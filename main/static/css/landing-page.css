@@ -3,8 +3,24 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
-
+ul{
+    list-style: none;
+}
+ul.competition
+li.competition-item img{
+    width: 300px;
+    height: 260px;
+}
+.carousel-inner{
+    position : relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-inner{
+    width: 980px !important;
+    padding-right: 10px;
+    padding-left: 10px;
+}
 
 .topnav {
     font-size: 14px;
@@ -22,12 +38,14 @@
     color: #f8f8f8;
     background: url(../../static/img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
+    height: 500px;
 }
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    align-self: center;
+    vertical-align: center;
+    padding-top: 15%;
 }
 
 .intro-message > h1 {
@@ -47,8 +65,10 @@
 }
 
 @media(max-width:767px) {
+    .container{
+        font-size: 12px;
+    }
     .intro-message {
-        padding-bottom: 15%;
     }
 
     .intro-message > h1 {
@@ -66,7 +86,7 @@
     }
 
     .intro-divider {
-        width: 100%;
+        width: 40%;
     }
 }
 
@@ -82,7 +102,7 @@
     letter-spacing: 2px;
 }
 .content-section-a {
-    padding: 50px 0;
+    padding: 0px 0;
     background-color: #f8f8f8;
 }
 
@@ -103,9 +123,8 @@
 }
 
 .banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background-color: #f7941e;
+    color: #000000;
+    background-color: #7d7d7d;
     background-size: cover;
 }
 
@@ -150,10 +169,39 @@
 }
 
 footer {
-    padding: 50px 0;
-    background-color: #f8f8f8;
+    padding: 30px 0;
+    background-color: #7d7d7d;
 }
 
 p.copyright {
     margin: 15px 0 0;
 }
+
+.nowcom{
+    padding: 10px;
+    font-weight: 800;
+}
+@media(max-width:767px) {
+        .footertable{
+            width: 100%;
+            font-size:12px;
+            margin:auto;
+        }
+        .margin{
+        padding: 0px;
+        }
+        .container{
+            padding: 0px;
+            text-align: center;
+        }
+        .h3,h3 {
+            font-size:12px;
+
+        }
+        th{
+            text-align: center;
+        }
+        td{
+            padding:3px;
+        }
+    }

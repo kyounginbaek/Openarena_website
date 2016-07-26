@@ -124,13 +124,12 @@ li.competition-item img{
 
 .banner {
     color: #000000;
-    background-color: #7d7d7d;
+    background-color: #212121;
     background-size: cover;
 }
 
 .banner h2 {
     margin: 0;
-
     font-size: 3em;
 }
 
@@ -170,7 +169,7 @@ li.competition-item img{
 
 footer {
     padding: 30px 0;
-    background-color: #7d7d7d;
+    background-color: #212121;
 }
 
 p.copyright {

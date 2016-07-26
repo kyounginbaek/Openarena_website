@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^video/$', views.video, name='video'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^login/$', views.login, name='login'),
+    url(r'^logout/$', views.logout_page, name="logout_page"),
 ]

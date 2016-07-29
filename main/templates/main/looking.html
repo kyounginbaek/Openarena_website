@@ -4,4 +4,112 @@
 
 {% block content %}
 
+   <div class="looking-header">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="looking_table">
+              <div class="table_title">지역별 대회</div>
+                <table  style="width:100%" cellpadding="10px">
+                  <tr>
+                    <th><div class="desc">서울</div></th>
+                    <th><div class="desc">경기</div></th>
+                    <th><div class="desc">인천</div></th>
+                  </tr>
+                  <tr>
+                    <th><div class="desc">강원</div></th>
+                    <th><div class="desc">충북</div></th>
+                    <th><div class="desc">충남</div></th>
+                  </tr>
+                  <tr>
+                    <th><div class="desc">전북</div></th>
+                    <th><div class="desc">전남</div></th>
+                    <th><div class="desc">경북</div></th>
+                  </tr>
+                  <tr>
+                    <th><div class="desc">경남</div></th>
+                    <th><div class="desc">제주</div></th>
+                    <th><div class="desc">해외</div></th>
+                  </tr>
+                </table>
+            </br>
+
+              <div class="table_title" >게임별 대회
+              </div>
+              <table style="width:100%" cellpadding="20px">
+                <tr>
+                  <th>
+                      <div class="desc">
+                        LOL
+                      </div>
+                  </th>
+                  <th><div class="desc">하스스톤</div></th>
+                </tr>
+                <tr>
+                  <th>
+                      <div class="desc">오버워치</div>
+                  </th>
+                  <th>
+                      <div class="desc">카트라이더</div>
+                  </th>
+                </tr>
+              </table>
+            </div>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="looking_mobile">
+                <div class="abc">
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            최신순 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                    </div>
+                </div>
+
+                <div class="looking_com">
+                    <div class="looking_picture1">
+                        <img src="../../static/nowcompetition/image1.png">
+                        <div class="pic_title">울산대 VS UNIST 롤 대전</div>
+                        <div class="pic_subtitle">울산대학교 롤 대전 예선이 진행중 입니다.</div>
+                        <div class="pic_dscrp">
+                        후원자수 <a class="pic_num">234</a>명</br>
+                        모인상금 <a class="pic_num">200,000</a>원</br>
+                        마감기한 <a class="pic_num">D-14</a>일
+                        </div>
+                    </div>
+                    <div class="looking_picture2">
+                        <img  src="../../static/nowcompetition/image2.png">
+                        <div class="pic_title">피파 아마추어 대회</div>
+                        <div class="pic_subtitle">경기 지역 피파 결승전 진행중입니다.</div>
+                        <div class="pic_dscrp">
+                        후원자수 <a class="pic_num">23</a>명</br>
+                        모인상금 <a class="pic_num">100,000</a>원</br>
+                        마감기한 <a class="pic_num">D-30</a>일
+                        </div>
+                    </div>
+                    <div class="looking_picture3">
+                        <img  src="../../static/nowcompetition/image3.png">
+                        <div class="pic_title">오버워치 아마추어 대회</div>
+                        <div class="pic_subtitle">경남 지역 예선이 진행중 입니다.</div>
+                        <div class="pic_dscrp">
+                        후원자수 <a class="pic_num">301</a>명</br>
+                        모인상금 <a class="pic_num">1,23,000</a>원</br>
+                        마감기한 <a class="pic_num">D-7</a>일
+                        </div>
+                    </div>
+                </div>
+
+                <div class="now_order">
+                    더보기
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

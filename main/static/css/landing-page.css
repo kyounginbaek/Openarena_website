@@ -3,6 +3,49 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+
+.table_title{
+    font-size:30px;
+    margin:10px;
+    text-align: center;
+    font-weight: 600;
+}
+.looking_table{
+    margin-left: 10px;
+    margin-top: 50px;
+    border:3px solid #f7941e;
+    background-color: #1b1b1b;
+    border-radius: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media(min-width:990px) {
+    .looking_table{
+        max-width: 220px;
+    }
+}
+.looking_com{
+    margin-top: 20px;
+    height:410px;
+}
+.now_order{
+    border:3px solid #f7941e;
+    background-color: #1b1b1b;
+    border-radius: 5px;
+    font-size: 21px;
+    font-weight: 500;
+    position: relative;
+    color: #c2c2c2;
+    width: 140px;
+    height: 50px;
+    padding: 7px;
+    margin-top: 20px;
+}
+.down_arrow{
+    margin-left: 12px;
+    width: 20%;
+}
 ul{
     list-style: none;
 }
@@ -40,6 +83,16 @@ li.competition-item img{
     background-size: cover;
     height: 500px;
 }
+.looking-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../../static/img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+    height: 780px;
+    font-family: 나눔고딕;
+}
 
 .intro-message {
     position: relative;
@@ -65,6 +118,10 @@ li.competition-item img{
 }
 
 @media(max-width:767px) {
+    .looking_mobile{
+        padding-top: 100px;
+        height: 800px;
+    }
     .container{
         font-size: 12px;
     }
@@ -124,6 +181,7 @@ li.competition-item img{
 
 .banner {
     color: #000000;
+    background-color: #212121;
     background-size: cover;
 }
 
@@ -146,6 +204,7 @@ li.competition-item img{
         float: left;
         margin-top: 15px;
     }
+
 }
 
 @media(max-width:767px) {
@@ -168,7 +227,7 @@ li.competition-item img{
 
 footer {
     padding: 30px 0;
-    background-color: rgba(19, 35, 47, 0.9);
+    background-color: #212121;
 }
 
 p.copyright {
@@ -203,3 +262,69 @@ p.copyright {
             padding:3px;
         }
     }
+
+div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.looking_picture3 img{
+    width: 294px;
+    height: 200px;
+    position: relative;
+    float: left;
+}
+.looking_picture,.looking_picture1,.looking_picture2,.looking_picture3{
+     width: 300px;
+    height: 400px;
+    float: left;
+    border:3px solid #f7941e;
+    background-color: #1b1b1b;
+    border-radius: 5px;
+    margin:5px;
+}
+
+@media(max-width:1270px) {
+    .looking_com {
+        width: 620px;
+        background-color: #1b1b1b;
+    }
+    .looking_picture3{
+        display: none;
+    }
+}
+    @media(max-width:860px) {
+    .looking_com {
+        width: 330px;
+        background-color: #1b1b1b;
+    }
+        .looking_picture3,.looking_picture2{
+        display: none;
+    }
+}
+.pic_title{
+    font-size: 18pt;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+.pic_subtitle{
+    font-size: 12pt;
+    color: #c2c2c2;
+    font-weight: 400;
+    padding-left: 10px;
+    text-align: left;
+}
+.pic_dscrp{
+    font-size: 12pt;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+.pic_num{
+    color: #f7941e;
+    text-align: right;
+    position: relative;
+}
+.abc{
+    margin-top: 50px;
+    width: 140px;
+    height: 50px;
+
+}

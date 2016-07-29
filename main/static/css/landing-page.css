@@ -124,7 +124,6 @@ li.competition-item img{
 
 .banner {
     color: #000000;
-    background-color: #212121;
     background-size: cover;
 }
 
@@ -169,7 +168,7 @@ li.competition-item img{
 
 footer {
     padding: 30px 0;
-    background-color: #212121;
+    background-color: rgba(19, 35, 47, 0.9);
 }
 
 p.copyright {

@@ -7,6 +7,8 @@ urlpatterns = [
     url(r'^making/$', views.making, name='making'),
     url(r'^video/$', views.video, name='video'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
+
+    url(r'^signup/$', views.signup, name='signup'),
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout_page, name="logout_page"),
 ]

@@ -15,14 +15,69 @@
     <!-- 메인  -->
     <div class="form">
       <ul class="tab-group">
-        <li class="tab active"><a href="#login">로그인</a></li>
-        <li class="tab"><a href="#signup">회원가입</a></li>
+        <li class="tab"><a href="#login">로그인</a></li>
+        <li class="tab active"><a href="#signup">회원가입</a></li>
       </ul>
 
       <div class="tab-content">
+        <div id="signup">
+          <h1>오픈아레나 회원가입</h1>
+          <form action="{% url 'signup' %}" method="post">{% csrf_token %}
+              <div class="top-row">
+                <div class="field-wrap">
+                  {% if not tmp_nickname %}
+                    <label>
+                        이름<span class="req">*</span>
+                    </label>
+                  {% endif %}
+                  <input type="text" required autocomplete="off" name="username" value="{{ tmp_username }}"/>
+                </div>
+
+                <div class="field-wrap">
+                  {% if not tmp_nickname %}
+                    <label>
+                        닉네임<span class="req">*</span>
+                    </label>
+                  {% endif %}
+                  <input type="text"required autocomplete="off" name="nickname" value="{{ tmp_nickname }}"/>
+                </div>
+              </div>
+
+              <div class="field-wrap">
+                {% if not tmp_nickname %}
+                    <label>
+                        이메일 주소(아이디)<span class="req">*</span>
+                    </label>
+                  {% endif %}
+                <input type="email"required autocomplete="off" name="email" value="{{ tmp_email }}"/>
+              </div>
+
+              <div class="field-wrap">
+                {% if not tmp_nickname %}
+                    <label>
+                        비밀번호<span class="req">*</span>
+                    </label>
+                  {% endif %}
+                <input type="password"required autocomplete="off" name="password1" value="{{ tmp_password1 }}"/>
+              </div>
+
+              <div class="field-wrap">
+                {% if not tmp_nickname %}
+                    <label>
+                        비밀번호 확인<span class="req">*</span>
+                    </label>
+                  {% endif %}
+                <input type="password"required autocomplete="off" name="password2" value="{{ tmp_password2 }}"/>
+              </div>
+
+              <button type="submit" class="button button-block" name="signup" style="margin-bottom: 20px"/>회원가입</button>
+              <button type="submit" class="button button-block" name="facebook" style="background-color: #3b5998"/>페이스북으로 회원가입</button>
+          </form>
+        </div>
+
         <div id="login">
           <h1>오픈아레나 로그인</h1>
-          <form action="{% url 'login' %}" method="post">{% csrf_token %}
+          <form action="{% url 'login' %}" method="post">
             <div class="field-wrap">
               <label>
                 이메일 주소(아이디)<span class="req">*</span>
@@ -42,50 +97,6 @@
           </form>
         </div>
 
-        <div id="signup">
-          <h1>오픈아레나 회원가입</h1>
-          <form action="{% url 'signup' %}" method="post">{% csrf_token %}
-              <div class="top-row">
-                <div class="field-wrap">
-                  <label>
-                    이름<span class="req">*</span>
-                  </label>
-                  <input type="text" required autocomplete="off" name="username" value="{{ tmp_username }}"/>
-                </div>
-
-                <div class="field-wrap">
-                  <label>
-                    닉네임<span class="req">*</span>
-                  </label>
-                  <input type="text"required autocomplete="off" name="nickname" value="{{ tmp_nickname }}"/>
-                </div>
-              </div>
-
-              <div class="field-wrap">
-                <label>
-                  이메일 주소(아이디)<span class="req">*</span>
-                </label>
-                <input type="email"required autocomplete="off" name="email" value="{{ tmp_email }}"/>
-              </div>
-
-              <div class="field-wrap">
-                <label>
-                  비밀번호<span class="req">*</span>
-                </label>
-                <input type="password"required autocomplete="off" name="password1" value="{{ tmp_password1 }}"/>
-              </div>
-
-              <div class="field-wrap">
-                <label>
-                  비밀번호 확인<span class="req">*</span>
-                </label>
-                <input type="password"required autocomplete="off" name="password2" value="{{ tmp_password2 }}"/>
-              </div>
-
-              <button type="submit" class="button button-block" name="signup" style="margin-bottom: 20px"/>회원가입</button>
-              <button type="submit" class="button button-block" name="facebook" style="background-color: #3b5998"/>페이스북으로 회원가입</button>
-          </form>
-        </div>
       </div><!-- tab-content -->
     </div> <!-- /form -->
 

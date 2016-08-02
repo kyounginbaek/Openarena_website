@@ -2,6 +2,11 @@
 
 {% block title %} 오픈아레나:대회 만들기 {% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+{% endblock %}
+
 {% block content %}
 <div class="making-header">
     <div id="sidebar" class="making_side" >
@@ -16,39 +21,50 @@
             <div class="bar_2">
             </div>
 
+            <!-- 대회 항목 -->
             <div class="looking-group">
               <div class="col-xs-12 col-sm-4 col-md-2">
-                <label class="making_font" for="exampleInputName">*이름 </label>
+                <label class="making_font" for="exampleInputName">이름<span style="color: #f7941e;">*</span></label>
               </div>
-              <input type="text" class="form-control" id="exampleInputName" placeholder="홍길동">
+              <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치 대회">
             </div>
 
               <div class="looking-group">
                   <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputURL">*주소 설정 </label>
+                    <label class="making_font" for="exampleInputURL">주소 설정 <span style="color: #f7941e;">*</span></label>
                   </div>
-                  <input type="email" class="form-control" id="exampleInputURL" placeholder="abcd1231">
+                  <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon3">openarena.co.kr/</span>
+                      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="overwatch">
+                  </div>
               </div>
 
             <div class="looking-group">
                 <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputType">*대회 타입 </label>
+                    <label class="making_font" for="exampleInputType">대회 타입 <span style="color: #f7941e;">*</span></label>
                 </div>
-                <input type="radio" name="gender" value="male" checked> 단일 방식 토너먼트
-                <input type="radio" name="gender" value="female"> 혼합 방식 토너먼트
+                <div class="btn-group">
+                    <input checked="checked" id="tournament_group_stages_enabled_false" name="tournament[group_stages_enabled]" type="radio" value="false"
+                    style="margin-bottom:10px">
+                    &nbsp; 단일 방식 토너먼트
+                    <br>
+                    <input id="tournament_group_stages_enabled_true" name="tournament[group_stages_enabled]" type="radio" value="true">
+                    &nbsp; 혼합 방식 토너먼트
+                </div>
             </div>
 
            <div class="looking-group">
                 <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputForm">*대회 형식 </label>
+                    <label class="making_font" for="exampleInputForm">대회 형식 <span style="color: #f7941e;">*</span></label>
                 </div>
                 <div class="btn-group">
-                      <button type="button" class="btn looking_btn" data-toggle="dropdown" aria-expanded="false">
-                        리그전 <span class="caret"></span>
+                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        선택해주세요 <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu">
                         <li><a href="#">싱글 엘리미네이션</a></li>
                         <li><a href="#">더블 엘리미네이션</a></li>
+                        <li><a href="#">라운드 로</a></li>
                         <li><a href="#">스위스 리그</a></li>
                       </ul>
                 </div>
@@ -56,54 +72,99 @@
 
             <div class="looking-group">
                 <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputForm">*대회 등록 방식 </label>
+                    <label class="making_font" for="exampleInputForm">대회 등록 방식 <span style="color: #f7941e;">*</span></label>
                 </div>
                 <div class="btn-group">
-                    <div class="aaa">
-                          <button type="button" class="btn looking_btn" data-toggle="dropdown" aria-expanded="false">
-                            자유참가 <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">초청전</a></li>
-                            <li><a href="#">조건부참가(개인)</a></li>
-                            <li><a href="#">조건부참가(팀)</a></li>
-                          </ul>
-                        </div>
+                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        선택해주세요 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">초청 등록</a></li>
+                        <li><a href="#">개인 등록</a></li>
+                        <li><a href="#">팀별 등록</a></li>
+                      </ul>
                 </div>
             </div>
 
             <div class="looking-group">
                 <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputNum">*최대 참가자수 </label>
+                    <label class="making_font" for="exampleInputNum">최대 참가자 수 <span style="color: #f7941e;">*</span></label>
                  </div>
-                <input type="text" class="form-control" id="exampleInputNum" placeholder="200">
-            </div>
-
-            <div class="looking-group">
-                <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputDay">대회 시작시간 </label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="200">
+                    <span class="input-group-addon">명</span>
                 </div>
-                <input type="text" class="form-control" id="exampleInputDay" placeholder="2016/08/02">
             </div>
 
             <div class="looking-group">
                 <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputDay">세부 사항 규칙 </label>
+                    <label class="making_font" for="exampleInputDay">대회 시작 시간 <span style="color: #f7941e;">*</span></label>
+                </div>
+                <input type="text" class="form-control" id="datepicker" placeholder="클릭해주세요">
+            </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputDay">규칙 세부 사항</label>
                 </div>
                 <textarea class="form-control" rows="3" placeholder="건의 사항"></textarea>
             </div>
 
+            <!-- 크라우드 펀딩 -->
             <div class="bar_2">
 
             </div>
 
             <div class="looking-group">
-                <button type="sub_submit" class="btn btn-default">임시저장</button>
-                <button class="empty"></button>
-                <button type="next" class="btn btn-default">다음</button>
+              <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="making_font" for="exampleInputReach">목표 금액 <span style="color: #f7941e;">*</span></label>
+              </div>
+              <div class="input-group">
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="200,000">
+                    <span class="input-group-addon">원</span>
+              </div>
             </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputGoal">공약 내용 </label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="100,000">
+                    <span class="input-group-addon">원</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">초과할 경우</span>
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="참가팀 전원에게 선물">
+                </div>
+            </div>
+
+            <!-- 버튼 추가 -->
+            <div>
+                <button type="add" class="btn btn-default">공약 추가</button>
+            </div>
+            <button type="add" class="btn btn-default">후원자 보상 만들기</button>
+
+            <!-- 제출 -->
+            <div class="bar_2">
+
+            </div>
+
+            <div class="looking-group">
+              <button type="next" class="btn btn-default">제출하기</button>
+           </div>
+
         </form>
     </div>
 </div>
 
+{% endblock %}
+
+{% block jquery %}
+    <script src="../../static/js/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+    </script>
 {% endblock %}

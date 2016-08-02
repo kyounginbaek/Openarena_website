@@ -1,0 +1,46 @@
+{% extends "main/base.html" %}
+
+{% block title %} 오픈아레나:대회 둘러보기 {% endblock %}
+
+{% block content %}
+
+   <div class="com_header">
+       <div class="com_title">미갈리스의 하스스톤대회</div>
+       <div class="com_subtitle">미갈리스의 하스스톤대회</div>
+       <ul class="list-inline intro-social-buttons">
+            <li>
+              <a href="{% url 'looking' %}" class="now_order" style="margin-right: 10px;">
+                 <span class="donate">참여하기</span></a>
+              <a href="{% url 'making' %}" class="now_order" style="margin-left: 10px;">
+                 <span class="donate">후원하기</span></a>
+            </li>
+       </ul>
+       <div class="col-lg-12">
+            <ul class="list-inline">
+                <li class="">
+                    <a href="#">도움말</a>
+                </li>
+                <li class="">&sdot;</li>
+                <li>
+                    <a href="#">개인정보정책</a>
+                </li>
+                <li class="">&sdot;</li>
+                <li>
+                    <a href="#">이용약관</a>
+                </li>
+                <li class="footer-menu-divider">&sdot;</li>
+                <li>
+                    <a href="#">문의하기</a>
+                </li>
+            </ul>
+       </div>
+       <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+           <img src="../../static/nowcompetition/image4.png">
+       </div>
+
+       <div class="looking_empty">
+       </div>
+   
+   </div>
+
+{% endblock %}

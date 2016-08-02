@@ -17,14 +17,14 @@ def looking(request):
 def making(request):
     return render(request, 'main/making.html', {})
 
-def making2(request):
-    return render(request, 'main/making2.html', {})
-
 def video(request):
     return render(request, 'main/video.html', {})
 
 def hallfame(request):
     return render(request, 'main/hallfame.html', {})
+
+def competition(request):
+    return render(request, 'main/competition.html', {})
 
 def login(request):
     if request.method == 'POST':

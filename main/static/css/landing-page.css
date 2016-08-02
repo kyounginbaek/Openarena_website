@@ -32,16 +32,9 @@
     width: 1100px;
 }
 .now_order{
-    border:2px solid #f7941e;
-    background-color: #1b1b1b;
-    border-radius: 1px;
-    font-size: 21px;
-    font-weight: 500;
     position: relative;
-    color: #c2c2c2;
     width: 140px;
     height: 50px;
-    padding: 7px;
     margin-top: 20px;
 }
 .down_arrow{
@@ -100,6 +93,16 @@ li.competition-item img{
     padding-bottom: 50px;
     color: #f8f8f8;
     background: #13232f;
+    height: 100%;
+    font-family: 나눔고딕;
+}
+.com_header{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: auto;
+    color: #f8f8f8;
+    background: #ffffff;
     height: 100%;
     font-family: 나눔고딕;
 }
@@ -169,7 +172,7 @@ li.competition-item img{
 }
 .donate {
     text-transform: lowercase;;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 2px;
 }
 .content-section-a {
@@ -326,12 +329,25 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     padding: 10px;
     text-align: left;
 }
+.com_title{
+    font-size: 40pt;
+    font-weight: 600;
+    color: #2d2d2d;
+    text-align: center;
+}
 .pic_subtitle{
     font-size: 10pt;
     color: #c2c2c2;
     font-weight: 400;
     padding-left: 10px;
     text-align: left;
+}
+.com_subtitle{
+    font-size: 30pt;
+    color: #000000;
+    font-weight: 400;
+    padding-left: 10px;
+    text-align: center;
 }
 .pic_dscrp{
     font-size: 12pt;
@@ -353,7 +369,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 #sidebar{
     width: 10%;
-    height: 97%;
+    height: 129%;
     position: absolute;
     background: #f7941e;
 }
@@ -399,4 +415,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     position: absolute;
     background: #f7941e;
     }
-                        }
+}
+
+.com_header img{
+    width: 300px;
+    height: 260px;
+}

@@ -3,5 +3,107 @@
 {% block title %} 오픈아레나:대회 만들기 {% endblock %}
 
 {% block content %}
+<div class="making-header">
+    <div id="sidebar" class="making_side" >
+    </div>
+
+    <div class="making_start">
+        <div class="making_font">대회 만들기</div>
+    </div>
+
+    <div class="making_content">
+        <form class="form-inline">
+            <div class="bar_2">
+            </div>
+
+            <div class="looking-group">
+              <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="making_font" for="exampleInputName">*이름 </label>
+              </div>
+              <input type="text" class="form-control" id="exampleInputName" placeholder="홍길동">
+            </div>
+
+              <div class="looking-group">
+                  <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputURL">*주소 설정 </label>
+                  </div>
+                  <input type="email" class="form-control" id="exampleInputURL" placeholder="abcd1231">
+              </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputType">*대회 타입 </label>
+                </div>
+                <input type="radio" name="gender" value="male" checked> 단일 방식 토너먼트
+                <input type="radio" name="gender" value="female"> 혼합 방식 토너먼트
+            </div>
+
+           <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputForm">*대회 형식 </label>
+                </div>
+                <div class="btn-group">
+                      <button type="button" class="btn looking_btn" data-toggle="dropdown" aria-expanded="false">
+                        리그전 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">싱글 엘리미네이션</a></li>
+                        <li><a href="#">더블 엘리미네이션</a></li>
+                        <li><a href="#">스위스 리그</a></li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputForm">*대회 등록 방식 </label>
+                </div>
+                <div class="btn-group">
+                    <div class="aaa">
+                          <button type="button" class="btn looking_btn" data-toggle="dropdown" aria-expanded="false">
+                            자유참가 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">초청전</a></li>
+                            <li><a href="#">조건부참가(개인)</a></li>
+                            <li><a href="#">조건부참가(팀)</a></li>
+                          </ul>
+                        </div>
+                </div>
+            </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputNum">*최대 참가자수 </label>
+                 </div>
+                <input type="text" class="form-control" id="exampleInputNum" placeholder="200">
+            </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputDay">대회 시작시간 </label>
+                </div>
+                <input type="text" class="form-control" id="exampleInputDay" placeholder="2016/08/02">
+            </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputDay">세부 사항 규칙 </label>
+                </div>
+                <textarea class="form-control" rows="3" placeholder="건의 사항"></textarea>
+            </div>
+
+            <div class="bar_2">
+
+            </div>
+
+            <div class="looking-group">
+                <button type="sub_submit" class="btn btn-default">임시저장</button>
+                <button class="empty"></button>
+                <button type="next" class="btn btn-default">다음</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

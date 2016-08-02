@@ -13,7 +13,7 @@
 .looking_table{
     margin-left: 10px;
     margin-top: 50px;
-    border:3px solid #f7941e;
+    border:2px solid #f7941e;
     background-color: #1b1b1b;
     border-radius: 5px;
     padding-top: 50px;
@@ -23,16 +23,18 @@
 @media(min-width:990px) {
     .looking_table{
         max-width: 220px;
+            float: right;
     }
 }
 .looking_com{
     margin-top: 20px;
-    height:410px;
+    height:360px;
+    width: 1100px;
 }
 .now_order{
-    border:3px solid #f7941e;
+    border:2px solid #f7941e;
     background-color: #1b1b1b;
-    border-radius: 5px;
+    border-radius: 1px;
     font-size: 21px;
     font-weight: 500;
     position: relative;
@@ -93,7 +95,19 @@ li.competition-item img{
     height: 780px;
     font-family: 나눔고딕;
 }
-
+.making-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    color: #f8f8f8;
+    background: #13232f;
+    height: 100%;
+    font-family: 나눔고딕;
+}
+.making_font{
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 150px;
+}
 .intro-message {
     position: relative;
     align-self: center;
@@ -263,49 +277,57 @@ p.copyright {
         }
     }
 
-div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.looking_picture3 img{
-    width: 294px;
-    height: 200px;
+div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.looking_picture3 img,div.looking_picture4 img{
+    width: 244px;
+    height: 150px;
     position: relative;
     float: left;
 }
-.looking_picture,.looking_picture1,.looking_picture2,.looking_picture3{
-     width: 300px;
-    height: 400px;
+.looking_picture,.looking_picture1,.looking_picture2,.looking_picture3,.looking_picture4{
+     width: 250px;
+    height: 350px;
     float: left;
-    border:3px solid #f7941e;
+    border:2px solid #f7941e;
     background-color: #1b1b1b;
-    border-radius: 5px;
-    margin:5px;
+    border-radius: 1px;
+    margin-right: 20px;
 }
-
-@media(max-width:1270px) {
+@media(max-width:1450px) {
     .looking_com {
-        width: 620px;
-        background-color: #1b1b1b;
+        width: 820px;
+    }
+    .looking_picture4{
+        display: none;
+    }
+}
+@media(max-width:1150px) {
+    .looking_com {
+        width: 550px;
     }
     .looking_picture3{
         display: none;
     }
+    .looking_picture4{
+        display: none;
+    }
 }
-    @media(max-width:860px) {
+    @media(max-width:580px) {
     .looking_com {
         width: 330px;
-        background-color: #1b1b1b;
     }
-        .looking_picture3,.looking_picture2{
+        .looking_picture2{
         display: none;
     }
 }
 .pic_title{
-    font-size: 18pt;
+    font-size: 15pt;
     font-weight: 600;
     color: #ffffff;
     padding: 10px;
     text-align: left;
 }
 .pic_subtitle{
-    font-size: 12pt;
+    font-size: 10pt;
     color: #c2c2c2;
     font-weight: 400;
     padding-left: 10px;
@@ -320,7 +342,8 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .pic_num{
     color: #f7941e;
     text-align: right;
-    position: relative;
+    position: inherit;
+    margin-left: 80px;
 }
 .abc{
     margin-top: 50px;
@@ -328,3 +351,52 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 50px;
 
 }
+#sidebar{
+    width: 10%;
+    height: 97%;
+    position: absolute;
+    background: #f7941e;
+}
+.making_start{
+    margin-top: 10px;
+    padding-left: 14%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.making_content{
+    padding-left: 14%;
+
+}
+.looking_btn{
+    color: #555;
+}
+.bar{
+    border:1px solid #ffffff;
+    width: 72%;
+    margin: auto;
+}
+.bar_2{
+    border:1px solid #ffffff;
+    width: 84%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.looking-group{
+    margin-bottom: 20px;
+}
+.empty{
+    width: 10%;
+    background-color: transparent;
+    border: transparent;
+}
+ @media(max-width:580px) {
+    .form-control {
+        width: 80%;
+    }
+     #sidebar{
+    width: 10%;
+    height: 150%;
+    position: absolute;
+    background: #f7941e;
+    }
+                        }

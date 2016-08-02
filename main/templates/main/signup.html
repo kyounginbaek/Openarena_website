@@ -25,49 +25,39 @@
           <form action="{% url 'signup' %}" method="post">{% csrf_token %}
               <div class="top-row">
                 <div class="field-wrap">
-                  {% if not tmp_nickname %}
-                    <label>
-                        이름<span class="req">*</span>
-                    </label>
-                  {% endif %}
-                  <input type="text" required autocomplete="off" name="username" value="{{ tmp_username }}"/>
+                  <label>
+                      이름<span class="req">*</span>
+                  </label>
+                  <input type="text" required autocomplete="off" name="username"/>
                 </div>
 
                 <div class="field-wrap">
-                  {% if not tmp_nickname %}
-                    <label>
-                        닉네임<span class="req">*</span>
-                    </label>
-                  {% endif %}
-                  <input type="text"required autocomplete="off" name="nickname" value="{{ tmp_nickname }}"/>
+                  <label>
+                      닉네임<span class="req">*</span>
+                  </label>
+                  <input type="text"required autocomplete="off" name="nickname"/>
                 </div>
               </div>
 
               <div class="field-wrap">
-                {% if not tmp_nickname %}
-                    <label>
-                        이메일 주소(아이디)<span class="req">*</span>
-                    </label>
-                  {% endif %}
-                <input type="email"required autocomplete="off" name="email" value="{{ tmp_email }}"/>
+                <label>
+                    이메일 주소(아이디)<span class="req">*</span>
+                </label>
+                <input type="email"required autocomplete="off" name="email"/>
               </div>
 
               <div class="field-wrap">
-                {% if not tmp_nickname %}
-                    <label>
-                        비밀번호<span class="req">*</span>
-                    </label>
-                  {% endif %}
-                <input type="password"required autocomplete="off" name="password1" value="{{ tmp_password1 }}"/>
+                <label>
+                    비밀번호<span class="req">*</span>
+                </label>
+                <input type="password"required autocomplete="off" name="password1"/>
               </div>
 
               <div class="field-wrap">
-                {% if not tmp_nickname %}
-                    <label>
-                        비밀번호 확인<span class="req">*</span>
-                    </label>
-                  {% endif %}
-                <input type="password"required autocomplete="off" name="password2" value="{{ tmp_password2 }}"/>
+                <label>
+                    비밀번호 확인<span class="req">*</span>
+                </label>
+                <input type="password"required autocomplete="off" name="password2"/>
               </div>
 
               <button type="submit" class="button button-block" name="signup" style="margin-bottom: 20px"/>회원가입</button>

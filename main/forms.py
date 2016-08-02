@@ -4,5 +4,9 @@ class SignupForm(forms.Form):
     username = forms.CharField()
     nickname = forms.CharField()
     email = forms.CharField()
-    password1 = forms.PasswordInput()
-    password2 = forms.PasswordInput()
+    password1 = forms.CharField()
+    password2 = forms.CharField()
+
+class LoginForm(forms.Form):
+    email = forms.CharField()
+    password1 = forms.CharField()

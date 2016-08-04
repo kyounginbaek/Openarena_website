@@ -1,6 +1,4 @@
 from django.contrib import messages
-from django.http import HttpResponseRedirect
-from django.contrib.auth import logout
 from django.shortcuts import render
 
 from main.models import Signup

@@ -93,7 +93,7 @@
             </div>
 
             <!-- js hide & show : Single_tournament format -->
-            <div class="looking-group js single_tournament-div" style="display: none;">
+            <div class="looking-group format single_tournament-div" style="display: none;">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                     <label class="making_font" for="exampleInputForm" style="color: #f7941e;">대회 형식 <span style="color: #f7941e;">*</span></label>
                 </div>
@@ -102,10 +102,10 @@
                         선택해주세요 <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu single_tournament_list" role="menu">
-                        <li><a id="single_single_elimination">싱글 엘리미네이션</a></li>
-                        <li><a id="single_double_elimination">더블 엘리미네이션</a></li>
-                        <li><a id="single_round_robin">라운드 로빈</a></li>
-                        <li><a id="single_swiss">스위스 리그</a></li>
+                        <li><a id="single_elimination">싱글 엘리미네이션</a></li>
+                        <li><a id="double_elimination">더블 엘리미네이션</a></li>
+                        <li><a id="round_robin">라운드 로빈</a></li>
+                        <li><a id="swiss">스위스 리그</a></li>
                       </ul>
                 </div>
                 &nbsp;
@@ -113,15 +113,16 @@
             </div>
 
             <!-- js hide & show : Two_tournament format -->
-            <div class="looking-group js two_tournament-div" style="display: none;">
+            <!-- Group Stage -->
+            <div class="looking-group format two_tournament-div" style="display: none;">
                 <div class="col-xs-12 col-sm-4 col-md-2">
-                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">대회 형식 <span style="color: #f7941e;">*</span></label>
+                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">그룹 스테이지 <span style="color: #f7941e;">*</span></label>
                 </div>
                 <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                      <button type="button" class="btn btn-original dropdown-toggle two_tournament_group_name" data-toggle="dropdown" aria-expanded="false">
                         선택해주세요 <span class="caret"></span>
                       </button>
-                      <ul class="dropdown-menu two_tournament_list" role="menu">
+                      <ul class="dropdown-menu two_tournament_group_list" role="menu">
                         <li><a id="two_single_elimination">싱글 엘리미네이션</a></li>
                         <li><a id="two_double_elimination">더블 엘리미네이션</a></li>
                         <li><a id="two_round_robin">라운드 로빈</a></li>
@@ -131,8 +132,87 @@
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </div>
 
-            <!-- js hide & show : Single_tournament + Single_elimination -->
-            <div class="looking-group single single_single_elimination" style="display: none;">
+            <!-- Fianl Stage -->
+            <div class="looking-group format two_tournament-div" style="display: none;">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">파이널 스테이지 <span style="color: #f7941e;">*</span></label>
+                </div>
+                <div class="btn-group">
+                      <button type="button" class="btn btn-original dropdown-toggle two_tournament_final_name" data-toggle="dropdown" aria-expanded="false">
+                        선택해주세요 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu two_tournament_final_list" role="menu">
+                        <li><a id="single_elimination">싱글 엘리미네이션</a></li>
+                        <li><a id="double_elimination">더블 엘리미네이션</a></li>
+                        <li><a id="round_robin">라운드 로빈</a></li>
+                        <li><a id="swiss">스위스 리그</a></li>
+                      </ul>
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </div>
+
+            <!-- Only Two_tournament Group Stage -->
+            <!-- js hide & show : Two_tournament + Single_elimination -->
+            <div class="looking-group spec two_single_elimination" style="display: none;">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                </div>
+                <div class="btn-group">
+                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        선택해주세요 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">싱글 엘리미네이션</a></li>
+                        <li><a href="#">더블 엘리미네이션</a></li>
+                        <li><a href="#">라운드 로</a></li>
+                        <li><a href="#">스위스 리그</a></li>
+                      </ul>
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </div>
+
+            <!-- js hide & show : Two_tournament + Double_elimination -->
+            <div class="looking-group spec two_double_elimination" style="display: none;">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                </div>
+                <div class="btn-group">
+                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        선택해주세요 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">싱글 엘리미네이션</a></li>
+                        <li><a href="#">더블 엘리미네이션</a></li>
+                        <li><a href="#">라운드 로</a></li>
+                        <li><a href="#">스위스 리그</a></li>
+                      </ul>
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </div>
+
+            <!-- js hide & show : Two_tournament + Round_robin -->
+            <div class="looking-group spec two_round_robin" style="display: none;">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                </div>
+                <div class="btn-group">
+                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        선택해주세요 <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">싱글 엘리미네이션</a></li>
+                        <li><a href="#">더블 엘리미네이션</a></li>
+                        <li><a href="#">라운드 로</a></li>
+                        <li><a href="#">스위스 리그</a></li>
+                      </ul>
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </div>
+
+            <!-- Single & Two tournament 공통 파트 -->
+            <!-- js hide & show : Single_elimination -->
+            <div class="looking-group spec single_elimination" style="display: none;">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
                 <div class="btn-group">
@@ -144,29 +224,29 @@
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </div>
 
-            <!-- js hide & show : Single_tournament + Double_elimination -->
-            <div class="looking-group single single_double_elimination" style="display: none;">
+            <!-- js hide & show : Double_elimination -->
+            <div class="looking-group spec double_elimination" style="display: none;">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                     <label class="making_font" for="exampleInputForm" style="color: #f7941e;">최종 경기 <span style="color: #f7941e;">*</span></label>
                 </div>
                 <div class="btn-group">
-                    <input id="single_tournament" name="single_double_elimination_spec" type="radio" value="false"
+                    <input id="single_tournament" name="double_elimination_spec" type="radio" value="false"
                     style="margin-bottom:10px">
                     &nbsp; 1-2 경기
                     &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                     <br>
-                    <input id="single_tournament" name="single_double_elimination_spec" type="radio" value="false"
+                    <input id="single_tournament" name="double_elimination_spec" type="radio" value="false"
                     style="margin-bottom:10px">
                     &nbsp; 1 경기
                     <br>
-                    <input id="single_tournament" name="single_double_elimination_spec" type="radio" value="false"
+                    <input id="single_tournament" name="double_elimination_spec" type="radio" value="false"
                     style="margin-bottom:10px">
                     &nbsp; 없음
                 </div>
             </div>
 
-            <!-- js hide & show : Single_tournament + Round_robin -->
-            <div class="looking-group single single_round_robin" style="display: none;">
+            <!-- js hide & show : Round_robin -->
+            <div class="looking-group spec round_robin" style="display: none;">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                     <label class="making_font" for="exampleInputForm" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
                 </div>
@@ -187,8 +267,8 @@
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </div>
 
-            <!-- js hide & show : Single_tournament + Swiss -->
-            <div class="looking-group single single_swiss" style="display: none;">
+            <!-- js hide & show : Swiss -->
+            <div class="looking-group spec swiss" style="display: none;">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
                 <div class="input-group">
@@ -225,63 +305,6 @@
                     <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
                     <span class="input-group-addon" id="basic-addon2">points per bye</span>
                 </div>
-            </div>
-
-            <!-- js hide & show : Two_tournament + Single_elimination -->
-            <div class="looking-group js two_single_elimination" style="display: none;">
-                <div class="col-xs-12 col-sm-4 col-md-2">
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">싱글 엘리미네이션</a></li>
-                        <li><a href="#">더블 엘리미네이션</a></li>
-                        <li><a href="#">라운드 로</a></li>
-                        <li><a href="#">스위스 리그</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-            </div>
-
-            <!-- js hide & show : Two_tournament + Double_elimination -->
-            <div class="looking-group js two_double_elimination" style="display: none;">
-                <div class="col-xs-12 col-sm-4 col-md-2">
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">싱글 엘리미네이션</a></li>
-                        <li><a href="#">더블 엘리미네이션</a></li>
-                        <li><a href="#">라운드 로</a></li>
-                        <li><a href="#">스위스 리그</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-            </div>
-
-            <!-- js hide & show : Two_tournament + Round_robin -->
-            <div class="looking-group js two_round_robin" style="display: none;">
-                <div class="col-xs-12 col-sm-4 col-md-2">
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">싱글 엘리미네이션</a></li>
-                        <li><a href="#">더블 엘리미네이션</a></li>
-                        <li><a href="#">라운드 로</a></li>
-                        <li><a href="#">스위스 리그</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </div>
 
             <!-- 등록 방식 -->
@@ -391,7 +414,7 @@
     <script src="../../static/js/jquery-ui.js"></script>
     <script>
         $(document).ready(function(){
-            /* js hide & show : streaming url */
+            /* streaming url dropdown 클릭 시 옆에 afreeca, 트위치 url 포맷 형성 + 대표 이름 변경 */
             $('.streaming_url li a').click(function() {
                 $(".streaming").hide();
                 $("."+$(this).attr("id")).show();
@@ -400,15 +423,20 @@
                 $(".streaming_name").val($(this).text());
             });
 
-            /* js hide & show : tournament_format */
+            /* single & two tournament 선택 시 div hide & show + 변경 시 하위 div 선택해주세요 버튼으로 변경 */
             $('input[name=tournament_type]').change(function(){
-                $(".js").hide();
+                $(".format").hide();
                 $("."+$(this).attr('id')+"-div").show();
+                $(".spec").hide();
+                $caret = '<span class="caret"></span>';
+                $(".single_tournament_name").html("선택해주세요"+" "+$caret)
+                $(".two_tournament_group_name").html("선택해주세요"+" "+$caret)
+                $(".two_tournament_final_name").html("선택해주세요"+" "+$caret)
             });
 
-            /* js hide & show : tournament_format_specifications */
+            /* single tournament 하위 리스트 div hide & show + 대표 이름 변경 */
             $('.single_tournament_list li a').click(function() {
-                $(".single").hide();
+                $(".spec").hide();
                 $("."+$(this).attr("id")).show();
 
                 $caret = '<span class="caret"></span>';
@@ -416,10 +444,21 @@
                 $(".single_tournament_name").val($(this).text());
             });
 
+            /* single tournament 하위 리스트 round_robin hide & show + 대표 이름 변경 */
             $('.single_round_robin_list li a').click(function() {
                 $caret = '<span class="caret"></span>';
                 $(".single_round_robin_name").html($(this).html()+" "+$caret);
                 $(".single_round_robin_name").val($(this).text());
+            });
+
+            /* two tournament 하위 리스트 div hide & show (single tournament와 동일) + 대표 이름 변경 */
+            $('.two_tournament_final_list li a').click(function() {
+                $(".spec").hide();
+                $("."+$(this).attr("id")).show();
+
+                $caret = '<span class="caret"></span>';
+                $(".two_tournament_final_name").html($(this).html()+" "+$caret);
+                $(".two_tournament_final_name").val($(this).text());
             });
 
             /* Datepicker */

@@ -510,10 +510,6 @@ input[type=search]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-
 @media print{.visible-print-inline-block{display:inline-block!important}}@media print{.hidden-print{display:none!important}}
 /*# sourceMappingURL=bootstrap.min.css.map */
 
-
-
-
-
 .sp-slideshow {
     position: relative;
 	width: 360px;

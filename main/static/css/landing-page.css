@@ -105,7 +105,7 @@ li.competition-item img{
     color: #f8f8f8;
     height: 100%;
     font-family: 나눔고딕;
-    background-color: #1b1b1b;
+
 }
 .making_font{
     font-size: 20px;
@@ -336,7 +336,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_title{
     font-size: 2.75em;
     font-weight: 600;
-    color: #ffffff;
+    color: #F8F6CC;
     text-align: center;
     margin-top: 20px;
 }
@@ -349,8 +349,8 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 50px;
 }
 .com_subtitle{
-    font-size: 20pt;
-    color: #f2f2f2;
+    font-size: 20px;
+    color: #D1D1DD;
     font-weight: 400;
     padding-left: 10px;
     text-align: center;
@@ -370,6 +370,12 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     margin-top: 50px;
     width: 100%;
     height: 100%;
+}
+.white{
+    background-color: transparent;
+    color: #F8F6CC;
+    font-size: 18px;
+    vertical-align: middle;
 }
 #sidebar{
     width: 10%;
@@ -406,6 +412,12 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     width: 80%;
     margin: auto;
 }
+.bar4{
+    border:1px solid #2F3138;
+    border-radius: 5px;
+    width: 100%;
+    margin: auto;
+}
 .looking-group{
     margin-bottom: 20px;
 }
@@ -433,7 +445,6 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_intro{
     width: 100%;
     height: 800px;
-    background-color: #ffffff;
     font-family: 나눔고딕;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -446,28 +457,28 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_intro img{
     width: 100%;
     height: 100%;
+    border : 1px solid #2F3138;
 }
 .com_list{
     color: #1b1b1b;
-    font-size: 15pt;
+    font-size: 1.3em;
     font-weight: 600;
+    vertical-align: middle;
 }
 .com_into_small{
-    color: #2d2d2d;
-    font-size: 14pt;
-    font-weight: 600;
+    color: #2F3138;
+    font-size: 18px;
 }
 .com_into_big{
-    color: #2d2d2d;
-    font-size: 18pt;
+    color: #2F3138;
+    font-size: 32px;
     font-weight: 400;
-    font-weight: bold;
 }
 .footer-menu-divider{
     color: #f7941e;
 }
 .com_intro_now{
-    padding: 15px;
+    padding: 0 0 15px 15px;
 }
 .com_intro_desp{
     padding: 15px;
@@ -477,19 +488,33 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     font-weight: 600;
 }
 .com_intro_box{
-    background: url(../../static/img/note.png) no-repeat center center;
-    width: 250px;
-    height: 250px;
+    width: 100%;
     padding: 1.5px 20px;
-    display: block;
+    border:2px solid #EBA444;
+    float: left;
     cursor: pointer;
 }
 .com_list_intro{
-    margin-top: 20px;
     text-align: center;
 }
 .com_list_margin{
-    margin-right: 6%;
+    margin-right: 5em;
+}
+.list-inline{
+    margin-bottom: 0px;
+}
+.bb{
+    background: url(../../static/img/pattern.png) ;
+    padding-bottom: 40px;
+}
+.com_mid{
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid #2F3138;
+    border-radius: 5px;
+    background-color: #F8F6CC;
+    padding-top: 20px;
 }
 .box_head{
     color: #676363;
@@ -524,4 +549,55 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 50px;
     padding: 7px;
     display: block;
+}
+.head_empty{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.help_head{
+
+    height: 275px;
+    background: url(../../static/img/q_cover.png) ;
+}
+.help_head_inner{
+    flex: 1;
+    margin: auto;
+    text-align: center;
+    width: 180px;
+    padding-top: 100px;
+
+}
+.help_head_title{
+    color: #fafafa;
+    font-weight: 600;
+}
+.head_background{
+    background-color: #ffffff;
+    height: 300px;
+    margin: auto;
+    padding: 20px 50px 50px 50px;
+}
+.head_box{
+    border:2px solid rgba(255, 153, 0, 1);
+    border-radius : 5px;
+    padding: 10px;
+}
+.facebook_btn{
+    background-color: #4460A0;
+    border-color:#4460A0;
+    border-radius: 2px;
+    padding-left: 5px;
+    width: 110px;
+    cursor: pointer;
+}
+.facebook_btn img{
+    width: auto;
+    border-color:#4460A0;
+}
+.facebook_font{
+   font-size: 15px;
+   color: #ffffff;
+    padding-bottom: 0px;
 }

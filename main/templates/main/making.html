@@ -3,7 +3,8 @@
 {% block title %} 오픈아레나:대회 만들기 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="../../static/css/jquery-ui.css">
 {% endblock %}
 
 {% block content %}
@@ -21,25 +22,25 @@
             </div>
 
             <!-- 대회 항목 -->
-            <div class="looking-group name">
+            <div class="looking-group tournament_name">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                   <label class="making_font" for="exampleInputName">대회 명칭<span style="color: #f7941e;">*</span></label>
                 </div>
                 <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치 대회">
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 명칭은 자유롭게 기술해주세요. 추후에 수정이 가능합니다."></span>
             </div>
 
-            <div class="looking-group name">
+            <div class="looking-group div_game_type">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                   <label class="making_font" for="exampleInputName">게임 종류<span style="color: #f7941e;">*</span></label>
                 </div>
                 <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치">
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="게임타입"></span>
             </div>
 
-            <div class="looking-group url">
+            <div class="looking-group div_tournament_url">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                   <label class="making_font" for="exampleInputURL">주소 설정 <span style="color: #f7941e;">*</span></label>
                 </div>
@@ -48,10 +49,10 @@
                     <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="예) overwatch">
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign tournament_url" aria-hidden="true" data-toggle="tooltip" title="방송 URL"></span>
             </div>
 
-            <div class="looking-group streaming_type">
+            <div class="looking-group div_streaming_url">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                   <label class="making_font" for="exampleInputURL">방송 주소 <span style="color: #f7941e;">*</span></label>
                 </div>
@@ -83,10 +84,10 @@
                 </div>
 
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign streaming_url" aria-hidden="true" data-toggle="tooltip" title="방송 주"></span>
             </div>
 
-            <div class="looking-group type">
+            <div class="looking-group tournament_type">
                 <div class="col-xs-12 col-sm-4 col-md-2">
                     <label class="making_font" for="exampleInputType">대회 타입 <span style="color: #f7941e;">*</span></label>
                 </div>
@@ -94,7 +95,7 @@
                     <input id="single_tournament" name="tournament_type" type="radio" value="false"
                     style="margin-bottom:10px">
                     &nbsp; 단일 방식 토너먼트
-                    &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                    &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="토너먼트 타입"></span>
                     <br>
                     <input id="two_tournament" name="tournament_type" type="radio" value="true">
                     &nbsp; 혼합 방식 토너먼트
@@ -118,7 +119,7 @@
                       </ul>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="토너먼트 포맷"></span>
             </div>
 
             <!-- js hide & show : Two_tournament format -->
@@ -138,7 +139,7 @@
                       </ul>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="그룹 스테이지"></span>
             </div>
 
             <!-- Only Two_tournament Group Stage -->
@@ -151,7 +152,7 @@
                     <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이"></span>
                 <br>
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
@@ -170,7 +171,7 @@
                     <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
                 <br>
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
@@ -189,7 +190,7 @@
                     <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈"></span>
                 <br>
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
@@ -214,6 +215,8 @@
                         <li><a id="custom_points_system_group">Custom(Points System)</a></li>
                       </ul>
                 </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="그룹 스테이지 + 라운드 로빈"></span>
             </div>
 
             <!-- js hide & show : Round_robin_group + Custom_points_system -->
@@ -225,7 +228,7 @@
                     <span class="input-group-addon" id="basic-addon2">points per match win</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈 + 커스텀 포인트 시스템"></span>
                 <br>
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
@@ -266,7 +269,7 @@
                       </ul>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="투 토너먼트"></span>
             </div>
 
             <!-- Single & Two tournament 공통 파트 -->
@@ -280,7 +283,7 @@
                     &nbsp; 3위 결정전을 포함하겠습니다.
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션"></span>
             </div>
 
             <!-- js hide & show : Double_elimination -->
@@ -292,7 +295,7 @@
                     <input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
                     style="margin-bottom:10px">
                     &nbsp; 1-2 경기
-                    &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                    &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
                     <br>
                     <input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
                     style="margin-bottom:10px">
@@ -323,7 +326,7 @@
                       </ul>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈"></span>
             </div>
 
             <!-- js hide & show : Round_robin_final + custom_points_system -->
@@ -335,7 +338,7 @@
                     <span class="input-group-addon" id="basic-addon2">points per match win</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈 + 커스텀 포인트 시스템"></span>
                 <br>
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
@@ -368,7 +371,7 @@
                     <span class="input-group-addon" id="basic-addon2">points per match win</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="스위스"></span>
                 <br>
                 <div class="col-xs-12 col-sm-4 col-md-2">
                 </div>
@@ -424,12 +427,12 @@
                 <div class="btn-group registration_team" style="display: none;">
                     <div class="input-group">
                       <input type="text" class="form-control" placeholder="예) 6" aria-describedby="basic-addon1">
-                      <span class="input-group-addon">명이 한</span>
+                      <span class="input-group-addon">명이 한팀</span>
                     </div>
                 </div>
 
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="신청 양식"></span>
             </div>
 
             <div class="looking-group">
@@ -441,7 +444,7 @@
                     <span class="input-group-addon">명</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="최대 참가자 수"></span>
             </div>
 
             <div class="looking-group">
@@ -456,7 +459,7 @@
                 </div>
 
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 시작 시간"></span>
             </div>
 
             <div class="looking-group">
@@ -465,7 +468,7 @@
                 </div>
                 <textarea class="form-control" rows="3" placeholder="예) "></textarea>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="규칙 세부 사항"></span>
             </div>
 
             <!-- 크라우드 펀딩 항목 -->
@@ -482,7 +485,7 @@
                     <span class="input-group-addon">원</span>
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="목표 금액"></span>
             </div>
 
             <div class="looking-group">
@@ -498,28 +501,72 @@
                     <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 참가팀 전원에게 선물">
                 </div>
                 &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="공약 내용"></span>
             </div>
 
-            <!-- 버튼 추가 -->
-            <div>
-                <button type="add" class="btn btn-default">공약 추가</button>
-            </div>
-            <button type="add" class="btn btn-default">후원자 보상 만들기</button>
-
-            <!-- 제출 -->
             <div class="looking-group">
-              <button type="submit" class="btn btn-default">제출하기</button>
-           </div>
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputGoal">후원자 보상 </label>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 100,000">
+                    <span class="input-group-addon">원</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">초과할 경우</span>
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 참가팀 전원에게 선물">
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="후원자 보상"></span>
+            </div>
 
+            <!-- 마무리 양식 -->
+            <div class="bar_2">
+
+            </div>
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputGoal">참가자 양식 <span style="color: #f7941e;">*</span></label>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">운영진이 연락드릴 번호</span>
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자 양식"></span>
+            </div>
+
+
+            <div class="looking-group">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <label class="making_font" for="exampleInputGoal">연락처 정보 <span style="color: #f7941e;">*</span></label>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">운영진이 연락드릴 번호</span>
+                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
+                </div>
+                &nbsp;
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="연락처 정보"></span>
+            </div>
+
+            <!-- 제출하기 -->
+            <div class="looking-group">
+              <button type="submit" class="btn btn-default" href="{% url 'making_submit' %}">제출하기</button>
+            </div>
         </form>
     </div>
 </div>
 
 {% endblock %}
 
-{% block jquery %}
-    <script src="/build/jquery.datetimepicker.full.min.js"></script>
+{% block script %}
+    <script src="../../static/js/jquery.datetimepicker.js"></script>
+    <script src="../../static/js/jquery-ui.js"></script>
     <script>
         $(document).ready(function(){
             /* streaming url dropdown 클릭 시 옆에 afreeca, 트위치 url 포맷 형성 + 대표 이름 변경 */
@@ -607,10 +654,16 @@
         });
 
         jQuery('#datetimepicker').datetimepicker({
-            allowTimes:[
-                '12:00', '13:00', '15:00',
-                '17:00', '17:05', '17:20', '19:00', '20:00'
-             ]
+            step: 5,
+            Locale: 'kr',
+        });
+
+        $('[data-toggle="tooltip"]').tooltip({
+            position: {
+                my: "left top",
+                at: "right+10 top-10",
+                collision: "none"
+            }
         });
     </script>
 

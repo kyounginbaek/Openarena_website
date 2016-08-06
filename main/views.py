@@ -15,6 +15,9 @@ def looking(request):
 def making(request):
     return render(request, 'main/making.html', {})
 
+def making_submit(request):
+    return render(request, 'main/making.html', {})
+
 def video(request):
     return render(request, 'main/video.html', {})
 

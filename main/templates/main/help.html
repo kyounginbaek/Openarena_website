@@ -2,29 +2,588 @@
 
 {% block title %} 오픈아레나:도움말 {% endblock %}
 
+{% block head %}
+    <div class="head_empty"></div>
+    <header class="help_head">
+        <div class="help_head_inner">
+            <h1 class="help_head_title">도움말</h1>
+        </div>
+    </header>
+{% endblock %}
+
 {% block content %}
-<div class="head_empty"></div>
-<header class="help_head">
-    <div class="help_head_inner">
-        <h1 class="help_head_title">도움말</h1>
-    </div>
-</header>
-    <div class="head_background">
-        <div class="col-md-10 col-lg-10">
-            <div class="col-md-6 ">
-                <div class="head_box">
-                <h4>오픈 아레나란</h4>
-                    Q. 오픈아레나란 무엇인가요?
-                    A. e-sports 아마추어 플랫폼 "오픈아레나" 는 e-spots 팬들의 크라우드펀딩 플랫폼입니다.
-                    팬들은 자신이 관심있는 e-spots대회에 대해서 e-spots 대회에 대한 후원을 할 수 있습니다..
-                    이를 통해 중간 유통과정에서 임대료, 광고비등으로 인해 팬들의 소비가 온전히 아마추어 프로게이머에 전달되지 못하는
-                    문제를 해결하고 온전한 가치에 대해 지불하는 소비를 지향합니다.
-                </div>
-            </div>
+    <div class="container">
+        <div class="col-md-12 col-lg-12">
             <div class="col-md-6">
+                <!-- Tab -->
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" style="font-size: 16px">서비스 소개</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content faq-cat-content">
+                        <div class="tab-pane active in fade" id="faq-cat-1">
+                            <div class="panel-group" id="accordion-cat-1">
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" id="tab1_question1">
+                                            <h4 class="panel-title">
+                                                오픈 아레나는 무슨 서비스인가요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-1" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>&nbsp;E-sports 아마추어 플랫폼 "오픈아레나" 는 e-spots 팬들의 크라우드펀딩 플랫폼입니다. 팬들은 자신이 관심있는 e-spots대회에 대해서 e-spots 대회에 대한 후원을 할 수 있습니다. 이를 통해 중간 유통과정에서 임대료, 광고비등으로 인해 팬들의 소비가 온전히 아마추어 프로게이머에 전달되지 못하는 문제를 해결하고 온전한 가치에 대해 지불하는 소비를 지향합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                오픈 아레나를 만든 이유는 무엇인가요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab -->
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" style="font-size: 16px">대회 참가자 & 후원</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content faq-cat-content">
+                        <div class="tab-pane active in fade" id="faq-cat-1">
+                            <div class="panel-group" id="accordion-cat-1">
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-1">
+                                            <h4 class="panel-title">
+                                                대회 참가자도 의무적으로 펀딩을 해야하나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-1" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>&nbsp;글을 써주세요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                제가 후원한 금액은 어디서 볼 수 있나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                금전이 아닌 다른 물품으로도 후원할 수 있나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                후원 시 대회 개최자에게 제공되는 제 개인정보는 무엇인가요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                하나의 대회를 중복으로 후원할 수 있나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                후원을 취소하려면 어떻게 해야하나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                어떤 결제 수단을 지원하나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                결제 방식은 선결제인가요 후결제인가요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                후원 시 제 신용카드 정보를 가져가는 건가요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question & Answer -->
+                                <div class="panel panel-default panel-faq">
+                                    <div class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                            <h4 class="panel-title">
+                                                대회 개최자가 후원 약속을 지키지 않으면 어떻게 하나요?
+                                                <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            &nbsp;글을 써주세요.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" style="font-size: 16px">대회 개최자</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content faq-cat-content">
+                    <div class="tab-pane active in fade" id="faq-cat-1">
+                        <div class="panel-group" id="accordion-cat-1">
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-1">
+                                        <h4 class="panel-title">
+                                            대회 페이지는 어떻게 만드는 건가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>&nbsp;.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            어떤 게임 장르든 대회로 만들 수 있는 건가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            펀딩 제한 시간과 목표 금액을 설정해야 하나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            펀딩 목표 금액을 다 채워야 하는 건가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            펀딩 금액은 자기 마음대로 설정해도 되나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            펀딩 금액을 지급받을 때 발생하는 수수료가 있나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회는 어떤 방식으로 진행되는 건가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회 페이지 생성은 무료인가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            공약과 후원자 선물은 꼭 생성해야 하는 건가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회 생성 후 대회 기간과 목표 금액을 변경할 수 있나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회 공개 후에 변경할 수 있는 사항은 무엇인가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            목표 금액이 초과되면 어떻게 되는 건가요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회를 중간에 취소할 수 있나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회 정보를 잘못 기재하여 수정하고 싶은데요.
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            펀딩 마감 이후 환불을 원하는 후원자가 있으면 어떻게 하죠?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            후원자에게 지급가능 한 선물은 무엇이 있나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            후원자 선물을 중간에 변경할 수 있나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Question & Answer -->
+                            <div class="panel panel-default panel-faq">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-2">
+                                        <h4 class="panel-title">
+                                            대회 펀딩 수수료에 대한 세금 계산서를 발생해 주시나요?
+                                            <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        &nbsp;.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function() {
+            $('.collapse').on('show.bs.collapse', function() {
+                var id = $(this).attr('id');
+                $('a[id="' + id + '"]').closest('.panel-heading').addClass('active-faq');
+                $('a[id="' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-minus"></i>');
+            });
+            $('.collapse').on('hide.bs.collapse', function() {
+                var id = $(this).attr('id');
+                $('a[id="' + id + '"]').closest('.panel-heading').removeClass('active-faq');
+                $('a[id="' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
+            });
+        });
+    </script>
 
 {% endblock %}

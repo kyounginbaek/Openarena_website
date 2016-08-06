@@ -98,12 +98,12 @@
  .table td,.table th{background-color:#fff!important}
  .table-bordered td,.table-bordered th{border:1px solid #ddd!important}}
  @font-face{font-family:'Glyphicons Halflings';
-     src:url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot);
-     src:url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot)
-      format('embedded-opentype'),url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff)
-       format('woff2'),url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff)
-       format('woff'),url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.ttf)
-       format('truetype'),url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg)
+     src:url('../../static/fonts/glyphicons-halflings-regular.eot');
+     src:url('../../static/fonts/glyphicons-halflings-regular.eot?#iefix')
+      format('embedded-opentype'),url('../../static/fonts/glyphicons-halflings-regular.woff2')
+       format('woff2'),url('../../static/fonts/glyphicons-halflings-regular.woff')
+       format('woff'),url('../../static/fonts/glyphicons-halflings-regular.ttf')
+       format('truetype'),url('../../static/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')
        format('svg')}
    .glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';
    font-style:normal;font-weight:400;line-height:1;
@@ -180,7 +180,7 @@
    :after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 
    html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}
-   body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}
+   body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;color:#333;background-color:#fff}
    button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#f7941e;text-decoration:none}
    a:focus,a:hover{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
    figure{margin:0}img{vertical-align:middle}
@@ -190,7 +190,7 @@
       .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}
       .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
       .sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role=button]{cursor:pointer}
-      .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}
+      .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:400;line-height:1.1;color:inherit}
       .h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4
       .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-weight:400;line-height:1;color:#777}.h1,.h2,.h3,h1,h2,h3{margin-bottom:10px}
       .h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small{font-size:65%}
@@ -768,4 +768,41 @@ input.sp-selector-5:checked ~ .sp-content .sp-slider > li:nth-child(5){
 }
 @media screen and (max-width: 320px){
 	.sp-slideshow { height: 158px; }
+}
+
+/* custon css */
+.faq-cat-content {
+    margin-top: 15px;
+}
+
+.faq-cat-tabs li a {
+    padding: 15px 10px 15px 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    color: #777777;
+}
+
+.nav-tabs li a:focus,
+.panel-heading a:focus {
+    outline: none;
+}
+
+.panel-heading a,
+.panel-heading a:hover,
+.panel-heading a:focus {
+    text-decoration: none;
+    color: #777777;
+}
+
+.faq-cat-content .panel-heading:hover {
+    background-color: #efefef;
+}
+
+.active-faq {
+    border-left: 5px solid #888888;
+}
+
+.panel-faq .panel-heading .panel-title span {
+    font-size: 13px;
+    font-weight: normal;
 }

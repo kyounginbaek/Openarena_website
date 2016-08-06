@@ -91,19 +91,18 @@ li.competition-item img{
 }
 .making-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
     color: #f8f8f8;
     background: #13232f;
     height: 100%;
     font-family: 나눔고딕;
 }
 .com_header{
-    padding-top: 50px;
     padding-bottom: 0px;
     text-align: center;
-    margin: auto;
     color: #f8f8f8;
-    height: 100%;
+    height: 750px;
+    background: url(../../static/img/com_back.png) no-repeat center center;
+    background-size: cover;
     font-family: 나눔고딕;
 
 }
@@ -334,11 +333,10 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     text-align: center;
 }
 .com_title{
-    font-size: 2.75em;
+    text-align: left;
+    font-size: 1.5em;
     font-weight: 600;
     color: #F8F6CC;
-    text-align: center;
-    margin-top: 20px;
 }
 .pic_subtitle{
     font-size: 1em ;
@@ -349,12 +347,10 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 50px;
 }
 .com_subtitle{
-    font-size: 20px;
+    text-align: left;
+    font-size: 1.2em;
     color: #D1D1DD;
     font-weight: 400;
-    padding-left: 10px;
-    text-align: center;
-    margin-bottom: 20px;
 }
 .pic_dscrp{
     font-size: 12pt;
@@ -379,7 +375,8 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 #sidebar{
     width: 10%;
-    height: 129%;
+    height: 100%;
+    overflow: hidden;
     position: absolute;
     background: #f7941e;
 }
@@ -413,10 +410,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     margin: auto;
 }
 .bar4{
-    border:1px solid #2F3138;
-    border-radius: 5px;
+    border:1px solid rgba( 251, 246, 204, 0.3 );
     width: 100%;
-    margin: auto;
+    margin-top: 10px
 }
 .looking-group{
     margin-bottom: 20px;
@@ -457,42 +453,49 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_intro img{
     width: 100%;
     height: 100%;
-    border : 1px solid #2F3138;
+    border : 1px solid #d1c0a5;
 }
 .com_list{
-    color: #1b1b1b;
+    color: #ffffff;
     font-size: 1.3em;
-    font-weight: 600;
     vertical-align: middle;
 }
 .com_into_small{
-    color: #2F3138;
-    font-size: 18px;
+    color: #ffffff;
+    font-size: medium;
 }
 .com_into_big{
-    color: #2F3138;
     font-size: 32px;
     font-weight: 400;
+    color: #ff9900;
 }
 .footer-menu-divider{
     color: #f7941e;
 }
 .com_intro_now{
     padding: 0 0 15px 15px;
+    width: 100%;
+    float: left;
 }
 .com_intro_desp{
-    padding: 15px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 1.22em;
     line-height: 1.85;
-    color: #676363;
+    color: #ffffff;
     font-weight: 600;
+    border:1px solid #d1c0a5;
+    background-color: #1a1a1a;
 }
 .com_intro_box{
     width: 100%;
-    padding: 1.5px 20px;
-    border:2px solid #EBA444;
+    padding: 20px 20px;
+    border:1px solid #EBA444;
     float: left;
     cursor: pointer;
+    background-color: #1a1a1a;
 }
 .com_list_intro{
     text-align: center;
@@ -504,20 +507,19 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     margin-bottom: 0px;
 }
 .bb{
-    background: url(../../static/img/pattern.png) ;
+    background-color: #1e1e1e;
     padding-bottom: 40px;
+    overflow: hidden;
 }
 .com_mid{
     width: 75%;
     height: 100%;
     margin: auto;
-    border: 2px solid #2F3138;
     border-radius: 5px;
-    background-color: #F8F6CC;
     padding-top: 20px;
 }
 .box_head{
-    color: #676363;
+    color: #ffffff;
 }
 .box_head_title{
     letter-spacing: -0.0225em ;
@@ -528,16 +530,16 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     margin-bottom: 13px;
     font-size: 15px;
     line-height: 1.625;
-    color: #676363;
+    color: #ffffff;
+}
+.com_empty{
+    height: 300px;
 }
 .com_header_inner{
-    -webkit-box-flex: 1;
-    flex: 1;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    text-align: center;
-    width: auto;
-
+    margin-top: 80px;
+    padding-top: 40px;
+    height: 300px;
+    background-color: rgba( 33, 33, 33, 0.9 );
 }
 .com_list_con{
     border: 2px solid #f7941e;
@@ -550,6 +552,13 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     padding: 7px;
     display: block;
 }
+.com_profile{
+        background: url(../../static/img/com_profile.png) no-repeat center center;
+        background-size: cover;
+        height: 160px;
+        max-width: 180px;
+        max-height: 180px;
+}
 .head_empty{
     width: 100%;
     height: 50px;
@@ -557,9 +566,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     overflow: hidden;
 }
 .help_head{
-
     height: 275px;
-    background: url(../../static/img/q_cover.png) ;
+    background: url(../../static/img/q_cover.png);
+    margin-bottom: 20px;
 }
 .help_head_inner{
     flex: 1;
@@ -600,4 +609,20 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
    font-size: 15px;
    color: #ffffff;
     padding-bottom: 0px;
+}
+.com_white_bar{
+    width: 100%;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+.com_orange_bar{
+    width: 60%;
+    height: 20px;
+    background-color: #ff9900;
+    border-radius: 3px;
+}
+.com_donate_box{
+    padding-left: 0px;
+    margin-top: 20px;
 }

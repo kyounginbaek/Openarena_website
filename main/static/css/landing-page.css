@@ -76,7 +76,7 @@ li.competition-item img{
     color: #f8f8f8;
     background: url(../../static/img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
-    height: 500px;
+    height: 700px;
 }
 .looking-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
@@ -116,10 +116,8 @@ li.competition-item img{
     min-width: 150px;
 }
 .intro-message {
-    position: relative;
-    align-self: center;
-    vertical-align: center;
-    padding-top: 15%;
+    margin: auto;
+    padding: 200px 0px;
 }
 
 .intro-message > h1 {
@@ -183,7 +181,7 @@ li.competition-item img{
     letter-spacing: 2px;
 }
 .content-section-a {
-    padding: 0px 0;
+    padding: 50px 0;
     background-color: #f8f8f8;
 }
 
@@ -383,7 +381,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 147%;
     position: absolute;
     float: left;
-    background: #f7941e;
+    background: #ff9900;
 }
 .making_start{
     margin-top: 10px;
@@ -595,8 +593,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 
 }
 .help_head_title{
-    color: #fafafa;
-    font-weight: 600;
+    color: #ffffff;
 }
 .head_background{
     background-color: #ffffff;

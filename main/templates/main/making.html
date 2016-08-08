@@ -16,8 +16,9 @@
             <div class="making_font">대회 만들기</div>
             <div style="margin-top: 10px"> &nbsp; * 대회 양식 작성 후 운영자 검토와 전화 미팅을 통해 대회가 개최가 결정됩니다.</div>
         </div>
+
         <div class="making_content">
-            <form class="form-inline making_form">
+            <form class="form-inline" method="POST">
                 <div class="bar_2">
                 </div>
                 <!-- 대회 항목 -->
@@ -526,13 +527,13 @@
                     <!-- js dynamic form fields : add -->
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" name="fields[]" type="text" placeholder="예) 100,000" />
+                            <input class="form-control" name="option[]" type="text" placeholder="예) 100,000" />
                             <span class="input-group-addon">원에 도달하면</span>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="예) 참가팀 전원에게 선물">
+                            <input class="form-control" type="text" name="option[]" placeholder="예) 참가팀 전원에게 선물">
                             <span class="input-group-btn">
-                                <button class="btn btn-success btn-add" type="button">
+                                <button class="btn btn-success addButton" type="button">
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </span>
@@ -542,18 +543,18 @@
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="목표 후원 금액을 넘어 더욱 더 많은 사람들이 후원에 참여할 수 있도록 공약 금액과 공약을 적어주세요."></span>
 
                     <!-- js dynamic form fields : remove -->
-                    <div class="looking-group">
+                    <div class="hide" id="optionTemplate">
                         <div class="col-xs-10 col-sm-3 col-md-3">
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" name="fields[]" type="text" placeholder="예) 100,000" />
+                                <input class="form-control" name="option[]" type="text" placeholder="예) 100,000" />
                                 <span class="input-group-addon">원에 도달하면</span>
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="예) 참가팀 전원에게 선물">
+                                <input class="form-control" type="text" name="option[]" placeholder="예) 참가팀 전원에게 선물">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-failure btn-danger" type="button">
+                                    <button class="btn btn-danger removeButton" type="button">
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                 </span>
@@ -772,12 +773,13 @@
                 offset = element.offset();
                 offsetTop = offset.top;
                 $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-            }
+            };
 
             /* 공약 & 후원 추가 버튼 기능 구현 */
             /* Add button click handler */
             var MAX_OPTIONS = 10;
-            $('#making_form').on('click', '.addButton', function() {
+
+            $('.form-inline').on('click', '.addButton', function() {
                 var $template = $('#optionTemplate'),
                     $clone    = $template
                                     .clone()
@@ -787,11 +789,11 @@
                     $option   = $clone.find('[name="option[]"]');
 
                 // Add new field
-                $('#surveyForm').formValidation('addField', $option);
-            });
+                $('.form-inline').formValidation('addField', $option);
+            })
 
             /* Remove button click handler */
-            $('#making_form').on('click', '.removeButton', function() {
+            $('.form-inline').on('click', '.removeButton', function() {
                 var $row    = $(this).parents('.form-group'),
                     $option = $row.find('[name="option[]"]');
 
@@ -799,27 +801,27 @@
                 $row.remove();
 
                 // Remove field
-                $('#surveyForm').formValidation('removeField', $option);
-            });
+                $('.form-inline').formValidation('removeField', $option);
+            })
 
             /* Called after adding new field */
-            $('#making_form').on('added.field.fv', function(e, data) {
+            $('.form-inline').on('added.field.fv', function(e, data) {
                 // data.field   --> The field name
                 // data.element --> The new field element
                 // data.options --> The new field options
 
                 if (data.field === 'option[]') {
-                    if ($('#surveyForm').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
-                        $('#surveyForm').find('.addButton').attr('disabled', 'disabled');
+                    if ($('.form-inline').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
+                        $('.form-inline').find('.addButton').attr('disabled', 'disabled');
                     }
                 }
-            });
+            })
 
             /* Called after removing the field */
-            $('#making_form').on('removed.field.fv', function(e, data) {
+            $('.form-inline').on('removed.field.fv', function(e, data) {
                if (data.field === 'option[]') {
-                    if ($('#surveyForm').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
-                        $('#surveyForm').find('.addButton').removeAttr('disabled');
+                    if ($('.form-inline').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
+                        $('.form-inline').find('.addButton').removeAttr('disabled');
                     }
                 }
             });

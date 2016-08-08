@@ -5,596 +5,631 @@
 {% block head %}
     <link rel="stylesheet" type="text/css" href="../../static/css/jquery.datetimepicker.css"/>
     <link rel="stylesheet" href="../../static/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../static/css/custom_kyoungin.css">
 {% endblock %}
 
 {% block content %}
-<div class="making-header">
-    <div  class="making_side" >
-    </div>
-    <div class="making_start">
-        <div class="making_font">대회 만들기</div>
-    </div>
-    <div class="making_content">
-        <form class="form-inline">
-            <div class="bar_2">
-            </div>
-            <!-- 대회 항목 -->
-            <!--대회명칭-->
-            <div class="looking-group tournament_name">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                  <label class="making_font" for="exampleInputName">대회 명칭<span style="color: #f7941e;">*</span></label>
+    <div class="making-header">
+        <div  class="making_side" >
+        </div>
+        <div class="making_start">
+            <div class="making_font">대회 만들기</div>
+            <div style="margin-top: 10px"> &nbsp; * 대회 양식 작성 후 운영자 검토와 전화 미팅을 통해 대회가 개최가 결정됩니다.</div>
+        </div>
+        <div class="making_content">
+            <form class="form-inline making_form">
+                <div class="bar_2">
                 </div>
-                <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치 대회">
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 명칭은 자유롭게 기술해주세요. 추후에 수정이 가능합니다."></span>
-            </div>
-            <!--게임종류-->
-            <div class="looking-group div_game_type">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                  <label class="making_font" for="exampleInputName">게임 종류<span style="color: #f7941e;">*</span></label>
-                </div>
-                <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치">
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="게임타입"></span>
-            </div>
-            <!--주소설정-->
-            <div class="looking-group div_tournament_url">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                  <label class="making_font" for="exampleInputURL">주소 설정 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3">openarena.co.kr/</span>
-                    <input type="text" class="form-control form-control2" id="basic-url" aria-describedby="basic-addon3" placeholder="예) overwatch">
-                </div>
-                <span class="glyphicon glyphicon-question-sign tournament_url" aria-hidden="true" data-toggle="tooltip" title="방송 URL"></span>
-            </div>
-
-            <div class="looking-group div_streaming_url">
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                  <label class="making_font" for="exampleInputURL">방송 주소 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-original dropdown-toggle streaming_name" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu streaming_url" role="menu">
-                      <li><a id="afreecatv">아프리카tv</a></li>
-                      <li><a id="twitch">트위치(twitch)</a></li>
-                      <li><a id="no">계정 없음</a></li>
-                    </ul>
-                </div>
-
-                <!-- js hide & show : afreeca tv -->
-                <div class="btn-group streaming afreecatv" style="display: none;">
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">play.afreecatv.com/</span>
-                      <input type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                <!-- 대회 항목 -->
+                <!--대회명칭-->
+                <div class="looking-group tournament_name">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                      <label class="making_font" for="exampleInputName">대회 명칭&nbsp;<span style="color: #f7941e;">*</span></label>
                     </div>
-                </div>
-
-                <!-- js hide & show : twitch -->
-                <div class="btn-group streaming twitch" style="display: none;">
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">twitch.tv/</span>
-                      <input type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign streaming_url" aria-hidden="true" data-toggle="tooltip" title="방송 주"></span>
-            </div>
-
-            <div class="looking-group tournament_type">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputType">대회 타입 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                    <input id="single_tournament" name="tournament_type" type="radio" value="false"
-                    style="margin-bottom:10px">
-                    &nbsp; 단일 방식 토너먼트
-                    &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="토너먼트 타입"></span>
-                    <br>
-                    <input id="two_tournament" name="tournament_type" type="radio" value="true">
-                    &nbsp; 혼합 방식 토너먼트
-                </div>
-            </div>
-
-            <!-- js hide & show : Single_tournament format -->
-            <div class="looking-group format single_tournament-div" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">대회 형식 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle single_tournament_name" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu single_tournament_list" role="menu">
-                        <li><a id="single_elimination">싱글 엘리미네이션</a></li>
-                        <li><a id="double_elimination">더블 엘리미네이션</a></li>
-                        <li><a id="round_robin">라운드 로빈</a></li>
-                        <li><a id="swiss">스위스 리그</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="토너먼트 포맷"></span>
-            </div>
-
-            <!-- js hide & show : Two_tournament format -->
-            <!-- Group Stage -->
-            <div class="looking-group format two_tournament-div" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">그룹 스테이지 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle two_tournament_name_group" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu two_tournament_list_group" role="menu">
-                        <li><a id="two_single_elimination">싱글 엘리미네이션</a></li>
-                        <li><a id="two_double_elimination">더블 엘리미네이션</a></li>
-                        <li><a id="two_round_robin">라운드 로빈</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="그룹 스테이지"></span>
-            </div>
-
-            <!-- Only Two_tournament Group Stage -->
-            <!-- js hide & show : Two_tournament + Single_elimination -->
-            <div class="looking-group spec_group two_single_elimination" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이"></span>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
-                </div>
-            </div>
-
-            <!-- js hide & show : Two_tournament + Double_elimination -->
-            <div class="looking-group spec_group two_double_elimination" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
-                </div>
-            </div>
-
-            <!-- js hide & show : Two_tournament + Round_robin -->
-            <div class="looking-group spec_group two_round_robin" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈"></span>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
-                </div>
-                <br>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle round_robin_name_group" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu round_robin_list_group" role="menu">
-                        <li><a>Match Wins</a></li>
-                        <li><a>Game/Set Wins</a></li>
-                        <li><a>Game/Set Win %</a></li>
-                        <li><a>Points Scored</a></li>
-                        <li><a>Points Difference</a></li>
-                        <li><a id="custom_points_system_group">Custom(Points System)</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="그룹 스테이지 + 라운드 로빈"></span>
-            </div>
-
-            <!-- js hide & show : Round_robin_group + Custom_points_system -->
-            <div class="looking-group spec_group custom_points_system_group" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per match win</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈 + 커스텀 포인트 시스템"></span>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per match tie</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
-                </div>
-            </div>
-
-            <!-- Fianl Stage -->
-            <div class="looking-group format two_tournament-div" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">파이널 스테이지 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle two_tournament_name_final" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu two_tournament_list_final" role="menu">
-                        <li><a id="single_elimination">싱글 엘리미네이션</a></li>
-                        <li><a id="double_elimination">더블 엘리미네이션</a></li>
-                        <li><a id="round_robin">라운드 로빈</a></li>
-                        <li><a id="swiss">스위스 리그</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="투 토너먼트"></span>
-            </div>
-
-            <!-- Single & Two tournament 공통 파트 -->
-            <!-- js hide & show : Single_elimination -->
-            <div class="looking-group spec single_elimination" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="btn-group">
-                    <input id="single_elimination" name="single_elimination_spec" type="checkbox" value="false"
-                    style="margin-bottom:10px">
-                    &nbsp; 3위 결정전을 포함하겠습니다.
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션"></span>
-            </div>
-
-            <!-- js hide & show : Double_elimination -->
-            <div class="looking-group spec double_elimination" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">최종 경기 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                    <input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
-                    style="margin-bottom:10px">
-                    &nbsp; 1-2 경기
-                    &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
-                    <br>
-                    <input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
-                    style="margin-bottom:10px">
-                    &nbsp; 1 경기
-                    <br>
-                    <input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
-                    style="margin-bottom:10px">
-                    &nbsp; 없음
-                </div>
-            </div>
-
-            <!-- js hide & show : Round_robin -->
-            <div class="looking-group spec round_robin" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputForm" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle round_robin_name_final" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu round_robin_list_final" role="menu">
-                        <li><a>Match Wins</a></li>
-                        <li><a>Game/Set Wins</a></li>
-                        <li><a>Game/Set Win %</a></li>
-                        <li><a>Points Scored</a></li>
-                        <li><a>Points Difference</a></li>
-                        <li><a id="custom_points_system_final">Custom(Points System)</a></li>
-                      </ul>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈"></span>
-            </div>
-
-            <!-- js hide & show : Round_robin_final + custom_points_system -->
-            <div class="looking-group spec custom_points_system_final" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per match win</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈 + 커스텀 포인트 시스템"></span>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per match tie</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
-                </div>
-            </div>
-
-            <!-- js hide & show : Swiss -->
-            <div class="looking-group spec swiss" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per match win</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="스위스"></span>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per match tie</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
-                </div>
-                <br>
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2">points per bye</span>
-                </div>
-            </div>
-
-            <!-- 등록 방식 -->
-            <div class="bar_2">
-
-            </div>
-
-            <div class="looking-group">
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputForm">대회 등록 방식 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="btn-group">
-                      <button type="button" class="btn btn-original dropdown-toggle registration_name" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu registration_list" role="menu">
-                        <li><a>초대식 개인 등록</a></li>
-                        <li><a id="registration_team">초대식 팀별 등록</a></li>
-                        <li><a>시청자 개인 등록</a></li>
-                        <li><a id="registration_team">시청자 팀별 등록</a></li>
-                      </ul>
-                </div>
-
-                <!-- js hide & show : registration_team -->
-                <div class="btn-group registration_team" style="display: none;">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="예) 6" aria-describedby="basic-addon1">
-                      <span class="input-group-addon">명이 한팀</span>
-                    </div>
-                </div>
-
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="신청 양식"></span>
-            </div>
-
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputNum">최대 참가자 수 <span style="color: #f7941e;">*</span></label>
-                 </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 200">
-                    <span class="input-group-addon">명</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="최대 참가자 수"></span>
-            </div>
-
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputDay">대회 시작 시간 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="datetimepicker" placeholder="클릭해주세요">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 시작 시간"></span>
-            </div>
-
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputDay">참가자 체크인 <span style="color: #f7941e;"></span></label>
-                </div>
-                <div class="btn-group">
-                    <input id="checkin_checkbox" name="checkin_checkbox" type="checkbox" style="margin-top: 10px">
-                    &nbsp;참가자 체크인 기능을 사용하시겠습니까?
-                    &nbsp;<span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자 체크인"></span>
-                </div>
-            </div>
-
-            <!-- js hide & show : check-in time -->
-            <div class="looking-group checkin_time" style="display: none;">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                </div>
-                <div class="input-group">
-                    대회 시작
-                </div>
-                <div class="input-group">
-                    <button type="button" class="btn btn-original dropdown-toggle checkin_name" data-toggle="dropdown" aria-expanded="false">
-                        선택해주세요 <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu checkin_list" role="menu">
-                        <li><a>15분</a></li>
-                        <li><a>30분</a></li>
-                        <li><a>1시간</a></li>
-                        <li><a>2시간</a></li>
-                        <li><a>6시간</a></li>
-                        <li><a>1일</a></li>
-                        <li><a>2일</a></li>
-                    </ul>
-                </div>
-                <div class="input-group">
-                    이전에 체크인을 해야합니다.
-                </div>
-            </div>
-
-            <div class="looking-group" style="margin-top: 30px">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputDay">규칙 세부 사항</label>
+                    <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치 대회">
                     &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회의 이름을 입력해주세요. 예) 오픈아레나 스타크래프트 토너먼트"></span>
                 </div>
-                <textarea class="form-control" rows="3" placeholder="예) " style="width: 60%; height: 120px;"></textarea>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="규칙 세부 사항" style="vertical-align: top;"></span>
-            </div>
+                <!--게임종류-->
+                <div class="looking-group div_game_type">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                      <label class="making_font" for="exampleInputName">게임 종류&nbsp;<span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치">
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="진행하려는 대회의 게임 종목을 입력해주세요. 예) 하스스톤"></span>
+                </div>
+                <!--주소설정-->
+                <div class="looking-group div_tournament_url">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                      <label class="making_font" for="exampleInputURL">주소 설정 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">openarena.co.kr/</span>
+                        <input type="text" class="form-control form-control2" id="basic-url" aria-describedby="basic-addon3" placeholder="예) overwatch">
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign tournament_url" aria-hidden="true" data-toggle="tooltip" title="펀딩 및 참가 페이지의 주소를 설정해주세요. 예) openarena.co.kr/overwatch"></span>
+                </div>
 
-            <!-- 크라우드 펀딩 항목 -->
-            <div class="bar_2">
+                <div class="looking-group div_streaming_url">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                      <label class="making_font" for="exampleInputURL">방송 주소 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-original dropdown-toggle streaming_name" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu streaming_url" role="menu">
+                          <li><a id="afreecatv">아프리카tv</a></li>
+                          <li><a id="twitch">트위치(twitch)</a></li>
+                          <li><a id="no">계정 없음</a></li>
+                        </ul>
+                    </div>
 
-            </div>
+                    <!-- js hide & show : afreeca tv -->
+                    <div class="btn-group streaming afreecatv" style="display: none;">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">play.afreecatv.com/</span>
+                          <input type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
 
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputReach">목표 금액 <span style="color: #f7941e;">*</span></label>
-                </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 200,000">
-                    <span class="input-group-addon">원</span>
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="목표 금액"></span>
-            </div>
+                    <!-- js hide & show : twitch -->
+                    <div class="btn-group streaming twitch" style="display: none;">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">twitch.tv/</span>
+                          <input type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
 
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputGoal">공약 내용 </label>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign streaming_url" aria-hidden="true" data-toggle="tooltip" title="대회가 방송되는 스트리밍 주소를 입력해주세요."></span>
                 </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 100,000">
-                    <span class="input-group-addon">원</span>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">초과할 경우</span>
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 참가팀 전원에게 선물">
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="공약 내용"></span>
-            </div>
 
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputGoal">후원자 보상 </label>
+                <div class="looking-group tournament_type">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputType">대회 타입 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input id="single_tournament" name="tournament_type" type="radio" value="false"
+                        style="margin-bottom:15px"> &nbsp;단일 방식 토너먼트</label>
+                        &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="단일 토너먼트 방식은 한가지 방식의 토너먼트이며, 혼합 방식 토너먼트 두 방식이 혼합된 토너먼트로 조별로 방식에 맞는 일정 선수를 뽑은 후 그 선수들로 새로운 방식을 통해 우승자를 가려냅니다."></span>
+                        <br>
+                        <label><input id="two_tournament" name="tournament_type" type="radio" value="true"> &nbsp;혼합 방식 토너먼트 </label>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 10,000">
-                    <span class="input-group-addon">원</span>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">후원으로</span>
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 마우스패드를 드려요">
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="후원자 보상"></span>
-            </div>
 
-            <!-- 마무리 양식 -->
-            <div class="bar_2">
-            </div>
-
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputGoal">참가자 양식 <span style="color: #f7941e;">*</span></label>
+                <!-- js hide & show : Single_tournament format -->
+                <div class="looking-group format single_tournament-div" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputForm" style="color: #f7941e;">대회 형식 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-original dropdown-toggle single_tournament_name" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu single_tournament_list" role="menu">
+                            <li><a id="single_elimination">싱글 엘리미네이션</a></li>
+                            <li><a id="double_elimination">더블 엘리미네이션</a></li>
+                            <li><a id="round_robin">라운드 로빈</a></li>
+                            <li><a id="swiss">스위스 리그</a></li>
+                          </ul>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션: 이긴 선수 혹은 팀이 다음 경기에 진출하는 일반적 토너먼트 방식입니다. 더블 엘리미네이션: 일종의 패자부활전 방식입니다. 처음 두 팀씩 경기를 치른 다음, 승자는 승자끼리, 패자는 패자끼리 경기를 치뤄 2연승한 팀은 다음 라운드 진출이 확정되고, 2연패를 한 팀은 탈락이 확정됩니다. 또 1승1패를 기록한 팀은 다시 경기를 치뤄 최종 진출팀을 가리게 됩니다. 라운드 로빈: 리그 방식으로 모든 참여 인원이 한 번씩 경기를 하여 순위를 가리는 방식입니다. 스위스리그: 라운드 별로 같은 승수를 가진 선수 혹은 팀끼리 경쟁하는 방식입니다. 일반적으로 4~5라운드 진행되며 큰 대회는 11라운드까지 진행이 되며 가장 많은 승수를 가진 선수가 동점일 경우 자신과 겨룬 모든 상대의 승수를 합한 승점으로, 혹은 자신과 겨룬 모든 상대의 승점을 합한 총점으로 1등을 가립니다."></span>
                 </div>
-                <div class="input-group">
-                    <span class="input-group-addon">운영진이 연락드릴 번호</span>
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
+
+                <!-- js hide & show : Two_tournament format -->
+                <!-- Group Stage -->
+                <div class="looking-group format two_tournament-div" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputForm" style="color: #f7941e;">그룹 스테이지 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-original dropdown-toggle two_tournament_name_group" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu two_tournament_list_group" role="menu">
+                            <li><a id="two_single_elimination">싱글 엘리미네이션</a></li>
+                            <li><a id="two_double_elimination">더블 엘리미네이션</a></li>
+                            <li><a id="two_round_robin">라운드 로빈</a></li>
+                          </ul>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션: 이긴 선수 혹은 팀이 다음 경기에 진출하는 일반적 토너먼트 방식입니다. 더블 엘리미네이션: 일종의 패자부활전 방식입니다. 처음 두 팀씩 경기를 치른 다음, 승자는 승자끼리, 패자는 패자끼리 경기를 치뤄 2연승한 팀은 다음 라운드 진출이 확정되고, 2연패를 한 팀은 탈락이 확정됩니다. 또 1승1패를 기록한 팀은 다시 경기를 치뤄 최종 진출팀을 가리게 됩니다. 라운드 로빈: 리그 방식으로 모든 참여 인원이 한 번씩 경기를 하여 순위를 가리는 방식입니다."></span>
                 </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자 양식"></span>
-            </div>
+
+                <!-- Only Two_tournament Group Stage -->
+                <!-- js hide & show : Two_tournament + Single_elimination -->
+                <div class="looking-group spec_group two_single_elimination" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="승자조 결승 진출자에게 일정의 어드밴티지를 줍니다. 어드밴티지 없이 단일 경기로 결승을 치룹니다"></span>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
+                    </div>
+                </div>
+
+                <!-- js hide & show : Two_tournament + Double_elimination -->
+                <div class="looking-group spec_group two_double_elimination" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="승자조 결승 진출자에게 일정의 어드밴티지를 줍니다. 어드밴티지 없이 단일 경기로 결승을 치룹니다"></span>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
+                    </div>
+                </div>
+
+                <!-- js hide & show : Two_tournament + Round_robin -->
+                <div class="looking-group spec_group two_round_robin" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="승자조 결승 진출자에게 일정의 어드밴티지를 줍니다. 어드밴티지 없이 단일 경기로 결승을 치룹니다"></span>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-original dropdown-toggle round_robin_name_group" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu round_robin_list_group" role="menu">
+                            <li><a>Match Wins</a></li>
+                            <li><a>Game/Set Wins</a></li>
+                            <li><a>Game/Set Win %</a></li>
+                            <li><a>Points Scored</a></li>
+                            <li><a>Points Difference</a></li>
+                            <li><a id="custom_points_system_group">Custom(Points System)</a></li>
+                          </ul>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="그룹 스테이지 + 라운드 로빈"></span>
+                </div>
+
+                <!-- js hide & show : Round_robin_group + Custom_points_system -->
+                <div class="looking-group spec_group custom_points_system_group" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per match win</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈 + 커스텀 포인트 시스템"></span>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per match tie</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
+                    </div>
+                </div>
+
+                <!-- Fianl Stage -->
+                <div class="looking-group format two_tournament-div" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputForm" style="color: #f7941e;">파이널 스테이지 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-original dropdown-toggle two_tournament_name_final" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu two_tournament_list_final" role="menu">
+                            <li><a id="single_elimination">싱글 엘리미네이션</a></li>
+                            <li><a id="double_elimination">더블 엘리미네이션</a></li>
+                            <li><a id="round_robin">라운드 로빈</a></li>
+                            <li><a id="swiss">스위스 리그</a></li>
+                          </ul>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션: 이긴 선수 혹은 팀이 다음 경기에 진출하는 일반적 토너먼트 방식입니다. 더블 엘리미네이션: 일종의 패자부활전 방식입니다. 처음 두 팀씩 경기를 치른 다음, 승자는 승자끼리, 패자는 패자끼리 경기를 치뤄 2연승한 팀은 다음 라운드 진출이 확정되고, 2연패를 한 팀은 탈락이 확정됩니다. 또 1승1패를 기록한 팀은 다시 경기를 치뤄 최종 진출팀을 가리게 됩니다. 라운드 로빈: 리그 방식으로 모든 참여 인원이 한 번씩 경기를 하여 순위를 가리는 방식입니다. 스위스리그: 라운드 별로 같은 승수를 가진 선수 혹은 팀끼리 경쟁하는 방식입니다. 일반적으로 4~5라운드 진행되며 큰 대회는 11라운드까지 진행이 되며 가장 많은 승수를 가진 선수가 동점일 경우 자신과 겨룬 모든 상대의 승수를 합한 승점으로, 혹은 자신과 겨룬 모든 상대의 승점을 합한 총점으로 1등을 가립니다."></span>
+                </div>
+
+                <!-- Single & Two tournament 공통 파트 -->
+                <!-- js hide & show : Single_elimination -->
+                <div class="looking-group spec single_elimination" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="checkbox">
+                        <label><input id="single_elimination" name="single_elimination_spec" type="checkbox" value="false"
+                        style="margin-bottom:10px"> &nbsp;3위 결정전을 포함하겠습니다.</label>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="3위 결정전을 포함하겠습니다."></span>
+                </div>
+
+                <!-- js hide & show : Double_elimination -->
+                <div class="looking-group spec double_elimination" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputForm" style="color: #f7941e;">최종 경기 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
+                        style="margin-bottom:10px"> &nbsp;1-2 경기</label>
+                        &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
+                        <br>
+                        <label><input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
+                        style="margin-bottom:10px"> &nbsp;1 경기</label>
+                        <br>
+                        <label><input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
+                        style="margin-bottom:10px"> &nbsp;없음</label>
+                    </div>
+                </div>
+
+                <!-- js hide & show : Round_robin -->
+                <div class="looking-group spec round_robin" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputForm" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-original dropdown-toggle round_robin_name_final" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu round_robin_list_final" role="menu">
+                            <li><a>Match Wins</a></li>
+                            <li><a>Game/Set Wins</a></li>
+                            <li><a>Game/Set Win %</a></li>
+                            <li><a>Points Scored</a></li>
+                            <li><a>Points Difference</a></li>
+                            <li><a id="custom_points_system_final">Custom(Points System)</a></li>
+                          </ul>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈"></span>
+                </div>
+
+                <!-- js hide & show : Round_robin_final + custom_points_system -->
+                <div class="looking-group spec custom_points_system_final" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per match win</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈 + 커스텀 포인트 시스템"></span>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per match tie</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
+                    </div>
+                </div>
+
+                <!-- js hide & show : Swiss -->
+                <div class="looking-group spec swiss" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per match win</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="1.판 당 승점: 2.판 당 무승부 점수: 3.	경기 승점: 4.	경기 무승부 점수: 5.	부전승 점수:"></span>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per match tie</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
+                    </div>
+                    <br>
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">points per bye</span>
+                    </div>
+                </div>
+
+                <!-- 등록 방식 -->
+                <div class="bar_2">
+
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputForm">대회 등록 방식 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="btn-group">
+                          <button type="button" class="btn btn-original dropdown-toggle registration_name" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu registration_list" role="menu">
+                            <li><a>초대식 개인 등록</a></li>
+                            <li><a id="registration_team">초대식 팀별 등록</a></li>
+                            <li><a>시청자 개인 등록</a></li>
+                            <li><a id="registration_team">시청자 팀별 등록</a></li>
+                          </ul>
+                    </div>
+
+                    <!-- js hide & show : registration_team -->
+                    <div class="btn-group registration_team" style="display: none;">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="예) 6" aria-describedby="basic-addon1">
+                          <span class="input-group-addon">명이 한팀</span>
+                        </div>
+                    </div>
+
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="개인적으로 참가를 받는지, 팀으로 참가를 받는지 혹은 참가를 받지 않고 초청전으로 진행되는 지를 선택해주세요."></span>
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputNum">최대 참가자 수 <span style="color: #f7941e;">*</span></label>
+                     </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 200">
+                        <span class="input-group-addon">명</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회가 진행되는 최대 참가자 수를 결정합니다. 2의 제곱수로 진행하는 것이 일반적입니다. 참가자 수 이상이 등록할 경우 대기자 명단이 만들어집니다."></span>
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputDay">대회 시작 시간 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="datetimepicker" placeholder="클릭해주세요">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 시작 시간을 결정합니다. 대회 시작 시간에 따라 출석체크 기능을 설정할 수 있습니다."></span>
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputDay">참가자 체크인 <span style="color: #f7941e;"></span></label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input id="checkin_checkbox" name="checkin_checkbox" type="checkbox" style="margin-top: 10px"> &nbsp;참가자 체크인 기능을 사용하시겠습니까?</label>
+                        &nbsp;<span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자 체크인 기능을 사용하시면 대회 지정 시간 전까지 체크인을 하지 않은 참가자는 자동 탈락되게 됩니다."></span>
+                    </div>
+                </div>
+
+                <!-- js hide & show : check-in time -->
+                <div class="looking-group div_checkin_time" style="display: none;">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                    </div>
+                    <div class="input-group">
+                        대회 시작
+                    </div>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-original dropdown-toggle checkin_name" data-toggle="dropdown" aria-expanded="false">
+                            선택해주세요 <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu checkin_list" role="menu">
+                            <li><a>15분</a></li>
+                            <li><a>30분</a></li>
+                            <li><a>1시간</a></li>
+                            <li><a>2시간</a></li>
+                            <li><a>6시간</a></li>
+                            <li><a>1일</a></li>
+                            <li><a>2일</a></li>
+                        </ul>
+                    </div>
+                    <div class="input-group">
+                        이전에 체크인을 해야합니다.
+                    </div>
+                </div>
+
+                <div class="looking-group" style="margin-top: 30px">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputDay">규칙 세부 사항</label>
+                        &nbsp;
+                    </div>
+                    <textarea class="form-control" rows="3" placeholder="예) " style="width: 60%; height: 120px;"></textarea>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회의 원활한 진행을 위해 대회 규칙에 대한 과도할 정도로 세세한 사항을 적어주세요." style="vertical-align: top;"></span>
+                </div>
+
+                <!-- 크라우드 펀딩 항목 -->
+                <div class="bar_2">
+
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputReach">목표 금액 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 200,000">
+                        <span class="input-group-addon">원</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회가 진행되는 최소 목표 후원 금액을 적어주세요."></span>
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputGoal">공약 내용 </label>
+                    </div>
+                    <!-- js dynamic form fields : add -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" name="fields[]" type="text" placeholder="예) 100,000" />
+                            <span class="input-group-addon">원에 도달하면</span>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="예) 참가팀 전원에게 선물">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success btn-add" type="button">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="목표 후원 금액을 넘어 더욱 더 많은 사람들이 후원에 참여할 수 있도록 공약 금액과 공약을 적어주세요."></span>
+
+                    <!-- js dynamic form fields : remove -->
+                    <div class="looking-group">
+                        <div class="col-xs-10 col-sm-3 col-md-3">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" name="fields[]" type="text" placeholder="예) 100,000" />
+                                <span class="input-group-addon">원에 도달하면</span>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="예) 참가팀 전원에게 선물">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-failure btn-danger" type="button">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputGoal">후원자 보상 </label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 10,000">
+                        <span class="input-group-addon">원을 후원하면</span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 마우스패드를 드려요">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="후원자들이 좋아할만한 상품을 통해 후원을 장려해주세요."></span>
+                </div>
+
+                <!-- 마무리 양식 -->
+                <div class="bar_2">
+                </div>
+
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputGoal">참가자 양식 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox" checked="checked" value="" style="margin-bottom: 15px" disabled> &nbsp;참가자명 / 팀명 (필수)</label>
+                      &nbsp;<span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자들이 대회 신청 시 적어야 하는 사항에 대하여 체크해주세요."></span>
+                      <br>
+                      <label><input type="checkbox" value="" style="margin-bottom: 15px"> &nbsp;참가자 연락처</label>
+                      <br>
+                      <label><input type="checkbox" value="" style="margin-bottom: 10px"> &nbsp;참가자 이메일</label>
+                      <br>
+                      <label><input type="checkbox" value=""> &nbsp;추가 기타양식</label>
+                      &nbsp;<input type="text" class="form-control" id="exampleInputNum" placeholder="예) 성별, 나이, 덱, 레벨">
+                    </div>
+                </div>
 
 
-            <div class="looking-group">
-                <div class="col-xs-10 col-sm-3 col-md-3">
-                    <label class="making_font" for="exampleInputGoal">연락처 정보 <span style="color: #f7941e;">*</span></label>
+                <div class="looking-group">
+                    <div class="col-xs-10 col-sm-3 col-md-3">
+                        <label class="making_font" for="exampleInputGoal">연락처 정보 <span style="color: #f7941e;">*</span></label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
+                        <span class="input-group-addon">운영진이 연락드릴 번호</span>
+                    </div>
+                    &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자 혹은 후원자들이 연락할 수 있는 연락처를 적어주세요."></span>
                 </div>
-                <div class="input-group">
-                    <span class="input-group-addon">운영진이 연락드릴 번호</span>
-                    <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
-                </div>
-                &nbsp;
-                <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="연락처 정보"></span>
-            </div>
 
-            <!-- 제출하기 -->
-            <div class="looking-group">
+                <!-- 제출하기 -->
+                <div class="looking-group">
                     <button type="submit" class="btn btn-default" href="{% url 'making_submit' %}">제출하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-            </div>
-        </form>
+    <!-- scroll-top-wrapper -->
+    <div class="scroll-top-wrapper ">
+        <span class="scroll-top-inner">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </span>
     </div>
-    </div>
-</div>
 
 {% endblock %}
 
@@ -687,6 +722,15 @@
             });
 
             /* 체크인 기능 사용 여부 : 체크 시 div hide & show */
+            $('#checkin_checkbox').change(function() {
+                if (!this.checked) {
+                    $('.div_checkin_time').hide();
+                    $caret = '<span class="caret"></span>';
+                    $(".checkin_name").html("선택해주세요"+" "+$caret);
+                } else {
+                    $('.div_checkin_time').show();
+                }
+            });
 
             /* 체크인 시간 : list 이름 변경 */
             $('.checkin_list li a').click(function() {
@@ -707,6 +751,80 @@
                     collision: "none"
                 }
             });
+
+            /* scroll-top-wrapper */
+            $(function(){
+                $(document).on( 'scroll', function(){
+
+                    if ($(window).scrollTop() > 100) {
+                        $('.scroll-top-wrapper').addClass('show');
+                    } else {
+                        $('.scroll-top-wrapper').removeClass('show');
+                    }
+                });
+
+                $('.scroll-top-wrapper').on('click', scrollToTop);
+            });
+
+            function scrollToTop() {
+                verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+                element = $('body');
+                offset = element.offset();
+                offsetTop = offset.top;
+                $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+            }
+
+            /* 공약 & 후원 추가 버튼 기능 구현 */
+            /* Add button click handler */
+            var MAX_OPTIONS = 10;
+            $('#making_form').on('click', '.addButton', function() {
+                var $template = $('#optionTemplate'),
+                    $clone    = $template
+                                    .clone()
+                                    .removeClass('hide')
+                                    .removeAttr('id')
+                                    .insertBefore($template),
+                    $option   = $clone.find('[name="option[]"]');
+
+                // Add new field
+                $('#surveyForm').formValidation('addField', $option);
+            });
+
+            /* Remove button click handler */
+            $('#making_form').on('click', '.removeButton', function() {
+                var $row    = $(this).parents('.form-group'),
+                    $option = $row.find('[name="option[]"]');
+
+                // Remove element containing the option
+                $row.remove();
+
+                // Remove field
+                $('#surveyForm').formValidation('removeField', $option);
+            });
+
+            /* Called after adding new field */
+            $('#making_form').on('added.field.fv', function(e, data) {
+                // data.field   --> The field name
+                // data.element --> The new field element
+                // data.options --> The new field options
+
+                if (data.field === 'option[]') {
+                    if ($('#surveyForm').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
+                        $('#surveyForm').find('.addButton').attr('disabled', 'disabled');
+                    }
+                }
+            });
+
+            /* Called after removing the field */
+            $('#making_form').on('removed.field.fv', function(e, data) {
+               if (data.field === 'option[]') {
+                    if ($('#surveyForm').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
+                        $('#surveyForm').find('.addButton').removeAttr('disabled');
+                    }
+                }
+            });
+
+            /* end */
         });
     </script>
 

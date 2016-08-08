@@ -2,8 +2,11 @@
 
 {% block title %} 오픈아레나:대회 둘러보기 {% endblock %}
 
-{% block content %}
+{% block head %}
+    <link rel="stylesheet" href="../../static/css/custom_kyoungin.css">
+{% endblock %}
 
+{% block content %}
    <div class="looking-header">
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="looking_table">
@@ -120,4 +123,38 @@
         </div>
     </div>
 
+    <!-- scroll-top-wrapper -->
+    <div class="scroll-top-wrapper ">
+        <span class="scroll-top-inner">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </span>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function(){
+            /* scroll-top-wrapper */
+            $(function(){
+                $(document).on( 'scroll', function(){
+
+                    if ($(window).scrollTop() > 100) {
+                        $('.scroll-top-wrapper').addClass('show');
+                    } else {
+                        $('.scroll-top-wrapper').removeClass('show');
+                    }
+                });
+
+                $('.scroll-top-wrapper').on('click', scrollToTop);
+            });
+
+            function scrollToTop() {
+                verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+                element = $('body');
+                offset = element.offset();
+                offsetTop = offset.top;
+                $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+            }
+        });
+    </script>
 {% endblock %}

@@ -3,6 +3,8 @@
 {% block title %} 오픈아레나:도움말 {% endblock %}
 
 {% block head %}
+    <link rel="stylesheet" href="../../static/css/custom_kyoungin.css">
+
     <div class="head_empty"></div>
     <header class="help_head">
         <div class="help_head_inner">
@@ -566,6 +568,13 @@
         </div>
     </div>
 
+    <!-- scroll-top-wrapper -->
+    <div class="scroll-top-wrapper ">
+        <span class="scroll-top-inner">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </span>
+    </div>
+
 {% endblock %}
 
 {% block script %}
@@ -581,6 +590,28 @@
                 $('a[href="#' + id + '"]').closest('.panel-heading').removeClass('active-faq');
                 $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
             });
+
+            /* scroll-top-wrapper */
+            $(function(){
+                $(document).on( 'scroll', function(){
+
+                    if ($(window).scrollTop() > 100) {
+                        $('.scroll-top-wrapper').addClass('show');
+                    } else {
+                        $('.scroll-top-wrapper').removeClass('show');
+                    }
+                });
+
+                $('.scroll-top-wrapper').on('click', scrollToTop);
+            });
+
+            function scrollToTop() {
+                verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+                element = $('body');
+                offset = element.offset();
+                offsetTop = offset.top;
+                $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+            }
         });
     </script>
 

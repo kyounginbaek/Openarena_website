@@ -10,3 +10,6 @@ class SignupForm(forms.Form):
 class LoginForm(forms.Form):
     email = forms.CharField()
     password1 = forms.CharField()
+
+class MakingForm(forms.Form):
+    name = forms.CharField()

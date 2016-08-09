@@ -18,7 +18,7 @@
         </div>
 
         <div class="making_content">
-            <form class="form-inline" method="POST">
+            <form class="form-inline" method="POST" action="{% making %}">{% csrf_token %}
                 <div class="bar_2">
                 </div>
                 <!-- 대회 항목 -->
@@ -27,7 +27,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                       <label class="making_font" for="exampleInputName">대회 명칭&nbsp;<span style="color: #f7941e;">*</span></label>
                     </div>
-                    <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치 대회">
+                    <input required autocomplete="off" type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치 대회">
                     &nbsp;
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회의 이름을 입력해주세요. 예) 오픈아레나 스타크래프트 토너먼트"></span>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                       <label class="making_font" for="exampleInputName">게임 종류&nbsp;<span style="color: #f7941e;">*</span></label>
                     </div>
-                    <input type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치">
+                    <input required autocomplete="off" type="text" class="form-control" id="exampleInputName" placeholder="예) 오버워치">
                     &nbsp;
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="진행하려는 대회의 게임 종목을 입력해주세요. 예) 하스스톤"></span>
                 </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon3">openarena.co.kr/</span>
-                        <input type="text" class="form-control form-control2" id="basic-url" aria-describedby="basic-addon3" placeholder="예) overwatch">
+                        <input required autocomplete="off" type="text" class="form-control form-control2" id="basic-url" aria-describedby="basic-addon3" placeholder="예) overwatch">
                     </div>
                     &nbsp;
                     <span class="glyphicon glyphicon-question-sign tournament_url" aria-hidden="true" data-toggle="tooltip" title="펀딩 및 참가 페이지의 주소를 설정해주세요. 예) openarena.co.kr/overwatch"></span>
@@ -72,7 +72,7 @@
                     <div class="btn-group streaming afreecatv" style="display: none;">
                         <div class="input-group">
                           <span class="input-group-addon" id="basic-addon1">play.afreecatv.com/</span>
-                          <input type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                          <input required autocomplete="off" type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@
                     <div class="btn-group streaming twitch" style="display: none;">
                         <div class="input-group">
                           <span class="input-group-addon" id="basic-addon1">twitch.tv/</span>
-                          <input type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                          <input required autocomplete="off" type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -93,7 +93,7 @@
                         <label class="making_font" for="exampleInputType">대회 타입 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="checkbox">
-                        <label><input id="single_tournament" name="tournament_type" type="radio" value="false"
+                        <label><input required autocomplete="off" id="single_tournament" name="tournament_type" type="radio" value="false"
                         style="margin-bottom:15px"> &nbsp;단일 방식 토너먼트</label>
                         &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="단일 토너먼트 방식은 한가지 방식의 토너먼트이며, 혼합 방식 토너먼트 두 방식이 혼합된 토너먼트로 조별로 방식에 맞는 일정 선수를 뽑은 후 그 선수들로 새로운 방식을 통해 우승자를 가려냅니다."></span>
                         <br>
@@ -147,7 +147,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
                     </div>
                     &nbsp;
@@ -156,7 +156,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
                     </div>
                     &nbsp;
@@ -175,7 +175,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 4" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">participants compete in each group</span>
                     </div>
                     &nbsp;
@@ -194,7 +194,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 2" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">participants advance from each group</span>
                     </div>
                     <br>
@@ -223,7 +223,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per match win</span>
                     </div>
                     &nbsp;
@@ -232,7 +232,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per match tie</span>
                     </div>
                     <br>
@@ -246,7 +246,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                         <label class="making_font" for="exampleInputForm" style="color: #f7941e;">최종 경기 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="checkbox">
-                        <label><input id="double_elimination" name="double_elimination_spec" type="radio" value="false"
+                        <label><input required autocomplete="off" id="double_elimination" name="double_elimination_spec" type="radio" value="false"
                         style="margin-bottom:10px"> &nbsp;1-2 경기</label>
                         &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
                         <br>
@@ -329,7 +329,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per match win</span>
                     </div>
                     &nbsp;
@@ -338,21 +338,21 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per match tie</span>
                     </div>
                     <br>
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
                     </div>
                     <br>
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
                     </div>
                 </div>
@@ -362,7 +362,7 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per match win</span>
                     </div>
                     &nbsp;
@@ -371,28 +371,28 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.5" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per match tie</span>
                     </div>
                     <br>
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per game/set win</span>
                     </div>
                     <br>
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 0.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per game/set tie</span>
                     </div>
                     <br>
                     <div class="col-xs-10 col-sm-3 col-md-3">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
+                        <input required autocomplete="off" type="text" class="form-control" placeholder="예) 1.0" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">points per bye</span>
                     </div>
                 </div>
@@ -421,7 +421,7 @@
                     <!-- js hide & show : registration_team -->
                     <div class="btn-group registration_team" style="display: none;">
                         <div class="input-group">
-                          <input type="text" class="form-control" placeholder="예) 6" aria-describedby="basic-addon1">
+                          <input required autocomplete="off" type="text" class="form-control" placeholder="예) 6" aria-describedby="basic-addon1">
                           <span class="input-group-addon">명이 한팀</span>
                         </div>
                     </div>
@@ -435,7 +435,7 @@
                         <label class="making_font" for="exampleInputNum">최대 참가자 수 <span style="color: #f7941e;">*</span></label>
                      </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 200">
+                        <input required autocomplete="off" type="text" class="form-control" id="exampleInputNum" placeholder="예) 200">
                         <span class="input-group-addon">명</span>
                     </div>
                     &nbsp;
@@ -447,7 +447,7 @@
                         <label class="making_font" for="exampleInputDay">대회 시작 시간 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="datetimepicker" placeholder="클릭해주세요">
+                        <input required autocomplete="off" type="text" class="form-control" id="datetimepicker" placeholder="클릭해주세요">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -513,7 +513,7 @@
                         <label class="making_font" for="exampleInputReach">목표 금액 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 200,000">
+                        <input required autocomplete="off" type="text" class="form-control" id="exampleInputNum" placeholder="예) 200,000">
                         <span class="input-group-addon">원</span>
                     </div>
                     &nbsp;
@@ -525,36 +525,36 @@
                         <label class="making_font" for="exampleInputGoal">공약 내용 </label>
                     </div>
                     <!-- js dynamic form fields : add -->
-                    <div class="form-group">
+                    <div>
                         <div class="input-group">
                             <input class="form-control" name="option[]" type="text" placeholder="예) 100,000" />
                             <span class="input-group-addon">원에 도달하면</span>
                         </div>
                         <div class="input-group">
-                            <input class="form-control" type="text" name="option[]" placeholder="예) 참가팀 전원에게 선물">
+                            <input class="form-control" type="text" placeholder="예) 참가팀 전원에게 선물">
                             <span class="input-group-btn">
-                                <button class="btn btn-success addButton" type="button">
+                                <button class="btn btn-success promise_addButton" type="button">
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </span>
                         </div>
-                    </div>
-                    &nbsp;
+                        &nbsp;
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="목표 후원 금액을 넘어 더욱 더 많은 사람들이 후원에 참여할 수 있도록 공약 금액과 공약을 적어주세요."></span>
+                    </div>
 
                     <!-- js dynamic form fields : remove -->
-                    <div class="hide" id="optionTemplate">
+                    <div class="promise-group hide" id="promiseTemplate">
                         <div class="col-xs-10 col-sm-3 col-md-3">
                         </div>
-                        <div class="form-group">
+                        <div>
                             <div class="input-group">
                                 <input class="form-control" name="option[]" type="text" placeholder="예) 100,000" />
                                 <span class="input-group-addon">원에 도달하면</span>
                             </div>
                             <div class="input-group">
-                                <input class="form-control" type="text" name="option[]" placeholder="예) 참가팀 전원에게 선물">
+                                <input class="form-control" type="text" placeholder="예) 참가팀 전원에게 선물">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-danger removeButton" type="button">
+                                    <button class="btn btn-danger promise_removeButton" type="button">
                                         <span class="glyphicon glyphicon-minus"></span>
                                     </button>
                                 </span>
@@ -567,20 +567,43 @@
                     <div class="col-xs-10 col-sm-3 col-md-3">
                         <label class="making_font" for="exampleInputGoal">후원자 보상 </label>
                     </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 10,000">
-                        <span class="input-group-addon">원을 후원하면</span>
+                    <!-- js dynamic form fields : add -->
+                    <div>
+                        <div class="input-group">
+                            <input class="form-control" name="option[]" type="text" placeholder="예) 10,000" />
+                            <span class="input-group-addon">원을 후원하면</span>
+                        </div>
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="예) 마우스패드를 드려요">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success sponsor_addButton" type="button">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                        &nbsp;
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="목표 후원 금액을 넘어 더욱 더 많은 사람들이 후원에 참여할 수 있도록 공약 금액과 공약을 적어주세요."></span>
                     </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 마우스패드를 드려요">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success btn-add" type="button">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </button>
-                        </span>
+
+                    <!-- js dynamic form fields : remove -->
+                    <div class="sponsor-group hide" id="sponsorTemplate">
+                        <div class="col-xs-10 col-sm-3 col-md-3">
+                        </div>
+                        <div>
+                            <div class="input-group">
+                                <input class="form-control" name="option[]" type="text" placeholder="예) 100,000" />
+                                <span class="input-group-addon">원에 도달하면</span>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="예) 참가팀 전원에게 선물">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger sponsor_removeButton" type="button">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    &nbsp;
-                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="후원자들이 좋아할만한 상품을 통해 후원을 장려해주세요."></span>
                 </div>
 
                 <!-- 마무리 양식 -->
@@ -610,7 +633,7 @@
                         <label class="making_font" for="exampleInputGoal">연락처 정보 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
+                        <input required autocomplete="off" type="text" class="form-control" id="exampleInputNum" placeholder="예) 010-1234-5678">
                         <span class="input-group-addon">운영진이 연락드릴 번호</span>
                     </div>
                     &nbsp;
@@ -619,7 +642,7 @@
 
                 <!-- 제출하기 -->
                 <div class="looking-group">
-                    <button type="submit" class="btn btn-default" href="{% url 'making_submit' %}">제출하기</button>
+                    <button type="submit" class="btn btn-default" href="{% url 'making' %}">제출하기</button>
                 </div>
             </form>
         </div>
@@ -775,12 +798,12 @@
                 $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
             };
 
-            /* 공약 & 후원 추가 버튼 기능 구현 */
+            /* 공약 추가 버튼 기능 구현 */
             /* Add button click handler */
             var MAX_OPTIONS = 10;
 
-            $('.form-inline').on('click', '.addButton', function() {
-                var $template = $('#optionTemplate'),
+            $('.form-inline').on('click', '.promise_addButton', function() {
+                var $template = $('#promiseTemplate'),
                     $clone    = $template
                                     .clone()
                                     .removeClass('hide')
@@ -790,11 +813,11 @@
 
                 // Add new field
                 $('.form-inline').formValidation('addField', $option);
-            })
+            });
 
             /* Remove button click handler */
-            $('.form-inline').on('click', '.removeButton', function() {
-                var $row    = $(this).parents('.form-group'),
+            $('.form-inline').on('click', '.promise_removeButton', function() {
+                var $row    = $(this).parents('.promise-group'),
                     $option = $row.find('[name="option[]"]');
 
                 // Remove element containing the option
@@ -802,9 +825,9 @@
 
                 // Remove field
                 $('.form-inline').formValidation('removeField', $option);
-            })
+            });
 
-            /* Called after adding new field */
+            // Called after adding new field
             $('.form-inline').on('added.field.fv', function(e, data) {
                 // data.field   --> The field name
                 // data.element --> The new field element
@@ -812,19 +835,72 @@
 
                 if (data.field === 'option[]') {
                     if ($('.form-inline').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
-                        $('.form-inline').find('.addButton').attr('disabled', 'disabled');
+                        $('.form-inline').find('.promise_addButton').attr('disabled', 'disabled');
                     }
                 }
             })
 
-            /* Called after removing the field */
+            // Called after removing the field
             $('.form-inline').on('removed.field.fv', function(e, data) {
                if (data.field === 'option[]') {
                     if ($('.form-inline').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
-                        $('.form-inline').find('.addButton').removeAttr('disabled');
+                        $('.form-inline').find('.promise_addButton').removeAttr('disabled');
                     }
                 }
             });
+
+            /* 후원 추가 버튼 기능 구현 */
+            /* Add button click handler */
+            var MAX_OPTIONS = 10;
+
+            $('.form-inline').on('click', '.sponsor_addButton', function() {
+                var $template = $('#sponsorTemplate'),
+                    $clone    = $template
+                                    .clone()
+                                    .removeClass('hide')
+                                    .removeAttr('id')
+                                    .insertBefore($template),
+                    $option   = $clone.find('[name="option[]"]');
+
+                // Add new field
+                $('.form-inline').formValidation('addField', $option);
+            });
+
+            /* Remove button click handler */
+            $('.form-inline').on('click', '.sponsor_removeButton', function() {
+                var $row    = $(this).parents('.sponsor-group'),
+                    $option = $row.find('[name="option[]"]');
+
+                // Remove element containing the option
+                $row.remove();
+
+                // Remove field
+                $('.form-inline').formValidation('removeField', $option);
+            });
+
+            // Called after adding new field
+            $('.form-inline').on('added.field.fv', function(e, data) {
+                // data.field   --> The field name
+                // data.element --> The new field element
+                // data.options --> The new field options
+
+                if (data.field === 'option[]') {
+                    if ($('.form-inline').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
+                        $('.form-inline').find('.sponsor_addButton').attr('disabled', 'disabled');
+                    }
+                }
+            })
+
+            // Called after removing the field
+            $('.form-inline').on('removed.field.fv', function(e, data) {
+               if (data.field === 'option[]') {
+                    if ($('.form-inline').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
+                        $('.form-inline').find('.sponsor_addButton').removeAttr('disabled');
+                    }
+                }
+            });
+
+            /* 게임 대회 URL 주소 검사 : ajax */
 
             /* end */
         });

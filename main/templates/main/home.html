@@ -15,9 +15,9 @@
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                              <a href="{% url 'looking' %}" class="btn btn-default " style="margin-right: 10px;">
+                              <a href="{% url 'looking' %}" class="btn btn-default main_btn_size " style="margin-right: 10px;">
                                  <span class="donate">참여하기</span></a>
-                              <a href="{% url 'making' %}" class="btn btn-default" style="margin-left: 10px;">
+                              <a href="{% url 'making' %}" class="btn btn-default main_btn_size" style="margin-left: 10px;">
                                  <span class="donate">후원하기</span></a>
                             </li>
                         </ul>
@@ -30,10 +30,6 @@
 
 {% block script %}
     <script>
-        {% if messages %}
-            {% for message in messages %}
-                alert('{{ message }}');
-            {% endfor %}
-        {% endif %}
+
     </script>
 {% endblock %}

@@ -11,7 +11,8 @@
     <!-- Favicon -->
     <link rel="icon" href="../../static/img/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="../../static/img/favicon.ico" type="image/x-icon"/>
-
+    <!--mypage.css-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <!-- Bootstrap Core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -64,12 +65,14 @@
                     <li>
                         <a href="{% url 'help' %}">도움말</a>
                     </li>
-                    {% if status_login %}
-                        <li>
-                            <a href="{% url 'mypage' %}">{{ tmp_nickname }}님</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'logout' %}">{{ status_login }}</a>
+                    {% if request.user.is_anthenticate %}
+                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">{{ tmp_nickname }}님 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'mypage' %}"><i class="glyphicon glyphicon-user"></i> &nbsp; 마이페이지</a></li>
+                            <li><a href="{% url 'support' %}"><i class="glyphicon glyphicon-envelope"></i> &nbsp; 문의/건의사항</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'logout' %}"><i class="glyphicon glyphicon-off"></i> &nbsp; 로그아웃</a></li>
+                        </ul>
                         </li>
                     {% else %}
                         <li>
@@ -97,19 +100,19 @@
                             </li>
                             <li class="footer-menu-divider">&sdot;</li>
                             <li>
+                                <a href="https://www.facebook.com/%EC%98%A4%ED%94%88%EC%95%84%EB%A0%88%EB%82%98-OpenArena-1081481298553678/">페이스북</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="{% url 'support' %}">문의 / 건의하기</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
                                 <a href="#competition">개인정보정책</a>
                             </li>
                             <li class="footer-menu-divider">&sdot;</li>
                             <li>
                                 <a href="#video">이용약관</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#fame">문의하기</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="https://www.facebook.com/%EC%98%A4%ED%94%88%EC%95%84%EB%A0%88%EB%82%98-OpenArena-1081481298553678/">페이스북</a>
                             </li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; Crowdit 2016. All Rights Reserved
@@ -126,6 +129,7 @@
     <script src="../../static/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../../static/js/bootstrap.min.js"></script>
+
     {% block script %}
 
     {% endblock %}

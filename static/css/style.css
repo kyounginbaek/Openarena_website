@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background: #c1bdba;
+  background: #ebebeb;
   font-family: 'Titillium Web', sans-serif;
 }
 
@@ -61,7 +61,7 @@ a:hover {
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #f7941e;
+  background: #ff9900;
   color: #ffffff;
 }
 
@@ -159,7 +159,7 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #f7941e;
+  background: #ff9900;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;

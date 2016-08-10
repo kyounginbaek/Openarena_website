@@ -1,9 +1,10 @@
 {% extends "main/base.html" %}
+{% load staticfiles %}
 
 {% block title %} 오픈아레나:도움말 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="../../static/css/custom_kyoungin.css">
+    <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
 
     <div class="head_empty"></div>
     <header class="help_head">

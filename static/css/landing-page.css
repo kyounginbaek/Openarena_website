@@ -76,7 +76,7 @@ li.competition-item img{
     color: #f8f8f8;
     background: url(../../static/img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
-    height: 700px;
+    height: 780px;
 }
 .looking-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
@@ -378,7 +378,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .making_side{
     width: 10%;
-    height: 175%;
+    height: 160%;
     position: absolute;
     float: left;
     background: #ff9900;
@@ -528,7 +528,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 100%;
     margin: auto;
     border-radius: 5px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 .box_head{
     color: #ffffff;
@@ -550,7 +550,6 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_header_inner{
     padding-top: 15px;
     padding-bottom: 20px;
-    height: 270px;
     background-color: rgba( 33, 33, 33, 0.9 );
         border-bottom: 1px solid rgba( 255, 255, 255, 0.5 );
         border-top: 1px solid rgba( 255, 255, 255, 0.5 );
@@ -566,12 +565,14 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     padding: 7px;
     display: block;
 }
+.gray{
+    background-color: #ebebeb;
+}
 .com_profile{
         background: url(../../static/img/com_profile.png) no-repeat center center;
         background-size: cover;
         height: 160px;
-        max-width: 180px;
-        max-height: 180px;
+
 }
 .head_empty{
     height: 50px;
@@ -659,6 +660,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     color: #ffffff;
     font-size: 12px;
 }
+.mypage_content{
+    min-height: 380px;
+}
 /*너비가 991보다 클떄*/
 @media(min-width:991px) {
     .list_btn{
@@ -675,6 +679,21 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     }
     .main_btn_size{
         width: 100px;
+    }
+
+}
+.com_prizebox{
+}
+@media(max-width:500px){
+        .white{
+        width: 100px;
+        font-size: 12px;
+        display: inline;
+    }
+    .com_mainbox{
+        padding-left: 0px;
+    }
+    .com_header_inner{
     }
 }
 

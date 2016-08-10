@@ -1,10 +1,10 @@
 {% extends "main/base.html" %}
 {% block title %} 오픈아레나:마이 페이지 {% endblock %}
-
 {% block content %}
-    <div class="bb">
+<div class="gray">
+    <div class="container bb" style="padding:0px">
         <div class="head_empty"></div>
-        <!-- my page 시작 -->
+        <!-- my page 오렌지 배경 -->
             <div class="card hovercard "><!-- .card.hovercard -->
                 <div class="useravatar col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
                     <!-- 프로필 사진 -->
@@ -13,7 +13,10 @@
                     <span class="card-title">오픈 아레나님</span>
                 </div>
             </div>
+        <!-- my page 검은 배경 -->
         <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
+            <div class="mypage_content">
+            <div class="mypage_empty"></div>
             <div class="mypage_empty"></div>
             <!--mypage list-->
             <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
@@ -87,6 +90,7 @@
                                   </div>
                     </div>
                 </div>
+
                 <div class="tab-pane fade in" id="tab2">
                   <div class="panel panel-default panel-table">
                                   <div class="panel-body">
@@ -120,6 +124,7 @@
                                   </div>
                     </div>
                 </div>
+
                 <div class="tab-pane fade in" id="tab3">
                   <div class="panel panel-default panel-table">
                                   <div class="panel-body">
@@ -151,18 +156,32 @@
                                   </div>
                     </div>
                 </div>
-                <div class="tab-pane fade in" id="tab4">
-                  <h3>This is tab 4</h3>
-                </div>
-              </div>
 
+                <div class="tab-pane fade in" id="tab4">
+                         <!--왼쪽 문단-->
+                          <div class="col-xs-4 col-sm-2 col-md-1">
+                            <label class="making_font" for="exampleInputName"> 닉네임&nbsp;</label>
+                          </div>
+                          <div class="col-xs-8 col-sm-3 col-md-3">
+                              <input type="text" class="form-control" id="exampleInputName" placeholder="예) 홍길동">&nbsp;
+                          </div>
+                           <div class=" col-sm-1 col-md-2">
+                          </div>
+
+                        <!--오른쪽 문단-->
+                        <div class="col-xs-10 col-sm-6 col-md-6">
+                        </div>
+                </div>
+               </div>
+
+            </div>
         </div>
     </div>
-
+</div>
 
 {% endblock %}
 
-{% block jquery %}
+{% block script %}
     <script>
         $(document).ready(function() {
             $(".btn-pref .btn").click(function () {

@@ -428,6 +428,13 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     background-color: transparent;
     border: transparent;
 }
+.donater_title{
+    font-weight: bold;
+}
+.donater_text{
+    background-color: #222;
+    color: #ffffff;
+}
  @media(max-width:770px) {
     .form-control {
         width: 70%;
@@ -482,10 +489,11 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     color: #f7941e;
 }
 .com_intro_now{
-    padding: 0 0 15px 15px;
+    padding: 15px;
     width: 100%;
     float: left;
     text-align: left;
+    border: 1px solid #d1c0a5;
 }
 .com_intro_desp{
     margin-top: 20px;
@@ -495,7 +503,6 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     font-size: 1.22em;
     line-height: 1.85;
     color: #ffffff;
-    font-weight: 600;
     border:1px solid #d1c0a5;
     background-color: #1a1a1a;
 }

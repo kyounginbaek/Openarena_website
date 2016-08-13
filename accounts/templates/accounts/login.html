@@ -28,14 +28,14 @@
               <label>
                 이메일 주소(아이디)<span class="req">*</span>
               </label>
-              <input type="email" required autocomplete="off" name="email"/>
+              <input type="email" required autocomplete="off" name="email" id="email"/>
             </div>
 
             <div class="field-wrap">
               <label>
                 비밀번호<span class="req">*</span>
               </label>
-              <input type="password" required autocomplete="off" name="password1"/>
+              <input type="password" required autocomplete="off" name="password" id="password"/>
             </div>
 
             <button type="submit" class="button button-block" style="margin-bottom: 20px"/>로그인</button>
@@ -50,28 +50,28 @@
                   <label>
                     닉네임<span class="req">*</span>
                   </label>
-                  <input type="text" required autocomplete="off" name="nickname"/>
+                  <input type="text" required autocomplete="off" name="username" id="username"/>
                 </div>
 
               <div class="field-wrap">
                 <label>
                   이메일 주소(아이디)<span class="req">*</span>
                 </label>
-                <input type="email" required autocomplete="off" name="email"/>
+                <input type="email" required autocomplete="off" name="email" id="email"/>
               </div>
 
               <div class="field-wrap">
                 <label>
                   비밀번호<span class="req">*</span>
                 </label>
-                <input type="password" required autocomplete="off" name="password1"/>
+                <input type="password" required autocomplete="off" name="password1" id="password1"/>
               </div>
 
               <div class="field-wrap">
                 <label>
                   비밀번호 확인<span class="req">*</span>
                 </label>
-                <input type="password" required autocomplete="off" name="password2"/>
+                <input type="password" required autocomplete="off" name="password2" id="password2"/>
               </div>
 
               <button type="submit" class="button button-block" name="register" style="margin-bottom: 20px"/>회원가입</button>
@@ -90,11 +90,6 @@
     <script>
         $(document).ready(function() {
             /* 만약 로그인되어 있지 않으면, 에러메세지를 띄우고 Redirect 시킨다 */
-            {% if messages %}
-                {% for message in messages %}
-                    alert('{{ message }}');
-                {% endfor %}
-            {% endif %}
 
             $("#login_form").submit(function(e){
                 e.preventDefault();
@@ -104,8 +99,13 @@
                     url: '/accounts/login/',
                     data: serializedData,
                     dataType: 'json',
-                    success: function(data) {
-                        alert(data.message)
+                    success: function(response) {
+                        if(response.status == "success"){
+                            window.location="{% url 'home' %}"
+                         }
+                         else{
+                            alert(response.message)
+                         }
                     }
                 });
             });
@@ -118,8 +118,13 @@
                     url: '/accounts/register/',
                     data: serializedData,
                     dataType: 'json',
-                    success: function(data) {
-                        alert(data.message)
+                    success: function(response) {
+                        if(response.status == "success"){
+                            window.location="{% url 'home' %}"
+                         }
+                         else{
+                            alert(response.message)
+                         }
                     }
                 });
             });

@@ -1,5 +1,8 @@
 {% extends "main/base.html" %}
+{% load staticfiles %}
+
 {% block title %} 오픈아레나:마이 페이지 {% endblock %}
+
 {% block content %}
 <div class="gray">
     <div class="container bb" style="padding:0px">
@@ -8,9 +11,9 @@
             <div class="card hovercard "><!-- .card.hovercard -->
                 <div class="useravatar col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
                     <!-- 프로필 사진 -->
-                    <img alt="profile" src="../../static/img/profile.svg">
+                    <img alt="profile" src="{% static 'img/profile.svg' %}">
                     <!-- 프로필 이름 -->
-                    <span class="card-title">오픈 아레나님</span>
+                    <span class="card-title">{{ user.username }} 님</span>
                 </div>
             </div>
         <!-- my page 검은 배경 -->
@@ -159,13 +162,15 @@
 
                 <div class="tab-pane fade in" id="tab4">
                          <!--왼쪽 문단-->
-                          <div class="col-xs-4 col-sm-2 col-md-1">
-                            <label class="making_font" for="exampleInputName"> 닉네임&nbsp;</label>
-                          </div>
-                          <div class="col-xs-8 col-sm-3 col-md-3">
-                              <input type="text" class="form-control" id="exampleInputName" placeholder="예) 홍길동">&nbsp;
-                          </div>
-                           <div class=" col-sm-1 col-md-2">
+                          <div class="col-xs-12 col-sm-6 col-md-6">
+                              <div >
+                                <label class="making_font" for="exampleInputName"> 닉네임&nbsp;</label>
+                                <input type="text" class="form-control" id="exampleInputName" placeholder="예) 홍길동">&nbsp;
+                              </div>
+                              <div class="">
+                                  <label class="making_font" for="exampleInputDay">대회 진행자 소개</label>
+                                  <textarea class="form-control" rows="3" placeholder="예) 아프리카 BJ " ></textarea>
+                              </div>
                           </div>
 
                         <!--오른쪽 문단-->

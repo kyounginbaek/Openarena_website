@@ -1,4 +1,5 @@
 {% extends "main/base.html" %}
+{% load staticfiles %}
 
 {% block title %} 오픈아레나:대회 만들기 {% endblock %}
 
@@ -621,7 +622,7 @@
                 </div>
                 <!-- 제출하기 -->
                 <div class="looking-group">
-                    <button type="submit" class="btn btn-default" href="{% url 'making_submit' %}">제출하기</button>
+                    <button type="submit" class="btn btn-default" href="{% url 'making' %}">제출하기</button>
                 </div>
             </form>
         </div>

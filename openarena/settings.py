@@ -127,5 +127,7 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
-AUTH_USER_MODEL = 'accounts.User'
-AUTHENTICATION_BACKENDS = ['accounts.backends.EmailAuthBackend', ]
+AUTHENTICATION_BACKENDS = (
+    'accounts.email-auth.EmailOrUsernameModelBackend',
+    'django.contrib.auth.backends.ModelBackend'
+)

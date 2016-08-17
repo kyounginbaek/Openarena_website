@@ -523,7 +523,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .list-inline{
     margin-bottom: 0px;
 }
-.bb{
+.block-b{
     background-color: #1e1e1e;
     padding-bottom: 40px;
     overflow: hidden;
@@ -654,6 +654,16 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .tab-content{
     color: #ffffff;
 }
+/*support css*/
+.support_title{
+    font-size: 28px;
+    color: #ffffff;
+}
+.support_subtitle{
+    color: #ffffff;
+    font-size: 16px;
+}
+
 /*my page 다듬기*/
 .no_border{
     border-bottom: 1px solid #ff9900;
@@ -720,7 +730,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     position: relative;
     padding-top: 0;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     background-color: #ff9900;
     border-radius: 3px;
 }

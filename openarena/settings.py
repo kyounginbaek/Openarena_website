@@ -129,5 +129,8 @@ STATICFILES_DIRS = [
 
 AUTHENTICATION_BACKENDS = (
     'accounts.email-auth.EmailOrUsernameModelBackend',
-    'django.contrib.auth.backends.ModelBackend'
+    'django.contrib.auth.backends.ModelBackend',
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1039658959457009'
+SOCIAL_AUTH_FACEBOOK_SECRET = '34846fe5b26a05ecea16603cdb649225'

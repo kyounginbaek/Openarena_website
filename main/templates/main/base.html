@@ -13,8 +13,7 @@
     <!-- Favicon -->
     <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
-    <!--mypage.css-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -68,7 +67,7 @@
                         <a href="{% url 'help' %}">도움말</a>
                     </li>
                     {% if request.user.is_authenticated %}
-                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}님 <b class="caret"></b></a>
+                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} 님 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'mypage' %}"><i class="glyphicon glyphicon-user"></i> &nbsp; 마이페이지</a></li>
                             <li><a href="{% url 'support' %}"><i class="glyphicon glyphicon-envelope"></i> &nbsp; 문의 / 건의사항</a></li>
@@ -119,7 +118,7 @@
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; Crowdit 2016. All Rights Reserved
                         </br></br>(주)크라우딧 | 공동대표: 한상우, 백경인, 안희철 | 사업자등록번호: 000-00-00000
-                        </br>연락처: 010-7126-8816 | 영업소재지: 대한민국 울산광역시 울주군 언양읍 유니스트길 50
+                        </br>이메일: support@crowdit.co.kr | 영업소재지: 대한민국 울산광역시 울주군 언양읍 유니스트길 50
                         </p>
                     </div>
                 </div>

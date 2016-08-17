@@ -8,72 +8,91 @@
 {% endblock %}
 
 {% block content %}
-<div class="gray">
-    <div class="container block-b" style="padding:0px">
-        <div class="head_empty"></div>
-        <!-- contact 오렌지 배경 -->
-        <div class="card hovercard "><!-- .card.hovercard -->
-                <!-- contact 문의 / 건의 사항 -->
-                <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
-                    <div class="mypage_empty"></div>
-                    <h2 class="support_title" style="margin-bottom: 0px;">문의 / 건의 사항</h2>
-                    <h4 class="support_subtitle">자유롭게 문의 / 건의사항을 보내주세요</h4>
-                    <h4 class="support_subtitle">작성해주신 내용은 support@crowdit.co.kr로 전송됩니다.</h4>
-                </div>
-        </div>
-        <div class="support_empty"></div>
-        <!-- contact 안쪽으로 중앙 정렬 -->
-        <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
-            <div class="mypage_content">
-                <div class="mypage_empty"></div>
-                    <section class="wrapper style4 special 75%">
+    <div class="gray">
+        <div class="block-b" style="padding:0px">
+            <div class="head_empty"></div>
+            <!-- contact 오렌지 배경 -->
+            <div class="card hovercard "><!-- .card.hovercard -->
+                    <!-- contact 문의 / 건의 사항 -->
+                    <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
+                        <div class="mypage_empty"></div>
+                        <h2 class="support_title" style="margin-bottom: 0px;">문의 / 건의 사항</h2>
+                        <h4 class="support_subtitle">자유롭게 문의 & 건의사항을 보내주세요</h4>
+                        <h4 class="support_subtitle">작성해주신 내용은 support@openarena.co.kr로 전송됩니다.</h4>
+                    </div>
+            </div>
+            <div class="support_empty"></div>
+            <!-- contact 안쪽으로 중앙 정렬 -->
+            <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
+                <div class="mypage_content">
+                    <div class="mypage_empty">
 
-							<!-- Content -->
-								<div class="content">
-									<form>
-                                        <!--이름, 이메일-->
-										<div class="row 50%">
-                                            <!--이름-->
-											<div class="6u 12u(mobile) box1" style="margin-right: 4%;">
-                                                <input type="text" name="name" placeholder="답장 받을 이메일" />
-											</div>
-                                            <!--이메일-->
-											<div class="6u 12u(mobile) box1">
-                                                <input type="text" name="email" placeholder="연락처 (선택사항)" />
-											</div>
-										</div>
-                                        <div class="support_empty"></div>
-                                        <!--제목-->
-										<div class="row 50%">
-											<div class="12u box2">
-												<input type="text" name="subject" placeholder="제목" />
-											</div>
-										</div>
-                                        <div class="support_empty"></div>
-                                        <!--내용-->
-										<div class="row 50% ">
-											<div class="12u box2">
-												<textarea name="message" placeholder="내용" rows="7"></textarea>
-											</div>
-										</div>
-                                        <div class="support_empty"></div>
-										<div class="row">
-											<div class="12u">
-												<ul class="buttons" style="padding-left: 0px;">
-													<li><input type="submit" class="special" value="제출 하기" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-                                    <div class="support_empty"></div>
-								</div>
+                    </div>
+                    <section class="wrapper style4 special 75%">
+                        <!-- Content -->
+                        <div class="content">
+                            <form id="contact_form" action="{% url 'contact' %}" method="POST">{% csrf_token %}
+                                <!--이름, 이메일-->
+                                <div class="row 50%">
+                                    <!--이름-->
+                                    <div class="6u 12u(mobile) box1" style="margin-right: 4%;">
+                                        <input type="email" required autocomplete="off" id="email" name="email" placeholder="답장 받을 이메일" />
+                                    </div>
+                                    <!--이메일-->
+                                    <div class="6u 12u(mobile) box1">
+                                        <input type="text" required autocomplete="off" id="phone" name="phone" placeholder="연락처 (선택사항)" />
+                                    </div>
+                                </div>
+                                <div class="support_empty"></div>
+                                <!--제목-->
+                                <div class="row 50%">
+                                    <div class="12u box2">
+                                        <input type="text" required autocomplete="off" id="subject" name="subject" placeholder="제목을 입력해주세요." />
+                                    </div>
+                                </div>
+                                <div class="support_empty"></div>
+                                <!--내용-->
+                                <div class="row 50% ">
+                                    <div class="12u box2">
+                                        <textarea required autocomplete="off" id="message" name="message" placeholder="내용을 입력해주세요." rows="7"></textarea>
+                                    </div>
+                                </div>
+                                <div class="support_empty"></div>
+                                <div class="row">
+                                    <div class="12u">
+                                        <ul class="buttons" style="padding-left: 0px;">
+                                            <li><input type="submit" class="special" value="제출하기" /></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="support_empty"></div>
+                        </div>
                     </section>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block script %}
+    <script>
+        $(document).ready(function() {
+            $("#contact_form").submit(function(e){
+                e.preventDefault();
+                serializedData = $("#contact_form").serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '/contact/',
+                    data: serializedData,
+                    dataType: 'json',
+                    success: function(response) {
+                        alert(response.message)
+                    }
+                });
+            });
+        })
+    </script>
 
 {% endblock %}

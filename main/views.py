@@ -23,8 +23,8 @@ def hallfame(request):
 def competition(request):
     return render(request, 'main/competition.html', {})
 
-def support(request):
-    return render(request, 'main/support.html', {})
+def contact(request):
+    return render(request, 'main/contact.html', {})
 
 def help(request):
     return render(request, 'main/help.html', {})

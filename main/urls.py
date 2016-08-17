@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^competition/$', views.competition, name='competition'),
 
-    url(r'^support/$', views.support, name="support"),
+    url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),
 ]

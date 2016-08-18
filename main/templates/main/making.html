@@ -50,7 +50,7 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon3">openarena.co.kr/</span>
-                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch">
+                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch (한글 불가)">
                     </div>
                     &nbsp;
                     <span class="glyphicon glyphicon-question-sign tournament_url" aria-hidden="true" data-toggle="tooltip" title="펀딩 및 참가 페이지의 주소를 설정해주세요. 예) openarena.co.kr/overwatch"></span>
@@ -62,14 +62,12 @@
                       <label class="making_font" for="streaming_url">방송 주소 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-original dropdown-toggle streaming_name" data-toggle="dropdown" aria-expanded="false">
-                            선택해주세요 <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu streaming_url" role="menu">
-                          <li><a id="afreecatv">아프리카tv</a></li>
-                          <li><a id="twitch">트위치(twitch)</a></li>
-                          <li><a id="no">계정 없음</a></li>
-                        </ul>
+                        <select id="streaming_url" name="streaming_url" class="form-control">
+                            <option value="default">선택해주세요</option>
+                            <option value="afreecatv">아프리카tv</option>
+                            <option value="twitch">트위치(twitch)</option>
+                            <option value="no">계정 없음</option>
+                        </select>
                     </div>
 
                     <!-- js hide & show : afreeca tv -->
@@ -112,15 +110,13 @@
                             <label class="making_font" for="single_tournament_format" style="color: #f7941e;">대회 형식 <span style="color: #f7941e;">*</span></label>
                         </div>
                         <div class="btn-group">
-                              <button type="button" class="btn btn-original dropdown-toggle single_tournament_name" data-toggle="dropdown" aria-expanded="false">
-                                선택해주세요 <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu single_tournament_list" role="menu">
-                                <li><a id="single_elimination">싱글 엘리미네이션</a></li>
-                                <li><a id="double_elimination">더블 엘리미네이션</a></li>
-                                <li><a id="round_robin">라운드 로빈</a></li>
-                                <li><a id="swiss">스위스 리그</a></li>
-                              </ul>
+                            <select id="single_tournament_format" name="single_tournament_format" class="form-control">
+                                <option value="default">선택해주세요</option>
+                                <option value="single_elimination">싱글 엘리미네이션</option>
+                                <option value="double_elimination">더블 엘리미네이션</option>
+                                <option value="round_robin">라운드 로빈</option>
+                                <option value="swiss">스위스 리그</option>
+                            </select>
                         </div>
                         &nbsp;
                         <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션: 이긴 선수 혹은 팀이 다음 경기에 진출하는 일반적 토너먼트 방식입니다. 더블 엘리미네이션: 일종의 패자부활전 방식입니다. 처음 두 팀씩 경기를 치른 다음, 승자는 승자끼리, 패자는 패자끼리 경기를 치뤄 2연승한 팀은 다음 라운드 진출이 확정되고, 2연패를 한 팀은 탈락이 확정됩니다. 또 1승1패를 기록한 팀은 다시 경기를 치뤄 최종 진출팀을 가리게 됩니다. 라운드 로빈: 리그 방식으로 모든 참여 인원이 한 번씩 경기를 하여 순위를 가리는 방식입니다. 스위스리그: 라운드 별로 같은 승수를 가진 선수 혹은 팀끼리 경쟁하는 방식입니다. 일반적으로 4~5라운드 진행되며 큰 대회는 11라운드까지 진행이 되며 가장 많은 승수를 가진 선수가 동점일 경우 자신과 겨룬 모든 상대의 승수를 합한 승점으로, 혹은 자신과 겨룬 모든 상대의 승점을 합한 총점으로 1등을 가립니다."></span>
@@ -132,21 +128,19 @@
                             <label class="making_font" for="two_tournament_group" style="color: #f7941e;">그룹 스테이지 <span style="color: #f7941e;">*</span></label>
                         </div>
                         <div class="btn-group">
-                              <button type="button" class="btn btn-original dropdown-toggle two_tournament_name_group" data-toggle="dropdown" aria-expanded="false">
-                                선택해주세요 <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu two_tournament_list_group" role="menu">
-                                <li><a id="two_single_elimination">싱글 엘리미네이션</a></li>
-                                <li><a id="two_double_elimination">더블 엘리미네이션</a></li>
-                                <li><a id="two_round_robin">라운드 로빈</a></li>
-                              </ul>
+                            <select id="two_tournament_group" name="two_tournament_group" class="form-control">
+                                <option value="default">선택해주세요</option>
+                                <option value="single_elimination_group">싱글 엘리미네이션</option>
+                                <option value="double_elimination_group">더블 엘리미네이션</option>
+                                <option value="round_robin_group">라운드 로빈</option>
+                            </select>
                         </div>
                         &nbsp;
                         <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션: 이긴 선수 혹은 팀이 다음 경기에 진출하는 일반적 토너먼트 방식입니다. 더블 엘리미네이션: 일종의 패자부활전 방식입니다. 처음 두 팀씩 경기를 치른 다음, 승자는 승자끼리, 패자는 패자끼리 경기를 치뤄 2연승한 팀은 다음 라운드 진출이 확정되고, 2연패를 한 팀은 탈락이 확정됩니다. 또 1승1패를 기록한 팀은 다시 경기를 치뤄 최종 진출팀을 가리게 됩니다. 라운드 로빈: 리그 방식으로 모든 참여 인원이 한 번씩 경기를 하여 순위를 가리는 방식입니다."></span>
                     </div>
 
                         <!-- js hide & show : 혼합 방식 토너먼트(Two_tournament) + 그룹 스테이지(Group Stage) + 싱글 엘리미네이션(Single_elimination) -->
-                        <div class="looking-group spec_group two_single_elimination" style="display: none;">
+                        <div class="looking-group spec_group single_elimination_group" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
                             </div>
                             <div class="input-group">
@@ -165,7 +159,7 @@
                         </div>
 
                         <!-- js hide & show : 혼합 방식 토너먼트(Two_tournament) + 그룹 스테이지(Group Stage) + 더블 엘리미네이션(Double_elimination) -->
-                        <div class="looking-group spec_group two_double_elimination" style="display: none;">
+                        <div class="looking-group spec_group double_elimination_group" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
                             </div>
                             <div class="input-group">
@@ -184,7 +178,7 @@
                         </div>
 
                         <!-- js hide & show : 혼합 방식 토너먼트(Two_tournament) + 그룹 스테이지(Group Stage) + 라운드 로빈(Round_robin) -->
-                        <div class="looking-group spec_group two_round_robin" style="display: none;">
+                        <div class="looking-group spec_group round_robin_group" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
                             </div>
                             <div class="input-group">
@@ -203,20 +197,18 @@
                             <br>
                             <br>
                             <div class="col-xs-10 col-sm-3 col-md-3">
-                                <label class="making_font" for="Rankby" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
+                                <label class="making_font" for="rankby" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
                             </div>
                             <div class="btn-group">
-                                  <button type="button" class="btn btn-original dropdown-toggle round_robin_name_group" data-toggle="dropdown" aria-expanded="false">
-                                    선택해주세요 <span class="caret"></span>
-                                  </button>
-                                  <ul class="dropdown-menu round_robin_list_group" role="menu">
-                                    <li><a>Match Wins</a></li>
-                                    <li><a>Game/Set Wins</a></li>
-                                    <li><a>Game/Set Win %</a></li>
-                                    <li><a>Points Scored</a></li>
-                                    <li><a>Points Difference</a></li>
-                                    <li><a id="custom_points_system_group">Custom(Points System)</a></li>
-                                  </ul>
+                                <select id="two_round_robin_group" name="two_round_robin_group" class="form-control">
+                                    <option value="default">선택해주세요</option>
+                                    <option value="match_wins">Match Wins</option>
+                                    <option value="game_set_wins">Game/Set Wins</option>
+                                    <option value="game_set_win_percent">Game/Set Win %</option>
+                                    <option value="points_scored">Points Scored</option>
+                                    <option value="points_difference">Points Difference</option>
+                                    <option value="custom_points_system_group">Custom(Points System)</option>
+                                </select>
                             </div>
                             &nbsp;
                             <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="그룹 스테이지 + 라운드 로빈"></span>
@@ -261,22 +253,20 @@
                             <label class="making_font" for="two_tournament_final" style="color: #f7941e;">파이널 스테이지 <span style="color: #f7941e;">*</span></label>
                         </div>
                         <div class="btn-group">
-                              <button type="button" class="btn btn-original dropdown-toggle two_tournament_name_final" data-toggle="dropdown" aria-expanded="false">
-                                선택해주세요 <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu two_tournament_list_final" role="menu">
-                                <li><a id="single_elimination">싱글 엘리미네이션</a></li>
-                                <li><a id="double_elimination">더블 엘리미네이션</a></li>
-                                <li><a id="round_robin">라운드 로빈</a></li>
-                                <li><a id="swiss">스위스 리그</a></li>
-                              </ul>
+                            <select id="two_tournament_final" name="two_tournament_final" class="form-control">
+                                <option value="default">선택해주세요</option>
+                                <option value="single_elimination_final">싱글 엘리미네이션</option>
+                                <option value="double_elimination_final">더블 엘리미네이션</option>
+                                <option value="round_robin_final">라운드 로빈</option>
+                                <option value="swiss_final">스위스 리그</option>
+                            </select>
                         </div>
                         &nbsp;
                         <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="싱글 엘리미네이션: 이긴 선수 혹은 팀이 다음 경기에 진출하는 일반적 토너먼트 방식입니다. 더블 엘리미네이션: 일종의 패자부활전 방식입니다. 처음 두 팀씩 경기를 치른 다음, 승자는 승자끼리, 패자는 패자끼리 경기를 치뤄 2연승한 팀은 다음 라운드 진출이 확정되고, 2연패를 한 팀은 탈락이 확정됩니다. 또 1승1패를 기록한 팀은 다시 경기를 치뤄 최종 진출팀을 가리게 됩니다. 라운드 로빈: 리그 방식으로 모든 참여 인원이 한 번씩 경기를 하여 순위를 가리는 방식입니다. 스위스리그: 라운드 별로 같은 승수를 가진 선수 혹은 팀끼리 경쟁하는 방식입니다. 일반적으로 4~5라운드 진행되며 큰 대회는 11라운드까지 진행이 되며 가장 많은 승수를 가진 선수가 동점일 경우 자신과 겨룬 모든 상대의 승수를 합한 승점으로, 혹은 자신과 겨룬 모든 상대의 승점을 합한 총점으로 1등을 가립니다."></span>
                     </div>
 
                         <!-- js hide & show : 단일/혼합_파이널 공통 파트(Single_tournament/Two_tournament_final) + 싱글 엘리미네이션(Single_elimination) -->
-                        <div class="looking-group spec single_elimination" style="display: none;">
+                        <div class="looking-group spec single_elimination_final" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
                             </div>
                             <div class="checkbox">
@@ -288,7 +278,7 @@
                         </div>
 
                         <!-- js hide & show : 단일/혼합_파이널 공통 파트(Single_tournament/Two_tournament_final) + 더블 엘리미네이션(Double_elimination) -->
-                        <div class="looking-group spec double_elimination" style="display: none;">
+                        <div class="looking-group spec double_elimination_final" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
                                 <label class="making_font" for="double_elimination" style="color: #f7941e;">최종 경기 <span style="color: #f7941e;">*</span></label>
                             </div>
@@ -306,22 +296,20 @@
                         </div>
 
                         <!-- js hide & show : 단일/혼합_파이널 공통 파트(Single_tournament/Two_tournament_final) + 라운드 로빈(Round_robin) -->
-                        <div class="looking-group spec round_robin" style="display: none;">
+                        <div class="looking-group spec round_robin_final" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
-                                <label class="making_font" for="round_robin" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
+                                <label class="making_font" for="round_robin_final" style="color: #f7941e;">Rank by <span style="color: #f7941e;">*</span></label>
                             </div>
                             <div class="btn-group">
-                                  <button type="button" class="btn btn-original dropdown-toggle round_robin_name_final" data-toggle="dropdown" aria-expanded="false">
-                                    선택해주세요 <span class="caret"></span>
-                                  </button>
-                                  <ul class="dropdown-menu round_robin_list_final" role="menu">
-                                    <li><a>Match Wins</a></li>
-                                    <li><a>Game/Set Wins</a></li>
-                                    <li><a>Game/Set Win %</a></li>
-                                    <li><a>Points Scored</a></li>
-                                    <li><a>Points Difference</a></li>
-                                    <li><a id="custom_points_system_final">Custom(Points System)</a></li>
-                                  </ul>
+                                <select id="two_round_robin_final" name="two_round_robin_final" class="form-control">
+                                    <option value="default">선택해주세요</option>
+                                    <option value="match_wins">Match Wins</option>
+                                    <option value="game_set_wins">Game/Set Wins</option>
+                                    <option value="game_set_win_percent">Game/Set Win %</option>
+                                    <option value="points_scored">Points Scored</option>
+                                    <option value="points_difference">Points Difference</option>
+                                    <option value="custom_points_system_final">Custom(Points System)</option>
+                                </select>
                             </div>
                             &nbsp;
                             <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="라운드 로빈"></span>
@@ -410,19 +398,17 @@
                         <label class="making_font" for="registration">대회 등록 방식 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="btn-group">
-                          <button type="button" class="btn btn-original dropdown-toggle registration_name" data-toggle="dropdown" aria-expanded="false">
-                            선택해주세요 <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu registration_list" role="menu">
-                            <li><a>초대식 개인 등록</a></li>
-                            <li><a id="registration_team">초대식 팀별 등록</a></li>
-                            <li><a>시청자 개인 등록</a></li>
-                            <li><a id="registration_team">시청자 팀별 등록</a></li>
-                          </ul>
+                        <select id="registration" name="registration" class="form-control">
+                            <option value="default">선택해주세요</option>
+                            <option value="personal_invite">개인 초대 등록</option>
+                            <option value="team_invite">팀별 초대 등록</option>
+                            <option value="personal_register">개인 신청 등록</option>
+                            <option value="team_register">팀별 신청 등록</option>
+                        </select>
                     </div>
 
                     <!-- js hide & show : 대회 등록 방식 + 팀 인원수(Registration_team) -->
-                    <div class="btn-group registration_team" style="display: none;">
+                    <div class="btn-group registration_team team_invite team_register" style="display: none;">
                         <div class="input-group">
                           <input type="text" required autocomplete="off" class="form-control" id="registration_team" name="registration_team" placeholder="예) 6" aria-describedby="basic-addon1">
                           <span class="input-group-addon">명이 한팀</span>
@@ -481,18 +467,16 @@
                             대회 시작
                         </div>
                         <div class="input-group">
-                            <button type="button" class="btn btn-original dropdown-toggle checkin_time_name" data-toggle="dropdown" aria-expanded="false">
-                                선택해주세요 <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu checkin_time_list" role="menu">
-                                <li><a>15분</a></li>
-                                <li><a>30분</a></li>
-                                <li><a>1시간</a></li>
-                                <li><a>2시간</a></li>
-                                <li><a>6시간</a></li>
-                                <li><a>1일</a></li>
-                                <li><a>2일</a></li>
-                            </ul>
+                            <select id="checkin_time" name="checkin_time" class="form-control">
+                                <option value="default">선택해주세요</option>
+                                <option value="15min">15분</option>
+                                <option value="30min">30분</option>
+                                <option value="1hour">1시간</option>
+                                <option value="2hour">2시간</option>
+                                <option value="6hour">6시간</option>
+                                <option value="1day">1일</option>
+                                <option value="2day">2일</option>
+                            </select>
                         </div>
                         <div class="input-group">
                             이전에 체크인을 해야합니다.
@@ -505,7 +489,7 @@
                         <label class="making_font" for="description">규칙 세부 사항</label>
                         &nbsp;
                     </div>
-                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="자유롭게 적어주세요" style="width: 60%; height: 120px;"></textarea>
+                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="자유롭게 규칙 세부 사항을 적어주세요." style="width: 60%; height: 120px;"></textarea>
                     &nbsp;
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회의 원활한 진행을 위해 대회 규칙에 대한 과도할 정도로 세세한 사항을 적어주세요." style="vertical-align: top;"></span>
                 </div>
@@ -692,6 +676,7 @@
                 }
             });
 
+            /* 숫자만 입력이 가능하도록 */
             $("input[name=participant]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
@@ -699,6 +684,7 @@
                 }
             });
 
+            /* 숫자만 입력이 가능하도록 */
             $("input[name=funding]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
@@ -706,6 +692,7 @@
                 }
             });
 
+            /* 숫자만 입력이 가능하도록 */
             $("input[name=promise]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
@@ -713,6 +700,7 @@
                 }
             });
 
+            /* 숫자만 입력이 가능하도록 */
             $("input[name=reward]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
@@ -720,105 +708,63 @@
                 }
             });
 
-            /* streaming url dropdown 클릭 시 옆에 afreeca, 트위치 url 포맷 형성 + 대표 이름 변경 */
-            $('.streaming_url li a').click(function() {
+            /* streaming url dropdown 클릭 시 옆에 afreeca, 트위치 url 포맷 형성 */
+            $('#streaming_url').change(function() {
                 $(".streaming").hide();
-                $("."+$(this).attr("id")).show();
-                $caret = '<span class="caret"></span>';
-                $(".streaming_name").html($(this).html()+" "+$caret);
-                $(".streaming_name").val($(this).text());
+                $("."+this.value).show();
             });
 
-            /* single & two tournament 선택 시 div hide & show + 변경 시 하위 div 선택해주세요 버튼으로 변경 */
+            /* single & two tournament 선택 시 div hide & show */
             $('input[name=tournament_type]').change(function(){
                 $(".format").hide();
                 $(".div_"+$(this).attr('value')).show();
                 $(".spec").hide();
                 $(".spec_group").hide();
-                $caret = '<span class="caret"></span>';
-                $(".single_tournament_name").html("선택해주세요"+" "+$caret)
-                $(".two_tournament_name_group").html("선택해주세요"+" "+$caret)
-                $(".two_tournament_name_final").html("선택해주세요"+" "+$caret)
-                $(".round_robin_name_group").html("선택해주세요"+" "+$caret)
-                $(".round_robin_name_final").html("선택해주세요"+" "+$caret)
             });
 
-            /* single tournament 하위 리스트 div hide & show + 대표 이름 변경 */
-            $('.single_tournament_list li a').click(function() {
+            /* single tournament 하위 리스트 div hide & show*/
+            $('#single_tournament_format').change(function() {
                 $(".spec").hide();
-                $("."+$(this).attr("id")).show();
-
-                $caret = '<span class="caret"></span>';
-                $(".single_tournament_name").html($(this).html()+" "+$caret);
-                $(".single_tournament_name").val($(this).text());
+                $("."+this.value).show();
             });
 
-            /* single & two tournament 하위 리스트 round_robin hide & show + 대표 이름 변경 +
-                Custom System을 선택 시 div hide & show */
-            $('.round_robin_list_group li a').click(function() {
+            /* single & two tournament final 하위 리스트 round_robin hide & show
+                    + Custom System을 선택 시 div hide & show */
+            $('#two_round_robin_group').change(function() {
                 $(".custom_points_system_group").hide();
-                $("."+$(this).attr("id")).show();
-
-                $caret = '<span class="caret"></span>';
-                $(".round_robin_name_group").html($(this).html()+" "+$caret);
-                $(".round_robin_name_group").val($(this).text());
+                $("."+this.value).show();
             });
 
-            $('.round_robin_list_final li a').click(function() {
+            $('#two_round_robin_final').change(function() {
                 $(".custom_points_system_final").hide();
-                $("."+$(this).attr("id")).show();
-
-                $caret = '<span class="caret"></span>';
-                $(".round_robin_name_final").html($(this).html()+" "+$caret);
-                $(".round_robin_name_final").val($(this).text());
+                $("."+this.value).show();
             });
 
-            /* two tournament 하위 리스트 group stage hide & show (single tournament와 동일) + 대표 이름 변경 */
-            $('.two_tournament_list_group li a').click(function() {
+            /* two tournament 하위 리스트 group stage hide & show (single tournament와 동일) */
+            $('#two_tournament_group').change(function() {
                 $(".spec_group").hide();
-                $("."+$(this).attr("id")).show();
-
-                $caret = '<span class="caret"></span>';
-                $(".two_tournament_name_group").html($(this).html()+" "+$caret);
-                $(".two_tournament_name_group").val($(this).text());
+                $("."+this.value).show();
             });
 
-            /* two tournament 하위 리스트 final stage hide & show (single tournament와 동일) + 대표 이름 변경 */
-            $('.two_tournament_list_final li a').click(function() {
+            /* two tournament 하위 리스트 final stage hide & show (single tournament와 동일) */
+            $('#two_tournament_final').change(function() {
                 $(".spec").hide();
-                $("."+$(this).attr("id")).show();
-
-                $caret = '<span class="caret"></span>';
-                $(".two_tournament_name_final").html($(this).html()+" "+$caret);
-                $(".two_tournament_name_final").val($(this).text());
+                $("."+this.value).show();
             });
 
-            /* 대회 등록 방식 : 이름 변경 */
-            $('.registration_list li a').click(function() {
+            /* registration 팀별 초대 등록 & 팀별 신청 등록 시 js hide & show */
+            $('#registration').change(function() {
                 $(".registration_team").hide();
-                $("."+$(this).attr("id")).show();
-
-                $caret = '<span class="caret"></span>';
-                $(".registration_name").html($(this).html()+" "+$caret);
-                $(".registration_name").val($(this).text());
+                $("."+this.value).show();
             });
 
             /* 체크인 기능 사용 여부 : 체크 시 div hide & show */
             $('#checkin').change(function() {
                 if (!this.checked) {
                     $('.div_checkin_time').hide();
-                    $caret = '<span class="caret"></span>';
-                    $(".checkin_time_name").html("선택해주세요"+" "+$caret);
                 } else {
                     $('.div_checkin_time').show();
                 }
-            });
-
-            /* 체크인 시간 : list 이름 변경 */
-            $('.checkin_time_list li a').click(function() {
-                $caret = '<span class="caret"></span>';
-                $(".checkin_time_name").html($(this).html()+" "+$caret);
-                $(".checkin_time_name").val($(this).text());
             });
 
             jQuery('#starttime').datetimepicker({
@@ -837,7 +783,6 @@
             /* scroll-top-wrapper */
             $(function(){
                 $(document).on( 'scroll', function(){
-
                     if ($(window).scrollTop() > 100) {
                         $('.scroll-top-wrapper').addClass('show');
                     } else {
@@ -949,7 +894,9 @@
                             window.location="{% url 'home' %}"
                         }
                         else{
-                            alert(response.message)
+                            if(response.message == ""){
+
+                            }
                         }
                     }
                 });

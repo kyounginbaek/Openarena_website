@@ -1,7 +1,10 @@
 {% extends "main/base.html" %}
-
+{% load staticfiles %}
 {% block title %} 오픈아레나:대회 둘러보기 {% endblock %}
-
+{% block head %}
+    <!--join.css-->
+    <link rel="stylesheet" href="{% static 'css/join.css' %}">
+{% endblock %}
 {% block content %}
 <div class="block-b">
    <div class="com_header">
@@ -17,14 +20,17 @@
                                    <p class="com_subtitle hidden-xs">매갈리스 배 하스스톤 레전드 매치는 8강으로 구성된 레전드 bj들의 매치이다. 탑 티어 플레이들이 4주간에 걸처 싱글 토너먼트 형식으로 진해된다.</p>
                                    <div class="com_subtitle">2016/08/30   05:45 pm</div></br>
                                </div>
-               <!--후원참가--><div class="col-sm-3 col-md-3 col-xs-12 ">
+               <!--후원/참가--><div class="col-sm-3 col-md-3 col-xs-12 ">
                                 <ul class="com_mainbox">
                         <li class="">
-                            <a href="#" class="btn btn-default white" >
-                             후원하기</a>
+                            <div class="">
+                                <button class="btn btn-primary center-block">후원하기 </button>
+                            </div>
                             <div class="hidden-xs" style="height: 20px"></div>
-                            <a href="#" class="btn btn-default white" >
-                                참가하기</a>
+                            <!--참가하기-->
+                            <div class="center">
+                              <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">참가하기</button>
+                            </div>
                         </li>
                     </ul>
                                 </div>
@@ -216,6 +222,42 @@
                 </div>
               </div>
        <!--competition content-end-->
+
+<!--join in-->
+
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
+		</div>
+		<div class="modal-body">
+
+            <!-- content goes here -->
+			<form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
+                <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">참가자 연락처</label>
+                <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">참가자 이메일</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex) op12@openarena.com">
+              </div>
+              <button type="submit" class="join_submit">참가하기</button>
+            </form>
+
+		</div>
+
+	</div>
+  </div>
+</div>
+
+<!--join in-->
 
     </div>
 </div>

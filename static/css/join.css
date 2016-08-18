@@ -1,0 +1,40 @@
+/*join start*/
+.center {
+}
+.center-block{
+    width: 140px;
+    height: 50px;
+    padding: 7px;
+    font-size: 18px;
+}
+.join_submit{
+    font-size: 15px;
+    font-family: 나눔글꼴;
+    background: #3885ca;
+    border:1px solid #3885ca;
+    border-radius: 3px;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+}
+.modal-header {
+}
+
+.modal-footer {
+    	padding: 0;
+	}
+
+.modal-footer .btn-group button {
+	height:40px;
+	border-top-left-radius : 0;
+	border-top-right-radius : 0;
+	border: none;
+	border-right: 1px solid #ddd;
+}
+
+.modal-footer .btn-group:last-child > button {
+	border-right: 0;
+}
+
+/*join end*/

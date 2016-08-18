@@ -25,13 +25,7 @@ def making(request):
         tournament_game = request.POST.get('tournament_game')
         tournament_url = request.POST.get('tournament_url')
 
-        if Making.objects.filter(tournament_url=tournament_url).exists():
-            response = {'status': 'fail', 'message': "이미 존재하는 대회 주소입니다. 다른 주소를 입력해주세요."}
-            return HttpResponse(json.dumps(response), content_type='application/json')
 
-        streaming_url = request.POST.get('streaming_url')
-        streaming_url_spec = request.POST.get('streaming_url_spec')
-        tournament_type = request.POST.get('tournament_type')
 
         registration = request.POST.get('registration')
         registration_team = request.POST.get('registration_team')
@@ -42,13 +36,21 @@ def making(request):
         description = request.POST.get('description')
         funding = request.POST.get('funding')
 
+        phone = request.POST.get('phone')
+
+        if Making.objects.filter(tournament_url=tournament_url).exists():
+            response = {'status': 'fail', 'message': "이미 존재하는 대회 주소입니다. 다른 주소를 입력해주세요."}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        streaming_url = request.POST.get('streaming_url')
+        streaming_url_spec = request.POST.get('streaming_url_spec')
+        tournament_type = request.POST.get('tournament_type')
+
         promise = request.POST.get('promise')
         promise_spec = request.POST.get('promise_spec')
         reward = request.POST.get('reward')
         reward_spec = request.POST.get('reward_spec')
         template = request.POST.get('template')
-
-        phone = request.POST.get('phone')
 
         response = {'status': 'success', 'message': "대회 생성 요청이 성공적으로 제출되었습니다. 빠른 시일 내에 운영진 검토 후 이메일과 연락처로 대회 개최 여부를 말씀드리겠습니다."}
         return HttpResponse(json.dumps(response), content_type='application/json')

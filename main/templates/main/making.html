@@ -71,7 +71,7 @@
                             <option value="default">선택해주세요</option>
                             <option value="afreecatv">아프리카tv</option>
                             <option value="twitch">트위치(twitch)</option>
-                            <option value="no">계정 없음</option>
+                            <option value="none">계정 없음</option>
                         </select>
                     </div>
 
@@ -219,14 +219,14 @@
                                 <label class="making_font" for="rankby" style="color: #f7941e;">등급 순위 <span style="color: #f7941e;">*</span></label>
                             </div>
                             <div class="btn-group">
-                                <select id="two_tournament_round_robin_group" name="two_tournament_round_robin_group" class="form-control">
+                                <select id="round_robin_group_spec" name="round_robin_group_spec" class="form-control">
                                     <option value="default">선택해주세요</option>
                                     <option value="match_wins">Match Wins</option>
                                     <option value="game_set_wins">Game/Set Wins</option>
                                     <option value="game_set_win_percent">Game/Set Win %</option>
                                     <option value="points_scored">Points Scored</option>
                                     <option value="points_difference">Points Difference</option>
-                                    <option value="custom_points_system_group">Custom(Points System)</option>
+                                    <option value="custom_points_system_group">Custom (Points System)</option>
                                 </select>
                             </div>
                             &nbsp;
@@ -299,7 +299,7 @@
                             <div class="col-xs-10 col-sm-3 col-md-3">
                             </div>
                             <div class="checkbox">
-                                <label><input id="single_elimination_final_spec" name="single_elimination_final_spec" type="checkbox" value="false"
+                                <label><input id="single_elimination_final_spec" name="single_elimination_final_spec" type="checkbox" value="3rd_decision_match"
                                 style="margin-bottom:10px"> &nbsp;3위 결정전을 포함하겠습니다.</label>
                             </div>
                             &nbsp;
@@ -312,14 +312,14 @@
                                 <label class="making_font" for="double_elimination_final_spec" style="color: #f7941e;">최종 경기 <span style="color: #f7941e;">*</span></label>
                             </div>
                             <div class="checkbox">
-                                <label><input id="double_elimination_final_spec1" name="double_elimination_final_spec" type="radio" value="false"
+                                <label><input id="double_elimination_final_spec1" name="double_elimination_final_spec" type="radio" value="1-2_match"
                                 style="margin-bottom:10px"> &nbsp;1-2 경기</label>
                                 &nbsp; <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="더블 엘리미네이션"></span>
                                 <br>
-                                <label><input id="double_elimination_final_spec2" name="double_elimination_final_spec" type="radio" value="false"
+                                <label><input id="double_elimination_final_spec2" name="double_elimination_final_spec" type="radio" value="1_match"
                                 style="margin-bottom:10px"> &nbsp;1 경기</label>
                                 <br>
-                                <label><input id="double_elimination_final_spec3" name="double_elimination_final_spec" type="radio" value="false"
+                                <label><input id="double_elimination_final_spec3" name="double_elimination_final_spec" type="radio" value="none"
                                 style="margin-bottom:10px"> &nbsp;없음</label>
                             </div>
                         </div>
@@ -327,17 +327,17 @@
                         <!-- js hide & show : 단일/혼합_파이널 공통 파트(Single_tournament/Two_tournament_final) + 라운드 로빈(Round_robin) -->
                         <div class="looking-group spec round_robin_final" style="display: none;">
                             <div class="col-xs-10 col-sm-3 col-md-3">
-                                <label class="making_font" for="round_robin_final" style="color: #f7941e;">등급 순위 <span style="color: #f7941e;">*</span></label>
+                                <label class="making_font" for="round_robin_final_spec" style="color: #f7941e;">등급 순위 <span style="color: #f7941e;">*</span></label>
                             </div>
                             <div class="btn-group">
-                                <select id="single_two_tournament_round_robin_final" name="single_two_tournament_round_robin_final" class="form-control">
+                                <select id="round_robin_final_spec" name="round_robin_final_spec" class="form-control">
                                     <option value="default">선택해주세요</option>
                                     <option value="match_wins">Match Wins</option>
                                     <option value="game_set_wins">Game/Set Wins</option>
                                     <option value="game_set_win_percent">Game/Set Win %</option>
                                     <option value="points_scored">Points Scored</option>
                                     <option value="points_difference">Points Difference</option>
-                                    <option value="custom_points_system_final">Custom(Points System)</option>
+                                    <option value="custom_points_system_final">Custom (Points System)</option>
                                 </select>
                             </div>
                             &nbsp;
@@ -627,7 +627,7 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="option[]" id="reward" name="reward" placeholder="예) 10,000" />
+                                <input type="text" class="form-control" name="option[]" id="reward" name="reward" placeholder="예) 20,000" />
                                 <span class="input-group-addon">원에 도달하면</span>
                             </div>
                             <div class="input-group">
@@ -652,15 +652,15 @@
                         <label class="making_font" for="template">참가자 양식 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" checked="checked" value="template_name" style="margin-bottom: 15px" disabled> &nbsp;참가자명 / 팀명 (필수)</label>
+                      <label><input id="template_name" name="template_name" type="checkbox" checked="checked" value="template_name" style="margin-bottom: 15px" disabled> &nbsp;참가자명 / 팀명 (필수)</label>
                       &nbsp;<span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="참가자들이 대회 신청 시 적어야 하는 사항에 대하여 체크해주세요."></span>
                       <br>
-                      <label><input type="checkbox" value="template_phone" style="margin-bottom: 15px"> &nbsp;참가자 연락처</label>
+                      <label><input id="template_phone" name="template_phone" type="checkbox" value="template_phone" style="margin-bottom: 15px"> &nbsp;참가자 연락처</label>
                       <br>
-                      <label><input type="checkbox" value="template_email" style="margin-bottom: 10px"> &nbsp;참가자 이메일</label>
+                      <label><input id="template_email" name="template_email" type="checkbox" value="template_email" style="margin-bottom: 10px"> &nbsp;참가자 이메일</label>
                       <br>
-                      <label><input type="checkbox" id="template_etc" name="template_etc"> &nbsp;추가 기타양식</label>
-                      &nbsp;<input type="text" class="form-control" id="input_template_etc" name="input_template_etc" placeholder="예) 성별, 나이, 덱, 레벨">
+                      <label><input id="template_etc" name="template_etc" type="checkbox"> &nbsp;추가 기타양식</label>
+                      &nbsp;<input id="input_template_etc" name="input_template_etc" type="text" class="form-control" placeholder="예) 성별, 나이, 덱, 레벨">
                     </div>
                 </div>
 
@@ -710,39 +710,59 @@
                     $(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
                 }
             });
-            /* 숫자만 입력이 가능하도록 */
-            $("input[name=registration_team]").keyup(function(event){
-                if (!(event.keyCode >=37 && event.keyCode<=40)) {
+            /* 숫자와 소수점 입력이 가능하도록 */
+            $("input[name=custom_points_system_final_spec1], input[name=custom_points_system_final_spec2], input[name=custom_points_system_final_spec3], input[name=custom_points_system_final_spec4]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
                     var inputVal = $(this).val();
-                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                    inputVal = inputVal.replace(/[^0-9\.]/gi,'');
+                    if(inputVal.split('.').length>2){
+                        inputVal = inputVal.replace(/\.+$/,'');
+                    }
+                    $(this).val(inputVal);
                 }
             });
-            /* 숫자만 입력이 가능하도록 */
-            $("input[name=participant]").keyup(function(event){
+            /* 숫자와 소수점 입력이 가능하도록 */
+            $("input[name=swiss_final_spec1], input[name=swiss_final_spec2], input[name=swiss_final_spec3], input[name=swiss_final_spec4], input[name=swiss_final_spec5]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
-                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                    inputVal = inputVal.replace(/[^0-9\.]/gi,'');
+                    if(inputVal.split('.').length>2){
+                        inputVal = inputVal.replace(/\.+$/,'');
+                    }
+                    $(this).val(inputVal);
                 }
             });
-            /* 숫자만 입력이 가능하도록 */
-            $("input[name=funding]").keyup(function(event){
+            /* 숫자와 소수점 입력이 가능하도록 */
+            $("input[name=single_elimination_group_spec1], input[name=single_elimination_group_spec2], input[name=double_elimination_group_spec1], input[name=double_elimination_group_spec2], input[name=round_robin_group_spec1], input[name=round_robin_group_spec2]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
-                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                    inputVal = inputVal.replace(/[^0-9\.]/gi,'');
+                    if(inputVal.split('.').length>2){
+                        inputVal = inputVal.replace(/\.+$/,'');
+                    }
+                    $(this).val(inputVal);
                 }
             });
-            /* 숫자만 입력이 가능하도록 */
-            $("input[name=promise]").keyup(function(event){
-                if (!(event.keyCode >=37 && event.keyCode<=40)) {
+            /* 숫자와 소수점 입력이 가능하도록 */
+            $("input[name=custom_points_system_group_spec1], input[name=custom_points_system_group_spec2], input[name=custom_points_system_group_spec3], input[name=custom_points_system_group_spec4]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
                     var inputVal = $(this).val();
-                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                    inputVal = inputVal.replace(/[^0-9\.]/gi,'');
+                    if(inputVal.split('.').length>2){
+                        inputVal = inputVal.replace(/\.+$/,'');
+                    }
+                    $(this).val(inputVal);
                 }
             });
-            /* 숫자만 입력이 가능하도록 */
-            $("input[name=reward]").keyup(function(event){
+            /* 숫자와 소수점 입력이 가능하도록 */
+            $("input[name=registration_team], input[name=participant], input[name=funding], input[name=promise], input[name=reward]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
-                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                    inputVal = inputVal.replace(/[^0-9\.]/gi,'');
+                    if(inputVal.split('.').length>2){
+                        inputVal = inputVal.replace(/\.+$/,'');
+                    }
+                    $(this).val(inputVal);
                 }
             });
 
@@ -783,9 +803,9 @@
 
                 /* 선택해주세요 default 초기화 */
                 $('#single_tournament_final').val("default");
-                $('#single_two_tournament_round_robin_final').val("default");
+                $('#round_robin_final_spec').val("default");
                 $('#two_tournament_group').val("default");
-                $('#two_tournament_round_robin_group').val("default");
+                $('#round_robin_group_spec').val("default");
                 $('#two_tournament_final').val("default");
 
                 /* input attr 초기화 */
@@ -830,7 +850,7 @@
             $('#single_tournament_final').change(function() {
                 $(".spec").hide();
                 $(".error3").hide();
-                $('#single_two_tournament_round_robin_final').val("default");
+                $('#round_robin_final_spec').val("default");
                 /* input attr 초기화 */
                 $("#double_elimination_final_spec1").removeAttr('required','');
                 $("#double_elimination_final_spec1").removeAttr('autocomplete', 'off');
@@ -861,7 +881,7 @@
             $('#two_tournament_group').change(function() {
                 $(".spec_group").hide();
                 $(".error4").hide();
-                $('#two_tournament_round_robin_group').val("default");
+                $('#round_robin_group_spec').val("default");
                 /* input attr 초기화 */
                 $("#single_elimination_group_spec1, #single_elimination_group_spec2").removeAttr('required','');
                 $("#single_elimination_group_spec1, #single_elimination_group_spec2").removeAttr('autocomplete', 'off');
@@ -895,7 +915,7 @@
             $('#two_tournament_final').change(function() {
                 $(".spec").hide();
                 $(".error6").hide();
-                $('#single_two_tournament_round_robin_final').val("default");
+                $('#round_robin_final_spec').val("default");
                 /* input attr 초기화 */
                 $("#double_elimination_final_spec1").removeAttr('required','');
                 $("#double_elimination_final_spec1").removeAttr('autocomplete', 'off');
@@ -924,7 +944,7 @@
 
             /* single & two tournament final 하위 리스트 round_robin hide & show
                     + Custom System을 선택 시 div hide & show */
-            $('#two_tournament_round_robin_group').change(function() {
+            $('#round_robin_group_spec').change(function() {
                 $(".custom_points_system_group").hide();
                 $(".error5").hide();
                 /* input attr 초기화 */
@@ -934,14 +954,14 @@
                 /* input value 초기화 */
                 $("#custom_points_system_group_spec1, #custom_points_system_group_spec2, #custom_points_system_group_spec3, #custom_points_system_group_spec4").val('');
 
-                if(document.getElementById('two_tournament_round_robin_group').value=="custom_points_system_group"){
+                if(document.getElementById('round_robin_group_spec').value=="custom_points_system_group"){
                     $("#custom_points_system_group_spec1, #custom_points_system_group_spec2, #custom_points_system_group_spec3, #custom_points_system_group_spec4").attr('required','');
                     $("#custom_points_system_group_spec1, #custom_points_system_group_spec2, #custom_points_system_group_spec3, #custom_points_system_group_spec4").attr('autocomplete', 'off');
                 }
                 $("."+this.value).show();
             });
 
-            $('#single_two_tournament_round_robin_final').change(function() {
+            $('#round_robin_final_spec').change(function() {
                 $(".custom_points_system_final").hide();
                 $(".error7").hide();
                 /* input attr 초기화 */
@@ -951,7 +971,7 @@
                 /* input value 초기화 */
                 $("#custom_points_system_final_spec1, #custom_points_system_final_spec2, #custom_points_system_final_spec3, #custom_points_system_final_spec4").val('');
 
-                if(document.getElementById('single_two_tournament_round_robin_final').value=="custom_points_system_final"){
+                if(document.getElementById('round_robin_final_spec').value=="custom_points_system_final"){
                     $("#custom_points_system_final_spec1, #custom_points_system_final_spec2, #custom_points_system_final_spec3, #custom_points_system_final_spec4").attr('required','');
                     $("#custom_points_system_final_spec1, #custom_points_system_final_spec2, #custom_points_system_final_spec3, #custom_points_system_final_spec4").attr('autocomplete', 'off');
                 }
@@ -1026,74 +1046,59 @@
             /* 공약 추가 버튼 기능 구현 */
             /* Add button click handler */
             var MAX_OPTIONS = 10;
+            var promise_number = 1;
             $('.div_promise').on('click', '.addButton', function() {
-                var $template = $('#promiseTemplate'),
+                if(promise_number < MAX_OPTIONS){
+                    var $template = $('#promiseTemplate'),
                     $clone    = $template
                                     .clone()
                                     .removeClass('hide')
                                     .removeAttr('id')
                                     .insertBefore($template),
                     $option   = $clone.find('[name="option[]"]');
-
-                // Add new field
-                $('.form-inline').formValidation('addField', $option);
+                    promise_number = promise_number + 1;
+                } else {
+                    $('.div_promise').find('.addButton').attr('disabled', 'disabled');
+                }
             });
             /* Remove button click handler */
             $('.div_promise').on('click', '.removeButton', function() {
+                promise_number = promise_number - 1;
+                $('.div_promise').find('.addButton').removeAttr('disabled', 'disabled');
                 var $row    = $(this).parents('.remove-group'),
                     $option = $row.find('[name="option[]"]');
 
                 // Remove element containing the option
                 $row.remove();
-
-                // Remove field
-                $('.form-inline').formValidation('removeField', $option);
-            });
-            /* Called after adding new field */
-            $('.div_promise').on('added.field.fv', function(e, data) {
-                // data.field   --> The field name
-                // data.element --> The new field element
-                // data.options --> The new field options
-
-                if (data.field === 'option[]') {
-                    if ($('.form-inline').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
-                        $('.form-inline').find('.addButton').attr('disabled', 'disabled');
-                    }
-                }
-            });
-            /* Called after removing the field */
-            $('.div_promise').on('removed.field.fv', function(e, data) {
-               if (data.field === 'option[]') {
-                    if ($('.form-inline').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
-                        $('.form-inline').find('.addButton').removeAttr('disabled');
-                    }
-                }
             });
 
             /* 후원 추가 버튼 기능 구현 */
             /* Add button click handler */
+            var MAX_OPTIONS = 10;
+            var reward_number = 1;
             $('.div_reward').on('click', '.addButton', function() {
-                var $template = $('#rewardTemplate'),
+                if(reward_number < MAX_OPTIONS){
+                    var $template = $('#rewardTemplate'),
                     $clone    = $template
                                     .clone()
                                     .removeClass('hide')
                                     .removeAttr('id')
                                     .insertBefore($template),
                     $option   = $clone.find('[name="option[]"]');
-
-                // Add new field
-                $('.form-inline').formValidation('addField', $option);
+                    reward_number = reward_number + 1;
+                } else {
+                    $('.div_reward').find('.addButton').attr('disabled', 'disabled');
+                }
             });
             /* Remove button click handler */
             $('.div_reward').on('click', '.removeButton', function() {
+                reward_number = reward_number - 1;
+                $('.div_reward').find('.addButton').removeAttr('disabled', 'disabled');
                 var $row    = $(this).parents('.remove-group'),
                     $option = $row.find('[name="option[]"]');
 
                 // Remove element containing the option
                 $row.remove();
-
-                // Remove field
-                $('.form-inline').formValidation('removeField', $option);
             });
 
             /* 참가자 양식: 추가 기타양식 체크 시 input required attr 부여 */
@@ -1116,21 +1121,21 @@
                     $('.error3').show();
                 }
                 /* 단일 방식 토너먼트 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
-                if($('input[name="tournament_type"]:radio:checked').val()=="single_tournament" && document.getElementById('single_tournament_final').value=="round_robin_final" && document.getElementById('single_two_tournament_round_robin_final').value=="default"){
+                if($('input[name="tournament_type"]:radio:checked').val()=="single_tournament" && document.getElementById('single_tournament_final').value=="round_robin_final" && document.getElementById('round_robin_final_spec').value=="default"){
                     $('.error7').show();
                 }
                 if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="default"){
                     $('.error4').show();
                 }
                 /* 혼합 방식 토너먼트 & 그룹 스테이지 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
-                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="round_robin_group" && document.getElementById('two_tournament_round_robin_group').value=="default"){
+                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="round_robin_group" && document.getElementById('round_robin_group_spec').value=="default"){
                     $('.error5').show();
                 }
                 if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="default"){
                     $('.error6').show();
                 }
                 /* 혼합 방식 토너먼트 & 파이널 스테이지 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
-                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="round_robin_final" && document.getElementById('single_two_tournament_round_robin_final').value=="default"){
+                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="round_robin_final" && document.getElementById('round_robin_final_spec').value=="default"){
                     $('.error7').show();
                 }
                 if(document.getElementById('registration').value=="default"){
@@ -1141,10 +1146,27 @@
                 }
 
                 /* ajax 실행 */
-
-                $("html, body").animate({ scrollTop: 0 }, "slow");
+                serializedData = $("#making_form").serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '/making/',
+                    data: serializedData,
+                    dataType: 'json',
+                    success: function(response) {
+                        if(response.status=="success"){
+                            alert(response.message)
+                            window.location="{% url 'home' %}"
+                            $("html, body").animate({ scrollTop: 0 }, "slow");
+                        }
+                        else{
+                            if(response.error=="error1"){
+                                $('.error1').removeClass('hide');
+                                $("html, body").animate({ scrollTop: 0 }, "slow");
+                            }
+                        }
+                    }
+                });
             });
-
             /* script end */
         });
     </script>

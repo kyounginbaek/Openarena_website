@@ -789,8 +789,8 @@
                 $('#two_tournament_final').val("default");
 
                 /* input attr 초기화 */
-                $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").removeAttr('required','');
-                $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").removeAttr('autocomplete', 'off');
+                $("#double_elimination_final_spec1").removeAttr('required','');
+                $("#double_elimination_final_spec1").removeAttr('autocomplete', 'off');
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").removeAttr('required','');
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").removeAttr('autocomplete', 'off');
 
@@ -832,10 +832,12 @@
                 $(".error3").hide();
                 $('#single_two_tournament_round_robin_final').val("default");
                 /* input attr 초기화 */
-                $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").removeAttr('required','');
-                $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").removeAttr('autocomplete', 'off');
+                $("#double_elimination_final_spec1").removeAttr('required','');
+                $("#double_elimination_final_spec1").removeAttr('autocomplete', 'off');
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").removeAttr('required','');
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").removeAttr('autocomplete', 'off');
+                $("#custom_point_system_final_spec1, #custom_point_system_final_spec2, #custom_point_system_final_spec3, #custom_point_system_final_spec4").removeAttr('required','');
+                $("#custom_point_system_final_spec1, #custom_point_system_final_spec2, #custom_point_system_final_spec3, #custom_point_system_final_spec4").removeAttr('autocomplete', 'off');
 
                 /* spec value 초기화 */
                 document.getElementById("single_elimination_final_spec").checked = false;
@@ -846,8 +848,8 @@
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").val('');
 
                 if(document.getElementById('single_tournament_final').value=="double_elimination_final"){
-                    $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").attr('required','');
-                    $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").attr('autocomplete', 'off');
+                    $("#double_elimination_final_spec1").attr('required','');
+                    $("#double_elimination_final_spec1").attr('autocomplete', 'off');
                 } else if(document.getElementById('single_tournament_final').value=="swiss_final"){
                     $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").attr('required','');
                     $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").attr('autocomplete', 'off');
@@ -867,6 +869,8 @@
                 $("#double_elimination_group_spec1, #double_elimination_group_spec2").removeAttr('autocomplete', 'off');
                 $("#round_robin_group_spec1, #round_robin_group_spec2").removeAttr('required','');
                 $("#round_robin_group_spec1, #round_robin_group_spec2").removeAttr('autocomplete', 'off');
+                $("#custom_points_system_group_spec1, #custom_points_system_group_spec2, #custom_points_system_group_spec3, #custom_points_system_group_spec4").removeAttr('required','');
+                $("#custom_points_system_group_spec1, #custom_points_system_group_spec2, #custom_points_system_group_spec3, #custom_points_system_group_spec4").removeAttr('autocomplete', 'off');
 
                 /* spec value 초기화 */
                 $("#single_elimination_group_spec1, #single_elimination_group_spec2").val('');
@@ -893,10 +897,12 @@
                 $(".error6").hide();
                 $('#single_two_tournament_round_robin_final').val("default");
                 /* input attr 초기화 */
-                $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").removeAttr('required','');
-                $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").removeAttr('autocomplete', 'off');
+                $("#double_elimination_final_spec1").removeAttr('required','');
+                $("#double_elimination_final_spec1").removeAttr('autocomplete', 'off');
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").removeAttr('required','');
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").removeAttr('autocomplete', 'off');
+                $("#custom_point_system_final_spec1, #custom_point_system_final_spec2, #custom_point_system_final_spec3, #custom_point_system_final_spec4").removeAttr('required','');
+                $("#custom_point_system_final_spec1, #custom_point_system_final_spec2, #custom_point_system_final_spec3, #custom_point_system_final_spec4").removeAttr('autocomplete', 'off');
 
                 /* spec value 초기화 */
                 document.getElementById("single_elimination_final_spec").checked = false;
@@ -907,8 +913,8 @@
                 $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").val('');
 
                 if(document.getElementById('two_tournament_final').value=="double_elimination_final"){
-                    $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").attr('required','');
-                    $("#double_elimination_final_spec1, #double_elimination_group_spec2, #double_elimination_final_spec3").attr('autocomplete', 'off');
+                    $("#double_elimination_final_spec1").attr('required','');
+                    $("#double_elimination_final_spec1").attr('autocomplete', 'off');
                 } else if(document.getElementById('two_tournament_final').value=="swiss_final"){
                     $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").attr('required','');
                     $("#swiss_final_spec1, #swiss_final_spec2, #swiss_final_spec3, #swiss_final_spec4, #swiss_final_spec5").attr('autocomplete', 'off');

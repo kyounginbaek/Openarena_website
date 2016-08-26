@@ -1,6 +1,6 @@
 from django.db import models
 
-class Making(models.Model):
+class Tournament(models.Model):
     username = models.CharField(max_length=30)
     email = models.CharField(max_length=30)
     tournament_name = models.CharField(max_length=30)
@@ -23,3 +23,4 @@ class Making(models.Model):
     reward_spec = models.CharField(max_length=200)
     template = models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
+    confirm = models.CharField(max_length=30)

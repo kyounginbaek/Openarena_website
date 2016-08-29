@@ -371,7 +371,7 @@ input[type=search]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-
 .btn-default{
     border:2px solid #ff9900;
     background-color: #1b1b1b;
-    border-radius: 3px;
+    border-radius: 1px;
     font-size: 21px;
     position: relative;
     color: #ffffff;

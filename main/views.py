@@ -61,10 +61,16 @@ def making(request):
         funding = request.POST.get('funding')
 
         # 공약 내용 & 후원자 보상 리스트 가져오기
-        promise = request.POST.get('promise')
-        promise_spec = request.POST.get('promise_spec')
-        reward = request.POST.get('reward')
-        reward_spec = request.POST.get('reward_spec')
+        promise = request.POST.get('promise1')+request.POST.get('promise_spec1')+request.POST.get('promise2')+request.POST.get('promise_spec2')+\
+                  request.POST.get('promise3')+request.POST.get('promise_spec3')+request.POST.get('promise4')+request.POST.get('promise_spec4')+\
+                  request.POST.get('promise5')+request.POST.get('promise_spec5')+request.POST.get('promise6')+request.POST.get('promise_spec6')+\
+                  request.POST.get('promise7')+request.POST.get('promise_spec7')+request.POST.get('promise8')+request.POST.get('promise_spec8')+\
+                  request.POST.get('promise9')+request.POST.get('promise_spec9')+request.POST.get('promise10')+request.POST.get('promise_spec10')
+        reward = request.POST.get('reward1')+request.POST.get('reward_spec1')+request.POST.get('reward2')+request.POST.get('reward_spec2')+\
+                  request.POST.get('reward3')+request.POST.get('reward_spec3')+request.POST.get('reward4')+request.POST.get('reward_spec4')+\
+                  request.POST.get('reward5')+request.POST.get('reward_spec5')+request.POST.get('reward6')+request.POST.get('reward_spec6')+\
+                  request.POST.get('reward7')+request.POST.get('reward_spec7')+request.POST.get('reward8')+request.POST.get('reward_spec8')+\
+                  request.POST.get('reward9')+request.POST.get('reward_spec9')+request.POST.get('reward10')+request.POST.get('reward_spec10')
 
         # 참가자명/팀명(필수), 참가자 연락처, 참가자 이메일, 추가기타양식(input)
         template = request.POST.get('template_name')+request.POST.get('template_phone')+request.POST.get('template_email')+request.POST.get('input_template_etc')

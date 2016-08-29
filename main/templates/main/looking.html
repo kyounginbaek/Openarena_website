@@ -17,17 +17,25 @@
                 <tr>
                   <th>
                       <div class="desc">
-                        <span style="color: #ff9900">전체</span>
+                        <a id="all" name="all" class="category" href="" style="color: #f7941e">전체</a>
                       </div>
                   </th>
-                  <th><div class="desc">하스스톤</div></th>
+                  <th>
+                      <div class="desc">
+                        <a id="hearthstone" name="hearthstone" class="category" href="" style="color: white">하스스톤</a>
+                      </div>
+                  </th>
                 </tr>
                 <tr>
                   <th>
-                      <div class="desc">오버워치</div>
+                      <div class="desc">
+                          <a id="overwatch" name="overwatch" class="category" href="" style="color: white">오버워치</a>
+                      </div>
                   </th>
                   <th>
-                      <div class="desc">LOL</div>
+                      <div class="desc">
+                          <a id="lol" name="lol" class="category" href="" style="color: white">롤 LOL</a>
+                      </div>
                   </th>
                 </tr>
               </table>
@@ -38,56 +46,26 @@
             <div class="looking_mobile">
                 <div class="abc">
                     <div class="looking_list">
-                        <span style="color: #ff9900">날짜순</span>
+                        <a id="time" name="time" class="filter" href="" style="color: #f7941e">날짜순</a>
                         <span style="margin-left: 10px">|</span>
-                        <span style="margin-left: 10px">인기순</span>
+                        <a id="popular" name="popular" class="filter" href="" style="color: white; margin-left: 10px">인기순</a>
                         <span style="margin-left: 10px">|</span>
-                        <span style="margin-left: 10px">상금순</span>
+                        <a id="reward" name="reward" class="filter" href="" style="color: white; margin-left: 10px">상금순</a>
                     </div>
                 </div>
                 <div class="looking_com">
-                    <div class="looking_picture1">
-                        <img src="../../static/nowcompetition/image1.png">
-                        <div class="pic_title">울산대 VS UNIST 롤대전</div>
-                        <div class="pic_subtitle">울산대학교 롤 대전 예선이 진행중 입니다.</div>
-                        <div class="pic_dscrp">
-                        후원자수 <a class="pic_num">234<span style="color: #ffffff">명</span></a></br>
-                        모인상금 <a class="pic_num">200,000<span style="color: #ffffff">원</span></a></br>
-                        마감기한 <a class="pic_num">D-14<span style="color: #ffffff">일</span></a>
+                    <a href="{% url 'competition' %}">
+                        <div class="looking_picture1">
+                            <img src="../../static/nowcompetition/image1.png" style="margin-bottom: 10px">
+                            <div class="pic_title">미갈리스의 하스스톤 대회</div>
+                            <div class="pic_subtitle">미갈리스 배 하스스톤 레전드 매치는 8강으로 구성된 레전드 bj들의 매치이다.</div>
+                            <div class="pic_dscrp">
+                                후원자수 <p class="pic_num"><span style="color: #ffffff">명</span></p></br>
+                                모인상금 <p class="pic_num"><span style="color: #ffffff">400,000원</span></p></br>
+                                마감기한 <p class="pic_num"><span style="color: #ffffff">일</span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="looking_empty">
-                    </div>
-                    <div class="looking_picture2">
-                        <img  src="../../static/nowcompetition/image2.png">
-                        <div class="pic_title">피파 아마추어 대회</div>
-                        <div class="pic_subtitle">경기 지역 피파 결승전 진행중입니다.</div>
-                        <div class="pic_dscrp">
-                        후원자수 <a class="pic_num">23<span style="color: #ffffff">명</span></a></br>
-                        모인상금 <a class="pic_num">100,000<span style="color: #ffffff">원</span></a></br>
-                        마감기한 <a class="pic_num">D-34<span style="color: #ffffff">일</span></a>
-                        </div>
-                    </div>
-                    <div class="looking_picture3">
-                        <img  src="../../static/nowcompetition/image3.png">
-                        <div class="pic_title">오버워치 아마추어 대회</div>
-                        <div class="pic_subtitle">경남 지역 예선이 진행중 입니다.</div>
-                        <div class="pic_dscrp">
-                        후원자수 <a class="pic_num">301<span style="color: #ffffff">명</span></a></br>
-                        모인상금 <a class="pic_num">123,000<span style="color: #ffffff">원</span></a></br>
-                        마감기한 <a class="pic_num">D-12<span style="color: #ffffff">일</span></a>
-                        </div>
-                    </div>
-                    <div class="looking_picture4">
-                        <img  src="../../static/nowcompetition/image4.png">
-                        <div class="pic_title">하스스톤 마스터즈 대회</div>
-                        <div class="pic_subtitle">서울 지역 예선이 진행중 입니다.</div>
-                        <div class="pic_dscrp">
-                        후원자수 <a class="pic_num">101<span style="color: #ffffff">명</span></a></br>
-                        모인상금 <a class="pic_num">93,000<span style="color: #ffffff">원</span></a></br>
-                        마감기한 <a class="pic_num">D-14<span style="color: #ffffff">일</span></a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="now_order">
@@ -131,6 +109,20 @@
                 offsetTop = offset.top;
                 $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
             }
+
+            /* 게임별 대회 카테고리 누를 시 글자색 변하기 */
+            $('.category').on('click',function() {
+                $('.category').css('color', 'white');
+                $('#'+this.id).css('color', '#f7941e');
+                return false;
+            });
+
+            /* 필터 기능 누를 시 글자색 변하기 */
+            $('.filter').on('click',function() {
+                $('.filter').css('color', 'white');
+                $('#'+this.id).css('color', '#f7941e');
+                return false;
+            });
         });
     </script>
 {% endblock %}

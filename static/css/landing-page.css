@@ -15,7 +15,7 @@
     margin-top: 50px;
     border:2px solid rgba(255, 153, 0, 1);
     background-color: #1b1b1b;
-    border-radius: 5px;
+    border-radius: 1px;
     padding-top: 28px;
     padding-bottom: 28px;
 }
@@ -117,7 +117,8 @@ li.competition-item img{
 }
 .intro-message {
     margin: auto;
-    padding: 200px 0px;
+    padding-top: 170px;
+    padding-bottom: 143px;
 }
 
 .intro-message > h1 {
@@ -462,9 +463,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .donater_title{
     font-weight: bold;
 }
-.donater_text{
-    background-color: #222;
+.donater_container{
     color: #ffffff;
+    padding-top: 20px;
 }
  @media(max-width:770px) {
     .form-control {
@@ -588,7 +589,14 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     padding-left: 0px;
     margin-top: 20px;
 }
-
+.com_donate_list{
+    background-color: #222;
+}
+.com_donate_icon{
+    height: 40px;
+    width: 40px;
+    padding: 3px;
+}
 .footer-menu-divider{
     color: #f7941e;
 }

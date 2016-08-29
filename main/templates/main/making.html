@@ -49,7 +49,7 @@
                       <label class="making_font" for="tournament_url">주소 설정 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">openarena.co.kr/</span>
+                        <span class="input-group-addon" id="basic-addon3">openarena.kr/</span>
                         <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch (한글 불가)">
                     </div>
                     &nbsp;
@@ -562,11 +562,11 @@
                     <!-- js dynamic form fields : add -->
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="promise" name="promise" placeholder="예) 100,000" />
+                            <input type="text" class="form-control" id="promise1" name="promise1" placeholder="예) 100,000" />
                             <span class="input-group-addon">원에 도달하면</span>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="promise_spec" name="promise_spec" placeholder="예) 참가팀 전원에게 선물">
+                            <input type="text" class="form-control" id="promise_spec1" name="promise_spec1" placeholder="예) 참가팀 전원에게 선물">
                             <span class="input-group-btn">
                                 <button class="btn btn-success addButton" type="button">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -606,11 +606,11 @@
                     <!-- js dynamic form fields : add -->
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="reward" name="reward" placeholder="예) 10,000">
+                            <input type="text" class="form-control" id="reward1" name="reward1" placeholder="예) 10,000">
                             <span class="input-group-addon">원을 후원하면</span>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="reward_spec" name="reward_spec" placeholder="예) 마우스패드를 드려요">
+                            <input type="text" class="form-control" id="reward_spec1" name="reward_spec1" placeholder="예) 마우스패드를 드려요">
                             <span class="input-group-btn">
                                 <button class="btn btn-success addButton" type="button">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -627,11 +627,11 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="option[]" id="reward" name="reward" placeholder="예) 20,000" />
+                                <input type="text" class="form-control" id="reward" name="reward" placeholder="예) 20,000" />
                                 <span class="input-group-addon">원에 도달하면</span>
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="option[]" id="reward_spec" name="reward_spec" placeholder="예) 마우스패드를 드려요">
+                                <input type="text" class="form-control" id="reward_spec" name="reward_spec" placeholder="예) 마우스패드를 드려요">
                                 <span class="input-group-btn">
                                     <button class="btn btn-danger removeButton" type="button">
                                         <span class="glyphicon glyphicon-minus"></span>
@@ -1049,14 +1049,13 @@
             var promise_number = 1;
             $('.div_promise').on('click', '.addButton', function() {
                 if(promise_number < MAX_OPTIONS){
+                    promise_number = promise_number + 1;
                     var $template = $('#promiseTemplate'),
                     $clone    = $template
                                     .clone()
                                     .removeClass('hide')
                                     .removeAttr('id')
-                                    .insertBefore($template),
-                    $option   = $clone.find('[name="option[]"]');
-                    promise_number = promise_number + 1;
+                                    .insertBefore($template);
                 } else {
                     $('.div_promise').find('.addButton').attr('disabled', 'disabled');
                 }
@@ -1065,8 +1064,7 @@
             $('.div_promise').on('click', '.removeButton', function() {
                 promise_number = promise_number - 1;
                 $('.div_promise').find('.addButton').removeAttr('disabled', 'disabled');
-                var $row    = $(this).parents('.remove-group'),
-                    $option = $row.find('[name="option[]"]');
+                var $row    = $(this).parents('.remove-group');
 
                 // Remove element containing the option
                 $row.remove();
@@ -1078,14 +1076,13 @@
             var reward_number = 1;
             $('.div_reward').on('click', '.addButton', function() {
                 if(reward_number < MAX_OPTIONS){
+                    reward_number = reward_number + 1;
                     var $template = $('#rewardTemplate'),
                     $clone    = $template
                                     .clone()
                                     .removeClass('hide')
                                     .removeAttr('id')
-                                    .insertBefore($template),
-                    $option   = $clone.find('[name="option[]"]');
-                    reward_number = reward_number + 1;
+                                    .insertBefore($template);
                 } else {
                     $('.div_reward').find('.addButton').attr('disabled', 'disabled');
                 }
@@ -1094,8 +1091,7 @@
             $('.div_reward').on('click', '.removeButton', function() {
                 reward_number = reward_number - 1;
                 $('.div_reward').find('.addButton').removeAttr('disabled', 'disabled');
-                var $row    = $(this).parents('.remove-group'),
-                    $option = $row.find('[name="option[]"]');
+                var $row    = $(this).parents('.remove-group');
 
                 // Remove element containing the option
                 $row.remove();
@@ -1154,8 +1150,8 @@
                     dataType: 'json',
                     success: function(response) {
                         if(response.status=="success"){
-                            alert(response.message)
-                            window.location="{% url 'home' %}"
+                            alert(response.message);
+                            window.location="{% url 'home' %}";
                             $("html, body").animate({ scrollTop: 0 }, "slow");
                         }
                         else{

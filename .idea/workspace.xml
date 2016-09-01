@@ -2,18 +2,168 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/home_spin.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/base.css" afterPath="$PROJECT_DIR$/main/static/admin/css/base.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" afterPath="$PROJECT_DIR$/main/static/admin/css/changelists.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterPath="$PROJECT_DIR$/main/static/admin/css/dashboard.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" afterPath="$PROJECT_DIR$/main/static/admin/css/fonts.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/forms.css" afterPath="$PROJECT_DIR$/main/static/admin/css/forms.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/login.css" afterPath="$PROJECT_DIR$/main/static/admin/css/login.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" afterPath="$PROJECT_DIR$/main/static/admin/css/rtl.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" afterPath="$PROJECT_DIR$/main/static/admin/css/widgets.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterPath="$PROJECT_DIR$/main/static/admin/fonts/LICENSE.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterPath="$PROJECT_DIR$/main/static/admin/fonts/README.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="$PROJECT_DIR$/main/static/admin/fonts/Roboto-Bold-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="$PROJECT_DIR$/main/static/admin/fonts/Roboto-Light-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="$PROJECT_DIR$/main/static/admin/fonts/Roboto-Regular-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" afterPath="$PROJECT_DIR$/main/static/admin/img/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/README.txt" afterPath="$PROJECT_DIR$/main/static/admin/img/README.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/calendar-icons.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/gis/move_vertex_off.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/gis/move_vertex_on.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-addlink.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-alert.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-calendar.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-changelink.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-clock.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-deletelink.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-no.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-unknown-alt.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-unknown.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/icon-yes.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/inline-delete.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/search.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/search.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/selector-icons.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/sorting-icons.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/tooltag-add.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterPath="$PROJECT_DIR$/main/static/admin/img/tooltag-arrowright.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterPath="$PROJECT_DIR$/main/static/admin/js/SelectBox.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterPath="$PROJECT_DIR$/main/static/admin/js/SelectFilter2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/actions.js" afterPath="$PROJECT_DIR$/main/static/admin/js/actions.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterPath="$PROJECT_DIR$/main/static/admin/js/actions.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterPath="$PROJECT_DIR$/main/static/admin/js/admin/DateTimeShortcuts.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterPath="$PROJECT_DIR$/main/static/admin/js/admin/RelatedObjectLookups.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" afterPath="$PROJECT_DIR$/main/static/admin/js/calendar.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" afterPath="$PROJECT_DIR$/main/static/admin/js/collapse.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterPath="$PROJECT_DIR$/main/static/admin/js/collapse.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/core.js" afterPath="$PROJECT_DIR$/main/static/admin/js/core.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" afterPath="$PROJECT_DIR$/main/static/admin/js/inlines.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterPath="$PROJECT_DIR$/main/static/admin/js/inlines.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterPath="$PROJECT_DIR$/main/static/admin/js/jquery.init.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterPath="$PROJECT_DIR$/main/static/admin/js/prepopulate.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterPath="$PROJECT_DIR$/main/static/admin/js/prepopulate.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" afterPath="$PROJECT_DIR$/main/static/admin/js/timeparse.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" afterPath="$PROJECT_DIR$/main/static/admin/js/urlify.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="$PROJECT_DIR$/main/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/main/static/admin/js/vendor/jquery/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/main/static/admin/js/vendor/jquery/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="$PROJECT_DIR$/main/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="$PROJECT_DIR$/main/static/admin/js/vendor/xregexp/xregexp.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/animate.css" afterPath="$PROJECT_DIR$/main/static/css/animate.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/main/static/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/main/static/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/contact_form.css" afterPath="$PROJECT_DIR$/main/static/css/contact_form.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/custom_kyoungin.css" afterPath="$PROJECT_DIR$/main/static/css/custom_kyoungin.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/easy-responsive-tabs.css" afterPath="$PROJECT_DIR$/main/static/css/easy-responsive-tabs.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/font-awesome.css" afterPath="$PROJECT_DIR$/main/static/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/main/static/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/home_spin.css" afterPath="$PROJECT_DIR$/main/static/css/home_spin.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/join.css" afterPath="$PROJECT_DIR$/main/static/css/join.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/jquery-ui.css" afterPath="$PROJECT_DIR$/main/static/css/jquery-ui.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/jquery.datetimepicker.css" afterPath="$PROJECT_DIR$/main/static/css/jquery.datetimepicker.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="$PROJECT_DIR$/main/static/css/landing-page.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/normalize.css" afterPath="$PROJECT_DIR$/main/static/css/normalize.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/main/static/css/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/bx_loader.gif" afterPath="$PROJECT_DIR$/main/static/images/bx_loader.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/close.png" afterPath="$PROJECT_DIR$/main/static/images/close.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/loading.gif" afterPath="$PROJECT_DIR$/main/static/images/loading.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture1.png" afterPath="$PROJECT_DIR$/main/static/images/lol/picture1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture2.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture3.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture4.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture5.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture6.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture6.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture7.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture8.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture8.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture9.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture9.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/next.png" afterPath="$PROJECT_DIR$/main/static/images/next.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture1.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture2.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture3.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture4.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture5.png" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture5.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture6.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture6.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture7.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture8.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture8.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture9.png" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture9.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/previous.png" afterPath="$PROJECT_DIR$/main/static/images/previous.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_about.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_about.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_arrow.png" afterPath="$PROJECT_DIR$/main/static/images/templatemo_arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_arrow_gap.png" afterPath="$PROJECT_DIR$/main/static/images/templatemo_arrow_gap.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_contact1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_contact1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home2.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home3.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home4.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_service1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_service1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_service2.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_service2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_servicebg.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_servicebg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_team.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_team.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testi_arrow.png" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testi_arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testimonial1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testimonial1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testimonial2.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testimonial2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testimonial3.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testimonial3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_vision.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_vision.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/banner-bg.svg" afterPath="$PROJECT_DIR$/main/static/img/banner-bg.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/com_back.png" afterPath="$PROJECT_DIR$/main/static/img/com_back.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/com_profile.png" afterPath="$PROJECT_DIR$/main/static/img/com_profile.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/dog.png" afterPath="$PROJECT_DIR$/main/static/img/dog.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/down_arrow.png" afterPath="$PROJECT_DIR$/main/static/img/down_arrow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/facebook.png" afterPath="$PROJECT_DIR$/main/static/img/facebook.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/facebook.svg" afterPath="$PROJECT_DIR$/main/static/img/facebook.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/favicon.ico" afterPath="$PROJECT_DIR$/main/static/img/favicon.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/gamer.jpg" afterPath="$PROJECT_DIR$/main/static/img/gamer.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/intro-bg.jpg" afterPath="$PROJECT_DIR$/main/static/img/intro-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/ipad.png" afterPath="$PROJECT_DIR$/main/static/img/ipad.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/logo.png" afterPath="$PROJECT_DIR$/main/static/img/logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/naver.svg" afterPath="$PROJECT_DIR$/main/static/img/naver.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/openarena.svg" afterPath="$PROJECT_DIR$/main/static/img/openarena.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/pattern.png" afterPath="$PROJECT_DIR$/main/static/img/pattern.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/phones.png" afterPath="$PROJECT_DIR$/main/static/img/phones.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/profile.svg" afterPath="$PROJECT_DIR$/main/static/img/profile.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/q_cover.png" afterPath="$PROJECT_DIR$/main/static/img/q_cover.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/bootstrap.js" afterPath="$PROJECT_DIR$/main/static/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/main/static/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/easyResponsiveTabs.js" afterPath="$PROJECT_DIR$/main/static/js/easyResponsiveTabs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/index.js" afterPath="$PROJECT_DIR$/main/static/js/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery-1.10.2.min.js" afterPath="$PROJECT_DIR$/main/static/js/jquery-1.10.2.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery-ui.js" afterPath="$PROJECT_DIR$/main/static/js/jquery-ui.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery.datetimepicker.js" afterPath="$PROJECT_DIR$/main/static/js/jquery.datetimepicker.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery.js" afterPath="$PROJECT_DIR$/main/static/js/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery.lightbox.js" afterPath="$PROJECT_DIR$/main/static/js/jquery.lightbox.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/templatemo_custom.js" afterPath="$PROJECT_DIR$/main/static/js/templatemo_custom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/arrows.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/arrows.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/bg.jpg" afterPath="$PROJECT_DIR$/main/static/nowcompetition/bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/grid.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/grid.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/image1.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/image1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/image2.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/image2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/image3.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/image3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/image4.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/image4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/nowcompetition/image5.png" afterPath="$PROJECT_DIR$/main/static/nowcompetition/image5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/openarena.iml" afterPath="$PROJECT_DIR$/.idea/openarena.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/base.html" afterPath="$PROJECT_DIR$/main/templates/main/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/competition.html" afterPath="$PROJECT_DIR$/main/templates/main/competition.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/contact.html" afterPath="$PROJECT_DIR$/main/templates/main/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/home.html" afterPath="$PROJECT_DIR$/main/templates/main/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/looking.html" afterPath="$PROJECT_DIR$/main/templates/main/looking.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/making.html" afterPath="$PROJECT_DIR$/main/templates/main/making.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/urls.py" afterPath="$PROJECT_DIR$/main/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="$PROJECT_DIR$/static/css/landing-page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openarena/settings.py" afterPath="$PROJECT_DIR$/openarena/settings.py" />
     </list>
     <ignored path="openarena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,67 +191,29 @@
       <file leaf-file-name="making.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1834">
-              <caret line="1152" column="39" selection-start-line="1152" selection-start-column="39" selection-end-line="1152" selection-end-column="39" />
+            <state relative-caret-position="274">
+              <caret line="769" column="36" selection-start-line="769" selection-start-column="36" selection-end-line="769" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="looking.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/looking.html">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/openarena/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+            <state relative-caret-position="523">
+              <caret line="132" column="9" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="competition.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/competition.html">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-315">
-              <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
-              <folding>
-                <element signature="e#1418#1438#0#HTML" expanded="true" />
-                <element signature="e#10541#10565#0#HTML" expanded="true" />
-                <element signature="e#11520#11544#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_spin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/home_spin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-              <folding>
-                <element signature="e#580#605#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="63" column="71" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main/static/js/jquery-1.10.2.min.js" />
         <option value="$PROJECT_DIR$/main/static/js/index.js" />
         <option value="$PROJECT_DIR$/main/static/css/jquery.datetimepicker.css" />
         <option value="$PROJECT_DIR$/main/static/js/jquery.datetimepicker.js" />
@@ -156,25 +267,26 @@
         <option value="$PROJECT_DIR$/accounts/email-auth.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/openarena/settings.py" />
         <option value="$PROJECT_DIR$/openarena/urls.py" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/main/templates/main/support.html" />
-        <option value="$PROJECT_DIR$/main/urls.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/main/forms.py" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
-        <option value="$PROJECT_DIR$/main/models.py" />
-        <option value="$PROJECT_DIR$/main/templates/main/looking.html" />
-        <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/main/templates/main/making.html" />
         <option value="$PROJECT_DIR$/main/templates/main/competition.html" />
         <option value="$PROJECT_DIR$/main/templates/main/home.html" />
-        <option value="$PROJECT_DIR$/main/templates/main/base.html" />
         <option value="$PROJECT_DIR$/main/templates/main/contact.html" />
         <option value="$PROJECT_DIR$/static/css/landing-page.css" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/main/templates/main/base.html" />
+        <option value="$PROJECT_DIR$/main/templates/main/looking.html" />
+        <option value="$PROJECT_DIR$/main/urls.py" />
+        <option value="$PROJECT_DIR$/main/views.py" />
+        <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/main/templates/main/making.html" />
+        <option value="$PROJECT_DIR$/openarena/wsgi.py" />
+        <option value="$PROJECT_DIR$/openarena/settings.py" />
       </list>
     </option>
   </component>
@@ -215,7 +327,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,117 +355,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="openarena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openarena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openarena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openarena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openarena" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,19 +406,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main" />
+      <recent name="$PROJECT_DIR$/accounts/templates/accounts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/accounts/forms" />
+      <recent name="$PROJECT_DIR$/accounts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/main/static/img" />
       <recent name="$PROJECT_DIR$/main/static" />
       <recent name="$PROJECT_DIR$/main/static/nowcompetition" />
       <recent name="$PROJECT_DIR$/main/static/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/accounts/templates/accounts" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/accounts/forms" />
-      <recent name="$PROJECT_DIR$/accounts" />
-      <recent name="$PROJECT_DIR$/main" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.openarena">
@@ -668,15 +708,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="40" width="1267" height="733" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31346938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31836733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.50285715" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32761312" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32761312" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -766,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openarena/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/hallfame.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -781,7 +814,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/favicon.ico">
+    <entry file="file://$PROJECT_DIR$/main/static/img/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -800,7 +833,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery.js">
+    <entry file="file://$PROJECT_DIR$/main/static/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11009">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -865,14 +898,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/profile.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openarena/__init__.py">
+    <entry file="file://$PROJECT_DIR$/main/static/img/profile.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -889,41 +915,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/contact_form.css">
+    <entry file="file://$PROJECT_DIR$/main/static/css/contact_form.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/main/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="499">
           <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openarena/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openarena/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/custom_kyoungin.css">
+    <entry file="file://$PROJECT_DIR$/main/static/css/custom_kyoungin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,18 +951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/join.css">
+    <entry file="file://$PROJECT_DIR$/main/static/css/join.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,14 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="131" column="28" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -984,68 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="63" column="71" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1834">
-          <caret line="1152" column="39" selection-start-line="1152" selection-start-column="39" selection-end-line="1152" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/looking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/competition.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
-          <folding>
-            <element signature="e#1418#1438#0#HTML" expanded="true" />
-            <element signature="e#10541#10565#0#HTML" expanded="true" />
-            <element signature="e#11520#11544#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/home_spin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,29 +996,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/landing-page.css">
+    <entry file="file://$PROJECT_DIR$/main/static/css/landing-page.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="364" column="5" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="374" column="20" selection-start-line="374" selection-start-column="20" selection-end-line="374" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/home_spin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/competition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="e#1418#1438#0#HTML" expanded="false" />
+            <element signature="e#10541#10565#0#HTML" expanded="false" />
+            <element signature="e#11520#11544#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openarena/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/main/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="374" column="20" selection-start-line="374" selection-start-column="20" selection-end-line="374" selection-end-column="20" />
+        <state relative-caret-position="195">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/looking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        <state relative-caret-position="270">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding>
-            <element signature="e#580#605#0#HTML" expanded="true" />
+            <element signature="e#580#605#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openarena/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openarena/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="769" column="36" selection-start-line="769" selection-start-column="36" selection-end-line="769" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openarena/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="132" column="9" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

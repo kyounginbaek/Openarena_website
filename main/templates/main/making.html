@@ -562,11 +562,11 @@
                     <!-- js dynamic form fields : add -->
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="promise1" name="promise1" placeholder="예) 100,000" />
+                            <input type="text" class="form-control" id="promise" name="promise[]" placeholder="예) 100,000" />
                             <span class="input-group-addon">원에 도달하면</span>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="promise_spec1" name="promise_spec1" placeholder="예) 참가팀 전원에게 선물">
+                            <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 참가팀 전원에게 선물">
                             <span class="input-group-btn">
                                 <button class="btn btn-success addButton" type="button">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -583,11 +583,11 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="promise" name="promise" placeholder="예) 200,000" />
+                                <input type="text" class="form-control" id="promise" name="promise[]" placeholder="예) 200,000" />
                                 <span class="input-group-addon">원에 도달하면</span>
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="promise_spec" name="promise_spec" placeholder="예) 참가팀 전원에게 선물">
+                                <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 참가팀 전원에게 선물">
                                 <span class="input-group-btn">
                                     <button class="btn btn-danger removeButton" type="button">
                                         <span class="glyphicon glyphicon-minus"></span>
@@ -606,11 +606,11 @@
                     <!-- js dynamic form fields : add -->
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="reward1" name="reward1" placeholder="예) 10,000">
+                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 10,000">
                             <span class="input-group-addon">원을 후원하면</span>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="reward_spec1" name="reward_spec1" placeholder="예) 마우스패드를 드려요">
+                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스패드를 드려요">
                             <span class="input-group-btn">
                                 <button class="btn btn-success addButton" type="button">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -627,11 +627,11 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="reward" name="reward" placeholder="예) 20,000" />
+                                <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 20,000" />
                                 <span class="input-group-addon">원에 도달하면</span>
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="reward_spec" name="reward_spec" placeholder="예) 마우스패드를 드려요">
+                                <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스패드를 드려요">
                                 <span class="input-group-btn">
                                     <button class="btn btn-danger removeButton" type="button">
                                         <span class="glyphicon glyphicon-minus"></span>
@@ -763,6 +763,13 @@
                         inputVal = inputVal.replace(/\.+$/,'');
                     }
                     $(this).val(inputVal);
+                }
+            });
+            /* 공약내용 & 후원내용 금전 input : 숫자만 입력이 가능하도록 */
+            $("input[name=promise], input[name=reward]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
                 }
             });
 
@@ -1108,60 +1115,93 @@
                 }
             });
 
-            $("#making_form").submit(function(e){
-                e.preventDefault();
-                if(document.getElementById('streaming_url').value=="default"){
-                    $('.error2').show();
-                }
-                if($('input[name="tournament_type"]:radio:checked').val()=="single_tournament" && document.getElementById('single_tournament_final').value=="default"){
-                    $('.error3').show();
-                }
-                /* 단일 방식 토너먼트 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
-                if($('input[name="tournament_type"]:radio:checked').val()=="single_tournament" && document.getElementById('single_tournament_final').value=="round_robin_final" && document.getElementById('round_robin_final_spec').value=="default"){
-                    $('.error7').show();
-                }
-                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="default"){
-                    $('.error4').show();
-                }
-                /* 혼합 방식 토너먼트 & 그룹 스테이지 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
-                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="round_robin_group" && document.getElementById('round_robin_group_spec').value=="default"){
-                    $('.error5').show();
-                }
-                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="default"){
-                    $('.error6').show();
-                }
-                /* 혼합 방식 토너먼트 & 파이널 스테이지 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
-                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="round_robin_final" && document.getElementById('round_robin_final_spec').value=="default"){
-                    $('.error7').show();
-                }
-                if(document.getElementById('registration').value=="default"){
-                    $('.error8').show();
-                }
-                if(document.getElementById('checkin').checked==true && document.getElementById('checkin_time').value=="default"){
-                    $('.error9').show();
-                }
+            /* tournament_url 실시간 ajax 체크 */
+            var tournament_url_error = 0;
+            $("#tournament_url").focus(function(){
+                /* 에러 변수 초기화 */
+                /* tournament_url 새로 입력 시 error 메세지 hide */
+                $(".error1").hide();
+            });
 
+            $("#tournament_url").submit(function(){
                 /* ajax 실행 */
                 serializedData = $("#making_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/making/',
+                    url: '/tournament_url_check/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
-                        if(response.status=="success"){
-                            alert(response.message);
-                            window.location="{% url 'home' %}";
-                            $("html, body").animate({ scrollTop: 0 }, "slow");
-                        }
-                        else{
-                            if(response.error=="error1"){
-                                $('.error1').removeClass('hide');
-                                $("html, body").animate({ scrollTop: 0 }, "slow");
-                            }
+                        if(response.status=="error"){
+                            $('.error1').show();
+                            tournament_url_error = 1;
+                        } else if(response.status=="success") {
+                            $('.error1').hide();
+                            tournament_url_error = 0;
                         }
                     }
                 });
+            });
+
+            $("#making_form").submit(function(e){
+                e.preventDefault();
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                var error = 0;
+                if(document.getElementById('streaming_url').value=="default"){
+                    $('.error2').show();
+                    error = 1;
+                }
+                if($('input[name="tournament_type"]:radio:checked').val()=="single_tournament" && document.getElementById('single_tournament_final').value=="default"){
+                    $('.error3').show();
+                    error = 1;
+                }
+                /* 단일 방식 토너먼트 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
+                if($('input[name="tournament_type"]:radio:checked').val()=="single_tournament" && document.getElementById('single_tournament_final').value=="round_robin_final" && document.getElementById('round_robin_final_spec').value=="default"){
+                    $('.error7').show();
+                    error = 1;
+                }
+                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="default"){
+                    $('.error4').show();
+                    error = 1;
+                }
+                /* 혼합 방식 토너먼트 & 그룹 스테이지 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
+                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_group').value=="round_robin_group" && document.getElementById('round_robin_group_spec').value=="default"){
+                    $('.error5').show();
+                    error = 1;
+                }
+                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="default"){
+                    $('.error6').show();
+                    error = 1;
+                }
+                /* 혼합 방식 토너먼트 & 파이널 스테이지 & 라운드 로빈 & 등급 순위 default시 에러 문구 show */
+                if($('input[name="tournament_type"]:radio:checked').val()=="two_tournament" && document.getElementById('two_tournament_final').value=="round_robin_final" && document.getElementById('round_robin_final_spec').value=="default"){
+                    $('.error7').show();
+                    error = 1;
+                }
+                if(document.getElementById('registration').value=="default"){
+                    $('.error8').show();
+                    error = 1;
+                }
+                if(document.getElementById('checkin').checked==true && document.getElementById('checkin_time').value=="default"){
+                    $('.error9').show();
+                    error = 1;
+                }
+
+                if(tournament_url_error==1 || error==1){
+                    alert("대회 만들기에 성공하지 못했습니다. 오류 메세지가 뜬 항목들을 다시 입력해주세요.");
+                } else {
+                    /* 모든 error 체크가 다 끝난 후 data save를 위한 ajax 실행 */
+                    serializedData = $("#making_form").serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: '/making/',
+                        data: serializedData,
+                        dataType: 'json',
+                        success: function(response) {
+                            alert(response.message);
+                        }
+                    });
+                }
             });
             /* script end */
         });

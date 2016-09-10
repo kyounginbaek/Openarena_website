@@ -105,7 +105,7 @@ li.competition-item img{
     color: #f8f8f8;
     height: 650px;
     background: url(../../static/img/com_back.png) no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     font-family: 나눔고딕;
 
 
@@ -525,6 +525,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     border:1px solid #d1c0a5;
     background-color: #1a1a1a;
 }
+.com_donatelist_box{
+    margin-bottom: 20px;
+}
 .com_intro_box{
     width: 100%;
     padding: 20px 20px;
@@ -569,7 +572,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .com_profile{
         background: url(../../static/img/com_profile.png) no-repeat center center;
-        background-size: cover;
+        background-size: contain;
         height: 160px;
 
 }
@@ -596,6 +599,25 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     height: 40px;
     width: 40px;
     padding: 3px;
+}
+.com_donate_desp{
+    height: 40px;
+    width: 85%;
+    display: inline;
+
+}
+.com_donate_enroll{
+    width: 12%;
+    height: 40px;
+    padding: 7px;
+    font-size: 15px;
+    float: right;
+}
+.match_list{
+    background: url(../../static/img/match_list.png);
+    background-size: cover;
+    height: 741px;
+
 }
 .footer-menu-divider{
     color: #f7941e;
@@ -677,7 +699,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     cursor: pointer;
 }
 .facebook_btn img{
-    width: auto;
+    width: 26px;
     border-color:#4460A0;
 }
 .facebook_font{

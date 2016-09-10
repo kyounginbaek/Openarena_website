@@ -7,16 +7,33 @@
     padding: 7px;
     font-size: 18px;
 }
+/*너비가 991보다 작을떄*/
+@media(max-width:770px){
+    .center-block{
+        float: left;
+        margin: auto;
+    }
+    .button_blank{
+        width: 20px;
+        float: left;
+        height:20px;
+    }
+}
 .join_submit{
     font-size: 15px;
     font-family: 나눔글꼴;
-    background: #3885ca;
-    border:1px solid #3885ca;
+    background: #ff9900;
+    border:1px solid #ff9900;
     border-radius: 3px;
-    color: #fff;
+    color: #ffffff;
     width: 120px;
     height: 40px;
     padding: 5px;
+}
+.modal-content{
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 나눔글꼴;
 }
 .modal-header {
 }

@@ -109,7 +109,7 @@ def funding(request):
 
         url = "https://toss.im/tosspay/api/v1/payments"
         params = {
-            "orderNo": "20160919"+str(random.randrange(1,99999999)),
+            "orderNo": "2016091901"+str(random.randrange(1,99999999)),
             "amount": funding_amount,
             "productDesc": "미갈리스의 하스스톤 대회",
             "apiKey": "sk_test_AVkGqlMNRdAVkGqlMNRd",
@@ -119,7 +119,16 @@ def funding(request):
         response = requests.post(url, data=params)
         print(response.text)
 
-        if response.text['status'] == 200 and response.text['code'] != -1:
-            return redirect(response.text['checkoutPage'])
+        if response.json().get('status') == 200 and response.json().get('code') != -1:
+            return redirect(response.json().get('checkoutPage'))
+        else:
+            response = {'status': 'fail'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
 
     return render(request, 'main/competition.html', {})
+
+def privacy(request):
+    return render(request, 'main/privacy.html', {})
+
+def agreement(request):
+    return render(request, 'main/agreement.html', {})

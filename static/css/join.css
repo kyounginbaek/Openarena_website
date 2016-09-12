@@ -30,6 +30,21 @@
     height: 40px;
     padding: 5px;
 }
+.donate_submit{
+    font-size: 15px;
+    font-family: 나눔글꼴;
+    background: transparent;
+    border:1px solid #ff9900;
+    border-radius: 3px;
+    color: #ffffff;
+    margin: auto;
+    width: 250px;
+    height: 80px;
+    padding: 5px;
+}
+.donate_submit:hover{
+    background:#ff9900;
+}
 .modal-content{
     background-color: #1e1e1e;
     color: #ffffff;

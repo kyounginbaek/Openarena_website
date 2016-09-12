@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'accounts',
-    'social.apps.django_app.default',
+    #'social.apps.django_app.default',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -72,8 +72,8 @@ TEMPLATES = [
                 'django.core.context_processors.media',
                 'django.core.context_processors.static',
                 'django.core.context_processors.tz',
-                'social.apps.django_app.context_processors.backends',
-                'social.apps.django_app.context_processors.login_redirect',
+                #'social.apps.django_app.context_processors.backends',
+                #'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
 
 AUTHENTICATION_BACKENDS = (
     'accounts.email-auth.EmailOrUsernameModelBackend',
-    'social.backends.facebook.FacebookOAuth2',
+    # 'social.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 

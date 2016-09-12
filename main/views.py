@@ -1,4 +1,6 @@
 import json
+import random
+
 import requests
 
 from django.contrib import messages
@@ -107,7 +109,7 @@ def funding(request):
 
         url = "https://toss.im/tosspay/api/v1/payments"
         params = {
-            "orderNo": "2016091900001",
+            "orderNo": "20160919"+str(random.randrange(1,99999999)),
             "amount": funding_amount,
             "productDesc": "미갈리스의 하스스톤 대회",
             "apiKey": "sk_test_AVkGqlMNRdAVkGqlMNRd",
@@ -117,7 +119,7 @@ def funding(request):
         response = requests.post(url, data=params)
         print(response.text)
 
-        if response.text == 200:
-            return redirect('/some/url/')
+        if response.text['status'] == 200 and response.text['code'] != -1:
+            return redirect(response.text['checkoutPage'])
 
     return render(request, 'main/competition.html', {})

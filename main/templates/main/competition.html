@@ -18,29 +18,31 @@
                <!--대회설명--><div class="col-sm-6 col-md-6 col-xs-12 ">
                                    <div class="com_title">미갈리스의 하스스톤 대회</div></br>
                                    <p class="com_subtitle hidden-xs">미갈리스 배 하스스톤 레전드 매치는 8강으로 구성된 레전드 bj들의 매치입니다. 탑 티어 플레이들이 4주간에 걸처 싱글 토너먼트 형식으로 진행됩니다.</p>
-                                   <div class="com_subtitle">2016/09/넷째주 06:00 pm</div></br>
+                                   <div class="com_subtitle">2016년 09월 19일 06:00 pm</div></br>
                                </div>
                <!--후원/참가--><div class="col-sm-3 col-md-3 col-xs-12 ">
                                 <ul class="com_mainbox">
                         <li class="">
                             <div class="" >
-                                <button class="btn btn-primary center-block">후원하기 </button>
+                                <button data-toggle="modal" data-target="#fundingModal" class="btn btn-primary center-block">후원하기 </button>
                             </div>
                             <div class="hidden-xs" style="height: 20px"></div>
                             <div class="button_blank" ></div>
-                            <!--참가하기-->
+                            <!--참가하기
                             <div class="center" >
-                              <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">참가하기</button>
+                              <button data-toggle="modal" data-target="#registerModal" class="btn btn-primary center-block">참가하기</button>
                             </div>
+                            -->
                         </li>
                     </ul>
                                 </div>
-               <!--상금바--> <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                               <h4 class="com_title">250,000 / 500,000 / 후원 해주셨습니다 </h4>
-                               <div class="com_white_bar">
-                                   <div class="com_orange_bar"></div>
-                               </div>
-                              </div>
+               <!--상금바-->
+               <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
+                   <h4 class="com_title">250,000 / 500,000 / 후원 해주셨습니다 </h4>
+                   <div class="com_white_bar">
+                       <div class="com_orange_bar"></div>
+                   </div>
+               </div>
            </div>
 
        </div>
@@ -93,13 +95,13 @@
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                <div class="container com_intro_now">
                     <div class="com_into_small">후원자 수</div>
-                   <div class="com_into_small"><span  class="com_into_big">234</span> 명</div><br>
+                   <div class="com_into_small"><span  class="com_into_big">6</span> 명</div><br>
                    <div class="com_into_small">모인 상금</div>
-                   <div class="com_into_small"><span class="com_into_big">300,000</span> 원</div><br>
+                   <div class="com_into_small"><span class="com_into_big">400,000</span> 원</div><br>
                    <div class="com_into_small">마감 기한</div>
-                   <div class="com_into_small"><span class="com_into_big">13</span> 일</div><br>
+                   <div class="com_into_small"><span class="com_into_big">6</span> 일</div><br>
                    <div class="com_into_small">참가자 수</div>
-                   <div class="com_into_small"><span class="com_into_big">13 / 50</span> 명</div><br>
+                   <div class="com_into_small"><span class="com_into_big">4</span> 명</div><br>
                    <div class="com_into_small facebook_btn">
                        <img src="../../static/img/facebook.svg"> <a class="facebook_font">공유하기</a>
                    </div>
@@ -199,8 +201,8 @@
                     - 어뷰징 및 관전 등 부정행위를한 선수는 이후 미갈tv 에서진행하는 모든 방송에 참여가 불가합니다.</br>
                     - 부정행위가 적발되면 그 즉시 몰수패처리됩니다.</br>
                     - 타 대회에서 부정행위를 한 선수도대회에 참여를 못할 수 있습니다.</br></br>
-              </p>
-          </div>
+                        </p>
+                    </div>
 
                 </div>
                 <!--competition content 3-->
@@ -265,41 +267,67 @@
               </div>
        <!--competition content-end-->
 
-<!--join in-->
+       <!--join in-->
+        <div class="modal fade" id="fundingModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
+                </div>
+                <div class="modal-body">
+                    <!-- content goes here -->
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
+                        <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">참가자 연락처</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">참가자 이메일</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex) op12@openarena.com">
+                      </div>
+                      <button type="submit" class="join_submit">참가하기</button>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!--join in-->
 
-<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-			<h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
-		</div>
-		<div class="modal-body">
-
-            <!-- content goes here -->
-			<form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
-                <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">참가자 연락처</label>
-                <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">참가자 이메일</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex) op12@openarena.com">
-              </div>
-              <button type="submit" class="join_submit">참가하기</button>
-            </form>
-
-		</div>
-
-	</div>
-  </div>
-</div>
-
-<!--join in-->
+        <!--join in-->
+        <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
+                </div>
+                <div class="modal-body">
+                    <!-- content goes here -->
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
+                        <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">참가자 연락처</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">참가자 이메일</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex) op12@openarena.com">
+                      </div>
+                      <button type="submit" class="join_submit">참가하기</button>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!--join in-->
 
     </div>
 </div>

@@ -3,7 +3,7 @@ import requests
 
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from main.forms import ContactForm
 from main.models import Tournament
 
@@ -109,12 +109,15 @@ def funding(request):
         params = {
             "orderNo": "2016091900001",
             "amount": funding_amount,
-            "productDesc": "미갈리스 하스스톤 대회",
+            "productDesc": "미갈리스의 하스스톤 대회",
             "apiKey": "sk_test_AVkGqlMNRdAVkGqlMNRd",
             "expiredTime": "2015-09-19 18:00:00",
         }
 
         response = requests.post(url, data=params)
         print(response.text)
+
+        if response.text == 200:
+            return redirect('/some/url/')
 
     return render(request, 'main/competition.html', {})

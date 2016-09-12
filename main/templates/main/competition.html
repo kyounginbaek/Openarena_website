@@ -12,16 +12,19 @@
        </div>
        <div class="com_header_inner">
            <div class="container">
-               <!--프로필칸--><div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                                   <div class="com_profile"></div>
-                              </div>
-               <!--대회설명--><div class="col-sm-6 col-md-6 col-xs-12 ">
-                                   <div class="com_title">미갈리스의 하스스톤 대회</div></br>
-                                   <p class="com_subtitle hidden-xs">미갈리스 배 하스스톤 레전드 매치는 8강으로 구성된 레전드 bj들의 매치입니다. 탑 티어 플레이들이 4주간에 걸처 싱글 토너먼트 형식으로 진행됩니다.</p>
-                                   <div class="com_subtitle">2016년 09월 19일 06:00 pm</div></br>
-                               </div>
-               <!--후원/참가--><div class="col-sm-3 col-md-3 col-xs-12 ">
-                                <ul class="com_mainbox">
+               <!--프로필칸-->
+               <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
+                   <div class="com_profile"></div>
+               </div>
+               <!--대회설명-->
+               <div class="col-sm-6 col-md-6 col-xs-12 ">
+                   <div class="com_title">미갈리스의 하스스톤 대회</div></br>
+                   <p class="com_subtitle hidden-xs">미갈리스 배 하스스톤 레전드 매치는 8강으로 구성된 레전드 bj들의 매치입니다. 탑 티어 플레이들이 4주간에 걸처 싱글 토너먼트 형식으로 진행됩니다.</p>
+                   <div class="com_subtitle">2016년 09월 19일 06:00 PM</div></br>
+               </div>
+               <!--후원/참가-->
+               <div class="col-sm-3 col-md-3 col-xs-12 ">
+                   <ul class="com_mainbox">
                         <li class="">
                             <div class="" >
                                 <button data-toggle="modal" data-target="#fundingModal" class="btn btn-primary center-block">후원하기 </button>
@@ -35,13 +38,16 @@
                             -->
                         </li>
                     </ul>
-                                </div>
+               </div>
+
                <!--상금바-->
                <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                   <h4 class="com_title">250,000 / 500,000 / 후원 해주셨습니다 </h4>
+                   <h4 class="com_title">400,000 / 800,000 / 후원 해주셨습니다 </h4>
+                   <!--
                    <div class="com_white_bar">
                        <div class="com_orange_bar"></div>
                    </div>
+                   -->
                </div>
            </div>
 
@@ -130,6 +136,8 @@
                     이 프로그램은 특성상 환불이 불가능 합니다.<br>
               </p>
           </div>
+
+          <!--
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                 <ul class="com_donate_box" >
                     <li class="com_intro_box">
@@ -167,6 +175,7 @@
                     </li>
                 </ul>
             </div>
+            -->
 
         </div>
                 </div>
@@ -277,20 +286,12 @@
                 </div>
                 <div class="modal-body">
                     <!-- content goes here -->
-                    <form>
+                    <form action="{% url 'funding' %}" method="POST">{% csrf_token %}
                       <div class="form-group">
-                        <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
-                        <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
+                        <label for="exampleInputPassword1">후원하실 금액</label>
+                        <input required autocomplete="off" class="form-control" id="funding_amount" name="funding_amount" placeholder="예) 10,000">
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">참가자 연락처</label>
-                        <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">참가자 이메일</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex) op12@openarena.com">
-                      </div>
-                      <button type="submit" class="join_submit">참가하기</button>
+                      <button type="submit" class="join_submit">후원하기</button>
                     </form>
                 </div>
             </div>
@@ -317,10 +318,6 @@
                         <label for="exampleInputPassword1">참가자 연락처</label>
                         <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">참가자 이메일</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex) op12@openarena.com">
-                      </div>
                       <button type="submit" class="join_submit">참가하기</button>
                     </form>
                 </div>
@@ -341,6 +338,14 @@
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
                 // $(".tab").addClass("active"); // instead of this do the below
                 $(this).removeClass("btn-default").addClass("btn-primary");
+            });
+
+            /* 후원하기 : 숫자만 입력이 가능하도록 */
+            $("input[name=funding_amount]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                }
             });
         });
     </script>

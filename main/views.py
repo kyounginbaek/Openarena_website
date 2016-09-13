@@ -2,7 +2,7 @@ import json
 import random
 
 import requests
-
+from django.core.mail import send_mail
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -94,10 +94,16 @@ def competition(request):
 
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            return render(request, 'main/contact.html', {})
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
 
+        send_mail(subject, phone+message, email, ['help@openarena.kr'], fail_silently=False)
+
+        response = {'status': 'success',
+                    'message': "문의가 정상적으로 접수되었습니다. 빠른 시일 내에 답변드리도록 하겠습니다."}
+        return HttpResponse(json.dumps(response), content_type='application/json')
     return render(request, 'main/contact.html', {})
 
 def help(request):
@@ -112,8 +118,8 @@ def funding(request):
             "orderNo": "2016091901"+str(random.randrange(1,99999999)),
             "amount": funding_amount,
             "productDesc": "미갈리스의 하스스톤 대회",
-            "apiKey": "sk_test_AVkGqlMNRdAVkGqlMNRd",
-            "expiredTime": "2015-09-19 18:00:00",
+            "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+            "expiredTime": "2015-09-19 19:00:00",
         }
 
         response = requests.post(url, data=params)

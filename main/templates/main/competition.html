@@ -1,9 +1,10 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
-{% block title %} 오픈아레나:대회 둘러보기 {% endblock %}
+{% block title %} 오픈아레나:미갈리스 하스스톤 대회 {% endblock %}
 {% block head %}
     <!--join.css-->
     <link rel="stylesheet" href="{% static 'css/join.css' %}">
+
 {% endblock %}
 {% block content %}
 <div class="block-b">
@@ -22,7 +23,7 @@
                    <p class="com_subtitle hidden-xs">
                        오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 bj들의 매치입니다.
                        하스스톤 탑 티어 플레이어들이 이틀간에 걸처 싱글 토너먼트 형식으로 진행됩니다.</p>
-                   <div class="com_subtitle">2016년 09월 19일 10:00 PM</div></br>
+                   <div class="com_subtitle">2016년 09월 19일 07:00 PM</div></br>
                </div>
                <!--후원/참가-->
                <div class="col-sm-3 col-md-3 col-xs-12 ">
@@ -33,11 +34,9 @@
                             </div>
                             <div class="hidden-xs" style="height: 20px"></div>
                             <div class="button_blank" ></div>
-                            <!--참가하기
                             <div class="center" >
-                              <button data-toggle="modal" data-target="#registerModal" class="btn btn-primary center-block">참가하기</button>
+                                <button id="streaming" name="streaming" class="btn btn-primary center-block">방송보기</button>
                             </div>
-                            -->
                         </li>
                     </ul>
                </div>
@@ -98,7 +97,7 @@
            <div class="com_intro">
            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                <div class="com_intro_img">
-               <img src="../../static/nowcompetition/image4.png">
+               <img src="{% static 'nowcompetition/image4.png' %}">
                </div>
            </div>
 
@@ -112,8 +111,9 @@
                    <div class="com_into_small"><span class="com_into_big">6</span> 일</div><br>
                    <div class="com_into_small">참가자 수</div>
                    <div class="com_into_small"><span class="com_into_big">4</span> 명</div><br>
-                   <div class="com_into_small facebook_btn">
-                       <img src="../../static/img/facebook.svg"> <a class="facebook_font">공유하기</a>
+                   <div class="com_into_small">
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_inline_share_toolbox"></div>
                    </div>
                </div>
            </div>
@@ -265,24 +265,24 @@
                         <label for="exampleInputPassword1">후원하실 금액을 선택해주세요</label>
 
                       </div>
-                        <button type="submit" class=" donate_submit">
+                        <button name="funding_amount" type="submit" class="donate_submit" value="1000">
                                   1,000원 후원하기
                         </button>
-                        <button type="submit" class=" donate_submit" style="margin-left: 20px;">
+                        <button name="funding_amount" type="submit" class="donate_submit" value="3000" style="margin-left: 20px;">
                                   3,000원 후원하기
                         </button>
                         </br></br>
-                        <button type="submit" class=" donate_submit">
+                        <button name="funding_amount" type="submit" class="donate_submit" value="5000">
                                   5,000원 후원하기
                         </button>
-                        <button type="submit" class=" donate_submit" style="margin-left: 20px;">
+                        <button name="funding_amount" type="submit" class="donate_submit" value="10000" style="margin-left: 20px;">
                                   10,000원 후원하기
                         </button>
                         </br></br>
-                        <button type="submit" class=" donate_submit">
+                        <button name="funding_amount" type="submit" class="donate_submit" value="20000">
                                   20,000원 후원하기
                         </button>
-                        <button type="submit" class=" donate_submit" style="margin-left: 20px;">
+                        <button name="funding_amount" type="submit" class="donate_submit" value="50000" style="margin-left: 20px;">
                                   50,000원 후원하기
                         </button>
                     </form>
@@ -330,13 +330,17 @@
                 $(this).removeClass("btn-default").addClass("btn-primary");
             });
 
+            $("#streaming").click(function () {
+                window.open("http://www.twitch.tv/migal07");
+            });
+
             $("#funding_form").submit(function(e) {
-                serializedData = $("#funding_form").serialize();
+                var params = "funding_amount="+$(this).context.submit.value;
                 $.ajax({
                     type: 'POST',
                     async: false,
                     url: '/funding/',
-                    data: serializedData,
+                    data: params,
                     dataType: 'json',
                     success: function(response) {
                         if(response.status == "fail"){
@@ -347,4 +351,8 @@
             });
         });
     </script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d75e1fa49a7bd2"></script>
+
 {% endblock %}

@@ -104,8 +104,8 @@ li.competition-item img{
     text-align: center;
     color: #f8f8f8;
     height: 650px;
-    background: url(../../static/img/com_back.png) no-repeat center center;
-    background-size: cover;
+    background: url(../../static/img/image.png) no-repeat center center;
+    background-size: contain;
     font-family: 나눔고딕;
 
 
@@ -617,9 +617,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     float: right;
 }
 .match_list{
-    background: url(../../static/img/match_list.png) center center no-repeat;
+    background: url(../../static/img/list.png) center center no-repeat;
     background-size: contain;
-    height: 741px;
+    height: 600px;
 
 }
 .footer-menu-divider{
@@ -777,6 +777,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     }
     .com_header_inner{
     }
+
+
+
 }
 
  .card {
@@ -848,6 +851,9 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .card.hovercard .bottom {
     padding: 0 20px;
     margin-bottom: 17px;
+}
+.privacy_content{
+    color: #ffffff;
 }
 .btn-pref .btn {
     -webkit-border-radius:0 !important;

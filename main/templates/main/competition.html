@@ -30,10 +30,9 @@
                    <ul class="com_mainbox">
                         <li class="">
                             <div class="" >
-                                <button data-toggle="modal" data-target="#fundingModal" class="btn btn-primary center-block" >후원하기 </button>
+                                <button data-toggle="modal" data-target="#fundingModal" class="btn btn-primary center-block don_emp" >후원하기 </button>
                             </div>
                             <div class="hidden-xs" style="height: 20px"></div>
-                            <div class="button_blank" ></div>
                             <div class="center" >
                                 <button id="streaming" name="streaming" class="btn btn-primary center-block">방송보기</button>
                             </div>
@@ -43,7 +42,7 @@
 
                <!--상금바-->
                <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                   <h4 class="com_title">10,000 / 400,000 원 후원 해주셨습니다 </h4>
+                   <h4 class="com_title">15,000 / 400,000 원 후원 해주셨습니다 </h4>
                    <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
                    <!--
                    <div class="com_white_bar">
@@ -97,16 +96,16 @@
            <div class="com_intro">
            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                <div class="com_intro_img">
-               <img src="{% static 'nowcompetition/image4.png' %}">
+               <img src="{% static 'nowcompetition/poster.png' %}">
                </div>
            </div>
 
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                <div class="container com_intro_now">
                     <div class="com_into_small">후원자 수</div>
-                   <div class="com_into_small"><span  class="com_into_big">1</span> 명</div><br>
+                   <div class="com_into_small"><span  class="com_into_big">2</span> 명</div><br>
                    <div class="com_into_small">모인 상금</div>
-                   <div class="com_into_small"><span class="com_into_big">10,000</span> 원</div><br>
+                   <div class="com_into_small"><span class="com_into_big">15,000</span> 원</div><br>
                    <div class="com_into_small">마감 기한</div>
                    <div class="com_into_small"><span class="com_into_big">6</span> 일</div><br>
                    <div class="com_into_small">참가자 수</div>
@@ -219,31 +218,34 @@
                 <!--competition content 5 후원자 명단-->
                 <div class="tab-pane fade in" id="com_tab5">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-md-offset-1">
+                        <div class="com_intro_desp">
+                                <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
+                            </div>
                           <div class="com_intro_desp">
                               <a class="donater_title">Top3 후원자</a>
-                                <!--<div class="donater_container">
+                                <div class="donater_container">
                                     <div class="com_donate_list">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>후원자 1</span>
+                                        <span>한상우 님</span>
                                     </div>
                                   <div class="com_donate_list" style="margin-top: 6px;">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>후원자 2</span>
+                                        <span>안희철 님</span>
                                     </div>
-                              </div>-->
+                              </div>
                           </div>
                           <div class="com_intro_desp">
                                   <a class="donater_title">후원해주신 분들</a>
-                                  <!--<div class="donater_container">
+                                  <div class="donater_container">
                                         <div class="com_donate_list">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>후원자 1</span>
+                                        <span>한상우 님 : 10,000원</span>
                                         </div>
                                         <div class="com_donate_list" style="margin-top: 6px;">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>후원자 2</span>
+                                        <span>안희철 님 : 5,000원</span>
                                         </div>
-                                    </div>-->
+                                  </div>
                           </div>
                       </div>
                 </div>
@@ -263,6 +265,7 @@
                     <form id="funding_form" action="{% url 'funding' %}" method="POST">{% csrf_token %}
                       <div class="form-group">
                         <label for="exampleInputPassword1">후원하실 금액을 선택해주세요</label>
+                          <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
 
                       </div>
                         <button name="funding_amount" type="submit" class="donate_submit" value="1000">
@@ -331,7 +334,7 @@
             });
 
             $("#streaming").click(function () {
-                window.open("http://www.twitch.tv/migal07");
+                window.open("http://www.twitch.tv/");
             });
 
             $("#funding_form").submit(function(e) {

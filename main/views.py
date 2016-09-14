@@ -122,7 +122,7 @@ def funding(request):
         }
 
         response = requests.post(url, data=params)
-        print(response.text)
+        #print(response.text)
 
         if response.json().get('status') == 200 and response.json().get('code') != -1:
             # save 코드

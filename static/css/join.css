@@ -7,17 +7,8 @@
     padding: 7px;
     font-size: 18px;
 }
-/*너비가 991보다 작을떄*/
-@media(max-width:770px){
-    .center-block{
-        float: left;
-        margin: auto;
-    }
-    .button_blank{
-        width: 20px;
-        float: left;
-        height:20px;
-    }
+.don_list{
+    color: #ff9900;
 }
 .join_submit{
     font-size: 15px;
@@ -68,5 +59,26 @@
 .modal-footer .btn-group:last-child > button {
 	border-right: 0;
 }
-
+/*너비가 770보다 작을떄*/
+@media(max-width:770px){
+    .center-block{
+        float: left;
+    }
+    .button_blank{
+        width: 20px;
+        float: left;
+        height:20px;
+    }
+     .don_emp{
+        margin-right: 10px;
+    }
+     .donate_submit{
+         width: 120px;
+         height: 40px;
+         font-size: 12px;
+     }
+     .don_list{
+         font-size: 12px;
+     }
+}
 /*join end*/

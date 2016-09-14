@@ -6,8 +6,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from main.forms import ContactForm
-from main.models import Tournament
+from main.models import Tournament, Funding
 
 
 def home(request):
@@ -28,8 +27,8 @@ def tournament_url_check(request):
 
 def making(request):
     if not request.user.is_authenticated():
-        messages.success(request, "로그인이 필요한 페이지입니다. 먼저 로그인을 해주세요.")
-        return render(request, 'accounts/login.html', {})
+        messages.success(request, "준비중인 기능입니다.")
+        return render(request, 'main/home.html', {})
 
     if request.method == 'POST':
         # 스트리밍 URL (afreecatv or twitch)
@@ -126,6 +125,10 @@ def funding(request):
         print(response.text)
 
         if response.json().get('status') == 200 and response.json().get('code') != -1:
+            # save 코드
+            funding_obj = Funding(username=request.user.username, email=request.user.email,
+                                  orderno=params.get('orderNo'), amount=params.get('amount'))
+            funding_obj.save()
             return redirect(response.json().get('checkoutPage'))
         else:
             response = {'status': 'fail'}

@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
 <div class="block-b">
-   <div class="com_header">
+   <div class="com_header" style="background:url({% static "img/image.png" %})">
        <div class="com_empty">
        </div>
        <div class="com_header_inner">
@@ -23,7 +23,7 @@
                    <p class="com_subtitle hidden-xs">
                        오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 bj들의 매치입니다.
                        하스스톤 탑 티어 플레이어들이 2주간에 걸쳐 싱글 토너먼트 형식으로 진행됩니다.</p>
-                   <div class="com_subtitle">대회 일정: 09월 19일 07:00 PM / 9월 26일 07:00 PM</div></br>
+                   <div class="com_subtitle">대회 일정: 09월 19일 07:00 PM / 9월 26일 08:00 PM</div></br>
                </div>
                <!--후원/참가-->
                <div class="col-sm-3 col-md-3 col-xs-12 ">
@@ -31,9 +31,7 @@
                         <li class="">
                             <div class="" >
                                 {% if request.user.is_authenticated %}
-                                    <button data-toggle="modal" data-target="#fundingModal" class="btn btn-primary center-block don_emp" >후원하기 </button>
                                 {% else %}
-                                    <button id="cant_funding" name="cant_funding" class="btn btn-primary center-block don_emp" >후원하기 </button>
                                 {% endif %}
                             </div>
                             <div class="hidden-xs" style="height: 20px"></div>
@@ -46,7 +44,7 @@
 
                <!--상금바-->
                <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                   <h4 class="com_title">25,000 / 400,000 원 후원 해주셨습니다 </h4>
+                   <h4 class="com_title">572,000 / 420,000 원 후원 해주셨습니다 </h4>
                    <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
                    <!--
                    <div class="com_white_bar">
@@ -100,18 +98,18 @@
            <div class="com_intro">
            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                <div class="com_intro_img">
-               <img src="{% static 'nowcompetition/poster.png' %}">
+               <img src="{% static 'nowcompetition/poster_new2.png' %}">
                </div>
            </div>
 
            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                <div class="container com_intro_now">
                     <div class="com_into_small">후원자 수</div>
-                   <div class="com_into_small"><span  class="com_into_big">3</span> 명</div><br>
+                   <div class="com_into_small"><span  class="com_into_big">34</span> 명</div><br>
                    <div class="com_into_small">모인 상금</div>
-                   <div class="com_into_small"><span class="com_into_big">25,000</span> 원</div><br>
+                   <div class="com_into_small"><span class="com_into_big">572,000</span> 원</div><br>
                    <div class="com_into_small">마감 기한</div>
-                   <div class="com_into_small"><span class="com_into_big">9월 26일 / D-12</span> 일</div><br>
+                   <div class="com_into_small"><span class="com_into_big">9월 26일 / 마감</span> 일</div><br>
                    <div class="com_into_small">참가자 수</div>
                    <div class="com_into_small"><span class="com_into_big">레전드 4</span> 명</div><br>
                    <div class="com_into_small">
@@ -136,11 +134,12 @@
                     최고의 선수들이 펼칠 오픈아레나 하스스톤 레전드 매치에 많은 후원 부탁드립니다.</br>
                      </br>
                     2. 일시</br>
-                    2016년 9월 19일 7PM. (4강 1차전, 2차전) . 9월 26일 7PM. (3,4위전, 결승)</br>
+                    2016년 9월 19일 7PM. (4강 1차전, 2차전) . 9월 26일 8PM. (3,4위전, 결승)</br>
                     (3덱 정복전 2매치로 방송이 마무리 되기에, 7시에 시작하여 최소 2시간~최대 4시간 까지 소요될 것으로 추정됨. 최대 시간은 사제vs사제. 전사vs전사. 얼방vs얼방 같은 극혐 매치업이 진행 되었을 경우를 상정하고 추산하였음.)</br>
                      </br>
                     3. 상금</br>
-                    기본 목표 금액 40만원 + 크라우드펀딩을 통한 나머지 적립금은 1위 입상자에게 전액 지급.</br>
+                    기본 목표 금액 42만원이 모일 시, 아래와 같이 1~4등에게 상금이 지급되고,</br>
+		    크라우드펀딩을 통한 나머지 추가 금액은 1위 입상자에게 전액 지급됩니다.</br>
                     1위 : 200,000 원</br>
                     2위 : 100,000 원</br>
                     3위 : 70,000 원</br>
@@ -148,8 +147,8 @@
                     </br>
                     4. 크라우드 펀딩 모금 방식</br>
                     방송 1주 전(9월14일)부터 모금 시작을 시작하며</br>
-                    방송이 종료 시점(9/25 23:59:59)까지의 펀딩 적립금을 통해 상금으로 지급하게 됩니다.</br>
-                    해당 시점까지 기본 목표 금액 40만원에 도달하지 못하였을 경우 대회는 취소됩니다.</br>
+                    방송 시작 전날(9/25 23:59:59)까지의 펀딩 적립금을 통해 상금으로 지급하게 됩니다.</br>
+                    해당 시점까지 기본 목표 금액 42만원에 도달하지 못하였을 경우 대회는 취소될 수 있습니다.</br>
                      </br>
                     5. 경기 진행 방식</br>
                     4덱 1벤 정복전 방식</br>
@@ -237,15 +236,15 @@
                                 <div class="donater_container">
                                     <div class="com_donate_list">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>한상우 님</span>
+                                        <span>jp 님 : 50,000원</span>
                                     </div>
                                     <div class="com_donate_list" style="margin-top: 6px;">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>안희철 님</span>
+                                        <span>auspice7 님 : 50,000원</span>
                                     </div>
                                     <div class="com_donate_list" style="margin-top: 6px;">
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>백경인 님</span>
+                                        <span>dldbstls 님 : 30,000원</span>
                                     </div>
                               </div>
                           </div>
@@ -264,7 +263,131 @@
                                         <img class="com_donate_icon" src="../../static/img/profile.svg">
                                         <span>백경인 님 : 10,000원</span>
                                         </div>
-                                  </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>예지 님 : 1,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>pgh 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>허키로 님 : 20,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>송승민 님 : 20,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>TiredNight 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>jp 님 : 50,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>jina 님 : 20,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>Raccoon 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>ezbrother 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>dldbstls 님 : 30,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>blue1028 님 : 20,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>auspice7 님 : 50,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>dbswo91 님 : 30,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>tak47 님 : 30,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>ioio8080 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>baek351 님 : 1,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>rocca1619 님 : 20,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>미갈화이팅 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>1994kr 님 : 20,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>Nuke 님 : 10,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>동그리동 님 : 5,000원</span>
+                                        </div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>리더스 님 : 10,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>바람의카사 님 : 20,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>bsg3955 님 : 20,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>min1230 님 : 10,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>daum7777 님 : 30,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>gethnemane 님 : 20,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>bluery3 님 : 10,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>never0886 님 : 10,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>설꼬 님 : 20,000원</span>
+					</div>
+					<div class="com_donate_list" style="margin-top: 6px;">
+                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                        <span>꽃으로 님 : 10,000원</span>
+                                	</div>
+				</div>
                           </div>
                       </div>
                 </div>

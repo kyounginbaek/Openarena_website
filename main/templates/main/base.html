@@ -96,12 +96,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="list-inline">
-                            <li>
+			    <li>
                                 <a href="{% url 'help' %}">도움말</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="https://www.facebook.com/%EC%98%A4%ED%94%88%EC%95%84%EB%A0%88%EB%82%98-OpenArena-1081481298553678/">페이스북</a>
                             </li>
                             <li class="footer-menu-divider">&sdot;</li>
                             <li>
@@ -114,6 +110,22 @@
                             <li class="footer-menu-divider">&sdot;</li>
                             <li>
                                 <a href="{% url 'agreement' %}">이용약관</a>
+                            </li>
+			    <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="https://www.facebook.com/openarena.kr">페이스북</a>
+                            </li>
+			    <li class="footer-menu-divider">&sdot;</li>
+			    <li>
+                                <a href="https://twitter.com/openarena_kr">트위터</a>
+                            </li>
+			    <li class="footer-menu-divider">&sdot;</li>
+			    <li>
+                                <a href="https://www.instagram.com/openarena_kr/">인스타그램</a>
+                            </li>
+			    <li class="footer-menu-divider">&sdot;</li>
+			    <li>
+                                <a href="http://blog.naver.com/openarena">블로그</a>
                             </li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; 2016. Openarena Inc. All Rights Reserved.
@@ -143,5 +155,15 @@
         {% endif %}
     </script>
 
+    <script>
+        /* 구글 Analytics */
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-84364746-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>

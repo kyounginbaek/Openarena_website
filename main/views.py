@@ -1,8 +1,7 @@
 import json
 import random
-
 import requests
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -98,7 +97,8 @@ def contact(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        send_mail(subject, phone+message, email, ['help@openarena.kr'], fail_silently=False)
+        emailsend = EmailMessage("보낸사람: "+email+" / "+"제목: "+subject, "내용: "+message+"\n"+"연락처: "+phone, to=['help@openarena.kr'])
+        emailsend.send()
 
         response = {'status': 'success',
                     'message': "문의가 정상적으로 접수되었습니다. 빠른 시일 내에 답변드리도록 하겠습니다."}

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'accounts',
-    #'social.apps.django_app.default',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -67,13 +67,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'django.core.context_processors.debug',
-                #'django.core.context_processors.i18n',
-                #'django.core.context_processors.media',
-                #'django.core.context_processors.static',
-                #'django.core.context_processors.tz',
-                #'social.apps.django_app.context_processors.backends',
-                #'social.apps.django_app.context_processors.login_redirect',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
+                'django.core.context_processors.tz',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
 
 AUTHENTICATION_BACKENDS = (
     'accounts.email-auth.EmailOrUsernameModelBackend',
-    # 'social.backends.facebook.FacebookOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -164,15 +164,15 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 }
 
 SOCIAL_AUTH_PIPELINE = (
-    #'social.pipeline.social_auth.social_details',
-    #'social.pipeline.social_auth.social_uid',
-    #'social.pipeline.social_auth.auth_allowed',
-    #'social.pipeline.social_auth.social_user',
-    #'social.pipeline.user.get_username',
-    #'social.pipeline.user.create_user',
-    #'accounts.social.create_user', # 덮어씀
-    #'accounts.social.update_avatar', # 추가함
-    #'social.pipeline.social_auth.associate_user',
-    #'social.pipeline.social_auth.load_extra_data',
-    #'social.pipeline.user.user_details'
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    # 'accounts.social.create_user', # 덮어씀
+    # 'accounts.social.update_avatar', # 추가함
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
 )

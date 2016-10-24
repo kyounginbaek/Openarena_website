@@ -1,0 +1,60 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block title %} 오픈아레나:대회 영상 {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/video_deco.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="head_empty"></div>
+
+    <div class="gray">
+        <div class="container">
+            <!--베너 부분. 체널아트-->
+            <div id = banner>
+                <div class="video_cover">
+                </div>
+            </div>
+            <!--menu list-->
+            <div class="menu">
+                    <div class="menu_list">
+                        <a class="filter" href="" style="color: #f7941e">전체</a>
+                        <span style="margin-left: 10px">|</span>
+                        <a class="filter" href="" style="color: #222; margin-left: 10px">하스스톤</a>
+                        <span style="margin-left: 10px">|</span>
+                        <a  class="filter" href="" style="color: #222; margin-left: 10px">오버워치</a>
+                        <span style="margin-left: 10px">|</span>
+                        <a  class="filter" href="" style="color: #222; margin-left: 10px">LoL</a>
+                        <span style="margin-left: 10px">|</span>
+                        <a class="filter" href="" style="color: #222; margin-left: 10px">스타2</a>
+                    </div>
+            </div>
+            <div class="video_clip">
+                <div class="clip1">
+                    <img class="clip1_img" style="background: url({% static "nowcompetition/image.png"%}) center center no-repeat;background-size: cover; ">
+                    </img>
+                    <div class="clip_title" >오픈아레나 레전드매치</div>
+                    <div class="clip_subtitle" >개최자 : BJ최미갈, 참가자 : 레전드BJ 4분</div>
+                </div>
+                <div class="clip1">
+                    <img class="clip1_img" style="background: url({% static "images/overwatch/picture1.jpg"%}) center center no-repeat;background-size: contain; ">
+                    </img>
+                    <div class="clip_title" >오버워치 달걀모자</div>
+                    <div class="clip_subtitle" >개최자 : 달걀모자, 참가자 : 9팀</div>
+                </div>
+                <div class="clip1">
+                    <img class="clip1_img" style="background: url({% static "images/lol/picture1.png"%}) center center no-repeat;background-size: contain; ">
+                    </img>
+                    <div class="clip_title" >카이스트 vs 유니스트</div>
+                    <div class="clip_subtitle" >개최자 : UNIST ping, 참가자 : UNIST,KAIST</div>
+                </div>
+            </div>
+            <div class="com_empty"></div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

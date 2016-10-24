@@ -26,9 +26,6 @@ class Tournament(models.Model):
     tournament_url = models.CharField(max_length=20, default='')
     streaming_url = models.CharField(max_length=20, default='')
     streaming_url_spec = models.CharField(max_length=20, default='')
-    tournament_type = models.CharField(max_length=20, default='')
-    tournament_format = models.CharField(max_length=20, default='')
-    tournament_spec = models.CharField(max_length=200, default='')
     registration = models.CharField(max_length=20, default='')
     registration_team = models.CharField(max_length=20, default='')
     participant = models.CharField(max_length=20, default='')
@@ -41,4 +38,7 @@ class Tournament(models.Model):
     reward = models.CharField(max_length=400, default='')
     template = models.CharField(max_length=40, default='')
     phone = models.CharField(max_length=20, default='')
-    letsmake = models.CharField(max_length=20, default='not_yet')
+    letsmake = models.CharField(max_length=20, default='no')
+
+    def __str__(self):
+        return self.tournament_name

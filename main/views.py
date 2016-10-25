@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from main.models import Tournament, Funding
+from main.models import Making, Funding
 
 
 def home(request):
@@ -17,7 +17,7 @@ def looking(request):
 def tournament_url_check(request):
     if request.method == 'POST':
         tournament_url = request.POST.get('tournament_url')
-        if Tournament.objects.filter(tournament_url=tournament_url).exists():
+        if Making.objects.filter(tournament_url=tournament_url).exists():
             response = {'status': 'error', 'message': "이미 존재하는 대회 url입니다."}
             return HttpResponse(json.dumps(response), content_type='application/json')
         else:
@@ -33,22 +33,25 @@ def making(request):
         # 스트리밍 URL (afreecatv or twitch)
         streaming_url_spec = request.POST.get('input_afreecatv')+request.POST.get('input_twitch')
 
-        # 공약 내용 & 후원자 보상 리스트 가져오기
-        promise = request.POST.getlist('promise')+"."+request.POST.getlist('promise_spec')
-        reward = request.POST.getlist('reward')+"."+request.POST.getlist('reward_spec')
+        # 체크인 기능 NULL 방지
+        if request.POST.get('checkin') is not None:
+            checkin = request.POST.get('checkin')
+        else:
+            checkin = "no"
 
         # 참가자명/팀명(필수), 참가자 연락처, 참가자 이메일, 추가기타양식(input)
-        template = request.POST.get('template_name')+"."+request.POST.get('template_phone')+"."+request.POST.get('template_email')+"."+request.POST.get('input_template_etc')
+        template = str(request.POST.get('template_name'))+"."+str(request.POST.get('template_phone'))+"."+str(request.POST.get('template_email'))+"."+str(request.POST.get('input_template_etc'))
 
         # save 코드
-        tournament_obj = Tournament(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
-                                    tournament_game=request.POST.get('tournament_game'), tournament_url = request.POST.get('tournament_url'),
-                                    streaming_url=request.POST.get('streaming_url'), streaming_url_spec=streaming_url_spec,
-                                    registration=request.POST.get('registration'), registration_team=request.POST.get('registration_team'),
-                                    participant=request.POST.get('participant'), starttime=request.POST.get('starttime'),
-                                    checkin=request.POST.get('checkin'), checkin_time=request.POST.get('checkin_time'), description=request.POST.get('description'),
-                                    funding=request.POST.get('funding'), promise=promise, reward=reward, template=template, phone=request.POST.get('phone'))
-        tournament_obj.save()
+        making_obj = Making(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
+                                tournament_game=request.POST.get('tournament_game'), tournament_url = request.POST.get('tournament_url'),
+                                streaming_url=request.POST.get('streaming_url'), streaming_url_spec=streaming_url_spec,
+                                registration=request.POST.get('registration'), registration_team=request.POST.get('registration_team'),
+                                participant=request.POST.get('participant'), starttime=request.POST.get('starttime'), funding_goal=request.POST.get('funding_goal'),
+                                checkin=checkin, checkin_time=request.POST.get('checkin_time'), description=request.POST.get('description'),
+                                promise=request.POST.getlist('promise'), promise_spec= request.POST.getlist('promise_spec'), reward=request.POST.getlist('reward'), reward_spec=request.POST.getlist('reward_spec'),
+                                template=template, phone=request.POST.get('phone'))
+        making_obj.save()
         response = {'status': 'success',
                     'message': "대회 생성 요청이 성공적으로 제출되었습니다. 빠른 시일 내에 운영진과 검토 후 이메일과 연락처로 대회 개최 여부를 말씀드리겠습니다."}
         return HttpResponse(json.dumps(response), content_type='application/json')

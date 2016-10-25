@@ -69,8 +69,10 @@
                     <div class="btn-group">
                         <select id="streaming_url" name="streaming_url" class="form-control">
                             <option value="default">선택해주세요</option>
-                            <option value="afreecatv">아프리카tv</option>
+                            <option value="afreecatv">아프리카(afreeca)</option>
                             <option value="twitch">트위치(twitch)</option>
+                            <option value="youtube">유투브(youtube)</option>
+                            <option value="facebook">페이스북(facebook)</option>
                             <option value="none">계정 없음</option>
                         </select>
                     </div>
@@ -90,6 +92,23 @@
                           <input id="input_twitch" name="input_twitch" type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
                         </div>
                     </div>
+
+                    <!-- js hide & show : youtube -->
+                    <div class="btn-group streaming youtube" style="display: none;">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">youtube.com/</span>
+                          <input id="input_youtube" name="input_youtube" type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
+                    <!-- js hide & show : facebook -->
+                    <div class="btn-group streaming facebook" style="display: none;">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">facebook.com/</span>
+                          <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) overwatch" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
                     &nbsp;
                     <span class="glyphicon glyphicon-question-sign streaming_url" aria-hidden="true" data-toggle="tooltip" title="대회가 방송되는 스트리밍 주소를 입력해주세요."></span>
                     <div class="btn-group error2" style="display: none;">
@@ -219,12 +238,12 @@
                 </div>
 
                 <!-- 목표 금액 : 필수항목 -->
-                <div class="looking-group div_funding">
+                <div class="looking-group div_funding_goal">
                     <div class="col-xs-10 col-sm-3 col-md-3">
-                        <label class="making_font" for="funding">목표 금액 <span style="color: #f7941e;">*</span></label>
+                        <label class="making_font" for="funding_goal">목표 금액 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="input-group">
-                        <input type="text" required autocomplete="off" class="form-control" id="funding" name="funding" placeholder="예) 200,000">
+                        <input type="text" required autocomplete="off" class="form-control" id="funding_goal" name="funding_goal" placeholder="예) 200,000">
                         <span class="input-group-addon">원</span>
                     </div>
                     &nbsp;
@@ -342,12 +361,12 @@
                 </div>
 
                 <!-- 연락처 정보 : 필수항목 -->
-                <div class="looking-group div_contact">
+                <div class="looking-group div_phone">
                     <div class="col-xs-10 col-sm-3 col-md-3">
-                        <label class="making_font" for="contact">연락처 정보 <span style="color: #f7941e;">*</span></label>
+                        <label class="making_font" for="phone">연락처 정보 <span style="color: #f7941e;">*</span></label>
                     </div>
                     <div class="input-group">
-                        <input type="text" required autocomplete="off" class="form-control" id="contact" name="contact" placeholder="예) 010-1234-5678">
+                        <input type="text" required autocomplete="off" class="form-control" id="phone" name="phone" placeholder="예) 010-1234-5678">
                         <span class="input-group-addon">운영진이 연락드릴 번호</span>
                     </div>
                     &nbsp;
@@ -388,7 +407,7 @@
                 }
             });
             /* 숫자와 소수점 입력이 가능하도록 */
-            $("input[name=registration_team], input[name=participant], input[name=funding], input[name=promise], input[name=reward]").keyup(function(event){
+            $("input[name=registration_team], input[name=participant], input[name=funding_goal], input[name=promise], input[name=reward]").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)) {
                     var inputVal = $(this).val();
                     inputVal = inputVal.replace(/[^0-9\.]/gi,'');
@@ -413,17 +432,29 @@
                 /* input value 초기화 */
                 document.getElementById("input_afreecatv").value = "";
                 document.getElementById("input_twitch").value = "";
+                document.getElementById("input_youtube").value = "";
+                document.getElementById("input_facebook").value = "";
                 /* input attr 초기화 */
                 $("#input_afreecatv").removeAttr('required','');
                 $("#input_afreecatv").removeAttr('autocomplete', 'off');
                 $("#input_twitch").removeAttr('required','');
                 $("#input_twitch").removeAttr('autocomplete', 'off');
+                $("#input_youtube").removeAttr('required','');
+                $("#input_youtube").removeAttr('autocomplete', 'off');
+                $("#input_facebook").removeAttr('required','');
+                $("#input_facebook").removeAttr('autocomplete', 'off');
                 if(document.getElementById('streaming_url').value=="afreecatv"){
                     $("#input_afreecatv").attr('required','');
                     $("#input_afreecatv").attr('autocomplete', 'off');
                 } else if(document.getElementById('streaming_url').value=="twitch") {
                     $("#input_twitch").attr('required', '');
                     $("#input_twitch").attr('autocomplete', 'off');
+                } else if(document.getElementById('streaming_url').value=="youtube") {
+                    $("#input_youtube").attr('required', '');
+                    $("#input_youtube").attr('autocomplete', 'off');
+                } else if(document.getElementById('streaming_url').value=="facebook") {
+                    $("#input_facebook").attr('required', '');
+                    $("#input_facebook").attr('autocomplete', 'off');
                 }
                 $("."+this.value).show();
             });

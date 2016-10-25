@@ -13,10 +13,7 @@ class Funding(models.Model):
         self.published_date = timezone.now()
         self.save()
 
-    def __str__(self):
-        return self.username
-
-class Tournament(models.Model):
+class Making(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=40, default='')
     email = models.CharField(max_length=40, default='')
@@ -33,12 +30,20 @@ class Tournament(models.Model):
     checkin = models.CharField(max_length=20, default='')
     checkin_time = models.CharField(max_length=20, default='')
     description = models.TextField(max_length=2000, default='')
-    funding = models.CharField(max_length=20, default='')
-    promise = models.CharField(max_length=400, default='')
-    reward = models.CharField(max_length=400, default='')
+    funding_goal = models.CharField(max_length=20, default='')
+    promise = models.CharField(max_length=200, default='')
+    promise_spec = models.CharField(max_length=200, default='')
+    reward = models.CharField(max_length=200, default='')
+    reward_spec = models.CharField(max_length=200, default='')
     template = models.CharField(max_length=40, default='')
     phone = models.CharField(max_length=20, default='')
-    letsmake = models.CharField(max_length=20, default='no')
+    confirm = models.CharField(max_length=20, default='no')
 
-    def __str__(self):
-        return self.tournament_name
+    main_image = models.CharField(max_length=100, default='')
+    summary = models.CharField(max_length=100, default='')
+    funder = models.CharField(max_length=20, default='')
+    funding_now = models.CharField(max_length=20, default='')
+    endtime = models.CharField(max_length=20, default='')
+    cover_image = models.CharField(max_length=100, default='')
+    poster_image = models.CharField(max_length=100, default='')
+    match_image = models.CharField(max_length=100, default='')

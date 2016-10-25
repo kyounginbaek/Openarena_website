@@ -39,8 +39,14 @@ def making(request):
         else:
             checkin = "no"
 
-        # 참가자명/팀명(필수), 참가자 연락처, 참가자 이메일, 추가기타양식(input)
-        template = str(request.POST.get('template_name'))+"."+str(request.POST.get('template_phone'))+"."+str(request.POST.get('template_email'))+"."+str(request.POST.get('input_template_etc'))
+        # 참가자명/팀명(필수), 참가자 연락처, 참가자 이메일, 추가 필요양식(input)
+        template = "name"
+        if request.POST.get('template_phone') is not None:
+            template = "phone"
+        if request.POST.get('template_email') is not None:
+            template = "email"
+        if request.POST.get('input_template_etc') is not None:
+            template = request.POST.get('input_template_etc')
 
         # save 코드
         making_obj = Making(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),

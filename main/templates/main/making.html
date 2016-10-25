@@ -355,7 +355,7 @@
                       <br>
                       <label><input id="template_email" name="template_email" type="checkbox" value="template_email" style="margin-bottom: 10px"> &nbsp;참가자 이메일</label>
                       <br>
-                      <label><input id="template_etc" name="template_etc" type="checkbox"> &nbsp;추가 기타양식</label>
+                      <label><input id="template_etc" name="template_etc" type="checkbox"> &nbsp;추가 필요양식</label>
                       &nbsp;<input id="input_template_etc" name="input_template_etc" type="text" class="form-control" placeholder="예) 성별, 나이, 덱, 레벨">
                     </div>
                 </div>
@@ -579,11 +579,19 @@
             });
 
             /* 참가자 양식: 추가 기타양식 체크 시 input required attr 부여 */
+            function disableTxt() {
+                document.getElementById("input_template_etc").disabled = true;
+            }
+            function undisableTxt() {
+                document.getElementById("input_template_etc").disabled = false;
+            }
+            disableTxt();
             $('#template_etc').change(function() {
                 /* input attr 초기화 */
                 $("#input_template_etc").removeAttr('required','');
                 $("#input_template_etc").removeAttr('autocomplete', 'off');
                 if(document.getElementById('template_etc').checked==true){
+                    undisableTxt();
                     $("#input_template_etc").attr('required','');
                     $("#input_template_etc").attr('autocomplete', 'off');
                 }

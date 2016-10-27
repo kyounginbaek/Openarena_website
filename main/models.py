@@ -7,17 +7,13 @@ class Funding(models.Model):
     email = models.CharField(max_length=40, default='')
     orderno = models.CharField(max_length=40, default='')
     amount = models.CharField(max_length=40, default='')
-    when = models.CharField(max_length=40, default=timezone.now())
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
 
 class Making(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=40, default='')
     email = models.CharField(max_length=40, default='')
-    when = models.CharField(max_length=40, default=timezone.now())
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
     tournament_name = models.CharField(max_length=40, default='')
     tournament_game = models.CharField(max_length=20, default='')
     tournament_url = models.CharField(max_length=20, default='')
@@ -47,3 +43,19 @@ class Making(models.Model):
     cover_image = models.CharField(max_length=100, default='')
     poster_image = models.CharField(max_length=100, default='')
     match_image = models.CharField(max_length=100, default='')
+
+class Reply(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=40, default='')
+    email = models.CharField(max_length=40, default='')
+    orderno = models.CharField(max_length=40, default='')
+    amount = models.CharField(max_length=40, default='')
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
+
+class Video(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=40, default='')
+    email = models.CharField(max_length=40, default='')
+    orderno = models.CharField(max_length=40, default='')
+    amount = models.CharField(max_length=40, default='')
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))

@@ -14,24 +14,21 @@ def home(request):
 def looking(request):
     return render(request, 'main/looking.html', {})
 
-def tournament_url_check(request):
-    if request.method == 'POST':
-        tournament_url = request.POST.get('tournament_url')
-        if Making.objects.filter(tournament_url=tournament_url).exists():
-            response = {'status': 'error', 'message': "이미 존재하는 대회 url입니다."}
-            return HttpResponse(json.dumps(response), content_type='application/json')
-        else:
-            response = {'status': 'success', 'message': "존재하지 않는 적절한 url입니다."}
-            return HttpResponse(json.dumps(response), content_type='application/json')
-
 def making(request):
     if not request.user.is_authenticated():
         messages.success(request, "준비중인 기능입니다.")
         return render(request, 'main/home.html', {})
 
     if request.method == 'POST':
+        # 토너먼트 URL 체크
+        tournament_url = request.POST.get('tournament_url')
+        if Making.objects.filter(tournament_url=tournament_url).exists():
+            response1 = {'status': 'error'}
+            return HttpResponse(json.dumps(response1), content_type='application/json')
+
         # 스트리밍 URL (afreecatv or twitch)
-        streaming_url_spec = request.POST.get('input_afreecatv')+request.POST.get('input_twitch')
+        streaming_url_spec = request.POST.get('input_afreecatv')+request.POST.get('input_twitch')+\
+                             request.POST.get('input_youtube')+request.POST.get('input_facebook')
 
         # 체크인 기능 NULL 방지
         if request.POST.get('checkin') is not None:
@@ -42,11 +39,11 @@ def making(request):
         # 참가자명/팀명(필수), 참가자 연락처, 참가자 이메일, 추가 필요양식(input)
         template = "name"
         if request.POST.get('template_phone') is not None:
-            template = "phone"
+            template += ".phone"
         if request.POST.get('template_email') is not None:
-            template = "email"
+            template += ".email"
         if request.POST.get('input_template_etc') is not None:
-            template = request.POST.get('input_template_etc')
+            template += "." + str(request.POST.get('input_template_etc'))
 
         # save 코드
         making_obj = Making(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
@@ -55,12 +52,12 @@ def making(request):
                                 registration=request.POST.get('registration'), registration_team=request.POST.get('registration_team'),
                                 participant=request.POST.get('participant'), starttime=request.POST.get('starttime'), funding_goal=request.POST.get('funding_goal'),
                                 checkin=checkin, checkin_time=request.POST.get('checkin_time'), description=request.POST.get('description'),
-                                promise=request.POST.getlist('promise'), promise_spec= request.POST.getlist('promise_spec'), reward=request.POST.getlist('reward'), reward_spec=request.POST.getlist('reward_spec'),
+                                promise=request.POST.getlist('promise[]'), promise_spec= request.POST.getlist('promise_spec[]'), reward=request.POST.getlist('reward[]'), reward_spec=request.POST.getlist('reward_spec[]'),
                                 template=template, phone=request.POST.get('phone'))
         making_obj.save()
-        response = {'status': 'success',
+        response2 = {'status': 'success',
                     'message': "대회 생성 요청이 성공적으로 제출되었습니다. 빠른 시일 내에 운영진과 검토 후 이메일과 연락처로 대회 개최 여부를 말씀드리겠습니다."}
-        return HttpResponse(json.dumps(response), content_type='application/json')
+        return HttpResponse(json.dumps(response2), content_type='application/json')
 
     return render(request, 'main/making.html', {})
 

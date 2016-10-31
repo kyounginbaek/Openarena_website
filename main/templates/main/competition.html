@@ -7,57 +7,56 @@
 
 {% endblock %}
 {% block content %}
-<div class="block-b">
-   <div class="com_header" style="background:url({% static "img/image.png" %})">
-       <div class="com_empty">
-       </div>
-       <div class="com_header_inner">
-           <div class="container">
-               <!--프로필칸-->
-               <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                   <div class="com_profile"></div>
-               </div>
-               <!--대회설명-->
-               <div class="col-sm-6 col-md-6 col-xs-12 ">
-                   <div class="com_title">오픈아레나 하스스톤 레전드 매치</div></br>
-                   <p class="com_subtitle hidden-xs">
-                       오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 bj들의 매치입니다.
-                       하스스톤 탑 티어 플레이어들이 2주간에 걸쳐 싱글 토너먼트 형식으로 진행됩니다.</p>
-                   <div class="com_subtitle">대회 일정: 09월 19일 07:00 PM / 9월 26일 08:00 PM</div></br>
-               </div>
-               <!--후원/참가-->
-               <div class="col-sm-3 col-md-3 col-xs-12 ">
-                   <ul class="com_mainbox">
-                        <li class="">
-                            <div class="" >
-                                {% if request.user.is_authenticated %}
-                                {% else %}
-                                {% endif %}
-                            </div>
-                            <div class="hidden-xs" style="height: 20px"></div>
-                            <div class="center" >
-                                <button id="streaming" name="streaming" class="btn btn-primary center-block">방송보기</button>
-                            </div>
-                        </li>
-                    </ul>
-               </div>
+    <div class="block-b">
+        <div class="com_header" style="background:url({% static "img/image.png" %})">
+            <div class="com_empty">
+            </div>
+            <div class="com_header_inner">
+                <div class="container">
+                    <!--프로필칸-->
+                    <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
+                        <div class="com_profile"></div>
+                    </div>
+                    <!--대회설명-->
+                    <div class="col-sm-6 col-md-6 col-xs-12 ">
+                        <div class="com_title">오픈아레나 하스스톤 레전드 매치</div></br>
+                        <p class="com_subtitle hidden-xs">
+                            오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 bj들의 매치입니다.
+                            하스스톤 탑 티어 플레이어들이 2주간에 걸쳐 싱글 토너먼트 형식으로 진행됩니다.</p>
+                        <div class="com_subtitle">대회 일정: 09월 19일 07:00 PM / 9월 26일 08:00 PM</div></br>
+                    </div>
+                    <!--후원/참가-->
+                    <div class="col-sm-3 col-md-3 col-xs-12 ">
+                        <ul class="com_mainbox">
+                            <li class="">
+                                <div class="" >
+                                    {% if request.user.is_authenticated %}
+                                    {% else %}
+                                    {% endif %}
+                                </div>
+                                <div class="hidden-xs" style="height: 20px"></div>
+                                <div class="center" >
+                                    <button id="streaming" name="streaming" class="btn btn-primary center-block">방송보기</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-               <!--상금바-->
-               <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                   <h4 class="com_title">572,000 / 420,000 원 후원 해주셨습니다 </h4>
-                   <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
-                   <!--
-                   <div class="com_white_bar">
-                       <div class="com_orange_bar"></div>
-                   </div>
-                   -->
-               </div>
-           </div>
+                    <!--상금바-->
+                    <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
+                        <h4 class="com_title">572,000 / 420,000 원 후원 해주셨습니다 </h4>
+                        <!--
+                        <div class="com_white_bar">
+                            <div class="com_orange_bar"></div>
+                        </div>
+                        -->
+                    </div>
+                </div>
 
-       </div>
-    </div>
-   <div class="com_mid">
-          <!--competition list-->
+            </div>
+        </div>
+        <div class="com_mid">
+            <!--competition list-->
             <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                 <!-- 대회 소개 -->
                 <div class="btn-group" role="group">
@@ -65,24 +64,18 @@
                         <div class="list_btn">대회 소개</div>
                     </button>
                 </div>
-                <!-- 대회 규칙
-                <div class="btn-group" role="group">
-                    <button type="button" id="favorites" class="btn btn-default no_border" href="#com_tab2" data-toggle="tab">
-                        <div class="list_btn">대회 규칙</div>
-                    </button>
-                </div>-->
                 <!-- 참여한 대회 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-default no_border" href="#com_tab3" data-toggle="tab">
                         <div class="list_btn">대진표</div>
                     </button>
                 </div>
-                <!-- 후원자 댓글
+                <!-- 후원자 댓글 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-default no_border" href="##com_tab4" data-toggle="tab">
                         <div class="list_btn">후원자 댓글</div>
                     </button>
-                </div>-->
+                </div>
                 <!-- 후원자 명단 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-default no_border" href="##com_tab5" data-toggle="tab">
@@ -90,113 +83,78 @@
                     </button>
                 </div>
             </div>
-          <!--competition list-->
+            <!--competition list-->
             <!--competition content-->
             <div class="tab-content">
                 <!--competition content 1-->
                 <div class="tab-pane fade in active" id="com_tab1">
-           <div class="com_intro">
-           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-               <div class="com_intro_img">
-               <img src="{% static 'nowcompetition/poster_new2.png' %}">
-               </div>
-           </div>
+                    <div class="com_intro">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <div class="com_intro_img">
+                                <img src="{% static 'nowcompetition/poster_new2.png' %}">
+                            </div>
+                        </div>
 
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="container com_intro_now">
-                    <div class="com_into_small">후원자 수</div>
-                   <div class="com_into_small"><span  class="com_into_big">34</span> 명</div><br>
-                   <div class="com_into_small">모인 상금</div>
-                   <div class="com_into_small"><span class="com_into_big">572,000</span> 원</div><br>
-                   <div class="com_into_small">마감 기한</div>
-                   <div class="com_into_small"><span class="com_into_big">9월 26일 / 마감</span> 일</div><br>
-                   <div class="com_into_small">참가자 수</div>
-                   <div class="com_into_small"><span class="com_into_big">레전드 4</span> 명</div><br>
-                   <div class="com_into_small">
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_inline_share_toolbox"></div>
-                   </div>
-               </div>
-           </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="container com_intro_now">
+                                <div class="com_into_small">후원자 수</div>
+                                <div class="com_into_small"><span  class="com_into_big"></span> 명</div><br>
+                                <div class="com_into_small">모인 상금</div>
+                                <div class="com_into_small"><span class="com_into_big"></span> 원</div><br>
+                                <div class="com_into_small">마감 기한</div>
+                                <div class="com_into_small"><span class="com_into_big"></span> 일</div><br>
+                                <div class="com_into_small">참가자 수</div>
+                                <div class="com_into_small"><span class="com_into_big"></span> 명</div><br>
+                                <div class="com_into_small">
+                                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                    <div class="addthis_inline_share_toolbox"></div>
+                                </div>
+                            </div>
+                        </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <p class="com_intro_desp">
-                    [사전설문조사 이벤트 발표]</br>
-                    <1만원권> 4732, 2030, 9955, 2215, 9177</br>
-                    <3만원권> 4547</br>
-                    </br>
-                    [오픈아레나 하스스톤 레전드매치]</br>
-                     </br>
-                    1. 대회 소개</br>
-                    오픈아레나는 e-sports 크라우드 펀딩 서비스로써 첫 베타 서비스를 시작하며 이번 하스스톤 레전드 매치를 기획하게 되었습니다.</br>
-                    BJ 최미갈과 하스스톤의 유명 선수들 간의 재미있는 경기로 시청자 여러분들에게 즐거움을 드리고자 합니다.</br>
-                    대회의 개최는 여러분의 후원에 전적으로 달려있습니다.</br>
-                    최고의 선수들이 펼칠 오픈아레나 하스스톤 레전드 매치에 많은 후원 부탁드립니다.</br>
-                     </br>
-                    2. 일시</br>
-                    2016년 9월 19일 7PM. (4강 1차전, 2차전) . 9월 26일 8PM. (3,4위전, 결승)</br>
-                    (3덱 정복전 2매치로 방송이 마무리 되기에, 7시에 시작하여 최소 2시간~최대 4시간 까지 소요될 것으로 추정됨. 최대 시간은 사제vs사제. 전사vs전사. 얼방vs얼방 같은 극혐 매치업이 진행 되었을 경우를 상정하고 추산하였음.)</br>
-                     </br>
-                    3. 상금</br>
-                    기본 목표 금액 42만원이 모일 시, 아래와 같이 1~4등에게 상금이 지급되고,</br>
-		    크라우드펀딩을 통한 나머지 추가 금액은 1위 입상자에게 전액 지급됩니다.</br>
-                    1위 : 200,000 원</br>
-                    2위 : 100,000 원</br>
-                    3위 : 70,000 원</br>
-                    4위 : 50,000 원</br>
-                    </br>
-                    4. 크라우드 펀딩 모금 방식</br>
-                    방송 1주 전(9월14일)부터 모금 시작을 시작하며</br>
-                    방송 시작 전날(9/25 23:59:59)까지의 펀딩 적립금을 통해 상금으로 지급하게 됩니다.</br>
-                    해당 시점까지 기본 목표 금액 42만원에 도달하지 못하였을 경우 대회는 취소될 수 있습니다.</br>
-                     </br>
-                    5. 경기 진행 방식</br>
-                    4덱 1벤 정복전 방식</br>
-                  </br>
-                  - 미갈리스의 트위치 방송을 통해 송출됩니다.</br>
-                  <a href="http://www.twitch.tv/migal07">http://www.twitch.tv/migal07</a></br>
-                  </br>
-                  1.  펀딩 성공과 동시에 대회 일정이 시작되는 특성상 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</br>
-                  2. 대회가 불가피하게 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</br>
-              </p>
-          </div>
-        </div>
-                </div>
-                <!--competition content 2
-                <div class="tab-pane fade in" id="com_tab2">-->
-                    <!--경기 규칙 content
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="com_intro_desp">
-                  대회 규정</br></br>
-                    (1) 부전패 규정</br>
-                    - 최종 대진표 업데이트 이후, 10분동안연락이 되지 않은 분들은 ‘부전패’ 처리가 됩니다.</br>
-                    - 상대방의 ‘부전패’ 신청은 Discussuon 에 남겨주시면 되며, 업데이트이후 ‘10분’이 지났음에도 친구추가가 되지 않았다는 증거 스샷을 남겨 주시기 바랍니다.</br>
-                    (하스스톤 창 내부의 시간이 보이며 ‘친구 신청’ 을 했고, 상대가 받지 않았다는 스샷을 찍어 주시면 됩니다.)</br></br>
-                    (2) 덱 준비 규정</br>
-                    - 덱리스트에는 반드시 1직업당 1개의 덱만 있어야 합니다.</br>
-                    - 친선 준비모드에 들어간 이후 스크린샷공유시 같은 직업의 덱이 2개 이상 있을 경우, 실격처리 됩니다.</br>
-                    - 스크린샷 공유시 본인이 사용할 3개의 덱을 제외한 나머지 덱은 반드시 x 표시가 되어 있어야 합니다.</br></br>
-                    (3) 경기중 규정</br>
-                    - 경기 중 덱 변경은 불가능합니다. (사이드보딩 금지.)</br>
-                    - ‘경기중’ 이란 [상호간의 동의 하에 ‘친선 준비 모드’ 에 돌입한 후, 최종 승자가 정해지는 순간까지] 를 의미합니다.</br>
-                    - 만약 경기중 ‘내카드’ 창에 들어가면 무조건 몰수패 당하게 됩니다. (상대선수가 ‘내카드’ 창에 들어가는게 확인 되었을경우 바로 친구창스크린샷을 남겨 증거를 확보하셔야 합니다.)</br>
-                    - 경기가 끝나고 다음 라운드를 준비하는중에는 자유롭게 덱 변경이 가능합니다.</br>
-                    (ex. 1라운드(128강) 에서 ‘전사, 법사, 드루’ 를 활용 했다면, 2라운드에서는 ‘기사, 법사, 도적’ 을 활용해도 무방합니다.)</br></br>
-                    (4) 접속종료 규정</br>
-                    - 경기 중간에 한쪽이 튕기게 되면그대로 경기를 진행하게 되고, 재경기는하지 않습니다.</br>
-                    - 튕긴 후에 상대가 5분이상 재접속을 하지 않으면 실격패 처리됩니다.</br>
-                    - 프리징 현상 (게임이 멈춤) 이발생할 경우, 친선전을잠시 종료하고 같은 직업으로 다시 경기 하면 됩니다.</br></br>
-                    (5) 결과보고</br>
-                    - 경기 종료 후, 선수는 자신 대진표상의 ? 를 클릭하고 결과보고를 하여야합니다.</br>
-                    - 매 경기가 끝날때마다 승리 스크린샷을저장하셔야 합니다. 만약상대가 이의제기를 했을 시에 승리 스크린샷이 없을 경우 재경기를 하니 이점 꼭 유념해 주시기 바랍니다.</br></br>
-                    (6) 부정행위</br>
-                    - 어뷰징 및 관전 등 부정행위를한 선수는 이후 미갈tv 에서진행하는 모든 방송에 참여가 불가합니다.</br>
-                    - 부정행위가 적발되면 그 즉시 몰수패처리됩니다.</br>
-                    - 타 대회에서 부정행위를 한 선수도대회에 참여를 못할 수 있습니다.</br></br>
-                        </p>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p class="com_intro_desp">
+                                [사전설문조사 이벤트 발표]</br>
+                                <1만원권> 4732, 2030, 9955, 2215, 9177</br>
+                                <3만원권> 4547</br>
+                                </br>
+                                [오픈아레나 하스스톤 레전드매치]</br>
+                                </br>
+                                1. 대회 소개</br>
+                                오픈아레나는 e-sports 크라우드 펀딩 서비스로써 첫 베타 서비스를 시작하며 이번 하스스톤 레전드 매치를 기획하게 되었습니다.</br>
+                                BJ 최미갈과 하스스톤의 유명 선수들 간의 재미있는 경기로 시청자 여러분들에게 즐거움을 드리고자 합니다.</br>
+                                대회의 개최는 여러분의 후원에 전적으로 달려있습니다.</br>
+                                최고의 선수들이 펼칠 오픈아레나 하스스톤 레전드 매치에 많은 후원 부탁드립니다.</br>
+                                </br>
+                                2. 일시</br>
+                                2016년 9월 19일 7PM. (4강 1차전, 2차전) . 9월 26일 8PM. (3,4위전, 결승)</br>
+                                (3덱 정복전 2매치로 방송이 마무리 되기에, 7시에 시작하여 최소 2시간~최대 4시간 까지 소요될 것으로 추정됨. 최대 시간은 사제vs사제. 전사vs전사. 얼방vs얼방 같은 극혐 매치업이 진행 되었을 경우를 상정하고 추산하였음.)</br>
+                                </br>
+                                3. 상금</br>
+                                기본 목표 금액 42만원이 모일 시, 아래와 같이 1~4등에게 상금이 지급되고,</br>
+                                크라우드펀딩을 통한 나머지 추가 금액은 1위 입상자에게 전액 지급됩니다.</br>
+                                1위 : 200,000 원</br>
+                                2위 : 100,000 원</br>
+                                3위 : 70,000 원</br>
+                                4위 : 50,000 원</br>
+                                </br>
+                                4. 크라우드 펀딩 모금 방식</br>
+                                방송 1주 전(9월14일)부터 모금 시작을 시작하며</br>
+                                방송 시작 전날(9/25 23:59:59)까지의 펀딩 적립금을 통해 상금으로 지급하게 됩니다.</br>
+                                해당 시점까지 기본 목표 금액 42만원에 도달하지 못하였을 경우 대회는 취소될 수 있습니다.</br>
+                                </br>
+                                5. 경기 진행 방식</br>
+                                4덱 1벤 정복전 방식</br>
+                                </br>
+                                - 미갈리스의 트위치 방송을 통해 송출됩니다.</br>
+                                <a href="http://www.twitch.tv/migal07">http://www.twitch.tv/migal07</a></br>
+                                </br>
+                                1.  펀딩 성공과 동시에 대회 일정이 시작되는 특성상 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</br>
+                                2. 대회가 불가피하게 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</br>
+                            </p>
+                        </div>
                     </div>
-
-                </div>-->
+                </div>
 
                 <!--competition content 3 대진표-->
                 <div class="tab-pane fade in" id="com_tab3">
@@ -204,266 +162,132 @@
                         <div class="match_list"></div>
                     </div>
                 </div>
-                <!--competition content 4
+
                 <div class="tab-pane fade in" id="com_tab4">
                     <div class="com_intro_desp ">
-                       <div class="com_donatelist_box">
-                       <textarea class="form-control com_donate_desp" rows="3" placeholder=" 대회 응원 댓글을 달아주세요" ></textarea>
-                       <button class="btn btn-primary com_donate_enroll ">등록</button>
-                       </div>
+                        <div class="com_donatelist_box">
+                            <textarea class="form-control com_donate_desp" rows="3" placeholder=" 대회 응원 댓글을 달아주세요" ></textarea>
+                            <button class="btn btn-primary com_donate_enroll ">등록</button>
+                        </div>
 
-                           <a class="donater_title">후원 댓글 보기</a>
-                            <div class="donater_container">
-                                    <div class="com_donate_list">
-                                        <img class="com_donate_icon" src="//static-cdn.jtvnw.net/jtv_user_pictures/sakursamurai-profile_image-a27a3721a51dfaa9-300x300.png">
-                                        <span>후원자 1 :</span>
-                                        화이팅
-                                    </div>
-                                  <div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="//static-cdn.jtvnw.net/jtv_user_pictures/beastyqt-profile_image-95b19fcde7bb9e33-300x300.jpeg">
-                                        <span>후원자 2</span>
-                                    </div>
+                        <a class="donater_title">후원 댓글 보기</a>
+                        <div class="donater_container">
+                            <div class="com_donate_list">
+                                <img class="com_donate_icon" src="//static-cdn.jtvnw.net/jtv_user_pictures/sakursamurai-profile_image-a27a3721a51dfaa9-300x300.png">
+                                <span>후원자 1 :</span>
+                                화이팅
                             </div>
+                            <div class="com_donate_list" style="margin-top: 6px;">
+                                <img class="com_donate_icon" src="//static-cdn.jtvnw.net/jtv_user_pictures/beastyqt-profile_image-95b19fcde7bb9e33-300x300.jpeg">
+                                <span>후원자 2</span>
+                            </div>
+                        </div>
                     </div>
-                </div>-->
+                </div>
+
                 <!--competition content 5 후원자 명단-->
                 <div class="tab-pane fade in" id="com_tab5">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-md-offset-1">
                         <div class="com_intro_desp">
-                                <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
-                            </div>
-                          <div class="com_intro_desp">
-                              <a class="donater_title">Top3 후원자</a>
-                                <div class="donater_container">
-                                    <div class="com_donate_list">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>jp 님 : 50,000원</span>
-                                    </div>
-                                    <div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>auspice7 님 : 50,000원</span>
-                                    </div>
-                                    <div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>dldbstls 님 : 30,000원</span>
-                                    </div>
-                              </div>
-                          </div>
-                          <div class="com_intro_desp">
-                                  <a class="donater_title">후원해주신 분들</a>
-                                  <div class="donater_container">
+                            <a class="donater_title">Top3 후원자</a>
+                            <div class="donater_container">
+                                {% if funding %}
+                                    {% for f in funding %}
                                         <div class="com_donate_list">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>한상우 님 : 10,000원</span>
+                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <span>{{ f.username }} 님 : {{ f.amount }}원</span>
                                         </div>
-                                        <div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>안희철 님 : 5,000원</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="com_intro_desp">
+                            <a class="donater_title">후원해주신 분들</a>
+                            <div class="donater_container">
+                                {% if funding %}
+                                    {% for f in funding %}
+                                        <div class="com_donate_list">
+                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <span>{{ f.username }} 님 : {{ f.amount }}원</span>
                                         </div>
-                                        <div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>백경인 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>예지 님 : 1,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>pgh 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>허키로 님 : 20,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>송승민 님 : 20,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>TiredNight 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>jp 님 : 50,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>jina 님 : 20,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>Raccoon 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>ezbrother 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>dldbstls 님 : 30,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>blue1028 님 : 20,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>auspice7 님 : 50,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>dbswo91 님 : 30,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>tak47 님 : 30,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>ioio8080 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>baek351 님 : 1,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>rocca1619 님 : 20,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>미갈화이팅 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>1994kr 님 : 20,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>Nuke 님 : 10,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>동그리동 님 : 5,000원</span>
-                                        </div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>리더스 님 : 10,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>바람의카사 님 : 20,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>bsg3955 님 : 20,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>min1230 님 : 10,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>daum7777 님 : 30,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>gethnemane 님 : 20,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>bluery3 님 : 10,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>never0886 님 : 10,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>설꼬 님 : 20,000원</span>
-					</div>
-					<div class="com_donate_list" style="margin-top: 6px;">
-                                        <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                        <span>꽃으로 님 : 10,000원</span>
-                                	</div>
-				</div>
-                          </div>
-                      </div>
-                </div>
-              </div>
-       <!--competition content-end-->
-
-       <!--donate-->
-        <div class="modal fade" id="fundingModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
-                </div>
-                <div class="modal-body">
-                    <!-- content goes here -->
-                    <form id="funding_form" action="{% url 'funding' %}" method="POST">{% csrf_token %}
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">후원하실 금액을 선택해주세요</label>
-                          <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
-
-                      </div>
-                        <button name="funding_amount" type="submit" class="donate_submit" value="1000">
-                                  1,000원 후원하기
-                        </button>
-                        <button name="funding_amount" type="submit" class="donate_submit" value="3000" style="margin-left: 20px;">
-                                  3,000원 후원하기
-                        </button>
-                        </br></br>
-                        <button name="funding_amount" type="submit" class="donate_submit" value="5000">
-                                  5,000원 후원하기
-                        </button>
-                        <button name="funding_amount" type="submit" class="donate_submit" value="10000" style="margin-left: 20px;">
-                                  10,000원 후원하기
-                        </button>
-                        </br></br>
-                        <button name="funding_amount" type="submit" class="donate_submit" value="20000">
-                                  20,000원 후원하기
-                        </button>
-                        <button name="funding_amount" type="submit" class="donate_submit" value="50000" style="margin-left: 20px;">
-                                  50,000원 후원하기
-                        </button>
-                    </form>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-        </div>
+            <!--competition content-end-->
 
-        <!--join in-->
-        <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
-                </div>
-                <div class="modal-body">
-                    <!-- content goes here -->
-                    <form>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
-                        <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">참가자 연락처</label>
-                        <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
-                      </div>
-                      <button type="submit" class="join_submit">참가하기</button>
-                    </form>
+            <!--donate-->
+            <div class="modal fade" id="fundingModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
+                        </div>
+                        <div class="modal-body">
+                            <!-- content goes here -->
+                            <form id="funding_form" action="{% url 'funding' %}" method="POST">{% csrf_token %}
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">후원하실 금액을 선택해주세요</label>
+                                    <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
+
+                                </div>
+                                <button name="funding_amount" type="submit" class="donate_submit" value="1000">
+                                    1,000원 후원하기
+                                </button>
+                                <button name="funding_amount" type="submit" class="donate_submit" value="3000" style="margin-left: 20px;">
+                                    3,000원 후원하기
+                                </button>
+                                </br></br>
+                                <button name="funding_amount" type="submit" class="donate_submit" value="5000">
+                                    5,000원 후원하기
+                                </button>
+                                <button name="funding_amount" type="submit" class="donate_submit" value="10000" style="margin-left: 20px;">
+                                    10,000원 후원하기
+                                </button>
+                                </br></br>
+                                <button name="funding_amount" type="submit" class="donate_submit" value="20000">
+                                    20,000원 후원하기
+                                </button>
+                                <button name="funding_amount" type="submit" class="donate_submit" value="50000" style="margin-left: 20px;">
+                                    50,000원 후원하기
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
+
+            <!--join in-->
+            <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
+                        </div>
+                        <div class="modal-body">
+                            <!-- content goes here -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
+                                    <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">참가자 연락처</label>
+                                    <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
+                                </div>
+                                <button type="submit" class="join_submit">참가하기</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
 

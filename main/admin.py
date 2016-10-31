@@ -3,8 +3,7 @@ from .models import Funding, Making, Reply, Video
 
 # Register your models here.
 class FundingAdmin(admin.ModelAdmin):
-    list_display = ['id', 'username', 'amount']
-
+    list_display = ['id', 'username', 'tournament_id', 'tournament_name', 'amount']
 admin.site.register(Funding, FundingAdmin)
 
 class MakingAdmin(admin.ModelAdmin):

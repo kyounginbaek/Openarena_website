@@ -630,8 +630,8 @@
                     url: '/making/',
                     data: serializedData,
                     dataType: 'json',
-                    success: function(response1) {
-                        if(response1.status=="error"){
+                    success: function(response) {
+                        if(response.status=="error"){
                             $('.error1').show();
                             error = 1;
                         }
@@ -644,8 +644,8 @@
                                 url: '/making/',
                                 data: serializedData,
                                 dataType: 'json',
-                                success: function(response2) {
-                                    alert(response2.message);
+                                success: function(response) {
+                                    alert("대회 생성 요청이 성공적으로 제출되었습니다. 빠른 시일 내에 운영진과 검토 후 이메일과 연락처로 대회 개최 여부를 말씀드리겠습니다.");
                                     location.reload();
                                 }
                             });

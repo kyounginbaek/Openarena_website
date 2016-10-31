@@ -35,137 +35,137 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="{% url 'home' %}"><img src="../../static/img/openarena.png" alt="logo" width="110px"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="{% url 'looking' %}">대회 둘러보기</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'making' %}">대회 만들기</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'video' %}">대회 영상</a>
-                    </li>
-                    <li style="display: none;">
-                        <a href="{% url 'hallfame' %}">명예의 전당</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'help' %}">도움말</a>
-                    </li>
-                    {% if request.user.is_authenticated %}
-                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} 님 <b class="caret"></b></a>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="{% url 'home' %}"><img src="../../static/img/openarena.png" alt="logo" width="110px"></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'looking' %}">대회 둘러보기</a>
+                </li>
+                <li>
+                    <a href="{% url 'making' %}">대회 만들기</a>
+                </li>
+                <li>
+                    <a href="{% url 'video' %}">대회 영상</a>
+                </li>
+                <li style="display: none;">
+                    <a href="{% url 'hallfame' %}">명예의 전당</a>
+                </li>
+                <li>
+                    <a href="{% url 'help' %}">도움말</a>
+                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} 님 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'mypage' %}"><i class="glyphicon glyphicon-user"></i> &nbsp; 마이페이지</a></li>
                             <li><a href="{% url 'contact' %}"><i class="glyphicon glyphicon-envelope"></i> &nbsp; 문의 / 건의사항</a></li>
                             <li class="divider"></li>
                             <li><a href="{% url 'logout' %}"><i class="glyphicon glyphicon-off"></i> &nbsp; 로그아웃</a></li>
                         </ul>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{% url 'login' %}">로그인</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">로그인</a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    {% block content %}
+{% block content %}
 
-    {% endblock %}
+{% endblock %}
 
-    <!-- Footer -->
-    <footer>
-        <div class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ul class="list-inline">
-			    <li>
-                                <a href="{% url 'help' %}">도움말</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="{% url 'contact' %}">문의 / 건의하기</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="{% url 'privacy' %}">개인정보정책</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="{% url 'agreement' %}">이용약관</a>
-                            </li>
-			    <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="https://www.facebook.com/openarena.kr">페이스북</a>
-                            </li>
-			    <li class="footer-menu-divider">&sdot;</li>
-			    <li>
-                                <a href="https://twitter.com/openarena_kr">트위터</a>
-                            </li>
-			    <li class="footer-menu-divider">&sdot;</li>
-			    <li>
-                                <a href="https://www.instagram.com/openarena_kr/">인스타그램</a>
-                            </li>
-			    <li class="footer-menu-divider">&sdot;</li>
-			    <li>
-                                <a href="http://blog.naver.com/openarena">블로그</a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-muted small">Copyright &copy; 2016. Openarena Inc. All Rights Reserved.
+<!-- Footer -->
+<footer>
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{% url 'help' %}">도움말</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="{% url 'contact' %}">문의 / 건의하기</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="{% url 'privacy' %}">개인정보정책</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="{% url 'agreement' %}">이용약관</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="https://www.facebook.com/openarena.kr">페이스북</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="https://twitter.com/openarena_kr">트위터</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="https://www.instagram.com/openarena_kr/">인스타그램</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="http://blog.naver.com/openarena">블로그</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; 2016. Openarena Inc. All Rights Reserved.
                         </br></br>(주)오픈아레나 | 대표: 한상우 | 사업자등록번호: 429-88-00403 | 통신판매업신고: 2016-울산울주-00149호
                         </br>이메일 문의: help@openarena.kr | 영업소재지: 대한민국 울산광역시 울주군 언양읍 유니스트길 50 114동 501-8호
                         </br>
                         </br>(주)오픈아레나는 통신판매중개자이며 통신판매의 당사자가 아닙니다. 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
-                        </p>
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- jQuery -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-    {% block script %}
+{% block script %}
 
-    {% endblock %}
+{% endblock %}
 
-    <script>
-        {% if messages %}
-            {% for message in messages %}
-                alert('{{ message }}');
-            {% endfor %}
-        {% endif %}
-    </script>
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            alert('{{ message }}');
+        {% endfor %}
+    {% endif %}
+</script>
 
-    <script>
-        /* 구글 Analytics */
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<script>
+    /* 구글 Analytics */
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-84364746-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+    ga('create', 'UA-84364746-1', 'auto');
+    ga('send', 'pageview');
+</script>
 </body>
 </html>

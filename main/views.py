@@ -23,8 +23,8 @@ def making(request):
         # 토너먼트 URL 체크
         tournament_url = request.POST.get('tournament_url')
         if Making.objects.filter(tournament_url=tournament_url).exists():
-            response1 = {'status': 'error'}
-            return HttpResponse(json.dumps(response1), content_type='application/json')
+            response = {'status': 'error'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
 
         # 스트리밍 URL (afreecatv or twitch)
         streaming_url_spec = request.POST.get('input_afreecatv')+request.POST.get('input_twitch')+\
@@ -55,9 +55,8 @@ def making(request):
                                 promise=request.POST.getlist('promise[]'), promise_spec= request.POST.getlist('promise_spec[]'), reward=request.POST.getlist('reward[]'), reward_spec=request.POST.getlist('reward_spec[]'),
                                 template=template, phone=request.POST.get('phone'))
         making_obj.save()
-        response2 = {'status': 'success',
-                    'message': "대회 생성 요청이 성공적으로 제출되었습니다. 빠른 시일 내에 운영진과 검토 후 이메일과 연락처로 대회 개최 여부를 말씀드리겠습니다."}
-        return HttpResponse(json.dumps(response2), content_type='application/json')
+        response = {'status': 'success'}
+        return HttpResponse(json.dumps(response), content_type='application/json')
 
     return render(request, 'main/making.html', {})
 
@@ -71,7 +70,8 @@ def hallfame(request):
     return render(request, 'main/hallfame.html', {})
 
 def competition(request):
-    return render(request, 'main/competition.html', {})
+    funding = Funding.objects.all()
+    return render(request, 'main/competition.html', {'funding': funding})
 
 def contact(request):
     if request.method == 'POST':

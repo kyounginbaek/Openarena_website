@@ -5,6 +5,8 @@ class Funding(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=40, default='')
     email = models.CharField(max_length=40, default='')
+    tournament_id = models.CharField(max_length=20, default='')
+    tournament_name = models.CharField(max_length=40, default='')
     orderno = models.CharField(max_length=40, default='')
     amount = models.CharField(max_length=40, default='')
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))

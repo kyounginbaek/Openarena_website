@@ -9,6 +9,8 @@ urlpatterns = [
     url(r'^video/$', views.video, name='video'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^competition/$', views.competition, name='competition'),
+    url(r'^participation/$', views.participation, name='participation'),
+    url(r'^reply/$', views.reply, name='reply'),
     url(r'^contents/$', views.contents, name='contents'),
 
     url(r'^contact/$', views.contact, name="contact"),

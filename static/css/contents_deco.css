@@ -14,19 +14,17 @@
 }
 .contents_main{
     height: 250px;
-    margin-right:10%;
-    margin-left:10%;
-    background-color: #ffffff;
+    background-color: rgba(23,20,31,.7);
     border: 1px solid rgba(255, 153, 0, 0.2);
     border-radius: 4px;
 }
 .main_img{
     float: left;
-    width: 50%;
+    width: 250px;
     height: 100%;
 }
-.main_img img{
-    width:100%;
+.main_img div{
+    width: 100%;
     height:100%;
     border-radius: 4px;
     float: left;
@@ -37,12 +35,28 @@
     overflow : hidden;
 
 }
+.sidebar{
+    width: 140px;
+    height: 81%;
+    position: absolute;
+    float: left;
+    background: rgba(255,153,0,.9);
+}
+.side_padding{
+    padding-left: 140px;
+}
+.contents_profile{
+        height: 60px;
+        width: 60px;
+}
 .main_title{
+     color: white;
      font-size: 20px;
      font-weight: 600;
 }
 .main_subtitle{
      font-size: 15px;
+     color: #ededed;
 }
 .control{
     width: 100px;
@@ -50,26 +64,35 @@
     float:right;
     font-family:inherit;
     font-size:15px;
-    border: 1px solid rgba(33,33,33,0.5)
+    background-color: rgba(23,20,31,.7);
+    color: white;
+    border: 1px solid white;
+    margin: auto;
     }
 .upload{
     height:30px;
     padding: 10px;
     font-size:15px;
     border-radius: 4px;
+    color: white;
 }
-.com_empty{
+.contents_empty{
+    height: 280px;
+
 }
 .video_bar{
     height: 5px;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid #ddd;
 }
 .contents_video{
-    background-color:#ffffff;
+    background-color: rgba(23,20,31,.7);
     border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 .contents_video_ul{
     padding-left:0px;
+    padding : 5px;
 
 }
 
@@ -78,16 +101,38 @@
     height:170px;
     margin-left: 5px;
     margin-right: 5px;
-    background-color:#ffffff;
+    border:none;
 }
 .clip_img{
-    width:196px;
+    width:100%;
     height:110px;
 }
 .clip_title{
     font-size: 13px;
-    color: #167ac6;
+    color: #ff9900;
 }
 .clip_subtitle{
     font-size: 12px;
+    color: #ededed;
+}
+
+@media(max-width:990px){
+    .main_title{
+        font-size: 12px;
+    }
+    .main_subtitle{
+        font-size: 10px;
+    }
+    .main_img img{
+    }
+    .side_padding{
+    padding: 3%;
+    }
+    .contents_main{
+    margin:0px;
+    }
+    .clip{
+        margin-right: 70px;
+        margin-left : 70px;
+    }
 }

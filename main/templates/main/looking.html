@@ -8,37 +8,37 @@
 {% endblock %}
 
 {% block content %}
-   <div class="looking-header">
+    <div class="looking-header">
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="looking_table">
-              <div class="table_title" >게임별 대회
-              </div>
-              <table style="width:100%" cellpadding="20px">
-                <tr>
-                  <th>
-                      <div class="desc">
-                        <a id="all" name="all" class="category" href="" style="color: #f7941e">전체</a>
-                      </div>
-                  </th>
-                  <th>
-                      <div class="desc">
-                        <a id="hearthstone" name="hearthstone" class="category" href="" style="color: white">하스스톤</a>
-                      </div>
-                  </th>
-                </tr>
-                <tr>
-                  <th>
-                      <div class="desc">
-                          <a id="overwatch" name="overwatch" class="category" href="" style="color: white">오버워치</a>
-                      </div>
-                  </th>
-                  <th>
-                      <div class="desc">
-                          <a id="lol" name="lol" class="category" href="" style="color: white">롤 LOL</a>
-                      </div>
-                  </th>
-                </tr>
-              </table>
+                <div class="table_title" >게임별 대회
+                </div>
+                <table style="width:100%" cellpadding="20px">
+                    <tr>
+                        <th>
+                            <div class="desc">
+                                <a id="all" name="all" class="category" href="" style="color: #f7941e">전체</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="desc">
+                                <a id="hearthstone" name="hearthstone" class="category" href="" style="color: white">하스스톤</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="desc">
+                                <a id="overwatch" name="overwatch" class="category" href="" style="color: white">오버워치</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="desc">
+                                <a id="lol" name="lol" class="category" href="" style="color: white">롤 LOL</a>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
             </div>
         </div>
 
@@ -54,18 +54,20 @@
                     </div>
                 </div>
                 <div class="looking_com">
-                    <a href="{% url 'competition' %}">
-                        <div class="looking_picture1">
-                            <img src="../../static/nowcompetition/image.png" style="margin-bottom: 10px">
-                            <div class="pic_title">하스스톤 레전드매치</div>
-                            <div class="pic_subtitle">하스스톤 레전드 매치는 BJ최미갈과 함께 진행되는 4강으로 구성된 하스스톤 매치입니다.</div>
-                            <div class="pic_dscrp" style="margin-top: 10px">
-                                <span style="color: #ffffff">후원자수</span> <a class="pic_num">34<span style="color: #ffffff"> 명</span></a></br>
-                                모인상금 <a class="pic_num">572,000<span style="color: #ffffff"> 원</span></a></br>
-                                마감기한 <a class="pic_num">9월 26일 / 마감<span style="color: #ffffff"> 일</span></a>
+                    {% if making %}
+                        <a href="{% url 'competition' %}">
+                            <div class="looking_picture1">
+                                <img src="{{ main_image }}" style="margin-bottom: 10px">
+                                <div class="pic_title">{{ making.tournament_name }}</div>
+                                <div class="pic_subtitle">{{ making.summary }}</div>
+                                <div class="pic_dscrp" style="margin-top: 10px">
+                                    <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ funding.count }}<span style="color: #ffffff"> 명</span></a></br>
+                                    모인상금 <a class="pic_num">{{ total_amount.amount__sum }}<span style="color: #ffffff"> 원</span></a></br>
+                                    마감기한 <a class="pic_num">{{ making.endtime }}<span style="color: #ffffff"> 일</span></a>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    {% endif %}
                 </div>
 
                 <div class="now_order">

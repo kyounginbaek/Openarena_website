@@ -2,8 +2,8 @@
 {% load staticfiles %}
 {% block title %} 오픈아레나:미갈리스 하스스톤 대회 {% endblock %}
 {% block head %}
-    <!--join.css-->
-    <link rel="stylesheet" href="{% static 'css/join.css' %}">
+    <!--participation.css-->
+    <link rel="stylesheet" href="{% static 'css/participation.css' %}">
 
 {% endblock %}
 {% block content %}
@@ -19,23 +19,28 @@
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
-                        <div class="com_title">오픈아레나 하스스톤 레전드 매치</div></br>
-                        <p class="com_subtitle hidden-xs">
-                            오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 bj들의 매치입니다.
-                            하스스톤 탑 티어 플레이어들이 2주간에 걸쳐 싱글 토너먼트 형식으로 진행됩니다.</p>
-                        <div class="com_subtitle">대회 일정: 09월 19일 07:00 PM / 9월 26일 08:00 PM</div></br>
+                        <div class="com_title">{{ making.tournament_name }}</div></br>
+                        <p class="com_subtitle hidden-xs">{{ making.summary }}</p>
+                        <div class="com_subtitle">대회 일정 : {{ making.starttime }}</div></br>
                     </div>
                     <!--후원/참가-->
                     <div class="col-sm-3 col-md-3 col-xs-12 ">
                         <ul class="com_mainbox">
                             <li class="">
                                 <div class="" >
-                                    {% if request.user.is_authenticated %}
-                                    {% else %}
-                                    {% endif %}
+                                    <div class="center">
+                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원하기</button>
+                                    </div>
+                                </div>
+
+                                <div class="hidden-xs" style="height: 20px"></div>
+                                <div class="" >
+                                    <div class="center">
+                                        <button id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">대회참가</button>
+                                    </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
-                                <div class="center" >
+                                <div class="center">
                                     <button id="streaming" name="streaming" class="btn btn-primary center-block">방송보기</button>
                                 </div>
                             </li>
@@ -44,7 +49,7 @@
 
                     <!--상금바-->
                     <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                        <h4 class="com_title">572,000 / 420,000 원 후원 해주셨습니다 </h4>
+                        <h4 class="com_title">최종 목표 {{ making.funding_goal }}원 | 총 {{ total_amount.amount__sum }}원 후원 해주셨습니다 </h4>
                         <!--
                         <div class="com_white_bar">
                             <div class="com_orange_bar"></div>
@@ -97,14 +102,26 @@
 
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="container com_intro_now">
-                                <div class="com_into_small">후원자 수</div>
-                                <div class="com_into_small"><span  class="com_into_big"></span> 명</div><br>
-                                <div class="com_into_small">모인 상금</div>
-                                <div class="com_into_small"><span class="com_into_big"></span> 원</div><br>
+                                {% if funding %}
+                                    <div class="com_into_small">후원자 수</div>
+                                    <div class="com_into_small"><span class="com_into_big">{{ funding.count }}</span> 명</div><br>
+                                    <div class="com_into_small">모인 상금</div>
+                                    <div class="com_into_small"><span class="com_into_big">{{ total_amount.amount__sum }}</span> 원</div><br>
+                                {% else %}
+                                    <div class="com_into_small">후원자 수</div>
+                                    <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
+                                    <div class="com_into_small">모인 상금</div>
+                                    <div class="com_into_small"><span class="com_into_big">0</span> 원</div><br>
+                                {% endif %}
                                 <div class="com_into_small">마감 기한</div>
-                                <div class="com_into_small"><span class="com_into_big"></span> 일</div><br>
-                                <div class="com_into_small">참가자 수</div>
-                                <div class="com_into_small"><span class="com_into_big"></span> 명</div><br>
+                                <div class="com_into_small"><span class="com_into_big">{{ making.endtime }}</span> 일</div><br>
+                                {% if participation %}
+                                    <div class="com_into_small">참가자 수</div>
+                                    <div class="com_into_small"><span class="com_into_big">{{ participation.count }}</span> 명</div><br>
+                                {% else %}
+                                    <div class="com_into_small">참가자 수</div>
+                                    <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
+                                {% endif %}
                                 <div class="com_into_small">
                                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
                                     <div class="addthis_inline_share_toolbox"></div>
@@ -113,73 +130,49 @@
                         </div>
 
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <p class="com_intro_desp">
-                                [사전설문조사 이벤트 발표]</br>
-                                <1만원권> 4732, 2030, 9955, 2215, 9177</br>
-                                <3만원권> 4547</br>
-                                </br>
-                                [오픈아레나 하스스톤 레전드매치]</br>
-                                </br>
-                                1. 대회 소개</br>
-                                오픈아레나는 e-sports 크라우드 펀딩 서비스로써 첫 베타 서비스를 시작하며 이번 하스스톤 레전드 매치를 기획하게 되었습니다.</br>
-                                BJ 최미갈과 하스스톤의 유명 선수들 간의 재미있는 경기로 시청자 여러분들에게 즐거움을 드리고자 합니다.</br>
-                                대회의 개최는 여러분의 후원에 전적으로 달려있습니다.</br>
-                                최고의 선수들이 펼칠 오픈아레나 하스스톤 레전드 매치에 많은 후원 부탁드립니다.</br>
-                                </br>
-                                2. 일시</br>
-                                2016년 9월 19일 7PM. (4강 1차전, 2차전) . 9월 26일 8PM. (3,4위전, 결승)</br>
-                                (3덱 정복전 2매치로 방송이 마무리 되기에, 7시에 시작하여 최소 2시간~최대 4시간 까지 소요될 것으로 추정됨. 최대 시간은 사제vs사제. 전사vs전사. 얼방vs얼방 같은 극혐 매치업이 진행 되었을 경우를 상정하고 추산하였음.)</br>
-                                </br>
-                                3. 상금</br>
-                                기본 목표 금액 42만원이 모일 시, 아래와 같이 1~4등에게 상금이 지급되고,</br>
-                                크라우드펀딩을 통한 나머지 추가 금액은 1위 입상자에게 전액 지급됩니다.</br>
-                                1위 : 200,000 원</br>
-                                2위 : 100,000 원</br>
-                                3위 : 70,000 원</br>
-                                4위 : 50,000 원</br>
-                                </br>
-                                4. 크라우드 펀딩 모금 방식</br>
-                                방송 1주 전(9월14일)부터 모금 시작을 시작하며</br>
-                                방송 시작 전날(9/25 23:59:59)까지의 펀딩 적립금을 통해 상금으로 지급하게 됩니다.</br>
-                                해당 시점까지 기본 목표 금액 42만원에 도달하지 못하였을 경우 대회는 취소될 수 있습니다.</br>
-                                </br>
-                                5. 경기 진행 방식</br>
-                                4덱 1벤 정복전 방식</br>
-                                </br>
-                                - 미갈리스의 트위치 방송을 통해 송출됩니다.</br>
-                                <a href="http://www.twitch.tv/migal07">http://www.twitch.tv/migal07</a></br>
-                                </br>
-                                1.  펀딩 성공과 동시에 대회 일정이 시작되는 특성상 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</br>
-                                2. 대회가 불가피하게 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</br>
-                            </p>
+                            <p class="com_intro_desp">{{ making.description }}</p>
                         </div>
                     </div>
                 </div>
 
                 <!--competition content 3 대진표-->
                 <div class="tab-pane fade in" id="com_tab3">
-                    <div class="com_intro_desp ">
-                        <div class="match_list"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-md-offset-1">
+                        <div class="com_intro_desp">
+                            <a class="donater_title">대회 신청자</a>
+                            <br>
+                            {% if participation %}
+                                <a style="color: white">현재 {{ participation.count }} 명</a>
+                            {% else %}
+                                <a style="color: white">현재 0 명</a>
+                            {% endif %}
+
+                            <div class="donater_container">
+                                {% if participation %}
+                                    {% for p in participation %}
+                                        <div class="com_donate_list">
+                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <span>참가 번호 {{ forloop.counter }} : {{ p.username }} 님 | {{ p.etc1 }}</span>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tab-pane fade in" id="com_tab4">
-                    <div class="com_intro_desp ">
+                    <div class="com_intro_desp">
                         <div class="com_donatelist_box">
-                            <textarea class="form-control com_donate_desp" rows="3" placeholder=" 대회 응원 댓글을 달아주세요" ></textarea>
-                            <button class="btn btn-primary com_donate_enroll ">등록</button>
+                            <textarea id="comment" name="comment" class="form-control com_donate_desp" rows="3" placeholder=" 대회 응원 댓글을 달아주세요. (후원자만 입력 가능합니다.)" ></textarea>
+                            <button class="btn btn-primary com_donate_enroll">등록</button>
                         </div>
 
                         <a class="donater_title">후원 댓글 보기</a>
                         <div class="donater_container">
                             <div class="com_donate_list">
-                                <img class="com_donate_icon" src="//static-cdn.jtvnw.net/jtv_user_pictures/sakursamurai-profile_image-a27a3721a51dfaa9-300x300.png">
-                                <span>후원자 1 :</span>
-                                화이팅
-                            </div>
-                            <div class="com_donate_list" style="margin-top: 6px;">
-                                <img class="com_donate_icon" src="//static-cdn.jtvnw.net/jtv_user_pictures/beastyqt-profile_image-95b19fcde7bb9e33-300x300.jpeg">
-                                <span>후원자 2</span>
+                                <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                <span>{{ reply.username }} : {{ reply.comment }}</span>
                             </div>
                         </div>
                     </div>
@@ -192,10 +185,10 @@
                             <a class="donater_title">Top3 후원자</a>
                             <div class="donater_container">
                                 {% if funding %}
-                                    {% for f in funding %}
+                                    {% for tf in top_funding %}
                                         <div class="com_donate_list">
                                             <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                            <span>{{ f.username }} 님 : {{ f.amount }}원</span>
+                                            <span>{{ tf.username }} 님 : {{ tf.amount }}원</span>
                                         </div>
                                     {% endfor %}
                                 {% endif %}
@@ -203,6 +196,8 @@
                         </div>
                         <div class="com_intro_desp">
                             <a class="donater_title">후원해주신 분들</a>
+                            <br>
+                            <a style="color: white">현재 {{ funding.count }} 명</a>
                             <div class="donater_container">
                                 {% if funding %}
                                     {% for f in funding %}
@@ -232,8 +227,6 @@
                             <form id="funding_form" action="{% url 'funding' %}" method="POST">{% csrf_token %}
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">후원하실 금액을 선택해주세요</label>
-                                    <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 2시간 마다 갱신됩니다.</p>
-
                                 </div>
                                 <button name="funding_amount" type="submit" class="donate_submit" value="1000">
                                     1,000원 후원하기
@@ -261,8 +254,8 @@
                 </div>
             </div>
 
-            <!--join in-->
-            <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <!--participation in-->
+            <div class="modal fade" id="participationModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -271,14 +264,22 @@
                         </div>
                         <div class="modal-body">
                             <!-- content goes here -->
-                            <form>
+                            <form id="participation_form" action="{% url 'participation' %}" method="POST">{% csrf_token %}
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">참가자 이름(or 팀명)</label>
-                                    <input class="form-control" id="exampleInput" placeholder="ex) 홍길동">
+                                    <label for="participation_username">참가자 닉네임</label>
+                                    <input disabled required autocomplete="off" class="form-control" placeholder="{{ user.username }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">참가자 연락처</label>
-                                    <input class="form-control" id="exampleInputPassword1" placeholder="ex) 010-1234-5678">
+                                    <label for="participation_phone">참가자 연락처 (대회 시작 전 연락을 위함)</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_phone" name="participation_phone" placeholder="예) 010-1234-5678">
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc1">롤 티어</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) 실버 1단계">
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc2">롤 아이디</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) 롤길동">
                                 </div>
                                 <button type="submit" class="join_submit">참가하기</button>
                             </form>
@@ -300,16 +301,60 @@
                 $(this).removeClass("btn-default").addClass("btn-primary");
             });
 
-            $("#streaming").click(function () {
-                window.open("http://www.twitch.tv/migal07");
-            });
+            {% if request.user.is_authenticated %}
+                {% if has_funded == "yes" %}
+                    document.getElementById("comment").disabled = false;
+                {% else %}
+                    document.getElementById("comment").disabled = true;
+                {% endif %}
+            {% else %}
+                $("#funding").click(function () {
+                    alert("로그인이 필요한 기능입니다.");
+                    location.href='{% url 'login' %}';
+                });
+                $("#participation").click(function () {
+                    alert("로그인이 필요한 기능입니다.");
+                    location.href='{% url 'login' %}';
+                });
+                document.getElementById("comment").disabled = true;
+            {% endif %}
 
-            $("#cant_funding").click(function () {
-                alert("로그인이 필요한 기능입니다.");
-                location.href='{% url 'login' %}';
+            $("#streaming").click(function () {
+                window.open("{{ making.streaming_url_spec }}");
             });
 
             $("#funding_form").submit(function(e) {
+                var params = "funding_amount="+$(this).context.submit.value;
+                $.ajax({
+                    type: 'POST',
+                    async: false,
+                    url: '/funding/',
+                    data: params,
+                    dataType: 'json',
+                    success: function(response) {
+                        if(response.status == "fail"){
+                            alert('결제가 정상적으로 이루어지지 않았습니다. 다시 한번 시도해주세요.');
+                        }
+                    }
+                });
+            });
+
+            $("#participation_form").submit(function(e) {
+                $.ajax({
+                    type: 'POST',
+                    async: false,
+                    url: '/participation/',
+                    data: params,
+                    dataType: 'json',
+                    success: function(response) {
+                        if(response.status == "success"){
+                            alert('대회 참가 신청이 정상적으로 제출되었습니다. 대회 시작 1시간 전 문자를 발송해드리도록 하겠습니다.');
+                        }
+                    }
+                });
+            });
+
+            $("#reply_form").submit(function(e) {
                 var params = "funding_amount="+$(this).context.submit.value;
                 $.ajax({
                     type: 'POST',

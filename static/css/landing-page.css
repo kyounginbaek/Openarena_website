@@ -412,8 +412,8 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     vertical-align: middle;
 }
 .making_side{
-    width: 10%;
-    height: 160%;
+    width: 140px;
+    height: 1124px;
     position: absolute;
     float: left;
     background: #ff9900;

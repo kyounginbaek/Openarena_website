@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from main.models import Making, Funding, Participation, Reply
+from main.models import Making, Funding, Participation, Reply, Video
 from django.db.models import Sum
 
 def home(request):
@@ -77,14 +77,20 @@ def video(request):
     return render(request, 'main/video.html', {})
 
 def contents(request):
-    return render(request, 'main/contents.html', {})
+    video = Video.objects.all()
+
+    return render(request, 'main/contents.html', {'video': video})
 
 def hallfame(request):
     return render(request, 'main/hallfame.html', {})
 
 def competition(request):
+    return render(request, 'main/competition.html', {})
+
+def darkhumor(request):
     making = Making.objects.all()[:1].values().get()
     participation = Participation.objects.all()
+    reply = Reply.objects.all()
 
     top_funding = Funding.objects.all().order_by('-amount')[:3]
     funding = Funding.objects.all()
@@ -96,7 +102,7 @@ def competition(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/competition.html', {'making': making, 'participation': participation,
+    return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation, 'reply': reply,
                                                      'top_funding': top_funding, 'funding': funding,
                                                      'total_amount': total_amount, 'has_funded': has_funded})
 
@@ -105,6 +111,7 @@ def participation(request):
         # save 코드
         participation_obj = Participation(tournament_id=2, tournament_name="현가놈의 어윾이들 롤대회",
                                           username=request.user.username,
+                                          name=request.POST.get('participation_name'),
                                           email=request.user.email,
                                           phone=request.POST.get('participation_phone'),
                                           etc1=request.POST.get('participation_etc1'),
@@ -117,7 +124,9 @@ def participation(request):
 def reply(request):
     if request.method == 'POST':
         # save 코드
-        reply_obj = Reply()
+        reply_obj = Reply(tournament_id=2, tournament_name="현가놈의 어윾이들 롤대회",
+                          username=request.user.username,
+                          comment=request.POST.get('comment'))
         reply_obj.save()
         response = {'status': 'success'}
         return HttpResponse(json.dumps(response), content_type='application/json')
@@ -147,11 +156,11 @@ def funding(request):
 
         url = "https://toss.im/tosspay/api/v1/payments"
         params = {
-            "orderNo": "2016091901"+str(random.randrange(1,99999999)),
+            "orderNo": "20161106"+str(random.randrange(1,99999999)),
             "amount": funding_amount,
-            "productDesc": "미갈리스의 하스스톤 대회",
+            "productDesc": "제1회 현가놈배 롤대회",
             "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
-            "expiredTime": "2015-09-19 19:00:00",
+            "expiredTime": "2015-11-20 19:00:00",
         }
 
         response = requests.post(url, data=params)

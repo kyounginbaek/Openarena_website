@@ -19,5 +19,5 @@ class VideoAdmin(admin.ModelAdmin):
 admin.site.register(Video, VideoAdmin)
 
 class ParticipationAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'phone', 'etc1', 'etc2']
+    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'name', 'email', 'phone', 'etc1', 'etc2']
 admin.site.register(Participation, ParticipationAdmin)

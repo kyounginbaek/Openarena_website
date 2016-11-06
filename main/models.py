@@ -65,6 +65,7 @@ class Participation(models.Model):
     tournament_id = models.CharField(max_length=20, default='')
     tournament_name = models.CharField(max_length=40, default='')
     username = models.CharField(max_length=40, default='')
+    name = models.CharField(max_length=40, default='')
     teamname = models.CharField(max_length=40, default='')
     teammember = models.CharField(max_length=200, default='')
     email = models.CharField(max_length=40, default='')

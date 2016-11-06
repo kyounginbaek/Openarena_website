@@ -9,95 +9,47 @@
 {% block content %}
     <div class="head_empty"></div>
 
-    <div class="gray" style="background: url({% static 'nowcompetition/image.png'%}) center center no-repeat;background-size: cover; " >
-                <div class="hidden-xs hidden-sm sidebar"></div>
+    <div class="gray" style="background: url({% static 'img/intro-bg.jpg'%}) center center no-repeat; background-size: cover; height: 5000px;" >
         <div class="container">
 
             <!--대회 소개-->
-        <div class="content_header_empty"></div>
-        <div class=" container side_padding">
-            <div class="contents_main">
-                <div class="main_img">
-                <div style="background: url({% static 'img/list_new3.png'%}) center center no-repeat;background-size: cover; ">
+            <div class="content_header_empty"></div>
+            <div class=" container">
+                <div class="contents_main">
+                    <div class="main_img">
+                        <div style="background: url({% static 'img/list_new3.png'%}) center center no-repeat;background-size: cover;">
+                        </div>
+                    </div>
+                    <div class="contents_main_desp">
+                        <div class="main_title">오픈아레나 하스스톤 레전드 매치</div>
+                        <div class="main_title">진행 : BJ 최미갈</div>
+                        <br>
+                        <div class="main_subtitle">오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 BJ들의 매치입니다.<br>
+                            <br>대회 일정: 09월 19일 07:00 PM | 9월 26일 08:00 PM
+                        </div>
+                    </div>
                 </div>
-                </div>
-                <div class="contents_main_desp">
-                    <div class="main_title">오픈아레나 하스스톤 레전드 매치</div>
-                    <div class="main_title">진행 : BJ 최미갈</div>
-                    <br>
-                    <div class="main_subtitle">오픈아레나 하스스톤 레전드 매치는 4강으로 구성된 하스스톤 레전드 bj들의 매치입니다.<br>
-                                                <br>대회 일정: 09월 19일 07:00 PM <br> 9월 26일 08:00 PM
+
+                <div class="content_header_empty"></div>
+                <div class="contents_video" style="height: 3000px">
+                    <div class="contents_video_ul"><!--업로드한 동영상-->
+                        <div >
+                            <select class="form-control input-sm control">
+                                <option selected>최신순</option>
+                                <option>조회순</option>
+                                <option>댓글순</option>
+                            </select>
+                            <div class="upload">업로드한 동영상</div>
+                        </div>
+                        <div class="video_bar"></div>
+                        {% if video %}
+                            {% for v in video %}
+                                <iframe style="margin-left: 12px" width="560" height="315" src="{{ v.video_url }}" frameborder="0" wmode="Opaque"></iframe>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
-
-            <div class="content_header_empty"></div>
-            <div class="contents_video">
-                <ul class="contents_video_ul"><!--업로드한 동영상-->
-                    <li >
-                        <select class="form-control input-sm control">
-                            <option selected>최신순</option>
-                            <option>조회순</option>
-                            <option>댓글순</option>
-                        </select>
-                        <div class="upload">업로드한 동영상</div>
-                    </li>
-                    <li class="video_bar"></li>
-                    <li ><!--동영상 클립들-->
-                        <ul style="padding-left:0px;"><!--동영상 클립들 ul-->
-                            <li>
-                                <div class="clip" style="margin-top: 10px;">
-                                <img class="clip_img" style="background: url({% static 'images/lol/picture7.jpg'%}) center center no-repeat;background-size: cover; ">
-                                </img>
-                                <div class="clip_title" >결승전 4경기 (마스카 vs 던)</div>
-                                <div class="clip_subtitle" >조회수: 100회 . 댓글: 20개</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li > <!--동영상 클립들-->
-                        <ul style="padding-left:0px;"><!--동영상 클립들 ul-->
-                            <li>
-                                <div class="clip" style="margin-top: 10px;">
-                                <img class="clip_img" style="background: url({% static 'images/lol/picture7.jpg'%}) center center no-repeat;background-size: cover; ">
-                                </img>
-                                <div class="clip_title" >결승전 3경기 (마스카 vs 던)</div>
-                                <div class="clip_subtitle" >조회수: 100회 . 댓글: 20개</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li > <!--동영상 클립들-->
-                        <ul style="padding-left:0px;"><!--동영상 클립들 ul-->
-                            <li>
-                                <div class="clip" style="margin-top: 10px;">
-                                <img class="clip_img" style="background: url({% static 'images/lol/picture7.jpg'%}) center center no-repeat;background-size: cover; ">
-                                </img>
-                                <div class="clip_title" >결승전 2경기 (마스카 vs 던)</div>
-                                <div class="clip_subtitle" >조회수: 100회 . 댓글: 20개</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li > <!--동영상 클립들-->
-                        <ul style="padding-left:0px;"><!--동영상 클립들 ul-->
-                            <li>
-                                <div class="clip" style="margin-top: 10px;">
-                                <img class="clip_img" style="background: url({% static 'images/lol/picture7.jpg'%}) center center no-repeat;background-size: cover; ">
-                                </img>
-                                <div class="clip_title" >결승전 1경기 (마스카 vs 던)</div>
-                                <div class="clip_subtitle" >조회수: 20회 . 댓글: 15개</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-
-                </ul>
-
-
-                <div class="contents_empty"></div>
-            </div>
-        </div>
         </div>
     </div>
 {% endblock %}

@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^tournament_url_check/$', views.making, name='tournament_url_check'),
     url(r'^video/$', views.video, name='video'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
+    url(r'^calendar/$', views.calendar, name='calendar'),
     url(r'^competition/$', views.competition, name='competition'),
     url(r'^darkhumor/$', views.darkhumor, name='darkhumor'),
     url(r'^participation/$', views.participation, name='participation'),

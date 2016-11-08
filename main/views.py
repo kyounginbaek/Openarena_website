@@ -84,6 +84,9 @@ def contents(request):
 def hallfame(request):
     return render(request, 'main/hallfame.html', {})
 
+def calendar(request):
+    return render(request, 'main/calendar.html', {})
+
 def competition(request):
     return render(request, 'main/competition.html', {})
 

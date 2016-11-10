@@ -8,7 +8,7 @@
 .menu_list{
     font-size: 16px;
     text-align: center;
-     font-weight: 600;
+    font-weight: 600;
     color: #222222;
     padding: 5px;
 }
@@ -44,17 +44,17 @@
 }
 
 .contents_profile{
-        height: 60px;
-        width: 60px;
+    height: 60px;
+    width: 60px;
 }
 .main_title{
-     color: white;
-     font-size: 20px;
-     font-weight: 600;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 }
 .main_subtitle{
-     font-size: 15px;
-     color: #ededed;
+    font-size: 15px;
+    color: #ededed;
 }
 .control{
     width: 100px;
@@ -66,7 +66,7 @@
     color: white;
     border: 1px solid white;
     margin: auto;
-    }
+}
 .upload{
     height:30px;
     padding: 10px;
@@ -81,6 +81,10 @@
 .video_bar{
     height: 5px;
     border-bottom: 1px solid #ddd;
+    margin-bottom : 5px;
+}
+.video_clip{
+    margin: 10px;
 }
 .contents_video{
     background-color: rgba(23,20,31,.7);
@@ -123,13 +127,18 @@
     .main_img img{
     }
     .side_padding{
-    padding: 3%;
+        padding: 3%;
     }
     .contents_main{
-    margin:0px;
+        margin:0px;
     }
     .clip{
         margin-right: 70px;
         margin-left : 70px;
+    }
+    .video_clip{
+        margin-left: 12px;
+        width: 500px;
+        height: 300px;
     }
 }

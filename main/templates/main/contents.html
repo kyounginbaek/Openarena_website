@@ -9,7 +9,7 @@
 {% block content %}
     <div class="head_empty"></div>
 
-    <div class="gray" style="background: url({% static 'img/intro-bg.jpg'%}) center center no-repeat; background-size: cover; height: 5000px;" >
+    <div class="gray" style="background: url({% static 'img/intro-bg.jpg'%}) center center no-repeat; background-size: cover;" >
         <div class="container">
 
             <!--대회 소개-->
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="content_header_empty"></div>
-                <div class="contents_video" style="height: 3000px">
+                <div class="contents_video" >
                     <div class="contents_video_ul"><!--업로드한 동영상-->
                         <div >
                             <select class="form-control input-sm control">
@@ -44,7 +44,7 @@
                         <div class="video_bar"></div>
                         {% if video %}
                             {% for v in video %}
-                                <iframe style="margin-left: 12px" width="560" height="315" src="{{ v.video_url }}" frameborder="0" wmode="Opaque"></iframe>
+                                <iframe class="video_clip" width="300" height="200" src="{{ v.video_url }}" frameborder="0" wmode="Opaque"></iframe>
                             {% endfor %}
                         {% endif %}
                     </div>

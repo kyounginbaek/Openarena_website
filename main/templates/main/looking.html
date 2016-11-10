@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="intro-header">
+    <div class="intro-header" style="background: url({% static 'img/intro-bg.jpg' %});">
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="looking_table">
                 <div class="table_title" >게임별 대회
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="{% url 'competition' %}">
+                        <a href="{% url 'migal' %}">
                             <div class="looking_picture1">
                                 <img src="{% static 'nowcompetition/image.png' %}" style="margin-bottom: 10px">
                                 <div class="pic_title">하스스톤 레전드매치</div>

@@ -3,7 +3,7 @@ import random
 import requests
 from django.core.mail import EmailMessage
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from main.models import Making, Funding, Participation, Reply, Video
 from django.db.models import Sum
@@ -87,8 +87,8 @@ def hallfame(request):
 def calendar(request):
     return render(request, 'main/calendar.html', {})
 
-def competition(request):
-    return render(request, 'main/competition.html', {})
+def migal(request):
+    return render(request, 'main/migal.html', {})
 
 def darkhumor(request):
     making = Making.objects.all()[:1].values().get()
@@ -106,8 +106,46 @@ def darkhumor(request):
         has_funded = "no"
 
     return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation, 'reply': reply,
-                                                     'top_funding': top_funding, 'funding': funding,
-                                                     'total_amount': total_amount, 'has_funded': has_funded})
+                                                   'top_funding': top_funding, 'funding': funding,
+                                                   'total_amount': total_amount, 'has_funded': has_funded})
+
+def arch(request):
+    making = Making.objects.all()[:1].values().get()
+    participation = Participation.objects.all()
+    reply = Reply.objects.all()
+
+    top_funding = Funding.objects.all().order_by('-amount')[:3]
+    funding = Funding.objects.all()
+    total_amount = Funding.objects.all().aggregate(Sum('amount'))
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation, 'reply': reply,
+                                                   'top_funding': top_funding, 'funding': funding,
+                                                   'total_amount': total_amount, 'has_funded': has_funded})
+
+def macho(request):
+    making = Making.objects.all()[:1].values().get()
+    participation = Participation.objects.all()
+    reply = Reply.objects.all()
+
+    top_funding = Funding.objects.all().order_by('-amount')[:3]
+    funding = Funding.objects.all()
+    total_amount = Funding.objects.all().aggregate(Sum('amount'))
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation, 'reply': reply,
+                                                   'top_funding': top_funding, 'funding': funding,
+                                                   'total_amount': total_amount, 'has_funded': has_funded})
 
 def participation(request):
     if request.method == 'POST':
@@ -120,9 +158,7 @@ def participation(request):
                                           etc1=request.POST.get('participation_etc1'),
                                           etc2=request.POST.get('participation_etc2'))
         participation_obj.save()
-        response = {'status': 'success'}
-        return HttpResponse(json.dumps(response), content_type='application/json')
-    return render(request, 'main/competition.html', {})
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 def reply(request):
     if request.method == 'POST':
@@ -133,7 +169,6 @@ def reply(request):
         reply_obj.save()
         response = {'status': 'success'}
         return HttpResponse(json.dumps(response), content_type='application/json')
-    return render(request, 'main/competition.html', {})
 
 def contact(request):
     if request.method == 'POST':
@@ -179,7 +214,7 @@ def funding(request):
             response = {'status': 'fail'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    return render(request, 'main/competition.html', {})
+    return render(request, 'main/migal.html', {})
 
 def privacy(request):
     return render(request, 'main/privacy.html', {})

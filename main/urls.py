@@ -9,8 +9,11 @@ urlpatterns = [
     url(r'^video/$', views.video, name='video'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^calendar/$', views.calendar, name='calendar'),
-    url(r'^competition/$', views.competition, name='competition'),
+    url(r'^migal/$', views.migal, name='migal'),
     url(r'^darkhumor/$', views.darkhumor, name='darkhumor'),
+    url(r'^arch/$', views.arch, name='arch'),
+    url(r'^macho/$', views.macho, name='macho'),
+
     url(r'^participation/$', views.participation, name='participation'),
     url(r'^reply/$', views.reply, name='reply'),
     url(r'^contents/$', views.contents, name='contents'),

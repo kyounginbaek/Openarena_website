@@ -15,7 +15,7 @@
                 <div class="container">
                     <!--프로필칸-->
                     <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                        <div class="com_profile" style="background: url({% static 'images/lol/League_of_Legends_Icon.png' %}) no-repeat center center;"></div>
+                        <div class="com_profile" style="background: url({% static 'img/whyachi/whyachi_logo.png' %}); background-size: contain;"></div>
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
@@ -49,7 +49,7 @@
 
                     <!--상금바-->
                     <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                        <h4 class="com_title">후원 목표 {{ making.funding_goal }}원 | 총 {{ total_amount.amount__sum }}원 후원 해주셨습니다 </h4>
+                        <h4 class="com_title">후원 목표 {{ making.funding_goal }}원 | 현재 {{ total_amount.amount__sum }}원 후원 해주셨습니다 </h4>
                         <!--
                         <div class="com_white_bar">
                             <div class="com_orange_bar"></div>

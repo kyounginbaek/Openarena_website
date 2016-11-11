@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^calendar/$', views.calendar, name='calendar'),
     url(r'^migal/$', views.migal, name='migal'),
     url(r'^darkhumor/$', views.darkhumor, name='darkhumor'),
-    url(r'^arch/$', views.arch, name='arch'),
+    url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),
 
     url(r'^participation/$', views.participation, name='participation'),

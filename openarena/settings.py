@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'main',
     'accounts',
     'social.apps.django_app.default',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -109,7 +109,7 @@ def darkhumor(request):
                                                    'top_funding': top_funding, 'funding': funding,
                                                    'total_amount': total_amount, 'has_funded': has_funded})
 
-def arch(request):
+def whyachi(request):
     making = Making.objects.all()[:1].values().get()
     participation = Participation.objects.all()
     reply = Reply.objects.all()
@@ -124,7 +124,7 @@ def arch(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation, 'reply': reply,
+    return render(request, 'main/whyachi.html', {'making': making, 'participation': participation, 'reply': reply,
                                                    'top_funding': top_funding, 'funding': funding,
                                                    'total_amount': total_amount, 'has_funded': has_funded})
 
@@ -143,15 +143,14 @@ def macho(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation, 'reply': reply,
+    return render(request, 'main/macho.html', {'making': making, 'participation': participation, 'reply': reply,
                                                    'top_funding': top_funding, 'funding': funding,
                                                    'total_amount': total_amount, 'has_funded': has_funded})
 
 def participation(request):
     if request.method == 'POST':
         # save 코드
-        participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
-                                          tournament_name=request.POST.get('tournament_name'),
+        participation_obj = Participation(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
                                           username=request.user.username,
                                           name=request.POST.get('participation_name'),
                                           email=request.user.email,
@@ -164,7 +163,7 @@ def participation(request):
 def reply(request):
     if request.method == 'POST':
         # save 코드
-        reply_obj = Reply(tournament_id=2, tournament_name="현가놈의 어윾이들 롤대회",
+        reply_obj = Reply(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
                           username=request.user.username,
                           comment=request.POST.get('comment'))
         reply_obj.save()

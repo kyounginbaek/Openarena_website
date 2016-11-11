@@ -11,6 +11,16 @@ class Funding(models.Model):
     amount = models.IntegerField(default='')
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
 
+class Fundingdummy(models.Model):
+    id = models.AutoField(primary_key=True)
+    tournament_id = models.CharField(max_length=20, default='')
+    tournament_name = models.CharField(max_length=40, default='')
+    username = models.CharField(max_length=40, default='')
+    email = models.CharField(max_length=40, default='')
+    orderno = models.CharField(max_length=40, default='')
+    amount = models.IntegerField(default='')
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
+
 class Making(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=40, default='')

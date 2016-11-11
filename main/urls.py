@@ -14,13 +14,10 @@ urlpatterns = [
     url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),
 
-    url(r'^participation/$', views.participation, name='participation'),
-    url(r'^reply/$', views.reply, name='reply'),
     url(r'^contents/$', views.contents, name='contents'),
 
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),
-    url(r'^funding/$', views.funding, name="funding"),
     url(r'^privacy/$', views.privacy, name="privacy"),
     url(r'^agreement/$', views.agreement, name="agreement"),
 ]

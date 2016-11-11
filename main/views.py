@@ -3,9 +3,9 @@ import random
 import requests
 from django.core.mail import EmailMessage
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from main.models import Making, Funding, Participation, Reply, Video
+from main.models import Making, Funding, Fundingdummy, Participation, Reply, Video
 from django.db.models import Sum
 
 def home(request):
@@ -110,6 +110,51 @@ def darkhumor(request):
                                                    'total_amount': total_amount, 'has_funded': has_funded})
 
 def whyachi(request):
+    if request.method == 'POST':
+        if request.POST.get('purpose')=="participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
+                                              username=request.user.username,
+                                              name=request.POST.get('participation_name'),
+                                              email=request.user.email,
+                                              phone=request.POST.get('participation_phone'),
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'))
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose')=="reply":
+            # save 코드
+            reply_obj = Reply(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
+                              username=request.user.username,
+                              comment=request.POST.get('comment'))
+            reply_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose')=="funding":
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20161111" + str(random.randrange(1, 99999999)),
+                "amount": request.POST.get('funding_amount'),
+                "productDesc": "2016 BJ 아치의 LOL 대회",
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2015-11-30 19:00:00",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(username=request.user.username, email=request.user.email,
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
     making = Making.objects.all()[:1].values().get()
     participation = Participation.objects.all()
     reply = Reply.objects.all()
@@ -125,8 +170,8 @@ def whyachi(request):
         has_funded = "no"
 
     return render(request, 'main/whyachi.html', {'making': making, 'participation': participation, 'reply': reply,
-                                                   'top_funding': top_funding, 'funding': funding,
-                                                   'total_amount': total_amount, 'has_funded': has_funded})
+                                                 'top_funding': top_funding, 'funding': funding,
+                                                 'total_amount': total_amount, 'has_funded': has_funded})
 
 def macho(request):
     making = Making.objects.all()[:1].values().get()
@@ -144,31 +189,8 @@ def macho(request):
         has_funded = "no"
 
     return render(request, 'main/macho.html', {'making': making, 'participation': participation, 'reply': reply,
-                                                   'top_funding': top_funding, 'funding': funding,
-                                                   'total_amount': total_amount, 'has_funded': has_funded})
-
-def participation(request):
-    if request.method == 'POST':
-        # save 코드
-        participation_obj = Participation(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
-                                          username=request.user.username,
-                                          name=request.POST.get('participation_name'),
-                                          email=request.user.email,
-                                          phone=request.POST.get('participation_phone'),
-                                          etc1=request.POST.get('participation_etc1'),
-                                          etc2=request.POST.get('participation_etc2'))
-        participation_obj.save()
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
-
-def reply(request):
-    if request.method == 'POST':
-        # save 코드
-        reply_obj = Reply(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
-                          username=request.user.username,
-                          comment=request.POST.get('comment'))
-        reply_obj.save()
-        response = {'status': 'success'}
-        return HttpResponse(json.dumps(response), content_type='application/json')
+                                               'top_funding': top_funding, 'funding': funding,
+                                               'total_amount': total_amount, 'has_funded': has_funded})
 
 def contact(request):
     if request.method == 'POST':
@@ -187,34 +209,6 @@ def contact(request):
 
 def help(request):
     return render(request, 'main/help.html', {})
-
-def funding(request):
-    if request.method == 'POST':
-        funding_amount = request.POST.get('funding_amount')
-
-        url = "https://toss.im/tosspay/api/v1/payments"
-        params = {
-            "orderNo": "20161106"+str(random.randrange(1,99999999)),
-            "amount": funding_amount,
-            "productDesc": "제1회 현가놈배 롤대회",
-            "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
-            "expiredTime": "2015-11-20 19:00:00",
-        }
-
-        response = requests.post(url, data=params)
-        #print(response.text)
-
-        if response.json().get('status') == 200 and response.json().get('code') != -1:
-            # save 코드
-            funding_obj = Funding(username=request.user.username, email=request.user.email,
-                                  orderno=params.get('orderNo'), amount=params.get('amount'))
-            funding_obj.save()
-            return redirect(response.json().get('checkoutPage'))
-        else:
-            response = {'status': 'fail'}
-            return HttpResponse(json.dumps(response), content_type='application/json')
-
-    return render(request, 'main/migal.html', {})
 
 def privacy(request):
     return render(request, 'main/privacy.html', {})

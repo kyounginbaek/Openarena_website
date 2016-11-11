@@ -150,7 +150,8 @@ def macho(request):
 def participation(request):
     if request.method == 'POST':
         # save 코드
-        participation_obj = Participation(tournament_id=2, tournament_name="현가놈의 어윾이들 롤대회",
+        participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
+                                          tournament_name=request.POST.get('tournament_name'),
                                           username=request.user.username,
                                           name=request.POST.get('participation_name'),
                                           email=request.user.email,

@@ -101,7 +101,7 @@ li.competition-item img{
     text-align: center;
     color: #f8f8f8;
     height: 650px;
-    background: url(../../static/img/image.png) no-repeat center center;
+    background: url(../img/migal/migal_cover.png) no-repeat center center;
     background-size: contain;
     font-family: 나눔고딕;
 
@@ -612,7 +612,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     float: right;
 }
 .match_list{
-    background: url(../../static/img/list_new3.png) center center no-repeat;
+    background: url(../img/migal/migal_participation.png) center center no-repeat;
     background-size: contain;
     height: 600px;
 

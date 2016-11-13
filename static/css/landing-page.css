@@ -97,11 +97,7 @@ li.competition-item img{
     text-align: center;
     color: #f8f8f8;
     height: 650px;
-    background: url(../img/migal/migal_cover.png) no-repeat center center;
-    background-size: contain;
     font-family: 나눔고딕;
-
-
 }
 .making_font{
     font-size: 20px;

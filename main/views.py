@@ -12,14 +12,14 @@ def home(request):
     return render(request, 'main/home.html', {})
 
 def looking(request):
-    making = Making.objects.all()[:1].values().get()
+    whyachi = Making.objects.filter(tournament_name = '2016 BJ아치 LOL 대회').values().get()
+    macho = Making.objects.filter(tournament_name = 'MASL 스타2 리그 시즌3').values().get()
 
     funding = Funding.objects.all()
     total_amount = Funding.objects.all().aggregate(Sum('amount'))
 
-    return render(request, 'main/looking.html', {'making': making,
-                                                 'funding': funding,
-                                                 'total_amount': total_amount})
+    return render(request, 'main/looking.html', {'whyachi': whyachi, 'macho': macho,
+                                                 'funding': funding, 'total_amount': total_amount})
 
 def making(request):
     if not request.user.is_authenticated():
@@ -113,7 +113,7 @@ def whyachi(request):
     if request.method == 'POST':
         if request.POST.get('purpose')=="participation":
             # save 코드
-            participation_obj = Participation(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
+            participation_obj = Participation(tournament_id=2, tournament_name="2016 BJ 아치의 LOL 대회",
                                               username=request.user.username,
                                               name=request.POST.get('participation_name'),
                                               email=request.user.email,
@@ -125,7 +125,7 @@ def whyachi(request):
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose')=="reply":
             # save 코드
-            reply_obj = Reply(tournament_id=3, tournament_name="2016 BJ 아치의 LOL 대회",
+            reply_obj = Reply(tournament_id=2, tournament_name="2016 BJ 아치의 LOL 대회",
                               username=request.user.username,
                               comment=request.POST.get('comment'))
             reply_obj.save()
@@ -155,7 +155,7 @@ def whyachi(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.all()[:1].values().get()
+    making = Making.objects.filter(tournament_name = '2016 BJ아치 LOL 대회').values().get()
     participation = Participation.objects.all()
     reply = Reply.objects.all()
 
@@ -174,7 +174,54 @@ def whyachi(request):
                                                  'total_amount': total_amount, 'has_funded': has_funded})
 
 def macho(request):
-    making = Making.objects.all()[:1].values().get()
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=3, tournament_name="MASL 스타2 리그 시즌3",
+                                              username=request.user.username,
+                                              name=request.POST.get('participation_name'),
+                                              email=request.user.email,
+                                              phone=request.POST.get('participation_phone'),
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3=request.POST.get('participation_etc3'),
+                                              etc4=request.POST.get('participation_etc4'))
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "reply":
+            # save 코드
+            reply_obj = Reply(tournament_id=3, tournament_name="MASL 스타2 리그 시즌3",
+                              username=request.user.username,
+                              comment=request.POST.get('comment'))
+            reply_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20161113" + str(random.randrange(1, 99999999)),
+                "amount": request.POST.get('funding_amount'),
+                "productDesc": "마초 스타2 리그(MASL) 시즌3",
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2015-11-30 19:00:00",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(username=request.user.username, email=request.user.email,
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+    making = Making.objects.filter(tournament_name = 'MASL 스타2 리그 시즌3').values().get()
     participation = Participation.objects.all()
     reply = Reply.objects.all()
 

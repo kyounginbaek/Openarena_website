@@ -1,5 +1,7 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
+{% load humanize %}
+
 {% block title %} 오픈아레나:{{ making.tournament_name }} {% endblock %}
 {% block head %}
     <!--participation.css-->
@@ -8,14 +10,14 @@
 {% endblock %}
 {% block content %}
     <div class="block-b">
-        <div class="com_header" style="background:url({% static "img/darkhumor/darkhumor_poster.jpeg" %})">
+        <div class="com_header" style="background:url({% static "img/macho/macho_cover.png" %}) center center no-repeat; background-size: cover;">
             <div class="com_empty">
             </div>
             <div class="com_header_inner">
                 <div class="container">
                     <!--프로필칸-->
                     <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                        <div class="com_profile" style="background: url({% static 'img/whyachi/whyachi_logo.png' %}); background-size: contain;"></div>
+                        <div class="com_profile" style="background: url({% static 'img/macho/macho_logo.png' %}); background-size: contain;"></div>
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
@@ -49,7 +51,10 @@
 
                     <!--상금바-->
                     <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                        <h4 class="com_title">후원 목표 {{ making.funding_goal }}원 | 총 {{ total_amount.amount__sum }}원 후원 해주셨습니다 </h4>
+                        <h4 id="comma1" class="com_title">
+                            후원 목표 : {{ making.funding_goal|intcomma }}원 / 현재 : {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다
+                        </h4>
+                        <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
                         <!--
                         <div class="com_white_bar">
                             <div class="com_orange_bar"></div>
@@ -96,7 +101,7 @@
                     <div class="com_intro">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div class="com_intro_img">
-                                <img src="{% static 'img/darkhumor/darkhumor_poster2.jpeg' %}">
+                                <img src="{% static 'img/macho/macho_poster.jpg' %}">
                             </div>
                         </div>
 
@@ -106,7 +111,7 @@
                                     <div class="com_into_small">후원자 수</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ funding.count }}</span> 명</div><br>
                                     <div class="com_into_small">모인 상금</div>
-                                    <div class="com_into_small"><span class="com_into_big">{{ total_amount.amount__sum }}</span> 원</div><br>
+                                    <div class="com_into_small"><span class="com_into_big">{{ total_amount.amount__sum|intcomma }}</span> 원</div><br>
                                 {% else %}
                                     <div class="com_into_small">후원자 수</div>
                                     <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
@@ -130,129 +135,68 @@
                         </div>
 
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <p class="com_intro_desp">
-                                제 1조 종목 명칭</br>
-                                제 1회 현가놈배 LOL 대회</br>
-                                </br>
-                                제 2조 참가 자격</br>
-                                2.1 대리 혹은 부계정이 아니라면 누구나 참여 가능합니다.</br>
-                                </br>
-                                제 3조 참가 신청</br>
-                                3.1 대회에 참가를 원하는 선수는 11/9(수) 23:59:59까지 개인별로 오픈아레나 홈페이지의 참가하기 버튼을 통해 참가 가능합니다.</br>
-                                3.2 이번 대회는 참가비가 있는 대회로 최소 5,000원이며 참가하기 버튼 위의 ‘후원하기’버튼을 통해 참가비를 입금할 수 있습니다. 5,000원 이상의 참가비 입금은 세제 후 모두 기부됩니다.</br>
-                                3.2 기본 8팀 8강 40명으로 진행되며 그 이상의 선수들이 접수했을 시 선착순으로 부전승의 기회를 얻습니다.</br>
-                                3.3 참가 시 작성된 티어를 바탕으로 주최측인 ㈜빅픽쳐에서 티어에 맞게 5명씩 팀이 편성됩니다.</br>
-                                3.4 대회 참가 시작 시간 1시간 전까지 5명의 팀원 모두가 출석하지 않으면 예비 번호를 받은 선수가 투입되며, 대회 시작 시간에서 10분 후까지 5명의 팀원 모두가 모이지 않으면 부전패 처리됩니다.</br>
-                                3.5 대회 참가 신청팀은 마감일 전까지 참가 선수의 소환사 명이 변경될 경우, 팀장은 반드시 참가 신청 페이지에 수정 반영을 해야하며, 대회진행 중 그 어떠한 경우라도 소환사명 변경은 금지합니다. 이를 어길 경우 대회 참여 자격을 즉시 박탈합니다.</br>
-                                (예외 조항) 대회 방송 경기 진행 시, 미풍양속을 저해하는 소환사명인 경우, 대회 운영 본부의 결정으로 참여 선수에게 소환사명 변경을 요구할 수 있으며, 참여 선수는 이를 적극적으로 수용하고 따라야 합니다.</br>
-                                </br>
-                                제 4조 경기 방식</br>
-                                4.1 기본 8팀 8강전을 바탕으로 수요일날까지 접수된 선수들을 바탕으로 재조정 될 수 있습니다.</br>
-                                4.1.1 서버 및 참가계정 : 한국 라이브 서버에서 본인 계정으로 진행됩니다.</br>
-                                4.1.2 방식 : 5 vs 5 토너먼트 드래프트 픽 모드</br>
-                                4.1.3 대전 맵 : 소환사의 협곡</br>
-                                4.1.4 진영 선택</br>
-                                ① 심판의 코인토스 후 승자 선택</br>
-                                ② 다전제 경기의 경우 세트마다 진영을 반대로 선택</br>
-                                4.1.5 경기 세트</br>
-                                ① 본선</br>
-                                8강 이하 : 단판</br>
-                                4강~결승 : 3판 2선승제</br>
-                                4.1.6 룬, 특성, 스킨 결정 : 전체사용 가능</br>
-                                4.1.7 관전 허용 : 대회 진행을 위해 심판, 옵저버만 허용</br>
-                                </br>
-                                5조 금지 행위</br>
-                                5.1 키보드, 마우스, 헤드폰, 마우스패드, 마우스 거치대 등 개인 장비를 대회에서 사용할 수 있으나, 개인장비로 인한 튕김 현상, 에러 등의 문제에 대해서는 선수 본인이 책임을 지며, 주최측에 이의를 제기할 수 없습니다.</br>
-                                5.2 마우스 프로그램 외 외부 프로그램 사용 금지</br>
-                                5.3 클라이언트 조작을 통해 기본 설정 범위를 초과한 설정 금지</br>
-                                5.4 채팅</br>
-                                ① 경기 포기의사 및 경기 중단 요청 채팅을 제외한 다른 채팅 사용 금지합니다. 단, 경기 도중 원활한 경기 진행을 위한 채팅과 경기 종료 직전의 GG 관련 채팅은 예외로 합니다.</br>
-                                ② 항복 투표 후 10초 이내로 찬성을 해야 하되, 찬성 투표 불일치로 인한 항복 취소는 금지합니다.</br>
-                                ③ shift + enter 오류로 인한 공백 채팅은 팀 당 1회까지 유예하며, 2회 발생 시 금지행위로 간주합니다.</br>
-                                ④ 게임 내 챔피언의 이야기, 웃음, 춤 등의 액션은 허용합니다.</br>
-                                ⑤ 보이스 채팅 프로그램 사용을 허용합니다.</br>
-                                </br>
-                                6조 버그 및 디스커넥트</br>
-                                6.1 경기의 일부로 인정하는 버그</br>
-                                아래 상황 발생 시 심판은 일시 중단 없이 경기를 진행합니다.</br>
-                                - 챔피언 스킬의 미 적용 또는 오작동</br>
-                                - 챔피언이 움직이지 않는 버그</br>
-                                - 챔피언이 의도하지 않는 곳으로 위치하게 되는 버그</br>
-                                - 룬, 마스터리 등 선수 개인에게 일어나는 버그</br>
-                                </br>
-                                6.2 경기의 일부로 인정되지 않는 버그</br>
-                                아래 상황 발생 시 심판은 판단에 따라 재경기, 경기 속개, 우세승 판정을 할 수 있습니다.</br>
-                                - 포탑에 대미지를 입힐 수 없는 버그</br>
-                                - 특정 챔피언의 상태 이상으로 타켓팅을 할 수 없는 버그</br>
-                                - 경기의 일부로 인정되는 버그가 연속적으로 발생하여 경기에 심대한 영향을 주는 경우</br>
-                                - 룬과 특성이 정상적으로 적용되지 않는 버그를 교전의사시점 전에 발견할 경우. 단, 교전의사시점 후에는 경기 중단 없이 속개합니다.</br>
-                                - 교전 의사 시점 : 해당 팀 중 1명의 선수라도 기지 밖(홈 기지 계단까지 포함)으로 나간 경우</br>
-                                </br>
-                                6.3 디스커넥트</br>
-                                ① 모든 디스커넥트는 재 접속을 통해 경기에 재 접속함을 기본 원칙으로 합니다.</br>
-                                ② 픽 밴 도중, 디스커넥트가 될 경우 디스커넥트가 된 팀에게 벌점 1점을 부과하며, 디스커넥트가 되기 전의 픽 밴까지 그대로 진행하고, 이후 픽 밴을 진행합니다.</br>
-                                </br>
-                                7조 경기 중 이상현상</br>
-                                7.1 경기 중 이상현상이 발생했을 경우 선수는 거수를 통해 심판에게 알립니다.</br>
-                                7.2 해당 선수는 문제상황 조치 후 재접속을 통해 경기에 참여합니다.</br>
-                                7.3 상황 조치 불가 또는 지속적인 이상 현상으로 경기 진행이 불가능할 경우, 심판의 판정에 따릅니다.</br>
-                                </br>
-                                8조 경기 승리 및 이의제기</br>
-                                8.1 상대방의 넥서스를 파괴하거나 항복을 받아내는 팀이 승리합니다.</br>
-                                8.2 규정상 상대팀에게 몰수 패를 줄 수 있는 사안이 발생되었을 경우 승리합니다.</br>
-                                8.3 게임 상의 문제로 인해 게임 속개가 불가능하다 판단되는 경우, 심판에게 이의를 제기할 수 있으며, 이후 해당 내용의 결과를 도출할 때까지 모든 경기는 그대로 지속해야 합니다.</br>
-                                8.4 경기의 결과가 나온 이후 이의제기는 경기 후 5분 이내로 심판에게 해야 하며, 그 이후의 이의제기는 효력을 상실합니다.</br>
-                                </br>
-                                9조 부정행위</br>
-                                9.1 참여 접수에 등록된 선수와 대회 현장에서 확인되는 선수가 불일치 할 시, 해당 팀은 몰수 패 처리합니다.</br>
-                                9.2 모든 경기가 끝난 후에라도 대리 선수가 경기를 뛴 사실이 적발될 시, 해당 팀은 몰수 패 처리되며, 해당 선수는 차기 시즌 참가자격을 박탈합니다.</br>
-                                9.3 모든 선수는 1개의 팀에만 소속될 수 있으며, 소속된 팀 외의 중복된 소속이 적발될 시, 양 팀 모두 몰수 패 처리합니다.</br>
-                                9.4 게임 상에서 발생되는 버그를 고의적으로 악용하여 이득을 취한 경우, 주최측의 판단 하에 몰수 패 처리 및 차기 시즌 참가자격을 박탈합니다.</br>
-                                9.5 승부조작과 관련해 의논이 진전된 상태라도 해당 경기 시작 직전까지 주최 측에 알린다면 해당 선수는 처벌하지 않습니다.</br>
-                                9.6 승부조작과 관련된 신고사항은 팀과 선수 모두에게 피해가 가지 않도록 처리하는 것을 원칙으로 합니다.</br>
-                                9.7 실제 경기에서 승부조작을 시도했을 경우, 라이엇, KeSPA와 협의 하에차기 리그 진출 불가는 물론, 법적 처벌을 받을 수 있도록 조치합니다.</br>
-                                9.8 상기 명시한 부정행위 관련 외에 팀 구성원이 규정을 위반한 사항에 대해서는 운영진의 판단하에 아래와 같은 패널티가 부여됩니다.</br>
-                                9.8.1 주의: 주의에 해당하는 행위 2회 누적 시 경고 1회</br>
-                                - 대회의 원활한 진행을 방해하거나, 현장 심판의 경기 진행에 협조하지 않는 경우</br>
-                                - 제 3자를 포함해 대회 현장 내 팀에게 지정된 좌석을 벗어나, 타 팀의경기를 지켜볼 경우</br>
-                                - 대회 진행 중 욕설, 비 매너 등으로 대회 분위기를 손상할 경우</br>
-                                - 그 외 운영진의 판단 하에 주의를 줄 사항이 발생할 모든 경우</br>
-                                </br>
-                                9.8.2 경고: 챔피언 밴 카드 소멸, 경고 2회누적 시 몰수패</br>
-                                - 챔피언 선택 진행 시, 고의로 게임을 종료해 진행을 방해하는 행위 적발 시</br>
-                                - 제 3자의 행동이 대회에 영향이 미칠 경우</br>
-                                - 그 외 운영진의 판단 하에 경고를 줄 사항이 발생할 모든 경우</br>
-                                </br>
-                                9.8.3 몰수패</br>
-                                - 경기 시작 시간 10분이 지나서도 모든 팀원이 출석하지 못한 경우</br>
-                                - 대회 진행에 심각한 피해를 주는 행위 또는 언행을 할 경우</br>
-                                </br>
-                                10조 선수의 의무</br>
-                                10.1 모든 선수는 대회 규정 및 공지, 변경 사항을 지속적으로 체크해야 하고, 숙지미숙으로 인한 불이익은 선수가 책임을 집니다.</br>
-                                10.2 규정에 해당되지 않는 상황이 발생할 경우, 주최측의 판단과 결정을 최우선으로 하며, 선수들은 주최측의 판단과 결정에 따릅니다.</br>
-                                10.3 모든 선수는 경기가 시작되기 전까지 자신의 컴퓨터와 주변 기기들을 체크하며, 경기 준비에 차질이 없도록 주의를 기울입니다. 경기 시작 후 발생하는 컴퓨터 및 주변 기기들의 이상에 대한 불이익은 선수가 책임을 집니다.</br>
-                                10.4 대회 참가 시작 시간 1시간 전까지 5명의 팀원 모두가 출석하지 않으면 예비 번호를 받은 선수가 투입되며 대회 시작 시간에서 10분 후까지 5명의 팀원 모두가 모이지 않으면 몰수패 처리 합니다.</br>
-                                10.5 모든 선수는 원활한 대회 운영 및 방송 중계를 위해 주최측과 운영진의 지시사항에 따라야 할 의무가 있으며, 이를 심각하게 어길 시 주최측의 판단에 따라 벌점, 경고, 몰수패 등의 패널티를 받게 됩니다.</br>
-                                10.6 참가 신청을 한 모든 팀과 팀원은 대회 규정을 숙지하고 이에 따를 것을 동의함으로 간주합니다.</br>
-                                </br>
-                                [개인정보 취급방법 동의서]</br>
-                                제1회 어윾롤대회는 대회 진행을 위해 아래와 같이 개인정보 수집 및 이용합니다.</br>
-                                - 수집 이용 목적 : 대회 참가 여부 확인 및 수상자 발표 / 상장 및 상품 발송 / 전화, SMS 등을 통한 대회 진행 관련 안내 및 문의사항에 대한 응대</br>
-                                - 수집 이용하는 개인정보 항목 : 성명, 롤 닉네임, 티어, 휴대폰 번호</br>
-                                - 보유 및 이용 기간 : 대회 진행을 위해 수집한 개인정보는 대회 종료 후 1주일 이내에 모두 파기하며, 대회종료 이전이라도 고객의 동의철회 요청이 있는 경우 해당 개인정보는 즉시 파기합니다. (단, 수상자 정보는 상장 발송 및 확인을 위해 대회 종료 후에도 최대 1달간 보관하여 수집, 이용목적을 달성한 경우 즉시 파기합니다.)</br>
-                                </br>
-                                [대회 참가를 위한 참가자 동의사항]</br>
-                                아래와 같은 준수사항을 위반 시 불이익이 갈 수 있습니다.</br>
-                                - 제1회 어윾롤대회를 참가신청 함으로써 대리, 부캐, 대회 중 팀원 및 적팀과 다툼의 오해의 소지가 있을 시 대회 참가 취소 및 소속된 팀 전체탈락</br>
-                                - 참가비는 환불이 되지 않습니다.</br>
-                                - 대회 불참가시 대회시작 하루 전까지 연락을 주셔야합니다. 페이스북 (연락처: 010-7126-8816)</br>
-                                - 시간이 결승까지 가게 될 경우 3시간 이상 소요가 될 것으로 예상됩니다. 대회 중도포기 및 해지시 불이익이 갈 수 있습니다.</br>
-                                </br>
-                                [환불 규정]</br>
-                                1. 대회에 대한 참가비는 원활한 대회 진행을 위해 참가 신청 기한 후에는 환불되지 않으며 모두 기부됩니다.</br>
-                                1.1 조 편성 후에 조가 편성 되지 않은 선수들에 한해 참가비가 환불됩니다.</br>
-                                2. 후원 성공과 동시에 대회 일정이 시작되는 특성상 후원이 마감된 이후에는 환불이 불가능 한 점 양해 부탁드립니다.</br>
-                            </p>
+                            <div class="com_intro_desp">
+                                <a>1. 대회소개</a></br>
+                                <blockquote>
+                                    프로, 아마추어 게이머 구분없이 마스터 상위권 이상의 실력이 입증되는 유저로 신청을 받으며, 경기는 16강으로 구성됩니다.</br>
+                                    ① 16강 : 3판 2선승제 (승자전, 패자전, 최종전을 이용하는 더블 엘리미네이션 방식으로 진행 - 총 4일)</br>
+                                    ② 8강 : 3판 2선승제 (총 2일)</br>
+                                    ③ 4강 : 3,4위전 & 결승전 (총 1일)</br>
+                                    <blockquote>
+                                        <a>경기일정 : 11월 19일 ~ 11월 27일</a></br>
+                                        ① 11월 19일 : 개막 및 16강 A조</br>
+                                        ② 11월 20일 : 16강 B조, C조</br>
+                                        ③ 11월 21일 : 16강 D조</br>
+                                        ④ 11월 25일 : 8강 1일차</br>
+                                        ⑤ 11월 26일 : 8강 2일차</br>
+                                        ⑥ 11월 27일 : 4강, 3/4위전, 결승전</br>
+                                        <a>진행맵 : 경기 시작 전 공개 예정</a></br>
+                                    </blockquote>
+                                </blockquote>
+                                <a>2. 후원금에 대한 상금 분배 방안</a></br>
+                                <blockquote>
+                                    총 상금 20만원 + α (세금 및 수수료 제외)</br>
+                                    ① 1등 : 50%</br>
+                                    ② 2등 : 30%</br>
+                                    ③ 3등 : 20%</br>
+                                </blockquote>
+                                <a>3. 후원자 보상 정보</a></br>
+                                <blockquote>
+                                    ① 만원 이상의 후원자 상위 4명 : 대회 최고의 선수들과 함께하는 아바타 매치를 제공해드립니다.</br>
+                                    <blockquote>
+                                        후원자 두 명이 각각 우승자 준우승자와 스카이프 연결 후 게임 알려주는 방식으로 마초 방송을통해 진행됩니다.</br>
+                                    </blockquote>
+                                    ② 모든 후원자 : 모든 후원자 분들을 기억하기 위해 모든 분들의 이름을 대회의 엔딩 크레딧에 담아드립니다.<br>
+                                </blockquote>
+                                <a>4. 경기진행 규칙</a></br>
+                                <blockquote>
+                                    1. 대진표가 나온 뒤 자신의 경기 시작 최소 10분 전에 게임 내에 접속하여 대기합니다. 잠수 불가.</br>
+                                    2. 마초방송은 대회 기간동안 AfreecaTV(720P), Daum Pot TV(720P), TwitchTV(1080P), Youtube(1080P)이 네 군데 플랫폼에 동시에 방송이 진행되며, 이 네 플랫폼 모두 1분 지연방송을 기본으로 합니다.
+                                    <blockquote>
+                                        온라인 리그 특성상 방송을 보며 게임을 플레이하는 행위를 막기 위함입니다.</br>
+                                    </blockquote>
+                                    3. 선수는 결승전을 제외한 모든 경기에서 제외맵을 선택해야 합니다.</br>
+                                    4. 경기를 진행하는 게임 안에서는 잡담 채팅을 금합니다. 기본적인 gg, hf, gl, ppp 등은 상관 없습니다.
+                                    <blockquote>
+                                        게임 퍼즈 후 대화는 해당하지 않습니다.</br>
+                                    </blockquote>
+                                    5. 경기를 진행하는 게임 안에서 마패, 우치하의 사륜안 (맵핵) 사용을 일절 금합니다.</br>
+                                    6. 선수는 경기 전 자신이 사용하는 단축키와 감도셋팅 그래픽셋팅을 완전하게 맞춰두도록 합니다.</br>
+                                    7. 경기에서 팅기거나 게임에 문제가 생긴 경우 복구모드를 이용합니다.</br>
+                                    <blockquote>
+                                        복구모드 불가 시 재량껏 승패처분 혹은 재경기를 할 수 있습니다.
+                                    </blockquote>
+                                    8. 경기에서는 양 선수간 잘 아는 사이이더라도 공손한 존댓말을 사용합니다.</br>
+                                    9. 위에 명시된 규칙에 명시되지 않은 여타 다른 문제들은 진행자 MC마초 재량껏 판단할 수 있습니다.</br>
+                                    10. 멋진 경기를 위해 최선을 다합니다. 불리한 상황을 극복하는 플레이가 스타크래프트2를 보는 묘미라 생각합니다.</br>
+                                    <blockquote>
+                                        선수분들이 혼자 레더를 하는 것이 아니라 시청자분들이 함께 본다는 것을 잊지 말아 주십시요.
+                                    </blockquote>
+                                </blockquote>
+                                <a>[환불 규정]</a></br>
+                                1. 펀딩 성공과 동시에 대회 일정이 시작되는 특성상 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</br>
+                                2. 대회가 불가피하게 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</br>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -274,7 +218,7 @@
                                     {% for p in participation %}
                                         <div class="com_donate_list">
                                             <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                            <span>참가 번호 {{ forloop.counter }} - {{ p.username }} 님 [{{ p.etc1 }}]</span>
+                                            <span>참가 번호 {{ forloop.counter }} - {{ p.username }} 님 [소속 리그 : {{ p.etc3 }} | MMR : {{ p.etc4 }}]</span>
                                         </div>
                                     {% endfor %}
                                 {% endif %}
@@ -286,7 +230,8 @@
                 <div class="tab-pane fade in" id="com_tab4">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-md-offset-1">
                         <div class="com_intro_desp">
-                            <form id="reaply_form" action="{% url 'reply' %}" method="POST">{% csrf_token %}
+                            <form id="reply_form" action="{% url 'whyachi' %}" method="POST">{% csrf_token %}
+                                <input type="hidden" class="form-control" id="purpose" name="purpose" value="reply">
                                 <div class="com_donatelist_box">
                                     <textarea id="comment" name="comment" class="form-control com_donate_desp" rows="3" placeholder=" 대회 응원 댓글을 입력해 주세요. (후원자만 입력 가능합니다.)" ></textarea>
                                     <button type="submit" class="btn btn-primary com_donate_enroll">등록</button>
@@ -311,13 +256,16 @@
                 <div class="tab-pane fade in" id="com_tab5">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-md-offset-1">
                         <div class="com_intro_desp">
+                            <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
+                        </div>
+                        <div class="com_intro_desp">
                             <a class="donater_title">Top3 후원자</a>
                             <div class="donater_container">
                                 {% if funding %}
                                     {% for tf in top_funding %}
                                         <div class="com_donate_list">
                                             <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                            <span>{{ tf.username }} 님 : {{ tf.amount }}원</span>
+                                            <span>{{ tf.username }} 님 : {{ tf.amount|intcomma }}원</span>
                                         </div>
                                     {% endfor %}
                                 {% endif %}
@@ -332,7 +280,7 @@
                                     {% for f in funding %}
                                         <div class="com_donate_list">
                                             <img class="com_donate_icon" src="../../static/img/profile.svg">
-                                            <span>{{ f.username }} 님 : {{ f.amount }}원</span>
+                                            <span>{{ f.username }} 님 : {{ f.amount|intcomma }}원</span>
                                         </div>
                                     {% endfor %}
                                 {% endif %}
@@ -353,30 +301,23 @@
                         </div>
                         <div class="modal-body">
                             <!-- content goes here -->
-                            <form id="funding_form" action="{% url 'funding' %}" method="POST">{% csrf_token %}
+                            <form id="funding_form" action="{% url 'whyachi' %}" method="POST">{% csrf_token %}
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">후원하실 금액을 선택해주세요</label>
+                                    <label for="exampleInputPassword1">후원하실 금액을 선택해주세요.</label>
                                 </div>
-                                <button name="funding_amount" type="submit" class="donate_submit" value="1000">
-                                    1,000원 후원하기
-                                </button>
-                                <button name="funding_amount" type="submit" class="donate_submit" value="3000" style="margin-left: 20px;">
-                                    3,000원 후원하기
-                                </button>
-                                </br></br>
-                                <button name="funding_amount" type="submit" class="donate_submit" value="5000">
-                                    5,000원 후원하기 [대회 참가자 필수]
-                                </button>
-                                <button name="funding_amount" type="submit" class="donate_submit" value="10000" style="margin-left: 20px;">
-                                    10,000원 후원하기
-                                </button>
-                                </br></br>
-                                <button name="funding_amount" type="submit" class="donate_submit" value="20000">
-                                    20,000원 후원하기
-                                </button>
-                                <button name="funding_amount" type="submit" class="donate_submit" value="50000" style="margin-left: 20px;">
-                                    50,000원 후원하기
-                                </button>
+                                <input type="hidden" class="donate_submit" id="purpose" name="purpose" value="funding">
+                                <select id="funding_amount" name="funding_amount" class="form-control">
+                                    <option value="1000">1,000원</option>
+                                    <option value="3000">3,000원</option>
+                                    <option value="5000">5,000원</option>
+                                    <option value="10000">10,000원</option>
+                                    <option value="20000">20,000원</option>
+                                    <option value="50000">50,000원 [혜택 : BJ아치의 롤 게임 코칭 제공]</option>
+                                </select>
+                                </br>
+                                * 팝업 허용을 해주셔야 새로운 창이 뜨면서 후원이 가능함을 알려드립니다.</br>
+                                * 후원해주신 분들 모두 댓글 등록이 가능하며 게임 영상 감사 크레딧에 소개될 예정입니다.
+                                <button type="submit" class="join_submit">참가하기</button>
                             </form>
                         </div>
                     </div>
@@ -393,24 +334,33 @@
                         </div>
                         <div class="modal-body">
                             <!-- content goes here -->
-                            <form id="participation_form" action="{% url 'participation' %}" method="POST">{% csrf_token %}
+                            <form id="participation_form" action="{% url 'whyachi' %}" method="POST">{% csrf_token %}
+                                <input type="hidden" class="form-control" id="purpose" name="purpose" value="participation">
                                 <div class="form-group">
                                     <label for="participation_username">참가자 성함 (상금 지급 및 대회 참가 확인을 위함)</label>
                                     <input required autocomplete="off" class="form-control" id="participation_name" name="participation_name" placeholder="예) 홍길동">
                                 </div>
                                 <div class="form-group">
+                                    <label for="participation_etc1">배틀넷 이메일</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc2" placeholder="예) 롤길동">
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc2">주 종족</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc1" placeholder="예) 실버 1티어">
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc3">소속 리그</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_etc3" name="participation_etc1" placeholder="예) 실버 1티어">
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc4">MMR</label>
+                                    <input required autocomplete="off" class="form-control" id="participation_etc4" name="participation_etc1" placeholder="예) 실버 1티어">
+                                </div>
+                                <div class="form-group">
                                     <label for="participation_phone">참가자 연락처 (상금 지급 및 대회 참가 확인을 위함)</label>
                                     <input required autocomplete="off" class="form-control" id="participation_phone" name="participation_phone" placeholder="예) 010-1234-5678">
                                 </div>
-                                <div class="form-group">
-                                    <label for="participation_etc1">롤 티어</label>
-                                    <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) 실버 1티어">
-                                </div>
-                                <div class="form-group">
-                                    <label for="participation_etc2">롤 아이디</label>
-                                    <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) 롤길동">
-                                </div>
-                                * 참가 신청 후 5,000원 참가비를 후원하셔야 최종적으로 참가 신청이 완료됩니다.
+                                * 참가 완료 확인 후 단체 카톡방 링크를 연락처로 보내드리도록 하겠습니다.
                                 </br>
                                 <button type="submit" class="join_submit">참가하기</button>
                             </form>
@@ -450,22 +400,20 @@
                 document.getElementById("comment").disabled = true;
             {% endif %}
 
-            $("#streaming").click(function () {
+            $("#streaming").click(function() {
                 window.open("{{ making.streaming_url_spec }}");
             });
 
             $("#funding_form").submit(function(e) {
-                var params = "funding_amount="+$(this).context.submit.value;
+                e.preventDefault();
+                serializedData = $("#funding_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    async: false,
-                    url: '/funding/',
-                    data: params,
+                    url: '/whyachi/',
+                    data: serializedData,
                     dataType: 'json',
                     success: function(response) {
-                        if(response.status == "fail"){
-                            alert('결제가 정상적으로 이루어지지 않았습니다. 다시 한번 시도해주세요.');
-                        }
+                        window.open(response.status)
                     }
                 });
             });
@@ -475,12 +423,13 @@
                 serializedData = $("#participation_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/participation/',
+                    url: '/whyachi/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
                         if(response.status == "success"){
                             alert('대회 참가 신청이 정상적으로 제출되었습니다.');
+                            location.reload();
                         }
                     }
                 });
@@ -491,10 +440,14 @@
                 serializedData = $("#reply_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/reply/',
+                    url: '/whyachi/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
+                        if(response.status == "success"){
+                            alert('댓글이 등록되었습니다.');
+                            location.reload();
+                        }
                     }
                 });
             });

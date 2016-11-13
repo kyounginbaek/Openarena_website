@@ -83,4 +83,5 @@ class Participation(models.Model):
     etc1 = models.CharField(max_length=40, default='')
     etc2 = models.CharField(max_length=40, default='')
     etc3 = models.CharField(max_length=40, default='')
+    etc4 = models.CharField(max_length=40, default='')
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))

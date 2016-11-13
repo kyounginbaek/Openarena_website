@@ -4,7 +4,7 @@ import requests
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from main.models import Making, Funding, Fundingdummy, Participation, Reply, Video
 from django.db.models import Sum
 
@@ -12,14 +12,17 @@ def home(request):
     return render(request, 'main/home.html', {})
 
 def looking(request):
-    whyachi = Making.objects.filter(tournament_name = '2016 BJ아치 LOL 대회').values().get()
-    macho = Making.objects.filter(tournament_name = 'MASL 스타2 리그 시즌3').values().get()
+    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
 
-    funding = Funding.objects.all()
-    total_amount = Funding.objects.all().aggregate(Sum('amount'))
+    whyachi_funding = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
+    macho_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
 
     return render(request, 'main/looking.html', {'whyachi': whyachi, 'macho': macho,
-                                                 'funding': funding, 'total_amount': total_amount})
+                                                 'whyachi_funding': whyachi_funding, 'whyachi_total_amount': whyachi_total_amount,
+                                                 'macho_funding': macho_funding, 'macho_total_amount': macho_total_amount,})
 
 def making(request):
     if not request.user.is_authenticated():
@@ -113,7 +116,7 @@ def whyachi(request):
     if request.method == 'POST':
         if request.POST.get('purpose')=="participation":
             # save 코드
-            participation_obj = Participation(tournament_id=2, tournament_name="2016 BJ 아치의 LOL 대회",
+            participation_obj = Participation(tournament_id=2, tournament_name="2016 BJ아치의 LOL 대회",
                                               username=request.user.username,
                                               name=request.POST.get('participation_name'),
                                               email=request.user.email,
@@ -125,7 +128,7 @@ def whyachi(request):
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose')=="reply":
             # save 코드
-            reply_obj = Reply(tournament_id=2, tournament_name="2016 BJ 아치의 LOL 대회",
+            reply_obj = Reply(tournament_id=2, tournament_name="2016 BJ아치 LOL 대회",
                               username=request.user.username,
                               comment=request.POST.get('comment'))
             reply_obj.save()
@@ -136,9 +139,9 @@ def whyachi(request):
             params = {
                 "orderNo": "20161111" + str(random.randrange(1, 99999999)),
                 "amount": request.POST.get('funding_amount'),
-                "productDesc": "2016 BJ 아치의 LOL 대회",
+                "productDesc": "2016 BJ아치 LOL 대회",
                 "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
-                "expiredTime": "2015-11-30 19:00:00",
+                "expiredTime": "2016-11-30 19:00:00",
             }
 
             result = requests.post(url, data=params)
@@ -146,7 +149,8 @@ def whyachi(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(username=request.user.username, email=request.user.email,
+                funding_obj = Fundingdummy(tournament_id=2, tournament_name="2016 BJ아치 LOL 대회",
+                                           username=request.user.username, email=request.user.email,
                                            orderno=params.get('orderNo'), amount=params.get('amount'))
                 funding_obj.save()
                 response = {'status': result.json().get('checkoutPage')}
@@ -155,16 +159,16 @@ def whyachi(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.filter(tournament_name = '2016 BJ아치 LOL 대회').values().get()
-    participation = Participation.objects.all()
-    reply = Reply.objects.all()
+    making = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    reply = Reply.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
 
-    top_funding = Funding.objects.all().order_by('-amount')[:3]
-    funding = Funding.objects.all()
-    total_amount = Funding.objects.all().aggregate(Sum('amount'))
+    top_funding = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').order_by('-amount')[:3]
+    funding = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
 
     # 그 사람이 후원했는지를 검색하는 기능
-    if Funding.objects.filter(username=request.user.username).exists():
+    if Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회', username=request.user.username).exists():
         has_funded = "yes"
     else:
         has_funded = "no"
@@ -177,7 +181,7 @@ def macho(request):
     if request.method == 'POST':
         if request.POST.get('purpose') == "participation":
             # save 코드
-            participation_obj = Participation(tournament_id=3, tournament_name="MASL 스타2 리그 시즌3",
+            participation_obj = Participation(tournament_id=3, tournament_name="MC마초 스타2리그 시즌3",
                                               username=request.user.username,
                                               name=request.POST.get('participation_name'),
                                               email=request.user.email,
@@ -191,7 +195,7 @@ def macho(request):
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "reply":
             # save 코드
-            reply_obj = Reply(tournament_id=3, tournament_name="MASL 스타2 리그 시즌3",
+            reply_obj = Reply(tournament_id=3, tournament_name="MC마초 스타2리그 시즌3",
                               username=request.user.username,
                               comment=request.POST.get('comment'))
             reply_obj.save()
@@ -202,9 +206,9 @@ def macho(request):
             params = {
                 "orderNo": "20161113" + str(random.randrange(1, 99999999)),
                 "amount": request.POST.get('funding_amount'),
-                "productDesc": "마초 스타2 리그(MASL) 시즌3",
+                "productDesc": "MC마초 스타2리그 시즌3",
                 "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
-                "expiredTime": "2015-11-30 19:00:00",
+                "expiredTime": "2016-11-30 19:00:00",
             }
 
             result = requests.post(url, data=params)
@@ -212,7 +216,8 @@ def macho(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(username=request.user.username, email=request.user.email,
+                funding_obj = Fundingdummy(tournament_id=3, tournament_name="MC마초 스타2리그 시즌3",
+                                           username=request.user.username, email=request.user.email,
                                            orderno=params.get('orderNo'), amount=params.get('amount'))
                 funding_obj.save()
                 response = {'status': result.json().get('checkoutPage')}
@@ -221,16 +226,16 @@ def macho(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.filter(tournament_name = 'MASL 스타2 리그 시즌3').values().get()
-    participation = Participation.objects.all()
-    reply = Reply.objects.all()
+    making = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    reply = Reply.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
 
-    top_funding = Funding.objects.all().order_by('-amount')[:3]
-    funding = Funding.objects.all()
-    total_amount = Funding.objects.all().aggregate(Sum('amount'))
+    top_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').order_by('-amount')[:3]
+    funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
 
     # 그 사람이 후원했는지를 검색하는 기능
-    if Funding.objects.filter(username=request.user.username).exists():
+    if Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3', username=request.user.username).exists():
         has_funded = "yes"
     else:
         has_funded = "no"

@@ -10,7 +10,7 @@
 {% endblock %}
 {% block content %}
     <div class="block-b">
-        <div class="com_header" style="background:url({% static "img/macho/macho_cover.png" %}) center center no-repeat; background-size: cover;">
+        <div class="com_header" style="background:url({% static "img/macho/macho_cover.png" %}) no-repeat; background-size: cover;">
             <div class="com_empty">
             </div>
             <div class="com_header_inner">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="center">
-                                    <button id="streaming" name="streaming" class="btn btn-primary center-block">방송보기</button>
+                                    <button id="streaming" name="streaming" class="btn btn-primary center-block" data-toggle="modal" data-target="#streamingModal">방송보기</button>
                                 </div>
                             </li>
                         </ul>
@@ -144,12 +144,12 @@
                                     ③ 4강 : 3,4위전 & 결승전 (총 1일)</br>
                                     <blockquote>
                                         <a>경기일정 : 11월 19일 ~ 11월 27일</a></br>
-                                        ① 11월 19일 : 개막 및 16강 A조</br>
-                                        ② 11월 20일 : 16강 B조, C조</br>
-                                        ③ 11월 21일 : 16강 D조</br>
-                                        ④ 11월 25일 : 8강 1일차</br>
-                                        ⑤ 11월 26일 : 8강 2일차</br>
-                                        ⑥ 11월 27일 : 4강, 3/4위전, 결승전</br>
+                                        ① 11월 19일 9PM : 개막 및 16강 A조</br>
+                                        ② 11월 20일 9PM : 16강 B조, C조</br>
+                                        ③ 11월 21일 9PM : 16강 D조</br>
+                                        ④ 11월 25일 9PM : 8강 1일차</br>
+                                        ⑤ 11월 26일 9PM : 8강 2일차</br>
+                                        ⑥ 11월 27일 9PM : 4강, 3/4위전, 결승전</br>
                                         <a>진행맵 : 경기 시작 전 공개 예정</a></br>
                                     </blockquote>
                                 </blockquote>
@@ -164,7 +164,7 @@
                                 <blockquote>
                                     ① 만원 이상의 후원자 상위 4명 : 대회 최고의 선수들과 함께하는 아바타 매치를 제공해드립니다.</br>
                                     <blockquote>
-                                        후원자 두 명이 각각 우승자 준우승자와 스카이프 연결 후 게임 알려주는 방식으로 마초 방송을통해 진행됩니다.</br>
+                                        후원자 두 명이 각각 우승자 준우승자와 스카이프 연결 후 게임을 알려주는 방식으로 진행됩니다.</br>
                                     </blockquote>
                                     ② 모든 후원자 : 모든 후원자 분들을 기억하기 위해 모든 분들의 이름을 대회의 엔딩 크레딧에 담아드립니다.<br>
                                 </blockquote>
@@ -297,7 +297,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                            <h3 class="modal-title" id="lineModalLabel">대회 참가하기</h3>
+                            <h3 class="modal-title" id="lineModalLabel">대회 후원하기</h3>
                         </div>
                         <div class="modal-body">
                             <!-- content goes here -->
@@ -312,12 +312,13 @@
                                     <option value="5000">5,000원</option>
                                     <option value="10000">10,000원</option>
                                     <option value="20000">20,000원</option>
-                                    <option value="50000">50,000원 [혜택 : BJ아치의 롤 게임 코칭 제공]</option>
+                                    <option value="50000">50,000원</option>
                                 </select>
                                 </br>
                                 * 팝업 허용을 해주셔야 새로운 창이 뜨면서 후원이 가능함을 알려드립니다.</br>
-                                * 후원해주신 분들 모두 댓글 등록이 가능하며 게임 영상 감사 크레딧에 소개될 예정입니다.
-                                <button type="submit" class="join_submit">참가하기</button>
+                                * 만원 이상의 후원자 상위 4명 : 대회 최고의 선수들과 함께하는 아바타 매치를 제공해드립니다.</br>
+                                * 모든 후원자 분들을 기억하기 위해 모든 분들의 이름을 대회의 엔딩 크레딧에 담아드립니다.</br>
+                                <button type="submit" class="join_submit">후원하기</button>
                             </form>
                         </div>
                     </div>
@@ -342,19 +343,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_etc1">배틀넷 이메일</label>
-                                    <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc2" placeholder="예) 롤길동">
+                                    <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) battle@starcraft.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_etc2">주 종족</label>
-                                    <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc1" placeholder="예) 실버 1티어">
+                                    <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) 테란/프로토스/저그">
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_etc3">소속 리그</label>
-                                    <input required autocomplete="off" class="form-control" id="participation_etc3" name="participation_etc1" placeholder="예) 실버 1티어">
+                                    <input required autocomplete="off" class="form-control" id="participation_etc3" name="participation_etc3" placeholder="예) 실버 리그">
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_etc4">MMR</label>
-                                    <input required autocomplete="off" class="form-control" id="participation_etc4" name="participation_etc1" placeholder="예) 실버 1티어">
+                                    <input required autocomplete="off" class="form-control" id="participation_etc4" name="participation_etc4" placeholder="예) 1870">
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_phone">참가자 연락처 (상금 지급 및 대회 참가 확인을 위함)</label>
@@ -368,6 +369,39 @@
                     </div>
                 </div>
             </div>
+
+            <!--streaming URL-->
+            <div class="modal fade" id="streamingModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                            <h3 class="modal-title" id="lineModalLabel">방송 보러가기</h3>
+                        </div>
+                        <div class="modal-body">
+                            <!-- content goes here -->
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">시청하실 스트리밍 사이트를 선택해주세요.</label>
+                                <p class="don_list">* 스트리밍 방송은 동시에 진행되며, 부정행위 방지를 위해 1분 지연방송을 기본으로 합니다.</p>
+                            </div>
+                            <button name="funding_amount" id="button_afreeca" name="button_afreeca" class="donate_submit">
+                                아프리카tv
+                            </button>
+                            <button name="funding_amount" id="button_twitch" name="button_twitch" class="donate_submit" style="margin-left: 20px;">
+                                트위치(twitch)
+                            </button>
+                            </br></br>
+                            <button name="funding_amount" id="button_youtube" name="button_youtube" class="donate_submit">
+                                유투브(youtube)
+                            </button>
+                            <button name="funding_amount" id="button_daumtvpot" name="button_daumtvpot" class="donate_submit"style="margin-left: 20px;">
+                                다음tv팟
+                            </button>
+                            </br></br>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -375,8 +409,8 @@
 
 {% block script %}
     <script>
-        $(document).ready(function() {
-            $(".btn-pref .btn").click(function () {
+        $(document).ready(function(){
+            $(".btn-pref .btn").click(function(){
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
                 // $(".tab").addClass("active"); // instead of this do the below
                 $(this).removeClass("btn-default").addClass("btn-primary");
@@ -389,19 +423,28 @@
                     document.getElementById("comment").disabled = true;
                 {% endif %}
             {% else %}
-                $("#funding").click(function () {
+                $("#funding").click(function(){
                     alert("로그인이 필요한 기능입니다.");
                     location.href='{% url 'login' %}';
                 });
-                $("#participation").click(function () {
+                $("#participation").click(function(){
                     alert("로그인이 필요한 기능입니다.");
                     location.href='{% url 'login' %}';
                 });
                 document.getElementById("comment").disabled = true;
             {% endif %}
 
-            $("#streaming").click(function() {
-                window.open("{{ making.streaming_url_spec }}");
+            $("#button_afreeca").click(function(){
+                window.open("http://afreeca.com/macho1929")
+            });
+            $("#button_twitch").click(function(){
+                window.open("https://twitch.tv/macho1929")
+            });
+            $("#button_youtube").click(function(){
+                window.open("https://youtube.com/c/mcmachotv")
+            });
+            $("#button_daumtvpot").click(function(){
+                window.open("http://tvpot.daum.net/macho1929a.live")
             });
 
             $("#funding_form").submit(function(e) {
@@ -409,7 +452,7 @@
                 serializedData = $("#funding_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/whyachi/',
+                    url: '/macho/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
@@ -423,7 +466,7 @@
                 serializedData = $("#participation_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/whyachi/',
+                    url: '/macho/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
@@ -440,7 +483,7 @@
                 serializedData = $("#reply_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/whyachi/',
+                    url: '/macho/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {

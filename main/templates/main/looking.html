@@ -53,14 +53,14 @@
                         <a id="reward" name="reward" class="filter" href="" style="color: white; margin-left: 10px">상금순</a>
                     </div>
                 </div>
-                <div class="looking_com">
+                <div class="container" style="padding-left:0; padding-top:10px;">
                     {% if making %}
                         <a href="{% url 'whyachi' %}">
                             <div class="looking_picture1">
                                 <img src="{% static 'img/whyachi/whyachi_looking.png' %}" style="margin-bottom: 10px">
                                 <div class="pic_title">{{ making.tournament_name }}</div>
                                 <div class="pic_subtitle">{{ making.summary }}</div>
-                                <div class="pic_dscrp" style="margin-top: 10px">
+                                <div class="pic_dscrp">
                                     <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ funding.count }}<span style="color: #ffffff"> 명</span></a></br>
                                     모인상금 <a class="pic_num">{{ total_amount.amount__sum }}<span style="color: #ffffff"> 원</span></a></br>
                                     마감기한 <a class="pic_num">{{ making.endtime }}<span style="color: #ffffff"> 일</span></a>

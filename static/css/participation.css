@@ -1,6 +1,10 @@
 /*join start*/
 .center {
 }
+.com_mainbox{
+    margin-left:0px;
+    padding-left:0px;
+}
 .center-block{
     width: 140px;
     height: 50px;
@@ -45,40 +49,45 @@
 }
 
 .modal-footer {
-    	padding: 0;
-	}
+    padding: 0;
+}
 
 .modal-footer .btn-group button {
-	height:40px;
-	border-top-left-radius : 0;
-	border-top-right-radius : 0;
-	border: none;
-	border-right: 1px solid #ddd;
+    height:40px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border: none;
+    border-right: 1px solid #ddd;
 }
 
 .modal-footer .btn-group:last-child > button {
-	border-right: 0;
+    border-right: 0;
 }
 /*너비가 770보다 작을떄*/
 @media(max-width:770px){
     .center-block{
         float: left;
+        width: 80px;
+        height: 40px;
+        padding: 6px;
+        font-size: 12px;
+        margin-right: 10px;
     }
     .button_blank{
         width: 20px;
         float: left;
         height:20px;
     }
-     .don_emp{
+    .don_emp{
         margin-right: 10px;
     }
-     .donate_submit{
-         width: 120px;
-         height: 40px;
-         font-size: 12px;
-     }
-     .don_list{
-         font-size: 12px;
-     }
+    .donate_submit{
+        width: 120px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .don_list{
+        font-size: 12px;
+    }
 }
 /*join end*/

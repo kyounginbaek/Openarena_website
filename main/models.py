@@ -1,16 +1,6 @@
 from django.utils import timezone
 from django.db import models
 
-class Funding(models.Model):
-    id = models.AutoField(primary_key=True)
-    tournament_id = models.CharField(max_length=20, default='')
-    tournament_name = models.CharField(max_length=40, default='')
-    username = models.CharField(max_length=40, default='')
-    email = models.CharField(max_length=40, default='')
-    orderno = models.CharField(max_length=40, default='')
-    amount = models.IntegerField(default='')
-    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
-
 class Fundingdummy(models.Model):
     id = models.AutoField(primary_key=True)
     tournament_id = models.CharField(max_length=20, default='')
@@ -18,8 +8,20 @@ class Fundingdummy(models.Model):
     username = models.CharField(max_length=40, default='')
     email = models.CharField(max_length=40, default='')
     orderno = models.CharField(max_length=40, default='')
-    amount = models.IntegerField(default='')
+    amount = models.IntegerField(default=0)
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
+    thankyou = models.CharField(max_length=20, default='')
+
+class Funding(models.Model):
+    id = models.AutoField(primary_key=True)
+    tournament_id = models.CharField(max_length=20, default='')
+    tournament_name = models.CharField(max_length=40, default='')
+    username = models.CharField(max_length=40, default='')
+    email = models.CharField(max_length=40, default='')
+    orderno = models.CharField(max_length=40, default='')
+    amount = models.IntegerField(default=0)
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
+    thankyou = models.CharField(max_length=20, default='')
 
 class Making(models.Model):
     id = models.AutoField(primary_key=True)
@@ -45,7 +47,7 @@ class Making(models.Model):
     reward_spec = models.CharField(max_length=200, default='')
     template = models.CharField(max_length=40, default='')
     phone = models.CharField(max_length=20, default='')
-    confirm = models.CharField(max_length=20, default='no')
+    confirm = models.CharField(max_length=20, default='')
 
     endtime = models.CharField(max_length=20, default='')
     main_image = models.CharField(max_length=100, default='')
@@ -85,3 +87,5 @@ class Participation(models.Model):
     etc3 = models.CharField(max_length=40, default='')
     etc4 = models.CharField(max_length=40, default='')
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
+    score = models.CharField(max_length=100, default='')
+    result = models.CharField(max_length=100, default='')

@@ -75,18 +75,18 @@
                             <div class="pic_dscrp">
                                 <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ whyachi_funding.count }}<span style="color: #ffffff"> 명</span></a></br>
                                 모인상금 <a class="pic_num">{{ whyachi_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a></br>
-                                마감기한 <a class="pic_num">{{ whyachi.endtime }}<span style="color: #ffffff"> 일</span></a>
+                                마감기한 <a class="pic_num">[종료] 2016/11/19<span style="color: #ffffff"> 일</span></a>
                             </div>
                         </div>
                     </a>
                     <a href="{% url 'migal' %}">
                         <div class="looking_picture1">
                             <img src="{% static 'img/migal/migal_looking.png' %}" style="margin-bottom: 10px">
-                            <div class="pic_title">하스스톤 레전드매치</div>
-                            <div class="pic_subtitle">하스스톤 레전드 매치는 BJ최미갈과 함께 진행되는 4강으로 구성된 하스스톤 매치입니다.</div>
+                            <div class="pic_title">{{ migal.tournament_name }}</div>
+                            <div class="pic_subtitle">{{ migal.summary }}</div>
                             <div class="pic_dscrp" style="margin-top: 10px">
-                                <span style="color: #ffffff">후원자수</span> <a class="pic_num">34<span style="color: #ffffff"> 명</span></a></br>
-                                모인상금 <a class="pic_num">572,000<span style="color: #ffffff"> 원</span></a></br>
+                                <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ migal_funding.count }}<span style="color: #ffffff"> 명</span></a></br>
+                                모인상금 <a class="pic_num">{{ migal_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a></br>
                                 마감기한 <a class="pic_num">[종료] 2016/09/26<span style="color: #ffffff"> 일</span></a>
                             </div>
                         </div>

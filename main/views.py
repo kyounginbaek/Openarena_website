@@ -14,15 +14,19 @@ def home(request):
 def looking(request):
     whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
     macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
 
     whyachi_funding = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
     whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
     macho_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
     macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
+    migal_funding = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    migal_total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
 
-    return render(request, 'main/looking.html', {'whyachi': whyachi, 'macho': macho,
+    return render(request, 'main/looking.html', {'whyachi': whyachi, 'macho': macho, 'migal': migal,
                                                  'whyachi_funding': whyachi_funding, 'whyachi_total_amount': whyachi_total_amount,
-                                                 'macho_funding': macho_funding, 'macho_total_amount': macho_total_amount,})
+                                                 'macho_funding': macho_funding, 'macho_total_amount': macho_total_amount,
+                                                 'migal_funding': migal_funding, 'migal_total_amount': migal_total_amount})
 
 def making(request):
     if not request.user.is_authenticated():
@@ -91,7 +95,49 @@ def calendar(request):
     return render(request, 'main/calendar.html', {})
 
 def migal(request):
-    return render(request, 'main/migal.html', {})
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "funding":
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20161111" + str(random.randrange(1, 99999999)),
+                "amount": request.POST.get('funding_amount'),
+                "productDesc": "BJ최미갈의 레전드 매치",
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2016-11-30 19:00:00",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=2, tournament_name="BJ최미갈의 레전드 매치",
+                                           username=request.user.username, email=request.user.email,
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+    making = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
+    participation = Participation.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    reply = Reply.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+
+    top_funding = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').order_by('-amount')[:3]
+    funding = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치', username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    return render(request, 'main/migal.html', {'making': making, 'participation': participation, 'reply': reply,
+                                               'top_funding': top_funding, 'funding': funding,
+                                               'total_amount': total_amount, 'has_funded': has_funded})
 
 def darkhumor(request):
     making = Making.objects.all()[:1].values().get()

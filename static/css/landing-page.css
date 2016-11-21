@@ -451,10 +451,10 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     background-color: transparent;
     border: transparent;
 }
-.donater_title{
+.donator_title{
     font-weight: bold;
 }
-.donater_container{
+.donator_container{
     color: #ffffff;
     padding-top: 20px;
 }
@@ -603,7 +603,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     float: right;
 }
 .match_list{
-    background: url(../img/migal/migal_participation.png) center center no-repeat;
+    background: url(../img/migal/migal_match.png) center center no-repeat;
     background-size: contain;
     height: 600px;
 

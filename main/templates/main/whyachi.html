@@ -31,7 +31,7 @@
                             <li class="">
                                 <div class="" >
                                     <div class="center">
-                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원하기</button>
+                                        <button disabled id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원마감</button>
                                     </div>
                                 </div>
 
@@ -292,7 +292,10 @@
                 <div class="tab-pane fade in" id="com_tab3">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="com_intro_desp">
-                            <a class="donater_title">대회 신청자</a>
+                            <img src="{% static 'img/whyachi/whyachi_match_final2.png' %}" style="max-width: 100%; height: auto;">
+                        </div>
+                        <div class="com_intro_desp">
+                            <a class="donator_title">대회 신청자</a>
                             <br>
                             {% if participation %}
                                 <a style="color: white">현재 {{ participation.count }} 명</a>
@@ -300,11 +303,11 @@
                                 <a style="color: white">현재 0 명</a>
                             {% endif %}
 
-                            <div class="donater_container">
+                            <div class="donator_container">
                                 {% if participation %}
                                     {% for p in participation %}
                                         <div class="com_donate_list">
-                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <img class="com_donate_icon" src="{% static 'img/profile.svg' %}">
                                             <span>참가 번호 {{ forloop.counter }} - {{ p.username }} 님 [티어 : {{ p.etc1 }}]</span>
                                         </div>
                                     {% endfor %}
@@ -324,12 +327,12 @@
                                     <button type="submit" class="btn btn-primary com_donate_enroll">등록</button>
                                 </div>
                             </form>
-                            <a class="donater_title">후원 댓글 보기</a>
-                            <div class="donater_container">
+                            <a class="donator_title">후원 댓글 보기</a>
+                            <div class="donator_container">
                                 {% if reply %}
                                     {% for r in reply %}
                                         <div class="com_donate_list">
-                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <img class="com_donate_icon" src="{% static 'img/profile.svg' %}">
                                             <span>{{ r.username }} 님 : {{ r.comment }}</span>
                                         </div>
                                     {% endfor %}
@@ -346,12 +349,12 @@
                             <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
                         </div>
                         <div class="com_intro_desp">
-                            <a class="donater_title">Top3 후원자</a>
-                            <div class="donater_container">
+                            <a class="donator_title">Top3 후원자</a>
+                            <div class="donator_container">
                                 {% if funding %}
                                     {% for tf in top_funding %}
                                         <div class="com_donate_list">
-                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <img class="com_donate_icon" src="{% static 'img/profile.svg' %}">
                                             <span>{{ tf.username }} 님 : {{ tf.amount|intcomma }}원</span>
                                         </div>
                                     {% endfor %}
@@ -359,14 +362,14 @@
                             </div>
                         </div>
                         <div class="com_intro_desp">
-                            <a class="donater_title">후원해주신 분들</a>
+                            <a class="donator_title">후원해주신 분들</a>
                             <br>
                             <a style="color: white">현재 {{ funding.count }} 명</a>
-                            <div class="donater_container">
+                            <div class="donator_container">
                                 {% if funding %}
                                     {% for f in funding %}
                                         <div class="com_donate_list">
-                                            <img class="com_donate_icon" src="../../static/img/profile.svg">
+                                            <img class="com_donate_icon" src="{% static 'img/profile.svg' %}">
                                             <span>{{ f.username }} 님 : {{ f.amount|intcomma }}원</span>
                                         </div>
                                     {% endfor %}

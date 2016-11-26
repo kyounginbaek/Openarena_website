@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name="logout"),
     url(r'^mypage/$', views.mypage, name="mypage"),
+    url(r'^withdrawal/$', views.withdrawal, name="withdrawal"),
     url(r'', include('social.apps.django_app.urls', namespace='social')),
 ]

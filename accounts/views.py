@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from accounts.forms import RegistrationForm, AuthenticationForm
-
+from main.models import Making, Funding, Fundingdummy, Participation
 
 def register(request):
     if request.method == 'POST':
@@ -70,4 +70,18 @@ def mypage(request):
     if not request.user.is_authenticated():
         messages.success(request, "로그인이 필요한 페이지입니다. 먼저 로그인을 해주세요.")
         return render(request, 'accounts/login.html', {})
+    else:
+        # 참가한 대회가 있는지 여부
+        if Participation.objects.filter(username=request.user.username).exists():
+            user_info = Participation.objects.filter(username=request.user.username).values().get()
+            tournament_name = Participation.objects.filter(username=request.user.username).values().get()
+            tournament_info = Making.objects.filter(tournament_name=tournament_name).values().get()
+            return render(request, 'accounts/mypage.html', {'tournament_info': tournament_info,
+                                                            'user_info': user_info})
     return render(request, 'accounts/mypage.html', {})
+
+def withdrawal(request):
+    # 회원탈퇴 시 비밀번호 변경
+
+
+    return redirect('/')

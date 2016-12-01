@@ -16,17 +16,17 @@ def looking(request):
     macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
     migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
 
-    whyachi_funding = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
     whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
-    macho_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    macho_participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
     macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
-    migal_funding = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    migal_participation = Participation.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
     migal_total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
 
     return render(request, 'main/looking.html', {'whyachi': whyachi, 'macho': macho, 'migal': migal,
-                                                 'whyachi_funding': whyachi_funding, 'whyachi_total_amount': whyachi_total_amount,
-                                                 'macho_funding': macho_funding, 'macho_total_amount': macho_total_amount,
-                                                 'migal_funding': migal_funding, 'migal_total_amount': migal_total_amount})
+                                                 'whyachi_participation': whyachi_participation, 'whyachi_total_amount': whyachi_total_amount,
+                                                 'macho_participation': macho_participation, 'macho_total_amount': macho_total_amount,
+                                                 'migal_participation': migal_participation, 'migal_total_amount': migal_total_amount})
 
 def making(request):
     if not request.user.is_authenticated():
@@ -105,7 +105,6 @@ def migal(request):
                 "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
                 "expiredTime": "2016-11-30 19:00:00",
             }
-
             result = requests.post(url, data=params)
             # print(response.text)
 
@@ -172,14 +171,6 @@ def whyachi(request):
             participation_obj.save()
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
-        elif request.POST.get('purpose')=="reply":
-            # save 코드
-            reply_obj = Reply(tournament_id=2, tournament_name="2016 BJ아치 LOL 대회",
-                              username=request.user.username,
-                              comment=request.POST.get('comment'))
-            reply_obj.save()
-            response = {'status': 'success'}
-            return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose')=="funding":
             url = "https://toss.im/tosspay/api/v1/payments"
             params = {
@@ -239,12 +230,63 @@ def macho(request):
             participation_obj.save()
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
-        elif request.POST.get('purpose') == "reply":
+        elif request.POST.get('purpose') == "funding":
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20161113" + str(random.randrange(1, 99999999)),
+                "amount": request.POST.get('funding_amount'),
+                "productDesc": "MC마초 스타2리그 시즌3",
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2016-11-30 19:00:00",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=3, tournament_name="MC마초 스타2리그 시즌3",
+                                           username=request.user.username, email=request.user.email,
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+    making = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    reply = Reply.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+
+    top_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').order_by('-amount')[:3]
+    funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3', username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    return render(request, 'main/macho.html', {'making': making, 'participation': participation, 'reply': reply,
+                                               'top_funding': top_funding, 'funding': funding,
+                                               'total_amount': total_amount, 'has_funded': has_funded})
+
+def unknown(request):
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
             # save 코드
-            reply_obj = Reply(tournament_id=3, tournament_name="MC마초 스타2리그 시즌3",
-                              username=request.user.username,
-                              comment=request.POST.get('comment'))
-            reply_obj.save()
+            participation_obj = Participation(tournament_id=3, tournament_name="MC마초 스타2리그 시즌3",
+                                              username=request.user.username,
+                                              name=request.POST.get('participation_name'),
+                                              email=request.user.email,
+                                              phone=request.POST.get('participation_phone'),
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3=request.POST.get('participation_etc3'),
+                                              etc4=request.POST.get('participation_etc4'))
+            participation_obj.save()
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "funding":
@@ -286,7 +328,7 @@ def macho(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/macho.html', {'making': making, 'participation': participation, 'reply': reply,
+    return render(request, 'main/unknown.html', {'making': making, 'participation': participation, 'reply': reply,
                                                'top_funding': top_funding, 'funding': funding,
                                                'total_amount': total_amount, 'has_funded': has_funded})
 

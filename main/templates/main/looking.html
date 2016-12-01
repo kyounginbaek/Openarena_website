@@ -39,6 +39,18 @@
                             </div>
                         </th>
                     </tr>
+                    <tr>
+                        <th>
+                            <div class="desc">
+                                <a id="startcraft2" name="startcraft2" class="category" href="" style="color: white">스타2</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="desc">
+                                <a id="etc" name="etc" class="category" href="" style="color: white">기타</a>
+                            </div>
+                        </th>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -61,9 +73,10 @@
                             <div class="pic_title">{{ macho.tournament_name }}</div>
                             <div class="pic_subtitle">{{ macho.summary }}</div>
                             <div class="pic_dscrp">
-                                <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ macho_funding.count }}<span style="color: #ffffff"> 명</span></a></br>
-                                모인상금 <a class="pic_num">{{ macho_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a></br>
-                                마감기한 <a class="pic_num">{{ macho.endtime }}<span style="color: #ffffff"> 일</span></a>
+                                <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ macho_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
+                                참가 마감 <a class="pic_num">{{ macho.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                모인 상금 <a class="pic_num">{{ macho_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                후원 마감 <a class="pic_num">[종료] 2016/11/27<span style="color: #ffffff"> 일</span></a>
                             </div>
                         </div>
                     </a>
@@ -73,9 +86,10 @@
                             <div class="pic_title">{{ whyachi.tournament_name }}</div>
                             <div class="pic_subtitle">{{ whyachi.summary }}</div>
                             <div class="pic_dscrp">
-                                <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ whyachi_funding.count }}<span style="color: #ffffff"> 명</span></a></br>
-                                모인상금 <a class="pic_num">{{ whyachi_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a></br>
-                                마감기한 <a class="pic_num">[종료] 2016/11/19<span style="color: #ffffff"> 일</span></a>
+                                <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ whyachi_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
+                                참가 마감 <a class="pic_num">{{ macho.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                모인 상금 <a class="pic_num">{{ macho_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                후원 마감 <a class="pic_num">[종료] 2016/11/19<span style="color: #ffffff"> 일</span></a>
                             </div>
                         </div>
                     </a>
@@ -84,10 +98,11 @@
                             <img src="{% static 'img/migal/migal_looking.png' %}" style="margin-bottom: 10px">
                             <div class="pic_title">{{ migal.tournament_name }}</div>
                             <div class="pic_subtitle">{{ migal.summary }}</div>
-                            <div class="pic_dscrp" style="margin-top: 10px">
-                                <span style="color: #ffffff">후원자수</span> <a class="pic_num">{{ migal_funding.count }}<span style="color: #ffffff"> 명</span></a></br>
-                                모인상금 <a class="pic_num">{{ migal_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a></br>
-                                마감기한 <a class="pic_num">[종료] 2016/09/26<span style="color: #ffffff"> 일</span></a>
+                            <div class="pic_dscrp">
+                                <span style="color: #ffffff">참가자 수</span> <a class="pic_num">BJ 4<span style="color: #ffffff"> 명</span></a></br>
+                                참가 마감 <a class="pic_num">{{ migal.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                모인 상금 <a class="pic_num">{{ migal_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a></br>
+                                마감 기한 <a class="pic_num">[종료] 2016/09/26<span style="color: #ffffff"> 일</span></a>
                             </div>
                         </div>
                     </a>

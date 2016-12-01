@@ -71,14 +71,22 @@ def mypage(request):
         messages.success(request, "로그인이 필요한 페이지입니다. 먼저 로그인을 해주세요.")
         return render(request, 'accounts/login.html', {})
     else:
+        # 초기화
+        participation_info = 0
+        funding_info = 0
+        tournament_info = 0
+
         # 참가한 대회가 있는지 여부
         if Participation.objects.filter(username=request.user.username).exists():
-            user_info = Participation.objects.filter(username=request.user.username).values().get()
-            tournament_name = Participation.objects.filter(username=request.user.username).values().get()
-            tournament_info = Making.objects.filter(tournament_name=tournament_name).values().get()
-            return render(request, 'accounts/mypage.html', {'tournament_info': tournament_info,
-                                                            'user_info': user_info})
-    return render(request, 'accounts/mypage.html', {})
+            participation_info = Participation.objects.filter(username=request.user.username)
+        if Funding.objects.filter(username=request.user.username).exists():
+            funding_info = Funding.objects.filter(username=request.user.username)
+        if Making.objects.filter(username=request.user.username).exists():
+            tournament_info = Making.objects.filter(username=request.user.username)
+
+        return render(request, 'accounts/mypage.html', {'participation_info': participation_info,
+                                                        'funding_info': funding_info,
+                                                        'tournament_info': tournament_info})
 
 def withdrawal(request):
     # 회원탈퇴 시 비밀번호 변경

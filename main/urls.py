@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^darkhumor/$', views.darkhumor, name='darkhumor'),
     url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),
+    url(r'^unknown/$', views.unknown, name='unknown'),
 
     url(r'^contents/$', views.contents, name='contents'),
 

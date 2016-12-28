@@ -2,32 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/macho2/macho2_poster.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/macho2/macho2_preview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/templates/main/archive.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/contents.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/main/templates/main/looking.html" afterPath="$PROJECT_DIR$/main/templates/main/tournament.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/main/templates/main/unknown.html" afterPath="$PROJECT_DIR$/main/templates/main/macho2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho/macho_looking.png" afterPath="$PROJECT_DIR$/static/img/macho/macho_preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/migal/migal_looking.png" afterPath="$PROJECT_DIR$/static/img/migal/migal_preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_looking.png" afterPath="$PROJECT_DIR$/static/img/whyachi/whyachi_preview.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_match_final2.png" afterPath="$PROJECT_DIR$/static/img/whyachi/whyachi_match_final2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/macho2/macho2_poster2.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho2/macho2_poster.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/admin.py" afterPath="$PROJECT_DIR$/main/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/agreement.html" afterPath="$PROJECT_DIR$/main/templates/main/agreement.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/base.html" afterPath="$PROJECT_DIR$/main/templates/main/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/help.html" afterPath="$PROJECT_DIR$/main/templates/main/help.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/macho.html" afterPath="$PROJECT_DIR$/main/templates/main/macho.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/migal.html" afterPath="$PROJECT_DIR$/main/templates/main/migal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/video.html" afterPath="$PROJECT_DIR$/main/templates/main/video.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/whyachi.html" afterPath="$PROJECT_DIR$/main/templates/main/whyachi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/urls.py" afterPath="$PROJECT_DIR$/main/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/contents_deco.css" afterPath="$PROJECT_DIR$/static/css/contents_deco.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/macho2.html" afterPath="$PROJECT_DIR$/main/templates/main/macho2.html" />
     </list>
     <ignored path="openarena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,10 +75,12 @@
       <file leaf-file-name="macho2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/templates/main/macho2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="451" column="49" selection-start-line="451" selection-start-column="49" selection-end-line="451" selection-end-column="49" />
+            <state relative-caret-position="270">
+              <caret line="107" column="34" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
               <folding>
-                <marker date="1482891788000" expanded="false" signature="11652:11682" ph="..." />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1482891950000" expanded="false" signature="11653:11683" ph="..." />
               </folding>
             </state>
           </provider>
@@ -173,8 +153,8 @@
         <option value="$PROJECT_DIR$/main/templates/main/migal.html" />
         <option value="$PROJECT_DIR$/main/templates/main/macho.html" />
         <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/main/templates/main/macho2.html" />
         <option value="$PROJECT_DIR$/main/admin.py" />
+        <option value="$PROJECT_DIR$/main/templates/main/macho2.html" />
       </list>
     </option>
   </component>
@@ -489,19 +469,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/img/macho2" />
-      <recent name="$PROJECT_DIR$/static/img/whyachi" />
-      <recent name="$PROJECT_DIR$/static/img/macho" />
-      <recent name="$PROJECT_DIR$/static/img/arch" />
-      <recent name="$PROJECT_DIR$/static/img/migal" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/static/img/macho2" />
       <recent name="$PROJECT_DIR$/static/img/migal" />
       <recent name="$PROJECT_DIR$/static/img/darkhumor" />
       <recent name="$PROJECT_DIR$/main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/img/macho2" />
+      <recent name="$PROJECT_DIR$/static/img/whyachi" />
+      <recent name="$PROJECT_DIR$/static/img/macho" />
+      <recent name="$PROJECT_DIR$/static/img/arch" />
+      <recent name="$PROJECT_DIR$/static/img/migal" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.openarena">
@@ -1201,10 +1181,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/macho2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="451" column="49" selection-start-line="451" selection-start-column="49" selection-end-line="451" selection-end-column="49" />
+        <state relative-caret-position="270">
+          <caret line="107" column="34" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
           <folding>
-            <marker date="1482891788000" expanded="false" signature="11652:11682" ph="..." />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1482891950000" expanded="false" signature="11653:11683" ph="..." />
           </folding>
         </state>
       </provider>

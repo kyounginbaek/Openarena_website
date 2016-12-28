@@ -3,19 +3,17 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^looking/$', views.looking, name='looking'),
+    url(r'^tournament/$', views.tournament, name='tournament'),
     url(r'^making/$', views.making, name='making'),
     url(r'^tournament_url_check/$', views.making, name='tournament_url_check'),
-    url(r'^video/$', views.video, name='video'),
+    url(r'^archive/$', views.archive, name='archive'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^calendar/$', views.calendar, name='calendar'),
     url(r'^migal/$', views.migal, name='migal'),
     url(r'^darkhumor/$', views.darkhumor, name='darkhumor'),
     url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),
-    url(r'^unknown/$', views.unknown, name='unknown'),
-
-    url(r'^contents/$', views.contents, name='contents'),
+    url(r'^macho2/$', views.macho2, name='macho2'),
 
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),

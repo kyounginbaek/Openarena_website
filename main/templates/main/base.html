@@ -15,12 +15,15 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.mini.css' %}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -135,17 +138,14 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="http://blog.naver.com/openarena">블로그</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="https://www.youtube.com/channel/UC7RnkoZH0_7TeMNoTWkJ1gA/featured">유투브</a>
+                            <a href="https://www.youtube.com/channel/UC7RnkoZH0_7TeMNoTWkJ1gA/featured">유튜브</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="http://plus.kakao.com/home/@오픈아레나">카카오톡 문의</a>
                         </li>
                     </ul>
+
                     <p class="copyright text-muted small">Copyright &copy; 2016. Openarena Inc. All Rights Reserved.
                         <br/><br/>(주)오픈아레나 | 대표: 한상우 | 사업자등록번호: 429-88-00403 | 통신판매업신고: 2016-울산울주-00149호
                         <br/>이메일 문의: help@openarena.kr | 영업소재지: 대한민국 울산광역시 울주군 언양읍 유니스트길 50 114동 501-8호
@@ -162,6 +162,8 @@
 <script src="{% static 'js/jquery.js' %}"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 
 {% block script %}
 
@@ -185,5 +187,6 @@
     ga('create', 'UA-84364746-1', 'auto');
     ga('send', 'pageview');
 </script>
+
 </body>
 </html>

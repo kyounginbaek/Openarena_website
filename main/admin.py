@@ -1,9 +1,10 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Funding, Fundingdummy, Making, Video, Participation
 
 # Register your models here.
 class FundingdummyAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'orderno', 'amount', 'comment']
+    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'amount', 'comment', 'orderno']
 admin.site.register(Fundingdummy, FundingdummyAdmin)
 
 class FundingAdmin(admin.ModelAdmin):

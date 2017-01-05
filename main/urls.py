@@ -10,7 +10,6 @@ urlpatterns = [
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^calendar/$', views.calendar, name='calendar'),
     url(r'^migal/$', views.migal, name='migal'),
-    url(r'^darkhumor/$', views.darkhumor, name='darkhumor'),
     url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),
     url(r'^macho2/$', views.macho2, name='macho2'),

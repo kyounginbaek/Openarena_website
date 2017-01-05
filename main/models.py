@@ -1,5 +1,6 @@
 from django.utils import timezone
 from django.db import models
+from django_summernote import fields as summer_fields
 
 class Fundingdummy(models.Model):
     id = models.AutoField(primary_key=True)
@@ -41,7 +42,7 @@ class Making(models.Model):
     starttime = models.CharField(max_length=20, default='')
     checkin = models.CharField(max_length=20, default='')
     checkin_time = models.CharField(max_length=20, default='')
-    description = models.TextField(max_length=20000, default='')
+    description = summer_fields.SummernoteTextField()
     funding_goal = models.CharField(max_length=20, default='')
     promise = models.CharField(max_length=200, default='')
     promise_spec = models.CharField(max_length=200, default='')

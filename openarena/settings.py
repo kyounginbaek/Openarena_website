@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'social.apps.django_app.default',
     'django.contrib.humanize',
+    'django_summernote',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,15 +127,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Sending email
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.worksmobile.com'
-EMAIL_HOST_PASSWORD = 'dhvmsdkfpsk16' #my naver password
-EMAIL_HOST_USER = 'help@openarena.kr' #my naver username
-EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -144,6 +136,16 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
+# Sending email
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.worksmobile.com'
+EMAIL_HOST_PASSWORD = 'dhvmsdkfpsk16' #my naver password
+EMAIL_HOST_USER = 'help@openarena.kr' #my naver username
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Authentication
 AUTHENTICATION_BACKENDS = (
     'accounts.email-auth.EmailOrUsernameModelBackend',
     'social.backends.facebook.FacebookOAuth2',

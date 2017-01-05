@@ -4,9 +4,10 @@ import requests
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from main.models import Making, Funding, Fundingdummy, Participation, Video
 from django.db.models import Sum
+from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     return render(request, 'main/home.html', {})
@@ -146,24 +147,6 @@ def migal(request):
                                                'total_amount': total_amount, 'has_funded': has_funded,
                                                'video': video})
 
-def darkhumor(request):
-    making = Making.objects.all()[:1].values().get()
-    participation = Participation.objects.all()
-
-    top_funding = Funding.objects.all().order_by('-amount')[:3]
-    funding = Funding.objects.all()
-    total_amount = Funding.objects.all().aggregate(Sum('amount'))
-
-    # 그 사람이 후원했는지를 검색하는 기능
-    if Funding.objects.filter(username=request.user.username).exists():
-        has_funded = "yes"
-    else:
-        has_funded = "no"
-
-    return render(request, 'main/darkhumor.html', {'making': making, 'participation': participation,
-                                                   'top_funding': top_funding, 'funding': funding,
-                                                   'total_amount': total_amount, 'has_funded': has_funded})
-
 def whyachi(request):
     if request.method == 'POST':
         if request.POST.get('purpose')=="participation":
@@ -267,7 +250,7 @@ def macho(request):
     making = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
     participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
 
-    top_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').order_by('-amount')[:3]
+    top_funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').order_by('-amount')[:4]
     funding = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
     total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
 
@@ -284,11 +267,12 @@ def macho(request):
                                                'total_amount': total_amount, 'has_funded': has_funded,
                                                'video': video})
 
+@csrf_exempt
 def macho2(request):
     if request.method == 'POST':
         if request.POST.get('purpose') == "participation":
             # save 코드
-            participation_obj = Participation(tournament_id=3, tournament_name="MC마초 스타2 연승전",
+            participation_obj = Participation(tournament_id=4, tournament_name="MC마초 스타2 연승전",
                                               username=request.user.username,
                                               name=request.POST.get('participation_name'),
                                               email=request.user.email,
@@ -326,7 +310,14 @@ def macho2(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name='MC마초 스타2 연승전').update(description=request.POST.get('description'))
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    making = get_object_or_404(Making, tournament_name='MC마초 스타2 연승전')
     participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
 
     top_funding = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').order_by('-amount')[:4]
@@ -341,7 +332,8 @@ def macho2(request):
 
     return render(request, 'main/macho2.html', {'making': making, 'participation': participation,
                                                 'top_funding': top_funding, 'funding': funding,
-                                                'total_amount': total_amount, 'has_funded': has_funded})
+                                                'total_amount': total_amount, 'has_funded': has_funded,
+                                                })
 
 def contact(request):
     if request.method == 'POST':

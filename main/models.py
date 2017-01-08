@@ -88,3 +88,17 @@ class Participation(models.Model):
     score = models.CharField(max_length=40, default='-')
     result = models.CharField(max_length=40, default='-')
     prize = models.CharField(max_length=40, default='-')
+
+class Privacy(models.Model):
+    id = models.AutoField(primary_key=True)
+    content = summer_fields.SummernoteTextField()
+
+class Agreement(models.Model):
+    id = models.AutoField(primary_key=True)
+    content = summer_fields.SummernoteTextField()
+
+class Help(models.Model):
+    id = models.AutoField(primary_key=True)
+    type = models.CharField(max_length=20, default='')
+    question = models.CharField(max_length=100, default='')
+    answer = summer_fields.SummernoteTextField()

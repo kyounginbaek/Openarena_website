@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
-from .models import Funding, Fundingdummy, Making, Video, Participation
+from .models import Funding, Fundingdummy, Making, Video, Participation, Privacy, Agreement, Help
 
 # Register your models here.
 class FundingdummyAdmin(admin.ModelAdmin):
@@ -22,3 +21,15 @@ admin.site.register(Video, VideoAdmin)
 class ParticipationAdmin(admin.ModelAdmin):
     list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'name', 'phone', 'etc1', 'etc2', 'etc3', 'etc4', 'confirm', 'checkin', 'score', 'result', 'prize']
 admin.site.register(Participation, ParticipationAdmin)
+
+class PrivacyAdmin(admin.ModelAdmin):
+    list_display = ['id', 'content']
+admin.site.register(Privacy, PrivacyAdmin)
+
+class AgreementAdmin(admin.ModelAdmin):
+    list_display = ['id', 'content']
+admin.site.register(Agreement, AgreementAdmin)
+
+class HelpAdmin(admin.ModelAdmin):
+    list_display = ['id', 'type', 'question', 'answer']
+admin.site.register(Help, HelpAdmin)

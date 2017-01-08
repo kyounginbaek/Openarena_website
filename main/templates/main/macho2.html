@@ -6,7 +6,6 @@
 {% block head %}
     <!--participation.css-->
     <link rel="stylesheet" href="{% static 'css/participation.css' %}">
-
 {% endblock %}
 {% block content %}
     <div class="block-b">
@@ -440,34 +439,6 @@
 {% block script %}
     <script>
         $(document).ready(function(){
-            var click = 0;
-            $("#edit").click(function(e){
-                if(click==0){
-                    /* 클릭시 창 켜지기 */
-                    $('.summernote').summernote({focus: true});
-                    document.getElementById("edit").value="저장하기";
-                    click = 1;
-                } else if(click==1){
-                    /* 저장하기 */
-                    e.preventDefault();
-                    var serializedData = {
-                        "purpose": "description",
-                        "description": $('.summernote').summernote('code')
-                    };
-                    $.ajax({
-                        type: 'POST',
-                        url: '/macho2/',
-                        data: serializedData,
-                        dataType: 'json',
-                        success: function(response) {
-                            $('.summernote').summernote('destroy');
-                            document.getElementById("edit").value="수정하기";
-                            click = 0;
-                        }
-                    });
-                }
-            });
-
             $(".btn-pref .btn").click(function(){
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-custom");
                 // $(".tab").addClass("active"); // instead of this do the below
@@ -538,8 +509,38 @@
                     }
                 });
             });
+
+            var click = 0;
+            $("#edit").click(function(e){
+                if(click==0){
+                    /* 클릭시 창 켜지기 */
+                    $('.summernote').summernote({focus: true});
+                    document.getElementById("edit").value="저장하기";
+                    click = 1;
+                } else if(click==1){
+                    /* 저장하기 */
+                    e.preventDefault();
+                    var serializedData = {
+                        "purpose": "description",
+                        "description": $('.summernote').summernote('code')
+                    };
+                    $.ajax({
+                        type: 'POST',
+                        url: '/macho2/',
+                        data: serializedData,
+                        dataType: 'json',
+                        success: function(response) {
+                            $('.summernote').summernote('destroy');
+                            document.getElementById("edit").value="수정하기";
+                            click = 0;
+                        }
+                    });
+                }
+            });
         });
     </script>
+
+    {% include 'main/light-youtube-embed.html' %}
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d75e1fa49a7bd2"></script>

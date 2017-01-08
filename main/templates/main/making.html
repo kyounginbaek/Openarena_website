@@ -503,27 +503,6 @@
                 }
             });
 
-            /* scroll-top-wrapper */
-            $(function(){
-                $(document).on( 'scroll', function(){
-                    if ($(window).scrollTop() > 100) {
-                        $('.scroll-top-wrapper').addClass('show');
-                    } else {
-                        $('.scroll-top-wrapper').removeClass('show');
-                    }
-                });
-
-                $('.scroll-top-wrapper').on('click', scrollToTop);
-            });
-
-            function scrollToTop() {
-                verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-                element = $('body');
-                offset = element.offset();
-                offsetTop = offset.top;
-                $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-            };
-
             /* 공약 추가 버튼 기능 구현 */
             /* Add button click handler */
             var MAX_OPTIONS = 10;

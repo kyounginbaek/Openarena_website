@@ -110,13 +110,6 @@
                 });
                 $('.scroll-top-wrapper').on('click', scrollToTop);
             });
-            function scrollToTop() {
-                verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-                element = $('body');
-                offset = element.offset();
-                offsetTop = offset.top;
-                $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-            }
             /* 게임별 대회 카테고리 누를 시 글자색 변하기 */
             $('.category').on('click',function() {
                 $('.category').css('color', 'white');

@@ -4,8 +4,10 @@ import requests
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help
+from django.shortcuts import render, get_object_or_404, render_to_response
+from django.template import RequestContext
+
+from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
@@ -280,6 +282,10 @@ def macho(request):
 @csrf_exempt
 def macho2(request):
     tournament_name = "MC마초 스타2 연승전"
+
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.all().order_by('-path')
+
     if request.method == 'POST':
         if request.POST.get('purpose') == "participation":
             # save 코드
@@ -324,7 +330,39 @@ def macho2(request):
         elif request.POST.get('purpose') == "description":
             # save 코드
             Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
 
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
@@ -343,7 +381,8 @@ def macho2(request):
 
     return render(request, 'main/macho2.html', {'making': making, 'participation': participation,
                                                 'top_funding': top_funding, 'funding': funding,
-                                                'total_amount': total_amount, 'has_funded': has_funded})
+                                                'total_amount': total_amount, 'has_funded': has_funded,
+                                                'comment_tree': comment_tree})
 
 def contact(request):
     if request.method == 'POST':

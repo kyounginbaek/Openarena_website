@@ -4,10 +4,9 @@ import requests
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render, get_object_or_404
 
-from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm
+from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
@@ -283,6 +282,7 @@ def macho(request):
 def macho2(request):
     tournament_name = "MC마초 스타2 연승전"
 
+    chat = Chat.objects.all()
     # Retrieve all comments and sort them by path
     comment_tree = Comment.objects.all().order_by('-path')
 
@@ -339,6 +339,15 @@ def macho2(request):
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
         elif request.POST.get('purpose') == "comment":
             # Set a blank path then save it to get an ID
             form = CommentForm()
@@ -382,7 +391,7 @@ def macho2(request):
     return render(request, 'main/macho2.html', {'making': making, 'participation': participation,
                                                 'top_funding': top_funding, 'funding': funding,
                                                 'total_amount': total_amount, 'has_funded': has_funded,
-                                                'comment_tree': comment_tree})
+                                                'chat': chat, 'comment_tree': comment_tree})
 
 def contact(request):
     if request.method == 'POST':
@@ -428,3 +437,7 @@ def help(request):
     return render(request, 'main/help.html', {'help_type1': help_type1,
                                               'help_type2': help_type2,
                                               'help_type3': help_type3})
+
+def Messages(request):
+    c = Chat.objects.all()
+    return render(request, 'main/messages.html', {'chat': c})

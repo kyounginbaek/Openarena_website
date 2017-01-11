@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.db import models
 from django_summernote import fields as summer_fields
 from django import forms
+from django.contrib.auth.models import User
 
 class Fundingdummy(models.Model):
     id = models.AutoField(primary_key=True)
@@ -122,3 +123,13 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('content',)
+
+class Chat(models.Model):
+    id = models.AutoField(primary_key=True)
+    tournament_name = models.CharField(max_length=40, default='')
+    user = models.ForeignKey(User)
+    message = models.CharField(max_length=200)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.message

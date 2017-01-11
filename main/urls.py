@@ -18,4 +18,6 @@ urlpatterns = [
     url(r'^help/$', views.help, name="help"),
     url(r'^privacy/$', views.privacy, name="privacy"),
     url(r'^agreement/$', views.agreement, name="agreement"),
+
+    url(r'^messages/$', views.Messages, name='messages'),
 ]

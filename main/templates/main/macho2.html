@@ -205,7 +205,21 @@
                         </div>
 
                         <div class="com_intro_desp">
-                            <a class="donator_title">참가자 게시판</a>
+                            <a class="donator_title">참가자 대화창</a>
+                            <div id="chatboard">
+                                <ul id="msg-list" class="list-group">
+                                    {% include 'main/messages.html' %}
+                                    <script>
+                                        var chatlist = document.getElementById('msg-list-div');
+                                        chatlist.scrollTop = chatlist.scrollHeight;
+                                    </script>
+                                </ul>
+                                <br/>
+                                <form id="chat_form" method="POST">{% csrf_token %}
+                                    <input type="text" id="chat-msg" name="chat-msg" class="form-control com_donate_desp" placeholder="로그인, 대회참가 후 대화를 시작해보세요."/>
+                                    <button type="submit" id="send" class="btn btn-primary com_donate_enroll">등록</button>
+                                </form>
+                            </div>
                         </div>
 
                         <div class="com_intro_desp">
@@ -216,21 +230,21 @@
                                         {% for c in comment_tree %}
                                             <li id="{{c.id}}" class="" style="margin-left:{{c.depth|add:c.depth}}em;">
                                                 <p style="border-top: 1px solid #eee"></p>
-                                                <p class="poster">{{ c.username }} 님 - {{c.date|naturaltime}}</p>
-                                                <p style="color: #D1D1DD">{{c.content}}</p>
+                                                <p>{{c.content}}</p>
+                                                <p class="poster" style="color: #D1D1DD">{{ c.username }} 님 - {{c.date|naturaltime}}</p>
                                                 <p><a href="javascript:return false" class="reply">댓글 달기</a></p>
                                             </li>
                                         {% endfor %}
                                     </ul>
                                 {% else %}
-                                    <div>글이 등록되지 않았습니다. 첫번째 글을 등록해보세요.</div><br/>
+                                    <div>첫번째 댓글을 등록해보세요.</div><br/>
                                 {% endif %}
                             </div>
 
                             <form id="comment_form" method="POST">{% csrf_token %}
                                 <input type="hidden" class="form-control" id="purpose" name="purpose" value="comment">
                                 <input type="hidden" class="parent" id="parent" name="parent">
-                                <input id="content" name="content" class="form-control com_donate_desp" placeholder="로그인 후 자유롭게 글을 적어주세요."/>
+                                <input id="content" name="content" class="form-control com_donate_desp" placeholder="로그인 후 자유롭게 댓글을 적어주세요."/>
                                 <button type="submit" class="btn btn-primary com_donate_enroll">등록</button>
                             </form>
                         </div>
@@ -617,6 +631,7 @@
     </script>
 
     {% include 'main/light-youtube-embed.html' %}
+    {% include 'main/jquery-chat-application.html' %}
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d75e1fa49a7bd2"></script>

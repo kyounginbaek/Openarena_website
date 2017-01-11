@@ -1,0 +1,14 @@
+{% load humanize %}
+
+{% for obj in chat %}
+    {% if obj.user == request.user %}
+        <li class="text-right list-group-item">
+            <p>{{ obj.message }}</p>
+            <p style="color: #D1D1DD">{{ obj.user }} 님 - {{ obj.created|naturaltime }}</p>
+        </li>
+    {% else %}
+        <li class="text-left list-group-item">{{ obj.message }}</li>
+    {% endif %}
+{% empty %}
+    <li class="text-right list-group-item">로그인, 대회참가 후 대화를 시작해보세요.</li>
+{% endfor %}

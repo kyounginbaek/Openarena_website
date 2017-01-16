@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load humanize %}
 
-{% block title %} 오픈아레나:{{ making.tournament_name }} {% endblock %}
+{% block title %} 오픈아레나:{{ tournament.tournament_name }} {% endblock %}
 {% block head %}
     <!--participation.css-->
     <link rel="stylesheet" href="{% static 'css/participation.css' %}">
@@ -22,9 +22,9 @@
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
-                        <div class="com_title">{{ making.tournament_name }}</div><br/>
-                        <p class="com_subtitle hidden-xs">{{ making.summary }}</p>
-                        <div class="com_subtitle">대회 일정 : {{ making.starttime }}</div><br/>
+                        <div class="com_title">{{ tournament.tournament_name }}</div><br/>
+                        <p class="com_subtitle hidden-xs">{{ tournament.summary }}</p>
+                        <div class="com_subtitle">대회 일정 : {{ tournament.starttime }}</div><br/>
                     </div>
                     <!--후원/참가-->
                     <div class="col-sm-3 col-md-3 col-xs-12 ">
@@ -52,7 +52,7 @@
                     <!--상금바-->
                     <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
                         <h4 id="comma1" class="com_title">
-                            후원 목표 : {{ making.funding_goal|intcomma }}원 / 현재 : {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다
+                            후원 목표 : {{ tournament.funding_goal|intcomma }}원 / 현재 : {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다
                         </h4>
                         <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
                         <!--
@@ -115,7 +115,7 @@
                                     <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
                                 {% endif %}
                                 <div class="com_into_small">참가 기한</div>
-                                <div class="com_into_small"><span class="com_into_big">{{ making.participation_endtime }}</span> 일</div><br>
+                                <div class="com_into_small"><span class="com_into_big">{{ tournament.participation_endtime }}</span> 일</div><br>
                                 {% if funding %}
                                     <div class="com_into_small">후원자 수</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ funding.count }}</span> 명</div><br>
@@ -137,7 +137,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="com_intro_desp">
                                 <input id="edit" class="btn btn-default" type="button" value="수정하기">
-                                <div id="description" class="summernote">{{ making.description|safe }}</div>
+                                <div id="description" class="summernote">{{ tournament.description|safe }}</div>
                             </div>
                         </div>
                     </div>
@@ -375,7 +375,7 @@
             });
 
             $("#streaming").click(function(){
-                window.open("{{ making.streaming_url_spec }}");
+                window.open("{{ tournament.streaming_url_spec }}");
             });
 
             $("#funding_form").submit(function(e){

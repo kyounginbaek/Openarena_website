@@ -28,7 +28,7 @@ class Funding(models.Model):
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
     thanks = models.CharField(max_length=20, default='-')
 
-class Making(models.Model):
+class Tournament(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=40, default='')
     email = models.CharField(max_length=40, default='')

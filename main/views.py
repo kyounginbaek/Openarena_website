@@ -6,21 +6,24 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
+from main.models import Tournament, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     return render(request, 'main/home.html', {})
 
-def tournament(request):
-    macho2 = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
+def tournaments(request):
+    macho2 = Tournament.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
     macho2_participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
     macho2_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').aggregate(Sum('amount'))
 
-    return render(request, 'main/tournament.html', {'macho2': macho2,
+    return render(request, 'main/tournaments.html', {'macho2': macho2,
                                                     'macho2_participation': macho2_participation,
                                                     'macho2_total_amount': macho2_total_amount})
+
+def clubs(request):
+    return render(request, 'main/clubs.html', {})
 
 def making(request):
     if not request.user.is_authenticated():
@@ -30,7 +33,7 @@ def making(request):
     if request.method == 'POST':
         # 토너먼트 URL 체크
         tournament_url = request.POST.get('tournament_url')
-        if Making.objects.filter(tournament_url=tournament_url).exists():
+        if Tournament.objects.filter(tournament_url=tournament_url).exists():
             response = {'status': 'error'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
@@ -60,7 +63,7 @@ def making(request):
             template += "." + str(request.POST.get('input_template_etc'))
 
         # save 코드
-        making_obj = Making(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
+        tournament_obj = Tournament(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
                             tournament_game=request.POST.get('tournament_game'), tournament_url = request.POST.get('tournament_url'),
                             streaming_url=request.POST.get('streaming_url'), streaming_url_spec=streaming_url_spec,
                             registration=request.POST.get('registration'), registration_team=request.POST.get('registration_team'),
@@ -68,16 +71,16 @@ def making(request):
                             checkin=checkin, checkin_time=request.POST.get('checkin_time'), description=request.POST.get('description'),
                             promise=request.POST.getlist('promise[]'), promise_spec= request.POST.getlist('promise_spec[]'), reward=request.POST.getlist('reward[]'), reward_spec=request.POST.getlist('reward_spec[]'),
                             template=template, phone=request.POST.get('phone'))
-        making_obj.save()
+        tournament_obj.save()
         response = {'status': 'success'}
         return HttpResponse(json.dumps(response), content_type='application/json')
 
     return render(request, 'main/making.html', {})
 
 def archive(request):
-    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
-    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
-    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
+    whyachi = Tournament.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    macho = Tournament.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    migal = Tournament.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
 
     whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
     whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
@@ -130,11 +133,11 @@ def migal(request):
 
         elif request.POST.get('purpose') == "description":
             # save 코드
-            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            Tournament.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.filter(tournament_name=tournament_name).values().get()
+    tournament = Tournament.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:3]
@@ -149,7 +152,7 @@ def migal(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/migal.html', {'making': making, 'participation': participation,
+    return render(request, 'main/migal.html', {'tournament': tournament, 'participation': participation,
                                                'top_funding': top_funding, 'funding': funding,
                                                'total_amount': total_amount, 'has_funded': has_funded,
                                                'video': video})
@@ -195,7 +198,7 @@ def whyachi(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.filter(tournament_name=tournament_name).values().get()
+    tournament = Tournament.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:3]
@@ -210,7 +213,7 @@ def whyachi(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/whyachi.html', {'making': making, 'participation': participation,
+    return render(request, 'main/whyachi.html', {'tournament': tournament, 'participation': participation,
                                                  'top_funding': top_funding, 'funding': funding,
                                                  'total_amount': total_amount, 'has_funded': has_funded,
                                                  'video': video})
@@ -258,7 +261,7 @@ def macho(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = Making.objects.filter(tournament_name=tournament_name).values().get()
+    tournament = Tournament.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:4]
@@ -273,7 +276,7 @@ def macho(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/macho.html', {'making': making, 'participation': participation,
+    return render(request, 'main/macho.html', {'tournament': tournament, 'participation': participation,
                                                'top_funding': top_funding, 'funding': funding,
                                                'total_amount': total_amount, 'has_funded': has_funded,
                                                'video': video})
@@ -329,13 +332,13 @@ def macho2(request):
 
         elif request.POST.get('purpose') == "description":
             # save 코드
-            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            Tournament.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
         elif request.POST.get('purpose') == "notice":
             # save 코드
-            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            Tournament.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
@@ -375,7 +378,7 @@ def macho2(request):
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    making = get_object_or_404(Making, tournament_name=tournament_name)
+    tournament = get_object_or_404(Tournament, tournament_name=tournament_name)
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:4]
@@ -388,7 +391,7 @@ def macho2(request):
     else:
         has_funded = "no"
 
-    return render(request, 'main/macho2.html', {'making': making, 'participation': participation,
+    return render(request, 'main/macho2.html', {'tournament': tournament, 'participation': participation,
                                                 'top_funding': top_funding, 'funding': funding,
                                                 'total_amount': total_amount, 'has_funded': has_funded,
                                                 'chat': chat, 'comment_tree': comment_tree})
@@ -438,6 +441,10 @@ def help(request):
                                               'help_type2': help_type2,
                                               'help_type3': help_type3})
 
-def Messages(request):
+def chat(request):
     c = Chat.objects.all()
     return render(request, 'main/messages.html', {'chat': c})
+
+def create(request):
+    c = Chat.objects.all()
+    return render(request, 'main/create.html', {'chat': c})

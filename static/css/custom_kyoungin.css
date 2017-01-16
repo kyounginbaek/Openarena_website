@@ -113,3 +113,46 @@
     transition: .4s all;
 }
 /* END Fast & Agile YouTube Embed by Schoberg.net */
+
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+}
+
+.bubble::before {
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+
+.left {
+    float: left;
+    margin: 5px 45px 5px 20px;
+}
+
+.left::before {
+    left: -9px;
+}
+
+.right {
+    float: right;
+    margin: 5px 20px 5px 45px;
+}
+
+.right::before {
+    right: -9px;
+}

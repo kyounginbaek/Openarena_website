@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^tournament/$', views.tournament, name='tournament'),
+    url(r'^tournaments/$', views.tournaments, name='tournaments'),
+    url(r'^clubs/$', views.clubs, name='clubs'),
     url(r'^making/$', views.making, name='making'),
     url(r'^tournament_url_check/$', views.making, name='tournament_url_check'),
     url(r'^archive/$', views.archive, name='archive'),
@@ -18,6 +19,6 @@ urlpatterns = [
     url(r'^help/$', views.help, name="help"),
     url(r'^privacy/$', views.privacy, name="privacy"),
     url(r'^agreement/$', views.agreement, name="agreement"),
-
-    url(r'^messages/$', views.Messages, name='messages'),
+    url(r'^chat/$', views.chat, name='chat'),
+    url(r'^create/$', views.create, name='create'),
 ]

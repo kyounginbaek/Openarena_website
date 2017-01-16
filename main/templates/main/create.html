@@ -1,0 +1,78 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block title %} 오픈아레나:대회 만들기 {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home_spin.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="block-b">
+        <div class="com_header_inner" >
+        </div>
+
+        <div class="com_mid">
+            <!--competition list-->
+            <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                <!-- 대회 개요 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="stars" class="btn btn-primary no_border " href="#com_tab1" data-toggle="tab">
+                        <span class="list_btn">대회 개요</span>
+                    </button>
+                </div>
+                <!-- 대회 세부 사항 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
+                        <span class="list_btn">대회 세부 사항 설정</span>
+                    </button>
+                </div>
+                <!-- 후원 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
+                        <span class="list_btn">후원 설정</span>
+                    </button>
+                </div>
+                <!-- 진행자 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
+                        <span class="list_btn">진행자 설정</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <!--competition list-->
+                <div class="tab-pane fade in active" id="com_tab1">
+                    <a>대회 개요</a>
+                </div>
+
+                <div class="tab-pane fade in active" id="com_tab2">
+                    <a>대회 개요</a>
+                </div>
+
+                <div class="tab-pane fade in active" id="com_tab3">
+                    <a>대회 개요</a>
+                </div>
+
+                <div class="tab-pane fade in active" id="com_tab4">
+                    <a>대회 개요</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function(){
+            $(".btn-pref .btn").click(function(){
+                $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-custom");
+                // $(".tab").addClass("active"); // instead of this do the below
+                $(this).removeClass("btn-custom").addClass("btn-primary");
+            });
+        });
+    </script>
+{% endblock %}

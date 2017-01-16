@@ -6,8 +6,6 @@ import datetime
 from django.db import migrations, models
 from django.utils.timezone import utc
 import django_summernote.fields
-import embed_video.fields
-
 
 class Migration(migrations.Migration):
 
@@ -44,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='video',
             name='video_url',
-            field=embed_video.fields.EmbedVideoField(),
+            field=models.CharField(default='', max_length=200),
         ),
         migrations.AlterField(
             model_name='video',

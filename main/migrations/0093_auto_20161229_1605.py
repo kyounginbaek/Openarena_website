@@ -5,8 +5,6 @@ from __future__ import unicode_literals
 import datetime
 from django.db import migrations, models
 from django.utils.timezone import utc
-import tinymce.models
-
 
 class Migration(migrations.Migration):
 
@@ -28,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='making',
             name='description',
-            field=tinymce.models.HTMLField(),
+            field=models.TextField(default='', max_length=20000),
         ),
         migrations.AlterField(
             model_name='making',

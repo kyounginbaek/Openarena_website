@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='help',
             name='number',
-            field=models.IntegerField(default=''),
+            field=models.IntegerField(default='0'),
         ),
         migrations.AlterField(
             model_name='funding',

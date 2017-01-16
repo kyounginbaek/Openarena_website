@@ -28,7 +28,7 @@ class Funding(models.Model):
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
     thanks = models.CharField(max_length=20, default='-')
 
-class Tournament(models.Model):
+class Making(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=40, default='')
     email = models.CharField(max_length=40, default='')
@@ -113,7 +113,7 @@ class Comment(models.Model):
     username = models.CharField(max_length=40, default='')
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    depth = models.PositiveSmallIntegerField(default=0)
+    depth = models.IntegerField(default=0)
     path = models.CommaSeparatedIntegerField(max_length=400)
 
     def __unicode__(self):

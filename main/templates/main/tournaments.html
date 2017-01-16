@@ -75,7 +75,7 @@
                             <div class="pic_dscrp">
                                 <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ macho2_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
                                 참가 마감 <a class="pic_num">{{ macho2.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
-                                {% if macho2_funding %}
+                                {% if macho2_total_amount %}
                                     모인 상금 <a class="pic_num">{{ macho2_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
                                 {% else %}
                                     모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>

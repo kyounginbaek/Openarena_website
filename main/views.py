@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from main.models import Tournament, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
+from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
@@ -14,7 +14,7 @@ def home(request):
     return render(request, 'main/home.html', {})
 
 def tournaments(request):
-    macho2 = Tournament.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
+    macho2 = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
     macho2_participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
     macho2_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').aggregate(Sum('amount'))
 
@@ -33,7 +33,7 @@ def making(request):
     if request.method == 'POST':
         # 토너먼트 URL 체크
         tournament_url = request.POST.get('tournament_url')
-        if Tournament.objects.filter(tournament_url=tournament_url).exists():
+        if Making.objects.filter(tournament_url=tournament_url).exists():
             response = {'status': 'error'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
@@ -63,7 +63,7 @@ def making(request):
             template += "." + str(request.POST.get('input_template_etc'))
 
         # save 코드
-        tournament_obj = Tournament(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
+        tournament_obj = Making(username=request.user.username, email=request.user.email, tournament_name=request.POST.get('tournament_name'),
                             tournament_game=request.POST.get('tournament_game'), tournament_url = request.POST.get('tournament_url'),
                             streaming_url=request.POST.get('streaming_url'), streaming_url_spec=streaming_url_spec,
                             registration=request.POST.get('registration'), registration_team=request.POST.get('registration_team'),
@@ -78,9 +78,9 @@ def making(request):
     return render(request, 'main/making.html', {})
 
 def archive(request):
-    whyachi = Tournament.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
-    macho = Tournament.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
-    migal = Tournament.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
+    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
 
     whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
     whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
@@ -133,11 +133,11 @@ def migal(request):
 
         elif request.POST.get('purpose') == "description":
             # save 코드
-            Tournament.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    tournament = Tournament.objects.filter(tournament_name=tournament_name).values().get()
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:3]
@@ -198,7 +198,7 @@ def whyachi(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    tournament = Tournament.objects.filter(tournament_name=tournament_name).values().get()
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:3]
@@ -261,7 +261,7 @@ def macho(request):
                 response = {'status': 'fail'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
 
-    tournament = Tournament.objects.filter(tournament_name=tournament_name).values().get()
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:4]
@@ -332,13 +332,13 @@ def macho2(request):
 
         elif request.POST.get('purpose') == "description":
             # save 코드
-            Tournament.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
         elif request.POST.get('purpose') == "notice":
             # save 코드
-            Tournament.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
@@ -378,7 +378,7 @@ def macho2(request):
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    tournament = get_object_or_404(Tournament, tournament_name=tournament_name)
+    tournament = get_object_or_404(Making, tournament_name=tournament_name)
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:4]

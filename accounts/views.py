@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from accounts.forms import RegistrationForm, AuthenticationForm
-from main.models import Tournament, Funding, Fundingdummy, Participation
+from main.models import Making, Funding, Fundingdummy, Participation
 
 def register(request):
     if request.method == 'POST':
@@ -81,8 +81,8 @@ def mypage(request):
             participation_info = Participation.objects.filter(username=request.user.username)
         if Funding.objects.filter(username=request.user.username).exists():
             funding_info = Funding.objects.filter(username=request.user.username)
-        if Tournament.objects.filter(username=request.user.username).exists():
-            tournament_info = Tournament.objects.filter(username=request.user.username)
+        if Making.objects.filter(username=request.user.username).exists():
+            tournament_info = Making.objects.filter(username=request.user.username)
 
         return render(request, 'accounts/mypage.html', {'participation_info': participation_info,
                                                         'funding_info': funding_info,

@@ -42,21 +42,323 @@
             </div>
 
             <div class="tab-content">
-                <!--competition list-->
+                <!-- competition list -->
+                <!-- com_tab1 -->
                 <div class="tab-pane fade in active" id="com_tab1">
-                    <a>대회 개요</a>
+                    <br/>
+                    <h4>• 대회 개요</h4>
+                    <!-- tab-pane -->
+                    <div class="panel-group" id="accordion-cat-1">
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question1">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>대회 이름</h4>
+                                        <h5>
+                                            대회 이름을 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab1_question1" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <blockquote style="font-size: 14px">
+                                        대회의 이름은 다음과 같이 사용됩니다.<br/>
+                                        부제에도 쓰일 수 있도록 짧은 제목도 입력해주세요.<br/>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question2">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>대회 대표 이미지</h4>
+                                        <h5>
+                                            대회 대표 이미지를 업로드해주세요.
+                                            <span class="glyphicon glyphicon-picture"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab1_question2" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <blockquote style="font-size: 14px">
+                                        대회의 대표 이미지 혹은 포스터를 업로드해주세요.<br/>
+                                        이미지는 다음과 같이 사용됩니다.<br/>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question3">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>대회 요약</h4>
+                                        <h5>
+                                            대회에 대한 간단한 설명을 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab1_question3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div id="" class="summernote"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question4">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>게임 카테고리</h4>
+                                        <h5>
+                                            대회로 진행되는 게임을 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab1_question4" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <div class="btn-group">
+                                        <select id="streaming_url" name="streaming_url" class="form-control">
+                                            <option value="default">선택해주세요</option>
+                                            <option value="lol">리그오브레전드(롤)</option>
+                                            <option value="overwatch">오버워치</option>
+                                            <option value="starcraft1">스타크래프트1</option>
+                                            <option value="starcraft2">스타크래프트2</option>
+                                            <option value="hearthstone">하스스톤</option>
+                                            <option value="etc">기타</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question5">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>대회 페이지 주소(URL)</h4>
+                                        <h5>
+                                            대회 페이지로 사용될 주소(URL)를 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab1_question5" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon3">http://openarena.kr/</span>
+                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch (한글 불가)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tab-pane fade in active" id="com_tab2">
-                    <a>대회 개요</a>
+                <!-- com_tab2 -->
+                <div class="tab-pane fade in" id="com_tab2">
+                    <br/>
+                    <h4>• 대회 진행 방식</h4>
+                    <div class="com_intro_desp">
+
+                    </div>
+                    <br/>
+                    <h4>• 대회 규칙</h4>
+                    <div class="panel-group" id="accordion-cat-1">
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question1">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>대회 규칙</h4>
+                                        <h5>
+                                            대회 규칙을 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab2_question1" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <h5>게임 별 예시 보기</h5>
+                                    <div id="" class="summernote"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h4>• 대회 참가 방식</h4>
+                    <div class="com_intro_desp" style="text-align: center">
+                        <h4>오픈 아레나를 통해 참가자 신청을 받으시겠습니까?</h4>
+                        <h5>
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                        </h5>
+                    </div>
                 </div>
 
-                <div class="tab-pane fade in active" id="com_tab3">
-                    <a>대회 개요</a>
+                <!-- com_tab3 -->
+                <div class="tab-pane fade in" id="com_tab3">
+                    <br/>
+                    <h4>• 참가비 설정</h4>
+                    <div class="com_intro_desp" style="text-align: center">
+                        <h4>참가비를 받으시겠습니까?</h4>
+                        <h5>
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                        </h5>
+                    </div>
+                    <br/>
+                    <h4>• 후원 설정</h4>
+                    <div class="com_intro_desp" style="text-align: center">
+                        <h4>상금 후원을 받으시겠습니까?</h4>
+                        <h5>
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                        </h5>
+                    </div>
+
+                    <!-- 다음을 꼭 확인해주세요 -->
+                    <div class="com_intro_desp" style="text-align: center">
+                        <h4>
+                            <span class="glyphicon glyphicon-exclamation-sign"></span>
+                            다음을 꼭 확인해주세요!
+                        </h4>
+                        <blockquote style="font-size: 14px">
+                            참가비 및 후원은 아래 정책에 의해 운영되고 있습니다.<br/>
+                            ① 후원/참가비는 선수들의 상금 지급을 위해 쓰이는 것을 원칙으로 하고 있습니다.<br/>
+                            ② 총 후원/참가비 금액 중 수수료를 제외한 약 80%가 실제 상금으로 사용됩니다.<br/>
+                            ③ 상금에 대한 수수료는 다음과 같습니다.<br/>
+                            <br/>
+                            • 오픈아레나 - 크라우드 펀딩 수수료 5%<br/>
+                            • 카드사 및 PG사 - 결제 수수료 10%<br/>
+                            • 대회 주최자, 크리에이터 - 대회 준비금 5%<br/>
+                        </blockquote>
+                        <h5>
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                        </h5>
+                    </div>
                 </div>
 
-                <div class="tab-pane fade in active" id="com_tab4">
-                    <a>대회 개요</a>
+                <!-- com_tab4 -->
+                <div class="tab-pane fade in" id="com_tab4">
+                    <br/>
+                    <h4>• 진행자 개요</h4>
+                    <!-- tab-pane -->
+                    <div class="panel-group" id="accordion-cat-3">
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question1">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>진행자 이미지</h4>
+                                        <h5>
+                                            진행자님의 프로필 이미지를 업로드해주세요.
+                                            <span class="glyphicon glyphicon-picture"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab3_question1" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <p class="help_text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question2">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>진행자 이름</h4>
+                                        <h5>
+                                            진행자님의 이름을 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab3_question2" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <p class="help_text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question3">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>진행자 소개</h4>
+                                        <h5>
+                                            진행자님을 간단히 소개해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab3_question3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p class="help_text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq">
+                            <div class="panel-heading">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question4">
+                                    <div class="panel-title" style="text-align: center">
+                                        <h4>방송 주소</h4>
+                                        <h5>
+                                            대회가 진행되는 방송의 주소를 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="tab3_question4" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <div class="btn-group">
+                                        <select id="streaming_url" name="streaming_url" class="form-control">
+                                            <option value="default">선택해주세요</option>
+                                            <option value="lol">리그오브레전드(롤)</option>
+                                            <option value="overwatch">오버워치</option>
+                                            <option value="starcraft1">스타크래프트1</option>
+                                            <option value="starcraft2">스타크래프트2</option>
+                                            <option value="hearthstone">하스스톤</option>
+                                            <option value="etc">기타</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h4>• 연락처 설정</h4>
+                    <div class="com_intro_desp" style="text-align: center">
+                        <h4>이메일 주소</h4>
+                        <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="예) help@openarena.kr">
+
+                        <h4>휴대폰 번호</h4>
+                        <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="예) 010-1234-5678">
+                    </div>
+                    <br/>
+                    <h4>• 크리에이터 등록하기</h4>
+                    <div class="com_intro_desp" style="text-align: center">
+                        <h4>오픈아레나 크리에이터로 등록하시겠습니까?</h4>
+                        <blockquote style="font-size: 14px">
+                            오픈아레나 크리에이터로 등록하시면<br/>
+                            더욱 더 빠르게 대회를 등록하고 관리하실 수 있으며<br/>
+                            메인과 상단 '크리에이터 소개' 메뉴에 소개되어<br/>
+                            더 많은 사람들이 대회에 관심을 가질 수 있게 됩니다.<br/>
+                        </blockquote>
+                        <h5>
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
+                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                        </h5>
+                    </div>
                 </div>
 
             </div>
@@ -68,6 +370,8 @@
 {% block script %}
     <script>
         $(document).ready(function(){
+            $('.summernote').summernote({focus: true});
+
             $(".btn-pref .btn").click(function(){
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-custom");
                 // $(".tab").addClass("active"); // instead of this do the below

@@ -44,7 +44,7 @@ class Making(models.Model):
     starttime = models.CharField(max_length=20, default='')
     checkin = models.CharField(max_length=20, default='')
     checkin_time = models.CharField(max_length=20, default='')
-    description = summer_fields.SummernoteTextField(default='')
+    description = models.TextField(default='')
     funding_goal = models.CharField(max_length=20, default='')
     promise = models.CharField(max_length=200, default='')
     promise_spec = models.CharField(max_length=200, default='')
@@ -54,7 +54,7 @@ class Making(models.Model):
     phone = models.CharField(max_length=20, default='')
     confirm = models.CharField(max_length=20, default='')
 
-    notice = summer_fields.SummernoteTextField(default='')
+    notice = models.TextField(default='')
     funding_endtime = models.CharField(max_length=20, default='')
     participation_endtime = models.CharField(max_length=20, default='')
     summary = models.TextField(max_length=400, default='')
@@ -94,18 +94,17 @@ class Participation(models.Model):
 
 class Privacy(models.Model):
     id = models.AutoField(primary_key=True)
-    content = summer_fields.SummernoteTextField()
+    content = models.TextField(default='')
 
 class Agreement(models.Model):
     id = models.AutoField(primary_key=True)
-    content = summer_fields.SummernoteTextField()
+    content = models.TextField(default='')
 
 class Help(models.Model):
     id = models.AutoField(primary_key=True)
     type = models.CharField(max_length=20, default='')
     question = models.CharField(max_length=100, default='')
-    answer = summer_fields.SummernoteTextField()
-
+    answer = models.TextField(default='')
 
 class Comment(models.Model):
     id = models.AutoField(primary_key=True)

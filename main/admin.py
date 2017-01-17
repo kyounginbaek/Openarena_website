@@ -11,7 +11,7 @@ class FundingAdmin(admin.ModelAdmin):
     list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'amount', 'reward', 'comment', 'orderno', 'thanks']
 admin.site.register(Funding, FundingAdmin)
 
-class MakingAdmin(SummernoteModelAdmin):
+class MakingAdmin(admin.ModelAdmin):
     list_display = ['id', 'tournament_name', 'tournament_game', 'tournament_url', 'starttime', 'confirm']
 admin.site.register(Making, MakingAdmin)
 
@@ -23,15 +23,15 @@ class ParticipationAdmin(admin.ModelAdmin):
     list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'name', 'phone', 'etc1', 'etc2', 'etc3', 'etc4', 'confirm', 'checkin', 'score', 'result', 'prize']
 admin.site.register(Participation, ParticipationAdmin)
 
-class PrivacyAdmin(SummernoteModelAdmin):
+class PrivacyAdmin(admin.ModelAdmin):
     list_display = ['id', 'content']
 admin.site.register(Privacy, PrivacyAdmin)
 
-class AgreementAdmin(SummernoteModelAdmin):
+class AgreementAdmin(admin.ModelAdmin):
     list_display = ['id', 'content']
 admin.site.register(Agreement, AgreementAdmin)
 
-class HelpAdmin(SummernoteModelAdmin):
+class HelpAdmin(admin.ModelAdmin):
     list_display = ['id', 'type', 'question', 'answer']
 admin.site.register(Help, HelpAdmin)
 

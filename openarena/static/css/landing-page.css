@@ -1,0 +1,956 @@
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+.table_title{
+    font-size:30px;
+    margin-top:10px;
+    text-align: center;
+    font-weight: 600;
+}
+.looking_table{
+    margin-left: 10px;
+    margin-top: 50px;
+    border:2px solid rgba(255, 153, 0, 1);
+    background-color: #1b1b1b;
+    border-radius: 1px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+@media(min-width:990px) {
+    .looking_table{
+        max-width: 220px;
+        float: right;
+    }
+}
+
+.now_order{
+    position: relative;
+    width: 140px;
+    height: 50px;
+    margin-top: 20px;
+}
+.down_arrow{
+    margin-left: 12px;
+    width: 20%;
+}
+ul{
+    list-style: none;
+}
+ul.competition
+li.competition-item img{
+    width: 300px;
+    height: 260px;
+}
+.carousel-inner{
+    position : relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-inner{
+    width: 980px !important;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.topnav {
+    font-size: 14px;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background-size: cover;
+    height: 780px;
+}
+.looking-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    height: 780px;
+    font-family: 나눔고딕;
+    overflow: hidden;
+}
+.making-header {
+    padding-top: 50px;
+    padding-bottom: 5px;
+    color: #f8f8f8;
+    background: #1e1e1e;
+    height: 100%;
+    font-family: 나눔고딕;
+
+    border-bottom: 1px solid #2d2d2d;
+}
+.com_header{
+    padding-bottom: 0px;
+    text-align: center;
+    color: #f8f8f8;
+    height: 650px;
+    font-family: 나눔고딕;
+}
+.making_font{
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 150px;
+}
+.intro-message {
+    margin: auto;
+    padding-top: 170px;
+    padding-bottom: 143px;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:990px) {
+    .looking_mobile{
+        margin-top: 0px;
+        display: block;
+    }
+    .looking-header {
+        height: 1200px;
+    }
+    .container{
+        font-size: 12px;
+    }
+    .intro-message {
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 40%;
+    }
+}
+
+.network-name {
+    text-transform: lowercase;;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.donate {
+    text-transform: lowercase;;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    color: #000000;
+    background-color: #212121;
+    background-size: cover;
+}
+.looking_picture1:hover{
+    background-color: #0a0a0a;
+    border: 2px solid #ffffff;
+}
+.banner h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 30px 0;
+    background-color: #212121;
+    clear: both;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.nowcom{
+    padding: 10px;
+    font-weight: 800;
+}
+@media(max-width:767px) {
+    .footertable{
+        width: 100%;
+        font-size:12px;
+        margin:auto;
+    }
+    .margin{
+        padding: 0px;
+    }
+    .container{
+        padding: 0px;
+        text-align: center;
+    }
+    .h3,h3 {
+        font-size:12px;
+
+    }
+    th{
+        text-align: center;
+    }
+    td{
+        padding:3px;
+    }
+}
+
+div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.looking_picture3 img,div.looking_picture4 img{
+    width: 244px;
+    height: 150px;
+    position: relative;
+    float: left;
+}
+.looking_picture,.looking_picture1,.looking_picture2,.looking_picture3,.looking_picture4{
+    width: 250px;
+    height: 370px;
+    float: left;
+    border:2px solid rgba(255, 153, 0, 1);
+    background-color: #1b1b1b;
+    border-radius: 1px;
+    margin-right: 20px;
+}
+@media(max-width:1450px) {
+
+    .looking_picture4{
+        display: none;
+    }
+}
+@media(max-width:1150px) {
+
+    .looking_picture3{
+        display: none;
+    }
+    .looking_picture4{
+        display: none;
+    }
+}
+@media(max-width:580px) {
+
+    .looking_picture2{
+        display: none;
+    }
+
+}
+.pic_title{
+    font-size: 14pt;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+/*competition page*/
+
+
+.com_into_small{
+    color: #ffffff;
+    font-size: 16px;
+}
+.com_into_big{
+    font-size: 32px;
+    font-weight: 400;
+    color: #ff9900;
+}
+/*너비가 991보다 작을떄*/
+@media(max-width:991px) {
+    .com_into_small{
+        font-size:14px;
+    }
+    .com_into_big{
+        font-size: 25px;
+    }
+}
+/*너비가 767보다 작을떄*/
+@media(max-width:767px) {
+    .com_into_small{
+        font-size:12px;
+    }
+    .com_into_big{
+        font-size: 21px;
+    }
+}
+.com_title{
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #ffffff;
+}
+.pic_subtitle{
+    font-size: 1em ;
+    color: #c2c2c2;
+    font-weight: 400;
+    padding-left: 10px;
+    text-align: left;
+}
+.com_subtitle{
+    text-align: left;
+    font-size: 1.2em;
+    color: #D1D1DD;
+    font-weight: 400;
+}
+.pic_dscrp{
+    font-size: 12pt;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+
+}
+.pic_num{
+    float: right;
+}
+.abc{
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+}
+.white{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.making_side{
+    width: 100px;
+    height: 1124px;
+    position: absolute;
+    float: left;
+    background: #ff9900;
+}
+.making_start{
+    margin-top: 10px;
+    padding-left: 14%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.making_content{
+    padding-left: 14%;
+}
+.looking_btn{
+    color: #555;
+}
+.bar{
+    border:1px solid #ffffff;
+    width: 72%;
+    margin: auto;
+}
+.bar_2{
+    border:1px solid #ffffff;
+    width: 85%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.bar3{
+    border:1px solid #ffffff;
+    width: 80%;
+    margin: auto;
+}
+.bar4{
+    border-top:1px solid rgba( 255, 255, 255, 1 );
+    width: 100%;
+    margin-top: 10px
+}
+.looking-group{
+    margin-bottom: 20px;
+    width:85%;
+}
+.looking_list{
+    font-size: 16px;
+    text-align: left;
+}
+.looking_add_button{
+    margin-top:10px;
+    width: 156px;
+}
+.empty{
+    width: 10%;
+    background-color: transparent;
+    border: transparent;
+}
+.donator_title{
+    font-weight: bold;
+}
+.donator_container{
+    color: #ffffff;
+    padding-top: 20px;
+}
+@media(max-width:770px) {
+    .form-control {
+        width: 70%;
+        display: inline;
+    }
+    .making_side{
+        display: none;
+    }
+    .making-start,.making_content{
+        padding-left: 10px;
+    }
+    .input-group{
+        width: 90%;
+    }
+    .making_start{
+        padding-left: 20px;
+    }
+}
+
+.com_intro{
+    width: 100%;
+    height: 800px;
+    font-family: 나눔고딕;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.com_intro_img{
+    margin: auto;
+}
+.com_intro img{
+    width: 100%;
+    height: 100%;
+    border : 1px solid #d1c0a5;
+}
+.com_list{
+    color: #ffffff;
+    font-size: 1.3em;
+    vertical-align: middle;
+}
+
+.com_intro_now{
+    padding: 15px;
+    width: 100%;
+    float: left;
+    text-align: left;
+    border: 1px solid #d1c0a5;
+}
+.com_intro_desp{
+    margin-top: 20px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1.22em;
+    line-height: 1.85;
+    color: #ffffff;
+    border:1px solid #fff;
+    background-color: #1a1a1a;
+}
+.com_donatelist_box{
+    margin-bottom: 20px;
+}
+.com_intro_box{
+    width: 100%;
+    padding: 20px 20px;
+    border:1px solid #EBA444;
+    float: left;
+    cursor: pointer;
+    background-color: #1a1a1a;
+}
+.com_list_intro{
+    text-align: center;
+}
+.com_list_margin{
+    margin-right: 5em;
+}
+.com_mid{
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    border-radius: 5px;
+    padding-top: 50px;
+}
+.com_empty{
+    height: 380px;
+}
+.com_header_inner{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: rgba( 33, 33, 33, 0.9 );
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.5 );
+    border-top: 1px solid rgba( 255, 255, 255, 0.5 );
+}
+.com_list_con{
+    border: 2px solid #f7941e;
+    border-radius: 1px;
+    font-size: 21px;
+    position: relative;
+    color: #2d2d2d;
+    width: 140px;
+    height: 50px;
+    padding: 7px;
+    display: block;
+}
+.com_profile{
+    background-size: contain;
+    height: 160px;
+}
+.com_white_bar{
+    width: 100%;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+.com_orange_bar{
+    width: 60%;
+    height: 20px;
+    background-color: #ff9900;
+    border-radius: 3px;
+}
+.com_donate_box{
+    padding-left: 0px;
+    margin-top: 20px;
+}
+.com_donate_list{
+    background-color: #222;
+}
+.com_donate_icon{
+    height: 40px;
+    width: 40px;
+    padding: 3px;
+}
+.com_donate_desp{
+    height: 40px;
+    width: 85%;
+    display: inline;
+
+}
+.com_donate_enroll{
+    width: 12%;
+    height: 40px;
+    padding: 7px;
+    font-size: 15px;
+    float: right;
+}
+.match_list{
+    background: url(../img/migal/migal_match.png) center center no-repeat;
+    background-size: contain;
+    height: 600px;
+
+}
+.footer-menu-divider{
+    color: #f7941e;
+}
+.list-inline{
+    margin-bottom: 0px;
+}
+.block-b{
+    background-color: #1e1e1e;
+    padding-bottom: 40px;
+    overflow: hidden;
+    font-family: 나눔글꼴;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.box_head{
+    color: #ffffff;
+}
+.box_head_title{
+    letter-spacing: -0.0225em ;
+    font-size: 15px;
+    display: block;
+}
+.box_body_de{
+    margin-bottom: 13px;
+    font-size: 15px;
+    line-height: 1.625;
+    color: #ffffff;
+}
+
+.gray{
+    background-color: #ebebeb;
+}
+
+.head_empty{
+    height: 50px;
+
+}
+.mypage_empty{
+    height: 20px;
+}
+.help_head{
+    height: 275px;
+    background: url(../../static/img/q_cover.png);
+    margin-bottom: 20px;
+}
+.help_head_inner{
+    flex: 1;
+    margin: auto;
+    text-align: center;
+    width: 180px;
+    padding-top: 100px;
+
+}
+.help_head_title{
+    color: #ffffff;
+}
+.help_text{
+    color: #2d2d2d;
+}
+.head_background{
+    background-color: #ffffff;
+    height: 300px;
+    margin: auto;
+    padding: 20px 50px 50px 50px;
+}
+.head_box{
+    border:2px solid rgba(255, 153, 0, 1);
+    border-radius : 5px;
+    padding: 10px;
+}
+.facebook_btn{
+    background-color: #4460A0;
+    border-color:#4460A0;
+    border-radius: 2px;
+    padding-left: 5px;
+    width: 110px;
+    float: left;
+    cursor: pointer;
+}
+.facebook_btn img{
+    width: 26px;
+    border-color:#4460A0;
+}
+.facebook_font{
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.tab-content{
+    color: #ffffff;
+}
+/*support css*/
+.support_title{
+    font-size: 28px;
+    color: #ffffff;
+}
+.support_subtitle{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/*my page 다듬기*/
+.no_border{
+    border-bottom: 1px solid #ff9900;
+    border-top : transparent;
+    border-right : transparent;
+    border-left : transparent;
+}
+.list_btn{
+    background-color: transparent;
+    border: hidden;
+    color: #ffffff;
+    font-size: 12px;
+}
+.mypage_content{
+    min-height: 380px;
+}
+/*너비가 991보다 클떄*/
+@media(min-width:991px) {
+    .list_btn{
+        font-size: 18px;
+    }
+}
+/*너비가 991보다 작을떄*/
+@media(max-width:991px) {
+    .tab-content{
+        font-size: 10px;
+    }
+    .list_btn{
+        font-size: 10px;
+    }
+    .main_btn_size{
+        width: 100px;
+    }
+    .facebook_font{
+        font-size: 12px;
+    }
+    .facebook_btn{
+        width: 95px;
+    }
+    .com_intro_desp blockquote,.com_donate_desp,.com_title,.com_subtitle{
+        font-size: 12px;
+    }
+    .looking_list{ font-size: 12px;
+    }
+    .intro-header{
+        height: 850px;
+    }
+
+}
+.com_prizebox{
+}
+@media(max-width:500px){
+    .white{
+        width: 100px;
+        font-size: 12px;
+        display: inline;
+    }
+    .com_mainbox{
+        padding-left: 0px;
+    }
+    .com_header_inner{
+    }
+    /*둘러보기 글 looking_pictue1 size*/
+    div.looking_picture1 img{
+        width: 152px;
+        height: 93px;
+    }
+    .looking_picture1{
+        width: 156px;
+        height: 231px;
+        font-size: 10px;
+    }
+    .pic_title{
+        font-size: 10px;
+        padding: 1px;
+    }
+    .pic_subtitle{
+        font-size: 10px;
+        padding: 1px;
+    }
+    .pic_dscrp{
+        font-size: 10px;
+        padding: 3px;
+    }
+    .now_order{
+        width: 112px;
+        font-size: 10px;
+    }
+    .com_intro_desp blockquote,.com_donate_desp,.com_title,.com_subtitle{
+        font-size: 10px;
+    }
+    .com_intro_desp{
+        padding:10px;
+    }
+    .com_donate_enroll{
+        font-size: 10px;
+        width: 15%;
+    }
+    .looking_picture1{
+        margin-right:10px;
+        margin-bottom:10px;
+    }
+    .abc{
+        margin-top:10px;
+    }
+    .looking_table{
+        margin-top:10px;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .table_title{
+        font-size:25px;
+    }
+
+}
+
+.card {
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-border-top-left-radius:5px;
+    -moz-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: left;
+    background-color: #ff9900;
+    border-radius: 3px;
+}
+.card.hovercard {
+    height: 160px;
+}
+.card.hovercard .useravatar {
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+.card.hovercard .useravatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+.card.hovercard .card-info {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+}
+.card-title{
+    font-size: 21px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+.card.hovercard .card-info  {
+    padding:0 5px;
+    font-size: 20px;
+    line-height: 1;
+    color: #262626;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.card.hovercard .card-info {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+.card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+}
+.privacy_content{
+    color: #ffffff;
+}
+.btn-pref .btn {
+    -webkit-border-radius:0 !important;
+}
+/*만든대회*/
+.panel-table .panel-body{
+    padding:0;
+}
+
+.panel-table .panel-body .table-bordered{
+    border-style: none;
+    margin:0;
+}
+
+.panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {
+    text-align:center;
+    width: 100px;
+}
+
+.panel-table .panel-body .table-bordered > thead > tr > th:last-of-type,
+.panel-table .panel-body .table-bordered > tbody > tr > td:last-of-type {
+    border-right: 0px;
+}
+
+.panel-table .panel-body .table-bordered > thead > tr > th:first-of-type,
+.panel-table .panel-body .table-bordered > tbody > tr > td:first-of-type {
+    border-left: 0px;
+}
+
+.panel-table .panel-body .table-bordered > tbody > tr:first-of-type > td{
+    border-bottom: 0px;
+}
+
+.panel-table .panel-body .table-bordered > thead > tr:first-of-type > th{
+    border-top: 0px;
+}
+
+.panel-table .panel-footer .pagination{
+    margin:0;
+}
+
+/*
+used to vertically center elements, may need modification if you're not using default sizes.
+*/
+.panel-table .panel-footer .col{
+    line-height: 34px;
+    height: 34px;
+}
+
+.panel-table .panel-heading .col h3{
+    line-height: 30px;
+    height: 30px;
+}
+
+.panel-table .panel-body .table-bordered > tbody > tr > td{
+    line-height: 34px;
+}

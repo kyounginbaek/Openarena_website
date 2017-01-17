@@ -1,0 +1,93 @@
+/*join start*/
+.center {
+}
+.com_mainbox{
+    margin-left:0px;
+    padding-left:0px;
+}
+.center-block{
+    width: 140px;
+    height: 50px;
+    padding: 7px;
+    font-size: 18px;
+}
+.don_list{
+    color: #ff9900;
+}
+.join_submit{
+    font-size: 15px;
+    font-family: 나눔글꼴;
+    background: #ff9900;
+    border:1px solid #ff9900;
+    border-radius: 3px;
+    color: #ffffff;
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+}
+.donate_submit{
+    font-size: 15px;
+    font-family: 나눔글꼴;
+    background: transparent;
+    border:1px solid #ff9900;
+    border-radius: 3px;
+    color: #ffffff;
+    margin: auto;
+    width: 250px;
+    height: 80px;
+    padding: 5px;
+}
+.donate_submit:hover{
+    background:#ff9900;
+}
+.modal-content{
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 나눔글꼴;
+}
+.modal-header {
+}
+
+.modal-footer {
+    padding: 0;
+}
+
+.modal-footer .btn-group button {
+    height:40px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border: none;
+    border-right: 1px solid #ddd;
+}
+
+.modal-footer .btn-group:last-child > button {
+    border-right: 0;
+}
+/*너비가 770보다 작을떄*/
+@media(max-width:770px){
+    .center-block{
+        float: left;
+        width: 80px;
+        height: 40px;
+        padding: 6px;
+        font-size: 12px;
+        margin-right: 10px;
+    }
+    .button_blank{
+        width: 20px;
+        float: left;
+        height:20px;
+    }
+    .don_emp{
+        margin-right: 10px;
+    }
+    .donate_submit{
+        width: 120px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .don_list{
+        font-size: 12px;
+    }
+}
+/*join end*/

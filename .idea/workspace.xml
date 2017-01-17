@@ -2,183 +2,262 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/forms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/search.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/actions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/animate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/easy-responsive-tabs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/nowcompetition/arrows.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/nowcompetition/bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/nowcompetition/grid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/nowcompetition/image1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/nowcompetition/image2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/nowcompetition/image3.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/main/static/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/contact_form.css" afterPath="$PROJECT_DIR$/main/static/css/contact_form.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/contents_deco.css" afterPath="$PROJECT_DIR$/main/static/css/contents_deco.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/custom_kyoungin.css" afterPath="$PROJECT_DIR$/main/static/css/custom_kyoungin.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/font-awesome.css" afterPath="$PROJECT_DIR$/main/static/css/font-awesome.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/main/static/css/font-awesome.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/home_spin.css" afterPath="$PROJECT_DIR$/main/static/css/home_spin.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/jquery-ui.css" afterPath="$PROJECT_DIR$/main/static/css/jquery-ui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/jquery.datetimepicker.css" afterPath="$PROJECT_DIR$/main/static/css/jquery.datetimepicker.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="$PROJECT_DIR$/main/static/css/landing-page.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/normalize.css" afterPath="$PROJECT_DIR$/main/static/css/normalize.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/participation.css" afterPath="$PROJECT_DIR$/main/static/css/participation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/main/static/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/video_deco.css" afterPath="$PROJECT_DIR$/main/static/css/video_deco.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/main/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/bx_loader.gif" afterPath="$PROJECT_DIR$/main/static/images/bx_loader.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/close.png" afterPath="$PROJECT_DIR$/main/static/images/close.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/loading.gif" afterPath="$PROJECT_DIR$/main/static/images/loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/lol_picture.jpeg" afterPath="$PROJECT_DIR$/main/static/images/lol/lol_picture.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture1.png" afterPath="$PROJECT_DIR$/main/static/images/lol/picture1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture2.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture3.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture4.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture5.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture5.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture6.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture7.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture8.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture8.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/lol/picture9.jpg" afterPath="$PROJECT_DIR$/main/static/images/lol/picture9.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/next.png" afterPath="$PROJECT_DIR$/main/static/images/next.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture1.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture2.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture3.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture4.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture5.png" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture6.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture7.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture8.jpg" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture8.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/overwatch/picture9.png" afterPath="$PROJECT_DIR$/main/static/images/overwatch/picture9.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/previous.png" afterPath="$PROJECT_DIR$/main/static/images/previous.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_about.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_about.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_arrow.png" afterPath="$PROJECT_DIR$/main/static/images/templatemo_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_arrow_gap.png" afterPath="$PROJECT_DIR$/main/static/images/templatemo_arrow_gap.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_contact1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_contact1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home2.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home3.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_home4.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_home4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_service1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_service1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_service2.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_service2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_servicebg.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_servicebg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_team.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_team.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testi_arrow.png" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testi_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testimonial1.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testimonial1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testimonial2.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testimonial2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_testimonial3.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_testimonial3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/images/templatemo_vision.jpg" afterPath="$PROJECT_DIR$/main/static/images/templatemo_vision.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/banner-bg.svg" afterPath="$PROJECT_DIR$/main/static/img/banner-bg.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/com_back.png" afterPath="$PROJECT_DIR$/main/static/img/com_back.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/darkhumor/darkhumor_looking.png" afterPath="$PROJECT_DIR$/main/static/img/darkhumor/darkhumor_looking.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/darkhumor/darkhumor_poster.jpeg" afterPath="$PROJECT_DIR$/main/static/img/darkhumor/darkhumor_poster.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/darkhumor/darkhumor_poster2.jpeg" afterPath="$PROJECT_DIR$/main/static/img/darkhumor/darkhumor_poster2.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/dog.png" afterPath="$PROJECT_DIR$/main/static/img/dog.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/down_arrow.png" afterPath="$PROJECT_DIR$/main/static/img/down_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/facebook.png" afterPath="$PROJECT_DIR$/main/static/img/facebook.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/facebook.svg" afterPath="$PROJECT_DIR$/main/static/img/facebook.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/favicon.ico" afterPath="$PROJECT_DIR$/main/static/img/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/gamer.jpg" afterPath="$PROJECT_DIR$/main/static/img/gamer.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/intro-bg.jpg" afterPath="$PROJECT_DIR$/main/static/img/intro-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/ipad.png" afterPath="$PROJECT_DIR$/main/static/img/ipad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/logo.png" afterPath="$PROJECT_DIR$/main/static/img/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho/macho_cover.png" afterPath="$PROJECT_DIR$/main/static/img/macho/macho_cover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho/macho_logo.png" afterPath="$PROJECT_DIR$/main/static/img/macho/macho_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho/macho_match_final.png" afterPath="$PROJECT_DIR$/main/static/img/macho/macho_match_final.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho/macho_poster.jpg" afterPath="$PROJECT_DIR$/main/static/img/macho/macho_poster.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho/macho_preview.png" afterPath="$PROJECT_DIR$/main/static/img/macho/macho_preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho2/macho2_poster_final.png" afterPath="$PROJECT_DIR$/main/static/img/macho2/macho2_poster_final.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/macho2/macho2_preview.png" afterPath="$PROJECT_DIR$/main/static/img/macho2/macho2_preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/migal/migal_cover.png" afterPath="$PROJECT_DIR$/main/static/img/migal/migal_cover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/migal/migal_logo.png" afterPath="$PROJECT_DIR$/main/static/img/migal/migal_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/migal/migal_match.png" afterPath="$PROJECT_DIR$/main/static/img/migal/migal_match.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/migal/migal_poster.png" afterPath="$PROJECT_DIR$/main/static/img/migal/migal_poster.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/migal/migal_preview.png" afterPath="$PROJECT_DIR$/main/static/img/migal/migal_preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/naver.svg" afterPath="$PROJECT_DIR$/main/static/img/naver.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/openarena.png" afterPath="$PROJECT_DIR$/main/static/img/openarena.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/openarena.svg" afterPath="$PROJECT_DIR$/main/static/img/openarena.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/pattern.png" afterPath="$PROJECT_DIR$/main/static/img/pattern.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/phones.png" afterPath="$PROJECT_DIR$/main/static/img/phones.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/profile.svg" afterPath="$PROJECT_DIR$/main/static/img/profile.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/q_cover.png" afterPath="$PROJECT_DIR$/main/static/img/q_cover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_cover.png" afterPath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_cover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_logo.png" afterPath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_match_final2.png" afterPath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_match_final2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_poster2.jpeg" afterPath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_poster2.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_preview.png" afterPath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_preview.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/bootstrap.js" afterPath="$PROJECT_DIR$/main/static/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/main/static/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/easyResponsiveTabs.js" afterPath="$PROJECT_DIR$/main/static/js/easyResponsiveTabs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/index.js" afterPath="$PROJECT_DIR$/main/static/js/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery-1.10.2.min.js" afterPath="$PROJECT_DIR$/main/static/js/jquery-1.10.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery-ui.js" afterPath="$PROJECT_DIR$/main/static/js/jquery-ui.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery.datetimepicker.js" afterPath="$PROJECT_DIR$/main/static/js/jquery.datetimepicker.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery.js" afterPath="$PROJECT_DIR$/main/static/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/jquery.lightbox.js" afterPath="$PROJECT_DIR$/main/static/js/jquery.lightbox.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/summernote.js" afterPath="$PROJECT_DIR$/main/static/js/summernote.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/js/templatemo_custom.js" afterPath="$PROJECT_DIR$/main/static/js/templatemo_custom.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/changelists.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/dashboard.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/forms.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/css/widgets.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/fonts/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/fonts/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/calendar-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/gis/move_vertex_off.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/gis/move_vertex_on.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-addlink.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-alert.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-calendar.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-changelink.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-clock.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-deletelink.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-no.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-unknown-alt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-unknown.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/icon-yes.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/inline-delete.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/search.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/selector-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/sorting-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/tooltag-add.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/img/tooltag-arrowright.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/SelectBox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/SelectFilter2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/actions.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/collapse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/collapse.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/inlines.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/inlines.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/jquery.init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/prepopulate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/prepopulate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/timeparse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/urlify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/vendor/jquery/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/contact_form.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/contents_deco.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/custom_kyoungin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/home_spin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/jquery.datetimepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/landing-page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/participation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/css/video_deco.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/SOURCE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/django_summernote.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/django_summernote_inplace.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/font/summernote.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/font/summernote.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/font/summernote.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/jquery.fileupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/jquery.iframe-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/jquery.ui.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ar-AR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ar-AR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-bg-BG.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-bg-BG.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ca-ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ca-ES.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-cs-CZ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-cs-CZ.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-da-DK.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-da-DK.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-de-DE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-de-DE.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-es-ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-es-ES.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-es-EU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-es-EU.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-fa-IR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-fa-IR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-fi-FI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-fi-FI.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-fr-FR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-fr-FR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-gl-ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-gl-ES.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-he-IL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-he-IL.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-hr-HR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-hr-HR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-hu-HU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-hu-HU.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-id-ID.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-id-ID.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-it-IT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-it-IT.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ja-JP.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ja-JP.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ko-KR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ko-KR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-lt-LT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-lt-LT.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-lt-LV.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-lt-LV.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-nb-NO.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-nb-NO.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-nl-NL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-nl-NL.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-pl-PL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-pl-PL.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-pt-BR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-pt-BR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-pt-PT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-pt-PT.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ro-RO.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ro-RO.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ru-RU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-ru-RU.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sk-SK.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sk-SK.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sl-SI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sl-SI.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sr-RS-Latin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sr-RS-Latin.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sr-RS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sr-RS.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sv-SE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-sv-SE.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-th-TH.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-th-TH.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-tr-TR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-tr-TR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-uk-UA.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-uk-UA.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-vi-VN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-vi-VN.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-zh-CN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-zh-CN.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-zh-TW.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/lang/summernote-zh-TW.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/summernote.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/django_summernote/summernote.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/bx_loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/lol_picture.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/lol/picture9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/overwatch/picture9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/previous.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_about.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_arrow_gap.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_contact1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_home1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_home2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_home3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_home4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_service1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_service2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_servicebg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_team.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_testi_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_testimonial1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_testimonial2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_testimonial3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/images/templatemo_vision.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/banner-bg.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/com_back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/darkhumor/darkhumor_looking.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/darkhumor/darkhumor_poster.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/darkhumor/darkhumor_poster2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/dog.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/down_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/facebook.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/gamer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/intro-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/ipad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho/macho_cover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho/macho_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho/macho_match_final.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho/macho_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho/macho_preview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho2/macho2_poster_final.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/macho2/macho2_preview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/migal/migal_cover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/migal/migal_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/migal/migal_match.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/migal/migal_poster.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/migal/migal_preview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/naver.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/openarena.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/openarena.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/pattern.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/phones.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/q_cover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/whyachi/whyachi_cover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/whyachi/whyachi_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/whyachi/whyachi_match_final2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/whyachi/whyachi_poster2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/img/whyachi/whyachi_preview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/easyResponsiveTabs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/jquery-1.10.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/jquery.datetimepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/jquery.lightbox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/summernote.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openarena/static/js/templatemo_custom.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/basement.html" afterPath="$PROJECT_DIR$/main/templates/main/basement.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openarena/settings.py" afterPath="$PROJECT_DIR$/openarena/settings.py" />
     </list>
     <ignored path="openarena.iws" />
@@ -207,7 +286,7 @@
       <file leaf-file-name="making.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="2940">
               <caret line="196" column="58" selection-start-line="196" selection-start-column="58" selection-end-line="196" selection-end-column="58" />
               <folding />
             </state>
@@ -237,8 +316,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/openarena/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
+            <state relative-caret-position="141">
+              <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -247,7 +326,7 @@
       <file leaf-file-name="agreement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/agreement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="300">
               <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding />
             </state>
@@ -277,7 +356,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3900">
+            <state relative-caret-position="3795">
               <caret line="263" column="32" selection-start-line="263" selection-start-column="32" selection-end-line="263" selection-end-column="32" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -423,7 +502,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openarena" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,10 +517,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="openarena" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -825,26 +900,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28513733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28917608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3979442" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.4955102" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2452276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -892,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,7 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,15 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2085">
           <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,17 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3900">
-          <caret line="263" column="32" selection-start-line="263" selection-start-column="32" selection-end-line="263" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-157">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-195">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,9 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding>
-            <element signature="e#72#111#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -994,9 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#72#111#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1004,23 +1046,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="6638" column="0" selection-start-line="6638" selection-start-column="0" selection-end-line="6638" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/summernote.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2055">
-          <caret line="0" column="12748" selection-start-line="0" selection-start-column="12748" selection-end-line="0" selection-end-column="12748" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/summernote.css" />
     <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,9 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,7 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,7 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,15 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,9 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1104,10 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <marker date="1484628594000" expanded="false" signature="1569:1594" ph="..." />
-            <marker date="1484628594000" expanded="false" signature="1784:1809" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,33 +1124,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/agreement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="6765" column="27" selection-start-line="6765" selection-start-column="27" selection-end-line="6765" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css.css" />
     <entry file="file://$PROJECT_DIR$/main/templates/main/light-youtube-embed.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,13 +1139,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4425">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="2940">
           <caret line="196" column="58" selection-start-line="196" selection-start-column="58" selection-end-line="196" selection-end-column="58" />
           <folding />
         </state>
@@ -1165,7 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="839" column="0" selection-start-line="839" selection-start-column="0" selection-end-line="839" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,9 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#642#683#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1207,33 +1190,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#33#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="6782" column="25" selection-start-line="6782" selection-start-column="25" selection-end-line="6782" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/easy-responsive-tabs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css" />
+    <entry file="file://$PROJECT_DIR$/static/css/easy-responsive-tabs.css" />
     <entry file="file://$PROJECT_DIR$/main/static/css/custom_kyoungin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,41 +1210,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/nowcompetition/image3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/nowcompetition/image2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/nowcompetition/image1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/nowcompetition/grid.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/nowcompetition/bg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/nowcompetition/arrows.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/nowcompetition/image3.png" />
+    <entry file="file://$PROJECT_DIR$/static/nowcompetition/image2.png" />
+    <entry file="file://$PROJECT_DIR$/static/nowcompetition/image1.png" />
+    <entry file="file://$PROJECT_DIR$/static/nowcompetition/grid.png" />
+    <entry file="file://$PROJECT_DIR$/static/nowcompetition/bg.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/nowcompetition/arrows.png" />
     <entry file="file://$PROJECT_DIR$/openarena/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
+        <state relative-caret-position="141">
+          <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/agreement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3795">
+          <caret line="263" column="32" selection-start-line="263" selection-start-column="32" selection-end-line="263" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

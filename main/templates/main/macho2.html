@@ -1,4 +1,4 @@
-{% extends "main/base.html" %}
+{% extends "main/basement.html" %}
 {% load staticfiles %}
 {% load humanize %}
 
@@ -140,7 +140,7 @@
                         <!-- description 수정하기/저장하기 -->
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="com_intro_desp">
-                                <input type="hidden" id="edit_description" class="btn btn-default" type="button" value="수정하기">
+                                <input  id="edit_description" class="btn btn-default" type="button" value="수정하기">
                                 <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
                             </div>
                         </div>

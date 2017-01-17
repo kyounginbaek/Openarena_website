@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User
+from django_summernote import fields as summer_fields
 
 class Fundingdummy(models.Model):
     id = models.AutoField(primary_key=True)
@@ -43,7 +44,7 @@ class Making(models.Model):
     starttime = models.CharField(max_length=20, default='')
     checkin = models.CharField(max_length=20, default='')
     checkin_time = models.CharField(max_length=20, default='')
-    description = models.TextField(default='')
+    description = summer_fields.SummernoteTextField()
     funding_goal = models.CharField(max_length=20, default='')
     promise = models.CharField(max_length=200, default='')
     promise_spec = models.CharField(max_length=200, default='')
@@ -53,7 +54,7 @@ class Making(models.Model):
     phone = models.CharField(max_length=20, default='')
     confirm = models.CharField(max_length=20, default='')
 
-    notice = models.TextField(default='')
+    notice = summer_fields.SummernoteTextField()
     funding_endtime = models.CharField(max_length=20, default='')
     participation_endtime = models.CharField(max_length=20, default='')
     summary = models.TextField(default='')
@@ -93,18 +94,17 @@ class Participation(models.Model):
 
 class Privacy(models.Model):
     id = models.AutoField(primary_key=True)
-    content = models.TextField(default='')
+    content = summer_fields.SummernoteTextField()
 
 class Agreement(models.Model):
     id = models.AutoField(primary_key=True)
-    content = models.TextField(default='')
+    content = summer_fields.SummernoteTextField()
 
 class Help(models.Model):
     id = models.AutoField(primary_key=True)
     type = models.CharField(max_length=20, default='')
     question = models.CharField(max_length=100, default='')
-    answer = models.TextField(default='')
-
+    answer = summer_fields.SummernoteTextField()
 
 class Comment(models.Model):
     id = models.AutoField(primary_key=True)

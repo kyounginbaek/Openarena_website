@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from accounts.forms import RegistrationForm, AuthenticationForm
-from main.models import Making, Funding, Fundingdummy, Participation
+from main.models import Making, Funding, Participation
 
 def register(request):
     if request.method == 'POST':
@@ -90,5 +90,4 @@ def mypage(request):
 
 def withdrawal(request):
     # 회원탈퇴 시 비밀번호 변경
-
     return redirect('/')

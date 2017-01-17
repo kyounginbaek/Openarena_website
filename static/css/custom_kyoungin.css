@@ -96,6 +96,7 @@
 }
 
 .youtube img {
+    !important;
     bottom: 0;
     display: block;
     left: 0;

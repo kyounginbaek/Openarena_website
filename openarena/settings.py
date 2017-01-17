@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'accounts',
-    'social.apps.django_app.default',
     'django.contrib.humanize',
     'django_summernote',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE_CLASSES = [

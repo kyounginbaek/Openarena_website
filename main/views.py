@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from main.models import Making, Funding, Fundingdummy, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
+from main.models import Making, Funding, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
@@ -121,7 +121,7 @@ def migal(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(tournament_id=2, tournament_name=tournament_name,
+                funding_obj = Funding(tournament_id=2, tournament_name=tournament_name,
                                            username=request.user.username, email=request.user.email,
                                            orderno=params.get('orderNo'), amount=params.get('amount'))
                 funding_obj.save()
@@ -188,7 +188,7 @@ def whyachi(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(tournament_id=2, tournament_name=tournament_name,
+                funding_obj = Funding(tournament_id=2, tournament_name=tournament_name,
                                            username=request.user.username, email=request.user.email,
                                            orderno=params.get('orderNo'), amount=params.get('amount'))
                 funding_obj.save()
@@ -251,7 +251,7 @@ def macho(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(tournament_id=3, tournament_name=tournament_name,
+                funding_obj = Funding(tournament_id=3, tournament_name=tournament_name,
                                            username=request.user.username, email=request.user.email,
                                            orderno=params.get('orderNo'), amount=params.get('amount'))
                 funding_obj.save()
@@ -319,7 +319,7 @@ def macho2(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(tournament_id=3, tournament_name=tournament_name,
+                funding_obj = Funding(tournament_id=3, tournament_name=tournament_name,
                                            username=request.user.username, email=request.user.email,
                                            comment=request.POST.get('funding_comment'),
                                            orderno=params.get('orderNo'), amount=params.get('amount'))

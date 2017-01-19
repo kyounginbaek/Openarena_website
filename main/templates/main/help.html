@@ -1,4 +1,4 @@
-{% extends "main/basement.html" %}
+{% extends "main/base.html" %}
 {% load staticfiles %}
 
 {% block title %} 오픈아레나:도움말 {% endblock %}
@@ -41,7 +41,7 @@
                                             </div>
                                             <div id="tab1_question{{ forloop.counter }}" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <p class="help_text">{{ h1.answer }}</p>
+                                                    <p class="help_text">{{ h1.answer|safe }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                             </div>
                                             <div id="tab2_question{{ forloop.counter }}" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <p class="help_text">{{ h2.answer }}</p>
+                                                    <p class="help_text">{{ h2.answer|safe }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                                         </div>
                                         <div id="tab3_question{{ forloop.counter }}" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <p class="help_text">{{ h3.answer }}</p>
+                                                <p class="help_text">{{ h3.answer|safe }}</p>
                                             </div>
                                         </div>
                                     </div>

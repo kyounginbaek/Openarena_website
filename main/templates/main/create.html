@@ -1,15 +1,16 @@
-{% extends "main/basement.html" %}
+{% extends "main/base.html" %}
 {% load staticfiles %}
 
 {% block title %} 오픈아레나:대회 만들기 {% endblock %}
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/home_spin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
 {% endblock %}
 
 {% block content %}
     <div class="block-b">
-        <div class="com_header_inner" >
+        <div class="com_header_inner">
         </div>
 
         <div class="com_mid">
@@ -88,6 +89,22 @@
                                         대회의 대표 이미지 혹은 포스터를 업로드해주세요.<br/>
                                         이미지는 다음과 같이 사용됩니다.<br/>
                                     </blockquote>
+                                    <!-- image-preview-filename input [CUT FROM HERE]-->
+                                    <div class="input-group image-preview">
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                            </button>
+                                            <!-- image-preview-input -->
+                                            <div class="btn btn-default image-preview-input">
+                                                <span class="glyphicon glyphicon-folder-open"></span>
+                                                <span class="image-preview-input-title">파일 선택</span>
+                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                            </div>
+                                        </span>
+                                    </div><!-- /input-group image-preview [TO HERE]-->
                                 </div>
                             </div>
                         </div>
@@ -212,7 +229,21 @@
                             <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
                             <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
                         </h5>
+                        <br/>
+                        <!-- 참가비를 받는 경우 팝업 -->
+                        <div style="text-align: center">
+                            <h5>얼마를 받으시겠습니까?</h5>
+                            <div class="input-group spinner" style="display: table; margin: 0 auto;">
+                                <span class="input-group-addon">￦</span>
+                                <input type="text" class="form-control" value="1000" style="width: 100px;">
+                                <div class="input-group-btn-vertical">
+                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <br/>
                     <h4>• 후원 설정</h4>
                     <div class="com_intro_desp" style="text-align: center">
@@ -266,7 +297,22 @@
                             </div>
                             <div id="tab3_question1" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <p class="help_text"></p>
+                                    <!-- image-preview-filename input [CUT FROM HERE]-->
+                                    <div class="input-group image-preview">
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                            </button>
+                                            <!-- image-preview-input -->
+                                            <div class="btn btn-default image-preview-input">
+                                                <span class="glyphicon glyphicon-folder-open"></span>
+                                                <span class="image-preview-input-title">파일 선택</span>
+                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                            </div>
+                                        </span>
+                                    </div><!-- /input-group image-preview [TO HERE]-->
                                 </div>
                             </div>
                         </div>
@@ -284,7 +330,7 @@
                             </div>
                             <div id="tab3_question2" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <p class="help_text"></p>
+                                    <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="예) 홍길동">
                                 </div>
                             </div>
                         </div>
@@ -302,7 +348,9 @@
                             </div>
                             <div id="tab3_question3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p class="help_text"></p>
+                                    <div class="panel-body" style="padding: 0px;">
+                                        <div id="" class="summernote"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -319,17 +367,13 @@
                                 </a>
                             </div>
                             <div id="tab3_question4" class="panel-collapse collapse">
-                                <div class="panel-body" style="text-align: center">
-                                    <div class="btn-group">
-                                        <select id="streaming_url" name="streaming_url" class="form-control">
-                                            <option value="default">선택해주세요</option>
-                                            <option value="lol">리그오브레전드(롤)</option>
-                                            <option value="overwatch">오버워치</option>
-                                            <option value="starcraft1">스타크래프트1</option>
-                                            <option value="starcraft2">스타크래프트2</option>
-                                            <option value="hearthstone">하스스톤</option>
-                                            <option value="etc">기타</option>
-                                        </select>
+                                <div class="panel-body" style="align-items: center">
+                                    <div style="display: table; margin: 0 auto;">
+                                        <label><input id="template_name" name="template_name" type="checkbox" value="template_name"> 아프리카tv(afreecatv)</label><br>
+                                        <label><input id="template_email" name="template_email" type="checkbox" value="template_email"> 트위치(twitch)</label><br>
+                                        <label><input id="template_phone" name="template_phone" type="checkbox" value="template_phone"> 유투브(youtube)</label><br>
+                                        <label><input id="template_etc" name="template_etc" type="checkbox"> 페이스북(facebook)</label><br/>
+                                        <label><input id="template_etc" name="template_etc" type="checkbox"> 방송 계정 없음</label>
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +384,7 @@
                     <div class="com_intro_desp" style="text-align: center">
                         <h4>이메일 주소</h4>
                         <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="예) help@openarena.kr">
-
+                        <br/>
                         <h4>휴대폰 번호</h4>
                         <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="예) 010-1234-5678">
                     </div>
@@ -360,8 +404,23 @@
                         </h5>
                     </div>
                 </div>
-
             </div>
+
+            <!-- previous & next button -->
+            <ul class="pager">
+                <li class="previous">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-menu-left"></span>
+                        이전
+                    </a>
+                </li>
+                <li class="next">
+                    <a href="#">
+                        다음
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -379,4 +438,7 @@
             });
         });
     </script>
+
+    {% include 'main/functions/popover-preview-image.html' %}
+    {% include 'main/functions/input-spinner.html' %}
 {% endblock %}

@@ -23,7 +23,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
 
     <!-- jQuery -->
-    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- include summernote css/js-->
@@ -176,8 +176,8 @@
     {% endif %}
 </script>
 
-{% include 'main/google-analytics.html' %}
-{% include 'main/channel-plugin.html' %}
+{% include 'main/functions/google-analytics.html' %}
+{% include 'main/functions/channel-plugin.html' %}
 
 </body>
 </html>

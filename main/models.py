@@ -121,3 +121,9 @@ class Chat(models.Model):
 
     def __unicode__(self):
         return self.message
+
+class Rule(models.Model):
+    id = models.AutoField(primary_key=True)
+    tournament_game = models.CharField(max_length=20, default='')
+    tournament_type = models.CharField(max_length=20, default='')
+    content = summer_fields.SummernoteTextField()

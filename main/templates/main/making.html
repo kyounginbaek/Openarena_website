@@ -4,8 +4,7 @@
 {% block title %} 오픈아레나:대회 만들기 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.datetimepicker.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.datetimepicker.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
 {% endblock %}
 
@@ -385,18 +384,11 @@
         </div>
     </div>
 
-    <!-- scroll-top-wrapper -->
-    <div class="scroll-top-wrapper ">
-        <span class="scroll-top-inner">
-            <i class="glyphicon glyphicon-chevron-up"></i>
-        </span>
-    </div>
-
 {% endblock %}
 
 {% block script %}
+    {% include 'main/functions/add-remove-button.html' %}
     <script src="{% static 'js/jquery.datetimepicker.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.js' %}"></script>
     <script>
         $(document).ready(function(){
             /* 한글을 제외한 입력만 가능하게 : tournament_url */
@@ -501,60 +493,6 @@
                     at: "right+10 top-10",
                     collision: "none"
                 }
-            });
-
-            /* 공약 추가 버튼 기능 구현 */
-            /* Add button click handler */
-            var MAX_OPTIONS = 10;
-            var promise_number = 1;
-            $('.div_promise').on('click', '.addButton', function() {
-                if(promise_number < MAX_OPTIONS){
-                    promise_number = promise_number + 1;
-                    var $template = $('#promiseTemplate'),
-                    $clone    = $template
-                                    .clone()
-                                    .removeClass('hide')
-                                    .removeAttr('id')
-                                    .insertBefore($template);
-                } else {
-                    $('.div_promise').find('.addButton').attr('disabled', 'disabled');
-                }
-            });
-            /* Remove button click handler */
-            $('.div_promise').on('click', '.removeButton', function() {
-                promise_number = promise_number - 1;
-                $('.div_promise').find('.addButton').removeAttr('disabled', 'disabled');
-                var $row    = $(this).parents('.remove-group');
-
-                // Remove element containing the option
-                $row.remove();
-            });
-
-            /* 후원 추가 버튼 기능 구현 */
-            /* Add button click handler */
-            var MAX_OPTIONS = 10;
-            var reward_number = 1;
-            $('.div_reward').on('click', '.addButton', function() {
-                if(reward_number < MAX_OPTIONS){
-                    reward_number = reward_number + 1;
-                    var $template = $('#rewardTemplate'),
-                    $clone    = $template
-                                    .clone()
-                                    .removeClass('hide')
-                                    .removeAttr('id')
-                                    .insertBefore($template);
-                } else {
-                    $('.div_reward').find('.addButton').attr('disabled', 'disabled');
-                }
-            });
-            /* Remove button click handler */
-            $('.div_reward').on('click', '.removeButton', function() {
-                reward_number = reward_number - 1;
-                $('.div_reward').find('.addButton').removeAttr('disabled', 'disabled');
-                var $row    = $(this).parents('.remove-group');
-
-                // Remove element containing the option
-                $row.remove();
             });
 
             /* 참가자 양식: 추가 기타양식 체크 시 input required attr 부여 */

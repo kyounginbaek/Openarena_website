@@ -69,10 +69,16 @@
                                         부제에 쓰일 짧은 제목도 입력해주세요.<br/>
                                     </blockquote>
                                     <div class="col-md-6">
-                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="대회 제목 입력">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon3">대회 제목</span>
+                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="입력해주세요.">
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="짧은 제목 입력">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon3">짧은 제목</span>
+                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="입력해주세요.">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +103,7 @@
                                     </blockquote>
                                     <!-- image-preview-filename input [CUT FROM HERE]-->
                                     <div class="input-group image-preview col-md-6 col-md-offset-3">
-                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
                                         <span class="input-group-btn">
                                             <!-- image-preview-clear button -->
                                             <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
@@ -147,8 +153,8 @@
                             <div id="tab1_question4" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <div class="col-md-4 col-md-offset-4">
-                                        <select id="streaming_url" name="streaming_url" class="form-control">
-                                            <option value="default">선택해주세요</option>
+                                        <select id="tournament_game" name="tournament_game" class="form-control">
+                                            <option value="default">선택해주세요.</option>
                                             <option value="lol">리그오브레전드(롤)</option>
                                             <option value="overwatch">오버워치</option>
                                             <option value="starcraft1">스타크래프트1</option>
@@ -158,9 +164,12 @@
                                         </select>
 
                                         <!-- 기타 선택시 팝업 -->
-                                        <div>
+                                        <div id="div_tournament_game_etc" style="display: none;">
                                             <h5>어떤 게임인가요?</h5>
-                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="입력해주세요">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1">종류</span>
+                                                <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="입력해주세요">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +228,7 @@
                                             게임 별 예시 보기 :
                                             <div class="btn-group">
                                                 <select id="streaming_url" name="streaming_url" class="form-control">
-                                                    <option value="default">선택해주세요</option>
+                                                    <option value="default">선택해주세요.</option>
                                                     <option value="lol">리그오브레전드(롤)</option>
                                                     <option value="overwatch">오버워치</option>
                                                     <option value="starcraft2">스타크래프트2</option>
@@ -235,42 +244,38 @@
                     </div>
                     <br/>
                     <h4>• 대회 참가 방식</h4>
-                    <div class="com_intro_desp" style="text-align: center">
-                        <div style="padding: 5px;">
-                            <h4>오픈 아레나를 통해 참가자 신청을 받으시겠습니까?</h4>
-                            <div style="padding: 5px"></div>
-                            <h5>
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
-                                &nbsp;
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
-                            </h5>
-                        </div>
-                        <hr/>
-                        <!-- 참가자 신청 클릭시 팝업 -->
-                        <div style="padding: 5px;">
+                    <div class="com_intro_desp" style="text-align: center;">
+                        <h4>오픈 아레나를 통해 참가자 신청을 받으시겠습니까?</h4>
+                        <div style="padding: 5px"></div>
+                        <h5>
+                            <input type="radio" id="registration" name="registration" value="yes"> 예
+                            &nbsp;
+                            <input type="radio" id="registration" name="registration" value="no"> 아니요
+                        </h5>
+                    </div>
+                    <!-- 참가자 신청 예 클릭시 팝업 -->
+                    <div class="com_intro_desp" id="div_registration_yes" style="display: none; text-align: center">
+                        <div id="registration_type" style="padding: 5px">
                             <h4>대회 등록 방식</h4>
                             <div style="padding: 5px"></div>
+                            <h5>대회 등록 방식을 선택해주세요.</h5>
                             <h5>
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 팀
+                                <input type="radio" id="registration_type" name="registration_type" value="checkin"> 개인
                                 &nbsp;
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 개인
+                                <input type="radio" id="registration_type" name="registration_type" value="checkin"> 팀
                             </h5>
                         </div>
                         <hr/>
-                        <div style="padding: 5px;">
+                        <div style="padding: 5px">
                             <h4>참가자 양식 만들기</h4>
                             <div style="padding: 5px"></div>
-                            <h5>
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 팀
-                                &nbsp;
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 개인
-                            </h5>
                         </div>
                         <hr/>
-                        <div style="padding: 5px;">
+                        <div style="padding: 5px">
                             <h4>최대 참가자 수</h4>
                             <div style="padding: 5px"></div>
-                            <div class="input-group spinner" style="display: table; margin: 0 auto;">
+                            <h5>최대 참가자 수를 선택해주세요.</h5>
+                            <div class="input-group spinner spinner_participation" style="display: table; margin: 10px auto;">
                                 <span class="input-group-addon">명</span>
                                 <input type="text" class="form-control" value="10" style="width: auto;">
                                 <div class="input-group-btn-vertical">
@@ -280,53 +285,58 @@
                             </div>
                         </div>
                         <hr/>
-                        <div style="padding: 5px;">
+                        <div style="padding: 5px">
                             <h4>대회 참가 기간</h4>
                             <div style="padding: 5px"></div>
+                            <h5>참가 시작 시간과 마감 시간을 선택해주세요.</h5>
                             <!-- 참가 시작, 마감 시간 -->
-                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 0 auto;">
+                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                                <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="시작 시간">
+                                <input type="text" required autocomplete="off" class="form-control" id="participation_starttime" name="participation_starttime" placeholder="시작 시간">
 
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                                <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" placeholder="마감 시간">
+                                <input type="text" required autocomplete="off" class="form-control" id="participation_endtime" name="participation_endtime" placeholder="마감 시간">
                             </div>
                         </div>
                         <hr/>
-                        <div style="padding: 5px;">
+                        <div style="padding: 5px">
                             <h4>참가자 체크인</h4>
                             <blockquote style="font-size: 14px; margin: 0;">
                                 <span class="glyphicon glyphicon-info-sign"></span>
                                 참가자 체크인 기능을 사용하시면 대회 시작 전 설정한 시간 전까지<br/>
                                 체크인 버튼을 클릭하지 않은 참가자는 자동 탈락하게 됩니다.<br/>
-                                <br/>
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 사용
-                                &nbsp;
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 미사용
                             </blockquote>
+                            <h5>
+                                <input type="radio" id="checkin" name="checkin" value="yes"> 사용
+                                &nbsp;
+                                <input type="radio" id="checkin" name="checkin" value="no"> 미사용
+                            </h5>
                             <!-- 체크인 기능 사용시 팝업 -->
-                            <div style="display: table; margin: 0 auto;">
-                                <div style="display:inline-block;">
-                                    <h5>대회 시작 전 &nbsp;</h5>
-                                </div>
-                                <div style="display:inline-block;">
-                                    <select id="checkin_time" name="checkin_time" class="form-control" style="width: auto;">
-                                        <option value="default">선택해주세요</option>
-                                        <option value="15min">15분</option>
-                                        <option value="30min">30분</option>
-                                        <option value="1hour">1시간</option>
-                                        <option value="2hour">2시간</option>
-                                        <option value="6hour">6시간</option>
-                                        <option value="1day">1일</option>
-                                        <option value="2day">2일</option>
-                                    </select>
-                                </div>
-                                <div style="display:inline-block;">
-                                    <h5>&nbsp; 전까지 체크인 필요</h5>
+                            <div id="div_checkin_yes" style="display: none;">
+                                <div style="padding: 5px;"></div>
+                                <div style="display: table; margin: 10px auto;">
+                                    <div style="display:inline-block;">
+                                        <h5>대회가 시작하기 전 &nbsp;</h5>
+                                    </div>
+                                    <div style="display:inline-block;">
+                                        <select id="checkin_time" name="checkin_time" class="form-control" style="width: auto;">
+                                            <option value="default">선택해주세요.</option>
+                                            <option value="15min">15분</option>
+                                            <option value="30min">30분</option>
+                                            <option value="1hour">1시간</option>
+                                            <option value="2hour">2시간</option>
+                                            <option value="6hour">6시간</option>
+                                            <option value="1day">1일</option>
+                                            <option value="2day">2일</option>
+                                        </select>
+                                    </div>
+                                    <div style="display:inline-block;">
+                                        <h5>&nbsp; 전까지 체크인 필요</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -339,15 +349,17 @@
                     <h4>• 참가비 설정</h4>
                     <div class="com_intro_desp" style="text-align: center">
                         <h4>참가비를 받으시겠습니까?</h4>
+                        <div style="padding: 5px;"></div>
                         <h5>
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                            <input type="radio" id="participation_fee" name="participation_fee" value="yes"> 예
+                            &nbsp;
+                            <input type="radio" id="participation_fee" name="participation_fee" value="no"> 아니요
                         </h5>
-                        <br/>
                         <!-- 참가비를 받는 경우 팝업 -->
-                        <div style="text-align: center">
+                        <div id="div_participation_fee_yes" style="display: none; text-align: center;">
+                            <br/>
                             <h5>얼마를 받으시겠습니까?</h5>
-                            <div class="input-group spinner" style="display: table; margin: 0 auto;">
+                            <div class="input-group spinner spinner_participation_fee" style="display: table; margin: 10px auto;">
                                 <span class="input-group-addon">￦</span>
                                 <input type="text" class="form-control" value="1000" style="width: auto;">
                                 <div class="input-group-btn-vertical">
@@ -357,20 +369,24 @@
                             </div>
                         </div>
                     </div>
-
                     <br/>
                     <h4>• 후원 설정</h4>
-                    <div class="com_intro_desp" style="text-align: center">
+                    <div class="com_intro_desp" style="text-align: center;">
                         <h4>상금 후원을 받으시겠습니까?</h4>
+                        <div style="padding: 5px;"></div>
                         <h5>
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                            <input type="radio" id="funding" name="funding" value="yes"> 예
+                            &nbsp;
+                            <input type="radio" id="funding" name="funding" value="no"> 아니요
                         </h5>
-                        <!-- 후원을 받는 경우 팝업 -->
-                        <div style="text-align: center">
-                            <br/>
-                            <h5>후원 목표 금액이 얼마인가요?</h5>
-                            <div class="input-group spinner" style="display: table; margin: 0 auto;">
+                    </div>
+                    <!-- 후원을 받는 경우 팝업 -->
+                    <div id="div_funding_yes" class="com_intro_desp" style="display: none; text-align: center;">
+                        <div style="padding: 5px;">
+                            <h4>후원 목표 금액</h4>
+                            <div style="padding: 5px;"></div>
+                            <h5>후원 목표 금액을 선택해주세요.</h5>
+                            <div class="input-group spinner spinner_funding_goal" style="display: table; margin: 10px auto;">
                                 <span class="input-group-addon">￦</span>
                                 <input type="text" class="form-control" value="10000" style="width: auto;">
                                 <div class="input-group-btn-vertical">
@@ -379,9 +395,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div>
-                            <br/>
+                        <hr/>
+                        <div style="padding: 5px;">
                             <h4>후원자에게 보상을 하시겠습니까?</h4>
                             <blockquote style="font-size: 14px">
                                 <span class="glyphicon glyphicon-info-sign"></span>
@@ -390,47 +405,50 @@
                                 후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
                             </blockquote>
                             <h5>
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 사용
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 미사용
+                                <input type="radio" id="reward" name="reward" value="yes"> 사용
+                                &nbsp;
+                                <input type="radio" id="reward" name="reward" value="no"> 미사용
                             </h5>
+                            <div style="padding: 5px;"></div>
                             <!-- 보상 사용시 팝업 -->
-                            <div class="div_reward" style="display: table; margin: 0 auto;">
-                                <!-- js dynamic form fields : add -->
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">₩</span>
-                                        <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 10,000">
-                                        <span class="input-group-addon">후원 시</span>
-                                        <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
+                            <div id="div_reward_yes" style="display: none;">
+                                <div class="div_reward" style="display: table; margin: 0 auto;">
+                                    <!-- js dynamic form fields : add -->
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">₩</span>
+                                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 10,000">
+                                            <span class="input-group-addon">후원 시</span>
+                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- js dynamic form fields : remove -->
-                                <div class="hide remove-group" id="rewardTemplate">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₩</span>
-                                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 20,000">
-                                            <span class="input-group-addon">후원 시</span>
-                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
+                                    <!-- js dynamic form fields : remove -->
+                                    <div class="hide remove-group" id="rewardTemplate">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">₩</span>
+                                                <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 20,000">
+                                                <span class="input-group-addon">후원 시</span>
+                                                <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div>
-                            <br/>
+                        <hr/>
+                        <div style="padding: 5px;">
                             <h4>후원자에게 공약을 하시겠습니까?</h4>
                             <blockquote style="font-size: 14px">
                                 <span class="glyphicon glyphicon-info-sign"></span>
@@ -439,39 +457,43 @@
                                 후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
                             </blockquote>
                             <h5>
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 사용
-                                <input type="checkbox" id="checkin" name="checkin" value="checkin"> 미사용
+                                <input type="radio" id="promise" name="promise" value="yes"> 사용
+                                &nbsp;
+                                <input type="radio" id="promise" name="promise" value="no"> 미사용
                             </h5>
+                            <div style="padding: 5px;"></div>
                             <!-- 보상 사용시 팝업 -->
-                            <div class="div_promise" style="display: table; margin: 0 auto;">
-                                <!-- js dynamic form fields : add -->
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">₩</span>
-                                        <input type="text" class="form-control" id="promise" name="promise[]" placeholder="예) 100,000">
-                                        <span class="input-group-addon">도달 시</span>
-                                        <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
+                            <div id="div_promise_yes" style="display: none;">
+                                <div class="div_promise" style="display: table; margin: 0 auto;">
+                                    <!-- js dynamic form fields : add -->
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">₩</span>
+                                            <input type="text" class="form-control" id="promise" name="promise[]" placeholder="예) 100,000">
+                                            <span class="input-group-addon">도달 시</span>
+                                            <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- js dynamic form fields : remove -->
-                                <div class="hide remove-group" id="promiseTemplate">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₩</span>
-                                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 200,000">
-                                            <span class="input-group-addon">도달 시</span>
-                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 참가팀 전원에게 선물">
+                                    <!-- js dynamic form fields : remove -->
+                                    <div class="hide remove-group" id="promiseTemplate">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">₩</span>
+                                                <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 200,000">
+                                                <span class="input-group-addon">도달 시</span>
+                                                <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 참가팀 전원에게 선물">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -494,8 +516,7 @@
                             • 대회 주최자, 크리에이터 - 대회 준비금 5%<br/>
                         </blockquote>
                         <h5>
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                            <input type="checkbox" id="funding_info" name="funding_info" value="yes"> 네. 확인했습니다.
                         </h5>
                     </div>
                 </div>
@@ -522,7 +543,7 @@
                                 <div class="panel-body" style="text-align: center">
                                     <!-- image-preview-filename input [CUT FROM HERE]-->
                                     <div class="input-group image-preview col-md-6 col-md-offset-3">
-                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요"> <!-- don't give a name === doesn't send on POST/GET -->
                                         <span class="input-group-btn">
                                             <!-- image-preview-clear button -->
                                             <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
@@ -553,7 +574,8 @@
                             </div>
                             <div id="tab3_question2" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <div class="col-md-4 col-md-offset-4">
+                                    <div class="input-group col-md-4 col-md-offset-4">
+                                        <span class="input-group-addon" id="basic-addon1">이름</span>
                                         <input type="text" required autocomplete="off" class="form-control" id="starttime" name="starttime" value="{{ user.username }}">
                                     </div>
                                 </div>
@@ -592,34 +614,39 @@
                             <div id="tab3_question4" class="panel-collapse collapse">
                                 <div class="panel-body" style="margin: 0 auto;">
                                     <div class="col-md-6 col-md-offset-3">
+                                        <div style="text-align: center;">
+                                            <h5>대회를 방송하실 스트리밍 사이트를 선택해주세요.</h5>
+                                            <h5>여러 사이트로 방송하실 경우 복수 선택이 가능합니다.</h5>
+                                        </div>
+                                        <div style="padding: 5px;"></div>
                                         <label><input id="template_name" name="template_name" type="checkbox" value="template_name"> 아프리카tv(afreecatv)</label><br/>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">URL:</span>
+                                            <span class="input-group-addon" id="basic-addon1">URL</span>
                                             <input id="input_afreecatv" name="input_afreecatv" type="text" class="form-control" placeholder="예) http://play.afreecatv.com/">
                                         </div>
                                         <br/>
                                         <label><input id="template_email" name="template_email" type="checkbox" value="template_email"> 트위치(twitch)</label><br/>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">URL:</span>
+                                            <span class="input-group-addon" id="basic-addon1">URL</span>
                                             <input id="input_twitch" name="input_twitch" type="text" class="form-control" placeholder="예) https://www.twitch.tv/">
                                         </div>
                                         <br/>
                                         <label><input id="template_phone" name="template_phone" type="checkbox" value="template_phone"> 유투브(youtube)</label><br/>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">URL:</span>
+                                            <span class="input-group-addon" id="basic-addon1">URL</span>
                                             <input id="input_youtube" name="input_youtube" type="text" class="form-control" placeholder="예) https://www.youtube.com/">
                                         </div>
                                         <br/>
                                         <label><input id="template_etc" name="template_etc" type="checkbox"> 페이스북(facebook)</label><br/>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">URL:</span>
+                                            <span class="input-group-addon" id="basic-addon1">URL</span>
                                             <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) https://www.facebook.com/">
                                         </div>
                                         <br/>
                                         <label><input id="template_etc" name="template_etc" type="checkbox"> 기타</label><br/>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1">URL:</span>
-                                            <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="URL을 입력해주세요">
+                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                            <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="URL을 입력해주세요.">
                                         </div>
                                         <br/>
                                         <label><input id="template_etc" name="template_etc" type="checkbox"> 방송 계정 없음</label><br/>
@@ -651,8 +678,9 @@
                             더 많은 사람들이 대회에 관심을 가질 수 있게 됩니다.<br/>
                         </blockquote>
                         <h5>
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 예
-                            <input type="checkbox" id="checkin" name="checkin" value="checkin"> 아니요
+                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예
+                            &nbsp;
+                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
                         </h5>
                     </div>
                 </div>
@@ -683,9 +711,94 @@
         $(document).ready(function(){
             $('.summernote').summernote({focus: true});
 
-            jQuery('#starttime').datetimepicker({
+            /* (1) 대회 개요 파트 */
+            /* 게임 카테고리 기타 선택 시 팝업 */
+            $('#tournament_game').change(function() {
+                if(document.getElementById('tournament_game').value=="etc"){
+                    $("#div_tournament_game_etc").show();
+                } else {
+                    $("#div_tournament_game_etc").hide();
+                }
+            });
+
+            /* 한글을 제외한 입력만 가능하게 : tournament_url */
+            $("input[name=tournament_url]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+                }
+            });
+
+            /* (2) 대회 세부사항 설정 파트 */
+            /* 참가자 신청 받기 기능 사용 시 팝업 */
+            $('input:radio[name="registration"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_registration_yes").show();
+                } else {
+                    $("#div_registration_yes").hide();
+                }
+            });
+
+            /* 참가자 수 input-spinner */
+            $('.spinner_participation .btn:first-of-type').on('click', function() {
+                $('.spinner_participation input').val( parseInt($('.spinner_participation input').val(), 10) + 1);
+            });
+            $('.spinner_participation .btn:last-of-type').on('click', function() {
+                $('.spinner_participation input').val( parseInt($('.spinner_participation input').val(), 10) - 1);
+            });
+
+            /* 대회 참가 기간 시작, 마감 */
+            jQuery('#participation_starttime').datetimepicker({
                 step: 5,
                 Locale: 'kr'
+            });
+            jQuery('#participation_endtime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+
+            /* 참가자 체크인 기능 사용 시 팝업 */
+            $('input:radio[name="checkin"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_checkin_yes").show();
+                } else {
+                    $("#div_checkin_yes").hide();
+                }
+            });
+
+            /* (3) 후원 설정 파트 */
+            /* 참가비 받기 기능 사용 시 팝업 */
+            $('input:radio[name="participation_fee"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_participation_fee_yes").show();
+                } else {
+                    $("#div_participation_fee_yes").hide();
+                }
+            });
+
+            /* 참가비 input-spinner */
+            $('.spinner_participation_fee .btn:first-of-type').on('click', function() {
+                $('.spinner_participation_fee input').val( parseInt($('.spinner_participation_fee input').val(), 10) + 500);
+            });
+            $('.spinner_participation_fee .btn:last-of-type').on('click', function() {
+                $('.spinner_participation_fee input').val( parseInt($('.spinner_participation_fee input').val(), 10) - 500);
+            });
+
+            /* 상금 후원 기능 사용 시 팝업 */
+            $('input:radio[name="funding"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_funding_yes").show();
+                } else {
+                    $("#div_funding_yes").hide();
+                }
+            });
+
+            /* 후원 목표 input-spinner */
+            $('.spinner_funding_goal .btn:first-of-type').on('click', function() {
+                $('.spinner_funding_goal input').val( parseInt($('.spinner_funding_goal input').val(), 10) + 1000);
+            });
+            $('.spinner_funding_goal .btn:last-of-type').on('click', function() {
+                $('.spinner_funding_goal input').val( parseInt($('.spinner_funding_goal input').val(), 10) - 1000);
             });
 
             $(".btn-pref .btn").click(function(){
@@ -693,11 +806,29 @@
                 // $(".tab").addClass("active"); // instead of this do the below
                 $(this).removeClass("btn-custom").addClass("btn-primary");
             });
+
+            /* 후원자 보상 기능 사용 시 팝업 */
+            $('input:radio[name="reward"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_reward_yes").show();
+                } else {
+                    $("#div_reward_yes").hide();
+                }
+            });
+
+            /* 후원자 공약 기능 사용 시 팝업 */
+            $('input:radio[name="promise"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_promise_yes").show();
+                } else {
+                    $("#div_promise_yes").hide();
+                }
+            });
+
         });
     </script>
 
     <script src="{% static 'js/jquery.datetimepicker.js' %}"></script>
     {% include 'main/functions/popover-preview-image.html' %}
-    {% include 'main/functions/input-spinner.html' %}
     {% include 'main/functions/add-remove-button.html' %}
 {% endblock %}

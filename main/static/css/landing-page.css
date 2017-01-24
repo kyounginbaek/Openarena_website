@@ -490,7 +490,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_intro img{
     width: 100%;
     height: 100%;
-    border : 1px solid #d1c0a5;
+    border : 1px solid #fff;
 }
 .com_list{
     color: #ffffff;
@@ -503,11 +503,11 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     width: 100%;
     float: left;
     text-align: left;
-    border: 1px solid #d1c0a5;
+    border: 1px solid #fff;
 }
 .com_intro_desp{
     margin-top: 20px;
-    padding: 20px;
+    padding: 15px;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 1.22em;

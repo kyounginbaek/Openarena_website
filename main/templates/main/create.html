@@ -18,25 +18,25 @@
             <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                 <!-- 대회 개요 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="stars" class="btn btn-primary no_border " href="#com_tab1" data-toggle="tab">
+                    <button type="button" id="tab1" class="btn btn-primary no_border " href="#com_tab1" data-toggle="tab">
                         <span class="list_btn">대회 개요</span>
                     </button>
                 </div>
                 <!-- 대회 세부 사항 설정 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
+                    <button type="button" id="tab2" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
                         <span class="list_btn">대회 세부 사항 설정</span>
                     </button>
                 </div>
                 <!-- 후원 설정 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
+                    <button type="button" id="tab3" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
                         <span class="list_btn">후원 설정</span>
                     </button>
                 </div>
                 <!-- 진행자 설정 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
+                    <button type="button" id="tab4" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
                         <span class="list_btn">진행자 설정</span>
                     </button>
                 </div>
@@ -50,8 +50,8 @@
                     <h4>• 대회 개요</h4>
                     <!-- tab-pane -->
                     <div class="panel-group" id="accordion-cat-1">
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center;">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question1" style="color: #fff;" aria-expanded="false">
                                     <h4>대회 이름</h4>
                                     <h5>
@@ -72,8 +72,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question2" style="color: #fff;" aria-expanded="false">
                                     <h4>대회 대표 이미지</h4>
                                     <h5>
@@ -105,8 +105,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question3" style="color: #fff;" aria-expanded="false">
                                     <h4>대회 요약</h4>
                                     <h5>
@@ -121,8 +121,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question4" style="color: #fff;" aria-expanded="false">
                                     <h4>게임 카테고리</h4>
                                     <h5>
@@ -156,8 +156,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question5" style="color: #fff;" aria-expanded="false">
                                     <h4>대회 페이지 주소(URL)</h4>
                                     <h5>
@@ -180,7 +180,7 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="next">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page1_next" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 다음
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -197,45 +197,32 @@
                     </div>
                     <br/>
                     <h4>• 대회 규칙</h4>
-                    <div class="panel-group" id="accordion-cat-1">
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question1" style="color: #fff;" aria-expanded="false">
-                                    <h4>대회 규칙</h4>
-                                    <h5>
-                                        대회 규칙을 입력해주세요.
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </h5>
-                                </a>
-                            </div>
-                            <div id="tab2_question1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div style="text-align: center">
-                                        <h5>아래 게임 별 규칙 예시를 참고하여 입력해주세요.</h5>
-                                    </div>
-                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin: 0 auto; width: 80%; overflow:hidden;">
-                                        {% for r in rule %}
-                                            <div class="panel panel-default panel-faq">
-                                                <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapse{{ forloop.counter }}">
-                                                        <div class="panel-title" style="text-align: center; font-size: 14px">
-                                                            {{ r.tournament_game }} {{ r.tournament_type }}
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
-                                                    <div class="panel-body">
-                                                        {{ r.content|safe }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                    <br/>
-                                    <div id="" class="summernote"></div>
-                                </div>
-                            </div>
+                    <div class="com_intro_desp hover_div">
+                        <div style="text-align: center">
+                            <h5>
+                                아래 게임 별 규칙 예시를 참고하여 대회 규칙을 입력해주세요.
+                            </h5>
                         </div>
+                        <div class="panel-group" id="accordion" aria-multiselectable="true" style="margin: 0 auto; width: 60%; overflow:hidden;">
+                            {% for r in rule %}
+                                <div class="panel panel-default panel-faq hover_collapse">
+                                    <div class="panel-heading hover_collapse_heading" id="heading{{ forloop.counter }}" style="background: #1a1a1a;">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-controls="collapse{{ forloop.counter }}">
+                                            <div class="panel-title" style="text-align: center; font-size: 14px; color: #fff">
+                                                {{ r.tournament_game }} | {{ r.tournament_type }}
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" aria-labelledby="heading{{ forloop.counter }}">
+                                        <div class="panel-body" style="font-size: 14px">
+                                            {{ r.content|safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div style="padding: 5px;"></div>
+                        <div id="" class="summernote"></div>
                     </div>
                     <br/>
                     <h4>• 대회 참가 방식</h4>
@@ -386,13 +373,13 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="previous">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page2_previous" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 <span class="glyphicon glyphicon-menu-left"></span>
                                 이전
                             </a>
                         </li>
                         <li class="next">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page2_next" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 다음
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -453,6 +440,24 @@
                         </div>
                         <hr/>
                         <div style="padding: 5px;">
+                            <h4>후원 가능 기간</h4>
+                            <blockquote style="font-size: 14px">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                                후원 가능 기간을 <br/>
+                                더 많은 후원 금액을 모으실 수 있습니다.<br/>
+                                후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
+                            </blockquote>
+                            <h5>
+                                <input type="radio" id="reward" name="reward" value="yes"> 사용
+                                &nbsp;
+                                <input type="radio" id="reward" name="reward" value="no"> 미사용
+                            </h5>
+                            <div style="padding: 5px;"></div>
+                            <!-- 사용시 팝업 -->
+
+                        </div>
+                        <hr/>
+                        <div style="padding: 5px;">
                             <h4>후원자에게 보상을 하시겠습니까?</h4>
                             <blockquote style="font-size: 14px">
                                 <span class="glyphicon glyphicon-info-sign"></span>
@@ -470,34 +475,30 @@
                             <div id="div_reward_yes" style="display: none;">
                                 <div class="div_reward" style="display: table; margin: 0 auto;">
                                     <!-- js dynamic form fields : add -->
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₩</span>
-                                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 10,000">
-                                            <span class="input-group-addon">후원 시</span>
-                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">₩</span>
+                                        <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 10,000">
+                                        <span class="input-group-addon">후원 시</span>
+                                        <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
-                                        </div>
                                     </div>
 
                                     <!-- js dynamic form fields : remove -->
                                     <div class="hide remove-group" id="rewardTemplate">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">₩</span>
-                                                <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 20,000">
-                                                <span class="input-group-addon">후원 시</span>
-                                                <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">₩</span>
+                                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 20,000">
+                                            <span class="input-group-addon">후원 시</span>
+                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -522,34 +523,30 @@
                             <div id="div_promise_yes" style="display: none;">
                                 <div class="div_promise" style="display: table; margin: 0 auto;">
                                     <!-- js dynamic form fields : add -->
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₩</span>
-                                            <input type="text" class="form-control" id="promise" name="promise[]" placeholder="예) 100,000">
-                                            <span class="input-group-addon">도달 시</span>
-                                            <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">₩</span>
+                                        <input type="text" class="form-control" id="promise" name="promise[]" placeholder="예) 100,000">
+                                        <span class="input-group-addon">도달 시</span>
+                                        <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
-                                        </div>
                                     </div>
 
                                     <!-- js dynamic form fields : remove -->
                                     <div class="hide remove-group" id="promiseTemplate">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">₩</span>
-                                                <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 200,000">
-                                                <span class="input-group-addon">도달 시</span>
-                                                <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 참가팀 전원에게 선물">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">₩</span>
+                                            <input type="text" class="form-control" id="reward" name="reward[]" placeholder="예) 200,000">
+                                            <span class="input-group-addon">도달 시</span>
+                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 참가팀 전원에게 선물">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -579,13 +576,13 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="previous">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page3_previous" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 <span class="glyphicon glyphicon-menu-left"></span>
                                 이전
                             </a>
                         </li>
                         <li class="next">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page3_next" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 다음
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -599,8 +596,8 @@
                     <h4>• 진행자 개요</h4>
                     <!-- tab-pane -->
                     <div class="panel-group" id="accordion-cat-3">
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question1" style="color: #fff;" aria-expanded="false">
                                     <h4>진행자 이미지</h4>
                                     <h5>
@@ -630,8 +627,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question2" style="color: #fff;" aria-expanded="false">
                                     <h4>진행자 이름</h4>
                                     <h5>
@@ -649,8 +646,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question3" style="color: #fff;" aria-expanded="false">
                                     <h4>진행자 소개</h4>
                                     <h5>
@@ -665,8 +662,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading hover_collapse" style="background: transparent; text-align: center">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question4" style="color: #fff;" aria-expanded="false">
                                     <h4>방송 주소</h4>
                                     <h5>
@@ -751,13 +748,13 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="previous">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page4_previous" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 <span class="glyphicon glyphicon-menu-left"></span>
                                 이전
                             </a>
                         </li>
                         <li class="next">
-                            <a class="hover_a" href="" style="background: transparent; color: #fff">
+                            <a id="page4_submit" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
                                 완료
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -898,10 +895,10 @@
             /* 참가자 양식 추가 버튼 기능 구현 */
             /* Add button click handler */
             var MAX_OPTIONS = 10;
-            var reward_number = 1;
+            var participation_number = 1;
             $('.div_participation_form').on('click', '.addButton', function() {
-                if(reward_number < MAX_OPTIONS){
-                    reward_number = reward_number + 1;
+                if(participation_number < MAX_OPTIONS){
+                    participation_number = participation_number + 1;
                     var $template = $('#participation_formTemplate'),
                             $clone    = $template
                                     .clone()
@@ -914,7 +911,7 @@
             });
             /* Remove button click handler */
             $('.div_participation_form').on('click', '.removeButton', function() {
-                reward_number = reward_number - 1;
+                participation_number = participation_number - 1;
                 $('.div_participation_form').find('.addButton').removeAttr('disabled', 'disabled');
                 var $row    = $(this).parents('.remove-group');
 
@@ -981,17 +978,21 @@
                 $(this).css("background", "#ff9900");
             }
             function mouseOut_collapse() {
-                $(this).css("background", "transparent");
+                $(this).css("background", "#1a1a1a");
             }
-            $('.hover_collapse').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
+            $('.hover_collapse').find('.hover_collapse_heading').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
 
-            /* collapse 클릭 시 border-color-change
-            $('.hover_collapse').click(function() {
-                $(this).unbind();
-                $(this).css("background", "#ff9900");
+            /* collapse 클릭 시 border-color-change */
+            $('.hover_collapse').on("show.bs.collapse", function(){
+                $(this).find('.hover_collapse_heading').unbind('mouseover', mouseOver_collapse).unbind('mouseout', mouseOut_collapse);
+                $(this).find('.hover_collapse_heading').css("background", "#ff9900");
             });
-            */
+            $('.hover_collapse').on("hide.bs.collapse", function(){
+                $(this).find('.hover_collapse_heading').css("background", "#1a1a1a");
+                $(this).find('.hover_collapse_heading').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
+            });
 
+            /* hover-border-color-change */
             function mouseOver_div() {
                 $(this).css("border-color", "#ff9900");
             }
@@ -1010,6 +1011,26 @@
                 $(this).css("color", "#fff");
             }
             $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+
+            /* page previous-next button function */
+            $("#page1_next").on('click', function() {
+                $('#tab2').click();
+            });
+            $("#page2_previous").on('click', function() {
+                $('#tab1').click();
+            });
+            $("#page2_next").on('click', function() {
+                $('#tab3').click();
+            });
+            $("#page3_previous").on('click', function() {
+                $('#tab2').click();
+            });
+            $("#page3_next").on('click', function() {
+                $('#tab4').click();
+            });
+            $("#page4_previous").on('click', function() {
+                $('#tab3').click();
+            });
         });
     </script>
 

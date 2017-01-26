@@ -443,8 +443,11 @@ def help(request):
 
 def chat(request):
     c = Chat.objects.all()
-    return render(request, 'main/messages.html', {'chat': c})
+    return render(request, 'main/functions/messages.html', {'chat': c})
 
 def create(request):
     rule = Rule.objects.all()
     return render(request, 'main/create.html', {'rule': rule})
+
+def template(request):
+    return render(request, 'main/template.html', {})

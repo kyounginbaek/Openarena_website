@@ -4,66 +4,17 @@
 
 {% block title %} 오픈아레나:{{ tournament.tournament_name }} {% endblock %}
 {% block head %}
-    <!--participation.css-->
     <link rel="stylesheet" href="{% static 'css/participation.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
 {% endblock %}
 {% block content %}
     <div class="block-b">
-        <div class="com_header" style="background:url({% static "img/macho2/macho2_preview.png" %}) center center no-repeat; background-size: cover;">
+        <div class="com_header" style="background:url({{ tournament.cover_img }}) center center no-repeat; background-size: cover;">
             <div class="com_empty">
             </div>
             <div class="com_header_inner">
                 <div class="container">
-                    <!--프로필칸-->
-                    <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                        <div class="com_profile" style="background: url({% static 'img/macho/macho_logo.png' %}); background-size: contain;"></div>
-                    </div>
-                    <!--대회설명-->
-                    <div class="col-sm-6 col-md-6 col-xs-12 ">
-                        <div class="com_title">{{ tournament.tournament_name }}</div><br/>
-                        <p class="com_subtitle hidden-xs">{{ tournament.summary }}</p>
-                        <div class="com_subtitle">대회 시작 : {{ tournament.starttime }}</div><br/>
-                    </div>
-                    <!--후원/참가-->
-                    <div class="col-sm-3 col-md-3 col-xs-12 ">
-                        <ul class="com_mainbox">
-                            <li class="">
-                                <div class="" >
-                                    <div class="center">
-                                        <button disabled id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">당일 신청</button>
-                                    </div>
-                                </div>
-                                <div class="hidden-xs" style="height: 20px"></div>
-                                <div class="" >
-                                    <div class="center">
-                                        <button disabled id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
-                                    </div>
-                                </div>
-                                <div class="hidden-xs" style="height: 20px"></div>
-                                <div class="center">
-                                    <button id="streaming" name="streaming" class="btn btn-primary center-block" data-toggle="modal" data-target="#streamingModal">방송 보기</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <!--상금바-->
-                    <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
-                        <h4 id="comma1" class="com_title">
-                            {% if funding %}
-                                후원 목표 : {{ tournament.funding_goal|intcomma }}원 / 현재 : {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다.
-                            {% else %}
-                                후원 목표 : {{ tournament.funding_goal|intcomma }}원 / 현재 : 0원 후원 해주셨습니다.
-                            {% endif %}
-                        </h4>
-                        <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
-                        <!--
-                        <div class="com_white_bar">
-                            <div class="com_orange_bar"></div>
-                        </div>
-                        -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -72,46 +23,81 @@
             <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                 <!-- 대회 소개 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="stars" class="btn btn-primary no_border " href="#com_tab1" data-toggle="tab">
+                    <button type="button" id="stars" class="btn btn-primary no_border" href="#com_tab1" data-toggle="tab">
                         <span class="list_btn">대회 소개</span>
                     </button>
                 </div>
-                <!-- 대회 게시판
+                <!-- 참가자 명단 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
-                        <span class="list_btn">게시판</span>
+                    <button type="button" id="stars" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
+                        <span class="list_btn">참가자 명단</span>
                     </button>
                 </div>
-                -->
-                <!-- 참여한 대회 -->
+                <!-- 대진표 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
-                        <span class="list_btn">참가자</span>
+                        <span class="list_btn">대진표</span>
                     </button>
                 </div>
                 <!-- 후원자 명단 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab5" data-toggle="tab">
+                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
                         <span class="list_btn">후원자 명단</span>
                     </button>
                 </div>
+                <!-- 대회 게시판 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab5" data-toggle="tab">
+                        <span class="list_btn">게시판</span>
+                    </button>
+                </div>
             </div>
-            <!--competition list-->
+
             <!--competition content-->
             <div class="tab-content">
                 <!--competition content 1-->
                 <div class="tab-pane fade in active" id="com_tab1">
                     <div class="com_intro">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <div class="com_intro_img">
-                                <img src="{% static 'img/macho2/macho2_poster_final.png' %}">
+                            <div class="com_intro_now hover_div">
+                                <div class="col-md-12" style="padding: 0;">
+                                    <h4>
+                                        • 대회 소개 및 규칙
+                                        &nbsp;
+                                        <input id="edit_description" class="btn btn-default" type="button" value="수정하기">
+                                    </h4>
+                                    <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding: 10px 0;">
+                                <div class="com_intro_now hover_div">
+                                    <h4>• 후원 보상</h4>
+                                    <input id="edit_description" class="btn btn-default" type="button" value="수정하기">
+                                    <input id="edit_description" class="btn btn-default" type="button" value="추가하기">
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding: 10px 0;">
+                                <div class="com_intro_now hover_div">
+                                    <h4>• 후원 공약</h4>
+                                    <input id="edit_description" class="btn btn-default" type="button" value="수정하기">
+                                    <input id="edit_description" class="btn btn-default" type="button" value="추가하기">
+                                </div>
+                            </div>
+                            <div class="com_intro_now hover_div">
+                                <div class="col-md-12" style="padding: 0;">
+                                    <h4>
+                                        • 대회 캘린더
+                                        &nbsp;
+                                        <input id="edit_description" class="btn btn-default" type="button" value="수정하기">
+                                    </h4>
+
+                                </div>
                             </div>
                         </div>
-
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="container com_intro_now">
+                            <div class="container com_intro_now hover_div">
                                 {% if participation %}
-                                    <div class="com_into_small">참가자 수</div>
+                                    <h4>참가자 수</h4>
                                     <div class="com_into_small"><span class="com_into_big">{{ participation.count }}</span> 명</div><br>
                                 {% else %}
                                     <div class="com_into_small">참가자 수</div>
@@ -127,7 +113,7 @@
                                 {% else %}
                                     <div class="com_into_small">후원자 수</div>
                                     <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
-                                    <div class="com_into_small">모인 상금</div>
+                                    <div class="com_into_small">후원 상금</div>
                                     <div class="com_into_small"><span class="com_into_big">0</span> 원</div><br>
                                 {% endif %}
                                 <div class="com_into_small">
@@ -135,36 +121,35 @@
                                     <div class="addthis_inline_share_toolbox"></div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- description 수정하기/저장하기 -->
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="com_intro_desp">
-                                <input  id="edit_description" class="btn btn-default" type="button" value="수정하기">
-                                <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
+                            <div class="container com_intro_now hover_div" style="margin-top: 10px;">
+                                <h4>크리에이터 정보</h4>
+                                <div class="com_profile" style="background: url({{ tournament.user_img }}); background-size: contain;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!--competition content 3 대진표-->
-                <div class="tab-pane fade in" id="com_tab3">
+                <!--competition content 2-->
+                <div class="tab-pane fade in" id="com_tab2">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="com_intro_desp">
-                            <!--
-                            <img src="" style="max-width: 100%; height: auto;">
-                            -->
-                            <a>당일 대회 방송 진행 중에 즉석에서 참가자를 받을 예정입니다.</a><br/>
+                        <div style="overflow:hidden; padding-top: 20px;">
+                            <div style="display: inline-block;">
+                                <h4>
+                                    <a class="donator_title">• 현재 참가자 수 : </a>
+                                    {% if participation %}
+                                        <a style="color: white">{{ participation.count }}명</a>
+                                    {% else %}
+                                        <a style="color: white">0명</a>
+                                    {% endif %}
+                                </h4>
+                            </div>
+                            &nbsp;
+                            <div style="display: inline-block;">
+                                <input id="edit_description" class="btn btn-default" type="button" value="참가 양식 수정">
+                                <input id="edit_description" class="btn btn-default" type="button" value="참가자 추가하기">
+                            </div>
                         </div>
-                        <div class="com_intro_desp">
-                            <a class="donator_title">대회 신청자</a>
-                            <br>
-                            {% if participation %}
-                                <a style="color: white">현재 {{ participation.count }} 명</a>
-                            {% else %}
-                                <a style="color: white">현재 0 명</a>
-                            {% endif %}
-
+                        <div class="com_intro_desp hover_div" style="margin-top: 5px;">
                             <div class="donator_container">
                                 <table class="table table-striped table-list">
                                     <thead>
@@ -197,101 +182,31 @@
                     </div>
                 </div>
 
-                <div class="tab-pane fade in" id="com_tab4">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="com_intro_desp">
-                            <a class="donator_title">공지 사항</a>
-                            <input id="edit_notice" class="btn btn-default" type="button" value="수정하기">
-                            <div id="notice" class="summernote_notice">{{ tournament.notice|safe }}</div>
-                        </div>
+                <!--competition content 3-->
+                <div class="tab-pane fade in" id="com_tab3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                        <div class="com_intro_desp">
-                            <a class="donator_title">참가자 대화창</a>
-                            <div id="chatboard">
-                                <ul id="msg-list" class="list-group">
-                                    {% include 'main/functions/messages.html' %}
-                                    <script>
-                                        var chatlist = document.getElementById('msg-list-div');
-                                        chatlist.scrollTop = chatlist.scrollHeight;
-                                    </script>
-                                </ul>
-                                <br/>
-                                <form id="chat_form" method="POST">{% csrf_token %}
-                                    <input type="text" id="chat-msg" name="chat-msg" class="form-control com_donate_desp" placeholder="로그인, 대회참가 후 대화를 시작해보세요."/>
-                                    <button type="submit" id="send" class="btn btn-primary com_donate_enroll">등록</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="com_intro_desp">
-                            <a class="donator_title">자유 게시판</a>
-                            <div id="freeboard">
-                                {% if comment_tree %}
-                                    <ul id="commenters">
-                                        {% for c in comment_tree %}
-                                            <li id="{{ c.id }}" class="" style="margin-left:{{c.depth|add:c.depth}}em;">
-                                                <p style="border-top: 1px solid #eee"></p>
-                                                <p>{{ c.content }}</p>
-                                                <p class="poster" style="color: #D1D1DD">{{ c.username }} 님 - {{ c.date }}</p>
-                                                <p><a href="javascript:return false" class="reply">댓글 달기</a></p>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% else %}
-                                    <div>첫번째 댓글을 등록해보세요.</div><br/>
-                                {% endif %}
-                            </div>
-
-                            <form id="comment_form" method="POST">{% csrf_token %}
-                                <input type="hidden" class="form-control" id="purpose" name="purpose" value="comment">
-                                <input type="hidden" class="parent" id="parent" name="parent">
-                                <input id="content" name="content" class="form-control com_donate_desp" placeholder="로그인 후 자유롭게 댓글을 적어주세요."/>
-                                <button type="submit" class="btn btn-primary com_donate_enroll">등록</button>
-                            </form>
-                        </div>
                     </div>
                 </div>
 
-                <!--competition content 5 후원자 명단-->
-                <div class="tab-pane fade in" id="com_tab5">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="com_intro_desp">
-                            <p class="don_list">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
-                        </div>
-                        <div class="com_intro_desp">
-                            <a class="donator_title">Top4 후원자</a>
-                            <div class="donator_container">
-                                <table class="table table-striped table-list">
-                                    <thead>
-                                    <tr>
-                                        <th>후원 순서</th>
-                                        <th>후원자 닉네임</th>
-                                        <th>후원 금액</th>
-                                        <th>보상 혜택</th>
-                                        <th>응원 문구</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% if funding %}
-                                        {% for tf in top_funding %}
-                                            <tr>
-                                                <td>{{ forloop.counter }}</td>
-                                                <td>{{ tf.username }} 님</td>
-                                                <td>{{ tf.amount|intcomma }}원</td>
-                                                <td>{{ tf.reward }}</td>
-                                                <td>{{ tf.comment }}</td>
-                                            </tr>
-                                        {% endfor %}
+                <!--competition content 4-->
+                <div class="tab-pane fade in" id="com_tab4">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div style="overflow:hidden; padding-top: 20px;">
+                            <div style="display: inline-block;">
+                                <h4>
+                                    <a class="donator_title">• 현재 후원자 수 : </a>
+                                    {% if participation %}
+                                        <a style="color: white">현재 {{ funding.count }}명</a>
+                                    {% else %}
+                                        <a style="color: white">0명</a>
                                     {% endif %}
-                                    </tbody>
-                                </table>
+                                </h4>
                             </div>
                         </div>
-                        <div class="com_intro_desp">
-                            <a class="donator_title">후원해주신 분들</a>
-                            <br>
-                            <a style="color: white">현재 {{ funding.count }} 명</a>
+                        <div class="com_intro_desp hover_div" style="margin-top: 5px;">
                             <div class="donator_container">
+                                <a class="donator_title">• 후원 TOP 5</a>
                                 <table class="table table-striped table-list">
                                     <thead>
                                     <tr>
@@ -316,6 +231,113 @@
                                     {% endif %}
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="com_intro_desp hover_div" style="margin-top: 10px;">
+                            <div class="donator_container">
+                                <a class="donator_title">• 후원자 명단</a>
+                                <table class="table table-striped table-list">
+                                    <thead>
+                                    <tr>
+                                        <th>후원 순서</th>
+                                        <th>후원자 닉네임</th>
+                                        <th>후원 금액</th>
+                                        <th>보상 혜택</th>
+                                        <th>응원 문구</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% if funding %}
+                                        {% for f in funding %}
+                                            <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td>{{ f.username }} 님</td>
+                                                <td>{{ f.amount|intcomma }}원</td>
+                                                <td>{{ f.reward }}</td>
+                                                <td>{{ f.comment }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--competition content 5-->
+                <div class="tab-pane fade in" id="com_tab5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div style="overflow:hidden; padding-top: 20px;">
+                            <div style="display: inline-block;">
+                                <h4>• 공지 사항</h4>
+                            </div>
+                            &nbsp;
+                            <div style="display: inline-block;">
+                                <input id="edit_description" class="btn btn-default" type="button" value="수정하기">
+                            </div>
+                        </div>
+                        <div class="com_intro_desp hover_div" style="margin-top: 5px;">
+                            <div id="notice" class="summernote_notice">{{ tournament.notice|safe }}</div>
+                        </div>
+                        <div style="overflow:hidden; padding-top: 20px;">
+                            <div style="display: inline-block;">
+                                <h4>• 게시판 목록 : </h4>
+                            </div>
+                            <div style="display: inline-block;">
+                                <ul class="pager" style="margin: 0; display: inline-block;">
+                                    <li class="free_board">
+                                        <a id="free_board" class="" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                            자유 게시판
+                                        </a>
+                                    </li>
+                                    <li class="participation_board">
+                                        <a id="participation_board" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                                            참가자 게시판
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="div_free_board" class="com_intro_desp hover_div" style="margin-top: 5px;">
+                            <div id="freeboard">
+                                {% if comment_tree %}
+                                    <ul id="commenters">
+                                        {% for c in comment_tree %}
+                                            <li id="{{ c.id }}" class="" style="margin-left:{{c.depth|add:c.depth}}em;">
+                                                <p style="border-top: 1px solid #eee"></p>
+                                                <p>{{ c.content }}</p>
+                                                <p class="poster" style="color: #D1D1DD">{{ c.username }} 님 - {{ c.date }}</p>
+                                                <p><a href="javascript:return false" class="reply">댓글 달기</a></p>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <h5>첫번째 댓글을 등록해보세요.</h5><br/>
+                                {% endif %}
+                            </div>
+
+                            <form id="comment_form" method="POST">{% csrf_token %}
+                                <input type="hidden" class="form-control" id="purpose" name="purpose" value="comment">
+                                <input type="hidden" class="parent" id="parent" name="parent">
+                                <input id="content" name="content" class="form-control com_donate_desp" placeholder="로그인 후 자유롭게 댓글을 적어주세요."/>
+                                <button type="submit" class="btn btn-primary com_donate_enroll">등록</button>
+                            </form>
+                        </div>
+                        <div id="div_participation_board" class="com_intro_desp hover_div" style="margin-top: 5px;">
+                            <div id="chatboard">
+                                <ul id="msg-list" class="list-group">
+                                    {% include 'main/functions/messages.html' %}
+                                    <script>
+                                        var chatlist = document.getElementById('msg-list-div');
+                                        chatlist.scrollTop = chatlist.scrollHeight;
+                                    </script>
+                                </ul>
+                                <br/>
+                                <form id="chat_form" method="POST">{% csrf_token %}
+                                    <input type="text" id="chat-msg" name="chat-msg" class="form-control com_donate_desp" placeholder="로그인, 대회참가 후 대화를 시작해보세요."/>
+                                    <button type="submit" id="send" class="btn btn-primary com_donate_enroll">등록</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -476,6 +498,46 @@
                 $(this).removeClass("btn-custom").addClass("btn-primary");
             });
 
+            /* hover-border-color-change */
+            function mouseOver_div() {
+                $(this).css("border-color", "#ff9900");
+            }
+            function mouseOut_div() {
+                $(this).css("border-color", "#fff");
+            }
+            $('.hover_div').bind('mouseover', mouseOver_div).bind('mouseout', mouseOut_div);
+
+            /* hover-border-color-change */
+            function mouseOver_a() {
+                $(this).css("border-color", "#ff9900");
+                $(this).css("color", "#ff9900");
+            }
+            function mouseOut_a() {
+                $(this).css("border-color", "#fff");
+                $(this).css("color", "#fff");
+            }
+            $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+
+            /* free_board, participation_board click */
+            $('#div_participation_board').hide();
+            $('#free_board').click(function(){
+                $('#div_free_board').show();
+                $('#div_participation_board').hide();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#participation_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#participation_board').css("border-color", "#fff");
+                $('#participation_board').css("color", "#fff");
+            });
+            $('#participation_board').click(function(){
+                $('#div_free_board').hide();
+                $('#div_participation_board').show();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#free_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#free_board').css("border-color", "#fff");
+                $('#free_board').css("color", "#fff");
+            });
+
+            /* */
             $("#button_afreeca").click(function(){
                 window.open("http://afreeca.com/macho1929");
             });
@@ -611,11 +673,7 @@
 
     <script>
         {% if request.user.is_authenticated %}
-            {% if has_funded == "yes" %}
-                document.getElementById("comment").disabled = false;
-            {% else %}
-                document.getElementById("comment").disabled = true;
-            {% endif %}
+
         {% else %}
             $("#funding").click(function(){
                 alert("로그인이 필요한 기능입니다.");

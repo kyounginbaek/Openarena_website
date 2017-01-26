@@ -13,13 +13,13 @@
             <div class="head_empty"></div>
             <!-- contact 오렌지 배경 -->
             <div class="card hovercard"><!-- .card.hovercard -->
-                    <!-- contact 문의 / 건의 사항 -->
-                    <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
-                        <div class="mypage_empty"></div>
-                        <h2 class="support_title" style="margin-bottom: 0px;">문의 / 건의 사항</h2>
-                        <h4 class="support_subtitle">자유롭게 문의 & 건의사항을 보내주세요</h4>
-                        <h4 class="support_subtitle">작성해주신 내용은 help@openarena.kr로 전송됩니다.</h4>
-                    </div>
+                <!-- contact 문의 / 건의 사항 -->
+                <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
+                    <div class="mypage_empty"></div>
+                    <h2 class="support_title" style="margin-bottom: 0px;">문의 / 건의 사항</h2>
+                    <h4 class="support_subtitle">자유롭게 문의 & 건의사항을 보내주세요</h4>
+                    <h4 class="support_subtitle">작성해주신 내용은 help@openarena.kr로 전송됩니다.</h4>
+                </div>
             </div>
             <div class="support_empty"></div>
             <!-- contact 안쪽으로 중앙 정렬 -->
@@ -36,32 +36,32 @@
                                 <div class="row 50%">
                                     <!--이메일-->
                                     <div class="6u 12u(mobile) box1" style="margin-right: 4%;">
-                                        <input type="email" required autocomplete="off" id="email" name="email" placeholder="답장 받을 이메일" />
+                                        <input type="email" required autocomplete="off" id="email" name="email" value="답장 받을 이메일" />
                                     </div>
                                     <!--연락처-->
                                     <div class="6u 12u(mobile) box1">
-                                        <input type="text" id="phone" name="phone" placeholder="연락처 (선택사항)" />
+                                        <input type="text" id="phone" name="phone" value="연락처 (선택사항)" />
                                     </div>
                                 </div>
                                 <div class="support_empty"></div>
                                 <!--제목-->
                                 <div class="row 50%">
                                     <div class="12u box2">
-                                        <input type="text" required autocomplete="off" id="subject" name="subject" placeholder="제목을 입력해주세요." />
+                                        <input type="text" required autocomplete="off" id="subject" name="subject" value="제목을 입력해주세요." />
                                     </div>
                                 </div>
                                 <div class="support_empty"></div>
                                 <!--내용-->
                                 <div class="row 50% ">
                                     <div class="12u box2">
-                                        <textarea required autocomplete="off" id="message" name="message" placeholder="내용을 입력해주세요." rows="7"></textarea>
+                                        <textarea required autocomplete="off" id="message" name="message" rows="7">내용을 입력해주세요.</textarea>
                                     </div>
                                 </div>
                                 <div class="support_empty"></div>
                                 <div class="row">
                                     <div class="12u">
-                                        <ul class="buttons" style="padding-left: 0px;">
-                                            <li><input type="submit" class="special" value="전송하기"/></li>
+                                        <ul class="buttons" style="padding-left: 0;">
+                                            <li><input type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white" value="전송하기"/></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -79,6 +79,17 @@
 {% block script %}
     <script>
         $(document).ready(function() {
+            /* hover-border-color-change */
+            function mouseOver_a() {
+                $(this).css("border-color", "#ff9900");
+                $(this).css("color", "#ff9900");
+            }
+            function mouseOut_a() {
+                $(this).css("border-color", "#fff");
+                $(this).css("color", "#fff");
+            }
+            $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+
             $("#contact_form").submit(function(e){
                 e.preventDefault();
                 serializedData = $("#contact_form").serialize();

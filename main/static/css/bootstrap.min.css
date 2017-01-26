@@ -791,7 +791,7 @@ input.sp-selector-5:checked ~ .sp-content .sp-slider > li:nth-child(5){
 /* custom css */
 .btn-custom {
     border:2px solid #ff9900;
-    background-color: #1b1b1b;
+    background-color: rgb(30, 30, 30);
     border-radius: 1px;
     font-size: 21px;
     position: relative;

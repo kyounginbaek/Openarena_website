@@ -176,3 +176,8 @@ class Image(models.Model):
     id = models.AutoField(primary_key=True)
     usage = models.CharField(max_length=20, default='')
     url = models.CharField(max_length=200, default='')
+
+class Userinfo(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=40, default='')
+    email = models.CharField(max_length=40, default='')

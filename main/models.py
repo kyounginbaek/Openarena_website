@@ -4,6 +4,19 @@ from django import forms
 from django.contrib.auth.models import User
 from django_summernote import fields as summer_fields
 
+class Fundingdummy(models.Model):
+    id = models.AutoField(primary_key=True)
+    tournament_id = models.CharField(max_length=20, default='')
+    tournament_name = models.CharField(max_length=40, default='')
+    username = models.CharField(max_length=40, default='')
+    email = models.CharField(max_length=40, default='')
+    amount = models.IntegerField(default=0)
+    reward = models.CharField(max_length=100, default='-')
+    comment = models.TextField(default='-')
+    orderno = models.CharField(max_length=40, default='-')
+    when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
+    thanks = models.CharField(max_length=20, default='-')
+
 class Funding(models.Model):
     id = models.AutoField(primary_key=True)
     tournament_id = models.CharField(max_length=20, default='')

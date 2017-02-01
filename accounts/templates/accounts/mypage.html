@@ -6,54 +6,45 @@
 {% block head %}
     <!--mypage.css-->
     <link rel="stylesheet" href="{% static 'css/participation.css' %}">
+
+    <div class="head_empty"></div>
+    <header class="help_head" style="background: url({% static 'img/q_cover.png' %}); margin-bottom: 0;">
+        <div class="help_head_inner">
+            <h1 class="help_head_title">마이 페이지</h1>
+        </div>
+    </header>
 {% endblock %}
 {% block content %}
-
     <div class="gray">
         <div class="block-b" style="padding:0px">
-            <div class="head_empty"></div>
-            <!-- my page 오렌지 배경 -->
-            <div class="card hovercard "><!-- .card.hovercard -->
-                <div class="useravatar col-xs-offset-1">
-                    <!-- 프로필 사진 -->
-                    <img alt="profile" src="{% static 'img/profile.svg' %}">
-                    <!-- 프로필 이름 -->
-                    <span class="card-title">{{ user.username }} 님</span>
-                </div>
-            </div>
             <!-- my page 검은 배경 -->
             <div class="col-xs-12 col-lg-10 col-sm-10 col-sm-offset-1">
                 <div class="mypage_content">
                     <div class="mypage_empty"></div>
-                    <div class="mypage_empty"></div>
                     <!--mypage list-->
                     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-                        <!-- 내 프로필 -->
                         <div class="btn-group" role="group">
                             <button type="button" id="following" class="btn btn-primary no_border" href="#tab1" data-toggle="tab">
                                 <span class="hidden-md hidden-lg glyphicon glyphicon-user" aria-hidden="true"></span>
-                                <span class="list_btn">내 프로필</span>
+                                <span class="list_btn">대회 정보</span>
                             </button>
                         </div>
-                        <!-- 참여한 대회 -->
                         <div class="btn-group" role="group">
                             <button type="button" id="following" class="btn btn-custom no_border" href="#tab2" data-toggle="tab">
                                 <span class="hidden-md hidden-lg glyphicon glyphicon-flag" aria-hidden="true"></span>
-                                <span class="list_btn">참가한 대회</span>
+                                <span class="list_btn">팀 정보</span>
                             </button>
                         </div>
-                        <!-- 후원한 대회 -->
                         <div class="btn-group" role="group">
                             <button type="button" id="favorites" class="btn btn-custom no_border" href="#tab3" data-toggle="tab">
                                 <span class="hidden-md hidden-lg glyphicon glyphicon-heart" aria-hidden="true"></span>
-                                <span class="list_btn">후원한 대회</span>
+                                <span class="list_btn">내 프로필</span>
                             </button>
                         </div>
-                        <!-- 만든 대회 -->
                         <div class="btn-group" role="group">
-                            <button type="button" id="stars" class="btn btn-custom no_border" href="#tab4" data-toggle="tab">
-                                <span class="hidden-md hidden-lg glyphicon glyphicon-cog" aria-hidden="true"></span>
-                                <span class="list_btn">만든 대회</span>
+                            <button type="button" id="favorites" class="btn btn-custom no_border" href="#tab4" data-toggle="tab">
+                                <span class="hidden-md hidden-lg glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                <span class="list_btn">내 계정</span>
                             </button>
                         </div>
                     </div>
@@ -62,94 +53,27 @@
 
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1">
-                            <!--왼쪽 문단-->
-                            <div class="col-xs-12 col-sm-6 col-md-6">
-                                <div class="container com_intro_now">
-                                    <label class="making_font" for="exampleInputName">오픈아레나 닉네임</label>
-                                    <blockquote>
-                                        <label class="making_font">{{ user.username }}</label>
-                                    </blockquote>
-                                    <label class="making_font" for="exampleInputDay">이메일</label>
-                                    <blockquote>
-                                        <label class="making_font">{{ user.email }}</label>
-                                    </blockquote>
-                                    <button id="password_change" name="password_change" class="btn btn-primary" data-toggle="modal" data-target="#passwordModal">비밀번호 변경</button>
-                                    <button id="withdrawal" name="withdrawal" class="btn btn-primary" data-toggle="modal" data-target="#withdrawalModal">회원탈퇴</button>
-                                </div>
+                            <div style="margin: 0 auto; text-align: center">
+                                <ul class="pager" style="margin-top: 5px; display: inline-block;">
+                                    <li class="making_tournament">
+                                        <a id="making_tournament" class="" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                            만든 대회
+                                        </a>
+                                    </li>
+                                    <li class="participation_tournament">
+                                        <a id="participation_tournament" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                                            참여한 대회
+                                        </a>
+                                    </li>
+                                    <li class="funding_tournament">
+                                        <a id="funding_tournament" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                                            후원한 대회
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <!--오른쪽 문단-->
-                            <div class="col-xs-10 col-sm-6 col-md-6">
-                            </div>
-                        </div>
 
-                        <div class="tab-pane fade in" id="tab2">
-                            <div class="panel panel-default panel-table">
-                                <div class="panel-body">
-                                    <table class="table table-striped table-list">
-                                        <thead>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>대회명</th>
-                                            <th>출전 정보</th>
-                                            <th>전적</th>
-                                            <th>성적</th>
-                                            <th>상금</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% if participation_info %}
-                                            {% for pi in participation_info %}
-                                                <tr>
-                                                    <td>{{ forloop.counter }}</td>
-                                                    <td><a href="">{{ pi.tournament_name }}</a></td>
-                                                    <td>{{ pi.etc1 }} | {{ pi.etc2 }} | {{ pi.etc3 }} | {{ pi.etc4 }}</td>
-                                                    <td>{{ pi.score }}</td>
-                                                    <td>{{ pi.result }}</td>
-                                                    <td>{{ pi.prize|intcomma }}</td>
-                                                </tr>
-                                            {% endfor %}
-                                        {% endif %}
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade in" id="tab3">
-                            <div class="panel panel-default panel-table">
-                                <div class="panel-body">
-                                    <table class="table table-striped table-list">
-                                        <thead>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>대회명</th>
-                                            <th>후원하신 금액</th>
-                                            <th>보상</th>
-                                            <th>응원 문구</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% if funding_info %}
-                                            {% for fi in funding_info %}
-                                                <tr>
-                                                    <td>{{ forloop.counter }}</td>
-                                                    <td><a href="">{{ fi.tournament_name }}</a></td>
-                                                    <td>{{ fi.amount|intcomma }}원</td>
-                                                    <td>{{ fi.reward }}</td>
-                                                    <td>{{ fi.comment }}</td>
-                                                </tr>
-                                            {% endfor %}
-                                        {% endif %}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade in" id="tab4">
-                            <!--표의 바깥border-->
-                            <div class="panel panel-default panel-table">
+                            <div id="div_making_tournament" class="panel panel-default panel-table">
                                 <div class="panel-body">
                                     <table class="table table-striped table-list">
                                         <thead>
@@ -179,6 +103,252 @@
                                         {% endif %}
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+
+                            <div id="div_participation_tournament" class="panel panel-default panel-table">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-list">
+                                        <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>대회명</th>
+                                            <th>출전 정보</th>
+                                            <th>전적</th>
+                                            <th>성적</th>
+                                            <th>상금</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% if participation_info %}
+                                            {% for pi in participation_info %}
+                                                <tr>
+                                                    <td>{{ forloop.counter }}</td>
+                                                    <td><a href="">{{ pi.tournament_name }}</a></td>
+                                                    <td>{{ pi.etc1 }} | {{ pi.etc2 }} | {{ pi.etc3 }} | {{ pi.etc4 }}</td>
+                                                    <td>{{ pi.score }}</td>
+                                                    <td>{{ pi.result }}</td>
+                                                    <td>{{ pi.prize|intcomma }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="div_funding_tournament" class="panel panel-default panel-table">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-list">
+                                        <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>대회명</th>
+                                            <th>후원하신 금액</th>
+                                            <th>보상</th>
+                                            <th>응원 문구</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% if funding_info %}
+                                            {% for fi in funding_info %}
+                                                <tr>
+                                                    <td>{{ forloop.counter }}</td>
+                                                    <td><a href="">{{ fi.tournament_name }}</a></td>
+                                                    <td>{{ fi.amount|intcomma }}원</td>
+                                                    <td>{{ fi.reward }}</td>
+                                                    <td>{{ fi.comment }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade in" id="tab2">
+                            <div style="margin: 0 auto; text-align: center">
+                                <ul class="pager" style="margin-top: 5px; display: inline-block;">
+                                    <li class="my_team">
+                                        <a id="my_team" class="" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                            나의 팀
+                                        </a>
+                                    </li>
+                                    <li class="funding_team">
+                                        <a id="funding_team" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                                            후원한 팀
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div id="div_my_team" class="panel panel-default panel-table">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-list">
+                                        <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>대회명</th>
+                                            <th>출전 정보</th>
+                                            <th>전적</th>
+                                            <th>성적</th>
+                                            <th>상금</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% if participation_info %}
+                                            {% for pi in participation_info %}
+                                                <tr>
+                                                    <td>{{ forloop.counter }}</td>
+                                                    <td><a href="">{{ pi.tournament_name }}</a></td>
+                                                    <td>{{ pi.etc1 }} | {{ pi.etc2 }} | {{ pi.etc3 }} | {{ pi.etc4 }}</td>
+                                                    <td>{{ pi.score }}</td>
+                                                    <td>{{ pi.result }}</td>
+                                                    <td>{{ pi.prize|intcomma }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="div_funding_team" class="panel panel-default panel-table">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-list">
+                                        <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th>대회명</th>
+                                            <th>후원하신 금액</th>
+                                            <th>보상</th>
+                                            <th>응원 문구</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% if funding_info %}
+                                            {% for fi in funding_info %}
+                                                <tr>
+                                                    <td>{{ forloop.counter }}</td>
+                                                    <td><a href="">{{ fi.tournament_name }}</a></td>
+                                                    <td>{{ fi.amount|intcomma }}원</td>
+                                                    <td>{{ fi.reward }}</td>
+                                                    <td>{{ fi.comment }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade in" id="tab3">
+                            <div class="com_intro_now hover_div" style="margin-top: 10px;">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <h4 style="padding: 5px;">프로필 선택</h4>
+                                </div>
+                                <div class="col-md-9" style="text-align: right;">
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">
+                                            이메일 뉴스레터를 구독하시겠습니까?
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예(기본값)
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
+                                        </h5>
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com_intro_now hover_div" style="margin-top: 20px;">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <h4 style="padding: 5px;">자기 소개</h4>
+                                </div>
+                                <div class="col-md-9" style="text-align: right;">
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <div id="notice" class="summernote_notice">{{ tournament.notice|safe }}</div>
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com_intro_now hover_div" style="margin-top: 20px;">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <h4 style="padding: 5px;">방송 주소</h4>
+                                </div>
+                                <div class="col-md-9" style="text-align: right;">
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">
+                                            이메일 뉴스레터를 구독하시겠습니까?
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예(기본값)
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
+                                        </h5>
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <h4 style="padding: 5px;">연락처</h4>
+                                </div>
+                                <div class="col-md-9" style="text-align: right;">
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">
+                                            이메일 뉴스레터를 구독하시겠습니까?
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예(기본값)
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
+                                        </h5>
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade in" id="tab4">
+                            <div class="com_intro_now hover_div">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <h4 style="padding: 5px;">비밀번호 변경</h4>
+                                </div>
+                                <div class="col-md-9" style="text-align: right;">
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">현재 비밀번호</h5>
+                                        <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
+                                    </div>
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">신규 비밀번호</h5>
+                                        <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
+                                    </div>
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">비밀번호 확인</h5>
+                                        <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
+                                    </div>
+                                    <div style="width: 80%; padding: 5px;">
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
+                                <div class="col-md-3" style="text-align: center;">
+                                    <h4 style="padding: 5px;">이메일 뉴스레터 구독</h4>
+                                </div>
+                                <div class="col-md-9" style="text-align: right;">
+                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                        <h5 style="display: inline-block;">
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes" checked="checked"> 구독(기본값)
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 구독 취소
+                                        </h5>
+                                    </div>
+                                    <div style="width: 80%; padding: 5px;">
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -219,10 +389,91 @@
 {% block script %}
     <script>
         $(document).ready(function() {
+            $('.summernote').summernote({focus: true});
+
             $(".btn-pref .btn").click(function () {
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-custom");
                 // $(".tab").addClass("active"); // instead of this do the below
                 $(this).removeClass("btn-custom").addClass("btn-primary");
+            });
+
+            /* hover-border-color-change */
+            function mouseOver_div() {
+                $(this).css("border-color", "#ff9900");
+            }
+            function mouseOut_div() {
+                $(this).css("border-color", "#fff");
+            }
+            $('.hover_div').bind('mouseover', mouseOver_div).bind('mouseout', mouseOut_div);
+
+            /* hover-border-color-change */
+            function mouseOver_a() {
+                $(this).css("border-color", "#ff9900");
+                $(this).css("color", "#ff9900");
+            }
+            function mouseOut_a() {
+                $(this).css("border-color", "#fff");
+                $(this).css("color", "#fff");
+            }
+            $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+
+            /* making_tournament, participation_tournament, funding_tournament */
+            $('#div_participation_tournament').hide();
+            $('#div_funding_tournament').hide();
+            $('#making_tournament').click(function(){
+                $('#div_making_tournament').show();
+                $('#div_participation_tournament').hide();
+                $('#div_funding_tournament').hide();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#participation_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#participation_tournament').css("border-color", "#fff");
+                $('#participation_tournament').css("color", "#fff");
+                $('#funding_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#funding_tournament').css("border-color", "#fff");
+                $('#funding_tournament').css("color", "#fff");
+            });
+            $('#participation_tournament').click(function(){
+                $('#div_making_tournament').hide();
+                $('#div_participation_tournament').show();
+                $('#div_funding_tournament').hide();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#making_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#making_tournament').css("border-color", "#fff");
+                $('#making_tournament').css("color", "#fff");
+                $('#funding_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#funding_tournament').css("border-color", "#fff");
+                $('#funding_tournament').css("color", "#fff");
+            });
+            $('#funding_tournament').click(function(){
+                $('#div_making_tournament').hide();
+                $('#div_participation_tournament').hide();
+                $('#div_funding_tournament').show();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#making_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#making_tournament').css("border-color", "#fff");
+                $('#making_tournament').css("color", "#fff");
+                $('#participation_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#participation_tournament').css("border-color", "#fff");
+                $('#participation_tournament').css("color", "#fff");
+            });
+
+            /* my_team, funding_team */
+            $('#div_funding_team').hide();
+            $('#my_team').click(function(){
+                $('#div_my_team').show();
+                $('#div_funding_team').hide();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#funding_team').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#funding_team').css("border-color", "#fff");
+                $('#funding_team').css("color", "#fff");
+            });
+            $('#funding_team').click(function(){
+                $('#div_my_team').hide();
+                $('#div_funding_team').show();
+                $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
+                $('#my_team').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+                $('#my_team').css("border-color", "#fff");
+                $('#my_team').css("color", "#fff");
             });
 
             $("#withdrawal_final").click(function(){

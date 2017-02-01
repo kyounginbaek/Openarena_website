@@ -452,7 +452,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     border: transparent;
 }
 .donator_title{
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .donator_container{
     color: #ffffff;

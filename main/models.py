@@ -160,6 +160,7 @@ class Comment(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     depth = models.IntegerField(default=0)
     path = models.CommaSeparatedIntegerField(max_length=400)
+    like = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.content

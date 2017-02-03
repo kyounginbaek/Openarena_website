@@ -6,7 +6,7 @@
 {% block head %}
     <!--mypage.css-->
     <link rel="stylesheet" href="{% static 'css/participation.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
     <div class="head_empty"></div>
     <header class="help_head" style="background: url({% static 'img/q_cover.png' %}); margin-bottom: 0;">
         <div class="help_head_inner">
@@ -246,109 +246,132 @@
                         </div>
 
                         <div class="tab-pane fade in" id="tab3">
-                            <div class="com_intro_now hover_div" style="margin-top: 10px;">
-                                <div class="col-md-3" style="text-align: center;">
-                                    <h4 style="padding: 5px;">프로필 선택</h4>
+                            <div class="com_intro_now hover_div">
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>프로필 선택</h4>
                                 </div>
-                                <div class="col-md-9" style="text-align: right;">
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
-                                        <h5 style="display: inline-block;">
-                                            이메일 뉴스레터를 구독하시겠습니까?
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예(기본값)
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
-                                        </h5>
-                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                <div class="col-md-8" style="text-align: center;">
+                                    <div class="col-md-6 col-md-offset-3 input-group image-preview" style="margin: 10px auto;">
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                            </button>
+                                            <!-- image-preview-input -->
+                                            <div class="btn btn-default image-preview-input">
+                                                <span class="glyphicon glyphicon-folder-open"></span>
+                                                <span class="image-preview-input-title">파일 선택</span>
+                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"> <!-- rename it -->
+                                            </div>
+                                        </span>
                                     </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
                             <div class="com_intro_now hover_div" style="margin-top: 20px;">
-                                <div class="col-md-3" style="text-align: center;">
-                                    <h4 style="padding: 5px;">자기 소개</h4>
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>닉네임</h4>
                                 </div>
-                                <div class="col-md-9" style="text-align: right;">
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                <div class="col-md-8">
+                                    <div class="col-md-6 col-md-offset-3 input-group" style="margin: 10px auto;">
+                                        <span class="input-group-addon" id="basic-addon1">닉네임</span>
+                                        <input disabled type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="{{ user.username }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                </div>
+                            </div>
+                            <div class="com_intro_now hover_div" style="margin-top: 20px;">
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>소개</h4>
+                                </div>
+                                <div class="col-md-8" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+                                    <div style="overflow: auto; white-space: nowrap;">
                                         <div id="notice" class="summernote_notice">{{ tournament.notice|safe }}</div>
-                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                     </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
                             <div class="com_intro_now hover_div" style="margin-top: 20px;">
-                                <div class="col-md-3" style="text-align: center;">
-                                    <h4 style="padding: 5px;">방송 주소</h4>
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>방송 주소</h4>
                                 </div>
-                                <div class="col-md-9" style="text-align: right;">
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
-                                        <h5 style="display: inline-block;">
-                                            이메일 뉴스레터를 구독하시겠습니까?
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예(기본값)
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
-                                        </h5>
-                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                <div class="col-md-8" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+                                    <div style="overflow: auto; white-space: nowrap;">
+                                        <div id="notice" class="summernote_notice">{{ tournament.notice|safe }}</div>
                                     </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
                             <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
-                                <div class="col-md-3" style="text-align: center;">
-                                    <h4 style="padding: 5px;">연락처</h4>
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>
+                                        연락처
+                                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 개최 및 변경사항, 긴급사항 시 연락처로 내용이 전달됩니다." style="font-size: 14px;"></span>
+                                    </h4>
                                 </div>
-                                <div class="col-md-9" style="text-align: right;">
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
-                                        <h5 style="display: inline-block;">
-                                            이메일 뉴스레터를 구독하시겠습니까?
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예(기본값)
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
-                                        </h5>
-                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                <div class="col-md-8">
+                                    <div class="col-md-6 col-md-offset-3 input-group" style="margin: 10px auto;">
+                                        <span class="input-group-addon" id="basic-addon1">연락처</span>
+                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="예) 010-1234-5678">
                                     </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="tab-pane fade in" id="tab4">
                             <div class="com_intro_now hover_div">
-                                <div class="col-md-3" style="text-align: center;">
-                                    <h4 style="padding: 5px;">비밀번호 변경</h4>
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>비밀번호 변경</h4>
                                 </div>
-                                <div class="col-md-9" style="text-align: right;">
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                <div class="col-md-8" style="text-align: center; margin-top: 10px;">
+                                    <div style="overflow: auto; white-space: nowrap;">
                                         <h5 style="display: inline-block;">현재 비밀번호</h5>
                                         <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
                                     </div>
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                    <div style="overflow: auto; white-space: nowrap; margin-top: 10px;">
                                         <h5 style="display: inline-block;">신규 비밀번호</h5>
                                         <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
                                     </div>
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                    <div style="overflow: auto; white-space: nowrap; margin-top: 10px; margin-bottom: 10px;">
                                         <h5 style="display: inline-block;">비밀번호 확인</h5>
                                         <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
                                     </div>
-                                    <div style="width: 80%; padding: 5px;">
-                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
-                                    </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white;">변경하기</button>
                                 </div>
                             </div>
 
                             <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
-                                <div class="col-md-3" style="text-align: center;">
-                                    <h4 style="padding: 5px;">이메일 뉴스레터 구독</h4>
+                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
+                                    <h4>
+                                        이메일 뉴스레터
+                                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 개최 및 변경사항, 긴급사항 시 이메일로 내용이 전달됩니다." style="font-size: 14px;"></span>
+                                    </h4>
                                 </div>
-                                <div class="col-md-9" style="text-align: right;">
-                                    <div style="overflow: auto; white-space: nowrap; width: 80%; padding: 5px;">
+                                <div class="col-md-8" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+                                    <div style="overflow: auto; white-space: nowrap;">
                                         <h5 style="display: inline-block;">
                                             <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes" checked="checked"> 구독(기본값)
                                             &nbsp;
                                             <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 구독 취소
                                         </h5>
                                     </div>
-                                    <div style="width: 80%; padding: 5px;">
-                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
-                                    </div>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
                         </div>
@@ -389,7 +412,9 @@
 {% block script %}
     <script>
         $(document).ready(function() {
-            $('.summernote').summernote({focus: true});
+            $('[data-toggle="tooltip"]').tooltip();
+
+            $('.summernote_notice').summernote({focus: true});
 
             $(".btn-pref .btn").click(function () {
                 $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-custom");

@@ -6,6 +6,8 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/participation.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
+    <!-- A JavaScript event calendar -->
+    <link rel='stylesheet' href="{% static 'css/fullcalendar.min.css' %}">
 {% endblock %}
 {% block content %}
     <div class="block-b">
@@ -78,9 +80,8 @@
                                 </div>
                             </div>
                             <div class="com_intro_now hover_div">
-                                <div class="col-md-12" style="margin: 0;">
-                                    <h4>• 대회 캘린더</h4>
-                                </div>
+                                <h4>• 대회 캘린더</h4>
+                                <div class="reset-this" id="calendar"></div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -111,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="container com_intro_now hover_div" style="margin-top: 20px;">
-                                <h4>크리에이터 정보</h4>
+                                <h4>• 크리에이터 정보</h4>
                                 <div class="com_profile" style="background: url({{ tournament.user_img }}); background-size: contain;"></div>
                             </div>
                         </div>
@@ -681,6 +682,75 @@
                     }
                 });
             });
+
+            $('#calendar').fullCalendar({
+                lang : "ko",
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay,listWeek'
+                },
+                defaultDate: '2016-12-12',
+                navLinks: true, // can click day/week names to navigate views
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: '2016-12-01'
+                    },
+                    {
+                        title: 'Long Event',
+                        start: '2016-12-07',
+                        end: '2016-12-10'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2016-12-09T16:00:00'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2016-12-16T16:00:00'
+                    },
+                    {
+                        title: 'Conference',
+                        start: '2016-12-11',
+                        end: '2016-12-13'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2016-12-12T10:30:00',
+                        end: '2016-12-12T12:30:00'
+                    },
+                    {
+                        title: 'Lunch',
+                        start: '2016-12-12T12:00:00'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2016-12-12T14:30:00'
+                    },
+                    {
+                        title: 'Happy Hour',
+                        start: '2016-12-12T17:30:00'
+                    },
+                    {
+                        title: 'Dinner',
+                        start: '2016-12-12T20:00:00'
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: '2016-12-13T07:00:00'
+                    },
+                    {
+                        title: 'Click for Google',
+                        url: 'http://google.com/',
+                        start: '2016-12-28'
+                    }
+                ]
+            });
+
         });
     </script>
 
@@ -702,6 +772,10 @@
 
     {% include 'main/functions/light-youtube-embed.html' %}
     {% include 'main/functions/jquery-chat-application.html' %}
+
+    <script type="text/javascript" src="{% static 'js/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ko.js' %}"></script>
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d75e1fa49a7bd2"></script>

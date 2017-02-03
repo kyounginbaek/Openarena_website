@@ -452,7 +452,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     border: transparent;
 }
 .donator_title{
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .donator_container{
     color: #ffffff;
@@ -489,7 +489,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 .com_intro img{
     width: 100%;
     height: 100%;
-    border : 1px solid #d1c0a5;
+    /* border : 1px solid #fff; */
 }
 .com_list{
     color: #ffffff;
@@ -502,7 +502,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     width: 100%;
     float: left;
     text-align: left;
-    border: 1px solid #d1c0a5;
+    border: 1px solid white;
 }
 .com_intro_desp{
     margin-top: 20px;
@@ -649,6 +649,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .help_head{
     height: 275px;
+    background: url(../../static/img/q_cover.png);
     margin-bottom: 20px;
 }
 .help_head_inner{

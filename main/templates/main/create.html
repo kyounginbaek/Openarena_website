@@ -101,7 +101,7 @@
                                                 <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"> <!-- rename it -->
                                             </div>
                                         </span>
-                                    </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="next">
-                            <a id="page1_next" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page1_next" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 다음
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -373,13 +373,13 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="previous">
-                            <a id="page2_previous" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page2_previous" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 <span class="glyphicon glyphicon-menu-left"></span>
                                 이전
                             </a>
                         </li>
                         <li class="next">
-                            <a id="page2_next" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page2_next" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 다음
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -576,13 +576,13 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="previous">
-                            <a id="page3_previous" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page3_previous" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 <span class="glyphicon glyphicon-menu-left"></span>
                                 이전
                             </a>
                         </li>
                         <li class="next">
-                            <a id="page3_next" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page3_next" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 다음
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -748,13 +748,13 @@
                     <!-- previous & next button -->
                     <ul class="pager">
                         <li class="previous">
-                            <a id="page4_previous" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page4_previous" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 <span class="glyphicon glyphicon-menu-left"></span>
                                 이전
                             </a>
                         </li>
                         <li class="next">
-                            <a id="page4_submit" class="hover_a" href="javascript:void(0)" style="background: #1a1a1a; color: #fff">
+                            <a id="page4_submit" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
                                 완료
                                 <span class="glyphicon glyphicon-menu-right"></span>
                             </a>
@@ -1002,15 +1002,15 @@
             $('.hover_div').bind('mouseover', mouseOver_div).bind('mouseout', mouseOut_div);
 
             /* 이전 다음 버튼 hover-border-color-change */
-            function mouseOver_a() {
-                $(this).css("border-color", "#ff9900");
-                $(this).css("color", "#ff9900");
-            }
-            function mouseOut_a() {
-                $(this).css("border-color", "#fff");
+            function mouseOver_pager() {
+                $(this).css("background", "#ff9900");
                 $(this).css("color", "#fff");
             }
-            $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
+            function mouseOut_pager() {
+                $(this).css("background", "#1a1a1a");
+                $(this).css("color", "#ff9900");
+            }
+            $('.hover_pager').bind('mouseover', mouseOver_pager).bind('mouseout', mouseOut_pager);
 
             /* page previous-next button function */
             $("#page1_next").on('click', function() {

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Fundingdummy, Funding, Making, Video, Participation, Privacy, Agreement, Help, Comment, Chat, Rule
+from .models import Fundingdummy, Funding, Making, Video, Participation, Privacy, Agreement, Help, Comment, Chat, Gamerule
 
 # Register your models here.
 class FundingdummyAdmin(admin.ModelAdmin):
@@ -42,6 +42,6 @@ class ChatAdmin(admin.ModelAdmin):
     list_display = ['id', 'tournament_name', 'user', 'message', 'created']
 admin.site.register(Chat, ChatAdmin)
 
-class RuleAdmin(admin.ModelAdmin):
+class GameruleAdmin(admin.ModelAdmin):
     list_display = ['id', 'tournament_game', 'tournament_type', 'content']
-admin.site.register(Rule, RuleAdmin)
+admin.site.register(Gamerule, GameruleAdmin)

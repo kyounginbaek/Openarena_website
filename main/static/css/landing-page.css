@@ -503,6 +503,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     float: left;
     text-align: left;
     border: 1px solid white;
+    border-radius: 4px;
 }
 .com_intro_desp{
     margin-top: 20px;
@@ -514,6 +515,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     color: #ffffff;
     border:1px solid #fff;
     background-color: #1a1a1a;
+    border-radius: 4px;
 }
 .com_donatelist_box{
     margin-bottom: 20px;

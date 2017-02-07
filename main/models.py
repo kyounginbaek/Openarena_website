@@ -72,39 +72,57 @@ class Tournament(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     #tab1
     tournament_name = models.CharField(max_length=40, default='')
+    tournament_game = models.CharField(max_length=40, default='')
     tournament_image = models.CharField(max_length=200, default='')
     tournament_summary = summer_fields.SummernoteTextField()
-    tournament_game = models.CharField(max_length=40, default='')
     tournament_url = models.CharField(max_length=40, default='')
     #tab2
+    tournament_starttime = models.CharField(max_length=20, default='')
+    tournament_endtime = models.CharField(max_length=20, default='')
+    #tournament_format = ?
     tournament_rule = summer_fields.SummernoteTextField()
+    registration = models.CharField(max_length=20, default='') #yes or no
     #if tournament_registration = yes
-    registration_type = models.CharField(max_length=20, default='')
+    registration_type = models.CharField(max_length=20, default='') #individual or team
     participation_form = models.CharField(max_length=200, default='')
     participation_number = models.CharField(max_length=20, default='')
+    participation_date = models.CharField(max_length=20, default='') #yes or no
+    #if participation_date = yes
     participation_starttime = models.CharField(max_length=20, default='')
     participation_endtime = models.CharField(max_length=20, default='')
+    participation_checkin = models.CharField(max_length=20, default='') #yes or no
     #if participation_checkin = yes
-    participation_checkin = models.CharField(max_length=20, default='')
+    participation_checkintime = models.CharField(max_length=20, default='')
     #tab3
-    #if participation_fee = yes
-    participation_fee = models.CharField(max_length=20, default='')
-    #if funding = yes
-    funding = models.CharField(max_length=20, default='')
+    participation_fee = models.CharField(max_length=20, default='') #yes or no
+    # if participation_fee = yes
+    participation_fee_value = models.CharField(max_length=20, default='')
+    funding = models.CharField(max_length=20, default='') #yes or no
+    # if funding = yes
+    funding_goal = models.CharField(max_length=20, default='')
+    funding_date = models.CharField(max_length=20, default='') #yes or no
+    # if funding_date = yes
+    funding_starttime = models.CharField(max_length=20, default='')
+    funding_endtime = models.CharField(max_length=20, default='')
+    reward = models.CharField(max_length=20, default='') #yes or no
     #if reward = yes
-    reward = models.CharField(max_length=200, default='')
+    reward_value = models.CharField(max_length=20, default='')
     reward_spec = models.CharField(max_length=200, default='')
+    promise = models.CharField(max_length=20, default='') #yes or no
     #if promise = yes
-    promise = models.CharField(max_length=200, default='')
+    promise_value = models.CharField(max_length=20, default='')
     promise_spec = models.CharField(max_length=200, default='')
+    funding_info = models.CharField(max_length=20, default='') #yes
     #tab4
-    user_image = models.CharField(max_length=200, default='')
-    user_name = models.CharField(max_length=40, default='')
-    user_introduction = summer_fields.SummernoteTextField()
+    profile_image = models.CharField(max_length=200, default='')
+    profile_name = models.CharField(max_length=40, default='')
+    profile_introduction = summer_fields.SummernoteTextField()
     streaming_url = models.CharField(max_length=200, default='')
-    user_email = models.CharField(max_length=40, default='')
-    user_phone = models.CharField(max_length=20, default='')
+    profile_email = models.CharField(max_length=40, default='')
+    profile_phone = models.CharField(max_length=20, default='')
     creater_enrollment = models.CharField(max_length=20, default='')
+    #after submit
+    confirm = models.CharField(max_length=20, default='') #yes or no(reviewing)
     #template
     cover_image = models.CharField(max_length=200, default='')
     logo_image = models.CharField(max_length=200, default='')
@@ -180,7 +198,7 @@ class Chat(models.Model):
     def __unicode__(self):
         return self.message
 
-class Rule(models.Model):
+class Gamerule(models.Model):
     id = models.AutoField(primary_key=True)
     tournament_game = models.CharField(max_length=20, default='')
     tournament_type = models.CharField(max_length=20, default='')

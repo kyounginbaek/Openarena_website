@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from main.models import Making, Fundingdummy, Funding, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat, Rule
+from main.models import Making, Fundingdummy, Funding, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat, Gamerule
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
@@ -573,8 +573,8 @@ def chat(request):
     return render(request, 'main/functions/messages.html', {'chat': c})
 
 def create(request):
-    rule = Rule.objects.all()
-    return render(request, 'main/create.html', {'rule': rule})
+    gamerule = Gamerule.objects.all()
+    return render(request, 'main/create.html', {'gamerule': gamerule})
 
 def template(request):
     return render(request, 'main/template.html', {})

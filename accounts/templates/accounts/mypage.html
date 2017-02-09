@@ -25,25 +25,21 @@
                     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                         <div class="btn-group" role="group">
                             <button type="button" id="following" class="btn btn-primary no_border" href="#tab1" data-toggle="tab">
-                                <span class="hidden-md hidden-lg glyphicon glyphicon-user" aria-hidden="true"></span>
                                 <span class="list_btn">대회 정보</span>
                             </button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" id="following" class="btn btn-custom no_border" href="#tab2" data-toggle="tab">
-                                <span class="hidden-md hidden-lg glyphicon glyphicon-flag" aria-hidden="true"></span>
                                 <span class="list_btn">팀 정보</span>
                             </button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" id="favorites" class="btn btn-custom no_border" href="#tab3" data-toggle="tab">
-                                <span class="hidden-md hidden-lg glyphicon glyphicon-heart" aria-hidden="true"></span>
                                 <span class="list_btn">내 프로필</span>
                             </button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" id="favorites" class="btn btn-custom no_border" href="#tab4" data-toggle="tab">
-                                <span class="hidden-md hidden-lg glyphicon glyphicon-heart" aria-hidden="true"></span>
                                 <span class="list_btn">내 계정</span>
                             </button>
                         </div>
@@ -248,10 +244,10 @@
                         <div class="tab-pane fade in" id="tab3">
                             <div class="com_intro_now hover_div">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>프로필 선택</h4>
+                                    <h4>개인 프로필</h4>
                                 </div>
-                                <div class="col-md-8" style="text-align: center;">
-                                    <div class="col-md-6 col-md-offset-3 input-group image-preview" style="margin: 10px auto;">
+                                <div class="col-md-8" style="margin: 10px auto;">
+                                    <div class="col-md-8 col-md-offset-2 input-group image-preview" style="margin: 0 auto;">
                                         <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
                                         <span class="input-group-btn">
                                             <!-- image-preview-clear button -->
@@ -266,23 +262,17 @@
                                             </div>
                                         </span>
                                     </div>
-                                </div>
-                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
-                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
-                                </div>
-                            </div>
-                            <div class="com_intro_now hover_div" style="margin-top: 20px;">
-                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>닉네임</h4>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="col-md-6 col-md-offset-3 input-group" style="margin: 10px auto;">
+                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 10px auto;">
                                         <span class="input-group-addon" id="basic-addon1">닉네임</span>
                                         <input disabled type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="{{ user.username }}">
                                     </div>
+                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
+                                        <span class="input-group-addon" id="basic-addon1">연락처</span>
+                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="예) 010-1234-5678">
+                                    </div>
                                 </div>
                                 <div class="col-md-2" style="text-align: right; margin-top: 10px;">
-                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
+                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white;">변경하기</button>
                                 </div>
                             </div>
                             <div class="com_intro_now hover_div" style="margin-top: 20px;">
@@ -298,7 +288,7 @@
                                     <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
-                            <div class="com_intro_now hover_div" style="margin-top: 20px;">
+                            <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
                                     <h4>방송 주소</h4>
                                 </div>
@@ -311,42 +301,26 @@
                                     <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
                                 </div>
                             </div>
-                            <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
-                                <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>
-                                        연락처
-                                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 개최 및 변경사항, 긴급사항 시 연락처로 내용이 전달됩니다." style="font-size: 14px;"></span>
-                                    </h4>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="col-md-6 col-md-offset-3 input-group" style="margin: 10px auto;">
-                                        <span class="input-group-addon" id="basic-addon1">연락처</span>
-                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" placeholder="예) 010-1234-5678">
-                                    </div>
-                                </div>
-                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
-                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white">변경하기</button>
-                                </div>
-                            </div>
                         </div>
 
+                        <!-- tab 4 -->
                         <div class="tab-pane fade in" id="tab4">
                             <div class="com_intro_now hover_div">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
                                     <h4>비밀번호 변경</h4>
                                 </div>
-                                <div class="col-md-8" style="text-align: center; margin-top: 10px;">
-                                    <div style="overflow: auto; white-space: nowrap;">
-                                        <h5 style="display: inline-block;">현재 비밀번호</h5>
-                                        <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
+                                <div class="col-md-8" style="margin: 10px auto;">
+                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
+                                        <span class="input-group-addon" id="basic-addon1">현재 비밀번호</span>
+                                        <input type="password" required autocomplete="off" class="form-control" id="password" name="password">
                                     </div>
-                                    <div style="overflow: auto; white-space: nowrap; margin-top: 10px;">
-                                        <h5 style="display: inline-block;">신규 비밀번호</h5>
-                                        <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
+                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 10px auto;">
+                                        <span class="input-group-addon" id="basic-addon1">신규 비밀번호</span>
+                                        <input type="password" required autocomplete="off" class="form-control" id="password" name="password">
                                     </div>
-                                    <div style="overflow: auto; white-space: nowrap; margin-top: 10px; margin-bottom: 10px;">
-                                        <h5 style="display: inline-block;">비밀번호 확인</h5>
-                                        <input style="display: inline-block; width: 60%; margin-left: 20px;" type="password" required autocomplete="off" class="form-control" id="password" name="password">
+                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
+                                        <span class="input-group-addon" id="basic-addon1">비밀번호 확인</span>
+                                        <input type="password" required autocomplete="off" class="form-control" id="password" name="password">
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="text-align: right; margin-top: 10px;">

@@ -26,7 +26,7 @@
                     <!-- 대회 세부 사항 설정 -->
                     <div class="btn-group" role="group">
                         <button type="button" id="tab2" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
-                            <span class="list_btn">대회 세부 사항 설정</span>
+                            <span class="list_btn">대회 세부 사항</span>
                         </button>
                     </div>
                     <!-- 후원 설정 -->
@@ -54,7 +54,7 @@
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
                                     <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question1" style="color: #fff;" aria-expanded="false">
-                                        <h4>대회 이름</h4>
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 이름</h4>
                                         <h5>
                                             대회 이름을 입력해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
@@ -76,7 +76,7 @@
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                     <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question2" style="color: #fff;" aria-expanded="false">
-                                        <h4>게임 카테고리</h4>
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">게임 카테고리</h4>
                                         <h5>
                                             대회로 진행되는 게임을 선택해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
@@ -111,7 +111,7 @@
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                     <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question3" style="color: #fff;" aria-expanded="false">
-                                        <h4>대회 대표 이미지</h4>
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 대표 이미지</h4>
                                         <h5>
                                             대회 대표 이미지를 업로드해주세요.
                                             <span class="glyphicon glyphicon-picture"></span>
@@ -144,7 +144,7 @@
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                     <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question4" style="color: #fff;" aria-expanded="false">
-                                        <h4>대회 요약</h4>
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 요약</h4>
                                         <h5>
                                             대회에 대한 간단한 설명을 입력해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
@@ -160,7 +160,7 @@
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                     <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question5" style="color: #fff;" aria-expanded="false">
-                                        <h4>대회 페이지 주소(URL)</h4>
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 페이지 주소(URL)</h4>
                                         <h5>
                                             대회 페이지로 사용될 주소(URL)를 입력해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
@@ -192,60 +192,89 @@
                     <!-- com_tab2 -->
                     <div class="tab-pane fade in" id="com_tab2">
                         <br/>
-                        <h4 style="color: #ff9900;">• 대회 기간 설정</h4>
-                        <div class="com_intro_desp hover_div" style="text-align: center;">
-                            <h5>대회 시작 시간과 종료 시간을 선택해주세요.</h5>
-                            <!-- 참가 시작, 종료 시간 -->
-                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                                <input type="text" required autocomplete="off" class="form-control" id="tournament_starttime" name="tournament_starttime" placeholder="대회 시작 시간">
+                        <h4 style="color: #ff9900;">• 대회 세부 사항</h4>
+                        <!-- tab-pane -->
+                        <div class="panel-group" id="accordion-cat-2">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 기간 설정</h4>
+                                        <h5>
+                                            대회 시작 시간과 종료 시간을 설정해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab2_question1" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <!-- 참가 시작, 종료 시간 -->
+                                        <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_starttime" name="tournament_starttime" placeholder="대회 시작 시간">
 
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                                <input type="text" required autocomplete="off" class="form-control" id="tournament_endtime" name="tournament_endtime" placeholder="대회 종료 시간">
-                            </div>
-                        </div>
-                        <br/>
-                        <h4 style="color: #ff9900;">• 대회 진행 방식</h4>
-                        <div class="com_intro_desp hover_div">
-
-                        </div>
-                        <br/>
-                        <h4 style="color: #ff9900;">• 대회 규칙</h4>
-                        <div class="com_intro_desp hover_div">
-                            <div style="text-align: center">
-                                <h5>
-                                    아래 게임 별 규칙 예시를 참고하여 대회 규칙을 입력해주세요.
-                                </h5>
-                            </div>
-                            <div class="panel-group" id="accordion-gamerule" aria-multiselectable="true" style="margin: 0 auto; width: 60%; overflow:hidden;">
-                                {% for gr in gamerule %}
-                                    <div class="panel panel-default panel-faq hover_collapse">
-                                        <div class="panel-heading hover_collapse_heading" id="heading{{ forloop.counter }}" style="background: #1a1a1a;">
-                                            <a data-toggle="collapse" data-parent="#accordion-gamerule" href="#collapse{{ forloop.counter }}" aria-controls="collapse{{ forloop.counter }}">
-                                                <div class="panel-title" style="text-align: center; font-size: 14px; color: #fff">
-                                                    {{ gr.tournament_game }} | {{ gr.tournament_type }}
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" aria-labelledby="heading{{ forloop.counter }}">
-                                            <div class="panel-body" style="font-size: 14px">
-                                                {{ gr.content|safe }}
-                                            </div>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_endtime" name="tournament_endtime" placeholder="대회 종료 시간">
                                         </div>
                                     </div>
-                                {% endfor %}
+                                </div>
                             </div>
-                            <div style="padding: 5px;"></div>
-                            <div id="tournament_rule" name="tournament_rule" class="summernote"></div>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question2" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 진행 방식</h4>
+                                        <h5>
+                                            대회 진행 방식을 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab2_question2" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question3" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 규칙 설정</h4>
+                                        <h5>
+                                            대회 규칙 방식을 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab2_question3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div style="text-align: center; margin-bottom: 15px;">
+                                            <h5>아래 게임 별 규칙 예시를 참고하여 대회 규칙을 작성해주세요.</h5>
+                                            <select id="tournament_rule_example" name="tournament_rule_example" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                                <option value="">공약 보상 예시 보기</option>
+                                                {% for gr in gamerule %}
+                                                    <option value="{{ gr.id}}">{{ gr.tournament_game }} - {{ gr.tournament_type }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        {% for gr in gamerule %}
+                                            <div id="div_{{ gr.id }}" class="col-md-8 col-md-offset2 tournament_rule_example" style="display: none; margin: 0 auto; margin-bottom: 15px; float: none; background-color: #fff; color: #555; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px;">
+                                                <h5>
+                                                    {{ gr.content|safe }}
+                                                </h5>
+                                            </div>
+                                        {% endfor %}
+                                        <div id="tournament_rule" name="tournament_rule" class="summernote"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <br/>
                         <h4 style="color: #ff9900;">• 대회 참가 방식</h4>
-                        <div id="div_registration" class="com_intro_desp hover_div" style="text-align: center;">
-                            <h4>오픈 아레나를 통해 참가자 신청을 받으시겠습니까?</h4>
+                        <div id="div_registration" class="com_intro_desp hover_div" style="text-align: center; margin-top: 0;">
+                            <h4 style="color: #ff9900;">오픈 아레나를 통해 참가자 신청을 받으시겠습니까?</h4>
                             <h5>
                                 <input type="radio" id="registration" name="registration" value="yes"> 예
                                 &nbsp;
@@ -253,149 +282,202 @@
                             </h5>
                         </div>
                         <!-- 참가자 신청 예 클릭시 팝업 -->
-                        <div class="com_intro_desp" id="div_registration_yes" style="display: none; text-align: center; border-color: #ff9900;">
-                            <div id="registration_type" style="padding: 5px">
-                                <h4>대회 등록 방식</h4>
-                                <div style="padding: 5px"></div>
-                                <h5>대회 등록 방식을 선택해주세요.</h5>
-                                <h5>
-                                    <input type="radio" id="registration_type" name="registration_type" value="individual"> 개인
-                                    &nbsp;
-                                    <input type="radio" id="registration_type" name="registration_type" value="team"> 팀
-                                </h5>
-                            </div>
-                            <hr/>
-                            <div class="col-md-4 col-md-offset-4" style="padding: 5px">
-                                <h4>참가자 양식 만들기</h4>
-                                <div style="padding: 5px"></div>
-                                <div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">회원 정보</span>
-                                        <input type="text" class="form-control" disabled placeholder="참가자명, 팀명, 이메일, 연락처">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">게임 정보</span>
-                                        <input type="text" class="form-control" disabled placeholder="게임 닉네임, 아이디, 배틀태그">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">실력 정보</span>
-                                        <input type="text" class="form-control" disabled placeholder="티어, 소속 리그, 레벨">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">캐릭 정보</span>
-                                        <input type="text" class="form-control" disabled placeholder="주 캐릭, 주 종족, 주 포지션">
+                        <!-- tab-pane -->
+                        <div class="panel-group" id="div_registration_yes" style="display: none;">
+                            <br/>
+                            <h4 style="color: #ff9900;">• 대회 참가 방식 : 세부 사항</h4>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 등록 방식</h4>
+                                        <h5>
+                                            대회 등록 방식을 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_registration_yes_1" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <h5>
+                                            <input type="radio" id="registration_type" name="registration_type" value="individual"> 개인 참가
+                                            &nbsp;
+                                            <input type="radio" id="registration_type" name="registration_type" value="team"> 팀 참가
+                                        </h5>
                                     </div>
                                 </div>
-                                <div style="padding: 5px;"></div>
-                                <h5>위 목록을 참고하여 원하는 양식을 만들어보세요.</h5>
-                                <h5>총 10개까지 항목을 추가할 수 있습니다.</h5>
-                                <div class="div_participation_form" style="display: table; margin: 0 auto;">
-                                    <!-- js dynamic form fields : add -->
-                                    <div class="input-group">
-                                        <span class="input-group-addon">양식</span>
-                                        <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
+                            </div>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_2" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">참가자 양식 만들기</h4>
+                                        <h5>
+                                            참가자 양식을 만들어주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_registration_yes_2" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <div class="col-md-6 col-md-offset3" style="margin: 0 auto; float: none">
+                                            <div class="input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon">회원 정보</span>
+                                                <input type="text" class="form-control" disabled placeholder="참가자명, 팀명, 이메일, 연락처">
+                                            </div>
+                                            <div class="input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon">게임 정보</span>
+                                                <input type="text" class="form-control" disabled placeholder="게임 닉네임, 아이디, 배틀태그">
+                                            </div>
+                                            <div class="input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon">실력 정보</span>
+                                                <input type="text" class="form-control" disabled placeholder="티어, 소속 리그, 레벨">
+                                            </div>
+                                            <div class="input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon">캐릭 정보</span>
+                                                <input type="text" class="form-control" disabled placeholder="주 캐릭, 주 종족, 주 포지션">
+                                            </div>
+                                        </div>
+                                        <div style="padding: 5px;"></div>
+                                        <h5>위 목록을 참고하여 원하는 양식을 만들어보세요.</h5>
+                                        <h5>총 10개까지 항목을 추가할 수 있습니다.</h5>
+                                        <div class="div_participation_form" style="display: table; margin: 0 auto;">
+                                            <!-- js dynamic form fields : add -->
+                                            <div class="input-group">
+                                                <span class="input-group-addon">양식</span>
+                                                <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
-                                    </div>
+                                            </div>
 
-                                    <!-- js dynamic form fields : remove -->
-                                    <div class="hide remove-group" id="participation_formTemplate">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">양식</span>
-                                            <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
+                                            <!-- js dynamic form fields : remove -->
+                                            <div class="hide remove-group" id="participation_formTemplate">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">양식</span>
+                                                    <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="padding: 15px;"></div>
                             </div>
-                            <hr/>
-                            <div style="padding: 5px">
-                                <h4>최대 참가자 수</h4>
-                                <div style="padding: 5px"></div>
-                                <h5>최대 참가자 수를 선택해주세요.</h5>
-                                <div class="input-group spinner spinner_participation" style="display: table; margin: 10px auto;">
-                                    <span class="input-group-addon">명</span>
-                                    <input type="text" class="form-control" id="participation_number" name="participation_number" value="10" style="width: auto;">
-                                    <div class="input-group-btn-vertical">
-                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_3" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">최대 참가자 수</h4>
+                                        <h5>
+                                            최대 참가자 수를 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_registration_yes_3" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <div class="input-group spinner spinner_participation" style="display: table; margin: 10px auto;">
+                                            <span class="input-group-addon">명</span>
+                                            <input type="text" class="form-control" id="participation_number" name="participation_number" value="10" style="width: auto;">
+                                            <div class="input-group-btn-vertical">
+                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr/>
-                            <div style="padding: 5px">
-                                <h4>대회 참가 기간 설정</h4>
-                                <blockquote style="font-size: 14px;">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    대회 참가 기간을 따로 설정하시겠습니까?<br/>
-                                    설정하지 않을 시 자동으로 대회 등록 시점부터<br/>
-                                    대회 시작 전까지 참가자를 받도록 자동 설정됩니다.<br/>
-                                </blockquote>
-                                <h5>
-                                    <input type="radio" id="participation_date" name="participation_date" value="no"> 기본 설정 사용
-                                    &nbsp;
-                                    <input type="radio" id="participation_date" name="participation_date" value="yes"> 따로 설정
-                                </h5>
-                                <!-- 참가 기간 사용시 팝업 -->
-                                <div id="div_participation_date_yes" style="display: none;">
-                                    <div style="padding: 5px;"></div>
-                                    <h5>참가 시작 시간과 마감 시간을 선택해주세요.</h5>
-                                    <!-- 참가 시작, 마감 시간 -->
-                                    <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_4" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">대회 참가 기간 설정</h4>
+                                        <h5>
+                                            대회 참가 기간을 설정해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_registration_yes_4" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px;">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            대회 참가 기간을 따로 설정하시겠습니까?<br/>
+                                            설정하지 않을 시 자동으로 대회 등록 시점부터<br/>
+                                            대회 시작 전까지 참가자를 받도록 자동 설정됩니다.<br/>
+                                        </blockquote>
+                                        <h5>
+                                            <input type="radio" id="participation_date" name="participation_date" value="no"> 기본 설정 사용
+                                            &nbsp;
+                                            <input type="radio" id="participation_date" name="participation_date" value="yes"> 따로 설정
+                                        </h5>
+                                        <!-- 참가 기간 사용시 팝업 -->
+                                        <div id="div_participation_date_yes" style="display: none;">
+                                            <div style="padding: 5px;"></div>
+                                            <h5>참가 시작 시간과 마감 시간을 선택해주세요.</h5>
+                                            <!-- 참가 시작, 마감 시간 -->
+                                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                                        <input type="text" required autocomplete="off" class="form-control" id="participation_starttime" name="participation_starttime" placeholder="참가 시작 시간">
+                                                <input type="text" required autocomplete="off" class="form-control" id="participation_starttime" name="participation_starttime" placeholder="참가 시작 시간">
 
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                                        <input type="text" required autocomplete="off" class="form-control" id="participation_endtime" name="participation_endtime" placeholder="참가 마감 시간">
+                                                <input type="text" required autocomplete="off" class="form-control" id="participation_endtime" name="participation_endtime" placeholder="참가 마감 시간">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr/>
-                            <div style="padding: 5px">
-                                <h4>참가자 체크인</h4>
-                                <blockquote style="font-size: 14px; margin: 0;">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    참가자 체크인 기능을 사용하시면 대회 시작 전 설정한 시간 전까지<br/>
-                                    체크인 버튼을 클릭하지 않은 참가자는 자동 탈락하게 됩니다.<br/>
-                                </blockquote>
-                                <h5>
-                                    <input type="radio" id="participation_checkin" name="participation_checkin" value="yes"> 사용
-                                    &nbsp;
-                                    <input type="radio" id="participation_checkin" name="participation_checkin" value="no"> 미사용
-                                </h5>
-                                <!-- 체크인 기능 사용시 팝업 -->
-                                <div id="div_checkin_yes" style="display: none;">
-                                    <div style="padding: 5px;"></div>
-                                    <div style="display: table; margin: 10px auto;">
-                                        <div style="display:inline-block;">
-                                            <h5>대회가 시작하기 전 &nbsp;</h5>
-                                        </div>
-                                        <div style="display:inline-block;">
-                                            <select id="participation_checkintime" name="participation_checkintime" class="form-control" style="width: auto;">
-                                                <option value="default">선택해주세요.</option>
-                                                <option value="15min">15분</option>
-                                                <option value="30min">30분</option>
-                                                <option value="1hour">1시간</option>
-                                                <option value="2hour">2시간</option>
-                                                <option value="6hour">6시간</option>
-                                                <option value="1day">1일</option>
-                                                <option value="2day">2일</option>
-                                            </select>
-                                        </div>
-                                        <div style="display:inline-block;">
-                                            <h5>&nbsp; 전까지 체크인 필요</h5>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_5" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">참가자 체크인</h4>
+                                        <h5>
+                                            참가자 체크인 기능을 사용하시겠습니까?
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_registration_yes_5" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px; margin: 0;">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            참가자 체크인 기능을 사용하시면 대회 시작 전 설정한 시간 전까지<br/>
+                                            체크인 버튼을 클릭하지 않은 참가자는 자동 탈락하게 됩니다.<br/>
+                                        </blockquote>
+                                        <h5>
+                                            <input type="radio" id="participation_checkin" name="participation_checkin" value="yes"> 사용
+                                            &nbsp;
+                                            <input type="radio" id="participation_checkin" name="participation_checkin" value="no"> 미사용
+                                        </h5>
+                                        <!-- 체크인 기능 사용시 팝업 -->
+                                        <div id="div_checkin_yes" style="display: none;">
+                                            <div style="padding: 5px;"></div>
+                                            <div style="display: table; margin: 10px auto;">
+                                                <div style="display:inline-block;">
+                                                    <h5>대회가 시작하기 전 &nbsp;</h5>
+                                                </div>
+                                                <div style="display:inline-block;">
+                                                    <select id="participation_checkintime" name="participation_checkintime" class="form-control" style="width: auto;">
+                                                        <option value="default">선택해주세요.</option>
+                                                        <option value="15min">15분</option>
+                                                        <option value="30min">30분</option>
+                                                        <option value="1hour">1시간</option>
+                                                        <option value="2hour">2시간</option>
+                                                        <option value="6hour">6시간</option>
+                                                        <option value="1day">1일</option>
+                                                        <option value="2day">2일</option>
+                                                    </select>
+                                                </div>
+                                                <div style="display:inline-block;">
+                                                    <h5>&nbsp; 전까지 체크인 필요</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -405,7 +487,7 @@
                         <!-- previous & next button -->
                         <ul class="pager">
                             <li class="previous">
-                                <a id="page2_previous" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                <a id="page2_previous" class="hover_previous" href="javascript:void(0)" style="background: #1a1a1a; color: #fff; border-color: #fff">
                                     <span class="glyphicon glyphicon-menu-left"></span>
                                     이전
                                 </a>
@@ -417,38 +499,82 @@
                                 </a>
                             </li>
                         </ul>
-
                     </div>
 
                     <!-- com_tab3 -->
                     <div class="tab-pane fade in" id="com_tab3">
                         <br/>
-                        <h4 style="color: #ff9900;">• 참가비 설정</h4>
-                        <div class="com_intro_desp hover_div" style="text-align: center;">
-                            <h4>참가비를 받으시겠습니까?</h4>
-                            <h5>
-                                <input type="radio" id="participation_fee" name="participation_fee" value="yes"> 예
-                                &nbsp;
-                                <input type="radio" id="participation_fee" name="participation_fee" value="no"> 아니요
-                            </h5>
-                            <!-- 참가비를 받는 경우 팝업 -->
-                            <div id="div_participation_fee_yes" style="display: none; text-align: center;">
-                                <br/>
-                                <h5>얼마를 받으시겠습니까?</h5>
-                                <div class="input-group spinner spinner_participation_fee" style="display: table; margin: 10px auto;">
-                                    <span class="input-group-addon">￦</span>
-                                    <input type="text" class="form-control" id="participation_fee_value" name="participation_fee_value" value="1000" style="width: auto;">
-                                    <div class="input-group-btn-vertical">
-                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                        <!-- 다음을 꼭 확인해주세요 -->
+                        <h4 style="color: #ff9900;">• 참가비 및 후원 정책</h4>
+                        <!-- tab-pane -->
+                        <div class="panel-group" id="accordion-cat-3">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">다음을 꼭 확인해주세요!</h4>
+                                        <h5>
+                                            참가비 및 후원 정책을 확인해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab3_question1" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            참가비 및 후원은 아래 정책에 의해 운영되고 있습니다.<br/>
+                                            ① 후원/참가비는 선수들의 상금 지급을 위해 쓰이는 것을 원칙으로 하고 있습니다.<br/>
+                                            ② 총 후원/참가비 금액 중 수수료를 제외한 약 80%가 실제 상금으로 사용됩니다.<br/>
+                                            ③ 상금에 대한 수수료는 다음과 같습니다.<br/>
+                                            <br/>
+                                            • 오픈아레나 - 크라우드 펀딩 수수료 5%<br/>
+                                            • 카드사 및 PG사 - 결제 수수료 10%<br/>
+                                            • 대회 주최자, 크리에이터 - 대회 준비금 5%<br/>
+                                        </blockquote>
+                                        <h5>
+                                            <input type="checkbox" id="funding_info" name="funding_info" value="yes"> 네. 확인했습니다.
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question2" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">참가비 설정</h4>
+                                        <h5>
+                                            대회 참가비를 받으시겠습니까?
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab3_question2" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <h5>
+                                            <input type="radio" id="participation_fee" name="participation_fee" value="yes"> 예
+                                            &nbsp;
+                                            <input type="radio" id="participation_fee" name="participation_fee" value="no"> 아니요
+                                        </h5>
+                                        <!-- 참가비를 받는 경우 팝업 -->
+                                        <div id="div_participation_fee_yes" style="display: none; text-align: center;">
+                                            <div style="padding: 5px;"></div>
+                                            <h5>얼마를 받으시겠습니까?</h5>
+                                            <div class="input-group spinner spinner_participation_fee" style="display: table; margin: 10px auto;">
+                                                <span class="input-group-addon">￦</span>
+                                                <input type="text" class="form-control" id="participation_fee_value" name="participation_fee_value" value="1000" style="width: auto;">
+                                                <div class="input-group-btn-vertical">
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br/>
                         <h4 style="color: #ff9900;">• 후원 설정</h4>
-                        <div id="div_funding" class="com_intro_desp hover_div" style="text-align: center;">
-                            <h4>상금 후원을 받으시겠습니까?</h4>
+                        <div id="div_funding" class="com_intro_desp hover_div" style="text-align: center; margin-top: 0;">
+                            <h4 style="color: #ff9900;">상금 후원을 받으시겠습니까?</h4>
                             <h5>
                                 <input type="radio" id="funding" name="funding" value="yes"> 예
                                 &nbsp;
@@ -456,244 +582,249 @@
                             </h5>
                         </div>
                         <!-- 후원을 받는 경우 팝업 -->
-                        <div id="div_funding_yes" class="com_intro_desp" style="display: none; text-align: center; border-color: #ff9900;">
-                            <div style="padding: 5px;">
-                                <h4>후원 목표 금액</h4>
-                                <div style="padding: 5px;"></div>
-                                <h5>후원 목표 금액을 선택해주세요.</h5>
-                                <div class="input-group spinner spinner_funding_goal" style="display: table; margin: 10px auto;">
-                                    <span class="input-group-addon">￦</span>
-                                    <input type="text" class="form-control" id="funding_goal" name="funding_goal" value="10000" style="width: auto;">
-                                    <div class="input-group-btn-vertical">
-                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                        <!-- tab-pane -->
+                        <div class="panel-group" id="div_funding_yes" style="display: none;">
+                            <br/>
+                            <h4 style="color: #ff9900;">• 후원 설정 : 세부 사항</h4>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">후원 목표 금액</h4>
+                                        <h5>
+                                            후원 목표 금액을 설정해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_funding_yes_1" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <div class="input-group spinner spinner_funding_goal" style="display: table; margin: 10px auto;">
+                                            <span class="input-group-addon">￦</span>
+                                            <input type="text" class="form-control" id="funding_goal" name="funding_goal" value="10000" style="width: auto;">
+                                            <div class="input-group-btn-vertical">
+                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr/>
-                            <div style="padding: 5px;">
-                                <h4>후원 가능 기간 설정</h4>
-                                <blockquote style="font-size: 14px;">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    후원 가능 기간을 따로 설정하시겠습니까?<br/>
-                                    설정하지 않을 시 자동으로 대회 등록 시점부터<br/>
-                                    대회 종료 전까지 후원을 받도록 자동 설정됩니다.<br/>
-                                </blockquote>
-                                <h5>
-                                    <input type="radio" id="funding_date" name="funding_date" value="no"> 기본 설정 사용
-                                    &nbsp;
-                                    <input type="radio" id="funding_date" name="funding_date" value="yes"> 따로 설정
-                                </h5>
-                                <!-- 후원 기간 사용시 팝업 -->
-                                <div id="div_funding_date_yes" style="display: none;">
-                                    <div style="padding: 5px;"></div>
-                                    <h5>후원 시작 시간과 종료 시간을 선택해주세요.</h5>
-                                    <!-- 후원 시작, 마감 시간 -->
-                                    <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_2" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">후원 가능 기간 설정</h4>
+                                        <h5>
+                                            참가자 양식을 만들어주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_funding_yes_2" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px;">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            후원 가능 기간을 따로 설정하시겠습니까?<br/>
+                                            설정하지 않을 시 자동으로 대회 등록 시점부터<br/>
+                                            대회 종료 전까지 후원을 받도록 자동 설정됩니다.<br/>
+                                        </blockquote>
+                                        <h5>
+                                            <input type="radio" id="funding_date" name="funding_date" value="no"> 기본 설정 사용
+                                            &nbsp;
+                                            <input type="radio" id="funding_date" name="funding_date" value="yes"> 따로 설정
+                                        </h5>
+                                        <!-- 후원 기간 사용시 팝업 -->
+                                        <div id="div_funding_date_yes" style="display: none;">
+                                            <div style="padding: 5px;"></div>
+                                            <h5>후원 시작 시간과 종료 시간을 선택해주세요.</h5>
+                                            <!-- 후원 시작, 마감 시간 -->
+                                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                                        <input type="text" required autocomplete="off" class="form-control" id="funding_starttime" name="funding_starttime" placeholder="후원 시작 시간">
+                                                <input type="text" required autocomplete="off" class="form-control" id="funding_starttime" name="funding_starttime" placeholder="후원 시작 시간">
 
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                                        <input type="text" required autocomplete="off" class="form-control" id="funding_endtime" name="funding_endtime" placeholder="후원 종료 시간">
-                                    </div>
-                                </div>
-                            </div>
-                            <hr/>
-                            <div style="padding: 5px;">
-                                <h4>후원자에게 보상을 하시겠습니까?</h4>
-                                <blockquote style="font-size: 14px">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    후원 금액 별 보상을 설정하신 경우<br/>
-                                    더 많은 후원 금액을 모으실 수 있습니다.<br/>
-                                    후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
-                                </blockquote>
-                                <h5>
-                                    <input type="radio" id="reward" name="reward" value="yes"> 사용
-                                    &nbsp;
-                                    <input type="radio" id="reward" name="reward" value="no"> 미사용
-                                </h5>
-                                <div style="padding: 5px;"></div>
-                                <!-- 보상 사용시 팝업 -->
-                                <div id="div_reward_yes" style="display: none;">
-                                    <!-- 보상 예시 -->
-                                    <div class="panel-group" id="accordion-reward" aria-multiselectable="true" style="margin: 0 auto; width: 60%; overflow:hidden;">
-                                        <div class="panel panel-default panel-faq hover_collapse">
-                                            <div class="panel-heading hover_collapse_heading" id="heading-reward" style="background: #1a1a1a;">
-                                                <a data-toggle="collapse" data-parent="#accordion-reward" href="#collapse-reward" aria-controls="collapse-reward">
-                                                    <div class="panel-title" style="text-align: center; font-size: 14px; color: #fff">
-                                                        후원 보상 예시 보기
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div id="collapse-reward" class="panel-collapse collapse" aria-labelledby="heading-reward" style="text-align: center; border-top: 1px solid #ddd;">
-                                                <div class="panel-body" style="font-size: 14px; text-align: left; margin: 0 auto; display: table; border-top: 0 solid #ddd;">
-                                                    특정 금액 이상 후원해주신 분들에게<br/>
-                                                    ① 게이밍 마우스, 패드 증정<br/>
-                                                    ② 개인 소장 물품 증정<br/>
-                                                    ③ 방송 게스트 출현<br/>
-                                                    ④ 함께 게임 및 친구 추가<br/>
-                                                    ⑤ 방송 중 감사의 인사<br/>
-                                                    ⑥ 팬미팅 진행<br/>
-                                                    ⑦ 대회 영상 크레딧 등재<br/>
-                                                    ⑧ 방송 매니저 등록<br/>
-                                                    ⑨ 다음 대회 우선권 증정<br/>
-                                                    ⑩ 재능 기부<br/>
-                                                    ⑪ 후원자가 원하는 미션 실행<br/>
-                                                    ⑫ 게임 아이템 증정<br/>
-                                                    ⑬ 기프티콘 증정<br/>
-                                                    ⑭ 게임 코치<br/>
-                                                    ⑮ 기타 등
-                                                </div>
+                                                <input type="text" required autocomplete="off" class="form-control" id="funding_endtime" name="funding_endtime" placeholder="후원 종료 시간">
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="padding: 10px;"></div>
-                                    <div class="div_reward" style="display: table; margin: 0 auto;">
-                                        <!-- js dynamic form fields : add -->
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₩</span>
-                                            <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 10,000">
-                                            <span class="input-group-addon">후원 시</span>
-                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
+                                </div>
+                            </div>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_3" style="color: #fff;" >
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">후원자에게 보상을 하시겠습니까?</h4>
+                                        <h5>
+                                            최대 참가자 수를 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_funding_yes_3" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            후원 금액 별 보상을 설정하신 경우<br/>
+                                            더 많은 후원 금액을 모으실 수 있습니다.<br/>
+                                            후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
+                                        </blockquote>
+                                        <h5>
+                                            <input type="radio" id="reward" name="reward" value="yes"> 사용
+                                            &nbsp;
+                                            <input type="radio" id="reward" name="reward" value="no"> 미사용
+                                        </h5>
+                                        <!-- 보상 사용시 팝업 -->
+                                        <div id="div_reward_yes" style="display: none;">
+                                            <div style="padding: 5px;"></div>
+                                            <!-- 보상 예시 -->
+                                            <div>
+                                                <select id="" name="" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                                    <option value="">후원 보상 예시 보기</option>
+                                                    <option value="">① 게임 관련 기기, 물품 증정</option>
+                                                    <option value="">② 개인 소장 물품 증정</option>
+                                                    <option value="">③ 방송 게스트 출현</option>
+                                                    <option value="">④ 함께 게임 및 친구 추가</option>
+                                                    <option value="">⑤ 방송 중 감사의 인사</option>
+                                                    <option value="">⑥ 팬미팅 진행</option>
+                                                    <option value="">⑦ 대회 영상 크레딧 등재</option>
+                                                    <option value="">⑧ 방송 매니저 등록</option>
+                                                    <option value="">⑨ 다음 대회 우선권 증정</option>
+                                                    <option value="">⑩ 재능 기부</option>
+                                                    <option value="">⑪ 후원자가 원하는 미션 실행</option>
+                                                    <option value="">⑫ 게임 아이템 증정</option>
+                                                    <option value="">⑬ 기프티콘 증정</option>
+                                                    <option value="">⑭ 게임 코치</option>
+                                                    <option value="">⑮ 기타 등</option>
+                                                </select>
+                                            </div>
+                                            <div style="padding: 10px;"></div>
+                                            <div class="div_reward" style="display: table; margin: 0 auto;">
+                                                <!-- js dynamic form fields : add -->
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">₩</span>
+                                                    <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 10,000">
+                                                    <span class="input-group-addon">이상 후원 시</span>
+                                                    <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
-                                        </div>
+                                                </div>
 
-                                        <!-- js dynamic form fields : remove -->
-                                        <div class="hide remove-group" id="rewardTemplate">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">₩</span>
-                                                <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 20,000">
-                                                <span class="input-group-addon">후원 시</span>
-                                                <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
+                                                <!-- js dynamic form fields : remove -->
+                                                <div class="hide remove-group" id="rewardTemplate">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">₩</span>
+                                                        <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 20,000">
+                                                        <span class="input-group-addon">이상 후원 시</span>
+                                                        <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr/>
-                            <div style="padding: 5px;">
-                                <h4>후원자에게 공약을 하시겠습니까?</h4>
-                                <blockquote style="font-size: 14px">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    총 후원 금액 별 공약을 설정하신 경우<br/>
-                                    더 많은 후원 금액을 모으실 수 있습니다.<br/>
-                                    후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
-                                </blockquote>
-                                <h5>
-                                    <input type="radio" id="promise" name="promise" value="yes"> 사용
-                                    &nbsp;
-                                    <input type="radio" id="promise" name="promise" value="no"> 미사용
-                                </h5>
-                                <div style="padding: 5px;"></div>
-                                <!-- 공약 사용시 팝업 -->
-                                <div id="div_promise_yes" style="display: none;">
-                                    <!-- 공약 예시 -->
-                                    <div class="panel-group" id="accordion-promise" aria-multiselectable="true" style="margin: 0 auto; width: 60%; overflow:hidden;">
-                                        <div class="panel panel-default panel-faq hover_collapse">
-                                            <div class="panel-heading hover_collapse_heading" id="heading-promise" style="background: #1a1a1a;">
-                                                <a data-toggle="collapse" data-parent="#accordion-promise" href="#collapse-promise" aria-controls="collapse-promise">
-                                                    <div class="panel-title" style="text-align: center; font-size: 14px; color: #fff">
-                                                        공약 보상 예시 보기
-                                                    </div>
-                                                </a>
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
+                                    <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_4" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">후원자에게 공약을 하시겠습니까?</h4>
+                                        <h5>
+                                            대회 참가 기간을 설정해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="div_funding_yes_4" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            총 후원 금액 별 공약을 설정하신 경우<br/>
+                                            더 많은 후원 금액을 모으실 수 있습니다.<br/>
+                                            후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
+                                        </blockquote>
+                                        <h5>
+                                            <input type="radio" id="promise" name="promise" value="yes"> 사용
+                                            &nbsp;
+                                            <input type="radio" id="promise" name="promise" value="no"> 미사용
+                                        </h5>
+                                        <!-- 공약 사용시 팝업 -->
+                                        <div id="div_promise_yes" style="display: none;">
+                                            <div style="padding: 5px;"></div>
+                                            <!-- 공약 예시 -->
+                                            <div>
+                                                <select id="" name="" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                                    <option value="">공약 보상 예시 보기</option>
+                                                    <option value="">① 게임 관련 기기, 물품 증정</option>
+                                                    <option value="">② 개인 소장 물품 증정</option>
+                                                    <option value="">③ 원하는 방송 게스트 초대</option>
+                                                    <option value="">④ 함께 게임 및 친구 추가</option>
+                                                    <option value="">⑤ 방송 중 감사의 인사</option>
+                                                    <option value="">⑥ 팬미팅 진행</option>
+                                                    <option value="">⑦ 대회 영상 크레딧 등재</option>
+                                                    <option value="">⑧ 방송 매니저 등록</option>
+                                                    <option value="">⑨ 다음 대회 우선권 증정</option>
+                                                    <option value="">⑩ 재능 기부</option>
+                                                    <option value="">⑪ 후원자가 원하는 미션 실행</option>
+                                                    <option value="">⑫ 게임 아이템 증정</option>
+                                                    <option value="">⑬ 기프티콘 증정</option>
+                                                    <option value="">⑭ 게임 코치</option>
+                                                    <option value="">⑮ 방송 분장 출현</option>
+                                                    <option value="">⑯ 게임 아이템 강화 도전</option>
+                                                    <option value="">⑰ 대회 한번 더 개최 약속</option>
+                                                    <option value="">⑱ 함께 다음 대회 기획</option>
+                                                    <option value="">⑲ 함께 피시방 밤샘</option>
+                                                    <option value="">⑳ 기타 등</option>
+                                                </select>
                                             </div>
-                                            <div id="collapse-promise" class="panel-collapse collapse" aria-labelledby="heading-promise" style="text-align: center; border-top: 1px solid #ddd;">
-                                                <div class="panel-body" style="font-size: 14px; text-align: left; margin: 0 auto; display: table; border-top: 0 solid #ddd;">
-                                                    목표 후원 금액 도달 시 참가자 혹은 후원자에게<br/>
-                                                    ① 게이밍 마우스, 패드 증정<br/>
-                                                    ② 개인 소장 물품 증정<br/>
-                                                    ③ 원하는 방송 게스트 초대<br/>
-                                                    ④ 함께 게임 및 친구 추가<br/>
-                                                    ⑤ 방송 중 감사의 인사<br/>
-                                                    ⑥ 팬미팅 진행<br/>
-                                                    ⑦ 대회 영상 크레딧 등재<br/>
-                                                    ⑧ 방송 매니저 등록<br/>
-                                                    ⑨ 다음 대회 우선권 증정<br/>
-                                                    ⑩ 재능 기부<br/>
-                                                    ⑪ 원하는 미션 실행<br/>
-                                                    ⑫ 게임 아이템 증정<br/>
-                                                    ⑬ 기프티콘 증정<br/>
-                                                    ⑭ 게임 코치<br/>
-                                                    ⑮ 방송 분장 출현<br/>
-                                                    ⑯ 게임 아이템 강화 도전<br/>
-                                                    ⑰ 대회 한번 더 개최 약속<br/>
-                                                    ⑱ 함께 다음 대회 기획<br/>
-                                                    ⑲ 함께 피시방 밤샘<br/>
-                                                    ⑳ 기타 등
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style="padding: 10px;"></div>
-                                    <div class="div_promise" style="display: table; margin: 0 auto;">
-                                        <!-- js dynamic form fields : add -->
-                                        <div class="input-group">
-                                            <span class="input-group-addon">₩</span>
-                                            <input type="text" class="form-control" id="promise_value" name="promise_value[]" placeholder="예) 100,000">
-                                            <span class="input-group-addon">도달 시</span>
-                                            <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
+                                            <div style="padding: 10px;"></div>
+                                            <div class="div_promise" style="display: table; margin: 0 auto;">
+                                                <!-- js dynamic form fields : add -->
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">₩</span>
+                                                    <input type="text" class="form-control" id="promise_value" name="promise_value[]" placeholder="예) 100,000">
+                                                    <span class="input-group-addon">도달 시</span>
+                                                    <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success addButton" type="button">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </button>
                                         </span>
-                                        </div>
+                                                </div>
 
-                                        <!-- js dynamic form fields : remove -->
-                                        <div class="hide remove-group" id="promiseTemplate">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">₩</span>
-                                                <input type="text" class="form-control" id="reward" name="promise_value[]" placeholder="예) 200,000">
-                                                <span class="input-group-addon">도달 시</span>
-                                                <input type="text" class="form-control" id="reward_spec" name="promise_spec[]" placeholder="예) 참가팀 전원에게 선물">
+                                                <!-- js dynamic form fields : remove -->
+                                                <div class="hide remove-group" id="promiseTemplate">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">₩</span>
+                                                        <input type="text" class="form-control" id="reward" name="promise_value[]" placeholder="예) 200,000">
+                                                        <span class="input-group-addon">도달 시</span>
+                                                        <input type="text" class="form-control" id="reward_spec" name="promise_spec[]" placeholder="예) 참가팀 전원에게 선물">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-danger removeButton" type="button">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
                                             </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- 다음을 꼭 확인해주세요 -->
-                        <div class="com_intro_desp hover_div" style="text-align: center">
-                            <h4 style="color: #ff9900;">다음을 꼭 확인해주세요!</h4>
-                            <blockquote style="font-size: 14px">
-                                <span class="glyphicon glyphicon-info-sign"></span>
-                                참가비 및 후원은 아래 정책에 의해 운영되고 있습니다.<br/>
-                                ① 후원/참가비는 선수들의 상금 지급을 위해 쓰이는 것을 원칙으로 하고 있습니다.<br/>
-                                ② 총 후원/참가비 금액 중 수수료를 제외한 약 80%가 실제 상금으로 사용됩니다.<br/>
-                                ③ 상금에 대한 수수료는 다음과 같습니다.<br/>
-                                <br/>
-                                • 오픈아레나 - 크라우드 펀딩 수수료 5%<br/>
-                                • 카드사 및 PG사 - 결제 수수료 10%<br/>
-                                • 대회 주최자, 크리에이터 - 대회 준비금 5%<br/>
-                            </blockquote>
-                            <h5>
-                                <input type="checkbox" id="funding_info" name="funding_info" value="yes"> 네. 확인했습니다.
-                            </h5>
                         </div>
 
                         <!-- previous & next button -->
                         <ul class="pager">
                             <li class="previous">
-                                <a id="page3_previous" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                <a id="page3_previous" class="hover_previous" href="javascript:void(0)" style="background: #1a1a1a; color: #fff; border-color: #fff">
                                     <span class="glyphicon glyphicon-menu-left"></span>
                                     이전
                                 </a>
@@ -712,18 +843,18 @@
                         <br/>
                         <h4 style="color: #ff9900;">• 진행자 개요</h4>
                         <!-- tab-pane -->
-                        <div class="panel-group" id="accordion-cat-3">
+                        <div class="panel-group" id="accordion-cat-4-1">
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                    <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question1" style="color: #fff;" aria-expanded="false">
-                                        <h4>진행자 이미지</h4>
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">진행자 이미지</h4>
                                         <h5>
                                             진행자님의 프로필 이미지를 업로드해주세요.
                                             <span class="glyphicon glyphicon-picture"></span>
                                         </h5>
                                     </a>
                                 </div>
-                                <div id="tab3_question1" class="panel-collapse collapse">
+                                <div id="tab4-1_question1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
                                         <!-- image-preview-filename input [CUT FROM HERE]-->
                                         <div class="input-group image-preview col-md-6 col-md-offset-3">
@@ -746,15 +877,15 @@
                             </div>
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                    <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question2" style="color: #fff;" aria-expanded="false">
-                                        <h4>진행자 이름</h4>
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question2" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">진행자 이름</h4>
                                         <h5>
                                             진행자님의 이름을 입력해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </h5>
                                     </a>
                                 </div>
-                                <div id="tab3_question2" class="panel-collapse collapse">
+                                <div id="tab4-1_question2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
                                         <div class="input-group col-md-4 col-md-offset-4">
                                             <span class="input-group-addon" id="basic-addon1">이름</span>
@@ -765,15 +896,15 @@
                             </div>
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                    <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question3" style="color: #fff;" aria-expanded="false">
-                                        <h4>진행자 소개</h4>
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question3" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">진행자 소개</h4>
                                         <h5>
                                             진행자님을 간단히 소개해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </h5>
                                     </a>
                                 </div>
-                                <div id="tab3_question3" class="panel-collapse collapse">
+                                <div id="tab4-1_question3" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <div id="profile_introduction" name="profile_introduction" class="summernote"></div>
                                     </div>
@@ -781,15 +912,15 @@
                             </div>
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                    <a data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question4" style="color: #fff;" aria-expanded="false">
-                                        <h4>방송 주소</h4>
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4" href="#tab4-1_question4" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">방송 주소</h4>
                                         <h5>
                                             대회가 진행되는 방송의 주소를 입력해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </h5>
                                     </a>
                                 </div>
-                                <div id="tab3_question4" class="panel-collapse collapse">
+                                <div id="tab4-1_question4" class="panel-collapse collapse">
                                     <div class="panel-body" style="margin: 0 auto;">
                                         <div class="col-md-6 col-md-offset-3">
                                             <div style="text-align: center;">
@@ -813,40 +944,52 @@
                                                     <h5>여러 사이트로 방송하실 경우 복수 선택이 가능합니다.</h5>
                                                 </div>
                                                 <div style="padding: 5px;"></div>
-                                                <input id="streaming_type" name="streaming_type" type="checkbox" value="afreecatv"> 아프리카tv(afreecatv)<br/>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                    <input id="input_afreecatv" name="input_afreecatv" type="text" class="form-control" placeholder="예) http://play.afreecatv.com/">
+                                                <div style="font-size: 14px;">
+                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="afreecatv"> 아프리카tv(afreecatv)<br/>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                        <input id="input_afreecatv" name="input_afreecatv" type="text" class="form-control" placeholder="예) http://play.afreecatv.com/">
+                                                    </div>
                                                 </div>
                                                 <br/>
-                                                <input id="streaming_type" name="streaming_type" type="checkbox" value="twitch"> 트위치(twitch)<br/>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                    <input id="input_twitch" name="input_twitch" type="text" class="form-control" placeholder="예) https://www.twitch.tv/">
+                                                <div style="font-size: 14px;">
+                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="twitch"> 트위치(twitch)<br/>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                        <input id="input_twitch" name="input_twitch" type="text" class="form-control" placeholder="예) https://www.twitch.tv/">
+                                                    </div>
                                                 </div>
                                                 <br/>
-                                                <input id="streaming_type" name="streaming_type" type="checkbox" value="youtube"> 유투브(youtube)<br/>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                    <input id="input_youtube" name="input_youtube" type="text" class="form-control" placeholder="예) https://www.youtube.com/">
+                                                <div style="font-size: 14px;">
+                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="youtube"> 유투브(youtube)<br/>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                        <input id="input_youtube" name="input_youtube" type="text" class="form-control" placeholder="예) https://www.youtube.com/">
+                                                    </div>
                                                 </div>
                                                 <br/>
-                                                <input id="streaming_type" name="streaming_type" type="checkbox" value="daumtvpot"> 다음 tv팟(tvpot)<br/>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                    <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) http://tvpot.daum.net/">
+                                                <div style="font-size: 14px;">
+                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="daumtvpot"> 다음 tv팟(tvpot)<br/>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                        <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) http://tvpot.daum.net/">
+                                                    </div>
                                                 </div>
                                                 <br/>
-                                                <input id="streaming_type" name="streaming_type" type="checkbox" value="facebook"> 페이스북(facebook)<br/>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                    <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) https://www.facebook.com/">
+                                                <div style="font-size: 14px;">
+                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="facebook"> 페이스북(facebook)<br/>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                        <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) https://www.facebook.com/">
+                                                    </div>
                                                 </div>
                                                 <br/>
-                                                <input id="streaming_type" name="streaming_type" type="checkbox" value="etc"> 기타<br/>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                    <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="URL을 입력해주세요.">
+                                                <div style="font-size: 14px;">
+                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="etc"> 기타<br/>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                        <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="URL을 입력해주세요.">
+                                                    </div>
                                                 </div>
                                                 <br/>
                                             </div>
@@ -857,45 +1000,95 @@
                         </div>
                         <br/>
                         <h4 style="color: #ff9900;">• 연락처 설정</h4>
-                        <div class="com_intro_desp hover_div" style="text-align: center; overflow: auto;">
-                            <div class="col-md-6">
-                                <h4>이메일 주소</h4>
-                                <input type="text" required autocomplete="off" class="form-control" id="profile_email" name="profile_email" value="{{ user.email }}">
+                        <!-- tab-pane -->
+                        <div class="panel-group" id="accordion-cat-4-2">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">이메일 주소</h4>
+                                        <h5>
+                                            진행자님의 이메일 주소를 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab4-2_question1" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center;">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            <div class="input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" id="basic-addon1">E-mail</span>
+                                                <input type="text" required autocomplete="off" class="form-control" id="profile_email" name="profile_email" value="{{ user.email }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <h4>휴대폰 번호</h4>
-                                <input type="text" required autocomplete="off" class="form-control" id="profile_phone" name="profile_phone" placeholder="예) 010-1234-5678">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question2" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">휴대폰 번호</h4>
+                                        <h5>
+                                            진행자님의 휴대폰 번호를 입력해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab4-2_question2" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            <div class="input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" id="basic-addon1">연락처</span>
+                                                <input type="text" required autocomplete="off" class="form-control" id="profile_phone" name="profile_phone" placeholder="예) 010-1234-5678">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <br/>
                         <h4 style="color: #ff9900;">• 크리에이터 등록하기</h4>
-                        <div class="com_intro_desp hover_div" style="text-align: center">
-                            <h4 style="color: #ff9900;">오픈아레나 크리에이터로 등록하시겠습니까?</h4>
-                            <blockquote style="font-size: 14px">
-                                오픈아레나 크리에이터로 등록하시면<br/>
-                                더욱 더 빠르게 대회를 등록하고 관리하실 수 있으며<br/>
-                                메인과 상단 '크리에이터 소개' 메뉴에 소개되어<br/>
-                                더 많은 사람들이 대회에 관심을 가질 수 있게 됩니다.<br/>
-                            </blockquote>
-                            <h5>
-                                <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예
-                                &nbsp;
-                                <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
-                            </h5>
+                        <!-- tab-pane -->
+                        <div class="panel-group" id="accordion-cat-4-3">
+                            <div class="panel panel-default panel-faq hover_collapse">
+                                <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-3_question1" style="color: #fff;" aria-expanded="false">
+                                        <h4 class="hover_collapse_title" style="color: #ff9900;">오픈아레나 크리에이터로 등록하시겠습니까?</h4>
+                                        <h5>
+                                            오픈아레나 크리에이터 등록 여부를 선택해주세요.
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                                <div id="tab4-3_question1" class="panel-collapse collapse">
+                                    <div class="panel-body" style="text-align: center">
+                                        <blockquote style="font-size: 14px">
+                                            오픈아레나 크리에이터로 등록하시면<br/>
+                                            더욱 더 빠르게 대회를 등록하고 관리하실 수 있으며<br/>
+                                            메인과 상단 '크리에이터 소개' 메뉴에 소개되어<br/>
+                                            더 많은 사람들이 대회에 관심을 가질 수 있게 됩니다.<br/>
+                                        </blockquote>
+                                        <h5>
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예
+                                            &nbsp;
+                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- previous & next button -->
                         <ul class="pager">
                             <li class="previous">
-                                <a id="page4_previous" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                <a id="page4_previous" class="hover_previous" href="javascript:void(0)" style="background: #1a1a1a; color: #fff; border-color: #fff">
                                     <span class="glyphicon glyphicon-menu-left"></span>
                                     이전
                                 </a>
                             </li>
                             <li class="next">
                                 <a id="page4_submit" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
-                                    완료
-                                    <span class="glyphicon glyphicon-menu-right"></span>
+                                    제출
+                                    <span class="glyphicon glyphicon-ok"></span>
                                 </a>
                             </li>
                         </ul>
@@ -944,6 +1137,12 @@
                 } else {
                     $("#div_participation_date_yes").hide();
                 }
+            });
+
+            /* 대회 규칙 설정 예시 팝업 */
+            $('#tournament_rule_example').change(function() {
+                $(".tournament_rule_example").hide();
+                $("#div_"+this.value).show();
             });
 
             /* 참가자 신청 받기 기능 사용 시 팝업 */
@@ -1144,9 +1343,11 @@
             /* hover-border-color-change */
             function mouseOver_collapse() {
                 $(this).css("background", "#ff9900");
+                $(this).find('.hover_collapse_title').css("color", "#fff");
             }
             function mouseOut_collapse() {
                 $(this).css("background", "#1a1a1a");
+                $(this).find('.hover_collapse_title').css("color", "#ff9900");
             }
             $('.hover_collapse').find('.hover_collapse_heading').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
 
@@ -1154,10 +1355,12 @@
             $('.hover_collapse').on("show.bs.collapse", function(){
                 $(this).find('.hover_collapse_heading').unbind('mouseover', mouseOver_collapse).unbind('mouseout', mouseOut_collapse);
                 $(this).find('.hover_collapse_heading').css("background", "#ff9900");
+                $(this).find('.hover_collapse_title').css("color", "#fff");
             });
             $('.hover_collapse').on("hide.bs.collapse", function(){
                 $(this).find('.hover_collapse_heading').css("background", "#1a1a1a");
                 $(this).find('.hover_collapse_heading').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
+                $(this).find('.hover_collapse_title').css("color", "#ff9900");
             });
 
             /* hover-border-color-change */
@@ -1168,6 +1371,17 @@
                 $(this).css("border-color", "#fff");
             }
             $('.hover_div').bind('mouseover', mouseOver_div).bind('mouseout', mouseOut_div);
+
+            /* 이전 다음 버튼 hover-border-color-change */
+            function mouseOver_previous() {
+                $(this).css("border-color", "#ff9900");
+                $(this).css("color", "#ff9900");
+            }
+            function mouseOut_previous() {
+                $(this).css("border-color", "#fff");
+                $(this).css("color", "#fff");
+            }
+            $('.hover_previous').bind('mouseover', mouseOver_previous).bind('mouseout', mouseOut_previous);
 
             /* 이전 다음 버튼 hover-border-color-change */
             function mouseOver_pager() {

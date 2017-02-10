@@ -62,12 +62,26 @@
                                     </a>
                                 </div>
                                 <div id="tab1_question1" class="panel-collapse collapse">
-                                    <div class="panel-body" style="text-align: center">
+                                    <div class="panel-body" style="text-align: center;">
                                         <h5>대회의 이름은 다음과 같이 사용됩니다.</h5>
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <div class="input-group">
-                                                <span class="input-group-addon" id="basic-addon3">대회 제목</span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="tournament_name" name="tournament_name" placeholder="입력해주세요.">
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" id="basic-addon3">대회 제목</span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="tournament_name" name="tournament_name" placeholder="입력해주세요.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -85,24 +99,39 @@
                                 </div>
                                 <div id="tab1_question2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <select id="tournament_game" name="tournament_game" class="form-control">
-                                                <option value="default">선택해주세요.</option>
-                                                <option value="lol">리그오브레전드(롤)</option>
-                                                <option value="overwatch">오버워치</option>
-                                                <option value="starcraft1">스타크래프트1</option>
-                                                <option value="starcraft2">스타크래프트2</option>
-                                                <option value="hearthstone">하스스톤</option>
-                                                <option value="etc">기타</option>
-                                            </select>
-
-                                            <!-- 기타 선택시 팝업 -->
-                                            <div id="div_tournament_game_etc" style="display: none;">
-                                                <h5>어떤 게임인가요?</h5>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon" id="basic-addon1">종류</span>
-                                                    <input type="text" required autocomplete="off" class="form-control" id="tournament_game" name="tournament_game" placeholder="입력해주세요">
+                                        <div class="row">
+                                            <h5>게임을 선택해주세요.</h5>
+                                            <div class="col-md-4 col-md-offset-4">
+                                                <select id="tournament_game" name="tournament_game" class="form-control">
+                                                    <option value="default">선택해주세요.</option>
+                                                    <option value="lol">리그오브레전드(롤)</option>
+                                                    <option value="overwatch">오버워치</option>
+                                                    <option value="starcraft1">스타크래프트1</option>
+                                                    <option value="starcraft2">스타크래프트2</option>
+                                                    <option value="hearthstone">하스스톤</option>
+                                                    <option value="etc">기타</option>
+                                                </select>
+                                                <div style="padding: 5px;"></div>
+                                                <!-- 기타 선택시 팝업 -->
+                                                <div id="div_tournament_game_etc" style="display: none;">
+                                                    <h5 style="color: #ff9900;">어떤 게임인가요?</h5>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" id="basic-addon1">종류</span>
+                                                        <input type="text" required autocomplete="off" class="form-control" id="tournament_game" name="tournament_game" placeholder="입력해주세요">
+                                                    </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -120,23 +149,37 @@
                                 </div>
                                 <div id="tab1_question3" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <h5>대회의 대표 이미지 혹은 포스터를 업로드해주세요.</h5>
-                                        <h5>이미지는 다음과 같이 사용됩니다.</h5>
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview col-md-6 col-md-offset-3">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- image-preview-clear button -->
-                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                <span class="glyphicon glyphicon-remove"></span> Clear
-                                            </button>
-                                            <!-- image-preview-input -->
-                                            <div class="btn btn-default image-preview-input">
-                                                <span class="glyphicon glyphicon-folder-open"></span>
-                                                <span class="image-preview-input-title">파일 선택</span>
-                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"> <!-- rename it -->
+                                        <div class="row">
+                                            <h5>대회의 대표 이미지 혹은 포스터를 업로드해주세요.</h5>
+                                            <h5>이미지는 다음과 같이 사용됩니다.</h5>
+                                            <!-- image-preview-filename input [CUT FROM HERE]-->
+                                            <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
+                                                <span class="input-group-btn">
+                                                    <!-- image-preview-clear button -->
+                                                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                        <span class="glyphicon glyphicon-remove"></span> Clear
+                                                    </button>
+                                                    <!-- image-preview-input -->
+                                                    <div class="btn btn-default image-preview-input">
+                                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                                        <span class="image-preview-input-title">파일 선택</span>
+                                                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"> <!-- rename it -->
+                                                    </div>
+                                                </span>
                                             </div>
-                                        </span>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -153,7 +196,20 @@
                                 </div>
                                 <div id="tab1_question4" class="panel-collapse collapse">
                                     <div class="panel-body">
+                                        <h5 style="text-align: center;">대회에 대한 간단한 설명을 입력해주세요.</h5>
                                         <div id="tournament_summary" name="tournament_summary" class="summernote"></div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -169,15 +225,29 @@
                                 </div>
                                 <div id="tab1_question5" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="input-group col-md-6 col-md-offset-3">
-                                            <span class="input-group-addon" id="basic-addon3">http://openarena.kr/</span>
-                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch (한글 불가)">
+                                        <div class="row">
+                                            <h5>대회가 진행될 URL 주소를 입력해주세요.</h5>
+                                            <div class="input-group col-md-6 col-md-offset-3" style="margin: 0 auto;">
+                                                <span class="input-group-addon" id="basic-addon3">http://openarena.kr/</span>
+                                                <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch (한글 불가)">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- previous & next button -->
                         <ul class="pager">
                             <li class="next">
@@ -207,17 +277,32 @@
                                 </div>
                                 <div id="tab2_question1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <!-- 참가 시작, 종료 시간 -->
-                                        <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                                        <div class="row">
+                                            <h5>대회 시작 시간과 종료 시간을 설정해주세요.</h5>
+                                            <!-- 참가 시작, 종료 시간 -->
+                                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
-                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_starttime" name="tournament_starttime" placeholder="대회 시작 시간">
+                                                <input type="text" required autocomplete="off" class="form-control" id="tournament_starttime" name="tournament_starttime" placeholder="대회 시작 시간">
 
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
-                                            <input type="text" required autocomplete="off" class="form-control" id="tournament_endtime" name="tournament_endtime" placeholder="대회 종료 시간">
+                                                <input type="text" required autocomplete="off" class="form-control" id="tournament_endtime" name="tournament_endtime" placeholder="대회 종료 시간">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -234,7 +319,21 @@
                                 </div>
                                 <div id="tab2_question2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
+                                        <div class="row">
 
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -250,23 +349,37 @@
                                 </div>
                                 <div id="tab2_question3" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <div style="text-align: center; margin-bottom: 15px;">
-                                            <h5>아래 게임 별 규칙 예시를 참고하여 대회 규칙을 작성해주세요.</h5>
-                                            <select id="tournament_rule_example" name="tournament_rule_example" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
-                                                <option value="">공약 보상 예시 보기</option>
-                                                {% for gr in gamerule %}
-                                                    <option value="{{ gr.id}}">{{ gr.tournament_game }} - {{ gr.tournament_type }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </div>
-                                        {% for gr in gamerule %}
-                                            <div id="div_{{ gr.id }}" class="col-md-8 col-md-offset2 tournament_rule_example" style="display: none; margin: 0 auto; margin-bottom: 15px; float: none; background-color: #fff; color: #555; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px;">
-                                                <h5>
-                                                    {{ gr.content|safe }}
-                                                </h5>
+                                        <div class="row">
+                                            <div style="text-align: center; margin-bottom: 15px;">
+                                                <h5>아래 게임 별 규칙 예시를 참고하여 대회 규칙을 작성해주세요.</h5>
+                                                <select id="tournament_rule_example" name="tournament_rule_example" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                                    <option value="">공약 보상 예시 보기</option>
+                                                    {% for gr in gamerule %}
+                                                        <option value="{{ gr.id}}">{{ gr.tournament_game }} - {{ gr.tournament_type }}</option>
+                                                    {% endfor %}
+                                                </select>
                                             </div>
-                                        {% endfor %}
-                                        <div id="tournament_rule" name="tournament_rule" class="summernote"></div>
+                                            {% for gr in gamerule %}
+                                                <div id="div_{{ gr.id }}" class="col-md-8 col-md-offset2 tournament_rule_example" style="display: none; margin: 0 auto; margin-bottom: 15px; float: none; background-color: #fff; color: #555; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px;">
+                                                    <h5>
+                                                        {{ gr.content|safe }}
+                                                    </h5>
+                                                </div>
+                                            {% endfor %}
+                                            <div id="tournament_rule" name="tournament_rule" class="summernote"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -298,11 +411,29 @@
                                 </div>
                                 <div id="div_registration_yes_1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <h5>
-                                            <input type="radio" id="registration_type" name="registration_type" value="individual"> 개인 참가
-                                            &nbsp;
-                                            <input type="radio" id="registration_type" name="registration_type" value="team"> 팀 참가
-                                        </h5>
+                                        <div class="row">
+                                            <h5>아래 사항을 선택해주세요.</h5>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="registration_type" name="registration_type" value="individual"> 개인 참가
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="registration_type" name="registration_type" value="team"> 팀 참가
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -318,50 +449,63 @@
                                 </div>
                                 <div id="div_registration_yes_2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="col-md-6 col-md-offset3" style="margin: 0 auto; float: none">
-                                            <div class="input-group" style="margin: 0 auto;">
-                                                <span class="input-group-addon">회원 정보</span>
-                                                <input type="text" class="form-control" disabled placeholder="참가자명, 팀명, 이메일, 연락처">
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset3" style="margin: 0 auto; float: none">
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="background-color: #fff; color: #555;">회원 정보</span>
+                                                    <input type="text" class="form-control" disabled placeholder="참가자명, 팀명, 이메일, 연락처" style="background-color: #fff; color: #555;">
+                                                </div>
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="background-color: #fff; color: #555;">게임 정보</span>
+                                                    <input type="text" class="form-control" disabled placeholder="게임 닉네임, 아이디, 배틀태그" style="background-color: #fff; color: #555;">
+                                                </div>
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="background-color: #fff; color: #555;">실력 정보</span>
+                                                    <input type="text" class="form-control" disabled placeholder="티어, 소속 리그, 레벨" style="background-color: #fff; color: #555;">
+                                                </div>
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="background-color: #fff; color: #555;">캐릭 정보</span>
+                                                    <input type="text" class="form-control" disabled placeholder="주 캐릭, 주 종족, 주 포지션" style="background-color: #fff; color: #555;">
+                                                </div>
                                             </div>
-                                            <div class="input-group" style="margin: 0 auto;">
-                                                <span class="input-group-addon">게임 정보</span>
-                                                <input type="text" class="form-control" disabled placeholder="게임 닉네임, 아이디, 배틀태그">
-                                            </div>
-                                            <div class="input-group" style="margin: 0 auto;">
-                                                <span class="input-group-addon">실력 정보</span>
-                                                <input type="text" class="form-control" disabled placeholder="티어, 소속 리그, 레벨">
-                                            </div>
-                                            <div class="input-group" style="margin: 0 auto;">
-                                                <span class="input-group-addon">캐릭 정보</span>
-                                                <input type="text" class="form-control" disabled placeholder="주 캐릭, 주 종족, 주 포지션">
-                                            </div>
-                                        </div>
-                                        <div style="padding: 5px;"></div>
-                                        <h5>위 목록을 참고하여 원하는 양식을 만들어보세요.</h5>
-                                        <h5>총 10개까지 항목을 추가할 수 있습니다.</h5>
-                                        <div class="div_participation_form" style="display: table; margin: 0 auto;">
-                                            <!-- js dynamic form fields : add -->
-                                            <div class="input-group">
-                                                <span class="input-group-addon">양식</span>
-                                                <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-success addButton" type="button">
-                                                <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </span>
-                                            </div>
-
-                                            <!-- js dynamic form fields : remove -->
-                                            <div class="hide remove-group" id="participation_formTemplate">
+                                            <div style="padding: 5px;"></div>
+                                            <h5>위 목록을 참고하여 원하는 양식을 만들어보세요.</h5>
+                                            <h5>총 10개까지 항목을 추가할 수 있습니다.</h5>
+                                            <div class="div_participation_form" style="display: table; margin: 0 auto;">
+                                                <!-- js dynamic form fields : add -->
                                                 <div class="input-group">
                                                     <span class="input-group-addon">양식</span>
                                                     <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-danger removeButton" type="button">
-                                                    <span class="glyphicon glyphicon-minus"></span>
-                                                </button>
-                                            </span>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-success addButton" type="button">
+                                                            <span class="glyphicon glyphicon-plus"></span>
+                                                        </button>
+                                                    </span>
                                                 </div>
+                                                <!-- js dynamic form fields : remove -->
+                                                <div class="hide remove-group" id="participation_formTemplate">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">양식</span>
+                                                        <input type="text" class="form-control" id="participation_form" name="participation_form[]" placeholder="입력해주세요.">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-danger removeButton" type="button">
+                                                                <span class="glyphicon glyphicon-minus"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -379,12 +523,27 @@
                                 </div>
                                 <div id="div_registration_yes_3" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="input-group spinner spinner_participation" style="display: table; margin: 10px auto;">
-                                            <span class="input-group-addon">명</span>
-                                            <input type="text" class="form-control" id="participation_number" name="participation_number" value="10" style="width: auto;">
-                                            <div class="input-group-btn-vertical">
-                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        <div class="row">
+                                            <h5>최대 참가자 수를 선택해주세요.</h5>
+                                            <div class="input-group spinner spinner_participation" style="display: table; margin: 10px auto;">
+                                                <span class="input-group-addon">명</span>
+                                                <input type="text" class="form-control" id="participation_number" name="participation_number" value="10" style="width: auto;">
+                                                <div class="input-group-btn-vertical">
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -402,32 +561,52 @@
                                 </div>
                                 <div id="div_registration_yes_4" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px;">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            대회 참가 기간을 따로 설정하시겠습니까?<br/>
-                                            설정하지 않을 시 자동으로 대회 등록 시점부터<br/>
-                                            대회 시작 전까지 참가자를 받도록 자동 설정됩니다.<br/>
-                                        </blockquote>
-                                        <h5>
-                                            <input type="radio" id="participation_date" name="participation_date" value="no"> 기본 설정 사용
-                                            &nbsp;
-                                            <input type="radio" id="participation_date" name="participation_date" value="yes"> 따로 설정
-                                        </h5>
-                                        <!-- 참가 기간 사용시 팝업 -->
-                                        <div id="div_participation_date_yes" style="display: none;">
+                                        <div class="row">
+                                            <div>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    대회 참가 기간을 따로 설정하시겠습니까?
+                                                </h5>
+                                                <h5>설정하지 않을 시 자동으로 대회 등록 시점부터</h5>
+                                                <h5>대회 시작 전까지 참가자를 받도록 자동 설정됩니다.</h5>
+                                            </div>
                                             <div style="padding: 5px;"></div>
-                                            <h5>참가 시작 시간과 마감 시간을 선택해주세요.</h5>
-                                            <!-- 참가 시작, 마감 시간 -->
-                                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="participation_starttime" name="participation_starttime" placeholder="참가 시작 시간">
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="participation_date" name="participation_date" value="no"> 기본 설정 사용
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="participation_date" name="participation_date" value="yes"> 따로 설정
+                                                </span>
+                                            </div>
+                                            <!-- 참가 기간 사용시 팝업 -->
+                                            <div id="div_participation_date_yes" style="display: none;">
+                                                <div style="padding: 5px;"></div>
+                                                <h5>참가 시작 시간과 마감 시간을 선택해주세요.</h5>
+                                                <!-- 참가 시작, 마감 시간 -->
+                                                <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="participation_starttime" name="participation_starttime" placeholder="참가 시작 시간">
 
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="participation_endtime" name="participation_endtime" placeholder="참가 마감 시간">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="participation_endtime" name="participation_endtime" placeholder="참가 마감 시간">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -445,38 +624,59 @@
                                 </div>
                                 <div id="div_registration_yes_5" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px; margin: 0;">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            참가자 체크인 기능을 사용하시면 대회 시작 전 설정한 시간 전까지<br/>
-                                            체크인 버튼을 클릭하지 않은 참가자는 자동 탈락하게 됩니다.<br/>
-                                        </blockquote>
-                                        <h5>
-                                            <input type="radio" id="participation_checkin" name="participation_checkin" value="yes"> 사용
-                                            &nbsp;
-                                            <input type="radio" id="participation_checkin" name="participation_checkin" value="no"> 미사용
-                                        </h5>
-                                        <!-- 체크인 기능 사용시 팝업 -->
-                                        <div id="div_checkin_yes" style="display: none;">
+                                        <div class="row">
+                                            <div>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    참가자 체크인 기능을 사용하시겠습니까?
+                                                </h5>
+                                                <h5>참가자 체크인 기능을 사용하시면 대회 시작 전 설정한 시간 전까지</h5>
+                                                <h5>체크인 버튼을 클릭하지 않은 참가자는 자동 탈락하게 됩니다.</h5>
+                                            </div>
                                             <div style="padding: 5px;"></div>
-                                            <div style="display: table; margin: 10px auto;">
-                                                <div style="display:inline-block;">
-                                                    <h5>대회가 시작하기 전 &nbsp;</h5>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="participation_checkin" name="participation_checkin" value="yes"> 사용
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="participation_checkin" name="participation_checkin" value="no"> 미사용
+                                                </span>
+                                            </div>
+                                            <!-- 체크인 기능 사용시 팝업 -->
+                                            <div id="div_checkin_yes" style="display: none;">
+                                                <div style="padding: 5px;"></div>
+                                                <div style="display: table; margin: 10px auto;">
+                                                    <div style="display:inline-block;">
+                                                        <h5>대회가 시작하기 전 &nbsp;</h5>
+                                                    </div>
+                                                    <div style="display:inline-block;">
+                                                        <select id="participation_checkintime" name="participation_checkintime" class="form-control" style="width: auto;">
+                                                            <option value="default">선택해주세요.</option>
+                                                            <option value="15min">15분</option>
+                                                            <option value="30min">30분</option>
+                                                            <option value="1hour">1시간</option>
+                                                            <option value="2hour">2시간</option>
+                                                            <option value="6hour">6시간</option>
+                                                            <option value="1day">1일</option>
+                                                            <option value="2day">2일</option>
+                                                        </select>
+                                                    </div>
+                                                    <div style="display:inline-block;">
+                                                        <h5>&nbsp; 전까지 체크인 필요</h5>
+                                                    </div>
                                                 </div>
-                                                <div style="display:inline-block;">
-                                                    <select id="participation_checkintime" name="participation_checkintime" class="form-control" style="width: auto;">
-                                                        <option value="default">선택해주세요.</option>
-                                                        <option value="15min">15분</option>
-                                                        <option value="30min">30분</option>
-                                                        <option value="1hour">1시간</option>
-                                                        <option value="2hour">2시간</option>
-                                                        <option value="6hour">6시간</option>
-                                                        <option value="1day">1일</option>
-                                                        <option value="2day">2일</option>
-                                                    </select>
-                                                </div>
-                                                <div style="display:inline-block;">
-                                                    <h5>&nbsp; 전까지 체크인 필요</h5>
-                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -520,20 +720,42 @@
                                 </div>
                                 <div id="tab3_question1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            참가비 및 후원은 아래 정책에 의해 운영되고 있습니다.<br/>
-                                            ① 후원/참가비는 선수들의 상금 지급을 위해 쓰이는 것을 원칙으로 하고 있습니다.<br/>
-                                            ② 총 후원/참가비 금액 중 수수료를 제외한 약 80%가 실제 상금으로 사용됩니다.<br/>
-                                            ③ 상금에 대한 수수료는 다음과 같습니다.<br/>
-                                            <br/>
-                                            • 오픈아레나 - 크라우드 펀딩 수수료 5%<br/>
-                                            • 카드사 및 PG사 - 결제 수수료 10%<br/>
-                                            • 대회 주최자, 크리에이터 - 대회 준비금 5%<br/>
-                                        </blockquote>
-                                        <h5>
-                                            <input type="checkbox" id="funding_info" name="funding_info" value="yes"> 네. 확인했습니다.
-                                        </h5>
+                                        <div class="row">
+                                            <div>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    참가비 및 후원은 아래 정책에 의해 운영되고 있습니다.
+                                                </h5>
+                                                <h5>① 후원/참가비는 선수들의 상금 지급을 위해 쓰이는 것을 원칙으로 하고 있습니다.</h5>
+                                                <h5>② 총 후원/참가비 금액 중 수수료를 제외한 약 80%가 실제 상금으로 사용됩니다.</h5>
+                                                <h5>③ 상금에 대한 수수료는 다음과 같습니다.</h5>
+                                            </div>
+                                            <div style="padding: 10px;">
+                                                <h5 style="color: #ff9900;">
+                                                    수수료 항목을 확인해주세요.
+                                                </h5>
+                                                <h5>• 오픈아레나 - 크라우드 펀딩 수수료 5%</h5>
+                                                <h5>• 카드사 및 PG사 - 결제 수수료 10%</h5>
+                                                <h5>• 대회 주최자, 크리에이터 - 대회 준비금 5%</h5>
+                                            </div>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555; border-radius: 4px;">
+                                                    <input type="checkbox" id="funding_info" name="funding_info" value="yes"> 네. 확인했습니다.
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -549,22 +771,40 @@
                                 </div>
                                 <div id="tab3_question2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <h5>
-                                            <input type="radio" id="participation_fee" name="participation_fee" value="yes"> 예
-                                            &nbsp;
-                                            <input type="radio" id="participation_fee" name="participation_fee" value="no"> 아니요
-                                        </h5>
-                                        <!-- 참가비를 받는 경우 팝업 -->
-                                        <div id="div_participation_fee_yes" style="display: none; text-align: center;">
-                                            <div style="padding: 5px;"></div>
-                                            <h5>얼마를 받으시겠습니까?</h5>
-                                            <div class="input-group spinner spinner_participation_fee" style="display: table; margin: 10px auto;">
-                                                <span class="input-group-addon">￦</span>
-                                                <input type="text" class="form-control" id="participation_fee_value" name="participation_fee_value" value="1000" style="width: auto;">
-                                                <div class="input-group-btn-vertical">
-                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        <div class="row">
+                                            <h5>아래 사항을 선택해주세요.</h5>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="participation_fee" name="participation_fee" value="yes"> 예
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="participation_fee" name="participation_fee" value="no"> 아니요
+                                                </span>
+                                            </div>
+                                            <!-- 참가비를 받는 경우 팝업 -->
+                                            <div id="div_participation_fee_yes" style="display: none; text-align: center;">
+                                                <div style="padding: 5px;"></div>
+                                                <h5>얼마를 받으시겠습니까?</h5>
+                                                <div class="input-group spinner spinner_participation_fee" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">￦</span>
+                                                    <input type="text" class="form-control" id="participation_fee_value" name="participation_fee_value" value="1000" style="width: auto;">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -598,12 +838,27 @@
                                 </div>
                                 <div id="div_funding_yes_1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="input-group spinner spinner_funding_goal" style="display: table; margin: 10px auto;">
-                                            <span class="input-group-addon">￦</span>
-                                            <input type="text" class="form-control" id="funding_goal" name="funding_goal" value="10000" style="width: auto;">
-                                            <div class="input-group-btn-vertical">
-                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        <div class="row">
+                                            <h5>후원 목표 금액을 설정해주세요.</h5>
+                                            <div class="input-group spinner spinner_funding_goal" style="display: table; margin: 10px auto;">
+                                                <span class="input-group-addon">￦</span>
+                                                <input type="text" class="form-control" id="funding_goal" name="funding_goal" value="10000" style="width: auto;">
+                                                <div class="input-group-btn-vertical">
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -621,32 +876,52 @@
                                 </div>
                                 <div id="div_funding_yes_2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px;">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            후원 가능 기간을 따로 설정하시겠습니까?<br/>
-                                            설정하지 않을 시 자동으로 대회 등록 시점부터<br/>
-                                            대회 종료 전까지 후원을 받도록 자동 설정됩니다.<br/>
-                                        </blockquote>
-                                        <h5>
-                                            <input type="radio" id="funding_date" name="funding_date" value="no"> 기본 설정 사용
-                                            &nbsp;
-                                            <input type="radio" id="funding_date" name="funding_date" value="yes"> 따로 설정
-                                        </h5>
-                                        <!-- 후원 기간 사용시 팝업 -->
-                                        <div id="div_funding_date_yes" style="display: none;">
+                                        <div class="row">
+                                            <div>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    후원 가능 기간을 따로 설정하시겠습니까?
+                                                </h5>
+                                                <h5>설정하지 않을 시 자동으로 대회 등록 시점부터</h5>
+                                                <h5>대회 종료 전까지 후원을 받도록 자동 설정됩니다.</h5>
+                                            </div>
                                             <div style="padding: 5px;"></div>
-                                            <h5>후원 시작 시간과 종료 시간을 선택해주세요.</h5>
-                                            <!-- 후원 시작, 마감 시간 -->
-                                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="funding_starttime" name="funding_starttime" placeholder="후원 시작 시간">
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="funding_date" name="funding_date" value="no"> 기본 설정 사용
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="funding_date" name="funding_date" value="yes"> 따로 설정
+                                                </span>
+                                            </div>
+                                            <!-- 후원 기간 사용시 팝업 -->
+                                            <div id="div_funding_date_yes" style="display: none;">
+                                                <div style="padding: 5px;"></div>
+                                                <h5>후원 시작 시간과 종료 시간을 선택해주세요.</h5>
+                                                <!-- 후원 시작, 마감 시간 -->
+                                                <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="funding_starttime" name="funding_starttime" placeholder="후원 시작 시간">
 
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="funding_endtime" name="funding_endtime" placeholder="후원 종료 시간">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="funding_endtime" name="funding_endtime" placeholder="후원 종료 시간">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -657,77 +932,96 @@
                                     <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_3" style="color: #fff;" >
                                         <h4 class="hover_collapse_title" style="color: #ff9900;">후원자에게 보상을 하시겠습니까?</h4>
                                         <h5>
-                                            최대 참가자 수를 선택해주세요.
+                                            후원자 보상 여부를 설정해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </h5>
                                     </a>
                                 </div>
                                 <div id="div_funding_yes_3" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            후원 금액 별 보상을 설정하신 경우<br/>
-                                            더 많은 후원 금액을 모으실 수 있습니다.<br/>
-                                            후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
-                                        </blockquote>
-                                        <h5>
-                                            <input type="radio" id="reward" name="reward" value="yes"> 사용
-                                            &nbsp;
-                                            <input type="radio" id="reward" name="reward" value="no"> 미사용
-                                        </h5>
-                                        <!-- 보상 사용시 팝업 -->
-                                        <div id="div_reward_yes" style="display: none;">
-                                            <div style="padding: 5px;"></div>
-                                            <!-- 보상 예시 -->
+                                        <div class="row">
                                             <div>
-                                                <select id="" name="" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
-                                                    <option value="">후원 보상 예시 보기</option>
-                                                    <option value="">① 게임 관련 기기, 물품 증정</option>
-                                                    <option value="">② 개인 소장 물품 증정</option>
-                                                    <option value="">③ 방송 게스트 출현</option>
-                                                    <option value="">④ 함께 게임 및 친구 추가</option>
-                                                    <option value="">⑤ 방송 중 감사의 인사</option>
-                                                    <option value="">⑥ 팬미팅 진행</option>
-                                                    <option value="">⑦ 대회 영상 크레딧 등재</option>
-                                                    <option value="">⑧ 방송 매니저 등록</option>
-                                                    <option value="">⑨ 다음 대회 우선권 증정</option>
-                                                    <option value="">⑩ 재능 기부</option>
-                                                    <option value="">⑪ 후원자가 원하는 미션 실행</option>
-                                                    <option value="">⑫ 게임 아이템 증정</option>
-                                                    <option value="">⑬ 기프티콘 증정</option>
-                                                    <option value="">⑭ 게임 코치</option>
-                                                    <option value="">⑮ 기타 등</option>
-                                                </select>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    후원 금액 별 보상을 설정하신 경우
+                                                </h5>
+                                                <h5>더 많은 후원 금액을 모으실 수 있습니다.</h5>
+                                                <h5>후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.</h5>
                                             </div>
-                                            <div style="padding: 10px;"></div>
-                                            <div class="div_reward" style="display: table; margin: 0 auto;">
-                                                <!-- js dynamic form fields : add -->
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">₩</span>
-                                                    <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 10,000">
-                                                    <span class="input-group-addon">이상 후원 시</span>
-                                                    <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-success addButton" type="button">
-                                                <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </span>
+                                            <div style="padding: 5px;"></div>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="reward" name="reward" value="yes"> 사용
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="reward" name="reward" value="no"> 미사용
+                                                </span>
+                                            </div>
+                                            <!-- 보상 사용시 팝업 -->
+                                            <div id="div_reward_yes" style="display: none;">
+                                                <div style="padding: 10px;"></div>
+                                                <!-- 보상 예시 -->
+                                                <div>
+                                                    <select id="" name="" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                                        <option value="">후원 보상 예시 보기</option>
+                                                        <option value="">① 게임 관련 기기, 물품 증정</option>
+                                                        <option value="">② 개인 소장 물품 증정</option>
+                                                        <option value="">③ 방송 게스트 출현</option>
+                                                        <option value="">④ 함께 게임 및 친구 추가</option>
+                                                        <option value="">⑤ 방송 중 감사의 인사</option>
+                                                        <option value="">⑥ 팬미팅 진행</option>
+                                                        <option value="">⑦ 대회 영상 크레딧 등재</option>
+                                                        <option value="">⑧ 방송 매니저 등록</option>
+                                                        <option value="">⑨ 다음 대회 우선권 증정</option>
+                                                        <option value="">⑩ 재능 기부</option>
+                                                        <option value="">⑪ 후원자가 원하는 미션 실행</option>
+                                                        <option value="">⑫ 게임 아이템 증정</option>
+                                                        <option value="">⑬ 기프티콘 증정</option>
+                                                        <option value="">⑭ 게임 코치</option>
+                                                        <option value="">⑮ 기타 등</option>
+                                                    </select>
                                                 </div>
-
-                                                <!-- js dynamic form fields : remove -->
-                                                <div class="hide remove-group" id="rewardTemplate">
-                                                    <div class="input-group">
+                                                <div style="padding: 5px;"></div>
+                                                <div class="div_reward" style="display: table; margin: 0 auto;">
+                                                    <!-- js dynamic form fields : add -->
+                                                    <div class="input-group" style="margin: 0 auto;">
                                                         <span class="input-group-addon">₩</span>
-                                                        <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 20,000">
+                                                        <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 10,000">
                                                         <span class="input-group-addon">이상 후원 시</span>
-                                                        <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-danger removeButton" type="button">
-                                                    <span class="glyphicon glyphicon-minus"></span>
-                                                </button>
-                                            </span>
+                                                        <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 게임 코치를 해드려요">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-success addButton" type="button">
+                                                                <span class="glyphicon glyphicon-plus"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                    <!-- js dynamic form fields : remove -->
+                                                    <div class="hide remove-group" id="rewardTemplate">
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon">₩</span>
+                                                            <input type="text" class="form-control" id="reward_value" name="reward_value[]" placeholder="예) 20,000">
+                                                            <span class="input-group-addon">이상 후원 시</span>
+                                                            <input type="text" class="form-control" id="reward_spec" name="reward_spec[]" placeholder="예) 마우스 패드를 드려요">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-danger removeButton" type="button">
+                                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -738,82 +1032,101 @@
                                     <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_4" style="color: #fff;" aria-expanded="false">
                                         <h4 class="hover_collapse_title" style="color: #ff9900;">후원자에게 공약을 하시겠습니까?</h4>
                                         <h5>
-                                            대회 참가 기간을 설정해주세요.
+                                            후원자 공약 여부를 설정해주세요.
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </h5>
                                     </a>
                                 </div>
                                 <div id="div_funding_yes_4" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            총 후원 금액 별 공약을 설정하신 경우<br/>
-                                            더 많은 후원 금액을 모으실 수 있습니다.<br/>
-                                            후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.
-                                        </blockquote>
-                                        <h5>
-                                            <input type="radio" id="promise" name="promise" value="yes"> 사용
-                                            &nbsp;
-                                            <input type="radio" id="promise" name="promise" value="no"> 미사용
-                                        </h5>
-                                        <!-- 공약 사용시 팝업 -->
-                                        <div id="div_promise_yes" style="display: none;">
-                                            <div style="padding: 5px;"></div>
-                                            <!-- 공약 예시 -->
+                                        <div class="row">
                                             <div>
-                                                <select id="" name="" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
-                                                    <option value="">공약 보상 예시 보기</option>
-                                                    <option value="">① 게임 관련 기기, 물품 증정</option>
-                                                    <option value="">② 개인 소장 물품 증정</option>
-                                                    <option value="">③ 원하는 방송 게스트 초대</option>
-                                                    <option value="">④ 함께 게임 및 친구 추가</option>
-                                                    <option value="">⑤ 방송 중 감사의 인사</option>
-                                                    <option value="">⑥ 팬미팅 진행</option>
-                                                    <option value="">⑦ 대회 영상 크레딧 등재</option>
-                                                    <option value="">⑧ 방송 매니저 등록</option>
-                                                    <option value="">⑨ 다음 대회 우선권 증정</option>
-                                                    <option value="">⑩ 재능 기부</option>
-                                                    <option value="">⑪ 후원자가 원하는 미션 실행</option>
-                                                    <option value="">⑫ 게임 아이템 증정</option>
-                                                    <option value="">⑬ 기프티콘 증정</option>
-                                                    <option value="">⑭ 게임 코치</option>
-                                                    <option value="">⑮ 방송 분장 출현</option>
-                                                    <option value="">⑯ 게임 아이템 강화 도전</option>
-                                                    <option value="">⑰ 대회 한번 더 개최 약속</option>
-                                                    <option value="">⑱ 함께 다음 대회 기획</option>
-                                                    <option value="">⑲ 함께 피시방 밤샘</option>
-                                                    <option value="">⑳ 기타 등</option>
-                                                </select>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    총 후원 금액 별 공약을 설정하신 경우
+                                                </h5>
+                                                <h5>더 많은 후원 금액을 모으실 수 있습니다.</h5>
+                                                <h5>후원자들이 좋아할만한 항목을 설정해 후원을 장려해주세요.</h5>
                                             </div>
-                                            <div style="padding: 10px;"></div>
-                                            <div class="div_promise" style="display: table; margin: 0 auto;">
-                                                <!-- js dynamic form fields : add -->
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">₩</span>
-                                                    <input type="text" class="form-control" id="promise_value" name="promise_value[]" placeholder="예) 100,000">
-                                                    <span class="input-group-addon">도달 시</span>
-                                                    <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-success addButton" type="button">
-                                                <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </span>
+                                            <div style="padding: 5px;"></div>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="promise" name="promise" value="yes"> 사용
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" id="promise" name="promise" value="no"> 미사용
+                                                </span>
+                                            </div>
+                                            <!-- 공약 사용시 팝업 -->
+                                            <div id="div_promise_yes" style="display: none;">
+                                                <div style="padding: 10px;"></div>
+                                                <!-- 공약 예시 -->
+                                                <div>
+                                                    <select id="" name="" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                                        <option value="">공약 보상 예시 보기</option>
+                                                        <option value="">① 게임 관련 기기, 물품 증정</option>
+                                                        <option value="">② 개인 소장 물품 증정</option>
+                                                        <option value="">③ 원하는 방송 게스트 초대</option>
+                                                        <option value="">④ 함께 게임 및 친구 추가</option>
+                                                        <option value="">⑤ 방송 중 감사의 인사</option>
+                                                        <option value="">⑥ 팬미팅 진행</option>
+                                                        <option value="">⑦ 대회 영상 크레딧 등재</option>
+                                                        <option value="">⑧ 방송 매니저 등록</option>
+                                                        <option value="">⑨ 다음 대회 우선권 증정</option>
+                                                        <option value="">⑩ 재능 기부</option>
+                                                        <option value="">⑪ 후원자가 원하는 미션 실행</option>
+                                                        <option value="">⑫ 게임 아이템 증정</option>
+                                                        <option value="">⑬ 기프티콘 증정</option>
+                                                        <option value="">⑭ 게임 코치</option>
+                                                        <option value="">⑮ 방송 분장 출현</option>
+                                                        <option value="">⑯ 게임 아이템 강화 도전</option>
+                                                        <option value="">⑰ 대회 한번 더 개최 약속</option>
+                                                        <option value="">⑱ 함께 다음 대회 기획</option>
+                                                        <option value="">⑲ 함께 피시방 밤샘</option>
+                                                        <option value="">⑳ 기타 등</option>
+                                                    </select>
                                                 </div>
-
-                                                <!-- js dynamic form fields : remove -->
-                                                <div class="hide remove-group" id="promiseTemplate">
-                                                    <div class="input-group">
+                                                <div style="padding: 5px;"></div>
+                                                <div class="div_promise" style="display: table; margin: 0 auto;">
+                                                    <!-- js dynamic form fields : add -->
+                                                    <div class="input-group" style="margin: 0 auto;">
                                                         <span class="input-group-addon">₩</span>
-                                                        <input type="text" class="form-control" id="reward" name="promise_value[]" placeholder="예) 200,000">
+                                                        <input type="text" class="form-control" id="promise_value" name="promise_value[]" placeholder="예) 100,000">
                                                         <span class="input-group-addon">도달 시</span>
-                                                        <input type="text" class="form-control" id="reward_spec" name="promise_spec[]" placeholder="예) 참가팀 전원에게 선물">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-danger removeButton" type="button">
-                                                    <span class="glyphicon glyphicon-minus"></span>
-                                                </button>
-                                            </span>
+                                                        <input type="text" class="form-control" id="promise_spec" name="promise_spec[]" placeholder="예) 대회 한번 더 개최 약속">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-success addButton" type="button">
+                                                                <span class="glyphicon glyphicon-plus"></span>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                    <!-- js dynamic form fields : remove -->
+                                                    <div class="hide remove-group" id="promiseTemplate">
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon">₩</span>
+                                                            <input type="text" class="form-control" id="reward" name="promise_value[]" placeholder="예) 200,000">
+                                                            <span class="input-group-addon">도달 시</span>
+                                                            <input type="text" class="form-control" id="reward_spec" name="promise_spec[]" placeholder="예) 참가팀 전원에게 선물">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-danger removeButton" type="button">
+                                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -856,21 +1169,36 @@
                                 </div>
                                 <div id="tab4-1_question1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview col-md-6 col-md-offset-3">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요"> <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- image-preview-clear button -->
-                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                <span class="glyphicon glyphicon-remove"></span> Clear
-                                            </button>
-                                            <!-- image-preview-input -->
-                                            <div class="btn btn-default image-preview-input">
-                                                <span class="glyphicon glyphicon-folder-open"></span>
-                                                <span class="image-preview-input-title">파일 선택</span>
-                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                        <div class="row">
+                                            <h5>진행자님의 프로필 이미지를 업로드해주세요.</h5>
+                                            <!-- image-preview-filename input [CUT FROM HERE]-->
+                                            <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요"> <!-- don't give a name === doesn't send on POST/GET -->
+                                                <span class="input-group-btn">
+                                                    <!-- image-preview-clear button -->
+                                                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                        <span class="glyphicon glyphicon-remove"></span> Clear
+                                                    </button>
+                                                    <!-- image-preview-input -->
+                                                    <div class="btn btn-default image-preview-input">
+                                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                                        <span class="image-preview-input-title">파일 선택</span>
+                                                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                                    </div>
+                                                </span>
                                             </div>
-                                        </span>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -887,9 +1215,24 @@
                                 </div>
                                 <div id="tab4-1_question2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="input-group col-md-4 col-md-offset-4">
-                                            <span class="input-group-addon" id="basic-addon1">이름</span>
-                                            <input type="text" required autocomplete="off" class="form-control" id="profile_name" name="profile_name" value="{{ user.username }}">
+                                        <div class="row">
+                                            <h5>진행자님의 이름을 입력해주세요.</h5>
+                                            <div class="input-group col-md-4 col-md-offset-4" style="margin: 0 auto;">
+                                                <span class="input-group-addon" id="basic-addon1">이름</span>
+                                                <input type="text" required autocomplete="off" class="form-control" id="profile_name" name="profile_name" value="{{ user.username }}">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -906,13 +1249,28 @@
                                 </div>
                                 <div id="tab4-1_question3" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <div id="profile_introduction" name="profile_introduction" class="summernote"></div>
+                                        <div class="row">
+                                            <h5 style="text-align: center;">진행자님을 간단히 소개해주세요.</h5>
+                                            <div id="profile_introduction" name="profile_introduction" class="summernote"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel panel-default panel-faq hover_collapse">
                                 <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                    <a data-toggle="collapse" data-parent="#accordion-cat-4" href="#tab4-1_question4" style="color: #fff;" aria-expanded="false">
+                                    <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question4" style="color: #fff;" aria-expanded="false">
                                         <h4 class="hover_collapse_title" style="color: #ff9900;">방송 주소</h4>
                                         <h5>
                                             대회가 진행되는 방송의 주소를 입력해주세요.
@@ -922,76 +1280,95 @@
                                 </div>
                                 <div id="tab4-1_question4" class="panel-collapse collapse">
                                     <div class="panel-body" style="margin: 0 auto;">
-                                        <div class="col-md-6 col-md-offset-3">
+                                        <div class="row">
                                             <div style="text-align: center;">
-                                                <h5>
-                                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                                    대회 진행상황을 방송하실 예정이신가요?
-                                                </h5>
-                                                <h5>대회 진행상황을 스트리밍 방송하실 경우</h5>
-                                                <h5>더 원활하고 재밌는 대회 진행이 가능합니다.</h5>
+                                                <div>
+                                                    <h5 style="color: #ff9900;">
+                                                        <span class="glyphicon glyphicon-info-sign"></span>
+                                                        대회 진행상황을 방송하실 예정이신가요?
+                                                    </h5>
+                                                    <h5>대회 진행상황을 스트리밍 방송하실 경우</h5>
+                                                    <h5>더 원활하고 재밌는 대회 진행이 가능합니다.</h5>
+                                                </div>
                                                 <div style="padding: 5px;"></div>
-                                                <h5>
-                                                    <input type="radio" id="streaming" name="streaming" value="yes"> 예
-                                                    &nbsp;
-                                                    <input type="radio" id="streaming" name="streaming" value="no"> 아니요
-                                                </h5>
+                                                <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                        <input type="radio" id="streaming" name="streaming" value="yes"> 예
+                                                    </span>
+                                                    <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                        <input type="radio" id="streaming" name="streaming" value="no"> 아니요
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div id="div_streaming_yes" style="display: none;">
-                                                <div style="padding: 5px;"></div>
-                                                <div style="text-align: center;">
-                                                    <h5>대회를 방송하실 스트리밍 사이트를 선택해주세요.</h5>
-                                                    <h5>여러 사이트로 방송하실 경우 복수 선택이 가능합니다.</h5>
-                                                </div>
-                                                <div style="padding: 5px;"></div>
-                                                <div style="font-size: 14px;">
-                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="afreecatv"> 아프리카tv(afreecatv)<br/>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                        <input id="input_afreecatv" name="input_afreecatv" type="text" class="form-control" placeholder="예) http://play.afreecatv.com/">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <div id="div_streaming_yes" style="display: none;">
+                                                    <div style="padding: 5px;"></div>
+                                                    <div style="text-align: center;">
+                                                        <h5 style="color: #ff9900;">대회를 방송하실 스트리밍 사이트를 선택해주세요.</h5>
+                                                        <h5>여러 사이트로 방송하실 경우 복수 선택이 가능합니다.</h5>
                                                     </div>
-                                                </div>
-                                                <br/>
-                                                <div style="font-size: 14px;">
-                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="twitch"> 트위치(twitch)<br/>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                        <input id="input_twitch" name="input_twitch" type="text" class="form-control" placeholder="예) https://www.twitch.tv/">
+                                                    <div style="padding: 5px;"></div>
+                                                    <div style="font-size: 14px;">
+                                                        <input id="streaming_type" name="streaming_type" type="checkbox" value="afreecatv"> 아프리카tv(afreecatv)
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                            <input id="input_afreecatv" name="input_afreecatv" type="text" class="form-control" placeholder="예) http://play.afreecatv.com/">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <br/>
-                                                <div style="font-size: 14px;">
-                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="youtube"> 유투브(youtube)<br/>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                        <input id="input_youtube" name="input_youtube" type="text" class="form-control" placeholder="예) https://www.youtube.com/">
+                                                    <br/>
+                                                    <div style="font-size: 14px;">
+                                                        <input id="streaming_type" name="streaming_type" type="checkbox" value="twitch"> 트위치(twitch)<br/>
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                            <input id="input_twitch" name="input_twitch" type="text" class="form-control" placeholder="예) https://www.twitch.tv/">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <br/>
-                                                <div style="font-size: 14px;">
-                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="daumtvpot"> 다음 tv팟(tvpot)<br/>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                        <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) http://tvpot.daum.net/">
+                                                    <br/>
+                                                    <div style="font-size: 14px;">
+                                                        <input id="streaming_type" name="streaming_type" type="checkbox" value="youtube"> 유투브(youtube)<br/>
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                            <input id="input_youtube" name="input_youtube" type="text" class="form-control" placeholder="예) https://www.youtube.com/">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <br/>
-                                                <div style="font-size: 14px;">
-                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="facebook"> 페이스북(facebook)<br/>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                        <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) https://www.facebook.com/">
+                                                    <br/>
+                                                    <div style="font-size: 14px;">
+                                                        <input id="streaming_type" name="streaming_type" type="checkbox" value="daumtvpot"> 다음 tv팟(tvpot)<br/>
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                            <input id="input_daumtvpot" name="input_daumtvpot" type="text" class="form-control" placeholder="예) http://tvpot.daum.net/">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <br/>
-                                                <div style="font-size: 14px;">
-                                                    <input id="streaming_type" name="streaming_type" type="checkbox" value="etc"> 기타<br/>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                        <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="URL을 입력해주세요.">
+                                                    <br/>
+                                                    <div style="font-size: 14px;">
+                                                        <input id="streaming_type" name="streaming_type" type="checkbox" value="facebook"> 페이스북(facebook)<br/>
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                            <input id="input_facebook" name="input_facebook" type="text" class="form-control" placeholder="예) https://www.facebook.com/">
+                                                        </div>
                                                     </div>
+                                                    <br/>
+                                                    <div style="font-size: 14px;">
+                                                        <input id="streaming_type" name="streaming_type" type="checkbox" value="etc"> 기타<br/>
+                                                        <div class="input-group" style="margin: 0 auto;">
+                                                            <span class="input-group-addon" id="basic-addon1">URL</span>
+                                                            <input id="input_etc" name="input_etc" type="text" class="form-control" placeholder="URL을 입력해주세요.">
+                                                        </div>
+                                                    </div>
+                                                    <br/>
                                                 </div>
-                                                <br/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1014,10 +1391,25 @@
                                 </div>
                                 <div id="tab4-2_question1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center;">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <div class="input-group" style="margin: 0 auto;">
-                                                <span class="input-group-addon" id="basic-addon1">E-mail</span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="profile_email" name="profile_email" value="{{ user.email }}">
+                                        <div class="row">
+                                            <h5>진행자님의 이메일 주소를 입력해주세요.</h5>
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" id="basic-addon1">E-mail</span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="profile_email" name="profile_email" value="{{ user.email }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1035,10 +1427,25 @@
                                 </div>
                                 <div id="tab4-2_question2" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <div class="input-group" style="margin: 0 auto;">
-                                                <span class="input-group-addon" id="basic-addon1">연락처</span>
-                                                <input type="text" required autocomplete="off" class="form-control" id="profile_phone" name="profile_phone" placeholder="예) 010-1234-5678">
+                                        <div class="row">
+                                            <h5>진행자님의 휴대폰 번호를 입력해주세요.</h5>
+                                            <div class="col-md-6 col-md-offset-3">
+                                                <div class="input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" id="basic-addon1">연락처</span>
+                                                    <input type="text" required autocomplete="off" class="form-control" id="profile_phone" name="profile_phone" placeholder="예) 010-1234-5678">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1061,17 +1468,38 @@
                                 </div>
                                 <div id="tab4-3_question1" class="panel-collapse collapse">
                                     <div class="panel-body" style="text-align: center">
-                                        <blockquote style="font-size: 14px">
-                                            오픈아레나 크리에이터로 등록하시면<br/>
-                                            더욱 더 빠르게 대회를 등록하고 관리하실 수 있으며<br/>
-                                            메인과 상단 '크리에이터 소개' 메뉴에 소개되어<br/>
-                                            더 많은 사람들이 대회에 관심을 가질 수 있게 됩니다.<br/>
-                                        </blockquote>
-                                        <h5>
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예
-                                            &nbsp;
-                                            <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
-                                        </h5>
+                                        <div class="row">
+                                            <div>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    오픈아레나 크리에이터로 등록하시면<br/>
+                                                </h5>
+                                                <h5>더욱 더 빠르게 대회를 등록하고 관리하실 수 있으며</h5>
+                                                <h5>메인과 상단 '크리에이터 소개' 메뉴에 소개되어</h5>
+                                                <h5>더 많은 사람들이 대회에 관심을 가질 수 있게 됩니다.</h5>
+                                            </div>
+                                            <div style="padding: 5px;"></div>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                        <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes"> 예
+                                                    </span>
+                                                    <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                        <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 아니요
+                                                    </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="submit" class="btn btn-default hover_previous" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1413,6 +1841,19 @@
             $("#page4_previous").on('click', function() {
                 $('#tab3').click();
             });
+
+            /* hover_save 저장하기 */
+            function mouseOver_save() {
+                $(this).css("background", "#ff9900");
+                $(this).css("color", "#fff");
+                $(this).css("border-color", "#ff9900");
+            }
+            function mouseOut_save() {
+                $(this).css("background", "#1a1a1a");
+                $(this).css("color", "#fff");
+                $(this).css("border-color", "#fff");
+            }
+            $('.hover_save').bind('mouseover', mouseOver_save).bind('mouseout', mouseOut_save);
         });
     </script>
 

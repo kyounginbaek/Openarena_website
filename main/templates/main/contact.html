@@ -81,12 +81,14 @@
         $(document).ready(function() {
             /* hover-border-color-change */
             function mouseOver_a() {
+                $(this).css("background", "#ff9900");
+                $(this).css("color", "#fff");
                 $(this).css("border-color", "#ff9900");
-                $(this).css("color", "#ff9900");
             }
             function mouseOut_a() {
-                $(this).css("border-color", "#fff");
+                $(this).css("background", "#1a1a1a");
                 $(this).css("color", "#fff");
+                $(this).css("border-color", "#fff");
             }
             $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
 

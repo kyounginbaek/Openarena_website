@@ -52,7 +52,7 @@
                             <div style="margin: 0 auto; text-align: center">
                                 <ul class="pager" style="margin-top: 5px; display: inline-block;">
                                     <li class="making_tournament">
-                                        <a id="making_tournament" class="" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                        <a id="making_tournament" class="" href="javascript:void(0)" style="background: #ff9900; color: #fff; border-color: #ff9900">
                                             만든 대회
                                         </a>
                                     </li>
@@ -167,7 +167,7 @@
                             <div style="margin: 0 auto; text-align: center">
                                 <ul class="pager" style="margin-top: 5px; display: inline-block;">
                                     <li class="my_team">
-                                        <a id="my_team" class="" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                        <a id="my_team" class="" href="javascript:void(0)" style="background: #ff9900; color: #fff; border-color: #ff9900">
                                             나의 팀
                                         </a>
                                     </li>
@@ -407,12 +407,14 @@
 
             /* hover-border-color-change */
             function mouseOver_a() {
+                $(this).css("background", "#ff9900");
+                $(this).css("color", "#fff");
                 $(this).css("border-color", "#ff9900");
-                $(this).css("color", "#ff9900");
             }
             function mouseOut_a() {
-                $(this).css("border-color", "#fff");
+                $(this).css("background", "#1a1a1a");
                 $(this).css("color", "#fff");
+                $(this).css("border-color", "#fff");
             }
             $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
 
@@ -425,11 +427,13 @@
                 $('#div_funding_tournament').hide();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#participation_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#participation_tournament').css("border-color", "#fff");
+                $('#participation_tournament').css("background", "#1a1a1a");
                 $('#participation_tournament').css("color", "#fff");
+                $('#participation_tournament').css("border-color", "#fff");
                 $('#funding_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#funding_tournament').css("border-color", "#fff");
+                $('#funding_tournament').css("background", "#1a1a1a");
                 $('#funding_tournament').css("color", "#fff");
+                $('#funding_tournament').css("border-color", "#fff");
             });
             $('#participation_tournament').click(function(){
                 $('#div_making_tournament').hide();
@@ -437,11 +441,13 @@
                 $('#div_funding_tournament').hide();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#making_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#making_tournament').css("border-color", "#fff");
+                $('#making_tournament').css("background", "#1a1a1a");
                 $('#making_tournament').css("color", "#fff");
+                $('#making_tournament').css("border-color", "#fff");
                 $('#funding_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#funding_tournament').css("border-color", "#fff");
+                $('#funding_tournament').css("background", "#1a1a1a");
                 $('#funding_tournament').css("color", "#fff");
+                $('#funding_tournament').css("border-color", "#fff");
             });
             $('#funding_tournament').click(function(){
                 $('#div_making_tournament').hide();
@@ -449,11 +455,13 @@
                 $('#div_funding_tournament').show();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#making_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#making_tournament').css("border-color", "#fff");
+                $('#making_tournament').css("background", "#1a1a1a");
                 $('#making_tournament').css("color", "#fff");
+                $('#making_tournament').css("border-color", "#fff");
                 $('#participation_tournament').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#participation_tournament').css("border-color", "#fff");
+                $('#participation_tournament').css("background", "#1a1a1a");
                 $('#participation_tournament').css("color", "#fff");
+                $('#participation_tournament').css("border-color", "#fff");
             });
 
             /* my_team, funding_team */
@@ -463,16 +471,18 @@
                 $('#div_funding_team').hide();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#funding_team').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#funding_team').css("border-color", "#fff");
+                $('#funding_team').css("background", "#1a1a1a");
                 $('#funding_team').css("color", "#fff");
+                $('#funding_team').css("border-color", "#fff");
             });
             $('#funding_team').click(function(){
                 $('#div_my_team').hide();
                 $('#div_funding_team').show();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#my_team').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#my_team').css("border-color", "#fff");
+                $('#my_team').css("background", "#1a1a1a");
                 $('#my_team').css("color", "#fff");
+                $('#my_team').css("border-color", "#fff");
             });
 
             $("#withdrawal_final").click(function(){

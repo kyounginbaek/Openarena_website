@@ -73,6 +73,7 @@ class Tournament(models.Model):
     #tab1
     tournament_name = models.CharField(max_length=40, default='')
     tournament_game = models.CharField(max_length=40, default='')
+    tournament_game_etc = models.CharField(max_length=40, default='')
     tournament_image = models.CharField(max_length=200, default='')
     tournament_summary = summer_fields.SummernoteTextField()
     tournament_url = models.CharField(max_length=40, default='')
@@ -84,43 +85,47 @@ class Tournament(models.Model):
     registration = models.CharField(max_length=20, default='') #yes or no
     #if tournament_registration = yes
     registration_type = models.CharField(max_length=20, default='') #individual or team
-    participation_form = models.CharField(max_length=200, default='')
+    participation_template = models.CharField(max_length=200, default='')
     participation_number = models.CharField(max_length=20, default='')
-    participation_date = models.CharField(max_length=20, default='') #yes or no
-    #if participation_date = yes
+    participation_time = models.CharField(max_length=20, default='') #default or custom
+    #if participation_time = custom
     participation_starttime = models.CharField(max_length=20, default='')
     participation_endtime = models.CharField(max_length=20, default='')
     participation_checkin = models.CharField(max_length=20, default='') #yes or no
     #if participation_checkin = yes
-    participation_checkintime = models.CharField(max_length=20, default='')
+    participation_checkin_time = models.CharField(max_length=20, default='')
     #tab3
+    funding_info = models.CharField(max_length=20, default='') #only yes
     participation_fee = models.CharField(max_length=20, default='') #yes or no
     # if participation_fee = yes
-    participation_fee_value = models.CharField(max_length=20, default='')
+    participation_fee_number = models.CharField(max_length=20, default='')
     funding = models.CharField(max_length=20, default='') #yes or no
     # if funding = yes
     funding_goal = models.CharField(max_length=20, default='')
-    funding_date = models.CharField(max_length=20, default='') #yes or no
-    # if funding_date = yes
+    funding_time = models.CharField(max_length=20, default='') #default or custom
+    # if funding_time = custom
     funding_starttime = models.CharField(max_length=20, default='')
     funding_endtime = models.CharField(max_length=20, default='')
     reward = models.CharField(max_length=20, default='') #yes or no
     #if reward = yes
-    reward_value = models.CharField(max_length=20, default='')
+    reward_number = models.CharField(max_length=20, default='')
     reward_spec = models.CharField(max_length=200, default='')
     promise = models.CharField(max_length=20, default='') #yes or no
     #if promise = yes
-    promise_value = models.CharField(max_length=20, default='')
+    promise_number = models.CharField(max_length=20, default='')
     promise_spec = models.CharField(max_length=200, default='')
-    funding_info = models.CharField(max_length=20, default='') #yes
+    funding_notice = models.CharField(max_length=20, default='') #yes
     #tab4
     profile_image = models.CharField(max_length=200, default='')
+    profile_name_question = models.CharField(max_length=20, default='') #default or custom
     profile_name = models.CharField(max_length=40, default='')
     profile_introduction = summer_fields.SummernoteTextField()
-    streaming_url = models.CharField(max_length=200, default='')
+    streaming_site = models.CharField(max_length=200, default='')
+    streaming_url = models.CharField(max_length=400, default='')
+    profile_email_question = models.CharField(max_length=20, default='')  # default or custom
     profile_email = models.CharField(max_length=40, default='')
     profile_phone = models.CharField(max_length=20, default='')
-    creater_enrollment = models.CharField(max_length=20, default='')
+    creator_enrollment = models.CharField(max_length=20, default='')
     #after submit
     confirm = models.CharField(max_length=20, default='') #yes or no(reviewing)
     #template
@@ -149,6 +154,8 @@ class Participation(models.Model):
     etc2 = models.CharField(max_length=40, default='-')
     etc3 = models.CharField(max_length=40, default='-')
     etc4 = models.CharField(max_length=40, default='-')
+    etc5 = models.CharField(max_length=200, default='-')
+    etc6 = models.CharField(max_length=200, default='-')
     when = models.CharField(max_length=40, default=timezone.localtime(timezone.now()))
     confirm = models.CharField(max_length=20, default='-')
     checkin = models.CharField(max_length=20, default='-')

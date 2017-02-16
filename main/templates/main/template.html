@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
     <!-- A JavaScript event calendar -->
     <link rel='stylesheet' href="{% static 'css/fullcalendar.min.css' %}">
-
-    <style>
-        .fc-sat{color: blue;}
-    </style>
 {% endblock %}
 {% block content %}
     <div class="block-b">
@@ -281,7 +277,7 @@
                             </div>
                             &nbsp;
                             <div style="display: inline-block;">
-                                <input id="edit_description" class="btn btn-default" type="button" value="업데이트">
+                                <input id="edit_description" class="btn btn-default hover_a" type="button" value="업데이트" style="background: #1a1a1a; color: #fff; border-color: #fff">
                             </div>
                         </div>
                         <div class="com_intro_desp hover_div" style="margin-top: 5px;">
@@ -294,7 +290,7 @@
                             <div style="display: inline-block;">
                                 <ul class="pager" style="margin: 0; display: inline-block;">
                                     <li class="free_board">
-                                        <a id="free_board" class="" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                        <a id="free_board" class="" href="javascript:void(0)" style="background: #ff9900; color: #fff; border-color: #ff9900">
                                             자유 게시판
                                         </a>
                                     </li>
@@ -317,10 +313,10 @@
                                     <ul id="commenters">
                                         {% for c in comment_tree %}
                                             <li id="{{ c.id }}" class="" style="margin-left:{{c.depth|add:c.depth}}em;">
-                                                <p style="border-top: 1px solid #eee"></p>
-                                                <p>{{ c.content }}</p>
-                                                <p class="poster" style="color: #D1D1DD">{{ c.username }} 님 - {{ c.date }}</p>
-                                                <p><a href="javascript:return false" class="reply">댓글 달기</a></p>
+                                                <h5 style="border-top: 1px solid #eee"></h5>
+                                                <h5>{{ c.content }}</h5>
+                                                <h5 class="poster" style="color: #D1D1DD">{{ c.username }} 님 - {{ c.date }}</h5>
+                                                <h5><a href="javascript:return false" class="reply">댓글 달기</a></h5>
                                             </li>
                                         {% endfor %}
                                     </ul>
@@ -524,12 +520,14 @@
 
             /* hover-border-color-change */
             function mouseOver_a() {
+                $(this).css("background", "#ff9900");
+                $(this).css("color", "#fff");
                 $(this).css("border-color", "#ff9900");
-                $(this).css("color", "#ff9900");
             }
             function mouseOut_a() {
-                $(this).css("border-color", "#fff");
+                $(this).css("background", "#1a1a1a");
                 $(this).css("color", "#fff");
+                $(this).css("border-color", "#fff");
             }
             $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
 
@@ -542,11 +540,13 @@
                 $('#div_video_board').hide();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#participation_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#participation_board').css("border-color", "#fff");
+                $('#participation_board').css("background-color", "#1a1a1a");
                 $('#participation_board').css("color", "#fff");
+                $('#participation_board').css("border-color", "#fff");
                 $('#video_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#video_board').css("border-color", "#fff");
+                $('#video_board').css("background-color", "#1a1a1a");
                 $('#video_board').css("color", "#fff");
+                $('#video_board').css("border-color", "#fff");
             });
             $('#participation_board').click(function(){
                 $('#div_free_board').hide();
@@ -554,11 +554,13 @@
                 $('#div_video_board').hide();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#free_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#free_board').css("border-color", "#fff");
+                $('#free_board').css("background-color", "#1a1a1a");
                 $('#free_board').css("color", "#fff");
+                $('#free_board').css("border-color", "#fff");
                 $('#video_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#video_board').css("border-color", "#fff");
+                $('#video_board').css("background-color", "#1a1a1a");
                 $('#video_board').css("color", "#fff");
+                $('#video_board').css("border-color", "#fff");
             });
             $('#video_board').click(function(){
                 $('#div_free_board').hide();
@@ -566,11 +568,13 @@
                 $('#div_video_board').show();
                 $(this).unbind('mouseover', mouseOver_a).unbind('mouseout', mouseOut_a);
                 $('#free_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#free_board').css("border-color", "#fff");
+                $('#free_board').css("background-color", "#1a1a1a");
                 $('#free_board').css("color", "#fff");
+                $('#free_board').css("border-color", "#fff");
                 $('#participation_board').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
-                $('#participation_board').css("border-color", "#fff");
+                $('#participation_board').css("background-color", "#1a1a1a");
                 $('#participation_board').css("color", "#fff");
+                $('#participation_board').css("border-color", "#fff");
             });
 
             /* */

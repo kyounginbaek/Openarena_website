@@ -552,7 +552,7 @@ def vsc(request):
         elif request.POST.get('purpose') == "funding":
             url = "https://toss.im/tosspay/api/v1/payments"
             params = {
-                "orderNo": "20170213" + str(random.randrange(1, 99999999)),
+                "orderNo": "20170217" + str(random.randrange(1, 99999999)),
                 "amount": request.POST.get('funding_amount'),
                 "productDesc": tournament_name,
                 "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
@@ -623,7 +623,7 @@ def vsc(request):
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    tournament = Making.objects.filter(tournament_name=tournament_name)
+    tournament = Making.objects.filter(tournament_name='2017 Versetop Shadowverse Cup').values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
@@ -638,10 +638,16 @@ def vsc(request):
     else:
         has_funded = "no"
 
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_maker = "yes"
+    else:
+        is_maker = "no"
+
     return render(request, 'main/vsc.html', {'tournament': tournament, 'participation': participation,
                                               'top_funding': top_funding, 'funding': funding,
                                               'total_amount': total_amount, 'has_funded': has_funded,
-                                              'chat': chat, 'comment_tree': comment_tree, 'video': video})
+                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_maker': is_maker})
 
 def contact(request):
     if request.method == 'POST':

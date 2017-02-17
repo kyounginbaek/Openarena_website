@@ -2,29 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/scc2/scc2_cover2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/scc2/scc2_tournament.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/vsc/vsc_cover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/vsc/vsc_example1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/vsc/vsc_example2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/vsc/vsc_example3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/vsc/vsc_logo.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/img/vsc/vsc_poster.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/templates/main/vsc.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/main/static/img/scc2/scc2_cover.png" afterPath="$PROJECT_DIR$/main/static/img/scc2/scc2_poster.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/admin.py" afterPath="$PROJECT_DIR$/main/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/create.html" afterPath="$PROJECT_DIR$/main/templates/main/create.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/scc2.html" afterPath="$PROJECT_DIR$/main/templates/main/scc2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/template.html" afterPath="$PROJECT_DIR$/main/templates/main/template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/tournaments.html" afterPath="$PROJECT_DIR$/main/templates/main/tournaments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/urls.py" afterPath="$PROJECT_DIR$/main/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/vsc.html" afterPath="$PROJECT_DIR$/main/templates/main/vsc.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openarena/settings.py" afterPath="$PROJECT_DIR$/openarena/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/fullcalendar.min.css" afterPath="$PROJECT_DIR$/static/css/fullcalendar.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="$PROJECT_DIR$/static/css/landing-page.css" />
     </list>
     <ignored path="openarena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,25 +42,38 @@
       <file leaf-file-name="vsc.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/templates/main/vsc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="502" column="87" selection-start-line="502" selection-start-column="87" selection-end-line="502" selection-end-column="87" />
+            <state relative-caret-position="315">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
-                <element signature="e#11524#11567#0#HTML" expanded="true" />
-                <element signature="e#24011#24034#0#HTML" expanded="true" />
-                <element signature="e#25075#25098#0#HTML" expanded="true" />
-                <element signature="e#25584#25609#0#HTML" expanded="true" />
-                <element signature="e#25647#25670#0#HTML" expanded="true" />
-                <element signature="e#26228#26253#0#HTML" expanded="true" />
-                <element signature="e#26338#26363#0#HTML" expanded="true" />
-                <element signature="e#26452#26476#0#HTML" expanded="true" />
-                <element signature="e#26773#26796#0#HTML" expanded="true" />
-                <element signature="e#27362#27385#0#HTML" expanded="true" />
-                <element signature="e#27950#27973#0#HTML" expanded="true" />
-                <element signature="e#28540#28563#0#HTML" expanded="true" />
-                <element signature="e#29126#29149#0#HTML" expanded="true" />
-                <element signature="e#29714#29737#0#HTML" expanded="true" />
-                <element signature="e#30301#30324#0#HTML" expanded="true" />
+                <element signature="e#6215#6236#0#HTML" expanded="true" />
+                <element signature="e#11540#11583#0#HTML" expanded="true" />
+                <element signature="e#11848#11872#0#HTML" expanded="true" />
+                <element signature="e#16877#16907#0#HTML" expanded="true" />
+                <element signature="e#17365#17406#0#HTML" expanded="true" />
+                <element signature="e#24185#24208#0#HTML" expanded="true" />
+                <element signature="e#25249#25272#0#HTML" expanded="true" />
+                <element signature="e#25758#25783#0#HTML" expanded="true" />
+                <element signature="e#25821#25844#0#HTML" expanded="true" />
+                <element signature="e#26402#26427#0#HTML" expanded="true" />
+                <element signature="e#26512#26537#0#HTML" expanded="true" />
+                <element signature="e#26922#26945#0#HTML" expanded="true" />
+                <element signature="e#27511#27534#0#HTML" expanded="true" />
+                <element signature="e#28099#28122#0#HTML" expanded="true" />
+                <element signature="e#28689#28712#0#HTML" expanded="true" />
+                <element signature="e#29275#29298#0#HTML" expanded="true" />
+                <element signature="e#29863#29886#0#HTML" expanded="true" />
+                <element signature="e#30450#30473#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="privacy.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,8 +91,18 @@
       <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="600">
               <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2880">
+              <caret line="216" column="50" selection-start-line="216" selection-start-column="50" selection-end-line="216" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -108,8 +111,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="540" column="38" selection-start-line="540" selection-start-column="38" selection-end-line="540" selection-end-column="38" />
+            <state relative-caret-position="1479">
+              <caret line="641" column="56" selection-start-line="641" selection-start-column="56" selection-end-line="641" selection-end-column="56" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -182,9 +185,9 @@
         <option value="$PROJECT_DIR$/main/templates/main/tournaments.html" />
         <option value="$PROJECT_DIR$/main/templates/main/scc2.html" />
         <option value="$PROJECT_DIR$/main/templates/main/template.html" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/main/admin.py" />
+        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/templates/main/vsc.html" />
       </list>
     </option>
@@ -804,7 +807,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2819063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -814,7 +817,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375919" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375919" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1104,14 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1138,14 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="154" column="55" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -1159,24 +1146,6 @@
         <state relative-caret-position="217">
           <caret line="834" column="76" selection-start-line="834" selection-start-column="76" selection-end-line="834" selection-end-column="76" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="540" column="38" selection-start-line="540" selection-start-column="38" selection-end-line="540" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,26 +1173,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="216" column="50" selection-start-line="216" selection-start-column="50" selection-end-line="216" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="641" column="56" selection-start-line="641" selection-start-column="56" selection-end-line="641" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/vsc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="502" column="87" selection-start-line="502" selection-start-column="87" selection-end-line="502" selection-end-column="87" />
+        <state relative-caret-position="315">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#11524#11567#0#HTML" expanded="true" />
-            <element signature="e#24011#24034#0#HTML" expanded="true" />
-            <element signature="e#25075#25098#0#HTML" expanded="true" />
-            <element signature="e#25584#25609#0#HTML" expanded="true" />
-            <element signature="e#25647#25670#0#HTML" expanded="true" />
-            <element signature="e#26228#26253#0#HTML" expanded="true" />
-            <element signature="e#26338#26363#0#HTML" expanded="true" />
-            <element signature="e#26452#26476#0#HTML" expanded="true" />
-            <element signature="e#26773#26796#0#HTML" expanded="true" />
-            <element signature="e#27362#27385#0#HTML" expanded="true" />
-            <element signature="e#27950#27973#0#HTML" expanded="true" />
-            <element signature="e#28540#28563#0#HTML" expanded="true" />
-            <element signature="e#29126#29149#0#HTML" expanded="true" />
-            <element signature="e#29714#29737#0#HTML" expanded="true" />
-            <element signature="e#30301#30324#0#HTML" expanded="true" />
+            <element signature="e#6215#6236#0#HTML" expanded="true" />
+            <element signature="e#11540#11583#0#HTML" expanded="true" />
+            <element signature="e#11848#11872#0#HTML" expanded="true" />
+            <element signature="e#16877#16907#0#HTML" expanded="true" />
+            <element signature="e#17365#17406#0#HTML" expanded="true" />
+            <element signature="e#24185#24208#0#HTML" expanded="true" />
+            <element signature="e#25249#25272#0#HTML" expanded="true" />
+            <element signature="e#25758#25783#0#HTML" expanded="true" />
+            <element signature="e#25821#25844#0#HTML" expanded="true" />
+            <element signature="e#26402#26427#0#HTML" expanded="true" />
+            <element signature="e#26512#26537#0#HTML" expanded="true" />
+            <element signature="e#26922#26945#0#HTML" expanded="true" />
+            <element signature="e#27511#27534#0#HTML" expanded="true" />
+            <element signature="e#28099#28122#0#HTML" expanded="true" />
+            <element signature="e#28689#28712#0#HTML" expanded="true" />
+            <element signature="e#29275#29298#0#HTML" expanded="true" />
+            <element signature="e#29863#29886#0#HTML" expanded="true" />
+            <element signature="e#30450#30473#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -78,7 +78,7 @@ li.competition-item img{
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    height: 780px;
+    height: auto;
     font-family: 나눔고딕;
     overflow: hidden;
 }

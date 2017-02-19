@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="container total_menu_video" >
+            <div class="container total_menu_video">
                 <div class="menu_video ">
                     <!--menu list-->
                     <div class="menu">
@@ -44,6 +44,23 @@
                     <div class="menu_bar"></div>
                     <!--competition list-->
                     <div class="container" style="padding-left:0; padding-top:10px;">
+                        <a href="{% url 'scc2' %}">
+                            <div class="looking_picture1">
+                                <img src="{% static 'img/scc2/scc2_tournament.png' %}" style="margin-bottom: 10px">
+                                <div class="pic_title"><h4>{{ scc2.tournament_name }}</h4></div>
+                                <div class="pic_subtitle">{{ scc2.summary }}</div>
+                                <div class="pic_dscrp">
+                                    <span style="color: #ffffff">참가 마감</span>
+                                    <a class="pic_num">{{ scc2.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                    {% if scc2_total_amount %}
+                                        모인 상금 <a class="pic_num">{{ scc2_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                    {% else %}
+                                        모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
+                                    {% endif %}
+                                    대회 시작 <a class="pic_num">{{ scc2.starttime }}<span style="color: #ffffff"> 일</span></a>
+                                </div>
+                            </div>
+                        </a>
                         <a href="{% url 'macho2' %}">
                             <div class="looking_picture1">
                                 <img src="{% static 'img/macho2/macho2_preview.png' %}" style="margin-bottom: 10px">

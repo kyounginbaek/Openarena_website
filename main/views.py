@@ -16,14 +16,48 @@ def home(request):
 def tournaments(request):
     vsc = Making.objects.filter(tournament_name='2017 Versetop Shadowverse Cup').values().get()
     vsc_participation = Participation.objects.filter(tournament_name='2017 Versetop Shadowverse Cup')
+    vsc_funding = Funding.objects.filter(tournament_name='2017 Versetop Shadowverse Cup')
     vsc_total_amount = Funding.objects.filter(tournament_name='2017 Versetop Shadowverse Cup').aggregate(Sum('amount'))
+
+    ringoncup = Making.objects.filter(tournament_name='제2회 섀도우버스 링곤컵').values().get()
+    ringoncup_participation = Participation.objects.filter(tournament_name='제2회 섀도우버스 링곤컵')
+    ringoncup_funding = Funding.objects.filter(tournament_name='제2회 섀도우버스 링곤컵')
+    ringoncup_total_amount = Funding.objects.filter(tournament_name='제2회 섀도우버스 링곤컵').aggregate(Sum('amount'))
+
+    scc3 = Making.objects.filter(tournament_name='제3회 Slayer Conqueror Cup').values().get()
+    scc3_participation = Participation.objects.filter(tournament_name='제3회 Slayer Conqueror Cup')
+    scc3_funding = Funding.objects.filter(tournament_name='제3회 Slayer Conqueror Cup')
+    scc3_total_amount = Funding.objects.filter(tournament_name='제3회 Slayer Conqueror Cup').aggregate(Sum('amount'))
+
+    return render(request, 'main/tournaments.html', {'vsc': vsc, 'vsc_participation': vsc_participation, 'vsc_funding': vsc_funding, 'vsc_total_amount': vsc_total_amount,
+                                                     'ringoncup': ringoncup, 'ringoncup_participation': ringoncup_participation, 'ringoncup_funding': ringoncup_funding, 'ringoncup_total_amount': ringoncup_total_amount,
+                                                     'scc3': scc3, 'scc3_participation': scc3_participation, 'scc3_funding': scc3_funding, 'scc3_total_amount': scc3_total_amount})
+
+def archive(request):
+    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
+
+    whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
+    macho_participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
+    migal_participation = Participation.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    migal_total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
+
+    macho2 = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
+    macho2_participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
+    macho2_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').aggregate(Sum('amount'))
 
     scc2 = Making.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').values().get()
     scc2_participation = Participation.objects.filter(tournament_name='제2회 Slayer Conqueror Cup')
     scc2_total_amount = Funding.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').aggregate(Sum('amount'))
 
-    return render(request, 'main/tournaments.html', {'scc2': scc2, 'scc2_participation': scc2_participation,'scc2_total_amount': scc2_total_amount,
-                                                     'vsc': vsc, 'vsc_participation': vsc_participation, 'vsc_total_amount': vsc_total_amount})
+    return render(request, 'main/archive.html', {'whyachi': whyachi, 'whyachi_participation': whyachi_participation, 'whyachi_total_amount': whyachi_total_amount,
+                                                 'macho': macho, 'macho_participation': macho_participation, 'macho_total_amount': macho_total_amount,
+                                                 'migal': migal, 'migal_participation': migal_participation, 'migal_total_amount': migal_total_amount,
+                                                 'macho2': macho2, 'macho2_participation': macho2_participation, 'macho2_total_amount': macho2_total_amount,
+                                                 'scc2': scc2, 'scc2_participation': scc2_participation, 'scc2_total_amount': scc2_total_amount})
 
 def clubs(request):
     return render(request, 'main/clubs.html', {})
@@ -79,34 +113,6 @@ def making(request):
         return HttpResponse(json.dumps(response), content_type='application/json')
 
     return render(request, 'main/making.html', {})
-
-def archive(request):
-    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
-    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
-    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
-
-    whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
-    whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
-    macho_participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
-    macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
-    migal_participation = Participation.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
-    migal_total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
-
-    macho2 = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
-    macho2_participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
-    macho2_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').aggregate(Sum('amount'))
-
-    return render(request, 'main/archive.html', {'whyachi': whyachi, 'macho': macho, 'migal': migal,
-                                                 'whyachi_participation': whyachi_participation,
-                                                 'whyachi_total_amount': whyachi_total_amount,
-                                                 'macho_participation': macho_participation,
-                                                 'macho_total_amount': macho_total_amount,
-                                                 'migal_participation': migal_participation,
-                                                 'migal_total_amount': migal_total_amount,
-                                                 'macho2': macho2,
-                                                 'macho2_participation': macho2_participation,
-                                                 'macho2_total_amount': macho2_total_amount
-                                                 })
 
 def hallfame(request):
     return render(request, 'main/hallfame.html', {})
@@ -528,6 +534,7 @@ def scc2(request):
 
 @csrf_exempt
 def vsc(request):
+    tournament_id = 6
     tournament_name = "2017 Versetop Shadowverse Cup"
 
     chat = Chat.objects.filter(tournament_name=tournament_name)
@@ -537,7 +544,7 @@ def vsc(request):
     if request.method == 'POST':
         if request.POST.get('purpose') == "participation":
             # save 코드
-            participation_obj = Participation(tournament_id=6, tournament_name=tournament_name,
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
                                               username=request.user.username,
                                               name=request.POST.get('participation_name'),
                                               email=request.user.email,
@@ -564,7 +571,7 @@ def vsc(request):
 
             if result.json().get('status') == 200 and result.json().get('code') != -1:
                 # save 코드
-                funding_obj = Fundingdummy(tournament_id=5, tournament_name=tournament_name,
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
                                            username=request.user.username, email=request.user.email,
                                            comment=request.POST.get('funding_comment'),
                                            orderno=params.get('orderNo'), amount=params.get('amount'))
@@ -623,7 +630,7 @@ def vsc(request):
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
-    tournament = Making.objects.filter(tournament_name='2017 Versetop Shadowverse Cup').values().get()
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
     participation = Participation.objects.filter(tournament_name=tournament_name)
 
     top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
@@ -640,14 +647,260 @@ def vsc(request):
 
     # 대회 개최자일 경우 공지사항 수정 가능하도록
     if request.user.username == tournament.get('username'):
-        is_maker = "yes"
+        is_creator = "yes"
     else:
-        is_maker = "no"
+        is_creator = "no"
 
     return render(request, 'main/vsc.html', {'tournament': tournament, 'participation': participation,
                                               'top_funding': top_funding, 'funding': funding,
                                               'total_amount': total_amount, 'has_funded': has_funded,
-                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_maker': is_maker})
+                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_maker': is_creator})
+
+@csrf_exempt
+def ringoncup(request):
+    tournament_id = 7
+    tournament_name = "제2회 섀도우버스 링곤컵"
+
+    chat = Chat.objects.filter(tournament_name=tournament_name)
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
+
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
+                                              username=request.user.username,
+                                              email=request.user.email,
+                                              phone=request.POST.get('participation_phone'),
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3=request.POST.get('participation_etc3'))
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20170219" + str(random.randrange(1, 99999999)),
+                "amount": request.POST.get('funding_amount'),
+                "productDesc": tournament_name,
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-03-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
+                                           username=request.user.username, email=request.user.email,
+                                           comment=request.POST.get('funding_comment'),
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
+    top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament_name)
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament_name)
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/ringoncup.html', {'tournament': tournament, 'participation': participation,
+                                              'top_funding': top_funding, 'funding': funding,
+                                              'total_amount': total_amount, 'has_funded': has_funded,
+                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+
+@csrf_exempt
+def scc3(request):
+    tournament_id = 8
+    tournament_name = "제3회 Slayer Conqueror Cup"
+
+    chat = Chat.objects.filter(tournament_name=tournament_name)
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
+
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
+                                              username=request.user.username,
+                                              name=request.POST.get('participation_name'),
+                                              email=request.user.email,
+                                              phone=request.POST.get('participation_phone'),
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3=request.POST.get('participation_etc3'),
+                                              etc4=request.POST.get('participation_etc4'))
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20170220" + str(random.randrange(1, 99999999)),
+                "amount": request.POST.get('funding_amount'),
+                "productDesc": tournament_name,
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-03-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
+                                           username=request.user.username, email=request.user.email,
+                                           comment=request.POST.get('funding_comment'),
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
+    top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament_name)
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament_name)
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/scc3.html', {'tournament': tournament, 'participation': participation,
+                                              'top_funding': top_funding, 'funding': funding,
+                                              'total_amount': total_amount, 'has_funded': has_funded,
+                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
 
 def contact(request):
     if request.method == 'POST':

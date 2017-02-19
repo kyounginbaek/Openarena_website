@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^macho2/$', views.macho2, name='macho2'),
     url(r'^scc2/$', views.scc2, name='scc2'),
     url(r'^vsc/$', views.vsc, name='vsc'),
+    url(r'^ringoncup/$', views.ringoncup, name='ringoncup'),
+    url(r'^scc3/$', views.scc3, name='scc3'),
 
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),

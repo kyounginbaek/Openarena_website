@@ -113,7 +113,7 @@
                             <div style="overflow: hidden; clear: both;">
                                 <h4 style="color: #f7941e">• 대회 소개 및 규칙</h4>
                                 <div class="com_intro_now hover_div">
-                                    <img src="{% static 'img/vsc/vsc_poster.png' %}">
+                                    <img src="{% static 'img/scc3/scc3_poster.jpeg' %}">
                                     <div style="padding: 5px;"></div>
                                     <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
                                 </div>
@@ -398,6 +398,17 @@
                         </div>
                         <form id="funding_form" method="POST">{% csrf_token %}
                             <div class="modal-body">
+                                <h5 style="color: #ff9900;">
+                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                    다음을 꼭 확인해주세요!
+                                </h5>
+                                <h5>SSC에 후원을 해주신 후원자의 후원명은 모두 방송중계 중에 최소 1번 이상 자막 혹은 육성을 통해 언급될 예정입니다.</h5>
+                                <h5>또한 후원자 중 최대금액 후원자 2명을 선정해, 후원자가 원하는 시간에 최대한 맞춰 Team Conqueror의 멤버 중 후원자가 원하는 멤버가 Shadowverse 플레이 코칭을 할 예정입니다.</h5>
+                                <h5>코칭은 1시간 정도 진행할 예정이며, 후원자가 원할 경우 방송으로 송출될 수 있습니다.</h5>
+                                <h5>최대금액 후원자는 다음 SCC 의 대회명을 결정할 수 있습니다. 단, 지나치게 외설적이거나 사회적으로 문제될만한 대회명은 불가합니다.</h5>
+                                <h5>(예) Gravekper님이 5만원으로 최대 후원자가 되고, Gravekper님의 희망으로 다음 컵 대회의 이름을 거품목욕배 SCC with Openarena로 변경 가능합니다.</h5>
+                            </div>
+                            <div class="modal-body">
                                 <!-- content goes here -->
                                 <input type="hidden" class="form-control" id="purpose" name="purpose" value="funding">
                                 <div class="form-group">
@@ -420,7 +431,6 @@
                                 </div>
                             </div>
                             <div class="modal-body">
-                                <h5 style="color: #ff9900;">* 후원해주신 모든 분들에게 방송을 통해 감사의 말씀을 전해드릴 예정입니다.</h5>
                                 <button type="submit" class="join_submit">후원하기</button>
                             </div>
                         </form>
@@ -553,11 +563,11 @@
     <script>
         $(document).ready(function(){
             $("#participation").click(function(){
-                window.open("http://twitch.tv/mascahs");
+                window.open("https://battlefy.com/team-conqueror/slayer-conqueror-cup-3-with-openarena/589c01c2a71b5c450341a737/info?infoTab=details");
             });
 
             $("#streaming").click(function(){
-                window.open("http://twitch.tv/mascahs");
+                window.open("www.twitch.tv/silentslayerhs");
             });
 
             $(".btn-pref .btn").click(function(){
@@ -640,7 +650,7 @@
                 var newWindow = window.open("","_blank");
                 $.ajax({
                     type: 'POST',
-                    url: '/vsc/',
+                    url: '/scc3/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
@@ -655,7 +665,7 @@
                 serializedData = $("#participation_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/vsc/',
+                    url: '/scc3/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
@@ -687,7 +697,7 @@
                 serializedData = $("#comment_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/vsc/',
+                    url: '/scc3/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(data) {
@@ -708,17 +718,13 @@
                 eventLimit: true, // allow "more" link when too many events
                 events: [
                     {
-                        title: '참가자 모집',
-                        start: '2017-02-18',
-                        end: '2017-02-25'
+                        title: '참가자 모집(대회 시작 전까지)',
+                        start: '2017-02-20T19:00:00',
+                        end: '2017-02-26'
                     },
                     {
-                        title: '예선 시작',
-                        start: '2017-02-25T12:00:00'
-                    },
-                    {
-                        title: '본선 시작',
-                        start: '2017-03-04T13:00:00',
+                        title: '대회 진행',
+                        start: '2017-02-26T13:00:00'
                     },
                 ]
             });
@@ -740,7 +746,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: '/vsc/',
+                        url: '/scc3/',
                         data: serializedData,
                         dataType: 'json',
                         success: function(response) {

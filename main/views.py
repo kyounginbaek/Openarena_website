@@ -10,6 +10,8 @@ from main.models import Making, Fundingdummy, Funding, Participation, Video, Pri
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 
+
+
 def home(request):
     return render(request, 'main/home.html', {})
 

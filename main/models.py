@@ -95,7 +95,8 @@ class Tournament(models.Model):
     #if participation_checkin = yes
     participation_checkin_time = models.CharField(max_length=20, default='')
     #tab3
-    funding_info = models.CharField(max_length=20, default='') #only yes
+    funding_notice = models.CharField(max_length=20, default='') #only yes
+    account_notice = models.CharField(max_length=20, default='')  #only yes
     participation_fee = models.CharField(max_length=20, default='') #yes or no
     # if participation_fee = yes
     participation_fee_number = models.CharField(max_length=20, default='')
@@ -122,9 +123,10 @@ class Tournament(models.Model):
     profile_introduction = summer_fields.SummernoteTextField()
     streaming_site = models.CharField(max_length=200, default='')
     streaming_url = models.CharField(max_length=400, default='')
-    profile_email_question = models.CharField(max_length=20, default='')  # default or custom
+    profile_email_question = models.CharField(max_length=20, default='')  #default or custom
     profile_email = models.CharField(max_length=40, default='')
     profile_phone = models.CharField(max_length=20, default='')
+    profile_account = models.CharField(max_length=40, default='')
     creator_enrollment = models.CharField(max_length=20, default='')
     #after submit
     confirm = models.CharField(max_length=20, default='') #yes or no(reviewing)

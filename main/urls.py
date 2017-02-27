@@ -1,5 +1,7 @@
 from django.conf.urls import url, include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -18,6 +20,7 @@ urlpatterns = [
     url(r'^vsc/$', views.vsc, name='vsc'),
     url(r'^ringoncup/$', views.ringoncup, name='ringoncup'),
     url(r'^scc3/$', views.scc3, name='scc3'),
+    url(r'^chainkiller_s1/$', views.chainkiller_s1, name='chainkiller_s1'),
 
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),
@@ -26,4 +29,5 @@ urlpatterns = [
     url(r'^chat/$', views.chat, name='chat'),
     url(r'^create/$', views.create, name='create'),
     url(r'^template/$', views.template, name='template'),
-]
+    url(r'^test/$', views.test, name='test'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

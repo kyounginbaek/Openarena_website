@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
+
 from accounts.forms import RegistrationForm, AuthenticationForm
 from main.models import Making, Funding, Participation
 
@@ -71,6 +72,19 @@ def mypage(request):
         messages.success(request, "로그인이 필요한 페이지입니다. 먼저 로그인을 해주세요.")
         return render(request, 'accounts/login.html', {})
     else:
+        if request.method == 'POST':
+            user = User.objects.get(username=request.user.username)
+            success = user.check_password(request.POST['current_password'])
+            if success:
+                #현재 비밀번호 확인 후 신규 비밀번호로 변경
+                user.set_password(request.POST['new_password'])
+                user.save()
+                response = {'status': 'success', 'message': "비밀번호가 변경되었습니다. 새로운 비밀번호로 로그인해주세요."}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail', 'message': "현재 비밀번호가 틀렸습니다. 다시 한번 입력해주세요."}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
         # 초기화
         participation_info = 0
         funding_info = 0

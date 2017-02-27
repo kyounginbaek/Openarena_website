@@ -67,20 +67,21 @@
                     </div>
                 </div>
                 <div class="container" style="padding-left:0; padding-top:10px;">
-                    <a href="{% url 'scc3' %}">
+                    <a href="{% url 'chainkiller_s1' %}">
                         <div class="looking_picture1">
-                            <img src="{% static 'img/scc3/scc3_cover.png' %}" style="margin-bottom: 10px">
-                            <div class="pic_title"><h4>{{ scc3.tournament_name }}</h4></div>
-                            <div class="pic_subtitle">{{ scc3.summary }}</div>
+                            <img src="{% static 'img/chainkiller_s1/chainkiller_s1_poster.png' %}" style="margin-bottom: 10px">
+                            <div class="pic_title"><h4>{{ chainkiller_s1.tournament_name }}</h4></div>
+                            <div class="pic_subtitle">{{ chainkiller_s1.summary }}</div>
                             <div class="pic_dscrp">
-                                <span style="color: #ffffff">참가 마감</span>
-                                <a class="pic_num">{{ scc3.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
-                                {% if scc3_funding %}
-                                    모인 상금 <a class="pic_num">{{ scc3_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ chainkiller_s1_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
+                                참가 마감
+                                <a class="pic_num">{{ chainkiller_s1.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                {% if chainkiller_s1_funding %}
+                                    모인 상금 <a class="pic_num">{{ chainkiller_s1_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
                                 {% else %}
                                     모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
                                 {% endif %}
-                                대회 시작 <a class="pic_num">{{ scc3.starttime }}<span style="color: #ffffff"> 일</span></a>
+                                대회 시작 <a class="pic_num">{{ chainkiller_s1.starttime }}<span style="color: #ffffff"> 일</span></a>
                             </div>
                         </div>
                     </a>
@@ -88,7 +89,7 @@
                         <div class="looking_picture1">
                             <img src="{% static 'img/ringoncup/ringoncup_poster.jpeg' %}" style="margin-bottom: 10px">
                             <div class="pic_title"><h4>{{ ringoncup.tournament_name }}</h4></div>
-                            <div class="pic_subtitle">{{ riingoncup.summary }}</div>
+                            <div class="pic_subtitle">{{ ringoncup.summary }}</div>
                             <div class="pic_dscrp">
                                 <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ ringoncup_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
                                 참가 마감

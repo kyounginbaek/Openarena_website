@@ -1,0 +1,348 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block title %} 오픈아레나:대회 만들기 {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.datetimepicker.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="block-b">
+        <div class="com_header_inner">
+        </div>
+
+        <div class="com_mid">
+            <!--competition list-->
+            <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                <!-- 대회 개요 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="tab1" class="btn btn-primary no_border " href="#com_tab1" data-toggle="tab">
+                        <span class="list_btn">대회 개요</span>
+                    </button>
+                </div>
+                <!-- 후원 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="tab3" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
+                        <span class="list_btn">후원 설정</span>
+                    </button>
+                </div>
+                <!-- 대회 세부 사항 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="tab2" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
+                        <span class="list_btn">대회 세부 사항</span>
+                    </button>
+                </div>
+                <!-- 진행자 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="tab4" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
+                        <span class="list_btn">진행자 설정</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <!-- competition list -->
+                <!-- com_tab1 -->
+                <div class="tab-pane fade in active" id="com_tab1">
+                    <br/>
+                    <h4 style="color: #ff9900;">• 대회 개요</h4>
+                    <h5>모든 항목에 <span class="glyphicon glyphicon-ok-sign"></span> 표시가 나타나야 제출이 가능합니다.</h5>
+                    <!-- tab-pane -->
+                    <div class="panel-group" id="accordion-cat-1">
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question3" style="color: #fff;" aria-expanded="false">
+                                    <h4 class="hover_collapse_title" style="color: #ff9900;">
+                                        대회 대표 이미지
+                                        <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                    </h4>
+                                    <h5>
+                                        대회 대표 이미지를 업로드해주세요.
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div id="tab1_question3" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <form id="tournament_image_form" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                        <div class="row">
+                                            <h5>대회의 대표 이미지 혹은 포스터를 업로드해주세요.</h5>
+                                            <h5>이미지는 다음과 같이 사용됩니다.</h5>
+                                            <!-- image-preview-filename input [CUT FROM HERE]-->
+                                            <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
+                                                <span class="input-group-btn">
+                                                    <!-- image-preview-clear button -->
+                                                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                        <span class="glyphicon glyphicon-remove"></span> 취소하기
+                                                    </button>
+                                                    <!-- image-preview-input -->
+                                                    <div class="btn btn-default image-preview-input">
+                                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                                        <span class="image-preview-input-title">파일선택</span>
+                                                        <input id="tournament_image" required type="file" accept="image/png, image/jpeg, image/gif" name="tournament_image"> <!-- rename it -->
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- previous & next button -->
+                    <ul class="pager">
+                        <li class="next">
+                            <a id="page1_next" class="hover_pager" href="javascript:void(0)" style="background: #1a1a1a; color: #ff9900; border-color: #ff9900">
+                                다음
+                                <span class="glyphicon glyphicon-menu-right"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function(){
+            $('.summernote').summernote({focus: true});
+
+            $(".btn-pref .btn").click(function(){
+                $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-custom");
+                // $(".tab").addClass("active"); // instead of this do the below
+                $(this).removeClass("btn-custom").addClass("btn-primary");
+            });
+
+            /* 한글을 제외한 입력만 가능하게 : tournament_url */
+            $("input[name=tournament_url]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+                }
+            });
+
+            /* 대회 규칙 설정 예시 팝업 */
+            $('#tournament_rule_example').change(function() {
+                $(".tournament_rule_example").hide();
+                $("#div_"+this.value).show();
+            });
+
+            /* input : 숫자만 입력이 가능하도록 */
+            $("input[name=participation_number]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                }
+            });
+
+            /* 참가자 수 input-spinner */
+            $('.spinner_participation .btn:first-of-type').on('click', function() {
+                $('.spinner_participation input').val( parseInt($('.spinner_participation input').val(), 10) + 1);
+            });
+            $('.spinner_participation .btn:last-of-type').on('click', function() {
+                $('.spinner_participation input').val( parseInt($('.spinner_participation input').val(), 10) - 1);
+            });
+
+            /* 대회 개최 기간 시작, 마감 */
+            jQuery('#tournament_starttime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+            jQuery('#tournament_endtime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+
+            /* 대회 참가 기간 시작, 마감 */
+            jQuery('#participation_starttime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+            jQuery('#participation_endtime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+
+            /* 대회 펀딩 기간 시작, 마감 */
+            jQuery('#funding_starttime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+            jQuery('#funding_endtime').datetimepicker({
+                step: 5,
+                Locale: 'kr'
+            });
+
+            /* input : 숫자만 입력이 가능하도록 */
+            $("input[name=participation_fee_number]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                }
+            });
+
+            /* 참가비 input-spinner */
+            $('.spinner_participation_fee .btn:first-of-type').on('click', function() {
+                $('.spinner_participation_fee input').val( parseInt($('.spinner_participation_fee input').val(), 10) + 500);
+            });
+            $('.spinner_participation_fee .btn:last-of-type').on('click', function() {
+                $('.spinner_participation_fee input').val( parseInt($('.spinner_participation_fee input').val(), 10) - 500);
+            });
+
+            /* input : 숫자만 입력이 가능하도록 */
+            $("input[name=funding_goal]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                }
+            });
+
+            /* 후원 목표 input-spinner */
+            $('.spinner_funding_goal .btn:first-of-type').on('click', function() {
+                $('.spinner_funding_goal input').val( parseInt($('.spinner_funding_goal input').val(), 10) + 1000);
+            });
+            $('.spinner_funding_goal .btn:last-of-type').on('click', function() {
+                $('.spinner_funding_goal input').val( parseInt($('.spinner_funding_goal input').val(), 10) - 1000);
+            });
+
+            /* hover-border-color-change */
+            function mouseOver_collapse() {
+                $(this).css("background", "#ff9900");
+                $(this).find('.hover_collapse_title').css("color", "#fff");
+            }
+            function mouseOut_collapse() {
+                $(this).css("background", "#1a1a1a");
+                $(this).find('.hover_collapse_title').css("color", "#ff9900");
+            }
+            $('.hover_collapse').find('.hover_collapse_heading').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
+
+            /* collapse 클릭 시 border-color-change */
+            $('.hover_collapse').on("show.bs.collapse", function(){
+                $(this).find('.hover_collapse_heading').unbind('mouseover', mouseOver_collapse).unbind('mouseout', mouseOut_collapse);
+                $(this).find('.hover_collapse_heading').css("background", "#ff9900");
+                $(this).find('.hover_collapse_title').css("color", "#fff");
+            });
+            $('.hover_collapse').on("hide.bs.collapse", function(){
+                $(this).find('.hover_collapse_heading').css("background", "#1a1a1a");
+                $(this).find('.hover_collapse_heading').bind('mouseover', mouseOver_collapse).bind('mouseout', mouseOut_collapse);
+                $(this).find('.hover_collapse_title').css("color", "#ff9900");
+            });
+
+            /* hover-border-color-change */
+            function mouseOver_div() {
+                $(this).css("border-color", "#ff9900");
+            }
+            function mouseOut_div() {
+                $(this).css("border-color", "#fff");
+            }
+            $('.hover_div').bind('mouseover', mouseOver_div).bind('mouseout', mouseOut_div);
+
+            /* 이전 다음 버튼 hover-border-color-change */
+            function mouseOver_pager() {
+                $(this).css("background", "#ff9900");
+                $(this).css("color", "#fff");
+            }
+            function mouseOut_pager() {
+                $(this).css("background", "#1a1a1a");
+                $(this).css("color", "#ff9900");
+            }
+            $('.hover_pager').bind('mouseover', mouseOver_pager).bind('mouseout', mouseOut_pager);
+
+            /* page previous-next button function */
+            $("#page1_next").on('click', function() {
+                $('#tab2').click();
+            });
+            $("#page2_previous").on('click', function() {
+                $('#tab1').click();
+            });
+            $("#page2_next").on('click', function() {
+                $('#tab3').click();
+            });
+            $("#page3_previous").on('click', function() {
+                $('#tab2').click();
+            });
+            $("#page3_next").on('click', function() {
+                $('#tab4').click();
+            });
+            $("#page4_previous").on('click', function() {
+                $('#tab3').click();
+            });
+
+            /* hover_save 저장하기 */
+            function mouseOver_save() {
+                $(this).css("background", "#ff9900");
+                $(this).css("color", "#fff");
+                $(this).css("border-color", "#ff9900");
+            }
+            function mouseOut_save() {
+                $(this).css("background", "#1a1a1a");
+                $(this).css("color", "#fff");
+                $(this).css("border-color", "#fff");
+            }
+            $('.hover_previous').bind('mouseover', mouseOver_save).bind('mouseout', mouseOut_save);
+            $('.hover_save').bind('mouseover', mouseOver_save).bind('mouseout', mouseOut_save);
+            $('.hover_cancel').bind('mouseover', mouseOver_save).bind('mouseout', mouseOut_save);
+
+            /* 취소하기 버튼 클릭 시 창 닫히기 */
+            $(".hover_cancel").click(function() {
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* (1) 대회 개요 페이지 */
+            /* 대회 대표 이미지 tournament_image */
+            $("#tournament_image_form").submit(function(e) {
+                e.preventDefault();
+                var formdata = new FormData();
+                formdata.append("tournament_image", $('#tournament_image').prop('files')[0]);
+                $.ajax({
+                    url: '/test/',
+                    processData: false,
+                    contentType: false,
+                    data: formdata,
+                    type: 'POST',
+                    success: function(result){
+                        alert(result.message);
+                    }
+                });
+            });
+
+            /* collapse 클릭 시 v체크 hide & var 미완료 설정 */
+            $(".hover_collapse_a").click(function(e) {
+                /* v체크가 show되어 있으면 hide하기 */
+                if($(this).children('h4').children('span').is(":visible")){
+                    $(this).children('h4').children('span').hide();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        {% if request.user.is_authenticated %}
+
+        {% else %}
+            alert("로그인이 필요한 기능입니다.");
+            location.href='{% url 'login' %}';
+        {% endif %}
+    </script>
+
+    <script src="{% static 'js/jquery.datetimepicker.js' %}"></script>
+    {% include 'main/functions/popover-preview-image.html' %}
+{% endblock %}

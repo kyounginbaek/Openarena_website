@@ -244,7 +244,7 @@
                         <div class="tab-pane fade in" id="tab3">
                             <div class="com_intro_now hover_div">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>개인 프로필</h4>
+                                    <h4 style="color: #ff9900">개인 프로필</h4>
                                 </div>
                                 <div class="col-md-8" style="margin: 10px auto;">
                                     <div class="col-md-8 col-md-offset-2 input-group image-preview" style="margin: 0 auto;">
@@ -252,7 +252,7 @@
                                         <span class="input-group-btn">
                                             <!-- image-preview-clear button -->
                                             <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                                <span class="glyphicon glyphicon-remove"></span> 취소 하기
                                             </button>
                                             <!-- image-preview-input -->
                                             <div class="btn btn-default image-preview-input">
@@ -277,7 +277,7 @@
                             </div>
                             <div class="com_intro_now hover_div" style="margin-top: 20px;">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>소개</h4>
+                                    <h4 style="color: #ff9900">소개</h4>
                                 </div>
                                 <div class="col-md-8" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
                                     <div style="overflow: auto; white-space: nowrap;">
@@ -290,7 +290,7 @@
                             </div>
                             <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>방송 주소</h4>
+                                    <h4 style="color: #ff9900">방송 주소</h4>
                                 </div>
                                 <div class="col-md-8" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
                                     <div style="overflow: auto; white-space: nowrap;">
@@ -307,41 +307,45 @@
                         <div class="tab-pane fade in" id="tab4">
                             <div class="com_intro_now hover_div">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>비밀번호 변경</h4>
+                                    <h4 style="color: #ff9900">비밀번호 변경</h4>
                                 </div>
-                                <div class="col-md-8" style="margin: 10px auto;">
-                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
-                                        <span class="input-group-addon" id="basic-addon1">현재 비밀번호</span>
-                                        <input type="password" required autocomplete="off" class="form-control" id="password" name="password" placeholder="입력해주세요.">
+                                <form id="password_change_form">{% csrf_token %}
+                                    <div class="col-md-8" style="margin: 10px auto;">
+                                        <input type="hidden" class="form-control" id="purpose" name="purpose" value="password_change">
+                                        <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
+                                            <span class="input-group-addon" id="basic-addon1">현재 비밀번호</span>
+                                            <input type="password" required autocomplete="off" class="form-control" id="current_password" name="current_password" placeholder="입력해주세요.">
+                                        </div>
+                                        <div class="col-md-8 col-md-offset-2 input-group" style="margin: 10px auto;">
+                                            <span class="input-group-addon" id="basic-addon1">신규 비밀번호</span>
+                                            <input type="password" required autocomplete="off" class="form-control" id="new_password" name="new_password" placeholder="입력해주세요.">
+                                        </div>
+                                        <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
+                                            <span class="input-group-addon" id="basic-addon1">비밀번호 확인</span>
+                                            <input type="password" required autocomplete="off" class="form-control" id="new_password_check" name="new_password_check" placeholder="한번 더 입력해주세요.">
+                                        </div>
                                     </div>
-                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 10px auto;">
-                                        <span class="input-group-addon" id="basic-addon1">신규 비밀번호</span>
-                                        <input type="password" required autocomplete="off" class="form-control" id="password" name="password" placeholder="입력해주세요.">
+                                    <div class="col-md-2" style="text-align: right; margin-top: 10px;">
+                                        <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white;">변경하기</button>
                                     </div>
-                                    <div class="col-md-8 col-md-offset-2 input-group" style="margin: 0 auto;">
-                                        <span class="input-group-addon" id="basic-addon1">비밀번호 확인</span>
-                                        <input type="password" required autocomplete="off" class="form-control" id="password" name="password" placeholder="입력해주세요.">
-                                    </div>
-                                </div>
-                                <div class="col-md-2" style="text-align: right; margin-top: 10px;">
-                                    <button type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white;">변경하기</button>
-                                </div>
+                                </form>
                             </div>
 
                             <div class="com_intro_now hover_div" style="margin-top: 20px; margin-bottom: 40px;">
                                 <div class="col-md-2" style="text-align: center; margin-top: 10px;">
-                                    <h4>
+                                    <h4 style="color: #ff9900">
                                         이메일 뉴스레터
                                         <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" title="대회 개최 및 변경사항, 긴급사항 시 이메일로 내용이 전달됩니다." style="font-size: 14px;"></span>
                                     </h4>
                                 </div>
                                 <div class="col-md-8" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
-                                    <div style="overflow: auto; white-space: nowrap;">
-                                        <h5 style="display: inline-block;">
+                                    <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
+                                        <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
                                             <input type="radio" id="creater_enrollment" name="creater_enrollment" value="yes" checked="checked"> 구독(기본값)
-                                            &nbsp;
+                                        </span>
+                                        <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
                                             <input type="radio" id="creater_enrollment" name="creater_enrollment" value="no"> 구독 취소
-                                        </h5>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-2" style="text-align: right; margin-top: 10px;">
@@ -483,6 +487,33 @@
                 $('#my_team').css("background", "#1a1a1a");
                 $('#my_team').css("color", "#fff");
                 $('#my_team').css("border-color", "#fff");
+            });
+
+            // 비밀번호 변경하기 form
+            // 기존 비밀번호 체크 및 새로운 비밀번호 일치하는지 체크
+            $("#password_change_form").submit(function(e) {
+                e.preventDefault();
+                var new_password =  $('#new_password').val();
+                var new_password_check = $('#new_password_check').val();
+                if(new_password == new_password_check){
+                    serializedData = $(this).serialize();
+                    $.ajax({
+                        url: '/accounts/mypage/',
+                        data: serializedData,
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function(response){
+                            if(response.status == "success"){
+                                alert(response.message);
+                                location.reload(true);
+                            } else{
+                                alert(response.message);
+                            }
+                        }
+                    });
+                } else{
+                    alert("신규 비밀번호와 비밀번호 확인이 일치하지 않습니다. 다시 한번 입력해주세요.");
+                }
             });
 
             $("#withdrawal_final").click(function(){

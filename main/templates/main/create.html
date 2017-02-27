@@ -163,38 +163,40 @@
                             </div>
                             <div id="tab1_question3" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <div class="row">
-                                        <h5>대회의 대표 이미지 혹은 포스터를 업로드해주세요.</h5>
-                                        <h5>이미지는 다음과 같이 사용됩니다.</h5>
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
+                                    <form id="tournament_image_form">
+                                        <div class="row">
+                                            <h5>대회의 대표 이미지 혹은 포스터를 업로드해주세요.</h5>
+                                            <h5>이미지는 다음과 같이 사용됩니다.</h5>
+                                            <!-- image-preview-filename input [CUT FROM HERE]-->
+                                            <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
                                                 <span class="input-group-btn">
                                                     <!-- image-preview-clear button -->
                                                     <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                        <span class="glyphicon glyphicon-remove"></span> Clear
+                                                        <span class="glyphicon glyphicon-remove"></span> 취소하기
                                                     </button>
                                                     <!-- image-preview-input -->
                                                     <div class="btn btn-default image-preview-input">
                                                         <span class="glyphicon glyphicon-folder-open"></span>
                                                         <span class="image-preview-input-title">파일 선택</span>
-                                                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"> <!-- rename it -->
+                                                        <input id="tournament_image" required type="file" accept="image/*" name="input-file-preview"> <!-- rename it -->
                                                     </div>
                                                 </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div style="text-align: right; margin-top: 10px;">
-                                            <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                                취소하기
-                                            </button>
-                                            <button type="button" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
-                                                <span class="glyphicon glyphicon-ok"></span>
-                                                저장하기
-                                            </button>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -1126,6 +1128,13 @@
                                             </h5>
                                             <h5>텍스트 입력으로 참가자들에게 정보를 입력받는 방법과</h5>
                                             <h5>파일(이미지 등)을 업로드하여 제출받는 방법이 있습니다.</h5>
+                                            <div style="padding: 5px;"></div>
+                                            <h5 style="color: #ff9900;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                                여러 장의 파일을 제출받아야 하는 경우(예: 덱리스트)
+                                            </h5>
+                                            <h5>압축 파일(zip) 형식으로 제출을 대회 설명에 명시해주시거나</h5>
+                                            <h5>2장의 이미지를 제출해야 한다면 파일 제출 항목을 2개 만들어주세요.</h5>
                                             <br/>
                                             <h5 style="color: #ff9900;">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
@@ -1150,6 +1159,15 @@
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="오픈아레나 이메일" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
                                                       <input type="checkbox" aria-label="..." disabled="disabled" checked="checked">
+                                                    </span>
+                                                </div>
+                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
+                                                    </div>
+                                                    <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="참가자 계좌번호" style="background-color: white;">
+                                                    <span class="input-group-addon" style="background-color: white;">
+                                                      <input id="template_account" type="checkbox" aria-label="..." disabled="disabled" checked="checked">
                                                     </span>
                                                 </div>
                                             </div>
@@ -1346,12 +1364,12 @@
                                                 <div class="hide remove-group" id="participation_formTemplate">
                                                     <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
                                                         <div class="input-group-btn">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">제출 방식 선택 <span class="caret"></span></button>
-                                                        <ul class="dropdown-menu" role="menu">
-                                                            <li><a href="#">텍스트 입력</a></li>
-                                                            <li><a href="#">파일 업로드</a></li>
-                                                        </ul>
-                                                    </div>
+                                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">제출 방식 선택 <span class="caret"></span></button>
+                                                            <ul class="dropdown-menu" role="menu">
+                                                                <li><a href="#">텍스트 입력</a></li>
+                                                                <li><a href="#">파일 업로드</a></li>
+                                                            </ul>
+                                                        </div>
                                                         <input disabled="disabled" type="text" required class="form-control" id="participation_template" name="participation_template[]" placeholder="추가 입력해주세요.">
                                                     <span class="input-group-btn">
                                                         <button class="btn btn-danger removeButton" type="button">
@@ -1594,55 +1612,6 @@
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
                                 <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
-                                        진행자 이미지
-                                        <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
-                                    </h4>
-                                    <h5>
-                                        진행자님의 프로필 이미지를 업로드해주세요.
-                                        <span class="glyphicon glyphicon-picture"></span>
-                                    </h5>
-                                </a>
-                            </div>
-                            <div id="tab4-1_question1" class="panel-collapse collapse">
-                                <div class="panel-body" style="text-align: center">
-                                    <div class="row">
-                                        <h5>진행자님의 프로필 이미지를 업로드해주세요.</h5>
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요"> <!-- don't give a name === doesn't send on POST/GET -->
-                                                <span class="input-group-btn">
-                                                    <!-- image-preview-clear button -->
-                                                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                        <span class="glyphicon glyphicon-remove"></span> Clear
-                                                    </button>
-                                                    <!-- image-preview-input -->
-                                                    <div class="btn btn-default image-preview-input">
-                                                        <span class="glyphicon glyphicon-folder-open"></span>
-                                                        <span class="image-preview-input-title">파일 선택</span>
-                                                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                                                    </div>
-                                                </span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div style="text-align: right; margin-top: 10px;">
-                                            <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                                취소하기
-                                            </button>
-                                            <button type="button" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
-                                                <span class="glyphicon glyphicon-ok"></span>
-                                                저장하기
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default panel-faq hover_collapse">
-                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question2" style="color: #fff;" aria-expanded="false">
-                                    <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         진행자명
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
                                     </h4>
@@ -1652,7 +1621,7 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab4-1_question2" class="panel-collapse collapse">
+                            <div id="tab4-1_question1" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="profile_name_form">
                                         <div class="row">
@@ -1702,7 +1671,7 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question3" style="color: #fff;" aria-expanded="false">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         진행자 소개
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
@@ -1713,12 +1682,63 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab4-1_question3" class="panel-collapse collapse">
+                            <div id="tab4-1_question2" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <form id="profile_introduction_form">
                                         <div class="row">
                                             <h5 style="text-align: center;">진행자님을 간단히 소개해주세요.</h5>
                                             <div id="profile_introduction" name="profile_introduction" class="summernote"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-faq hover_collapse">
+                            <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
+                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question3" style="color: #fff;" aria-expanded="false">
+                                    <h4 class="hover_collapse_title" style="color: #ff9900;">
+                                        진행자 이미지
+                                        <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                    </h4>
+                                    <h5>
+                                        진행자님의 프로필 이미지를 업로드해주세요.
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </h5>
+                                </a>
+                            </div>
+                            <div id="tab4-1_question3" class="panel-collapse collapse">
+                                <div class="panel-body" style="text-align: center">
+                                    <form id="profile_image_form">
+                                        <div class="row">
+                                            <h5>진행자님의 프로필 이미지를 업로드해주세요.</h5>
+                                            <!-- image-preview-filename input [CUT FROM HERE]-->
+                                            <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요"> <!-- don't give a name === doesn't send on POST/GET -->
+                                                <span class="input-group-btn">
+                                                    <!-- image-preview-clear button -->
+                                                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                        <span class="glyphicon glyphicon-remove"></span> 취소하기
+                                                    </button>
+                                                    <!-- image-preview-input -->
+                                                    <div class="btn btn-default image-preview-input">
+                                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                                        <span class="image-preview-input-title">파일 선택</span>
+                                                        <input type="file" required accept="image/*" name="input-file-preview"/> <!-- rename it -->
+                                                    </div>
+                                                </span>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div style="text-align: right; margin-top: 10px;">
@@ -2312,7 +2332,11 @@
             });
 
             /* 대회 대표 이미지 tournament_image */
-
+            $("#tournament_image_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
 
             /* 대회 요약 tournament_summary */
             /* 입력을 완료했는지 required 체크 */
@@ -2350,141 +2374,7 @@
                 });
             });
 
-            /* (2) 대회 세부 사항 페이지 */
-            /* 대회 기간 설정 tournament_time */
-            /* 입력을 완료했는지 required 체크 */
-            $("#tournament_time_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 진행 방식 */
-
-
-            /* 대회 규칙 설정 tournament_rule */
-            /* 입력을 완료했는지 required 체크 */
-            $("#tournament_rule_form").submit(function(e) {
-                e.preventDefault();
-                /* 만약 summernote input이 비어있을 경우 팝업 */
-                if($('#tournament_rule').summernote('code')=="<p><br></p>"){
-                    alert('자세한 대회 규칙을 입력해주세요.');
-                } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                    $(this).closest('.hover_collapse').children('div').children('a').click();
-                }
-            });
-
-            /* 대회 참가 방식 */
-            /* 참가자 신청 registration */
-            /* 입력을 완료했는지 required 체크 */
-            $("#registration_form").submit(function(e) {
-                e.preventDefault();
-                /* 참가자 신청 받기 기능 사용 시 팝업 */
-                if ($('input:radio[name="registration"]:checked').val() == 'yes') {
-                    $("#div_registration_yes").show();
-                } else {
-                    $("#div_registration_yes").hide();
-                }
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 참가 방식:세부 사항 */
-            /* 대회 등록 방식 registration_type */
-            /* 입력을 완료했는지 required 체크 */
-            $("#registration_type_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 참가자 양식 만들기 */
-            /* 입력을 완료했는지 required 체크 */
-            /* 참가자 양식 추가 버튼 기능 구현 */
-            /* Add button click handler */
-            var MAX_OPTIONS = 10;
-            var participation_number = 1;
-            $('.div_participation_template').on('click', '.addButton', function() {
-                if(participation_number < MAX_OPTIONS){
-                    participation_number = participation_number + 1;
-                    var $template = $('#participation_formTemplate'),
-                            $clone    = $template
-                                    .clone()
-                                    .removeClass('hide')
-                                    .removeAttr('id')
-                                    .insertBefore($template);
-                    $clone.children('div').children('input').prop('disabled', false);
-                } else {
-                    $('.div_participation_template').find('.addButton').attr('disabled', 'disabled');
-                }
-            });
-            /* Remove button click handler */
-            $('.div_participation_template').on('click', '.removeButton', function() {
-                participation_number = participation_number - 1;
-                $('.div_participation_template').find('.addButton').removeAttr('disabled', 'disabled');
-                var $row    = $(this).parents('.remove-group');
-
-                // Remove element containing the option
-                $row.remove();
-            });
-
-            $("#participation_template_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 최대 참가자 수 participation_number */
-            /* 입력을 완료했는지 required 체크 */
-            $("#participation_number_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 참가 기간 설정 participation_time */
-            /* 입력을 완료했는지 required 체크 */
-            $('input:radio[name="participation_time"]').change(function() {
-                if ($(this).val() == 'custom') {
-                    document.getElementById("participation_starttime").required = true;
-                    document.getElementById("participation_endtime").required = true;
-                    $("#div_participation_time_custom").show();
-                } else {
-                    document.getElementById("participation_starttime").required = false;
-                    document.getElementById("participation_endtime").required = false;
-                    $("#div_participation_time_custom").hide();
-                }
-            });
-
-            $("#participation_time_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 참가자 체크인 participation_checkin */
-            /* 입력을 완료했는지 required 체크 */
-            /* 사용 클릭 시 시간 default 선택시 팝업 */
-            $('input:radio[name="participation_checkin"]').change(function() {
-                if ($(this).val() == 'yes') {
-                    $("#div_participation_checkin_yes").show();
-                } else {
-                    $("#div_participation_checkin_yes").hide();
-                }
-            });
-
-            $("#participation_checkin_form").submit(function(e) {
-                e.preventDefault();
-                if($('input:radio[name="participation_checkin"]:checked').val()=='yes' && document.getElementById('participation_checkin_time').value=="default"){
-                    alert('참가자 체크인 시간을 선택해주세요.');
-                } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                    $(this).closest('.hover_collapse').children('div').children('a').click();
-                }
-            });
-
-            /* (3) 후원 설정 페이지 */
+            /* (2) 후원 설정 페이지 */
             /* 다음을 꼭 확인해주세요 funding_notice */
             /* 입력을 완료했는지 required 체크 */
             $("#funding_notice_form").submit(function(e) {
@@ -2512,6 +2402,8 @@
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     participation_fee_yes = 1;
                     $('#panel_profile_account').show();
+                    $("#template_account").prop('disabled', true);
+                    $("#template_account").prop('checked', 'checked');
                 } else {
                     document.getElementById("participation_fee_number").required = false;
                     $("#div_participation_fee_yes").hide();
@@ -2519,6 +2411,7 @@
                     participation_fee_yes = 0;
                     if(funding_yes==0){
                         $('#panel_profile_account').hide();
+                        $("#template_account").prop('disabled', false);
                     }
                 }
             });
@@ -2541,12 +2434,15 @@
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     funding_yes = 1;
                     $('#panel_profile_account').show();
+                    $("#template_account").prop('disabled', true);
+                    $("#template_account").prop('checked', 'checked');
                 } else {
                     $("#div_funding_yes").hide();
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     funding_yes = 0;
                     if(participation_fee_yes==0){
                         $('#panel_profile_account').hide();
+                        $("#template_account").prop('disabled', false);
                     }
                 }
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2707,8 +2603,147 @@
                 $(this).closest('.hover_collapse').children('div').children('a').click();
             });
 
+            /* (3) 대회 세부 사항 페이지 */
+            /* 대회 기간 설정 tournament_time */
+            /* 입력을 완료했는지 required 체크 */
+            $("#tournament_time_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* 대회 진행 방식 */
+
+
+            /* 대회 규칙 설정 tournament_rule */
+            /* 입력을 완료했는지 required 체크 */
+            $("#tournament_rule_form").submit(function(e) {
+                e.preventDefault();
+                /* 만약 summernote input이 비어있을 경우 팝업 */
+                if($('#tournament_rule').summernote('code')=="<p><br></p>"){
+                    alert('자세한 대회 규칙을 입력해주세요.');
+                } else{
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $(this).closest('.hover_collapse').children('div').children('a').click();
+                }
+            });
+
+            /* 대회 참가 방식 */
+            /* 참가자 신청 registration */
+            /* 입력을 완료했는지 required 체크 */
+            $("#registration_form").submit(function(e) {
+                e.preventDefault();
+                /* 참가자 신청 받기 기능 사용 시 팝업 */
+                if ($('input:radio[name="registration"]:checked').val() == 'yes') {
+                    $("#div_registration_yes").show();
+                } else {
+                    $("#div_registration_yes").hide();
+                }
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* 대회 참가 방식:세부 사항 */
+            /* 대회 등록 방식 registration_type */
+            /* 입력을 완료했는지 required 체크 */
+            $("#registration_type_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* 참가자 양식 만들기 */
+            /* 입력을 완료했는지 required 체크 */
+            /* 참가자 양식 추가 버튼 기능 구현 */
+            /* Add button click handler */
+            var MAX_OPTIONS = 10;
+            var participation_number = 1;
+            $('.div_participation_template').on('click', '.addButton', function() {
+                if(participation_number < MAX_OPTIONS){
+                    participation_number = participation_number + 1;
+                    var $template = $('#participation_formTemplate'),
+                            $clone    = $template
+                                    .clone()
+                                    .removeClass('hide')
+                                    .removeAttr('id')
+                                    .insertBefore($template);
+                    $clone.children('div').children('input').prop('disabled', false);
+                } else {
+                    $('.div_participation_template').find('.addButton').attr('disabled', 'disabled');
+                }
+            });
+            /* Remove button click handler */
+            $('.div_participation_template').on('click', '.removeButton', function() {
+                participation_number = participation_number - 1;
+                $('.div_participation_template').find('.addButton').removeAttr('disabled', 'disabled');
+                var $row    = $(this).parents('.remove-group');
+
+                // Remove element containing the option
+                $row.remove();
+            });
+
+            $("#participation_template_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* 최대 참가자 수 participation_number */
+            /* 입력을 완료했는지 required 체크 */
+            $("#participation_number_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* 대회 참가 기간 설정 participation_time */
+            /* 입력을 완료했는지 required 체크 */
+            $('input:radio[name="participation_time"]').change(function() {
+                if ($(this).val() == 'custom') {
+                    document.getElementById("participation_starttime").required = true;
+                    document.getElementById("participation_endtime").required = true;
+                    $("#div_participation_time_custom").show();
+                } else {
+                    document.getElementById("participation_starttime").required = false;
+                    document.getElementById("participation_endtime").required = false;
+                    $("#div_participation_time_custom").hide();
+                }
+            });
+
+            $("#participation_time_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
+
+            /* 참가자 체크인 participation_checkin */
+            /* 입력을 완료했는지 required 체크 */
+            /* 사용 클릭 시 시간 default 선택시 팝업 */
+            $('input:radio[name="participation_checkin"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_participation_checkin_yes").show();
+                } else {
+                    $("#div_participation_checkin_yes").hide();
+                }
+            });
+
+            $("#participation_checkin_form").submit(function(e) {
+                e.preventDefault();
+                if($('input:radio[name="participation_checkin"]:checked').val()=='yes' && document.getElementById('participation_checkin_time').value=="default"){
+                    alert('참가자 체크인 시간을 선택해주세요.');
+                } else{
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $(this).closest('.hover_collapse').children('div').children('a').click();
+                }
+            });
+
             /* (4) 진행자 설정 페이지 */
             /* 진행자 이미지 */
+            $("#profile_image_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
 
             /* 진행자 이름 profile_name */
             /* 입력을 완료했는지 required 체크 */

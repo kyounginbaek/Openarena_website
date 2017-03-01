@@ -939,21 +939,154 @@
                             </div>
                             <div id="tab2-1_question2" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <div class="row">
-
-                                    </div>
-                                    <div class="row">
-                                        <div style="text-align: right; margin-top: 10px;">
-                                            <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                                취소하기
-                                            </button>
-                                            <button type="button" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
-                                                <span class="glyphicon glyphicon-ok"></span>
-                                                저장하기
-                                            </button>
+                                    <form id="tournament_format_submit">
+                                        <div class="row">
+                                            <h5 style="color: #ff9900;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                                대회 진행 방식에 따라 대진표 기능을 제공해드립니다.
+                                            </h5>
+                                            <h5>오픈아레나는 챌론지(Challonge) 시스템을 사용하고 있습니다.</h5>
+                                            <h5>현재는 싱글 스테이지 토너먼트 대진표만 지원하고 있습니다.</h5>
+                                            <br/>
+                                            <h5>
+                                                <u>사용 안함</u>
+                                                을 선택 시 스스로 대진표를 구성하셔야 합니다.</h5>
+                                            <h5>각 항목 선택 시 항목에 대한 설명이 포함되어 있습니다.</h5>
+                                            <div class="col-md-4 col-md-offset-4">
+                                                <select id="tournament_format" name="tournament_format" class="form-control">
+                                                    <option value="default">선택해주세요.</option>
+                                                    <option value="single_elimination">싱글 엘리미네이션</option>
+                                                    <option value="double_elimination">더블 엘리미네이션</option>
+                                                    <option value="round_robin">리그전</option>
+                                                    <option value="swiss">스위스 리그</option>
+                                                    <option value="no">사용 안함</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="row">
+                                            <div style="padding: 5px;"></div>
+                                            <!-- 싱글 엘리미네이션 -->
+                                            <div id="div_single_elimination" style="display: none;">
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    3위 결정전을 포함 하시겠습니까?
+                                                </h5>
+                                                <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                    <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                        <input type="radio" required id="tournament_format_spec" name="tournament_format_spec" value="yes"> 예
+                                                    </span>
+                                                    <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                        <input type="radio" required id="tournament_format_spec" name="tournament_format_spec" value="no"> 아니요
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- 더블 엘리미네이션 -->
+                                            <div id="div_double_elimination" style="display: none;">
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    최종 결승전의 승자를 어떤 방식으로 정하시겠습니까?
+                                                </h5>
+                                                <h5>
+                                                    <u>(1) 승자 조 결승자 혜택 부여</u>
+                                                    : 패자 조 결승자는 승자 조 결승자를 2번 이겨야 우승자가 됩니다.</h5>
+                                                <h5>
+                                                    <u>(2) 승자 조 결승자 혜택 없음</u>
+                                                    : 패자 조와 승자 조 결승자 모두 1번만 이기면 우승자가 됩니다.</h5>
+                                                <h5>
+                                                    <u>(3) 승자 조 결승자 자동 우승</u>
+                                                    : 최종 결승전을 치룰 필요 없이 승자 조 결승자가 우승하게 됩니다.</h5>
+                                                <div class="col-md-4 col-md-offset-4">
+                                                    <select id="tournament_format_spec" name="tournament_format_spec" class="form-control">
+                                                        <option value="default">선택해주세요.</option>
+                                                        <option value="advantage">(1) 승자 조 결승자 혜택 부여</option>
+                                                        <option value="no_advantage">(2) 승자 조 결승자 혜택 없음</option>
+                                                        <option value="auto">(3) 승자 조 결승자 자동 우승</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- 라운드 로빈 -->
+                                            <div id="div_round_robin" style="display: none;">
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    어떤 방식으로 순위를 정하시겠습니까?
+                                                </h5>
+                                                <h5>
+                                                    <u>• 매치와 세트의 차이</u>
+                                                    : 3판 2선승제에서 3판 전체를 하나의 매치라고 하며 각 판을 세트라고 합니다.</h5>
+                                                <br/>
+                                                <img src="{% static 'img/rank-by-help.png' %}">
+                                                <br/>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    위의 이미지를 참고하여 각 항목을 설명해드리겠습니다.
+                                                </h5>
+                                                <h5>
+                                                    <u>(1) 승리한 매치의 총합</u>
+                                                    : 플레이어1이 3판 2선승을 했으므로 승리 매치 1점, 플레이어2는 0점을 획득합니다.</h5>
+                                                <h5>
+                                                    <u>(2) 승리한 세트의 총합</u>
+                                                    : 플레이어1이 3판 2선승을 했으므로 승리 세트 2점, 플레이어2는 1점을 획득합니다.</h5>
+                                                <h5>
+                                                    <u>(3) 세트 포인트의 총합</u>
+                                                    : 플레이어1은 28(10+8+10)포인트, 플레이어2는 22(5+10+7)포인트를 획득합니다.</h5>
+                                                <h5>
+                                                    <u>(4) 세트 포인트의 차이합</u>
+                                                    : 플레이어1은 6(28-22)포인트를, 플레이어2는 -6(22-28)포인트를 획득합니다.</h5>
+                                                <h5>
+                                                    <u>(5) 커스텀 포인트 시스템</u>
+                                                    : 매치 승리 시 매치 무승부 시 세트 승리 시 세트 무승부 시 각 포인트를 설정할 수 있습니다.</h5>
+                                                <br/>
+                                                <div class="col-md-4 col-md-offset-4">
+                                                    <select id="tournament_format_spec" name="tournament_format_spec" class="form-control">
+                                                        <option value="default">선택해주세요.</option>
+                                                        <option value="match_wins">(1) 승리한 매치의 총합</option>
+                                                        <option value="game_wins">(2) 승리한 세트의 총합</option>
+                                                        <option value="points_scored">(3) 세트 포인트의 총합</option>
+                                                        <option value="points_difference">(4) 세트 포인트의 차이합</option>
+                                                        <option value="custom">(5) 커스텀 포인트 시스템</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- 스위스 리그 -->
+                                            <div id="div_swiss" style="display: none;">
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    최종 결승전의 승자를 어떤 방식으로 정하시겠습니까?
+                                                </h5>
+                                                <h5>
+                                                    <u>(1) 승자 조 결승자 혜택 부여</u>
+                                                    : 패자 조 결승자는 승자 조 결승자를 2번 이겨야 우승자가 됩니다.</h5>
+                                                <h5>
+                                                    <u>(2) 승자 조 결승자 혜택 없음</u>
+                                                    : 패자 조와 승자 조 결승자 모두 1번만 이기면 우승자가 됩니다.</h5>
+                                                <h5>
+                                                    <u>(3) 승자 조 결승자 자동 우승</u>
+                                                    : 최종 결승전을 치룰 필요 없이 승자 조 결승자가 우승하게 됩니다.</h5>
+                                                <div class="col-md-4 col-md-offset-4">
+                                                    <select id="tournament_format_spec" name="tournament_format_spec" class="form-control">
+                                                        <option value="default">선택해주세요.</option>
+                                                        <option value="match_wins">(1) 승자 조 결승자 혜택 부여</option>
+                                                        <option value="game_wins">(2) 승자 조 결승자 혜택 없음</option>
+                                                        <option value="points_scored">(3) 승자 조 결승자 자동 우승</option>
+                                                        <option value="points_difference">(3) 승자 조 결승자 자동 우승</option>
+                                                        <option value="custom">(3) 승자 조 결승자 자동 우승</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align: right; margin-top: 10px;">
+                                                <button type="button" class="btn btn-default hover_cancel" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                    취소하기
+                                                </button>
+                                                <button type="submit" class="btn btn-default hover_save" style="background: transparent; border-color: white; color: white;">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                    저장하기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -973,23 +1106,27 @@
                             <div id="tab2-1_question3" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <form id="tournament_rule_form">
-                                        <div class="row">
-                                            <div style="text-align: center; margin-bottom: 15px;">
-                                                <h5>아래 게임 별 규칙 예시를 참고하여 대회 규칙을 작성해주세요.</h5>
-                                                <select id="tournament_rule_example" name="tournament_rule_example" class="form-control" style="width: auto; text-align: center; margin: 0 auto;">
+                                        <div class="row" style="text-align: center;">
+                                            <h5>아래 게임 별 규칙 예시를 참고하여 대회 규칙을 작성해주세요.</h5>
+                                            <div class="col-md-4 col-md-offset-4" style="margin-bottom: 15px;">
+                                                <select id="tournament_rule_example" name="tournament_rule_example" class="form-control" style="text-align: center; margin: 0 auto;">
                                                     <option value="">게임 규칙 예시 보기</option>
                                                     {% for gr in gamerule %}
                                                         <option value="{{ gr.id }}">{{ gr.tournament_game }} - {{ gr.tournament_type }}</option>
                                                     {% endfor %}
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="row">
                                             {% for gr in gamerule %}
-                                                <div id="div_{{ gr.id }}" class="col-md-8 col-md-offset2 tournament_rule_example" style="display: none; margin: 0 auto; margin-bottom: 15px; float: none; background-color: #fff; color: #555; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px;">
+                                                <div id="div_{{ gr.id }}" class="col-md-8 col-md-offset-2 tournament_rule_example" style="display: none; margin: 0 auto; margin-bottom: 15px; float: none; background-color: #fff; color: #555; padding: 6px 12px; border: 1px solid #ccc; border-radius: 4px;">
                                                     <h5>
                                                         {{ gr.content|safe }}
                                                     </h5>
                                                 </div>
                                             {% endfor %}
+                                        </div>
+                                        <div class="row">
                                             <div id="tournament_rule" name="tournament_rule" class="summernote"></div>
                                         </div>
                                         <div class="row">
@@ -1140,7 +1277,7 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                                 기본 제공 항목(기본 제공)
                                             </h5>
-                                            <h5>기본으로 참가자에게 수집되며 개최자에게 제공됩니다.</h5>
+                                            <h5>기본으로 참가자에게 수집되어 개최자에게 제공됩니다.</h5>
                                             <h5>이를 고려하여 다른 선택 항목들을 선택해주세요.</h5>
                                             <div>
                                                 <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
@@ -1167,7 +1304,7 @@
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="참가자 계좌번호" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input id="template_account" type="checkbox" aria-label="..." disabled="disabled" checked="checked">
+                                                      <input id="template_account" type="checkbox" aria-label="..." checked="checked">
                                                     </span>
                                                 </div>
                                             </div>
@@ -1184,7 +1321,7 @@
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="참가자 실명" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input type="checkbox" aria-label="...">
+                                                      <input checked="checked" type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
                                                 <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
@@ -1228,7 +1365,7 @@
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="게임 닉네임" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input type="checkbox" aria-label="...">
+                                                      <input checked="checked" type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
                                                 <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
@@ -1263,7 +1400,7 @@
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="티어(등급)" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input type="checkbox" aria-label="...">
+                                                      <input checked="checked" type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
                                                 <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
@@ -1307,7 +1444,7 @@
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="주 캐릭터" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input type="checkbox" aria-label="...">
+                                                      <input checked="checked" type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
                                                 <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
@@ -2613,7 +2750,20 @@
             });
 
             /* 대회 진행 방식 */
+            $('#tournament_format').change(function() {
+                $("#div_single_elimination").hide();
+                $("#div_double_elimination").hide();
+                $("#div_round_robin").hide();
+                $("#div_swiss").hide();
 
+                $("#div_"+document.getElementById('tournament_format').value).show();
+            });
+
+            $("#tournament_format_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+            });
 
             /* 대회 규칙 설정 tournament_rule */
             /* 입력을 완료했는지 required 체크 */

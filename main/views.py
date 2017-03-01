@@ -1144,3 +1144,6 @@ def test(request):
                     'message': url}
         return HttpResponse(json.dumps(response), content_type='application/json')
     return render(request, 'main/test.html', {})
+
+def members(request):
+    return render(request, 'main/members.html', {})

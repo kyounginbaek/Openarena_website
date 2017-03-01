@@ -948,17 +948,33 @@
                                             <h5>오픈아레나는 챌론지(Challonge) 시스템을 사용하고 있습니다.</h5>
                                             <h5>현재는 싱글 스테이지 토너먼트 대진표만 지원하고 있습니다.</h5>
                                             <br/>
+                                            <h5 style="color: #ff9900;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                                각 대회 진행 방식들에 대한 정보를 아래에 참고해보세요.
+                                            </h5>
+                                            <h5>
+                                                <u>(1) 싱글 엘리미네이션</u>
+                                                : 한국에서 일반적으로 생각하는 토너먼트이며, 한번 지면 탈락하고 승자는 다른 승자와 경기를 하는 방식.</h5>
+                                            <h5>
+                                                <u>(2) 더블 엘리미네이션</u>
+                                                : 싱글 엘리미네이션에서 한번 지면 탈락이기 때문에 이 문제점을 보완하기 위해 한 번이 아닌 두 번 져야 탈락하는 방식.</h5>
+                                            <h5>
+                                                <u>(3) 리그전</u>
+                                                : 각 팀이 다른 팀과 모두 최소 한 번씩 경기를 치르는 방식으로, 모든 팀이 겨루는 방식이다보니 많은 시간이 소요된다.</h5>
+                                            <h5>
+                                                <u>(4) 스위스 리그</u>
+                                                : 승자는 승자끼리, 패자는 패자끼리 대결하는 방식으로, 라운드별로 승수가 비슷한 사람끼리 대결하여 순위를 가리게 된다.</h5>
+                                            <br/>
                                             <h5>
                                                 <u>사용 안함</u>
                                                 을 선택 시 스스로 대진표를 구성하셔야 합니다.</h5>
-                                            <h5>각 항목 선택 시 항목에 대한 설명이 포함되어 있습니다.</h5>
                                             <div class="col-md-4 col-md-offset-4">
                                                 <select id="tournament_format" name="tournament_format" class="form-control">
                                                     <option value="default">선택해주세요.</option>
-                                                    <option value="single_elimination">싱글 엘리미네이션</option>
-                                                    <option value="double_elimination">더블 엘리미네이션</option>
-                                                    <option value="round_robin">리그전</option>
-                                                    <option value="swiss">스위스 리그</option>
+                                                    <option value="single_elimination">(1) 싱글 엘리미네이션</option>
+                                                    <option value="double_elimination">(2) 더블 엘리미네이션</option>
+                                                    <option value="round_robin">(3) 리그전</option>
+                                                    <option value="swiss">(4) 스위스 리그</option>
                                                     <option value="no">사용 안함</option>
                                                 </select>
                                             </div>
@@ -1045,6 +1061,41 @@
                                                         <option value="points_difference">(4) 세트 포인트의 차이합</option>
                                                         <option value="custom">(5) 커스텀 포인트 시스템</option>
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <!-- 라운드 로빈 : 커스텀 포인트 시스템 선택 시 팝업 -->
+                                            <div id="div_round_robin_custom" class="row" style="display: none;">
+                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">매치 승리 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="1.0" style="width: auto;">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">매치 비길 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="0.5" style="width: auto;">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">세트 승리 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="0.0" style="width: auto;">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
+                                                    <span class="input-group-addon">세트 비길 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="0.0" style="width: auto;">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- 스위스 리그 -->
@@ -2422,9 +2473,9 @@
             });
 
             /* (1) 대회 개요 페이지 */
-            /* 대회 이름 tournament_name */
-            /* 입력을 완료했는지 required 체크 */
-            /* 중복되는 대회명이 있는지 체크 */
+            // 대회 이름 tournament_name
+            // 입력을 완료했는지 required 체크
+            // 중복되는 대회명이 있는지 체크
             $("#tournament_name_form").submit(function(e) {
                 e.preventDefault();
                 serializedData = $(this).serialize();
@@ -2446,7 +2497,7 @@
             });
 
             /* 게임 카테고리 tournament_game */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $('#tournament_game').change(function() {
                 if(document.getElementById('tournament_game').value=="etc"){
                     /* 기타를 선택했을 경우, required 붙이기 */
@@ -2468,7 +2519,7 @@
                 }
             });
 
-            /* 대회 대표 이미지 tournament_image */
+            // 대회 대표 이미지 tournament_image
             $("#tournament_image_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2476,7 +2527,7 @@
             });
 
             /* 대회 요약 tournament_summary */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#tournament_summary_form").submit(function(e) {
                 e.preventDefault();
                 /* 만약 summernote input이 비어있을 경우 팝업 */
@@ -2489,8 +2540,8 @@
             });
 
             /* 대회 페이지 주소 tournament_url */
-            /* 입력을 완료했는지 required 체크 */
-            /* 중복되는 url이 있는지 체크 */
+            // 입력을 완료했는지 required 체크
+            // 중복되는 url이 있는지 체크
             $("#tournament_url_form").submit(function(e) {
                 e.preventDefault();
                 serializedData = $(this).serialize();
@@ -2512,8 +2563,8 @@
             });
 
             /* (2) 후원 설정 페이지 */
-            /* 다음을 꼭 확인해주세요 funding_notice */
-            /* 입력을 완료했는지 required 체크 */
+            // 다음을 꼭 확인해주세요 funding_notice
+            // 입력을 완료했는지 required 체크
             $("#funding_notice_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2521,7 +2572,7 @@
             });
 
             /* 다음을 꼭 확인해주세요 account_notice */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#account_notice_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2529,8 +2580,8 @@
             });
 
             /* 참가비 설정 participation_fee */
-            /* 입력을 완료했는지 체크 */
-            /* 사용 클릭 시 input required 설정 */
+            // 입력을 완료했는지 체크
+            // 사용 클릭 시 input required 설정
             var participation_fee_yes = 0;
             $('input:radio[name="participation_fee"]').change(function() {
                 if ($(this).val() == 'yes') {
@@ -2560,8 +2611,8 @@
             });
 
             /* 후원 설정 funding */
-            /* 상금 후원을 받으시겠습니까? */
-            /* 입력을 완료했는지 required 체크 */
+            // 상금 후원을 받으시겠습니까?
+            // 입력을 완료했는지 required 체크
             var funding_yes = 0;
             $("#funding_form").submit(function(e) {
                 e.preventDefault();
@@ -2587,8 +2638,8 @@
             });
 
             /* 후원 설정:세부 사항 */
-            /* 후원 목표 금액 funding_goal */
-            /* 입력을 완료했는지 required 체크 */
+            // 후원 목표 금액 funding_goal
+            // 입력을 완료했는지 required 체크
             $("#funding_goal_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2596,8 +2647,8 @@
             });
 
             /* 후원 가능 기간 설정 funding_time */
-            /* 입력을 완료했는지 체크 */
-            /* 사용 클릭 시 input required 설정 */
+            // 입력을 완료했는지 체크
+            // 사용 클릭 시 input required 설정
             $('input:radio[name="funding_time"]').change(function() {
                 if ($(this).val() == 'custom') {
                     document.getElementById("funding_starttime").required = true;
@@ -2617,8 +2668,8 @@
             });
 
             /* 후원자 보상 설정 */
-            /* 입력을 완료했는지 required 체크 */
-            /* input : 숫자만 입력이 가능하도록 */
+            // 입력을 완료했는지 required 체크
+            // input : 숫자만 입력이 가능하도록
             $("input[name='reward_number\\[\\]']").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)){
                     var inputVal = $(this).val();
@@ -2644,7 +2695,7 @@
             });
 
             /* 후원 추가 버튼 기능 구현 */
-            /* Add button click handler */
+            // Add button click handler
             var MAX_OPTIONS = 10;
             var reward_number = 1;
             $('.div_reward').on('click', '.addButton', function() {
@@ -2662,7 +2713,7 @@
                     $('.div_reward').find('.addButton').attr('disabled', 'disabled');
                 }
             });
-            /* Remove button click handler */
+            // Remove button click handler
             $('.div_reward').on('click', '.removeButton', function() {
                 reward_number = reward_number - 1;
                 $('.div_reward').find('.addButton').removeAttr('disabled', 'disabled');
@@ -2679,8 +2730,8 @@
             });
 
             /* 후원자 공약 설정 */
-            /* 입력을 완료했는지 required 체크 */
-            /* input : 숫자만 입력이 가능하도록 */
+            // 입력을 완료했는지 required 체크
+            // input : 숫자만 입력이 가능하도록
             $("input[name='promise_number\\[\\]']").keyup(function(event){
                 if (!(event.keyCode >=37 && event.keyCode<=40)){
                     var inputVal = $(this).val();
@@ -2706,7 +2757,7 @@
             });
 
             /* 공약 추가 버튼 기능 구현 */
-            /* Add button click handler */
+            // Add button click handler
             var MAX_OPTIONS = 10;
             var promise_number = 1;
             $('.div_promise').on('click', '.addButton', function() {
@@ -2724,7 +2775,7 @@
                     $('.div_promise').find('.addButton').attr('disabled', 'disabled');
                 }
             });
-            /* Remove button click handler */
+            // Remove button click handler
             $('.div_promise').on('click', '.removeButton', function() {
                 promise_number = promise_number - 1;
                 $('.div_promise').find('.addButton').removeAttr('disabled', 'disabled');
@@ -2741,8 +2792,8 @@
             });
 
             /* (3) 대회 세부 사항 페이지 */
-            /* 대회 기간 설정 tournament_time */
-            /* 입력을 완료했는지 required 체크 */
+            // 대회 기간 설정 tournament_time
+            // 입력을 완료했는지 required 체크
             $("#tournament_time_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2750,6 +2801,7 @@
             });
 
             /* 대회 진행 방식 */
+            // 대회 진행 방식 선택에 따라 div 팝업
             $('#tournament_format').change(function() {
                 $("#div_single_elimination").hide();
                 $("#div_double_elimination").hide();
@@ -2759,6 +2811,14 @@
                 $("#div_"+document.getElementById('tournament_format').value).show();
             });
 
+            // 라운드 로빈에서 custom 선택 시 div 팝업
+            $('#tournament_format_round_robin').change(function() {
+                $("#div_round_robin_custom").hide();
+                if(document.getElementById('tournament_format_round_robin').value=="custom"){
+                    $("#div_round_robin_custom").show();
+                }
+            });
+
             $("#tournament_format_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2766,7 +2826,7 @@
             });
 
             /* 대회 규칙 설정 tournament_rule */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#tournament_rule_form").submit(function(e) {
                 e.preventDefault();
                 /* 만약 summernote input이 비어있을 경우 팝업 */
@@ -2779,11 +2839,11 @@
             });
 
             /* 대회 참가 방식 */
-            /* 참가자 신청 registration */
-            /* 입력을 완료했는지 required 체크 */
+            // 참가자 신청 registration
+            // 입력을 완료했는지 required 체크
             $("#registration_form").submit(function(e) {
                 e.preventDefault();
-                /* 참가자 신청 받기 기능 사용 시 팝업 */
+                // 참가자 신청 받기 기능 사용 시 팝업
                 if ($('input:radio[name="registration"]:checked').val() == 'yes') {
                     $("#div_registration_yes").show();
                 } else {
@@ -2794,8 +2854,8 @@
             });
 
             /* 대회 참가 방식:세부 사항 */
-            /* 대회 등록 방식 registration_type */
-            /* 입력을 완료했는지 required 체크 */
+            // 대회 등록 방식 registration_type
+            // 입력을 완료했는지 required 체크
             $("#registration_type_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2803,9 +2863,9 @@
             });
 
             /* 참가자 양식 만들기 */
-            /* 입력을 완료했는지 required 체크 */
-            /* 참가자 양식 추가 버튼 기능 구현 */
-            /* Add button click handler */
+            // 입력을 완료했는지 required 체크
+            // 참가자 양식 추가 버튼 기능 구현
+            // Add button click handler
             var MAX_OPTIONS = 10;
             var participation_number = 1;
             $('.div_participation_template').on('click', '.addButton', function() {
@@ -2822,7 +2882,7 @@
                     $('.div_participation_template').find('.addButton').attr('disabled', 'disabled');
                 }
             });
-            /* Remove button click handler */
+            // Remove button click handler
             $('.div_participation_template').on('click', '.removeButton', function() {
                 participation_number = participation_number - 1;
                 $('.div_participation_template').find('.addButton').removeAttr('disabled', 'disabled');
@@ -2839,7 +2899,7 @@
             });
 
             /* 최대 참가자 수 participation_number */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#participation_number_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2847,7 +2907,7 @@
             });
 
             /* 대회 참가 기간 설정 participation_time */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $('input:radio[name="participation_time"]').change(function() {
                 if ($(this).val() == 'custom') {
                     document.getElementById("participation_starttime").required = true;
@@ -2867,8 +2927,8 @@
             });
 
             /* 참가자 체크인 participation_checkin */
-            /* 입력을 완료했는지 required 체크 */
-            /* 사용 클릭 시 시간 default 선택시 팝업 */
+            // 입력을 완료했는지 required 체크
+            // 사용 클릭 시 시간 default 선택시 팝업
             $('input:radio[name="participation_checkin"]').change(function() {
                 if ($(this).val() == 'yes') {
                     $("#div_participation_checkin_yes").show();
@@ -2888,7 +2948,7 @@
             });
 
             /* (4) 진행자 설정 페이지 */
-            /* 진행자 이미지 */
+            // 진행자 이미지
             $("#profile_image_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2896,7 +2956,7 @@
             });
 
             /* 진행자 이름 profile_name */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $('input:radio[name="profile_name_question"]').change(function() {
                 if ($(this).val() == 'default') {
                     document.getElementById("profile_name_custom").required = false;
@@ -2916,10 +2976,10 @@
             });
 
             /* 진행자 소개 profile_introduction */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#profile_introduction_form").submit(function(e) {
                 e.preventDefault();
-                /* 만약 summernote input이 비어있을 경우 팝업 */
+                // 만약 summernote input이 비어있을 경우 팝업
                 if($('#profile_introduction').summernote('code')=="<p><br></p>"){
                     alert('간단한 진행자 소개를 입력해주세요.');
                 } else{
@@ -2929,15 +2989,15 @@
             });
 
             /* 방송 주소 streaming_site, streaming_url */
-            /* 입력을 완료했는지 required 체크 */
-            /* 예 클릭 시 checkbox 선택하도록 required 기능 */
-            /* 체크한 방송의 input에 required 기능 */
-            /* 대회 방송 기능 사용 시 팝업 */
+            // 입력을 완료했는지 required 체크
+            // 예 클릭 시 checkbox 선택하도록 required 기능
+            // 체크한 방송의 input에 required 기능
+            // 대회 방송 기능 사용 시 팝업
             $('input:radio[name="streaming"]').change(function() {
                 if ($(this).val() == 'yes') {
                     $("#div_streaming_yes").show();
                 } else {
-                    /* 아니요 변경 시 checkbox 체크 해제 -> input required 해제를 위함 */
+                    // 아니요 변경 시 checkbox 체크 해제 -> input required 해제를 위함
                     $("#div_streaming_yes").hide();
                     $('input:checkbox[name="streaming_site"]').removeAttr('checked');
                     $("input[name='streaming_url\\[\\]']").prop("disabled", true);
@@ -2966,9 +3026,9 @@
             });
 
             /* 이메일 주소 profile_email */
-            /* 입력을 완료했는지 required 체크 */
-            /* 예 클릭 시 꼭 체크하도록 required 기능 */
-            /* 체크한 방송은 input 필수되도록 */
+            // 입력을 완료했는지 required 체크
+            // 예 클릭 시 꼭 체크하도록 required 기능
+            // 체크한 방송은 input 필수되도록
             $('input:radio[name="profile_email_question"]').change(function() {
                 if ($(this).val() == 'default') {
                     document.getElementById("profile_email_custom").required = false;
@@ -2988,7 +3048,7 @@
             });
 
             /* 휴대폰 번호 profile_phone */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#profile_phone_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -2996,7 +3056,7 @@
             });
 
             /* 계좌 번호 profile_account */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#profile_account_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
@@ -3004,7 +3064,7 @@
             });
 
             /* 크리에이터 등록 creator_enrollment */
-            /* 입력을 완료했는지 required 체크 */
+            // 입력을 완료했는지 required 체크
             $("#creator_enrollment_form").submit(function(e) {
                 e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();

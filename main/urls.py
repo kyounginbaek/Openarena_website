@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^create/$', views.create, name='create'),
     url(r'^template/$', views.template, name='template'),
     url(r'^test/$', views.test, name='test'),
+    url(r'^members/$', views.members, name='members'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

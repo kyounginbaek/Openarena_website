@@ -6,38 +6,60 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
     <link rel="stylesheet" href="{% static 'css/jquery.datetimepicker.css' %}">
+
+    <style>
+        .inactiveLink {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
     <div class="block-b">
-        <div class="com_header_inner">
-        </div>
-
         <div class="com_mid">
+            <br/>
+            <h5 style="color: white;">각 탭의 항목을 모두 완료하여 모든 탭에 <span class="glyphicon glyphicon-ok-sign"></span> 표시가 나타나야 제출이 가능합니다.</h5>
             <!--competition list-->
             <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                 <!-- 대회 개요 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="tab1" class="btn btn-primary no_border " href="#com_tab1" data-toggle="tab">
-                        <span class="list_btn">대회 개요</span>
-                    </button>
-                </div>
-                <!-- 후원 설정 -->
-                <div class="btn-group" role="group">
-                    <button type="button" id="tab3" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
-                        <span class="list_btn">후원 설정</span>
+                        <span class="list_btn">
+                            대회 개요
+                            <span class="glyphicon glyphicon-ok-sign" id="tab1_oksign" style="display: none;"></span>
+                            <input type="hidden" class="form-control" id="tab1_allcheck" name="tab1_allcheck" value="uncheck">
+                        </span>
                     </button>
                 </div>
                 <!-- 대회 세부 사항 설정 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="tab2" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
-                        <span class="list_btn">대회 세부 사항</span>
+                        <span class="list_btn">
+                            대회 세부 사항
+                            <span class="glyphicon glyphicon-ok-sign" id="tab2_oksign" style="display: none;"></span>
+                            <input type="hidden" class="form-control" id="tab2_allcheck" name="tab2_allcheck" value="uncheck">
+                        </span>
+                    </button>
+                </div>
+                <!-- 후원 설정 -->
+                <div class="btn-group" role="group">
+                    <button type="button" id="tab3" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
+                        <span class="list_btn">
+                            후원 설정
+                            <span class="glyphicon glyphicon-ok-sign" id="tab3_oksign" style="display: none;"></span>
+                            <input type="hidden" class="form-control" id="tab3_allcheck" name="tab3_allcheck" value="uncheck">
+                        </span>
                     </button>
                 </div>
                 <!-- 진행자 설정 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="tab4" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
-                        <span class="list_btn">진행자 설정</span>
+                        <span class="list_btn">
+                            진행자 설정
+                            <span class="glyphicon glyphicon-ok-sign" id="tab4_oksign" style="display: none;"></span>
+                            <input type="hidden" class="form-control" id="tab4_allcheck" name="tab4_allcheck" value="uncheck">
+                        </span>
                     </button>
                 </div>
             </div>
@@ -53,10 +75,11 @@
                     <div class="panel-group" id="accordion-cat-1">
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a class="hover_collapse_a" data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab1" data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 이름
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab1_check" id="tab1_check1" name="tab1_check1" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 이름을 입력해주세요.
@@ -70,7 +93,7 @@
                                         <h5>대회의 이름은 다음과 같이 사용됩니다.</h5>
                                         <div class="row">
                                             <div class="col-md-6 col-md-offset-3">
-                                                <input type="hidden" hidden class="form-control" id="purpose" name="purpose" value="tournament_name">
+                                                <input type="hidden" class="form-control" id="purpose" name="purpose" value="tournament_name">
                                                 <div class="input-group" style="margin: 0 auto;">
                                                     <span class="input-group-addon" id="basic-addon3">대회 제목</span>
                                                     <input type="text" required autocomplete="off" class="form-control" id="tournament_name" name="tournament_name" placeholder="입력해주세요.">
@@ -95,10 +118,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab1" data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         게임 카테고리
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab1_check" id="tab1_check2" name="tab1_check2" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회로 진행되는 게임을 선택해주세요.
@@ -119,6 +143,7 @@
                                                     <option value="starcraft1">스타크래프트1</option>
                                                     <option value="starcraft2">스타크래프트2</option>
                                                     <option value="hearthstone">하스스톤</option>
+                                                    <option value="shadowverse">섀도우버스</option>
                                                     <option value="etc">기타</option>
                                                 </select>
                                                 <div style="padding: 5px;"></div>
@@ -150,10 +175,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question3" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab1" data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question3" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 대표 이미지
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab1_check" id="tab1_check3" name="tab1_check3" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 대표 이미지를 업로드해주세요.
@@ -202,10 +228,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question4" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab1" data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question4" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 요약
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab1_check" id="tab1_check4" name="tab1_check4" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회에 대한 간단한 설명을 입력해주세요.
@@ -236,10 +263,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question5" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab1" data-toggle="collapse" data-parent="#accordion-cat-1" href="#tab1_question5" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 페이지 주소(URL)
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab1_check" id="tab1_check5" name="tab1_check5" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 페이지로 사용될 주소(URL)를 입력해주세요.
@@ -252,7 +280,7 @@
                                     <form id="tournament_url_form">{% csrf_token %}
                                         <div class="row">
                                             <h5>대회가 진행될 URL 주소를 입력해주세요.</h5>
-                                            <input type="hidden" hidden class="form-control" id="purpose" name="purpose" value="tournament_url">
+                                            <input type="hidden" class="form-control" id="purpose" name="purpose" value="tournament_url">
                                             <div class="input-group col-md-6 col-md-offset-3" style="margin: 0 auto;">
                                                 <span class="input-group-addon" id="basic-addon3">http://openarena.kr/</span>
                                                 <input type="text" required autocomplete="off" class="form-control" id="tournament_url" name="tournament_url" aria-describedby="basic-addon3" placeholder="예) overwatch (한글 불가)">
@@ -293,13 +321,14 @@
                     <h4 style="color: #ff9900;">• 참가비 및 후원 설정 </h4>
                     <h5>모든 항목에 <span class="glyphicon glyphicon-ok-sign"></span> 표시가 나타나야 제출이 가능합니다.</h5>
                     <!-- tab-pane -->
-                    <div class="panel-group" id="accordion-cat-3-1">
+                    <div class="panel-group" id="accordion-cat-3">
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-3-1" href="#tab3-1_question1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         참가비 및 후원 정책
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab3_check" id="tab3_check1" name="tab3_check1" value="uncheck">
                                     </h4>
                                     <h5>
                                         참가비 및 후원 정책을 확인해주세요.
@@ -307,7 +336,7 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab3-1_question1" class="panel-collapse collapse">
+                            <div id="tab3_question1" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="funding_notice_form">
                                         <div class="row">
@@ -353,10 +382,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-3-1" href="#tab3-1_question2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 상금 지급 정책
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab3_check" id="tab3_check2" name="tab3_check2" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 상금 지급 정책을 확인해주세요.
@@ -364,7 +394,7 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab3-1_question2" class="panel-collapse collapse">
+                            <div id="tab3_question2" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="account_notice_form">
                                         <div class="row">
@@ -373,25 +403,20 @@
                                                     <span class="glyphicon glyphicon-info-sign"></span>
                                                     대회 상금 지급 정책은 아래 정책에 의해 운영되고 있습니다.
                                                 </h5>
-                                                <h5><u>① 오픈아레나가 직접 참가자 계좌 번호로 대회 상금을 지급합니다.</u></h5>
+                                                <h5 style="color: #ff9900;">① 오픈아레나가 직접 참가자 계좌 번호로 대회 상금을 지급합니다.</h5>
                                                 <h5> 상금 지급에 대한 신뢰도를 높이고 개최자의 상금 지급 편의를 위함입니다.</h5>
                                                 <br/>
-                                                <h5><u>② 오픈아레나를 통해 참가비와 후원비 받기 중 하나의 기능이라도 사용할 때</u></h5>
-                                                <h5 style="color: #ff9900;"> (1) 오픈아레나를 통해 참가자 양식을 받는 경우 :</h5>
-                                                <h5> 대회 상금 지급을 위해 계좌 번호가 참가자 양식에 자동으로 추가됩니다.</h5>
+                                                <h5 style="color: #ff9900;">② 오픈아레나를 통해 참가비와 후원비 받기 중 하나의 기능이라도 사용할 때</h5>
+                                                <h5><u>(1) 오픈아레나를 통해 대회를 진행하는 경우 :</u></h5>
+                                                <h5> 대회가 끝나고 승자에게 계좌 번호를 입력받아 대회 상금을 지급합니다. </h5>
                                                 <div style="padding: 5px;"></div>
-                                                <h5 style="color: #ff9900;"> (2) 다른 플랫폼을 통해 참가자 양식을 받는 경우 :</h5>
-                                                <h5> 대회 상금 지급을 위해 오픈아레나에게 참가자 계좌 번호를 보내주셔야 합니다.</h5>
+                                                <h5><u>(2) 다른 플랫폼을 통해 대회를 진행하는 경우 :</u></h5>
+                                                <h5> 대회 상금 지급을 위해 오픈아레나에게 승자의 계좌 번호를 보내주셔야 합니다.</h5>
                                                 <br/>
-                                                <h5><u>③ 참가비와 후원비 받기 중 하나의 기능도 사용하지 않고 사비로 대회를 진행하는 경우</u></h5>
-                                                <h5 style="color: #ff9900;"> (1) 오픈아레나를 통해 참가자 양식을 받는 경우 :</h5>
+                                                <h5 style="color: #ff9900;">③ 참가비와 후원비 받기 중 하나의 기능도 사용하지 않고 사비로 대회를 진행하는 경우</h5>
                                                 <h5> 오픈아레나가 아닌 개최자 스스로 참가자에게 대회 상금을 지급하셔야 합니다.</h5>
-                                                <h5> 따라서 대회가 끝나고 연락처로 계좌 번호를 묻는 번거로움을 피하기 위해</h5>
-                                                <h5> 참가자 양식에서 계좌 번호 항목을 사용 체크하는 것을 추천드립니다.</h5>
-                                                <div style="padding: 5px;"></div>
-                                                <h5 style="color: #ff9900;"> (2) 다른 플랫폼을 통해 참가자 양식을 받는 경우 :</h5>
-                                                <h5> 오픈아레나가 아닌 개최자 스스로 참가자에게 대회 상금을 지급하셔야 합니다.</h5>
-                                                <h5> 따라서 대회가 끝나고 개최자가 상금을 받는 참가자분들께 연락하여 직접 상금을 지급하셔야 합니다.</h5>
+                                                <h5> 따라서 참가자 양식에서 계좌 번호 항목을 사용 체크하여 계좌 번호를 미리 받아 두거나,</h5>
+                                                <h5> 대회가 끝나고 개최자가 상금을 받는 분들께 직접 연락하여 상금을 지급하셔야 합니다.</h5>
                                             </div>
                                             <br/>
                                             <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
@@ -418,10 +443,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-3-1" href="#tab3-1_question3" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question3" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         참가비 설정
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab3_check" id="tab3_check3" name="tab3_check3" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 참가비를 받으시겠습니까?
@@ -429,7 +455,7 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab3-1_question3" class="panel-collapse collapse">
+                            <div id="tab3_question3" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="participation_fee_form">
                                         <div class="row">
@@ -474,10 +500,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-3-1" href="#tab3-1_question4" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#accordion-cat-3" href="#tab3_question4" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         상금 후원 설정
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab3_check" id="tab3_check4" name="tab3_check4" value="uncheck">
                                     </h4>
                                     <h5>
                                         사람들에게 상금 후원을 받으시겠습니까?
@@ -485,7 +512,7 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab3-1_question4" class="panel-collapse collapse">
+                            <div id="tab3_question4" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="funding_form">
                                         <div class="row">
@@ -528,10 +555,11 @@
                         <h5>모든 항목에 <span class="glyphicon glyphicon-ok-sign"></span> 표시가 나타나야 제출이 가능합니다.</h5>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         후원 목표 금액
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control funding_yes_check" id="funding_yes_check1" name="funding_yes_check1" value="uncheck">
                                     </h4>
                                     <h5>
                                         후원 목표 금액을 설정해주세요.
@@ -571,10 +599,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         후원 가능 기간 설정
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control funding_yes_check" id="funding_yes_check2" name="funding_yes_check2" value="uncheck">
                                     </h4>
                                     <h5>
                                         참가자 양식을 만들어주세요.
@@ -638,10 +667,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_3" style="color: #fff;" >
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_3" style="color: #fff;" >
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         후원자에게 보상을 하시겠습니까?
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control funding_yes_check" id="funding_yes_check3" name="funding_yes_check3" value="uncheck">
                                     </h4>
                                     <h5>
                                         후원자 보상 여부를 설정해주세요.
@@ -743,10 +773,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_4" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab3" data-toggle="collapse" data-parent="#div_funding_yes" href="#div_funding_yes_4" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         후원자에게 공약을 하시겠습니까?
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control funding_yes_check" id="funding_yes_check4" name="funding_yes_check4" value="uncheck">
                                     </h4>
                                     <h5>
                                         후원자 공약 여부를 설정해주세요.
@@ -876,13 +907,14 @@
                     <h4 style="color: #ff9900;">• 대회 세부 사항</h4>
                     <h5>모든 항목에 <span class="glyphicon glyphicon-ok-sign"></span> 표시가 나타나야 제출이 가능합니다.</h5>
                     <!-- tab-pane -->
-                    <div class="panel-group" id="accordion-cat-2-1">
+                    <div class="panel-group" id="accordion-cat-2">
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-2-1" href="#tab2-1_question1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 기간 설정
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab2_check" id="tab2_check1" name="tab2_check1" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 시작 시간과 종료 시간을 설정해주세요.
@@ -890,13 +922,13 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab2-1_question1" class="panel-collapse collapse">
+                            <div id="tab2_question1" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="tournament_time_form">
                                         <div class="row">
                                             <h5>대회 시작 시간과 종료 시간을 설정해주세요.</h5>
                                             <!-- 참가 시작, 종료 시간 -->
-                                            <div class="input-group col-md-6 col-md-offset-3" style="display: table; margin: 10px auto;">
+                                            <div class="input-group col-md-6 col-md-offset-2" style="display: table; margin: 10px auto;">
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -926,10 +958,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-2-1" href="#tab2-1_question2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 진행 방식
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab2_check" id="tab2_check2" name="tab2_check2" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 진행 방식을 선택해주세요.
@@ -937,9 +970,9 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab2-1_question2" class="panel-collapse collapse">
+                            <div id="tab2_question2" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <form id="tournament_format_submit">
+                                    <form id="tournament_format_form">
                                         <div class="row">
                                             <h5 style="color: #ff9900;">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
@@ -960,10 +993,10 @@
                                                 : 싱글 엘리미네이션에서 한번 지면 탈락이기 때문에 이 문제점을 보완하기 위해 한 번이 아닌 두 번 져야 탈락하는 방식.</h5>
                                             <h5>
                                                 <u>(3) 리그전</u>
-                                                : 각 팀이 다른 팀과 모두 최소 한 번씩 경기를 치르는 방식으로, 모든 팀이 겨루는 방식이다보니 많은 시간이 소요된다.</h5>
+                                                : 각 팀이 다른 팀과 모두 최소 한 번씩 경기를 치르는 방식으로, 모든 팀이 겨루는 방식이다보니 많은 시간이 소요됩니다.</h5>
                                             <h5>
                                                 <u>(4) 스위스 리그</u>
-                                                : 승자는 승자끼리, 패자는 패자끼리 대결하는 방식으로, 라운드별로 승수가 비슷한 사람끼리 대결하여 순위를 가리게 된다.</h5>
+                                                : 승자는 승자끼리, 패자는 패자끼리 대결하는 방식으로, 라운드별로 승수가 비슷한 사람끼리 대결하여 순위를 가리게 됩니다.</h5>
                                             <br/>
                                             <h5>
                                                 <u>사용 안함</u>
@@ -989,10 +1022,10 @@
                                                 </h5>
                                                 <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
                                                     <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
-                                                        <input type="radio" required id="tournament_format_spec" name="tournament_format_spec" value="yes"> 예
+                                                        <input type="radio" required disabled="disabled" id="single_elimination_spec" name="single_elimination_spec" value="yes_3rd_match"> 예
                                                     </span>
                                                     <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
-                                                        <input type="radio" required id="tournament_format_spec" name="tournament_format_spec" value="no"> 아니요
+                                                        <input type="radio" required disabled="disabled" id="single_elimination_spec" name="single_elimination_spec" value="no_3rd_match"> 아니요
                                                     </span>
                                                 </div>
                                             </div>
@@ -1011,12 +1044,13 @@
                                                 <h5>
                                                     <u>(3) 승자 조 결승자 자동 우승</u>
                                                     : 최종 결승전을 치룰 필요 없이 승자 조 결승자가 우승하게 됩니다.</h5>
+                                                <br/>
                                                 <div class="col-md-4 col-md-offset-4">
-                                                    <select id="tournament_format_spec" name="tournament_format_spec" class="form-control">
+                                                    <select id="double_elimination_spec" name="double_elimination_spec" class="form-control">
                                                         <option value="default">선택해주세요.</option>
-                                                        <option value="advantage">(1) 승자 조 결승자 혜택 부여</option>
+                                                        <option value="yes_advantage">(1) 승자 조 결승자 혜택 부여</option>
                                                         <option value="no_advantage">(2) 승자 조 결승자 혜택 없음</option>
-                                                        <option value="auto">(3) 승자 조 결승자 자동 우승</option>
+                                                        <option value="auto_win">(3) 승자 조 결승자 자동 우승</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -1053,75 +1087,110 @@
                                                     : 매치 승리 시 매치 무승부 시 세트 승리 시 세트 무승부 시 각 포인트를 설정할 수 있습니다.</h5>
                                                 <br/>
                                                 <div class="col-md-4 col-md-offset-4">
-                                                    <select id="tournament_format_spec" name="tournament_format_spec" class="form-control">
+                                                    <select id="round_robin_spec" name="round_robin_spec" class="form-control">
                                                         <option value="default">선택해주세요.</option>
                                                         <option value="match_wins">(1) 승리한 매치의 총합</option>
                                                         <option value="game_wins">(2) 승리한 세트의 총합</option>
                                                         <option value="points_scored">(3) 세트 포인트의 총합</option>
                                                         <option value="points_difference">(4) 세트 포인트의 차이합</option>
-                                                        <option value="custom">(5) 커스텀 포인트 시스템</option>
+                                                        <option value="custom_system">(5) 커스텀 포인트 시스템</option>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <!-- 라운드 로빈 : 커스텀 포인트 시스템 선택 시 팝업 -->
-                                            <div id="div_round_robin_custom" class="row" style="display: none;">
-                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
-                                                    <span class="input-group-addon">매치 승리 시 포인트</span>
-                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="1.0" style="width: auto;">
-                                                    <div class="input-group-btn-vertical">
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-                                                    </div>
-                                                </div>
-                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
-                                                    <span class="input-group-addon">매치 비길 시 포인트</span>
-                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="0.5" style="width: auto;">
-                                                    <div class="input-group-btn-vertical">
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-                                                    </div>
-                                                </div>
-                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
-                                                    <span class="input-group-addon">세트 승리 시 포인트</span>
-                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="0.0" style="width: auto;">
-                                                    <div class="input-group-btn-vertical">
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-                                                    </div>
-                                                </div>
-                                                <div class="input-group spinner spinner_round_robin_custom" style="display: table; margin: 10px auto;">
-                                                    <span class="input-group-addon">세트 비길 시 포인트</span>
-                                                    <input type="text" required class="form-control" id="round_robin_custom" name="round_robin_custom" value="0.0" style="width: auto;">
-                                                    <div class="input-group-btn-vertical">
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- 스위스 리그 -->
                                             <div id="div_swiss" style="display: none;">
                                                 <h5 style="color: #ff9900;">
                                                     <span class="glyphicon glyphicon-info-sign"></span>
-                                                    최종 결승전의 승자를 어떤 방식으로 정하시겠습니까?
+                                                    각 상황 시 지급 포인트를 입력해주세요.
                                                 </h5>
-                                                <h5>
-                                                    <u>(1) 승자 조 결승자 혜택 부여</u>
-                                                    : 패자 조 결승자는 승자 조 결승자를 2번 이겨야 우승자가 됩니다.</h5>
-                                                <h5>
-                                                    <u>(2) 승자 조 결승자 혜택 없음</u>
-                                                    : 패자 조와 승자 조 결승자 모두 1번만 이기면 우승자가 됩니다.</h5>
-                                                <h5>
-                                                    <u>(3) 승자 조 결승자 자동 우승</u>
-                                                    : 최종 결승전을 치룰 필요 없이 승자 조 결승자가 우승하게 됩니다.</h5>
-                                                <div class="col-md-4 col-md-offset-4">
-                                                    <select id="tournament_format_spec" name="tournament_format_spec" class="form-control">
-                                                        <option value="default">선택해주세요.</option>
-                                                        <option value="match_wins">(1) 승자 조 결승자 혜택 부여</option>
-                                                        <option value="game_wins">(2) 승자 조 결승자 혜택 없음</option>
-                                                        <option value="points_scored">(3) 승자 조 결승자 자동 우승</option>
-                                                        <option value="points_difference">(3) 승자 조 결승자 자동 우승</option>
-                                                        <option value="custom">(3) 승자 조 결승자 자동 우승</option>
-                                                    </select>
+                                                <h5>기본값을 제공하고 있으며, 수정 시 숫자와 소숫점만 입력 가능합니다.</h5>
+                                                <!-- 스위스 리그 선택 시 팝업 -->
+                                                <div id="" class="row">
+                                                    <div class="col-md-4 col-md-offset-4">
+                                                        <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                            <span class="input-group-addon">매치 승리 시 포인트</span>
+                                                            <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="1.0">
+                                                            <div class="input-group-btn-vertical">
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                            <span class="input-group-addon">매치 비길 시 포인트</span>
+                                                            <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="0.5">
+                                                            <div class="input-group-btn-vertical">
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                            <span class="input-group-addon">세트 승리 시 포인트</span>
+                                                            <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="0.0">
+                                                            <div class="input-group-btn-vertical">
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                            <span class="input-group-addon">세트 비길 시 포인트</span>
+                                                            <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="0.0">
+                                                            <div class="input-group-btn-vertical">
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                            <span class="input-group-addon" style="width: 133px;">부전승 시 포인트</span>
+                                                            <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="1.0">
+                                                            <div class="input-group-btn-vertical">
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 라운드 로빈 : 커스텀 포인트 시스템 선택 시 팝업 -->
+                                        <div id="div_round_robin_custom_system" class="row" style="display: none;">
+                                            <br/>
+                                            <h5 style="color: #ff9900;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                                각 상황 시 지급 포인트를 입력해주세요.
+                                            </h5>
+                                            <h5>기본값을 제공하고 있으며, 수정 시 숫자와 소숫점만 입력 가능합니다.</h5>
+                                            <div class="col-md-4 col-md-offset-4">
+                                                <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                    <span class="input-group-addon">매치 승리 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="1.0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%;">
+                                                    <span class="input-group-addon">매치 비길 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="0.5">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%">
+                                                    <span class="input-group-addon">세트 승리 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="0.0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group spinner spinner_tournament_format_spec_detail" style="width: 100%">
+                                                    <span class="input-group-addon">세트 비길 시 포인트</span>
+                                                    <input type="text" required class="form-control" id="tournament_format_spec_detail" name="tournament_format_spec_detail" value="0.0">
+                                                    <div class="input-group-btn-vertical">
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1143,18 +1212,19 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-2-1" href="#tab2-1_question3" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question3" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 규칙 설정
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab2_check" id="tab2_check3" name="tab2_check3" value="uncheck">
                                     </h4>
                                     <h5>
-                                        대회 규칙 방식을 선택해주세요.
+                                        대회 규칙을 입력해주세요.
                                         <span class="glyphicon glyphicon-pencil"></span>
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab2-1_question3" class="panel-collapse collapse">
+                            <div id="tab2_question3" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <form id="tournament_rule_form">
                                         <div class="row" style="text-align: center;">
@@ -1198,10 +1268,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-2-1" href="#tab2-1_question4" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#accordion-cat-2" href="#tab2_question4" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         참가자 신청
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab2_check" id="tab2_check4" name="tab2_check4" value="uncheck">
                                     </h4>
                                     <h5>
                                         오픈 아레나를 통해 참가자 신청을 받으시겠습니까?
@@ -1209,7 +1280,7 @@
                                     </h5>
                                 </a>
                             </div>
-                            <div id="tab2-1_question4" class="panel-collapse collapse">
+                            <div id="tab2_question4" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
                                     <form id="registration_form">
                                         <div class="row">
@@ -1252,10 +1323,11 @@
                         <h5>모든 항목에 <span class="glyphicon glyphicon-ok-sign"></span> 표시가 나타나야 제출이 가능합니다.</h5>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 등록 방식
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control registration_yes_check" id="registration_yes_check1" name="registration_yes_check1" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 등록 방식을 선택해주세요.
@@ -1295,10 +1367,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         참가자 양식 만들기
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control registration_yes_check" id="registration_yes_check2" name="registration_yes_check2" value="uncheck">
                                     </h4>
                                     <h5>
                                         참가자 양식을 만들어주세요.
@@ -1331,7 +1404,7 @@
                                             <h5>기본으로 참가자에게 수집되어 개최자에게 제공됩니다.</h5>
                                             <h5>이를 고려하여 다른 선택 항목들을 선택해주세요.</h5>
                                             <div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1340,22 +1413,13 @@
                                                           <input type="checkbox" aria-label="..." disabled="disabled" checked="checked">
                                                         </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="오픈아레나 이메일" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
                                                       <input type="checkbox" aria-label="..." disabled="disabled" checked="checked">
-                                                    </span>
-                                                </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
-                                                    <div class="input-group-btn">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
-                                                    </div>
-                                                    <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="참가자 계좌번호" style="background-color: white;">
-                                                    <span class="input-group-addon" style="background-color: white;">
-                                                      <input id="template_account" type="checkbox" aria-label="..." checked="checked">
                                                     </span>
                                                 </div>
                                             </div>
@@ -1365,17 +1429,18 @@
                                                 회원 정보(선택 사항)
                                             </h5>
                                             <h5>아래 리스트에서 사용하실 항목을 체크해주세요.</h5>
+                                            <h5>계좌 번호는 대회가 끝나고 우승자에게만 받는 것을 추천드립니다.</h5>
                                             <div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="참가자 실명" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input checked="checked" type="checkbox" aria-label="...">
+                                                      <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1384,7 +1449,7 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1393,11 +1458,20 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="개인 연락처" style="background-color: white;">
+                                                    <span class="input-group-addon" style="background-color: white;">
+                                                      <input type="checkbox" aria-label="...">
+                                                    </span>
+                                                </div>
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
+                                                    </div>
+                                                    <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="계좌 번호" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
@@ -1410,16 +1484,16 @@
                                             </h5>
                                             <h5>아래 리스트에서 사용하실 항목을 체크해주세요.</h5>
                                             <div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="게임 닉네임" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input checked="checked" type="checkbox" aria-label="...">
+                                                      <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1428,7 +1502,7 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1445,16 +1519,16 @@
                                             </h5>
                                             <h5>아래 리스트에서 사용하실 항목을 체크해주세요.</h5>
                                             <div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="티어(등급)" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input checked="checked" type="checkbox" aria-label="...">
+                                                      <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1463,7 +1537,7 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1472,7 +1546,7 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1489,16 +1563,16 @@
                                             </h5>
                                             <h5>아래 리스트에서 사용하실 항목을 체크해주세요.</h5>
                                             <div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
                                                     <input type="text" class="form-control" aria-label="..." disabled="disabled" placeholder="주 캐릭터" style="background-color: white;">
                                                     <span class="input-group-addon" style="background-color: white;">
-                                                      <input checked="checked" type="checkbox" aria-label="...">
+                                                      <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1507,7 +1581,7 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">텍스트 입력 방식</button>
                                                     </div>
@@ -1516,7 +1590,7 @@
                                                       <input type="checkbox" aria-label="...">
                                                     </span>
                                                 </div>
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">파일 업로드 방식</button>
                                                     </div>
@@ -1529,11 +1603,31 @@
                                         </div>
                                         <div class="row">
                                             <br/>
-                                            <h5>위 목록을 참고하여 원하는 양식을 만들어보세요.</h5>
+                                            <div>
+                                                <h5 style="color: #ff9900;">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    위의 항목들 외 다른 항목이 필요하신가요?
+                                                </h5>
+                                                <h5>다른 항목이 필요하신 경우 '다른 항목 추가'를 선택해주세요.</h5>
+                                                <h5>본인의 입맛대로 원하시는 항목들을 만들어 추가하실 수 있습니다</h5>
+                                            </div>
+                                            <div style="padding: 5px;"></div>
+                                            <div class="col-md-4 col-md-offset-4 input-group" style="margin: 0 auto;">
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" required id="participation_template_custom" name="participation_template_custom" value="yes"> 다른 항목 추가
+                                                </span>
+                                                <span class="input-group-addon" style="padding: 10px; background-color: #fff; color: #555;">
+                                                    <input type="radio" required id="participation_template_custom" name="participation_template_custom" value="no"> 추가 필요 없음
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div id="div_participation_template_custom" class="row" style="display: none;">
+                                            <br/>
+                                            <h5>위 목록들을 참고하여 원하는 양식을 만들어보세요.</h5>
                                             <h5>총 10개까지 항목을 추가할 수 있습니다.</h5>
                                             <div class="div_participation_template">
                                                 <!-- js dynamic form fields : add -->
-                                                <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                     <div class="input-group-btn">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">제출 방식 선택 <span class="caret"></span></button>
                                                         <ul class="dropdown-menu" role="menu">
@@ -1550,7 +1644,7 @@
                                                 </div>
                                                 <!-- js dynamic form fields : remove -->
                                                 <div class="hide remove-group" id="participation_formTemplate">
-                                                    <div class="col-md-6 col-md-offset3 input-group" style="margin: 0 auto;">
+                                                    <div class="col-md-6 col-md-offset-3 input-group" style="margin: 0 auto;">
                                                         <div class="input-group-btn">
                                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">제출 방식 선택 <span class="caret"></span></button>
                                                             <ul class="dropdown-menu" role="menu">
@@ -1586,10 +1680,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_3" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_3" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         최대 참가자 수
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control registration_yes_check" id="registration_yes_check3" name="registration_yes_check3" value="uncheck">
                                     </h4>
                                     <h5>
                                         최대 참가자 수를 선택해주세요.
@@ -1629,10 +1724,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_4" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_4" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         대회 참가 기간 설정
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control registration_yes_check" id="registration_yes_check4" name="registration_yes_check4" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회 참가 기간을 설정해주세요.
@@ -1697,10 +1793,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center;">
-                                <a data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_5" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab2" data-toggle="collapse" data-parent="#div_registration_yes" href="#div_registration_yes_5" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         참가자 체크인
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control registration_yes_check" id="registration_yes_check5" name="registration_yes_check5" value="uncheck">
                                     </h4>
                                     <h5>
                                         참가자 체크인 기능을 사용하시겠습니까?
@@ -1798,10 +1895,11 @@
                     <div class="panel-group" id="accordion-cat-4-1">
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         진행자명
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check1" name="tab4_check1" value="uncheck">
                                     </h4>
                                     <h5>
                                         진행자명을 입력해주세요.
@@ -1859,10 +1957,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         진행자 소개
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check2" name="tab4_check2" value="uncheck">
                                     </h4>
                                     <h5>
                                         진행자님을 간단히 소개해주세요.
@@ -1895,10 +1994,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question3" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question3" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         진행자 이미지
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check3" name="tab4_check3" value="uncheck">
                                     </h4>
                                     <h5>
                                         진행자님의 프로필 이미지를 업로드해주세요.
@@ -1913,7 +2013,7 @@
                                             <h5>진행자님의 프로필 이미지를 업로드해주세요.</h5>
                                             <!-- image-preview-filename input [CUT FROM HERE]-->
                                             <div class="input-group image-preview col-md-6 col-md-offset-3" style="margin: 0 auto;">
-                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요"> <!-- don't give a name === doesn't send on POST/GET -->
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled" placeholder="파일을 선택해주세요."> <!-- don't give a name === doesn't send on POST/GET -->
                                                 <span class="input-group-btn">
                                                     <!-- image-preview-clear button -->
                                                     <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
@@ -1946,10 +2046,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question4" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-1" href="#tab4-1_question4" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         방송 주소
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check4" name="tab4_check4" value="uncheck">
                                     </h4>
                                     <h5>
                                         대회가 진행되는 방송의 주소를 입력해주세요.
@@ -2063,10 +2164,11 @@
                     <div class="panel-group" id="accordion-cat-4-2">
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         이메일 주소
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check5" name="tab4_check5" value="uncheck">
                                     </h4>
                                     <h5>
                                         진행자님의 이메일 주소를 입력해주세요.
@@ -2124,10 +2226,11 @@
                         </div>
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question2" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question2" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         휴대폰 번호
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check6" name="tab4_check6" value="uncheck">
                                     </h4>
                                     <h5>
                                         진행자님의 휴대폰 번호를 입력해주세요.
@@ -2140,7 +2243,7 @@
                                     <form id="profile_phone_form">
                                         <div class="row">
                                             <h5>진행자님의 휴대폰 번호를 입력해주세요.</h5>
-                                            <div class="col-md-6 col-md-offset-3">
+                                            <div class="col-md-4 col-md-offset-4">
                                                 <div class="input-group" style="margin: 0 auto;">
                                                     <span class="input-group-addon" id="basic-addon1">연락처</span>
                                                     <input type="text" required autocomplete="off" class="form-control" id="profile_phone" name="profile_phone" placeholder="예) 010-1234-5678">
@@ -2163,12 +2266,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="panel_profile_account" class="panel panel-default panel-faq hover_collapse" style="display: none;">
+                        <div id="panel_profile_account" class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question3" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_account" data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-2_question3" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         계좌 번호
-                                        <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <span id="tab4_oksign7" class="glyphicon glyphicon-ok-sign"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check7" name="tab4_check7" value="check">
                                     </h4>
                                     <h5>
                                         대회 준비금을 지급받을 계좌 번호를 입력해주세요.
@@ -2180,11 +2284,15 @@
                                 <div class="panel-body" style="text-align: center">
                                     <form id="profile_account_form">
                                         <div class="row">
-                                            <h5>대회 준비금을 지급받을 계좌 번호를 입력해주세요.</h5>
+                                            <h5 style="color: #ff9900;">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                                참가비와 후원비를 받는 경우 필수적으로 입력하셔야 합니다.
+                                            </h5>
+                                            <h5>참가비와 후원비를 받지 않는 경우 입력하실 필요가 없습니다.</h5>
                                             <div class="col-md-6 col-md-offset-3">
                                                 <div class="input-group" style="margin: 0 auto;">
                                                     <span class="input-group-addon" id="basic-addon1">계좌 번호</span>
-                                                    <input type="text" required autocomplete="off" class="form-control" id="profile_account" name="profile_account" placeholder="예) 경남은행 123-45-678910">
+                                                    <input type="text" disabled="disabled" required autocomplete="off" class="form-control" id="profile_account" name="profile_account" placeholder="예) 경남은행 123-45-678910">
                                                 </div>
                                             </div>
                                         </div>
@@ -2212,10 +2320,11 @@
                     <div class="panel-group" id="accordion-cat-4-3">
                         <div class="panel panel-default panel-faq hover_collapse">
                             <div class="panel-heading hover_collapse_heading" style="background: #1a1a1a; text-align: center">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-3_question1" style="color: #fff;" aria-expanded="false">
+                                <a class="hover_collapse_a hover_collapse_tab4" data-toggle="collapse" data-parent="#accordion-cat-4-2" href="#tab4-3_question1" style="color: #fff;" aria-expanded="false">
                                     <h4 class="hover_collapse_title" style="color: #ff9900;">
                                         오픈아레나 크리에이터로 등록하시겠습니까?
                                         <span class="glyphicon glyphicon-ok-sign" style="display: none;"></span>
+                                        <input type="hidden" class="form-control tab4_check" id="tab4_check8" name="tab4_check8" value="uncheck">
                                     </h4>
                                     <h5>
                                         오픈아레나 크리에이터 등록 여부를 선택해주세요.
@@ -2491,6 +2600,8 @@
                             $("#tournament_name_form").closest('.hover_collapse').children('div').children('a').click();
                             $("#tournament_name_form").closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                             alert("사용 가능한 대회명입니다.");
+                            $('#tab1_check1').attr('value', 'check');
+                            tab1_check_function()
                         }
                     }
                 });
@@ -2514,16 +2625,20 @@
                 if(document.getElementById('tournament_game').value=="default"){
                     alert("대회로 진행되는 게임을 선택해주세요.");
                 } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                     $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $('#tab1_check2').attr('value', 'check');
+                    tab1_check_function()
                 }
             });
 
             // 대회 대표 이미지 tournament_image
             $("#tournament_image_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab1_check3').attr('value', 'check');
+                tab1_check_function()
             });
 
             /* 대회 요약 tournament_summary */
@@ -2534,8 +2649,10 @@
                 if($('#tournament_summary').summernote('code')=="<p><br></p>"){
                     alert('간단한 대회 요약을 입력해주세요.');
                 } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                     $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $('#tab1_check4').attr('value', 'check');
+                    tab1_check_function()
                 }
             });
 
@@ -2554,60 +2671,353 @@
                         if(response.status=="error"){
                             alert("이미 존재하는 URL입니다. 다른 URL을 사용해주세요.");
                         } else {
-                            $("#tournament_url_form").closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                             $("#tournament_url_form").closest('.hover_collapse').children('div').children('a').click();
+                            $("#tournament_url_form").closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                             alert("사용 가능한 URL입니다.");
+                            $('#tab1_check5').attr('value', 'check');
+                            tab1_check_function();
                         }
                     }
                 });
             });
 
-            /* (2) 후원 설정 페이지 */
+            // 모든 항목이 다 확인되었으면, 탭 옆에 v체크 뜨게 하기
+            function tab1_check_function(){
+                var check1 = $("#tab1_check1").val();
+                var check2 = $("#tab1_check2").val();
+                var check3 = $("#tab1_check3").val();
+                var check4 = $("#tab1_check4").val();
+                var check5 = $("#tab1_check5").val();
+
+                if(check1=="check" && check2=="check" && check3=="check" && check4=="check" && check5=="check"){
+                    $("#tab1_oksign").show();
+                    $('#tab1_allcheck').attr('value', 'check');
+                    alert("첫번째 탭이 완료되었습니다.");
+                } else{
+                    $("#tab1_oksign").hide();
+                    $('#tab1_allcheck').attr('value', 'uncheck');
+                }
+            }
+
+            /* (2) 대회 세부 사항 페이지 */
+            // 대회 기간 설정 tournament_time
+            // 입력을 완료했는지 required 체크
+            $("#tournament_time_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab2_check1').attr('value', 'check');
+                tab2_check_function();
+            });
+
+            /* 대회 진행 방식 */
+            // 대회 진행 방식 선택에 따라 div 팝업
+            $('#tournament_format').change(function() {
+                $("#div_single_elimination").hide();
+                $("#div_double_elimination").hide();
+                $("#div_round_robin").hide();
+                $("#div_swiss").hide();
+                $("#div_round_robin_custom").hide();
+
+                $("#div_"+document.getElementById('tournament_format').value).show();
+            });
+
+            // 라운드 로빈에서 custom 선택 시 div 팝업
+            $('#round_robin_spec').change(function() {
+                $("#div_round_robin_custom_system").hide();
+                if(document.getElementById('round_robin_spec').value=="custom_system"){
+                    $("#div_round_robin_custom_system").show();
+                }
+            });
+
+            /* 라운드 로빈 & 스위스 리그 input-spinner */
+            $('.spinner_tournament_format_spec_detail .btn:first-of-type').on('click', function() {
+                $(this).parent('div').parent('div').children('input').val( parseFloat(parseFloat($(this).parent('div').parent('div').children('input').val()) + 0.1).toFixed(1));
+            });
+            $('.spinner_tournament_format_spec_detail .btn:last-of-type').on('click', function( ) {
+                $(this).parent('div').parent('div').children('input').val( parseFloat(parseFloat($(this).parent('div').parent('div').children('input').val()) - 0.1).toFixed(1));
+            });
+
+            /* 숫자와 소수점 입력이 가능하도록 */
+            $("input[name=tournament_format_spec_detail]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)) {
+                    var inputVal = $(this).val();
+                    inputVal = inputVal.replace(/[^0-9\.]/gi,'');
+                    if(inputVal.split('.').length>2){
+                        inputVal = inputVal.replace(/\.+$/,'');
+                    }
+                    $(this).val(inputVal);
+                }
+            });
+
+            $("#tournament_format").change(function() {
+                if(document.getElementById('tournament_format').value=="single_elimination"){
+                    $('input:radio[name="single_elimination_spec"]').removeAttr("disabled", "disabled");
+                } else {
+                    $('input:radio[name="single_elimination_spec"]').attr("disabled", "disabled");
+                }
+            });
+
+            $("#tournament_format_form").submit(function(e) {
+                e.preventDefault();
+                if(document.getElementById('tournament_format').value=="default"){
+                    alert("대회 진행 방식을 선택해주세요.");
+                } else {
+                    if(document.getElementById('tournament_format').value=="double_elimination" && document.getElementById('double_elimination_spec').value=="default"){
+                        alert("최종 결승전 승자 방식을 선택해주세요.");
+                    } else if(document.getElementById('tournament_format').value=="round_robin" && document.getElementById('round_robin_spec').value=="default") {
+                        alert("순위 선정 방식을 선택해주세요.");
+                    } else {
+                        $(this).closest('.hover_collapse').children('div').children('a').click();
+                        $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                        $('#tab2_check2').attr('value', 'check');
+                        tab2_check_function();
+                    }
+                }
+            });
+
+            /* 대회 규칙 설정 tournament_rule */
+            // 입력을 완료했는지 required 체크
+            $("#tournament_rule_form").submit(function(e) {
+                e.preventDefault();
+                /* 만약 summernote input이 비어있을 경우 팝업 */
+                if($('#tournament_rule').summernote('code')=="<p><br></p>"){
+                    alert('자세한 대회 규칙을 입력해주세요.');
+                } else{
+                    $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $('#tab2_check3').attr('value', 'check');
+                    tab2_check_function();
+                }
+            });
+
+            /* 대회 참가 방식 */
+            // 참가자 신청 registration
+            // 입력을 완료했는지 required 체크
+            $("#registration_form").submit(function(e) {
+                e.preventDefault();
+                // 참가자 신청 받기 기능 사용 시 팝업
+                if ($('input:radio[name="registration"]:checked').val() == 'yes') {
+                    $("#div_registration_yes").show();
+                } else {
+                    $("#div_registration_yes").hide();
+                }
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab2_check4').attr('value', 'check');
+                tab2_check_function();
+            });
+
+            // 모든 항목이 다 확인되었으면, 탭 옆에 v체크 뜨게 하기
+            function tab2_check_function(){
+                var check1 = $("#tab2_check1").val();
+                var check2 = $("#tab2_check2").val();
+                var check3 = $("#tab2_check3").val();
+                var check4 = $("#tab2_check4").val();
+
+                if($('input:radio[name="registration"]:checked').val() == 'no'){
+                    if(check1=="check" && check2=="check" && check3=="check" && check4=="check"){
+                        $("#tab2_oksign").show();
+                        $('#tab2_allcheck').attr('value', 'check');
+                        alert("두번째 탭이 완료되었습니다.");
+                    } else{
+                        $("#tab2_oksign").hide();
+                        $('#tab2_allcheck').attr('value', 'uncheck');
+                    }
+                } else {
+                    var registration_check1 = $("#registration_yes_check1").val();
+                    var registration_check2 = $("#registration_yes_check2").val();
+                    var registration_check3 = $("#registration_yes_check3").val();
+                    var registration_check4 = $("#registration_yes_check4").val();
+
+                    if(check1=="check" && check2=="check" && check3=="check" && check4=="check" && registration_check1=="check" && registration_check2=="check" && registration_check3=="check" && registration_check4=="check"){
+                        $("#tab2_oksign").show();
+                        $('#tab2_allcheck').attr('value', 'check');
+                        alert("두번째 탭이 완료되었습니다.");
+                    } else{
+                        $("#tab2_oksign").hide();
+                        $('#tab2_allcheck').attr('value', 'uncheck');
+                    }
+                }
+            }
+
+            /* 대회 참가 방식:세부 사항 */
+            // 대회 등록 방식 registration_type
+            // 입력을 완료했는지 required 체크
+            $("#registration_type_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#registration_yes_check1').attr('value', 'check');
+                tab2_check_function();
+            });
+
+            /* 참가자 양식 만들기 */
+            // 다른 항목 추가 선택 시 div 팝업
+            $('input:radio[name="participation_template_custom"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $('#div_participation_template_custom').show();
+                } else {
+                    $('#div_participation_template_custom').hide();
+                }
+            });
+
+            // 입력을 완료했는지 required 체크
+            // 참가자 양식 추가 버튼 기능 구현
+            // Add button click handler
+            var MAX_OPTIONS = 10;
+            var participation_number = 1;
+            $('.div_participation_template').on('click', '.addButton', function() {
+                if(participation_number < MAX_OPTIONS){
+                    participation_number = participation_number + 1;
+                    var $template = $('#participation_formTemplate'),
+                            $clone    = $template
+                                    .clone()
+                                    .removeClass('hide')
+                                    .removeAttr('id')
+                                    .insertBefore($template);
+                    $clone.children('div').children('input').prop('disabled', false);
+                } else {
+                    $('.div_participation_template').find('.addButton').attr('disabled', 'disabled');
+                }
+            });
+            // Remove button click handler
+            $('.div_participation_template').on('click', '.removeButton', function() {
+                participation_number = participation_number - 1;
+                $('.div_participation_template').find('.addButton').removeAttr('disabled', 'disabled');
+                var $row    = $(this).parents('.remove-group');
+
+                // Remove element containing the option
+                $row.remove();
+            });
+
+            $("#participation_template_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#registration_yes_check2').attr('value', 'check');
+                tab2_check_function();
+            });
+
+            /* 최대 참가자 수 participation_number */
+            // 입력을 완료했는지 required 체크
+            $("#participation_number_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#registration_yes_check3').attr('value', 'check');
+                tab2_check_function();
+            });
+
+            /* 대회 참가 기간 설정 participation_time */
+            // 입력을 완료했는지 required 체크
+            $('input:radio[name="participation_time"]').change(function() {
+                if ($(this).val() == 'custom') {
+                    document.getElementById("participation_starttime").required = true;
+                    document.getElementById("participation_endtime").required = true;
+                    $("#div_participation_time_custom").show();
+                } else {
+                    document.getElementById("participation_starttime").required = false;
+                    document.getElementById("participation_endtime").required = false;
+                    $("#div_participation_time_custom").hide();
+                }
+            });
+
+            $("#participation_time_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#registration_yes_check4').attr('value', 'check');
+                tab2_check_function();
+            });
+
+            /* 참가자 체크인 participation_checkin */
+            // 입력을 완료했는지 required 체크
+            // 사용 클릭 시 시간 default 선택시 팝업
+            $('input:radio[name="participation_checkin"]').change(function() {
+                if ($(this).val() == 'yes') {
+                    $("#div_participation_checkin_yes").show();
+                } else {
+                    $("#div_participation_checkin_yes").hide();
+                }
+            });
+
+            $("#participation_checkin_form").submit(function(e) {
+                e.preventDefault();
+                if($('input:radio[name="participation_checkin"]:checked').val()=='yes' && document.getElementById('participation_checkin_time').value=="default"){
+                    alert('참가자 체크인 시간을 선택해주세요.');
+                } else{
+                    $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    tab2_check_function();
+                }
+            });
+
+            /* (3) 후원 설정 페이지 */
             // 다음을 꼭 확인해주세요 funding_notice
             // 입력을 완료했는지 required 체크
             $("#funding_notice_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab3_check1').attr('value', 'check');
+                tab3_check_function();
             });
 
             /* 다음을 꼭 확인해주세요 account_notice */
             // 입력을 완료했는지 required 체크
             $("#account_notice_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab3_check2').attr('value', 'check');
+                tab3_check_function();
             });
 
             /* 참가비 설정 participation_fee */
             // 입력을 완료했는지 체크
             // 사용 클릭 시 input required 설정
+            var profile_account = 0;
             var participation_fee_yes = 0;
+
             $('input:radio[name="participation_fee"]').change(function() {
                 if ($(this).val() == 'yes') {
+                    /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     document.getElementById("participation_fee_number").required = true;
                     $("#div_participation_fee_yes").show();
-                    /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
-                    participation_fee_yes = 1;
-                    $('#panel_profile_account').show();
-                    $("#template_account").prop('disabled', true);
-                    $("#template_account").prop('checked', 'checked');
                 } else {
+                    /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     document.getElementById("participation_fee_number").required = false;
                     $("#div_participation_fee_yes").hide();
-                    /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
-                    participation_fee_yes = 0;
-                    if(funding_yes==0){
-                        $('#panel_profile_account').hide();
-                        $("#template_account").prop('disabled', false);
-                    }
                 }
             });
 
             $("#participation_fee_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                if ($('input:radio[name="participation_fee"]:checked').val() == 'yes') {
+                    participation_fee_yes = 1;
+                    profile_account = 1;
+                    $('#tab4_oksign7').hide();
+                    $('#tab4_check7').attr('value', 'uncheck');
+                    $('#profile_account').prop('disabled', false);
+
+                } else {
+                    participation_fee_yes = 0;
+                    if(funding_yes==1){
+
+                    } else {
+                        profile_account = 0;
+                        $('#tab4_oksign7').show();
+                        $('#tab4_check7').attr('value', 'check');
+                        $('#profile_account').prop('disabled', true);
+                    }
+                }
+
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab3_check3').attr('value', 'check');
+                tab2_check_function();
+                tab4_check_function();
             });
 
             /* 후원 설정 funding */
@@ -2621,29 +3031,74 @@
                     $("#div_funding_yes").show();
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     funding_yes = 1;
-                    $('#panel_profile_account').show();
-                    $("#template_account").prop('disabled', true);
-                    $("#template_account").prop('checked', 'checked');
+
+                    profile_account = 1;
+                    $('#tab4_oksign7').hide();
+                    $('#tab4_check7').attr('value', 'uncheck');
+                    $('#profile_account').prop('disabled', false);
+
                 } else {
                     $("#div_funding_yes").hide();
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
                     funding_yes = 0;
-                    if(participation_fee_yes==0){
-                        $('#panel_profile_account').hide();
-                        $("#template_account").prop('disabled', false);
+                    if(participation_fee_yes==1){
+
+                    } else{
+                        profile_account = 0;
+                        $('#tab4_oksign7').show();
+                        $('#tab4_check7').attr('value', 'check');
+                        $('#profile_account').prop('disabled', true);
                     }
                 }
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab3_check4').attr('value', 'check');
+                tab3_check_function();
+                tab4_check_function();
             });
+
+            // 모든 항목이 다 확인되었으면, 탭 옆에 v체크 뜨게 하기
+            function tab3_check_function(){
+                var check1 = $("#tab3_check1").val();
+                var check2 = $("#tab3_check2").val();
+                var check3 = $("#tab3_check3").val();
+                var check4 = $("#tab3_check4").val();
+
+                if(funding_yes == 0){
+                    if(check1=="check" && check2=="check" && check3=="check" && check4=="check"){
+                        $("#tab3_oksign").show();
+                        $('#tab3_allcheck').attr('value', 'check');
+                        alert("세번째 탭이 완료되었습니다.");
+                    } else{
+                        $("#tab3_oksign").hide();
+                        $('#tab3_allcheck').attr('value', 'uncheck');
+                    }
+                } else {
+                    var funding_check1 = $("#funding_yes_check1").val();
+                    var funding_check2 = $("#funding_yes_check2").val();
+                    var funding_check3 = $("#funding_yes_check3").val();
+                    var funding_check4 = $("#funding_yes_check4").val();
+
+                    if(check1=="check" && check2=="check" && check3=="check" && check4=="check" && funding_check1=="check" && funding_check2=="check" && funding_check3=="check" && funding_check4=="check"){
+                        $("#tab3_oksign").show();
+                        $('#tab3_allcheck').attr('value', 'check');
+                        alert("세번째 탭이 완료되었습니다.");
+                    } else{
+                        $("#tab3_oksign").hide();
+                        $('#tab3_allcheck').attr('value', 'uncheck');
+                    }
+                }
+            }
 
             /* 후원 설정:세부 사항 */
             // 후원 목표 금액 funding_goal
             // 입력을 완료했는지 required 체크
             $("#funding_goal_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#funding_yes_check1').attr('value', 'check');
+                tab3_check_function();
             });
 
             /* 후원 가능 기간 설정 funding_time */
@@ -2663,8 +3118,10 @@
 
             $("#funding_time_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#funding_yes_check2').attr('value', 'check');
+                tab3_check_function();
             });
 
             /* 후원자 보상 설정 */
@@ -2725,8 +3182,10 @@
 
             $("#reward_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#funding_yes_check3').attr('value', 'check');
+                tab3_check_function();
             });
 
             /* 후원자 공약 설정 */
@@ -2787,174 +3246,13 @@
 
             $("#promise_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* (3) 대회 세부 사항 페이지 */
-            // 대회 기간 설정 tournament_time
-            // 입력을 완료했는지 required 체크
-            $("#tournament_time_form").submit(function(e) {
-                e.preventDefault();
                 $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 진행 방식 */
-            // 대회 진행 방식 선택에 따라 div 팝업
-            $('#tournament_format').change(function() {
-                $("#div_single_elimination").hide();
-                $("#div_double_elimination").hide();
-                $("#div_round_robin").hide();
-                $("#div_swiss").hide();
-
-                $("#div_"+document.getElementById('tournament_format').value).show();
-            });
-
-            // 라운드 로빈에서 custom 선택 시 div 팝업
-            $('#tournament_format_round_robin').change(function() {
-                $("#div_round_robin_custom").hide();
-                if(document.getElementById('tournament_format_round_robin').value=="custom"){
-                    $("#div_round_robin_custom").show();
-                }
-            });
-
-            $("#tournament_format_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 규칙 설정 tournament_rule */
-            // 입력을 완료했는지 required 체크
-            $("#tournament_rule_form").submit(function(e) {
-                e.preventDefault();
-                /* 만약 summernote input이 비어있을 경우 팝업 */
-                if($('#tournament_rule').summernote('code')=="<p><br></p>"){
-                    alert('자세한 대회 규칙을 입력해주세요.');
-                } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                    $(this).closest('.hover_collapse').children('div').children('a').click();
-                }
-            });
-
-            /* 대회 참가 방식 */
-            // 참가자 신청 registration
-            // 입력을 완료했는지 required 체크
-            $("#registration_form").submit(function(e) {
-                e.preventDefault();
-                // 참가자 신청 받기 기능 사용 시 팝업
-                if ($('input:radio[name="registration"]:checked').val() == 'yes') {
-                    $("#div_registration_yes").show();
-                } else {
-                    $("#div_registration_yes").hide();
-                }
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 참가 방식:세부 사항 */
-            // 대회 등록 방식 registration_type
-            // 입력을 완료했는지 required 체크
-            $("#registration_type_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 참가자 양식 만들기 */
-            // 입력을 완료했는지 required 체크
-            // 참가자 양식 추가 버튼 기능 구현
-            // Add button click handler
-            var MAX_OPTIONS = 10;
-            var participation_number = 1;
-            $('.div_participation_template').on('click', '.addButton', function() {
-                if(participation_number < MAX_OPTIONS){
-                    participation_number = participation_number + 1;
-                    var $template = $('#participation_formTemplate'),
-                            $clone    = $template
-                                    .clone()
-                                    .removeClass('hide')
-                                    .removeAttr('id')
-                                    .insertBefore($template);
-                    $clone.children('div').children('input').prop('disabled', false);
-                } else {
-                    $('.div_participation_template').find('.addButton').attr('disabled', 'disabled');
-                }
-            });
-            // Remove button click handler
-            $('.div_participation_template').on('click', '.removeButton', function() {
-                participation_number = participation_number - 1;
-                $('.div_participation_template').find('.addButton').removeAttr('disabled', 'disabled');
-                var $row    = $(this).parents('.remove-group');
-
-                // Remove element containing the option
-                $row.remove();
-            });
-
-            $("#participation_template_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 최대 참가자 수 participation_number */
-            // 입력을 완료했는지 required 체크
-            $("#participation_number_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 대회 참가 기간 설정 participation_time */
-            // 입력을 완료했는지 required 체크
-            $('input:radio[name="participation_time"]').change(function() {
-                if ($(this).val() == 'custom') {
-                    document.getElementById("participation_starttime").required = true;
-                    document.getElementById("participation_endtime").required = true;
-                    $("#div_participation_time_custom").show();
-                } else {
-                    document.getElementById("participation_starttime").required = false;
-                    document.getElementById("participation_endtime").required = false;
-                    $("#div_participation_time_custom").hide();
-                }
-            });
-
-            $("#participation_time_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
-            /* 참가자 체크인 participation_checkin */
-            // 입력을 완료했는지 required 체크
-            // 사용 클릭 시 시간 default 선택시 팝업
-            $('input:radio[name="participation_checkin"]').change(function() {
-                if ($(this).val() == 'yes') {
-                    $("#div_participation_checkin_yes").show();
-                } else {
-                    $("#div_participation_checkin_yes").hide();
-                }
-            });
-
-            $("#participation_checkin_form").submit(function(e) {
-                e.preventDefault();
-                if($('input:radio[name="participation_checkin"]:checked').val()=='yes' && document.getElementById('participation_checkin_time').value=="default"){
-                    alert('참가자 체크인 시간을 선택해주세요.');
-                } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                    $(this).closest('.hover_collapse').children('div').children('a').click();
-                }
+                $('#funding_yes_check4').attr('value', 'check');
+                tab3_check_function();
             });
 
             /* (4) 진행자 설정 페이지 */
-            // 진행자 이미지
-            $("#profile_image_form").submit(function(e) {
-                e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
-                $(this).closest('.hover_collapse').children('div').children('a').click();
-            });
-
             /* 진행자 이름 profile_name */
             // 입력을 완료했는지 required 체크
             $('input:radio[name="profile_name_question"]').change(function() {
@@ -2971,8 +3269,10 @@
 
             $("#profile_name_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab4_check1').attr('value', 'check');
+                tab4_check_function();
             });
 
             /* 진행자 소개 profile_introduction */
@@ -2983,9 +3283,20 @@
                 if($('#profile_introduction').summernote('code')=="<p><br></p>"){
                     alert('간단한 진행자 소개를 입력해주세요.');
                 } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                     $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $('#tab4_check2').attr('value', 'check');
+                    tab4_check_function();
                 }
+            });
+
+            // 진행자 이미지
+            $("#profile_image_form").submit(function(e) {
+                e.preventDefault();
+                $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab4_check3').attr('value', 'check');
+                tab4_check_function();
             });
 
             /* 방송 주소 streaming_site, streaming_url */
@@ -3020,8 +3331,10 @@
                 if($('input:radio[name="streaming"]:checked').val()=='yes' && $("input:checkbox[name='streaming_site']:checked").length==0){
                     alert("스트리밍하실 사이트를 선택해주세요.");
                 } else{
-                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                     $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $('#tab4_check4').attr('value', 'check');
+                    tab4_check_function();
                 }
             });
 
@@ -3043,39 +3356,109 @@
 
             $("#profile_email_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab4_check5').attr('value', 'check');
+                tab4_check_function();
             });
 
             /* 휴대폰 번호 profile_phone */
             // 입력을 완료했는지 required 체크
             $("#profile_phone_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab4_check6').attr('value', 'check');
             });
 
             /* 계좌 번호 profile_account */
             // 입력을 완료했는지 required 체크
             $("#profile_account_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab4_check7').attr('value', 'check');
+                tab4_check_function();
             });
 
             /* 크리에이터 등록 creator_enrollment */
             // 입력을 완료했는지 required 체크
             $("#creator_enrollment_form").submit(function(e) {
                 e.preventDefault();
-                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
                 $(this).closest('.hover_collapse').children('div').children('a').click();
+                $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                $('#tab4_check8').attr('value', 'check');
+                tab4_check_function();
             });
 
+            // 모든 항목이 다 확인되었으면, 탭 옆에 v체크 뜨게 하기
+            function tab4_check_function(){
+                var check1 = $("#tab4_check1").val();
+                var check2 = $("#tab4_check2").val();
+                var check3 = $("#tab4_check3").val();
+                var check4 = $("#tab4_check4").val();
+                var check5 = $("#tab4_check5").val();
+                var check6 = $("#tab4_check6").val();
+                var check7 = $("#tab4_check7").val();
+                var check8 = $("#tab4_check8").val();
+
+                if(check1=="check" && check2=="check" && check3=="check" && check4=="check" && check5=="check" && check6=="check" && check7=="check" && check8=="check"){
+                    $("#tab4_oksign").show();
+                    $('#tab4_allcheck').attr('value', 'check');
+                    alert("네번째 탭이 완료되었습니다.");
+                } else{
+                    $("#tab4_oksign").hide();
+                    $('#tab4_allcheck').attr('value', 'uncheck');
+                }
+            }
+
             /* collapse 클릭 시 v체크 hide & var 미완료 설정 */
-            $(".hover_collapse_a").click(function(e) {
+            $(".hover_collapse_tab1").click(function(e) {
                 /* v체크가 show되어 있으면 hide하기 */
                 if($(this).children('h4').children('span').is(":visible")){
                     $(this).children('h4').children('span').hide();
+                    $(this).children('h4').children('input').val("uncheck");
+                    tab1_check_function();
+                }
+            });
+
+            $(".hover_collapse_tab2").click(function(e) {
+                /* v체크가 show되어 있으면 hide하기 */
+                if($(this).children('h4').children('span').is(":visible")){
+                    $(this).children('h4').children('span').hide();
+                    $(this).children('h4').children('input').val("uncheck");
+                    tab2_check_function();
+                }
+            });
+
+            $(".hover_collapse_tab3").click(function(e) {
+                /* v체크가 show되어 있으면 hide하기 */
+                if($(this).children('h4').children('span').is(":visible")){
+                    $(this).children('h4').children('span').hide();
+                    $(this).children('h4').children('input').val("uncheck");
+                    tab3_check_function();
+                }
+            });
+
+            $(".hover_collapse_tab4").click(function(e) {
+                /* v체크가 show되어 있으면 hide하기 */
+                if($(this).children('h4').children('span').is(":visible")){
+                    $(this).children('h4').children('span').hide();
+                    $(this).children('h4').children('input').val("uncheck");
+                    tab4_check_function();
+                }
+            });
+
+            $(".hover_collapse_account").click(function(e) {
+                if(profile_account==1){
+                    // 만약 참가비와 후원비 둘 중 하나라도 사용한다면 클릭 시 오픈
+                    if($(this).children('h4').children('span').is(":visible")){
+                        $(this).children('h4').children('span').hide();
+                        $(this).children('h4').children('input').val("uncheck");
+                        tab4_check_function();
+                    }
+                } else{
+                    // 둘 다 사용하지 않을 경우, 클릭해도 v체크가 유지되고 창이 열리지 않는다.
                 }
             });
         });

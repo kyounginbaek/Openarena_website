@@ -38,12 +38,47 @@
                             <span style="margin-left: 10px">|</span>
                             <a class="filter" href="" style="color: #ffffff; margin-left: 10px">스타2</a>
                             <span style="margin-left: 10px">|</span>
-                            <a class="filter" href="" style="color: #ffffff; margin-left: 10px">기타</a>
+                            <a class="filter" href="" style="color: #ffffff; margin-left: 10px">섀도우버스</a>
                         </div>
                     </div>
                     <div class="menu_bar"></div>
                     <!--competition list-->
                     <div class="container" style="padding-left:0; padding-top:10px;">
+                        <a href="{% url 'ringoncup' %}">
+                            <div class="looking_picture1">
+                                <img src="{% static 'img/ringoncup/ringoncup_poster.jpeg' %}" style="margin-bottom: 10px">
+                                <div class="pic_title"><h4>{{ ringoncup.tournament_name }}</h4></div>
+                                <div class="pic_subtitle">{{ ringoncup.summary }}</div>
+                                <div class="pic_dscrp">
+                                    <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ ringoncup_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
+                                    참가 마감
+                                    <a class="pic_num">{{ ringoncup.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                    {% if ringoncup_funding %}
+                                        모인 상금 <a class="pic_num">{{ ringoncup_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                    {% else %}
+                                        모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
+                                    {% endif %}
+                                    대회 시작 <a class="pic_num">{{ ringoncup.starttime }}<span style="color: #ffffff"> 일</span></a>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="{% url 'vsc' %}">
+                            <div class="looking_picture1">
+                                <img src="{% static 'img/vsc/vsc_cover.png' %}" style="margin-bottom: 10px">
+                                <div class="pic_title"><h4>{{ vsc.tournament_name }}</h4></div>
+                                <div class="pic_subtitle">{{ vsc.summary }}</div>
+                                <div class="pic_dscrp">
+                                    <span style="color: #ffffff">참가 마감</span>
+                                    <a class="pic_num">{{ vsc.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
+                                    {% if vsc_funding %}
+                                        모인 상금 <a class="pic_num">{{ vsc_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                    {% else %}
+                                        모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
+                                    {% endif %}
+                                    대회 시작 <a class="pic_num">{{ vsc.starttime }}<span style="color: #ffffff"> 일</span></a>
+                                </div>
+                            </div>
+                        </a>
                         <a href="{% url 'scc3' %}">
                             <div class="looking_picture1">
                                 <img src="{% static 'img/scc3/scc3_cover.png' %}" style="margin-bottom: 10px">

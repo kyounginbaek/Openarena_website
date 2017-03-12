@@ -70,68 +70,51 @@ class Tournament(models.Model):
     username = models.CharField(max_length=400, default='')
     email = models.CharField(max_length=400, default='')
     created = models.DateTimeField(auto_now_add=True)
-    #tab1
+    # tab1
     tournament_name = models.CharField(max_length=400, default='')
     tournament_game = models.CharField(max_length=400, default='')
-    tournament_game_etc = models.CharField(max_length=400, default='')
     tournament_image = models.CharField(max_length=2000, default='')
     tournament_summary = summer_fields.SummernoteTextField()
     tournament_url = models.CharField(max_length=400, default='')
-    #tab2
-    funding_notice = models.CharField(max_length=200, default='') #only yes
-    account_notice = models.CharField(max_length=200, default='')  #only yes
-    participation_fee = models.CharField(max_length=200, default='') #yes or no
-    # if participation_fee = yes
-    participation_fee_number = models.CharField(max_length=200, default='')
-    funding = models.CharField(max_length=200, default='') #yes or no
-    # if funding = yes
-    funding_goal = models.CharField(max_length=200, default='')
-    funding_time = models.CharField(max_length=200, default='') #default or custom
-    # if funding_time = custom
-    funding_starttime = models.CharField(max_length=200, default='')
-    funding_endtime = models.CharField(max_length=200, default='')
-    reward = models.CharField(max_length=200, default='') #yes or no
-    #if reward = yes
-    reward_number = models.CharField(max_length=200, default='')
-    reward_spec = models.CharField(max_length=2000, default='')
-    promise = models.CharField(max_length=200, default='') #yes or no
-    #if promise = yes
-    promise_number = models.CharField(max_length=200, default='')
-    promise_spec = models.CharField(max_length=2000, default='')
-    # tab3
+    # tab2
     tournament_starttime = models.CharField(max_length=200, default='')
     tournament_endtime = models.CharField(max_length=200, default='')
     tournament_format = models.CharField(max_length=200, default='')
     tournament_format_spec = models.CharField(max_length=200, default='')
-    tournament_format_spec_detail = models.CharField(max_length=200, default='')
     tournament_rule = summer_fields.SummernoteTextField()
-    registration = models.CharField(max_length=200, default='')  # yes or no
+    participation = models.CharField(max_length=200, default='')  # yes or no
     # if tournament_registration = yes
-    registration_type = models.CharField(max_length=200, default='')  # individual or team
+    participation_type = models.CharField(max_length=200, default='')  # individual or team
     participation_template = models.CharField(max_length=2000, default='')
     participation_number = models.CharField(max_length=200, default='')
-    participation_time = models.CharField(max_length=200, default='')  # default or custom
     # if participation_time = custom
     participation_starttime = models.CharField(max_length=200, default='')
     participation_endtime = models.CharField(max_length=200, default='')
-    participation_checkin = models.CharField(max_length=200, default='')  # yes or no
-    # if participation_checkin = yes
-    participation_checkin_time = models.CharField(max_length=200, default='')
-    #tab4
-    profile_image = models.CharField(max_length=2000, default='')
-    profile_name_question = models.CharField(max_length=200, default='') #default or custom
+    participation_checkin = models.CharField(max_length=200, default='')  # checkin_time or no
+    # tab2
+    funding_notice = models.CharField(max_length=200, default='')  # only yes
+    account_notice = models.CharField(max_length=200, default='')  # only yes
+    participation_fee = models.CharField(max_length=200, default='')  # fee_number or no
+    funding = models.CharField(max_length=200, default='')  # yes or no
+    # if funding = yes
+    funding_goal = models.CharField(max_length=200, default='')
+    # if funding_time = custom
+    funding_starttime = models.CharField(max_length=200, default='')
+    funding_endtime = models.CharField(max_length=200, default='')
+    reward = models.CharField(max_length=4000, default='')  # [number, spec] or no
+    promise = models.CharField(max_length=4000, default='')  # [number, spec] or no
+    # tab4
     profile_name = models.CharField(max_length=400, default='')
     profile_introduction = summer_fields.SummernoteTextField()
-    streaming_site = models.CharField(max_length=2000, default='')
-    streaming_url = models.CharField(max_length=4000, default='')
-    profile_email_question = models.CharField(max_length=200, default='')  #default or custom
+    profile_image = models.CharField(max_length=2000, default='')
+    streaming = models.CharField(max_length=4000, default='')  # yes or no
     profile_email = models.CharField(max_length=400, default='')
     profile_phone = models.CharField(max_length=200, default='')
     profile_account = models.CharField(max_length=400, default='')
     creator_enrollment = models.CharField(max_length=200, default='')
-    #after submit
-    confirm = models.CharField(max_length=200, default='') #yes or no(reviewing)
-    #template
+    # after submit
+    confirm = models.CharField(max_length=200, default='') # yes or no(reviewing)
+    # template
     cover_image = models.CharField(max_length=2000, default='')
     logo_image = models.CharField(max_length=2000, default='')
 

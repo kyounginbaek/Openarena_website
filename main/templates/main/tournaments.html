@@ -67,6 +67,23 @@
                     </div>
                 </div>
                 <div class="container" style="padding-left:0; padding-top:10px;">
+                    <a href="{% url 'moon' %}">
+                        <div class="looking_picture1">
+                            <img src="{% static 'img/moon/moon_cover.jpg' %}" style="margin-bottom: 10px">
+                            <div class="pic_title"><h4>{{ moon.tournament_name }}</h4></div>
+                            <div class="pic_subtitle">{{ moon.summary }}</div>
+                            <div class="pic_dscrp">
+                                <span style="color: #ffffff">참가 마감</span>
+                                <a class="pic_num">초청 대회<span style="color: #ffffff"> 일</span></a><br/>
+                                {% if moon_funding %}
+                                    모인 상금 <a class="pic_num">{{ moon_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
+                                {% else %}
+                                    모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
+                                {% endif %}
+                                대회 시작 <a class="pic_num">진행중<span style="color: #ffffff"> 일</span></a>
+                            </div>
+                        </div>
+                    </a>
                     <a href="{% url 'vsc2' %}">
                         <div class="looking_picture1">
                             <img src="{% static 'img/vsc/vsc_cover.png' %}" style="margin-bottom: 10px">

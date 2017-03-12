@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^scc3/$', views.scc3, name='scc3'),
     url(r'^chainkiller_s1/$', views.chainkiller_s1, name='chainkiller_s1'),
     url(r'^vsc2/$', views.vsc2, name='vsc2'),
+    url(r'^moon/$', views.moon, name='moon'),
 
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),

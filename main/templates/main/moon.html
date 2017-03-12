@@ -11,14 +11,14 @@
 {% endblock %}
 {% block content %}
     <div class="block-b">
-        <div class="com_header" style="background:url({% static 'img/vsc/vsc_cover.png' %}) center center no-repeat; background-size: cover;">
+        <div class="com_header" style="background:url({% static 'img/moon/moon_cover.jpg' %}) center center no-repeat; background-size: cover;">
             <div class="com_empty">
             </div>
             <div class="com_header_inner">
                 <div class="container">
                     <!--프로필칸-->
                     <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                        <div class="com_profile" style="background: url({% static 'img/vsc/vsc_logo.jpeg' %}); background-size: contain;"></div>
+                        <div class="com_profile" style="background: url({% static 'img/moon/moon_logo2.png' %}); background-size: contain;"></div>
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
@@ -32,18 +32,18 @@
                             <li class="">
                                 <div class="" >
                                     <div class="center">
-                                        <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">참가 하기</button>
+                                        <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block">참가 마감</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="" >
                                     <div class="center">
-                                        <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
+                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="center">
-                                    <button id="streaming" name="streaming" class="btn btn-primary center-block" data-toggle="modal" data-target="#streamingModal">방송 보기</button>
+                                    <button id="streaming" name="streaming" class="btn btn-primary center-block">방송 보기</button>
                                 </div>
                             </li>
                         </ul>
@@ -77,18 +77,20 @@
                         <span class="list_btn">대회 소개</span>
                     </button>
                 </div>
-                <!-- 참가자 명단 -->
+                <!-- 참가자 명단
                 <div class="btn-group" role="group">
                     <button type="button" id="stars" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
                         <span class="list_btn">참가자 명단</span>
                     </button>
                 </div>
-                <!-- 대진표 -->
+                -->
+                <!-- 대진표
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
                         <span class="list_btn">대진표</span>
                     </button>
                 </div>
+                -->
                 <!-- 후원자 명단 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
@@ -112,9 +114,13 @@
                             <div style="overflow: hidden; clear: both;">
                                 <h4 style="color: #f7941e">• 대회 소개 및 규칙</h4>
                                 <div class="com_intro_now hover_div">
-                                    <img src="{% static 'img/ringoncup/ringoncup_poster.jpeg' %}">
-                                    <div style="padding: 5px;"></div>
+                                    <img src="{% static 'img/moon/moon_poster.png' %}">
+                                    <div style="padding: 15px;"></div>
                                     <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
+                                    <br/>
+                                    <p style="color: #ff9900">환불 규정</p>
+                                    <p>1. 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</p>
+                                    <p>2. 대회가 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</p>
                                 </div>
                             </div>
                             <div style="overflow: hidden; clear: both;">
@@ -128,13 +134,6 @@
                             <div>
                                 <h4 style="color: #f7941e">• 대회 정보</h4>
                                 <div class="container com_intro_now hover_div">
-                                    {% if participation %}
-                                        <div class="com_into_small">참가자 수</div>
-                                        <div class="com_into_small"><span class="com_into_big">{{ participation.count }}</span> 명</div><br>
-                                    {% else %}
-                                        <div class="com_into_small">참가자 수</div>
-                                        <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
-                                    {% endif %}
                                     <div class="com_into_small">참가 마감</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ tournament.participation_endtime }}</span> 일</div><br>
                                     {% if funding %}
@@ -181,6 +180,10 @@
                                     <tr>
                                         <th>참가 번호</th>
                                         <th>오픈아레나 닉네임</th>
+                                        <th>소속 리그</th>
+                                        <th>티어</th>
+                                        <th>최종 참가 여부</th>
+                                        <th>체크인</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -189,6 +192,10 @@
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
                                                 <td>{{ p.username }}</td>
+                                                <td>{{ p.etc3 }}</td>
+                                                <td>{{ p.etc4 }}</td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         {% endfor %}
                                     {% endif %}
@@ -399,7 +406,8 @@
                                 <!-- content goes here -->
                                 <input type="hidden" class="form-control" id="purpose" name="purpose" value="funding">
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">후원하실 금액을 선택해주세요.</label>
+                                    <label for="exampleInputPassword1" style="color: #ff9900;">후원하실 금액을 선택해주세요.</label>
+                                    <h5>금액 직접 입력 시 1,000원 이상부터 후원 가능합니다.</h5>
                                     <select id="funding_amount" name="funding_amount" class="form-control">
                                         <option value="1000">1,000원</option>
                                         <option value="3000">3,000원</option>
@@ -407,7 +415,18 @@
                                         <option value="10000">10,000원</option>
                                         <option value="20000">20,000원</option>
                                         <option value="50000">50,000원</option>
+                                        <option value="etc">금액 직접 입력</option>
                                     </select>
+                                </div>
+                                <div class="form-group" id="div_funding_amount_etc" style="display: none;">
+                                    <div class="input-group spinner spinner_funding_amount" style="width: 100%;">
+                                        <span class="input-group-addon">￦</span>
+                                        <input required disabled="disabled" type="text" class="form-control" id="funding_amount_etc" name="funding_amount_etc" value="1000">
+                                        <div class="input-group-btn-vertical">
+                                            <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                            <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">대회 응원 문구를 적어주세요.</label>
@@ -440,11 +459,20 @@
                                     <span class="glyphicon glyphicon-info-sign"></span>
                                     다음을 꼭 확인해주세요!
                                 </h5>
-                                <h5>참가자는 직업당 1개의 덱씩 총 2개의 직업과 덱을 사용할 수 있으며 사이드 보딩은 허락되지 않습니다.</h5>
-                                <h5>덱의 수정은 3월 1일 0시까지 가능합니다.</h5>
-                                <h5>카드 제약 룰을 위반한 것이 들어날 경우 몰수패로 취급한다.</h5>
-                                <h5>덱의 제출은 섀도우버스 포탈과 이메일을 사용하여 합니다.</h5>
-                                <h5>대회 규칙과 카드 이용 제약 리스트를 자세히 읽고 신청해주시기 바랍니다.</h5>
+                                <h5>모든 참가자들은 2가지 덱을 제출해야 합니다.</h5>
+                                <h5>같은 클래스의 덱은 사용할 수 없습니다.</h5>
+                                <h5>신청 시 프로필, 덱리스트와 함께 ID, 닉네임, 직업 2개, 연락처를 적어서 제출해야합니다.</h5>
+                                <img src="{% static 'img/vsc/vsc_example1.png' %}" style="max-width : 100%;">
+                                <h5 style="color: #ff9900;">
+                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                    덱 제출시 주의 사항
+                                </h5>
+                                <h5>사진 제출시 파일명은 클래스1, 클래스2로 합니다.</h5>
+                                <h5>덱리스트가 길어서 한 장에 캡쳐되지 않을 경우에는 2장으로 제출합니다.</h5>
+                                <h5>사진이 2장이 될 경우 파일명을 클래스1-1, 1-2로 제출합니다.</h5>
+                                <h5>(예) 네크로맨서1-1, 네크로맨서1-2, 로얄2</h5>
+                                <img src="{% static 'img/vsc/vsc_example2.png' %}" style="max-width : 100%;">
+                                <img src="{% static 'img/vsc/vsc_example3.png' %}" style="max-width : 100%;">
                             </div>
                             <div class="modal-body">
                                 <img src="">
@@ -453,40 +481,47 @@
                                     <label for="participation_etc1" style="color: #ff9900;">섀도우버스 ID</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) 123 456 789">
+                                        <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) 593 308 123">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_etc2" style="color: #ff9900;">섀도우버스 닉네임</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) 오픈아레나">
+                                        <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) VerseStop">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="participation_etc3" style="color: #ff9900;">이메일</label>
+                                    <label for="participation_etc3" style="color: #ff9900;">섀도우버스 직업 2개</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc3" name="participation_etc3" placeholder="예) email@openarena.kr">
+                                        <input required autocomplete="off" class="form-control" id="participation_etc3" name="participation_etc3" placeholder="예) 네크로맨서, 로얄">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="participation_etc4" style="color: #ff9900;">연락처</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_phone" name="participation_phone" placeholder="예) 010-1234-5678">
+                                        <input required autocomplete="off" class="form-control" id="participation_etc4" name="participation_etc4" placeholder="예) 010-1234-5678">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc5" style="color: #ff9900;">참가 덱1</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
+                                        <input required autocomplete="off" class="form-control" id="participation_etc5" name="participation_etc5" placeholder="예) 010-1234-5678">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="participation_etc6" style="color: #ff9900;">참가 덱2</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
+                                        <input required autocomplete="off" class="form-control" id="participation_etc5" name="participation_etc5" placeholder="예) 010-1234-5678">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-body">
-                                <h5 style="color: #ff9900;">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    대회 참가자 안내
-                                </h5>
-                                <h5>모든 참가자는 디스코드를 사용 하여야 하며 대진표 추첨 2시간 이전에 디스코드에 접속하여 대회에 체크인 하여야 합니다.</h5>
-                                <h5>16강 이상 진출자는 화면 송출을 위해 카카오TV를 통하여 화면을 송출 하여야 할 수도 있습니다.</h5>
-                                <h5>이메일을 통하여 덱 리스트 제출 안내와 디스코드 주소를 전달합니다.</h5>
-                                <h5>대진표 확정 이후 이메일이 갈 예정이니 반드시 확인하여 주세요.</h5>
+                                <h5 style="color: #ff9900;">* 참가 완료 확인 후 연락처로 대회 관련 사항을 보내드리도록 하겠습니다.</h5>
                                 <button type="submit" class="join_submit">참가하기</button>
                             </div>
                         </form>
@@ -506,12 +541,20 @@
                             <!-- content goes here -->
                             <div class="form-group">
                                 <label for="exampleInputPassword1">시청하실 스트리밍 사이트를 선택해주세요.</label>
+                                <p class="don_list">* 스트리밍 방송은 동시에 진행되며, 부정행위 방지를 위해 1분 지연방송을 기본으로 합니다.</p>
                             </div>
+                            <button id="button_afreeca" name="button_afreeca" class="donate_submit">
+                                아프리카tv
+                            </button>
                             <button id="button_twitch" name="button_twitch" class="donate_submit" style="margin-left: 20px;">
                                 트위치(twitch)
                             </button>
+                            <br/><br/>
                             <button id="button_youtube" name="button_youtube" class="donate_submit">
                                 유투브(youtube)
+                            </button>
+                            <button id="button_daumtvpot" name="button_daumtvpot" class="donate_submit"style="margin-left: 20px;">
+                                다음tv팟
                             </button>
                             <br/><br/>
                         </div>
@@ -526,12 +569,27 @@
 {% block script %}
     <script>
         $(document).ready(function(){
-            $("#button_twitch").click(function(){
-                window.open("https://www.twitch.tv/lt_kaido");
+            $("input[name=funding_amount_etc]").keyup(function(event){
+                if (!(event.keyCode >=37 && event.keyCode<=40)){
+                    var inputVal = $(this).val();
+                    $(this).val(inputVal.replace(/[^0-9]/gi,''));
+                }
             });
 
-            $("#button_youtube").click(function(){
-                window.open("http://www.youtube.com/channel/UCq_g4f7lhAjEladXg-KUX7Q/live");
+            // 후원 금액 직접 입력 시
+            $('.spinner_funding_amount .btn:first-of-type').on('click', function() {
+                $('.spinner_funding_amount input').val( parseInt($('.spinner_funding_amount input').val(), 10) + 1000);
+            });
+            $('.spinner_funding_amount .btn:last-of-type').on('click', function() {
+                $('.spinner_funding_amount input').val( parseInt($('.spinner_funding_amount input').val(), 10) - 1000);
+            });
+
+            $("#participation").click(function(){
+                window.open("https://battlefy.com/versestopcup/versestopcup/58bdb65144c20f37030ea7da/info?infoTab=details");
+            });
+
+            $("#streaming").click(function(){
+                window.open("http://afreecatv.com/iopsbj");
             });
 
             $(".btn-pref .btn").click(function(){
@@ -608,20 +666,35 @@
                 $('#participation_board').css("border-color", "#fff");
             });
 
+            // 만약 금액 직접 입력을 선택하면 금액 항목이 팝업되도록
+            $('#funding_amount').change(function() {
+                $("#div_funding_amount_etc").hide();
+                $("#funding_amount_etc").prop('disabled', true);
+
+                if(document.getElementById('funding_amount').value=="etc"){
+                    $("#div_funding_amount_etc").show();
+                    $("#funding_amount_etc").prop('disabled', false);
+                }
+            });
+
             $("#funding_form").submit(function(e) {
                 e.preventDefault();
-                serializedData = $("#funding_form").serialize();
-                var newWindow = window.open("","_blank");
-                $.ajax({
-                    type: 'POST',
-                    url: '/ringoncup/',
-                    data: serializedData,
-                    dataType: 'json',
-                    success: function(response) {
-                        newWindow.location.href = response.status;
-                        newWindow.focus;
-                    }
-                });
+                if(document.getElementById('funding_amount').value=="etc" && document.getElementById('funding_amount_etc').value < 1000){
+                    alert("1,000원 이상부터 후원이 가능합니다.");
+                }else{
+                    serializedData = $("#funding_form").serialize();
+                    var newWindow = window.open("","_blank");
+                    $.ajax({
+                        type: 'POST',
+                        url: '/moon/',
+                        data: serializedData,
+                        dataType: 'json',
+                        success: function(response) {
+                            newWindow.location.href = response.status;
+                            newWindow.focus;
+                        }
+                    });
+                }
             });
 
             $("#participation_form").submit(function(e) {
@@ -629,7 +702,7 @@
                 serializedData = $("#participation_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/ringoncup/',
+                    url: '/moon/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
@@ -661,7 +734,7 @@
                 serializedData = $("#comment_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/ringoncup/',
+                    url: '/moon/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(data) {
@@ -677,26 +750,89 @@
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay,listWeek'
                 },
-                defaultDate: '2017-02-16',
+                defaultDate: '2017-03-12',
                 navLinks: true, // can click day/week names to navigate views
                 eventLimit: true, // allow "more" link when too many events
                 events: [
                     {
-                        title: '참가자 모집',
-                        start: '2017-02-20T17:00:00',
-                        end: '2017-02-27T00:00:00'
+                        title: 'A조 1경기 Moon vs KaL',
+                        start: '2017-03-06T20:00:00',
                     },
                     {
-                        title: '대진표 추첨',
-                        start: '2017-02-27T19:00:00',
+                        title: 'A조 2경기 Jeak vs Sarin',
+                        start: '2017-03-07T20:00:00',
                     },
                     {
-                        title: '덱 제출 완료',
-                        start: '2017-03-01T00:00:00'
+                        title: 'A조 승자전',
+                        start: '2017-03-08T20:00:00',
                     },
                     {
-                        title: '대회 진행',
-                        start: '2017-03-01T14:00:00'
+                        title: 'A조 패자전',
+                        start: '2017-03-10T20:00:00',
+                    },
+                    {
+                        title: 'A조 최종전',
+                        start: '2017-03-11T17:00:00',
+                    },
+                    {
+                        title: 'B조 1경기 Dream.T vs Shield',
+                        start: '2017-03-12T17:00:00',
+                    },
+                    {
+                        title: 'B조 2경기 Ns vs NeOx',
+                        start: '2017-03-13T20:00:00',
+                    },
+                    {
+                        title: 'B조 승자전',
+                        start: '2017-03-14T20:00:00',
+                    },
+                    {
+                        title: 'B조 패자전',
+                        start: '2017-03-15T20:00:00',
+                    },
+                    {
+                        title: 'B조 최종전',
+                        start: '2017-03-16T17:00:00',
+                    },
+                    {
+                        title: 'C조 1경기 Qus vs SaDo',
+                        start: '2017-03-17T17:00:00',
+                    },
+                    {
+                        title: 'C조 2경기 WHITE vs Mi',
+                        start: '2017-03-18T17:00:00',
+                    },
+                    {
+                        title: 'C조 승자전',
+                        start: '2017-03-19T17:00:00',
+                    },
+                    {
+                        title: 'C조 패자전',
+                        start: '2017-03-20T20:00:00',
+                    },
+                    {
+                        title: 'C조 최종전',
+                        start: '2017-03-21T20:00:00',
+                    },
+                    {
+                        title: 'D조 1경기 Kiss vs Ever',
+                        start: '2017-03-22T20:00:00',
+                    },
+                    {
+                        title: 'D조 2경기 ErOs vs NsP',
+                        start: '2017-03-23T20:00:00',
+                    },
+                    {
+                        title: 'D조 승자전',
+                        start: '2017-03-24T20:00:00',
+                    },
+                    {
+                        title: 'D조 패자전',
+                        start: '2017-03-26T17:00:00',
+                    },
+                    {
+                        title: 'D조 최종전',
+                        start: '2017-03-27T20:00:00',
                     },
                 ]
             });
@@ -718,7 +854,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: '/ringoncup/',
+                        url: '/moon/',
                         data: serializedData,
                         dataType: 'json',
                         success: function(response) {

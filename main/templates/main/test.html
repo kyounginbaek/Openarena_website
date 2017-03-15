@@ -314,6 +314,7 @@
                 e.preventDefault();
                 var formdata = new FormData();
                 formdata.append("tournament_image", $('#tournament_image').prop('files')[0]);
+                console.log(formdata);
                 $.ajax({
                     url: '/test/',
                     processData: false,

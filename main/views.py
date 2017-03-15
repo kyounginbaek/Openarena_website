@@ -1376,6 +1376,7 @@ def chat(request):
     c = Chat.objects.all()
     return render(request, 'main/functions/messages.html', {'chat': c})
 
+@csrf_exempt
 def create(request):
     gamerule = Gamerule.objects.all()
     if request.method == 'POST':
@@ -1396,9 +1397,70 @@ def create(request):
                 response = {'status': 'success', 'purpose': 'tournament_url'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "submit":
-            # 대회 생성 및 저장 + 이미지 업로드
+            # 대회 생성 및 저장
+            # save 코드
+            tournament_obj = Tournament(username=request.user.username,
+                                        email=request.user.email,
+                                        # tab1
+                                        tournament_name=request.POST.get('tournament_name'),
+                                        tournament_game=request.POST.get('tournament_game'),
+                                        tournament_image="",
+                                        tournament_summary=request.POST.get('tournament_summary'),
+                                        tournament_url=request.POST.get('tournament_url'),
+                                        # tab2
+                                        tournament_starttime=request.POST.get('tournament_starttime'),
+                                        tournament_endtime=request.POST.get('tournament_endtime'),
+                                        tournament_format=request.POST.get('tournament_format'),
+                                        tournament_format_spec=request.POST.get('tournament_format_spec'),
+                                        tournament_rule=request.POST.get('tournament_rule'),
+                                        participation=request.POST.get('participation'),
+                                        participation_custom_url=request.POST.get('participation_custom_url'),
+                                        # participation=yes
+                                        participation_type=request.POST.get('participation_type'),
+                                        participation_template_custom=request.POST.get('participation_template_custom'),
+                                        participation_template_format=request.POST.get('participation_template_format'),
+                                        participation_template=request.POST.get('participation_template'),
+                                        participation_number=request.POST.get('participation_number'),
+                                        participation_time=request.POST.get('participation_time'),
+                                        participation_starttime=request.POST.get('participation_starttime'),
+                                        participation_endtime=request.POST.get('participation_endtime'),
+                                        participation_checkin=request.POST.get('participation_checkin'),
+                                        # tab3
+                                        funding_notice=request.POST.get('funding_notice'),
+                                        account_notice=request.POST.get('account_notice'),
+                                        participation_fee=request.POST.get('participation_fee'),
+                                        funding=request.POST.get('funding'),
+                                        # if funding=yes
+                                        funding_goal=request.POST.get('funding_goal'),
+                                        funding_time=request.POST.get('funding_time'),
+                                        funding_starttime=request.POST.get('funding_starttime'),
+                                        funding_endtime=request.POST.get('funding_endtime'),
+                                        reward=request.POST.get('reward'),
+                                        reward_number=request.POST.get('reward_number'),
+                                        reward_spec=request.POST.get('reward_spec'),
+                                        promise=request.POST.get('promise'),
+                                        promise_spec=request.POST.get('promise_spec'),
+                                        # tab4
+                                        profile_name=request.POST.get('profile_name'),
+                                        profile_introduction=request.POST.get('profile_introduction'),
+                                        profile_image="",
+                                        streaming=request.POST.get('streaming'),
+                                        streaming_site=request.POST.get('streaming_site'),
+                                        streaming_url=request.POST.get('streaming_url'),
+                                        profile_email=request.POST.get('profile_email'),
+                                        profile_phone=request.POST.get('profile_phone'),
+                                        profile_account=request.POST.get('profile_account'),
+                                        creator_enrollment=request.POST.get('creator_enrollment'))
+            tournament_obj.save()
 
-            response = {'status': 'error', 'message': '대회가 성공적으로 제출되었습니다. 오픈아레나에서 검토 후 빠른 시일 내에 연락드리도록 하겠습니다.'}
+            # 챌론지 대회 생성?
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "image_upload":
+            # 이미지 업로드
+
+            response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
     return render(request, 'main/create.html', {'gamerule': gamerule})

@@ -651,7 +651,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .help_head{
     height: 275px;
-    background: url(../../static/img/q_cover.png);
+    background: url(../img/help-cover.png);
     margin-bottom: 20px;
 }
 .help_head_inner{

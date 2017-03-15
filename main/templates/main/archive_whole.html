@@ -1,0 +1,139 @@
+{% extends "main/base2.html" %}
+{% load staticfiles %}
+
+{% block title %} 오픈아레나:대회기록실 {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/archive_whole.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <p id="report-page-title">대회기록실</p>
+            </div>
+            <!-- game category -->
+            <div class="game-category">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        게임 전체<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">리그 오브 레전드</a></li>
+                        <li><a href="#">오버 워치</a></li>
+                        <li><a href="#">스타1</a></li>
+                        <li><a href="#">기타</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="order-search-container col-md-12">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-3 report-whole-content">
+                    <span class="last-arena-title">지난 대회</span>
+                    <a href="{% url 'archive' %}"><button type="button">더보기</button></a>
+                </div>
+                <div class="col-md-3 search-container"></div>
+                <div class="order-category col-md-4">
+                    <button type="button" class="">후원 금액순</button>
+                    <button type="button" class="">후원자순</button>
+                    <button type="button" class="">최신순</button>
+                    <button type="button" class="">마감 임박순</button>
+                </div>
+
+
+            </div>
+            <!-- contents -->
+            <div class="container-fluid col-md-12" id="project-container">
+                <div class="project-card-container col-md-12">
+                    {% for card in card_list_end %}
+                        <div class="project-card">
+                            <div class="card sticky-action">
+                                <div class="card-image waves-effect waves-block waves-light" style="background: {{ card.main_image }}; background-size: cover">
+                                    <div class="card-stats">
+                                        <div class="stat1">
+                                            Sponsership
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%
+                                            </div>
+                                        </div>
+                                        <div class="stat3">
+                                            Participants: {{ participation.count }}&nbsp; &nbsp; {{ card.get_day }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-head">
+                                        <h5>{{ card.tournament_name }}</h5>
+                                        {{ card.summary }}
+                                    </div>
+                                    <div class="detail-button-container">
+                                        <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-search-plus" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                    </div>
+                                </div>
+                                <div class="card-reveal card-detail">
+                                    <div class="down-icon">
+                                        <span class="card-title grey-text text-darken-4"><i class="fa fa-search-minus" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                    </div>
+                                    <div class="card-head">
+                                        <h5>{{ card.tournament_name }}</h5>
+                                        {{ card.summary }}
+                                    </div>
+                                    <div class="card-detail-information">
+                                        <ul>
+                                            <li>분류: {{ card.tournament_game }}</li>
+                                            <li>보상: {{ card.reward }} </li>
+                                            <li>일시: {{ card.starttime }}</li>
+                                            <li>신청 마감일: {{ card.participation_endtime }}</li>
+                                        </ul>
+                                        <div class="card-detail-button">
+                                            <button type="button" name="" class="sponser-button">바로가기</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-artist">
+                                        아티스트: {{ card.username }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="container-fluid col-md-12" id="video-container">
+                <div class="col-md-3 col-md-offset-1 report-whole-content">
+                    <span class="video-title">대회 영상</span>
+                    <a href="{% url 'archive_videos' %}"><button type="button">더보기</button></a>
+                </div>
+                <div class="video-raw col-md-10 col-md-offset-1">
+                    <div class="video-card col-md-5">
+                        <video width="440" height="280" controls>
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-card col-md-5">
+                        <video width="440" height="280" controls>
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('.project-card-container').slick({
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            autoplay: false,
+            arrows: false,
+            dots: true,
+        });
+    </script>
+{% endblock %}

@@ -15,7 +15,7 @@ class MakingAdmin(admin.ModelAdmin):
 admin.site.register(Making, MakingAdmin)
 
 class TournamentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tournament_name', 'tournament_game', 'confirm']
+    list_display = ['id', 'tournament_name', 'tournament_game', 'tournament_url', 'tournament_format', 'participation', 'participation_fee', 'funding', 'streaming', 'confirm']
 admin.site.register(Tournament, TournamentAdmin)
 
 class VideoAdmin(admin.ModelAdmin):

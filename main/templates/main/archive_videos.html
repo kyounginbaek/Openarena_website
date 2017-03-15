@@ -1,0 +1,74 @@
+{% extends "main/base2.html" %}
+{% load staticfiles %}
+
+{% block title %} 오픈아레나:대회기록실 {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/archive_whole.css' %}">
+    <link rel="stylesheet" href="{% static 'css/archive_tournaments.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header>
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <p id="report-page-title">대회기록실</p>
+            </div>
+            <!-- game category -->
+            <div class="game-category">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        게임 전체<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">리그 오브 레전드</a></li>
+                        <li><a href="#">오버 워치</a></li>
+                        <li><a href="#">스타1</a></li>
+                        <li><a href="#">기타</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="order-search-container col-md-12">
+                <div class="col-md-1"></div>
+                <span class="last-arena-title col-md-2">영상</span>
+                <div class="col-md-3 search-container" id="search-container">
+                    <input type="search" alt="" value="" placeholder="Search.." class="search">
+                </div>
+                <div class="order-category col-md-6">
+                    <button type="button" class="activate">후원 금액순</button>
+                    <button type="button" class="">후원자순</button>
+                    <button type="button" class="">최신순</button>
+                </div>
+            </div>
+            <!-- contents -->
+            <div class="container-fluid col-md-12" id="contents-container">
+                <div class="col-md-1 remote">
+                    <div>
+                        <a href="{% url 'archive_whole' %}"><p>전체</p></a>
+                    </div>
+                    <div class="go-arena">
+                        <a href="{% url 'archive' %}"><p>지난 대회</p></a>
+                    </div>
+                    <div class="go-video">
+                        <a href="{% url 'archive_videos' %}"><p>영상</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="videos-container col-md-11">
+
+            </div>
+            <!--
+            <div class="next-scroll-card col-md-12">
+                <a href="card.html">더보기</a>
+            </div>
+            -->
+        </div>
+        </div>
+    </header>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

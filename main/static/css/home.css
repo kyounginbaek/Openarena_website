@@ -1,0 +1,276 @@
+h5{
+    margin: 0;
+}
+
+h2{
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+h3{
+    font-size: 2.5rem;
+}
+
+.slick-slide{
+    margin-bottom: 0;
+}
+
+.slick-dots{
+    margin-bottom: 3rem;
+}
+
+.main-head{
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom:4rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin:0;
+    height: 34rem;
+    border-bottom: 1px silver solid;
+}
+
+.main-title-eng
+{
+    font-weight: 100;
+    color: rgba(255, 153, 0, 1);
+}
+
+.main-title-kor{
+}
+
+.main-title{
+    margin-top:12.5rem;
+    text-align: center;
+    padding: 0;
+}
+
+#main-title-1{
+    opacity: 0.6;
+}
+
+#main1{
+    background-size: cover;
+    color: white;
+}
+
+#main2{
+    background: #161616;
+    background-size: cover;
+}
+
+#service-title{
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+#service-title-eng{
+    font-size: 2.5rem;
+    color: rgba(255, 153, 0, 1);
+    font-weight: 300;
+}
+
+#service-title-kor{
+    font-size: 1rem;
+    font-weight: 400;
+    color: gray;
+}
+
+.service-container{
+    height: 21rem;
+    padding: 0;
+    text-align: center;
+}
+.service-img{
+    width: 130px;
+    background-color: inherit;
+    padding: 0.5rem;
+}
+
+.service{
+    font-size: 1.5rem;
+    color: rgba(255, 153, 0, 1);
+    font-weight: 300;
+}
+
+.service-contents{
+    font-size: 1rem;
+    color: white;
+    font-weight: 300;
+}
+
+#service1{
+    padding-right: 7rem;
+}
+
+#service2{
+    background-size: cover;
+    border-right-color: gray;
+    border-right-style: solid;
+    border-left-color: gray;
+    border-left-style: solid;
+}
+
+#service3{
+    margin-left: 3.6rem;
+}
+
+#arena-title{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    border-top: 2px black solid;
+}
+
+#arena-title-eng{
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 100;
+}
+
+#arena-title-kor{
+    font-size: 1rem;
+    color: gray;
+}
+
+
+.project-head{
+    background-color: black;
+    height: 5rem;
+}
+
+.project-category-eng
+{
+    color: rgba(255, 153, 0, 1);
+    font-size:3rem;
+    font-weight: 100;
+    padding-top: 2rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-top: 4px black solid;
+}
+
+
+.project-category-kor{
+    font-size: 1.2rem;
+    margin-left: 8rem;
+    margin-right: 4.5rem;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+}
+
+.project-card-container{
+    color: white;
+    background-color: inherit;
+    padding-bottom: 2rem;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+}
+
+.project-stats{
+    padding-left: 10%;
+    padding-bottom: 1rem;
+
+}
+
+.card{
+    margin-left: 0.5rem;
+    margin-right: 1.9rem;
+}
+
+.user-img{
+    display: inline !important;
+    width: 3rem;
+    margin: 0;
+}
+
+#main1-img{
+    display: inline-block;
+    width: 30rem;
+}
+
+#main1-mini-title{
+    text-align: left;
+    margin-left: 3rem;
+}
+#main1-img-container{
+    padding-top: 2rem;
+}
+
+
+.main-title > a{
+    color: white;
+}
+
+.slick-dots li{
+    margin: 0.1rem;
+}
+
+.slick-dots li button:before{
+    font-size: 1.1rem;
+
+}
+
+.button-go{
+    background-color: inherit;
+    color:dimgray;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    border-color:black;
+}
+
+.slick-next:before, .slick-prev:before{
+    font-size:5rem;
+}
+
+#best-project .slick-arrow{
+    margin-right: 5rem;
+    margin-left: 3.2rem;
+    padding-bottom: 6rem;
+    z-index: 1;
+}
+
+#New-project .slick-arrow{
+    margin-right: 5rem;
+    margin-left: 3.2rem;
+    padding-bottom: 6rem;
+    z-index: 1;
+}
+
+i.slick-arrow{
+    color: white;
+
+}
+
+#final-buttons1{
+    margin-left: 7.8rem;
+    margin-right: 1rem;
+}
+
+#final-buttons2{
+    margin-right: 1rem;
+}
+
+.final-button-container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.final-button:hover{
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    background-color: rgba(255, 153, 0, 1);
+}
+
+.final-button{
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    border: 1px solid silver;
+    width: 20.85rem;
+}

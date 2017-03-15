@@ -1,162 +1,574 @@
-{% extends "main/base.html" %}
+{% extends "main/base2.html" %}
 {% load staticfiles %}
-{% load humanize %}
 
-{% block title %} 오픈아레나:대회 둘러보기 {% endblock %}
+
+{% block title %} 오픈아레나:대회둘러보기 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/custom_kyoungin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tournaments.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="intro-header" style="background: url({% static 'img/intro-bg.jpg' %});">
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="looking_table">
-                <div class="table_title" >게임별 대회
-                </div>
-                <table style="width:100%" cellpadding="20px">
-                    <tr>
-                        <th>
-                            <div class="desc">
-                                <a id="all" name="all" class="category" href="" style="color: #f7941e">전체</a>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="desc">
-                                <a id="hearthstone" name="hearthstone" class="category" href="" style="color: white">하스스톤</a>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <div class="desc">
-                                <a id="overwatch" name="overwatch" class="category" href="" style="color: white">오버워치</a>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="desc">
-                                <a id="lol" name="lol" class="category" href="" style="color: white">롤 LOL</a>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <div class="desc">
-                                <a id="startcraft2" name="startcraft2" class="category" href="" style="color: white">스타2</a>
-                            </div>
-                        </th>
-                        <th>
-                            <div class="desc">
-                                <a id="shadowverse" name="shadowverse" class="category" href="" style="color: white">섀도우버스</a>
-                            </div>
-                        </th>
-                    </tr>
-                </table>
+    <header>
+        <div class="container-fluid">
+            <!--
+            <div class="col-md-12">
             </div>
-        </div>
+            <div class="col-md-12 search-row">
 
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-            <div class="looking_mobile">
-                <div class="abc">
-                    <div class="looking_list">
-                        <a id="time" name="time" class="filter" href="" style="color: #f7941e">날짜순</a>
-                        <span style="margin-left: 10px">|</span>
-                        <a id="popular" name="popular" class="filter" href="" style="color: white; margin-left: 10px">인기순</a>
-                        <span style="margin-left: 10px">|</span>
-                        <a id="reward" name="reward" class="filter" href="" style="color: white; margin-left: 10px">상금순</a>
+                <div class="col-md-3 col-md-offset-2">
+                    <span>검색</span>
+                    <div class="search-container" id="search-container">
+                        <input type="search" alt="" value="" placeholder="Search.." class="search">
                     </div>
                 </div>
-                <div class="container" style="padding-left:0; padding-top:10px;">
-                    <a href="{% url 'moon' %}">
-                        <div class="looking_picture1">
-                            <img src="{% static 'img/moon/moon_cover.jpg' %}" style="margin-bottom: 10px">
-                            <div class="pic_title"><h4>{{ moon.tournament_name }}</h4></div>
-                            <div class="pic_subtitle">{{ moon.summary }}</div>
-                            <div class="pic_dscrp">
-                                <span style="color: #ffffff">참가 마감</span>
-                                <a class="pic_num">초청 대회<span style="color: #ffffff"> 일</span></a><br/>
-                                {% if moon_funding %}
-                                    모인 상금 <a class="pic_num">{{ moon_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
-                                {% else %}
-                                    모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
-                                {% endif %}
-                                대회 시작 <a class="pic_num">진행중<span style="color: #ffffff"> 일</span></a>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{% url 'vsc2' %}">
-                        <div class="looking_picture1">
-                            <img src="{% static 'img/vsc/vsc_cover.png' %}" style="margin-bottom: 10px">
-                            <div class="pic_title"><h4>{{ vsc2.tournament_name }}</h4></div>
-                            <div class="pic_subtitle">{{ vsc2.summary }}</div>
-                            <div class="pic_dscrp">
-                                <span style="color: #ffffff">참가 마감</span>
-                                <a class="pic_num">{{ vsc2.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
-                                {% if vsc2_funding %}
-                                    모인 상금 <a class="pic_num">{{ vsc2_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
-                                {% else %}
-                                    모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
-                                {% endif %}
-                                대회 시작 <a class="pic_num">{{ vsc2.starttime }}<span style="color: #ffffff"> 일</span></a>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{% url 'chainkiller_s1' %}">
-                        <div class="looking_picture1">
-                            <img src="{% static 'img/chainkiller_s1/chainkiller_s1_poster.png' %}" style="margin-bottom: 10px">
-                            <div class="pic_title"><h4>{{ chainkiller_s1.tournament_name }}</h4></div>
-                            <div class="pic_subtitle">{{ chainkiller_s1.summary }}</div>
-                            <div class="pic_dscrp">
-                                <span style="color: #ffffff">참가자 수</span> <a class="pic_num">{{ chainkiller_s1_participation.count }}<span style="color: #ffffff"> 명</span></a><br/>
-                                참가 마감
-                                <a class="pic_num">{{ chainkiller_s1.participation_endtime }}<span style="color: #ffffff"> 일</span></a><br/>
-                                {% if chainkiller_s1_funding %}
-                                    모인 상금 <a class="pic_num">{{ chainkiller_s1_total_amount.amount__sum|intcomma }}<span style="color: #ffffff"> 원</span></a><br/>
-                                {% else %}
-                                    모인 상금 <a class="pic_num">0<span style="color: #ffffff"> 원</span></a><br/>
-                                {% endif %}
-                                대회 시작 <a class="pic_num">{{ chainkiller_s1.starttime }}<span style="color: #ffffff"> 일</span></a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="looking_add_button">
-                    <button type="button" class="btn btn-custom">
-                        더보기
-                    </button>
+            </div>
+            -->
+            <div class="col-md-12 contents">
+                <div class="col-xs-12 col-sm-12 col-md-1 btn" role="tablist" id="myTab">
+                    <div role="" class="game-tab-head">게임별 대회</div>
+                    <span class="tap-manu">
+                        <a href="#wholes" aria-controls="home act" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">전체</div></a>
+                        <a href="#lols" aria-controls="profile" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">롤LOL</div></a>
+                    </span>
+                    <span class="tap-manu">
+                        <a href="#overwatchs" aria-controls="messages" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">오버워치</div></a>
+                        <a href="#star2s" aria-controls="settings" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">스타2</div></a>
+                    </span>
+                    <span class="tap-manu">
+                        <a href="#heartstones" aria-controls="settings" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">하스스톤</div></a>
+                        <a href="#shadowbuss" aria-controls="settings" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">섀도우버스</div></a>
+                    </span>
+                </div>
+                <div class="tab-content col-xs-12 col-sm-12 col-md-11">
+                    <div role="tabpanel" class="tab-pane active" id="wholes">
+                        <div class="game-category-container col-md-12">
+                            <span class="game-category-name col-md-2">전체</span>
+                            <div class="order-category col-md-10">
+                                <button type="button" class="">후원 금액순</button>
+                                <button type="button" class="">후원자순</button>
+                                <button type="button" class="">최신순</button>
+                                <button type="button" class="">마감 임박순</button>
+                            </div>
+                        </div>
+                        <div class="project-card-container container-fluid">
+                            {% for card in card_list %}
+                                <div class="project-card">
+                                    <div class="card sticky-action">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            </div>
+                                        </div>
+                                        <div class="card-content-container">
+                                            <div class="card-content-title">
+                                                <div class="card-content-top">
+                                                    <div class="card-title-container">
+                                                        <span class="card-title">{{card.tournament_name}}</span>
+                                                    </div>
+                                                    <div class="card-dday-container">
+                                                        <span class="card-dday">{{card.get_day}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal card-detail">
+                                            <div class="progress stat2">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                </div>
+                                            </div>
+                                            <div class="card-content-top">
+                                                <div class="card-title-container">
+                                                    <span class="card-title">{{card.tournament_name}}</span>
+                                                </div>
+                                                <div class="card-dday-container">
+                                                    <span class="card-dday">{{card.get_day}}</span>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-information">
+                                                <ul>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                </ul>
+                                                <div class="card-detail-button">
+                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                        <!--
+                        <div class="next-scroll-card container-fluid">
+                            <a href="card-arena.html">더보기</a>
+                        </div>
+                        -->
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="lols">
+                        <div class="game-category-container col-md-12">
+                            <span class="game-category-name col-md-2">롤LOL</span>
+                            <div class="order-category col-md-10">
+                                <button type="button" class="">후원 금액순</button>
+                                <button type="button" class="">후원자순</button>
+                                <button type="button" class="">최신순</button>
+                                <button type="button" class="">마감 임박순</button>
+                            </div>
+                        </div>
+                        <div class="project-card-container container-fluid">
+                            {% for card in card_list_lol %}
+                                <div class="project-card">
+                                    <div class="card sticky-action">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            </div>
+                                        </div>
+                                        <div class="card-content-container">
+                                            <div class="card-content-title">
+                                                <div class="card-content-top">
+                                                    <div class="card-title-container">
+                                                        <span class="card-title">{{card.tournament_name}}</span>
+                                                    </div>
+                                                    <div class="card-dday-container">
+                                                        <span class="card-dday">{{card.get_day}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal card-detail">
+                                            <div class="progress stat2">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                </div>
+                                            </div>
+                                            <div class="card-content-top">
+                                                <div class="card-title-container">
+                                                    <span class="card-title">{{card.tournament_name}}</span>
+                                                </div>
+                                                <div class="card-dday-container">
+                                                    <span class="card-dday">{{card.get_day}}</span>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-information">
+                                                <ul>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                </ul>
+                                                <div class="card-detail-button">
+                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="overwatchs">
+                        <div class="game-category-container col-md-12">
+                            <span class="game-category-name col-md-2">오버워치</span>
+                            <div class="order-category col-md-10">
+                                <button type="button" class="">후원 금액순</button>
+                                <button type="button" class="">후원자순</button>
+                                <button type="button" class="">최신순</button>
+                                <button type="button" class="">마감 임박순</button>
+                            </div>
+                        </div>
+                        <div class="project-card-container container-fluid">
+                            {% for card in card_list_overwatch %}
+                                <div class="project-card">
+                                    <div class="card sticky-action">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            </div>
+                                        </div>
+                                        <div class="card-content-container">
+                                            <div class="card-content-title">
+                                                <div class="card-content-top">
+                                                    <div class="card-title-container">
+                                                        <span class="card-title">{{card.tournament_name}}</span>
+                                                    </div>
+                                                    <div class="card-dday-container">
+                                                        <span class="card-dday">{{card.get_day}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal card-detail">
+                                            <div class="progress stat2">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                </div>
+                                            </div>
+                                            <div class="card-content-top">
+                                                <div class="card-title-container">
+                                                    <span class="card-title">{{card.tournament_name}}</span>
+                                                </div>
+                                                <div class="card-dday-container">
+                                                    <span class="card-dday">{{card.get_day}}</span>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-information">
+                                                <ul>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                </ul>
+                                                <div class="card-detail-button">
+                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="star2s">
+                        <div class="game-category-container col-md-12">
+                            <span class="game-category-name col-md-2">스타2</span>
+                            <div class="order-category col-md-10">
+                                <button type="button" class="">후원 금액순</button>
+                                <button type="button" class="">후원자순</button>
+                                <button type="button" class="">최신순</button>
+                                <button type="button" class="">마감 임박순</button>
+                            </div>
+                        </div>
+                        <div class="project-card-container container-fluid">
+                            {% for card in card_list_star2 %}
+                                <div class="project-card">
+                                    <div class="card sticky-action">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            </div>
+                                        </div>
+                                        <div class="card-content-container">
+                                            <div class="card-content-title">
+                                                <div class="card-content-top">
+                                                    <div class="card-title-container">
+                                                        <span class="card-title">{{card.tournament_name}}</span>
+                                                    </div>
+                                                    <div class="card-dday-container">
+                                                        <span class="card-dday">{{card.get_day}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal card-detail">
+                                            <div class="progress stat2">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                </div>
+                                            </div>
+                                            <div class="card-content-top">
+                                                <div class="card-title-container">
+                                                    <span class="card-title">{{card.tournament_name}}</span>
+                                                </div>
+                                                <div class="card-dday-container">
+                                                    <span class="card-dday">{{card.get_day}}</span>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-information">
+                                                <ul>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                </ul>
+                                                <div class="card-detail-button">
+                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="heartstones">
+                        <div class="game-category-container col-md-12">
+                            <span class="game-category-name col-md-2">하스스톤</span>
+                            <div class="order-category col-md-10">
+                                <button type="button" class="">후원 금액순</button>
+                                <button type="button" class="">후원자순</button>
+                                <button type="button" class="">최신순</button>
+                                <button type="button" class="">마감 임박순</button>
+                            </div>
+                        </div>
+                        <div class="project-card-container container-fluid">
+                            {% for card in card_list_heartstone %}
+                                <div class="project-card">
+                                    <div class="card sticky-action">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            </div>
+                                        </div>
+                                        <div class="card-content-container">
+                                            <div class="card-content-title">
+                                                <div class="card-content-top">
+                                                    <div class="card-title-container">
+                                                        <span class="card-title">{{card.tournament_name}}</span>
+                                                    </div>
+                                                    <div class="card-dday-container">
+                                                        <span class="card-dday">{{card.get_day}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal card-detail">
+                                            <div class="progress stat2">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                </div>
+                                            </div>
+                                            <div class="card-content-top">
+                                                <div class="card-title-container">
+                                                    <span class="card-title">{{card.tournament_name}}</span>
+                                                </div>
+                                                <div class="card-dday-container">
+                                                    <span class="card-dday">{{card.get_day}}</span>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-information">
+                                                <ul>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                </ul>
+                                                <div class="card-detail-button">
+                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="shadowbuss">
+                        <div class="game-category-container col-md-12">
+                            <span class="game-category-name col-md-2">쉐도우버스</span>
+                            <div class="order-category col-md-10">
+                                <button type="button" class="">후원 금액순</button>
+                                <button type="button" class="">후원자순</button>
+                                <button type="button" class="">최신순</button>
+                                <button type="button" class="">마감 임박순</button>
+                            </div>
+                        </div>
+                        <div class="project-card-container container-fluid">
+                            {% for card in card_list_shadowbus %}
+                                <div class="project-card">
+                                    <div class="card sticky-action">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        </div>
+                                        <div class="progress stat2">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            </div>
+                                        </div>
+                                        <div class="card-content-container">
+                                            <div class="card-content-title">
+                                                <div class="card-content-top">
+                                                    <div class="card-title-container">
+                                                        <span class="card-title">{{card.tournament_name}}</span>
+                                                    </div>
+                                                    <div class="card-dday-container">
+                                                        <span class="card-dday">{{card.get_day}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal card-detail">
+                                            <div class="progress stat2">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                </div>
+                                            </div>
+                                            <div class="card-content-top">
+                                                <div class="card-title-container">
+                                                    <span class="card-title">{{card.tournament_name}}</span>
+                                                </div>
+                                                <div class="card-dday-container">
+                                                    <span class="card-dday">{{card.get_day}}</span>
+                                                </div>
+                                                <div class="card-summary-container">
+                                                    <span class="card-summary">{{card.summary}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content-bottom">
+                                                <div class="card-fundings-container">
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                </div>
+                                                <div class="detail-button-container">
+                                                    <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-information">
+                                                <ul>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                </ul>
+                                                <div class="card-detail-button">
+                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-{% endblock %}
+    </header>
 
+{% endblock %}
 {% block script %}
-    <script>
-        $(document).ready(function(){
-            /* scroll-top-wrapper */
-            $(function(){
-                $(document).on( 'scroll', function(){
-                    if ($(window).scrollTop() > 100) {
-                        $('.scroll-top-wrapper').addClass('show');
-                    } else {
-                        $('.scroll-top-wrapper').removeClass('show');
-                    }
-                });
-                $('.scroll-top-wrapper').on('click', scrollToTop);
-            });
-            /* 게임별 대회 카테고리 누를 시 글자색 변하기 */
-            $('.category').on('click',function() {
-                $('.category').css('color', 'white');
-                $('#'+this.id).css('color', '#f7941e');
-                return false;
-            });
-            /* 필터 기능 누를 시 글자색 변하기 */
-            $('.filter').on('click',function() {
-                $('.filter').css('color', 'white');
-                $('#'+this.id).css('color', '#f7941e');
-                return false;
-            });
-        });
-    </script>
+
 {% endblock %}

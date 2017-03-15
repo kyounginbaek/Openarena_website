@@ -13,34 +13,79 @@ from .forms import UploadFileForm
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
 from django.conf import settings
+from datetime import datetime
 
 def home(request):
-    return render(request, 'main/home.html', {})
+    card_list_ing = Making.objects.filter(starttime__gt=datetime.now()).order_by('-when')    #최신순
+    # card_list = Making.objects.filter(starttime__lte=datetime.now()).order_by('when')    #오래된순
+    card_list_end = Making.objects.filter(starttime__lte=datetime.now()).order_by('-when')
+    participation = Participation.objects.all()
+    return render(request, 'main/home.html', {'card_list_ing': card_list_ing, 'participation': participation, 'card_list_end': card_list_end, })
 
 def tournaments(request):
-    moon = Making.objects.filter(tournament_name='Moon 클랜 스타 리그').values().get()
-    moon_participation = Participation.objects.filter(tournament_name='Moon 클랜 스타 리그')
-    moon_funding = Funding.objects.filter(tournament_name='Moon 클랜 스타 리그')
-    moon_total_amount = Funding.objects.filter(tournament_name='Moon 클랜 스타 리그').aggregate(Sum('amount'))
+    vsc = Making.objects.filter(tournament_name='2017 Versestop Shadowverse Cup').values().get()
+    vsc_participation = Participation.objects.filter(tournament_name='2017 Versestop Shadowverse Cup')
+    vsc_funding = Funding.objects.filter(tournament_name='2017 Versestop Shadowverse Cup')
+    vsc_total_amount = Funding.objects.filter(tournament_name='2017 Versestop Shadowverse Cup').aggregate(Sum('amount'))
 
-    vsc2 = Making.objects.filter(tournament_name='제2회 Versestop Shadowverse Cup').values().get()
-    vsc2_participation = Participation.objects.filter(tournament_name='제2회 Versestop Shadowverse Cup')
-    vsc2_funding = Funding.objects.filter(tournament_name='제2회 Versestop Shadowverse Cup')
-    vsc2_total_amount = Funding.objects.filter(tournament_name='제2회 Versestop Shadowverse Cup').aggregate(Sum('amount'))
+    ringoncup = Making.objects.filter(tournament_name='제2회 섀도우버스 링곤컵').values().get()
+    ringoncup_participation = Participation.objects.filter(tournament_name='제2회 섀도우버스 링곤컵')
+    ringoncup_funding = Funding.objects.filter(tournament_name='제2회 섀도우버스 링곤컵')
+    ringoncup_total_amount = Funding.objects.filter(tournament_name='제2회 섀도우버스 링곤컵').aggregate(Sum('amount'))
 
-    chainkiller_s1 = Making.objects.filter(tournament_name='Chainkiller S1 연승전').values().get()
-    chainkiller_s1_participation = Participation.objects.filter(tournament_name='Chainkiller S1 연승전')
-    chainkiller_s1_funding = Funding.objects.filter(tournament_name='Chainkiller S1 연승전')
-    chainkiller_s1_total_amount = Funding.objects.filter(tournament_name='Chainkiller S1 연승전').aggregate(Sum('amount'))
+    scc3 = Making.objects.filter(tournament_name='제3회 Slayer Conqueror Cup').values().get()
+    scc3_participation = Participation.objects.filter(tournament_name='제3회 Slayer Conqueror Cup')
+    scc3_funding = Funding.objects.filter(tournament_name='제3회 Slayer Conqueror Cup')
+    scc3_total_amount = Funding.objects.filter(tournament_name='제3회 Slayer Conqueror Cup').aggregate(Sum('amount'))
 
-    return render(request, 'main/tournaments.html', {'moon': moon, 'moon_participation': moon_participation,
-                                                     'moon_funding': moon_funding, 'moon_total_amount': moon_total_amount,
-                                                     'vsc2': vsc2, 'vsc2_participation': vsc2_participation,
-                                                     'vsc2_funding': vsc2_funding, 'vsc2_total_amount': vsc2_total_amount,
-                                                     'chainkiller_s1': chainkiller_s1,
-                                                     'chainkiller_s1_participation': chainkiller_s1_participation,
-                                                     'chainkiller_s1_funding': chainkiller_s1_funding,
-                                                     'chainkiller_s1_total_amount': chainkiller_s1_total_amount})
+    card_list = Making.objects.filter(starttime__gt=datetime.now()).order_by('-when')
+    card_list_lol = Making.objects.filter(tournament_game='리그오브레전드(LOL)', starttime__gt=datetime.now()).order_by('-when')
+    card_list_overwatch = Making.objects.filter(tournament_game='오버워치', starttime__gt=datetime.now()).order_by('-when')
+    card_list_star2 = Making.objects.filter(tournament_game='스타크래프트2', starttime__gt=datetime.now()).order_by('-when')
+    card_list_heartstone = Making.objects.filter(tournament_game='하스스톤', starttime__gt=datetime.now()).order_by('-when')
+    card_list_shadowbus = Making.objects.filter(tournament_game='섀도우버스', starttime__gt=datetime.now()).order_by('-when')
+
+    return render(request, 'main/tournaments.html', {'vsc': vsc, 'vsc_participation': vsc_participation, 'vsc_funding': vsc_funding, 'vsc_total_amount': vsc_total_amount,
+                                                     'ringoncup': ringoncup, 'ringoncup_participation': ringoncup_participation, 'ringoncup_funding': ringoncup_funding, 'ringoncup_total_amount': ringoncup_total_amount,
+                                                     'scc3': scc3, 'scc3_participation': scc3_participation, 'scc3_funding': scc3_funding, 'scc3_total_amount': scc3_total_amount,
+                                                     'card_list':card_list, 'card_list_lol':card_list_lol, 'card_list_overwatch':card_list_overwatch, 'card_list_star2':card_list_star2, 'card_list_heartstone':card_list_heartstone, 'card_list_shadowbus': card_list_shadowbus,
+                                                     })
+
+def archive_whole(request):
+    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
+
+    whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
+    macho_participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
+    migal_participation = Participation.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    migal_total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
+
+    macho2 = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
+    macho2_participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
+    macho2_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').aggregate(Sum('amount'))
+
+    scc2 = Making.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').values().get()
+    scc2_participation = Participation.objects.filter(tournament_name='제2회 Slayer Conqueror Cup')
+    scc2_total_amount = Funding.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').aggregate(Sum('amount'))
+
+    #card_list = Tournament.objects.filter()
+    card_list_end = Making.objects.filter(when__lte=datetime.now()).order_by('-when')
+    card_list_lol = Making.objects.filter(tournament_game='리그오브레전드')
+    card_list_overwatch = Making.objects.filter(tournament_game='오버워치')
+    card_list_star2 = Making.objects.filter(tournament_game='스타크래프트2')
+    card_list_heartstone = Making.objects.filter(tournament_game='하스스톤')
+    card_list_shadowbus = Making.objects.filter(tournament_game='섀도우버스')
+
+    return render(request, 'main/archive_whole.html', {'whyachi': whyachi, 'whyachi_participation': whyachi_participation, 'whyachi_total_amount': whyachi_total_amount,
+                                                 'macho': macho, 'macho_participation': macho_participation, 'macho_total_amount': macho_total_amount,
+                                                 'migal': migal, 'migal_participation': migal_participation, 'migal_total_amount': migal_total_amount,
+                                                 'macho2': macho2, 'macho2_participation': macho2_participation, 'macho2_total_amount': macho2_total_amount,
+                                                 'scc2': scc2, 'scc2_participation': scc2_participation, 'scc2_total_amount': scc2_total_amount,
+                                                 'card_list_end': card_list_end, 'card_list_lol': card_list_lol, 'card_list_overwatch': card_list_overwatch, 'card_list_star2': card_list_star2, 'card_list_heartstone': card_list_heartstone, 'card_list_shadowbus': card_list_shadowbus,
+                                                       })
 
 def archive(request):
     whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
@@ -62,35 +107,41 @@ def archive(request):
     scc2_participation = Participation.objects.filter(tournament_name='제2회 Slayer Conqueror Cup')
     scc2_total_amount = Funding.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').aggregate(Sum('amount'))
 
-    scc3 = Making.objects.filter(tournament_name='제3회 Slayer Conqueror Cup').values().get()
-    scc3_participation = Participation.objects.filter(tournament_name='제3회 Slayer Conqueror Cup')
-    scc3_funding = Funding.objects.filter(tournament_name='제3회 Slayer Conqueror Cup')
-    scc3_total_amount = Funding.objects.filter(tournament_name='제3회 Slayer Conqueror Cup').aggregate(Sum('amount'))
-
-    vsc = Making.objects.filter(tournament_name='2017 Versestop Shadowverse Cup').values().get()
-    vsc_participation = Participation.objects.filter(tournament_name='2017 Versestop Shadowverse Cup')
-    vsc_funding = Funding.objects.filter(tournament_name='2017 Versestop Shadowverse Cup')
-    vsc_total_amount = Funding.objects.filter(tournament_name='2017 Versestop Shadowverse Cup').aggregate(Sum('amount'))
-
-    ringoncup = Making.objects.filter(tournament_name='제2회 섀도우버스 링곤컵').values().get()
-    ringoncup_participation = Participation.objects.filter(tournament_name='제2회 섀도우버스 링곤컵')
-    ringoncup_funding = Funding.objects.filter(tournament_name='제2회 섀도우버스 링곤컵')
-    ringoncup_total_amount = Funding.objects.filter(tournament_name='제2회 섀도우버스 링곤컵').aggregate(Sum('amount'))
+    card_list_end = Making.objects.filter(starttime__lte=datetime.now()).order_by('-when')
 
     return render(request, 'main/archive.html', {'whyachi': whyachi, 'whyachi_participation': whyachi_participation, 'whyachi_total_amount': whyachi_total_amount,
                                                  'macho': macho, 'macho_participation': macho_participation, 'macho_total_amount': macho_total_amount,
                                                  'migal': migal, 'migal_participation': migal_participation, 'migal_total_amount': migal_total_amount,
                                                  'macho2': macho2, 'macho2_participation': macho2_participation, 'macho2_total_amount': macho2_total_amount,
                                                  'scc2': scc2, 'scc2_participation': scc2_participation, 'scc2_total_amount': scc2_total_amount,
-                                                 'scc3': scc3, 'scc3_participation': scc3_participation,
-                                                 'scc3_funding': scc3_funding, 'scc3_total_amount': scc3_total_amount,
-                                                 'vsc': vsc, 'vsc_participation': vsc_participation,
-                                                 'vsc_funding': vsc_funding, 'vsc_total_amount': vsc_total_amount,
-                                                 'ringoncup': ringoncup,
-                                                 'ringoncup_participation': ringoncup_participation,
-                                                 'ringoncup_funding': ringoncup_funding,
-                                                 'ringoncup_total_amount': ringoncup_total_amount,
+                                                 'card_list_end': card_list_end,
                                                  })
+
+def archive_videos(request):
+    whyachi = Making.objects.filter(tournament_name='2016 BJ아치 LOL 대회').values().get()
+    macho = Making.objects.filter(tournament_name='MC마초 스타2리그 시즌3').values().get()
+    migal = Making.objects.filter(tournament_name='BJ최미갈의 레전드 매치').values().get()
+
+    whyachi_participation = Participation.objects.filter(tournament_name='2016 BJ아치 LOL 대회')
+    whyachi_total_amount = Funding.objects.filter(tournament_name='2016 BJ아치 LOL 대회').aggregate(Sum('amount'))
+    macho_participation = Participation.objects.filter(tournament_name='MC마초 스타2리그 시즌3')
+    macho_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2리그 시즌3').aggregate(Sum('amount'))
+    migal_participation = Participation.objects.filter(tournament_name='BJ최미갈의 레전드 매치')
+    migal_total_amount = Funding.objects.filter(tournament_name='BJ최미갈의 레전드 매치').aggregate(Sum('amount'))
+
+    macho2 = Making.objects.filter(tournament_name='MC마초 스타2 연승전').values().get()
+    macho2_participation = Participation.objects.filter(tournament_name='MC마초 스타2 연승전')
+    macho2_total_amount = Funding.objects.filter(tournament_name='MC마초 스타2 연승전').aggregate(Sum('amount'))
+
+    scc2 = Making.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').values().get()
+    scc2_participation = Participation.objects.filter(tournament_name='제2회 Slayer Conqueror Cup')
+    scc2_total_amount = Funding.objects.filter(tournament_name='제2회 Slayer Conqueror Cup').aggregate(Sum('amount'))
+
+    return render(request, 'main/archive_videos.html', {'whyachi': whyachi, 'whyachi_participation': whyachi_participation, 'whyachi_total_amount': whyachi_total_amount,
+                                                 'macho': macho, 'macho_participation': macho_participation, 'macho_total_amount': macho_total_amount,
+                                                 'migal': migal, 'migal_participation': migal_participation, 'migal_total_amount': migal_total_amount,
+                                                 'macho2': macho2, 'macho2_participation': macho2_participation, 'macho2_total_amount': macho2_total_amount,
+                                                 'scc2': scc2, 'scc2_participation': scc2_participation, 'scc2_total_amount': scc2_total_amount})
 
 def clubs(request):
     return render(request, 'main/clubs.html', {})

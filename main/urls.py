@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -6,10 +6,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^tournaments/$', views.tournaments, name='tournaments'),
+    url(r'^archive_whole/$', views.archive_whole, name='archive_whole'),
+    url(r'^archive/$', views.archive, name='archive'),
+    url(r'^archive_videos/$', views.archive_videos, name='archive_videos'),
     url(r'^clubs/$', views.clubs, name='clubs'),
     url(r'^making/$', views.making, name='making'),
     url(r'^tournament_url_check/$', views.making, name='tournament_url_check'),
-    url(r'^archive/$', views.archive, name='archive'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^calendar/$', views.calendar, name='calendar'),
     url(r'^migal/$', views.migal, name='migal'),

@@ -1,0 +1,40 @@
+
+.order-category{
+    margin-top: 0.5rem;
+    padding-right: 4.5rem;
+    text-align: right;
+    margin-left: 4.6rem;
+}
+
+.remote{
+    font-size: 1rem;
+    text-align: center;
+    padding-top:1rem;
+    padding-bottom: 0.5rem;
+    border: 1px silver solid;
+    margin-top: 0.5rem;
+}
+
+.remote a{
+    color: white;
+}
+
+.remote a:hover{
+    color: rgba(255, 153, 0, 1);
+}
+
+.last-arena-title{
+    margin-left: 1rem;
+}
+
+.search{
+    text-align: left;
+    display: inline-block;
+}
+
+.project-card-container{
+    text-align: left;
+    width: auto;
+    padding: 0;
+    padding-left: 1.5rem;
+}

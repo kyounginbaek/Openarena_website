@@ -11,14 +11,14 @@
 {% endblock %}
 {% block content %}
     <div class="block-b">
-        <div class="com_header" style="background:url({% static 'img/vsc/vsc_cover.png' %}) center center no-repeat; background-size: cover;">
+        <div class="com_header" style="background:url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/shadowverse_cover.png') center center no-repeat; background-size: cover;">
             <div class="com_empty">
             </div>
             <div class="com_header_inner">
                 <div class="container">
                     <!--프로필칸-->
                     <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                        <div class="com_profile" style="background: url({% static 'img/vsc/vsc_logo.jpeg' %}); background-size: contain;"></div>
+                        <div class="com_profile" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/shadowverse_logo.jpeg'); background-size: contain;"></div>
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
@@ -113,7 +113,7 @@
                             <div style="overflow: hidden; clear: both;">
                                 <h4 style="color: #f7941e">• 대회 소개 및 규칙</h4>
                                 <div class="com_intro_now hover_div">
-                                    <img src="{% static 'img/vsc/vsc2_poster.png' %}">
+                                    <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/custom/vsc2_poster.png">
                                     <div style="padding: 5px;"></div>
                                     <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
                                 </div>
@@ -457,7 +457,6 @@
                                 <h5>모든 참가자들은 2가지 덱을 제출해야 합니다.</h5>
                                 <h5>같은 클래스의 덱은 사용할 수 없습니다.</h5>
                                 <h5>신청 시 프로필, 덱리스트와 함께 ID, 닉네임, 직업 2개, 연락처를 적어서 제출해야합니다.</h5>
-                                <img src="{% static 'img/vsc/vsc_example1.png' %}" style="max-width : 100%;">
                                 <h5 style="color: #ff9900;">
                                     <span class="glyphicon glyphicon-info-sign"></span>
                                     덱 제출시 주의 사항
@@ -466,8 +465,6 @@
                                 <h5>덱리스트가 길어서 한 장에 캡쳐되지 않을 경우에는 2장으로 제출합니다.</h5>
                                 <h5>사진이 2장이 될 경우 파일명을 클래스1-1, 1-2로 제출합니다.</h5>
                                 <h5>(예) 네크로맨서1-1, 네크로맨서1-2, 로얄2</h5>
-                                <img src="{% static 'img/vsc/vsc_example2.png' %}" style="max-width : 100%;">
-                                <img src="{% static 'img/vsc/vsc_example3.png' %}" style="max-width : 100%;">
                             </div>
                             <div class="modal-body">
                                 <img src="">

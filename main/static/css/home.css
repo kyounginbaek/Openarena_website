@@ -26,7 +26,7 @@ h3{
     padding-left: 0;
     padding-right: 0;
     margin:0;
-    height: 34rem;
+    height: 36rem;
     border-bottom: 1px silver solid;
 }
 
@@ -50,13 +50,13 @@ h3{
 }
 
 #main1{
-    background-size: cover;
+    background-size: cover !important;
     color: white;
 }
 
 #main2{
+    background-size: cover !important;
     background: #161616;
-    background-size: cover;
 }
 
 #service-title{
@@ -133,7 +133,6 @@ h3{
     font-size: 1rem;
     color: gray;
 }
-
 
 .project-head{
     background-color: black;
@@ -226,7 +225,7 @@ h3{
     font-size:5rem;
 }
 
-#best-project .slick-arrow{
+#ing-project .slick-arrow{
     margin-right: 5rem;
     margin-left: 3.2rem;
     padding-bottom: 6rem;
@@ -254,6 +253,10 @@ i.slick-arrow{
     margin-right: 1rem;
 }
 
+
+#final-buttons3{
+}
+
 .final-button-container{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -273,4 +276,51 @@ i.slick-arrow{
     padding: 1rem;
     border: 1px solid silver;
     width: 20.85rem;
+}
+
+@media (max-width:992px){
+    .service-img{
+        width: 100px;
+    }
+
+    .service-container{
+        height: 27rem;
+        padding: 0;
+        text-align: center;
+    }
+
+    .service{
+        color: white;
+        font-size: 1.1rem
+    }
+
+    .service:hover{
+        color: rgba(255, 153, 0, 1);
+    }
+
+    #service1{
+        padding: 0;
+    }
+
+    #service2{
+        border: none;
+    }
+
+    #service3{
+        margin: 0;
+    }
+
+    .service-contents{
+        display: none;
+    }
+}
+
+@media (max-width:570px){
+    #arena-title{
+        display: none;
+    }
+
+    .project{
+        display: none;
+    }
 }

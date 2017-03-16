@@ -13,11 +13,11 @@ body{
 }
 
 header{
-  margin-top: 3.5rem;
-  padding: 0;
-  font-size: 1.5rem;
-  color: white;
-  background-color: #161616;
+    margin-top: 3.5rem;
+    padding: 0;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #161616;
 }
 
 .project .slick-next:before, .video .slick-next:before{

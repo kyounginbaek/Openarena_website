@@ -1,7 +1,6 @@
-
 from django.utils import timezone
 from django.db import models
-from datetime import datetime
+from datetime import timedelta, datetime
 from django import forms
 from django.contrib.auth.models import User
 from django_summernote import fields as summer_fields
@@ -50,10 +49,10 @@ class Making(models.Model):
     checkin_time = models.CharField(max_length=200, default='')
     description = summer_fields.SummernoteTextField()
     funding_goal = models.CharField(max_length=200, default='')
-    promise = models.CharField(max_length=2000, default='')
-    promise_spec = models.CharField(max_length=2000, default='')
-    reward = models.CharField(max_length=2000, default='')
-    reward_spec = models.CharField(max_length=2000, default='')
+    promise = models.CharField(max_length=200, default='')
+    promise_spec = models.CharField(max_length=200, default='')
+    reward = models.CharField(max_length=200, default='')
+    reward_spec = models.CharField(max_length=200, default='')
     template = models.CharField(max_length=400, default='')
     phone = models.CharField(max_length=200, default='')
     confirm = models.CharField(max_length=200, default='')
@@ -62,10 +61,10 @@ class Making(models.Model):
     funding_endtime = models.CharField(max_length=200, default='')
     participation_endtime = models.CharField(max_length=200, default='')
     summary = models.TextField(default='')
-    main_image = models.CharField(max_length=1000, default='')
-    cover_image = models.CharField(max_length=1000, default='')
-    poster_image = models.CharField(max_length=1000, default='')
-    match_image = models.CharField(max_length=1000, default='')
+    main_image = models.CharField(max_length=100, default='')
+    cover_image = models.CharField(max_length=100, default='')
+    poster_image = models.CharField(max_length=100, default='')
+    match_image = models.CharField(max_length=100, default='')
 
     def get_fundings_sum(self):
         funding_qs = Funding.objects.filter(tournament_name=self)
@@ -83,21 +82,21 @@ class Making(models.Model):
             funding_sum = 0
             for funding in funding_qs:
                 funding_sum += funding.amount
-            funding_rate = funding_sum / int(self.funding_goal) * 100
+            funding_rate = funding_sum/int(self.funding_goal)*100
             return funding_rate
         except ValueError:
             return '-'
 
-            # d_day 연산
-
+        # d_day 연산
     def get_day(self):
         now = timezone.localtime(timezone.now())
+        print(self.starttime)
         try:
             end_time = timezone.localtime(datetime.strptime(self.starttime, '%Y/%m/%d %H:%M'))
-            d_day = str(-(end_time - now).days)
+            d_day = str(-(end_time-now).days)
             if not d_day.startswith('-'):
                 d_day = '+' + d_day
-            return 'D' + d_day
+            return 'D'+d_day
         except ValueError:
             return 'D-X'
 

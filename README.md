@@ -98,3 +98,10 @@
 * `confirm` = 우리가 최종적으로 대회를 열지 말지를 선택
 * `cover_image` = 따로 대회 이미지가 없는 경우 사용되는 이미지 URL
 * `logo_image` = 각 대회에 따른 게임 카테고리 로고 이미지 URL
+## SSH 접속
+```
+# 참고 코드
+> ssh -i "openarena.pem" ubuntu@ec2-52-79-197-160.ap-northeast-2.compute.amazonaws.com
+> git@github.com:kyounginbaek/Openarena_website.git
+> uwsgi --ini uwsgi.ini
+```

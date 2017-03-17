@@ -2,302 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/chainkiller_s1/chainkiller_s1_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/darkhumor/darkhumor_looking.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/darkhumor/darkhumor_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/darkhumor/darkhumor_poster2.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/help-cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho/macho_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho/macho_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho/macho_match_final.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho/macho_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho/macho_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho2/macho2_poster_final.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/macho2/macho2_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/migal/migal_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/migal/migal_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/migal/migal_match.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/migal/migal_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/migal/migal_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/moon/moon_cover.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/moon/moon_logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/moon/moon_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/rank-by-help.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/ringoncup/ringoncup_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/scc2/scc2_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/scc2/scc2_logo.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/scc2/scc2_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/scc2/scc2_tournament.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/scc3/scc3_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/scc3/scc3_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc2_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc_example1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc_example2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc_example3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc_logo.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/vsc/vsc_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_match_final.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/static/img/whyachi/whyachi_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/forms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/search.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/actions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/archive_tournaments.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/archive_whole.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/contact_form.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/contents_deco.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/custom_kyoungin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/fullcalendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/home.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/jquery.datetimepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/participation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/rotating-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/tournaments.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/video_deco.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/SOURCE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/django_summernote.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/django_summernote_inplace.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/font/summernote.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/font/summernote.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/font/summernote.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/jquery.fileupload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/jquery.iframe-transport.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/jquery.ui.widget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ar-AR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ar-AR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-bg-BG.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-bg-BG.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ca-ES.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ca-ES.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-cs-CZ.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-cs-CZ.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-da-DK.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-da-DK.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-de-DE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-de-DE.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-ES.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-ES.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-EU.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-EU.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fa-IR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fa-IR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fi-FI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fi-FI.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fr-FR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fr-FR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-gl-ES.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-gl-ES.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-he-IL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-he-IL.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hr-HR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hr-HR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hu-HU.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hu-HU.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-id-ID.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-id-ID.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-it-IT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-it-IT.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ja-JP.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ja-JP.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ko-KR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ko-KR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LT.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LV.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LV.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nb-NO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nb-NO.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nl-NL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nl-NL.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pl-PL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pl-PL.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-BR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-BR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-PT.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-PT.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ro-RO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ro-RO.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ru-RU.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ru-RU.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sk-SK.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sk-SK.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sl-SI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sl-SI.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS-Latin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS-Latin.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sv-SE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sv-SE.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-th-TH.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-th-TH.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-tr-TR.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-tr-TR.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-uk-UA.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-uk-UA.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-vi-VN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-vi-VN.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-CN.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-TW.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-TW.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/summernote.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/summernote.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/chainkiller_s1/chainkiller_s1_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/darkhumor/darkhumor_looking.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/darkhumor/darkhumor_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/darkhumor/darkhumor_poster2.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/help-cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/intro-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho/macho_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho/macho_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho/macho_match_final.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho/macho_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho/macho_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho2/macho2_poster_final.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/macho2/macho2_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/migal/migal_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/migal/migal_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/migal/migal_match.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/migal/migal_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/migal/migal_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/moon/moon_cover.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/moon/moon_logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/moon/moon_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/openarena.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/profile.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/rank-by-help.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/ringoncup/ringoncup_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/scc2/scc2_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/scc2/scc2_logo.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/scc2/scc2_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/scc2/scc2_tournament.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/scc3/scc3_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/scc3/scc3_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc2_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc_example1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc_example2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc_example3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc_logo.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/vsc/vsc_poster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_cover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_match_final.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_poster.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/whyachi/whyachi_preview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/easyResponsiveTabs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-1.10.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.datetimepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.lightbox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/summernote.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/migrations/0161_auto_20170316_1833.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/migrations/0162_auto_20170316_1858.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/migrations/0163_auto_20170317_1038.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/archive_videos.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/archive_whole.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/main/static/css/archive_tournaments.css" afterPath="$PROJECT_DIR$/main/static/css/archive.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/css/archive_tournaments.css" afterPath="$PROJECT_DIR$/static/css/archive.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" afterPath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/archive_tournaments.css" afterPath="$PROJECT_DIR$/main/static/css/archive_tournaments.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/common.css" afterPath="$PROJECT_DIR$/main/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/home.css" afterPath="$PROJECT_DIR$/main/static/css/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/tournaments.css" afterPath="$PROJECT_DIR$/main/static/css/tournaments.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" afterPath="$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/archive.html" afterPath="$PROJECT_DIR$/main/templates/main/archive.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/base2.html" afterPath="$PROJECT_DIR$/main/templates/main/base2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/create.html" afterPath="$PROJECT_DIR$/main/templates/main/create.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/help.html" afterPath="$PROJECT_DIR$/main/templates/main/help.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/home.html" afterPath="$PROJECT_DIR$/main/templates/main/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/macho.html" afterPath="$PROJECT_DIR$/main/templates/main/macho.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/macho2.html" afterPath="$PROJECT_DIR$/main/templates/main/macho2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/migal.html" afterPath="$PROJECT_DIR$/main/templates/main/migal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/moon.html" afterPath="$PROJECT_DIR$/main/templates/main/moon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/ringoncup.html" afterPath="$PROJECT_DIR$/main/templates/main/ringoncup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/scc2.html" afterPath="$PROJECT_DIR$/main/templates/main/scc2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/scc3.html" afterPath="$PROJECT_DIR$/main/templates/main/scc3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/vsc.html" afterPath="$PROJECT_DIR$/main/templates/main/vsc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/vsc2.html" afterPath="$PROJECT_DIR$/main/templates/main/vsc2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/whyachi.html" afterPath="$PROJECT_DIR$/main/templates/main/whyachi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/members.html" afterPath="$PROJECT_DIR$/main/templates/main/members.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/tournaments.html" afterPath="$PROJECT_DIR$/main/templates/main/tournaments.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/urls.py" afterPath="$PROJECT_DIR$/main/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openarena/settings.py" afterPath="$PROJECT_DIR$/openarena/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/tournaments.css" afterPath="$PROJECT_DIR$/static/css/tournaments.css" />
     </list>
     <ignored path="openarena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -322,35 +48,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="privacy.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-              <folding>
-                <element signature="e#295#314#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="help.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/help.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="299">
+              <caret line="4023" column="18" selection-start-line="4023" selection-start-column="18" selection-end-line="4023" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mypage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/mypage.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="150">
+              <caret line="88" column="82" selection-start-line="88" selection-start-column="82" selection-end-line="88" selection-end-column="82" />
               <folding>
-                <element signature="e#371#494#0#HTML" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="123" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="526" column="58" selection-start-line="526" selection-start-column="58" selection-end-line="526" selection-end-column="58" />
+              <folding>
+                <element signature="n#for#0;n#!!top" expanded="false" />
+                <element signature="e#3656#3705#0#HTML" expanded="true" />
+                <element signature="e#6034#6085#0#HTML" expanded="true" />
+                <element signature="n#for#1;n#!!top" expanded="false" />
+                <element signature="e#11385#11434#0#HTML" expanded="true" />
+                <element signature="e#13763#13814#0#HTML" expanded="true" />
+                <element signature="n#for#2;n#!!top" expanded="false" />
+                <element signature="e#18905#18954#0#HTML" expanded="true" />
+                <element signature="e#21283#21334#0#HTML" expanded="true" />
+                <element signature="n#for#3;n#!!top" expanded="false" />
+                <element signature="e#26416#26465#0#HTML" expanded="true" />
+                <element signature="e#28794#28845#0#HTML" expanded="true" />
+                <element signature="n#for#4;n#!!top" expanded="false" />
+                <element signature="e#33938#33987#0#HTML" expanded="true" />
+                <element signature="e#36316#36367#0#HTML" expanded="true" />
+                <element signature="e#41462#41511#0#HTML" expanded="true" />
+                <element signature="e#43840#43891#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="238" column="40" selection-start-line="159" selection-start-column="0" selection-end-line="238" selection-end-column="40" />
+              <folding>
+                <element signature="e#344#474#0#HTML" expanded="true" />
+                <element signature="e#779#909#0#HTML" expanded="true" />
+                <element signature="e#4012#4111#0#HTML" expanded="true" />
+                <element signature="e#4409#4458#0#HTML" expanded="true" />
+                <element signature="e#6787#6838#0#HTML" expanded="true" />
+                <element signature="n#for#1;n#!!top" expanded="false" />
+                <element signature="e#11453#11502#0#HTML" expanded="true" />
+                <element signature="e#13831#13882#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/static/css/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="248" column="18" selection-start-line="248" selection-start-column="18" selection-end-line="248" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="archive.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/archive.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+              <folding>
+                <element signature="n#for#0;n#!!top" expanded="false" />
+                <element signature="e#3123#3172#0#HTML" expanded="true" />
+                <element signature="e#5501#5552#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -385,16 +180,12 @@
         <option value="$PROJECT_DIR$/main/static/css/rotating-card.css" />
         <option value="$PROJECT_DIR$/main/admin.py" />
         <option value="$PROJECT_DIR$/main/templates/main/archive_tournaments.html" />
-        <option value="$PROJECT_DIR$/main/urls.py" />
-        <option value="$PROJECT_DIR$/main/templates/main/base2.html" />
         <option value="$PROJECT_DIR$/main/templates/main/base.html" />
-        <option value="$PROJECT_DIR$/main/templates/main/archive.html" />
         <option value="$PROJECT_DIR$/main/templates/main/archive_videos.html" />
         <option value="$PROJECT_DIR$/main/templates/main/archive_whole.html" />
         <option value="$PROJECT_DIR$/main/templates/main/test.html" />
         <option value="$PROJECT_DIR$/main/templates/main/template.html" />
         <option value="$PROJECT_DIR$/main/templates/main/privacy.html" />
-        <option value="$PROJECT_DIR$/main/templates/main/members.html" />
         <option value="$PROJECT_DIR$/main/templates/main/making.html" />
         <option value="$PROJECT_DIR$/main/templates/main/hallfame.html" />
         <option value="$PROJECT_DIR$/main/templates/main/contact.html" />
@@ -402,15 +193,9 @@
         <option value="$PROJECT_DIR$/main/templates/main/agreement.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/main/static/css/common.css" />
         <option value="$PROJECT_DIR$/main/static/css/home.css" />
         <option value="$PROJECT_DIR$/main/static/css/archive_tournaments.css" />
-        <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/openarena/settings.py" />
-        <option value="$PROJECT_DIR$/main/views.py" />
-        <option value="$PROJECT_DIR$/main/templates/main/home.html" />
-        <option value="$PROJECT_DIR$/main/static/css/tournaments.css" />
-        <option value="$PROJECT_DIR$/main/templates/main/tournaments.html" />
         <option value="$PROJECT_DIR$/main/templates/main/whyachi.html" />
         <option value="$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" />
         <option value="$PROJECT_DIR$/main/templates/main/macho.html" />
@@ -425,6 +210,16 @@
         <option value="$PROJECT_DIR$/main/templates/main/help.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" />
         <option value="$PROJECT_DIR$/main/templates/main/create.html" />
+        <option value="$PROJECT_DIR$/main/static/css/tournaments.css" />
+        <option value="$PROJECT_DIR$/main/templates/main/base2.html" />
+        <option value="$PROJECT_DIR$/main/views.py" />
+        <option value="$PROJECT_DIR$/main/urls.py" />
+        <option value="$PROJECT_DIR$/main/templates/main/members.html" />
+        <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/main/templates/main/home.html" />
+        <option value="$PROJECT_DIR$/main/templates/main/tournaments.html" />
+        <option value="$PROJECT_DIR$/main/static/css/common.css" />
+        <option value="$PROJECT_DIR$/main/templates/main/archive.html" />
       </list>
     </option>
   </component>
@@ -465,6 +260,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -677,31 +473,31 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MI_Anthouse 01_03 - 2017" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/baekkyoungin/PycharmProjects/openarena/main/templates/main/base.html" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main/static/css" />
+      <recent name="$PROJECT_DIR$/main/templates/main" />
+      <recent name="$PROJECT_DIR$/main/templates/main/functions" />
+      <recent name="$PROJECT_DIR$/main/static/img/moon" />
+      <recent name="$PROJECT_DIR$/main/static/img/vsc" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/main/templates/main/functions" />
       <recent name="$PROJECT_DIR$/main/templates/main/function" />
       <recent name="$PROJECT_DIR$/main/static" />
       <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/static/img/macho2" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/main/templates/main" />
-      <recent name="$PROJECT_DIR$/main/templates/main/functions" />
-      <recent name="$PROJECT_DIR$/main/static/css" />
-      <recent name="$PROJECT_DIR$/main/static/img/moon" />
-      <recent name="$PROJECT_DIR$/main/static/img/vsc" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.openarena">
@@ -993,24 +789,24 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25928918" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3979442" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.4955102" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24229075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1049,12 +845,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="231" />
+      <option name="time" value="234" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/static/img/rank-by-help.png" />
     <entry file="file://$PROJECT_DIR$/main/static/img/help-cover.png" />
     <entry file="file://$PROJECT_DIR$/main/templates/main/functions/archive_tournaments.html" />
     <entry file="file://$PROJECT_DIR$/openarena/urls.py">
@@ -1103,14 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/members.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1131,14 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/clubs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1181,30 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/archive.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/base2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1219,20 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/static/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="372" column="24" selection-start-line="372" selection-start-column="24" selection-end-line="372" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/static/css/archive_whole.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/static/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1240,7 +981,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/static/css/archive_tournaments.css">
+    <entry file="file://$PROJECT_DIR$/main/static/css/archive.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="179" column="34" selection-start-line="179" selection-start-column="34" selection-end-line="179" selection-end-column="34" />
@@ -1251,6 +992,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="299" column="22" selection-start-line="299" selection-start-column="22" selection-end-line="299" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1262,52 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="e#344#476#0#HTML" expanded="false" />
-            <element signature="e#781#915#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/static/css/tournaments.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="183" column="34" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="556" column="32" selection-start-line="556" selection-start-column="32" selection-end-line="556" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="87" column="7" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/whyachi.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1316,34 +1012,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/chainkiller_s1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-          <folding>
-            <element signature="e#519#686#0#HTML" expanded="false" />
-            <element signature="e#986#1130#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/ringoncup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
           <folding>
-            <element signature="e#519#685#0#HTML" expanded="true" />
-            <element signature="e#985#1130#0#HTML" expanded="true" />
+            <element signature="e#519#685#0#HTML" expanded="false" />
+            <element signature="e#985#1130#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1401,8 +1076,8 @@
         <state relative-caret-position="247">
           <caret line="120" column="70" selection-start-line="120" selection-start-column="70" selection-end-line="120" selection-end-column="70" />
           <folding>
-            <element signature="e#519#685#0#HTML" expanded="true" />
-            <element signature="e#7197#7219#0#HTML" expanded="true" />
+            <element signature="e#519#685#0#HTML" expanded="false" />
+            <element signature="e#7197#7219#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1415,12 +1090,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/mypage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="330">
+          <caret line="41" column="75" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="75" />
           <folding>
-            <element signature="e#295#314#0#HTML" expanded="true" />
+            <element signature="e#371#494#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1433,20 +1108,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
+    <entry file="file://$PROJECT_DIR$/main/templates/main/privacy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="247" column="30" selection-start-line="247" selection-start-column="30" selection-end-line="247" selection-end-column="30" />
+        <state relative-caret-position="195">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/mypage.html">
+    <entry file="file://$PROJECT_DIR$/main/static/css/video_deco.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/tournaments.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/base2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="162" column="10" selection-start-line="162" selection-start-column="10" selection-end-line="162" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/archive_whole.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/members.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="297" column="90" selection-start-line="297" selection-start-column="90" selection-end-line="297" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/clubs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/chainkiller_s1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
           <folding>
-            <element signature="e#371#494#0#HTML" expanded="true" />
+            <element signature="e#519#686#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="88" column="82" selection-start-line="88" selection-start-column="82" selection-end-line="88" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="4023" column="18" selection-start-line="4023" selection-start-column="18" selection-end-line="4023" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="123" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="526" column="58" selection-start-line="526" selection-start-column="58" selection-end-line="526" selection-end-column="58" />
+          <folding>
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="e#3656#3705#0#HTML" expanded="true" />
+            <element signature="e#6034#6085#0#HTML" expanded="true" />
+            <element signature="n#for#1;n#!!top" expanded="false" />
+            <element signature="e#11385#11434#0#HTML" expanded="true" />
+            <element signature="e#13763#13814#0#HTML" expanded="true" />
+            <element signature="n#for#2;n#!!top" expanded="false" />
+            <element signature="e#18905#18954#0#HTML" expanded="true" />
+            <element signature="e#21283#21334#0#HTML" expanded="true" />
+            <element signature="n#for#3;n#!!top" expanded="false" />
+            <element signature="e#26416#26465#0#HTML" expanded="true" />
+            <element signature="e#28794#28845#0#HTML" expanded="true" />
+            <element signature="n#for#4;n#!!top" expanded="false" />
+            <element signature="e#33938#33987#0#HTML" expanded="true" />
+            <element signature="e#36316#36367#0#HTML" expanded="true" />
+            <element signature="e#41462#41511#0#HTML" expanded="true" />
+            <element signature="e#43840#43891#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="248" column="18" selection-start-line="248" selection-start-column="18" selection-end-line="248" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="238" column="40" selection-start-line="159" selection-start-column="0" selection-end-line="238" selection-end-column="40" />
+          <folding>
+            <element signature="e#344#474#0#HTML" expanded="true" />
+            <element signature="e#779#909#0#HTML" expanded="true" />
+            <element signature="e#4012#4111#0#HTML" expanded="true" />
+            <element signature="e#4409#4458#0#HTML" expanded="true" />
+            <element signature="e#6787#6838#0#HTML" expanded="true" />
+            <element signature="n#for#1;n#!!top" expanded="false" />
+            <element signature="e#11453#11502#0#HTML" expanded="true" />
+            <element signature="e#13831#13882#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/archive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+          <folding>
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="e#3123#3172#0#HTML" expanded="true" />
+            <element signature="e#5501#5552#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

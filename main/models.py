@@ -67,32 +67,37 @@ class Making(models.Model):
     match_image = models.CharField(max_length=100, default='')
 
     def get_fundings_sum(self):
-        funding_qs = Funding.objects.filter(tournament_name=self)
         try:
             funding_sum = 0
-            for funding in funding_qs:
-                funding_sum += funding.amount
+            fundings = list()
+            for funding in Funding.objects.filter(tournament_name=self.tournament_name):
+                fundings.append(funding)
+                print(funding.amount)
+            for funding_amount in fundings:
+                funding_sum = funding_sum + funding_amount.amount
             return funding_sum
         except ValueError:
             return '-'
 
-    def get_fundings(self):
-        funding_qs = Funding.objects.filter(tournament_name=self)
+    def get_fundings_percentage(self):
         try:
             funding_sum = 0
-            for funding in funding_qs:
-                funding_sum += funding.amount
-            funding_rate = funding_sum/int(self.funding_goal)*100
+            fundings = list()
+            for funding in Funding.objects.filter(tournament_name=self.tournament_name):
+                fundings.append(funding)
+            for funding_amount in fundings:
+                funding_sum = funding_sum + funding_amount.amount
+            funding_rate = funding_sum / int(self.funding_goal) * 100
             return funding_rate
         except ValueError:
             return '-'
 
         # d_day 연산
     def get_day(self):
-        now = timezone.localtime(timezone.now())
+        now = datetime.now()
         print(self.starttime)
         try:
-            end_time = timezone.localtime(datetime.strptime(self.starttime, '%Y/%m/%d %H:%M'))
+            end_time = datetime.strptime(self.starttime, '%Y/%m/%d %H:%M')
             d_day = str(-(end_time-now).days)
             if not d_day.startswith('-'):
                 d_day = '+' + d_day
@@ -101,9 +106,24 @@ class Making(models.Model):
             return 'D-X'
 
     def get_participation(self):
-        participation_qs = Participation.objects.filter(tournament_name=self)
-        participation = participation_qs.count()
-        return participation
+        participation_qs = list()
+        for participation in Participation.objects.filter(tournament_name=self.tournament_name):
+            participation_qs.append(participation)
+
+        participation_num = len(participation_qs)
+        return participation_num
+
+
+    def get_funding_num(self):
+        funding_qs = list()
+        for funding in Funding.objects.filter(tournament_name=self.tournament_name):
+            funding_qs.append(funding)
+
+        funding_num = len(funding_qs)
+        if funding_num == '':
+            return 0
+
+        return funding_num
 
 class Tournament(models.Model):
     id = models.AutoField(primary_key=True)

@@ -11,7 +11,7 @@
     <header>
         <div id="header">
             <div class="mainboard">
-                <div class="main-head" id="main1" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/esports_union.jpg') center center no-repeat;">
+                <div class="main-head" id="main1" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/main_cover1.png') center center no-repeat;">
                     <!--
                     <p id="main1-mini-title">Open Arena</p>
                     -->
@@ -19,7 +19,7 @@
 
                     </div>
                 </div>
-                <div class="main-head" id="main2" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/openarena_cover.png') center center no-repeat;">
+                <div class="main-head" id="main2" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/main_cover2.png') center center no-repeat;">
                     <!--
                     <p id="main1-mini-title">Open Arena</p>
                     -->
@@ -74,10 +74,10 @@
                             {% for card in card_list_ing %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
                                         </div>
                                         <div class="progress stat2">
-                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
                                         </div>
                                         <div class="card-content-container">
@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="card-reveal card-detail">
                                             <div class="progress stat2">
-                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings_percentage }}%;">
                                                 </div>
                                             </div>
                                             <div class="card-content-top">
@@ -131,12 +131,17 @@
                                                 <ul>
                                                     <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
                                                     <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <!--
                                                     <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
-                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    -->
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_funding_num}}명</div></li>
+                                                    <!--
                                                     <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                    -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                        바로가기</a></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,9 +161,10 @@
                                 <div class="project-card">
                                     <div class="card sticky-action">
                                         <div class="card-image waves-effect waves-block waves-light" id="overwatch">
+                                            <img src="{{ card.main_image }}">
                                         </div>
                                         <div class="progress stat2">
-                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings}}%;">
+                                            <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
                                         </div>
                                         <div class="card-content-container">
@@ -186,7 +192,7 @@
                                         </div>
                                         <div class="card-reveal card-detail">
                                             <div class="progress stat2">
-                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings }}%;">
+                                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ card.get_fundings_percentage }}%;">
                                                 </div>
                                             </div>
                                             <div class="card-content-top">
@@ -212,12 +218,18 @@
                                                 <ul>
                                                     <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
                                                     <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
+                                                    <!--
                                                     <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
-                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_participation}}명</div></li>
+                                                    -->
+                                                    <li><div class="card-information-content">후원자수</div><div class="card-information-data">{{card.get_funding_num}}명</div></li>
+                                                    <!--
                                                     <li><div class="card-information-content">보상</div><div class="card-information-data">{{card.reward}}</div></li>
+                                                    -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button">바로가기</button>
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
+                                                        바로가기</a></button>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -252,11 +264,12 @@
     <script>
         $('.project-card-container').slick({
             slidesToShow: 4,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 10000,
             arrows:true,
             dots: false,
+            variableWidth: true,
         });
     </script>
 {% endblock %}

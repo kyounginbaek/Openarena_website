@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/create.html" afterPath="$PROJECT_DIR$/main/templates/main/create.html" />
     </list>
     <ignored path="openarena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,26 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="4023" column="18" selection-start-line="4023" selection-start-column="18" selection-end-line="4023" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,6 +51,16 @@
                 <element signature="e#41462#41511#0#HTML" expanded="true" />
                 <element signature="e#43840#43891#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -167,7 +156,6 @@
         <option value="$PROJECT_DIR$/main/templates/main/moon.html" />
         <option value="$PROJECT_DIR$/main/templates/main/help.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" />
-        <option value="$PROJECT_DIR$/main/templates/main/create.html" />
         <option value="$PROJECT_DIR$/main/static/css/tournaments.css" />
         <option value="$PROJECT_DIR$/main/templates/main/base2.html" />
         <option value="$PROJECT_DIR$/main/urls.py" />
@@ -178,6 +166,7 @@
         <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/static/css/common.css" />
         <option value="$PROJECT_DIR$/main/models.py" />
+        <option value="$PROJECT_DIR$/main/templates/main/create.html" />
       </list>
     </option>
   </component>
@@ -1148,32 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="526" column="58" selection-start-line="526" selection-start-column="58" selection-end-line="526" selection-end-column="58" />
-          <folding>
-            <element signature="n#for#0;n#!!top" expanded="false" />
-            <element signature="e#3656#3705#0#HTML" expanded="true" />
-            <element signature="e#6034#6085#0#HTML" expanded="true" />
-            <element signature="n#for#1;n#!!top" expanded="false" />
-            <element signature="e#11385#11434#0#HTML" expanded="true" />
-            <element signature="e#13763#13814#0#HTML" expanded="true" />
-            <element signature="n#for#2;n#!!top" expanded="false" />
-            <element signature="e#18905#18954#0#HTML" expanded="true" />
-            <element signature="e#21283#21334#0#HTML" expanded="true" />
-            <element signature="n#for#3;n#!!top" expanded="false" />
-            <element signature="e#26416#26465#0#HTML" expanded="true" />
-            <element signature="e#28794#28845#0#HTML" expanded="true" />
-            <element signature="n#for#4;n#!!top" expanded="false" />
-            <element signature="e#33938#33987#0#HTML" expanded="true" />
-            <element signature="e#36316#36367#0#HTML" expanded="true" />
-            <element signature="e#41462#41511#0#HTML" expanded="true" />
-            <element signature="e#43840#43891#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/archive.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
@@ -1223,16 +1186,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="4023" column="18" selection-start-line="4023" selection-start-column="18" selection-end-line="4023" selection-end-column="18" />
+        <state relative-caret-position="254">
+          <caret line="3892" column="48" selection-start-line="3892" selection-start-column="48" selection-end-line="3892" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="526" column="58" selection-start-line="526" selection-start-column="58" selection-end-line="526" selection-end-column="58" />
+          <folding>
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="e#3656#3705#0#HTML" expanded="true" />
+            <element signature="e#6034#6085#0#HTML" expanded="true" />
+            <element signature="n#for#1;n#!!top" expanded="false" />
+            <element signature="e#11385#11434#0#HTML" expanded="true" />
+            <element signature="e#13763#13814#0#HTML" expanded="true" />
+            <element signature="n#for#2;n#!!top" expanded="false" />
+            <element signature="e#18905#18954#0#HTML" expanded="true" />
+            <element signature="e#21283#21334#0#HTML" expanded="true" />
+            <element signature="n#for#3;n#!!top" expanded="false" />
+            <element signature="e#26416#26465#0#HTML" expanded="true" />
+            <element signature="e#28794#28845#0#HTML" expanded="true" />
+            <element signature="n#for#4;n#!!top" expanded="false" />
+            <element signature="e#33938#33987#0#HTML" expanded="true" />
+            <element signature="e#36316#36367#0#HTML" expanded="true" />
+            <element signature="e#41462#41511#0#HTML" expanded="true" />
+            <element signature="e#43840#43891#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        <state relative-caret-position="225">
+          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
           <folding />
         </state>
       </provider>

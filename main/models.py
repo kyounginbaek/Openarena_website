@@ -72,7 +72,7 @@ class Making(models.Model):
             fundings = list()
             for funding in Funding.objects.filter(tournament_name=self.tournament_name):
                 fundings.append(funding)
-                print(funding.amount)
+                # print(funding.amount)
             for funding_amount in fundings:
                 funding_sum = funding_sum + funding_amount.amount
             return funding_sum
@@ -95,7 +95,7 @@ class Making(models.Model):
         # d_day 연산
     def get_day(self):
         now = datetime.now()
-        print(self.starttime)
+        # print(self.starttime)
         try:
             end_time = datetime.strptime(self.starttime, '%Y/%m/%d %H:%M')
             d_day = str(-(end_time-now).days)

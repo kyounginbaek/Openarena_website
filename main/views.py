@@ -43,7 +43,7 @@ def tournaments(request):
 
     for making_item in Making.objects.all().order_by('-when'):
         starttime = datetime.strptime(making_item.funding_endtime, '%Y/%m/%d %H:%M')
-        print('tg -> '+making_item.tournament_game)
+        # print('tg -> '+making_item.tournament_game)
         if starttime > datetime.now():
             card_list.append(making_item)
             if making_item.tournament_game == '리그오브레전드(LOL)':

@@ -9,9 +9,9 @@ urlpatterns = [
     url(r'^archive/$', views.archive, name='archive'),
     url(r'^clubs/$', views.clubs, name='clubs'),
     url(r'^making/$', views.making, name='making'),
-    url(r'^tournament_url_check/$', views.making, name='tournament_url_check'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^calendar/$', views.calendar, name='calendar'),
+
     url(r'^migal/$', views.migal, name='migal'),
     url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),

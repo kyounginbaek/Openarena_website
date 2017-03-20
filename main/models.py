@@ -184,10 +184,10 @@ class Tournament(models.Model):
     profile_account = models.CharField(max_length=400, default='')
     creator_enrollment = models.CharField(max_length=200, default='')
     # after submit
-    confirm = models.CharField(max_length=200, default='') # yes or no(reviewing)
+    confirm = models.CharField(max_length=200, default='-')  # yes or no(reviewing)
     # template
-    cover_image = models.CharField(max_length=2000, default='')
-    logo_image = models.CharField(max_length=2000, default='')
+    cover_image = models.CharField(max_length=2000, default='-')
+    logo_image = models.CharField(max_length=2000, default='-')
 
 class Video(models.Model):
     id = models.AutoField(primary_key=True)

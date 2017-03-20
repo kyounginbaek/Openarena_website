@@ -138,7 +138,7 @@
                                             <div class="col-md-4 col-md-offset-4">
                                                 <select id="tournament_game" name="tournament_game" class="form-control">
                                                     <option value="default">선택해주세요.</option>
-                                                    <option value="리그오브레전드">리그오브레전드(롤)</option>
+                                                    <option value="리그오브레전드">리그오브레전드</option>
                                                     <option value="오버워치">오버워치</option>
                                                     <option value="스타크래프트1">스타크래프트1</option>
                                                     <option value="스타크래프트2">스타크래프트2</option>
@@ -3664,59 +3664,59 @@
                         "purpose": "submit",
                         //tab1
                         "tournament_name": $('#tournament_name').val(),
-                        "tournament_game": "", //value or etc_input
-                        "tournament_image": "", //yes_input or no
+                        "tournament_game": "-", //value or etc_input
+                        "tournament_image": "-", //yes_input or no
                         "tournament_summary": $('#tournament_summary').summernote('code'),
                         "tournament_url": $('#tournament_url').val(),
                         //tab2
                         "tournament_starttime": $('#tournament_starttime').val(),
                         "tournament_endtime": $('#tournament_endtime').val(),
                         "tournament_format": $('#tournament_format').val(),
-                        "tournament_format_spec": "", //format_spec or array
+                        "tournament_format_spec": "-", //format_spec or array
                         "tournament_rule": $('#tournament_rule').summernote('code'),
                         "participation": $('input:radio[name="participation"]:checked').val(), //yes or no(radio)
                         //if participation = no
-                        "participation_custom_url": "", //custom_url_input or no
+                        "participation_custom_url": "-", //custom_url_input or no
                         //if participation = yes
-                        "participation_type": "", //radio
-                        "participation_template_custom": "", //yes or no
-                        "participation_template_format": "", //array
-                        "participation_template": "", //array
-                        "participation_number": "",
-                        "participation_time": "", //default or custom
-                        "participation_starttime": "",
-                        "participation_endtime": "",
-                        "participation_checkin": "", //yes_input or no
+                        "participation_type": "-", //radio
+                        "participation_template_custom": "-", //yes or no
+                        "participation_template_format": "-", //array
+                        "participation_template": "-", //array
+                        "participation_number": "-",
+                        "participation_time": "-", //default or custom
+                        "participation_starttime": "-",
+                        "participation_endtime": "-",
+                        "participation_checkin": "-", //yes_input or no
                         //
                         //tab3
                         "funding_notice": $('#funding_notice').val(), //only yes
                         "account_notice": $('#account_notice').val(), //only yes
-                        "participation_fee": "", // fee_number_input or no
+                        "participation_fee": "-", // fee_number_input or no
                         "funding": $('input:radio[name="funding"]:checked').val(), //yes or no(radio)
                         //if funding = yes
-                        "funding_goal": "",
-                        "funding_time": "", //default or custom
-                        "funding_starttime": "",
-                        "funding_endtime": "",
-                        "reward": "", //yes or no
-                        "reward_number": "", //array
-                        "reward_spec": "", //array
-                        "promise": "", //yes or no
-                        "promise_number": "", //array
-                        "promise_spec": "", //array
+                        "funding_goal": "-",
+                        "funding_time": "-", //default or custom
+                        "funding_starttime": "-",
+                        "funding_endtime": "-",
+                        "reward": "-", //yes or no
+                        "reward_number": "-", //array
+                        "reward_spec": "-", //array
+                        "promise": "-", //yes or no
+                        "promise_number": "-", //array
+                        "promise_spec": "-", //array
                         //
                         //tab4
-                        "profile_name": "", // default_name or custom_name
+                        "profile_name": "-", // default_name or custom_name
                         "profile_introduction": $('#profile_introduction').summernote('code'),
-                        "profile_image": "", // yes_input or no
+                        "profile_image": "-", // yes_input or no
                         "streaming": $('input:radio[name="streaming"]:checked').val(), //yes or no
                         //if streaming = yes
-                        "streaming_site": "", //array
-                        "streaming_url": "", //array
+                        "streaming_site": "-", //array
+                        "streaming_url": "-", //array
                         //
-                        "profile_email": "", // default_email or custom_email
+                        "profile_email": "-", // default_email or custom_email
                         "profile_phone": $('#profile_phone').val(),
-                        "profile_account": "", // account_input or no
+                        "profile_account": "-", // account_input or no
                         "creator_enrollment": $('input:radio[name="creator_enrollment"]:checked').val() //yes or no
                     };
 
@@ -3732,6 +3732,7 @@
                         serializedData.tournament_game = $('#tournament_game').val();
                     }
 
+                    image_formdata.append("tournament_image_question", $('input:radio[name="tournament_image_question"]:checked').val());
                     if($('input:radio[name="tournament_image_question"]:checked').val()=="yes"){
                         // 이미지 업로드파일 형식으로 변환 필요
                         image_formdata.append("tournament_image", $('#tournament_image').prop('files')[0]);
@@ -3854,6 +3855,7 @@
                         serializedData.profile_name = $('#profile_name_custom').val();
                     }
 
+                    image_formdata.append("profile_image_question", $('input:radio[name="profile_image_question"]:checked').val());
                     if($('input:radio[name="profile_image_question"]:checked').val()=="yes"){
                         // 이미지 업로드파일 형식으로 변환 필요
                         image_formdata.append("profile_image", $('#profile_image').prop('files')[0]);

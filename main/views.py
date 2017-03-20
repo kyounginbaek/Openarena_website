@@ -1400,7 +1400,7 @@ def create(request):
                                         # tab1
                                         tournament_name=request.POST.get('tournament_name'),
                                         tournament_game=request.POST.get('tournament_game'),
-                                        tournament_image="",
+                                        tournament_image=request.POST.get('tournament_image'),
                                         tournament_summary=request.POST.get('tournament_summary'),
                                         tournament_url=request.POST.get('tournament_url'),
                                         # tab2
@@ -1439,7 +1439,7 @@ def create(request):
                                         # tab4
                                         profile_name=request.POST.get('profile_name'),
                                         profile_introduction=request.POST.get('profile_introduction'),
-                                        profile_image="",
+                                        profile_image=request.POST.get('profile_image'),
                                         streaming=request.POST.get('streaming'),
                                         streaming_site=request.POST.get('streaming_site'),
                                         streaming_url=request.POST.get('streaming_url'),
@@ -1455,6 +1455,28 @@ def create(request):
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "image_upload":
             # 이미지 업로드
+            form = UploadFileForm()
+            temp = form.save(commit=False)
+            conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY, host='s3.ap-northeast-2.amazonaws.com')
+            bucket = conn.get_bucket('openarena')
+
+            if request.POST.get('tournament_image_question') != "no":
+                file1 = request.FILES['tournament_image']
+                k1 = Key(bucket)
+                k1.key = file1.name
+                k1.content_type = 'text/plain'
+                k1.set_contents_from_string(file1.read(), policy='public-read')
+                url1 = k1.generate_url(expires_in=0, query_auth=False)
+                Tournament.objects.filter(tournament_name=request.POST.get('tournament_name')).update(tournament_image=url1)
+
+            if request.POST.get('profile_image_question') != "no":
+                file2 = request.FILES['profile_image']
+                k2 = Key(bucket)
+                k2.key = file2.name
+                k2.content_type = 'text/plain'
+                k2.set_contents_from_string(file2.read(), policy='public-read')
+                url2 = k2.generate_url(expires_in=0, query_auth=False)
+                Tournament.objects.filter(tournament_name=request.POST.get('tournament_name')).update(profile_image=url2)
 
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')

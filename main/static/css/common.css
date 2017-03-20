@@ -246,11 +246,7 @@ footer{
 }
 
 .card.sticky-action{
-    overflow:auto;
-}
-
-.card-detail-button > button > a{
-    color: white;
+    overflow: auto;
 }
 
 @media (max-width:1281px) {
@@ -401,5 +397,7 @@ footer{
         color: white;
     }
 
-
+    .card.sticky-action {
+        overflow: auto;
+    }
 }

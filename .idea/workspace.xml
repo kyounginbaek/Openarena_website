@@ -2,7 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/create.html" afterPath="$PROJECT_DIR$/main/templates/main/create.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/css/club_contents_deco.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/css/team_intro_style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main/static/css/team_post_style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/base.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/forms.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/search.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/archive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/archive_whole.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/contact_form.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/contents_deco.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/custom_kyoungin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/fullcalendar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/home.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/jquery.datetimepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/landing-page.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/participation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/rotating-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/tournaments.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/video_deco.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/SOURCE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/django_summernote.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/django_summernote_inplace.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/font/summernote.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/font/summernote.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/font/summernote.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/jquery.fileupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/jquery.iframe-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/jquery.ui.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ar-AR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ar-AR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-bg-BG.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-bg-BG.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ca-ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ca-ES.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-cs-CZ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-cs-CZ.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-da-DK.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-da-DK.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-de-DE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-de-DE.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-ES.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-EU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-es-EU.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fa-IR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fa-IR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fi-FI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fi-FI.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fr-FR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-fr-FR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-gl-ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-gl-ES.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-he-IL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-he-IL.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hr-HR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hr-HR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hu-HU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-hu-HU.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-id-ID.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-id-ID.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-it-IT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-it-IT.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ja-JP.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ja-JP.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ko-KR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ko-KR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LT.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LV.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-lt-LV.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nb-NO.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nb-NO.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nl-NL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-nl-NL.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pl-PL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pl-PL.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-BR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-BR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-PT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-pt-PT.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ro-RO.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ro-RO.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ru-RU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-ru-RU.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sk-SK.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sk-SK.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sl-SI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sl-SI.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS-Latin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS-Latin.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sr-RS.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sv-SE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-sv-SE.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-th-TH.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-th-TH.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-tr-TR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-tr-TR.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-uk-UA.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-uk-UA.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-vi-VN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-vi-VN.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-CN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-CN.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-TW.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/lang/summernote-zh-TW.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/summernote.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/django_summernote/summernote.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/intro-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/openarena.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/easyResponsiveTabs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/fullcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-1.10.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.datetimepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.lightbox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/moment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/summernote.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/common.css" afterPath="$PROJECT_DIR$/main/static/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/landing-page.css" afterPath="$PROJECT_DIR$/main/static/css/landing-page.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/static/css/participation.css" afterPath="$PROJECT_DIR$/main/static/css/participation.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/clubs.html" afterPath="$PROJECT_DIR$/main/templates/main/clubs.html" />
     </list>
     <ignored path="openarena.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,39 +225,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="526" column="58" selection-start-line="526" selection-start-column="58" selection-end-line="526" selection-end-column="58" />
-              <folding>
-                <element signature="n#for#0;n#!!top" expanded="false" />
-                <element signature="e#3656#3705#0#HTML" expanded="true" />
-                <element signature="e#6034#6085#0#HTML" expanded="true" />
-                <element signature="n#for#1;n#!!top" expanded="false" />
-                <element signature="e#11385#11434#0#HTML" expanded="true" />
-                <element signature="e#13763#13814#0#HTML" expanded="true" />
-                <element signature="n#for#2;n#!!top" expanded="false" />
-                <element signature="e#18905#18954#0#HTML" expanded="true" />
-                <element signature="e#21283#21334#0#HTML" expanded="true" />
-                <element signature="n#for#3;n#!!top" expanded="false" />
-                <element signature="e#26416#26465#0#HTML" expanded="true" />
-                <element signature="e#28794#28845#0#HTML" expanded="true" />
-                <element signature="n#for#4;n#!!top" expanded="false" />
-                <element signature="e#33938#33987#0#HTML" expanded="true" />
-                <element signature="e#36316#36367#0#HTML" expanded="true" />
-                <element signature="e#41462#41511#0#HTML" expanded="true" />
-                <element signature="e#43840#43891#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="254">
+              <caret line="3892" column="48" selection-start-line="3892" selection-start-column="48" selection-end-line="3892" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/models.py">
+      <file leaf-file-name="clubs.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/clubs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+            <state relative-caret-position="90">
+              <caret line="22" column="216" selection-start-line="22" selection-start-column="216" selection-end-line="22" selection-end-column="216" />
               <folding />
             </state>
           </provider>
@@ -116,9 +296,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main/static/css/custom_kyoungin.css" />
         <option value="$PROJECT_DIR$/main/static/css/fullcalendar.min.css" />
-        <option value="$PROJECT_DIR$/main/static/css/landing-page.css" />
         <option value="$PROJECT_DIR$/main/forms.py" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/main/templates/main/chainkiller.html" />
@@ -136,7 +314,6 @@
         <option value="$PROJECT_DIR$/main/templates/main/making.html" />
         <option value="$PROJECT_DIR$/main/templates/main/hallfame.html" />
         <option value="$PROJECT_DIR$/main/templates/main/contact.html" />
-        <option value="$PROJECT_DIR$/main/templates/main/clubs.html" />
         <option value="$PROJECT_DIR$/main/templates/main/agreement.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -167,6 +344,9 @@
         <option value="$PROJECT_DIR$/main/static/css/common.css" />
         <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/main/templates/main/create.html" />
+        <option value="$PROJECT_DIR$/main/static/css/landing-page.css" />
+        <option value="$PROJECT_DIR$/main/static/css/participation.css" />
+        <option value="$PROJECT_DIR$/main/templates/main/clubs.html" />
       </list>
     </option>
   </component>
@@ -734,7 +914,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25928918" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -744,7 +924,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24229075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24229075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -797,38 +977,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/static/img/help-cover.png" />
-    <entry file="file://$PROJECT_DIR$/main/templates/main/functions/archive_tournaments.html" />
-    <entry file="file://$PROJECT_DIR$/openarena/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/static/css/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/archive_videos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="48" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1119,14 +1267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/clubs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/chainkiller_s1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -1149,11 +1289,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/static/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="257" column="19" selection-start-line="257" selection-start-column="19" selection-end-line="257" selection-end-column="19" />
+        <state relative-caret-position="224">
+          <caret line="393" column="5" selection-start-line="393" selection-start-column="5" selection-end-line="393" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="528" column="71" selection-start-line="528" selection-start-column="71" selection-end-line="528" selection-end-column="71" />
+          <folding>
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="e#3656#3705#0#HTML" expanded="false" />
+            <element signature="e#6034#6085#0#HTML" expanded="false" />
+            <element signature="n#for#1;n#!!top" expanded="false" />
+            <element signature="e#11385#11434#0#HTML" expanded="false" />
+            <element signature="e#13763#13814#0#HTML" expanded="false" />
+            <element signature="n#for#2;n#!!top" expanded="false" />
+            <element signature="e#18905#18954#0#HTML" expanded="false" />
+            <element signature="e#21283#21334#0#HTML" expanded="false" />
+            <element signature="n#for#3;n#!!top" expanded="false" />
+            <element signature="e#26416#26465#0#HTML" expanded="false" />
+            <element signature="e#28794#28845#0#HTML" expanded="false" />
+            <element signature="n#for#4;n#!!top" expanded="false" />
+            <element signature="e#33938#33987#0#HTML" expanded="false" />
+            <element signature="e#36316#36367#0#HTML" expanded="false" />
+            <element signature="e#41462#41511#0#HTML" expanded="false" />
+            <element signature="e#43840#43891#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,13 +1358,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
+    <entry file="file://$PROJECT_DIR$/main/static/css/clubs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,36 +1374,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+    <entry file="file://$PROJECT_DIR$/main/static/css/landing-page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="526" column="58" selection-start-line="526" selection-start-column="58" selection-end-line="526" selection-end-column="58" />
-          <folding>
-            <element signature="n#for#0;n#!!top" expanded="false" />
-            <element signature="e#3656#3705#0#HTML" expanded="true" />
-            <element signature="e#6034#6085#0#HTML" expanded="true" />
-            <element signature="n#for#1;n#!!top" expanded="false" />
-            <element signature="e#11385#11434#0#HTML" expanded="true" />
-            <element signature="e#13763#13814#0#HTML" expanded="true" />
-            <element signature="n#for#2;n#!!top" expanded="false" />
-            <element signature="e#18905#18954#0#HTML" expanded="true" />
-            <element signature="e#21283#21334#0#HTML" expanded="true" />
-            <element signature="n#for#3;n#!!top" expanded="false" />
-            <element signature="e#26416#26465#0#HTML" expanded="true" />
-            <element signature="e#28794#28845#0#HTML" expanded="true" />
-            <element signature="n#for#4;n#!!top" expanded="false" />
-            <element signature="e#33938#33987#0#HTML" expanded="true" />
-            <element signature="e#36316#36367#0#HTML" expanded="true" />
-            <element signature="e#41462#41511#0#HTML" expanded="true" />
-            <element signature="e#43840#43891#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="434">
+          <caret line="953" column="1" selection-start-line="953" selection-start-column="1" selection-end-line="953" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/models.py">
+    <entry file="file://$PROJECT_DIR$/main/static/css/club_contents_deco.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/participation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/team_post_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/team_intro_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/clubs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="22" column="216" selection-start-line="22" selection-start-column="216" selection-end-line="22" selection-end-column="216" />
           <folding />
         </state>
       </provider>

@@ -246,7 +246,7 @@ footer{
 }
 
 .card.sticky-action{
-    overflow: scroll;
+    overflow: auto;
 }
 
 @media (max-width:1281px) {
@@ -398,6 +398,6 @@ footer{
     }
 
     .card.sticky-action {
-        overflow: scroll;
+        overflow: auto;
     }
 }

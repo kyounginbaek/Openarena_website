@@ -356,7 +356,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .com_title{
     text-align: left;
-    font-size: 1.5em;
+    font-size: 2.3rem;
     font-weight: 600;
     color: #ffffff;
 }
@@ -369,7 +369,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .com_subtitle{
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.6rem;
     color: #D1D1DD;
     font-weight: 400;
 }
@@ -548,8 +548,6 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
     padding-top: 15px;
     padding-bottom: 20px;
     background-color: rgba( 33, 33, 33, 0.9 );
-    border-bottom: 1px solid rgba( 255, 255, 255, 0.5 );
-    border-top: 1px solid rgba( 255, 255, 255, 0.5 );
 }
 .com_list_con{
     border: 2px solid #f7941e;
@@ -651,7 +649,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .help_head{
     height: 275px;
-    background: url(../img/help-cover.png);
+    background: url(../../static/img/q_cover.png);
     margin-bottom: 20px;
 }
 .help_head_inner{
@@ -712,7 +710,6 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 
 /*my page 다듬기*/
 .no_border{
-    border-bottom: 1px solid #ff9900;
     border-top : transparent;
     border-right : transparent;
     border-left : transparent;
@@ -729,7 +726,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 /*너비가 991보다 클떄*/
 @media(min-width:991px) {
     .list_btn{
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 }
 /*너비가 991보다 작을떄*/
@@ -738,7 +735,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
         font-size: 10px;
     }
     .list_btn{
-        font-size: 10px;
+        font-size: 1rem;
     }
     .main_btn_size{
         width: 100px;

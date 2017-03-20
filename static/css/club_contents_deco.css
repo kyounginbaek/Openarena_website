@@ -1,0 +1,75 @@
+
+.profile{
+    width: 160px;
+    float: left;
+}
+.profile_img{
+    height: 160px;
+}
+.team_header{
+    color: #f8f8f8;
+    height: 650px;
+    font-family: 나눔고딕;
+}
+.club_menu{
+    height: 100%;
+    margin: auto;
+    padding-top: 50px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  box-shadow: 0 0 20px rgba(21, 21, 29, 0.2);
+  overflow: hidden;
+  border-radius: 2px;
+  width: 100%;
+}
+.team_dscp{
+    width: 160px;
+    hight: 160px;
+}
+.club_menu_contents{
+
+    width: 100%;
+}
+.content1_team{
+    line-height: 1.5em;
+    background: #222;
+    min-height: 300px;
+    border: solid 1px #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.document-title h1{
+    color: #18b1bd;
+    font-size: 3em;
+    font-weight: 600;
+}
+@media only screen and (min-width: 767px) {
+    .price_bar {
+        padding-left: 0px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .team_header{
+    height: 380px;
+    }
+    .profile{
+        width: 120px;
+        padding: 10px;
+    }
+    .team_title{
+        padding-top: 10px;
+    }
+    .profile_img{
+        width: 100px;
+    height: 100px;
+    }
+    .center-block{
+        width: 100%;
+    }
+
+}

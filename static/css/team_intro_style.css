@@ -1,0 +1,38 @@
+.post_picture{
+  width: 100%;
+}
+.text_box{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.player-picture {
+  width: 177px !important;
+  height: 271px !important;
+  padding: 0px !important;
+  background: #222;
+  border-color: #ccc;
+}
+.player_nickname{
+  font-size: 3rem;
+  padding:5px;
+}
+.player_subname{
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 1200px) {
+    .player-picture{
+  width: 143px !important;
+  height: 235px !important;
+  font-size: 10px;
+    }
+  .player_nickname{
+  font-size: 2rem;
+  }
+}
+.member-image div{
+  height: 130px;
+  border-radius: 3px;
+}
+.team_picture{
+  width: 100%;
+}

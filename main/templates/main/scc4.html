@@ -32,13 +32,13 @@
                             <li class="">
                                 <div class="" >
                                     <div class="center">
-                                        <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block">참가 하기</button>
+                                        <button id="participation" name="participation" class="btn btn-primary center-block">참가 하기</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="" >
                                     <div class="center">
-                                        <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
+                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
@@ -84,12 +84,13 @@
                     </button>
                 </div>
                 -->
-                <!-- 대진표 -->
+                <!-- 대진표
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
                         <span class="list_btn">대진표</span>
                     </button>
                 </div>
+                -->
                 <!-- 후원자 명단 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
@@ -113,9 +114,13 @@
                             <div style="overflow: hidden; clear: both;">
                                 <h4 style="color: #f7941e">• 대회 소개 및 규칙</h4>
                                 <div class="com_intro_now hover_div">
-                                    <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/custom/vsc2_poster.png">
-                                    <div style="padding: 5px;"></div>
+                                    <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/custom/scc4_poster.jpg">
+                                    <div style="padding: 15px;"></div>
                                     <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
+                                    <br/>
+                                    <p style="color: #ff9900">환불 규정</p>
+                                    <p>1. 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</p>
+                                    <p>2. 대회가 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</p>
                                 </div>
                             </div>
                             <div style="overflow: hidden; clear: both;">
@@ -424,10 +429,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">대회 응원 문구를 적어주세요.</label>
+                                    <label for="exampleInputPassword1">대회 응원 문구 혹은 자신이 추천하는 다음 대회명을 입력해주세요.</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
                                         <input type="text" class="form-control" id="funding_comment" name="funding_comment" placeholder="예) 재밌는 대회 기대하겠습니다!">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">플레이 코칭을 받고 싶으신 분은 연락처를 입력해주세요.</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
+                                        <input type="text" class="form-control" id="funding_comment2" name="funding_comment2" placeholder="예) 010-1234-5678">
                                     </div>
                                 </div>
                             </div>
@@ -577,11 +589,11 @@
             });
 
             $("#participation").click(function(){
-                window.open("https://battlefy.com/versestopcup/versestopcup/58bdb65144c20f37030ea7da/info?infoTab=details");
+                window.open("https://battlefy.com/team-conqueror/slayer-conqueror-cup-4-with-openarena/58b2a073105e583103da3680/info?infoTab=details");
             });
 
             $("#streaming").click(function(){
-                window.open("http://twitch.tv/mascahs");
+                window.open("http://www.twitch.tv/silentslayerhs");
             });
 
             $(".btn-pref .btn").click(function(){
@@ -678,7 +690,7 @@
                     var newWindow = window.open("","_blank");
                     $.ajax({
                         type: 'POST',
-                        url: '/vsc2/',
+                        url: '/scc4/',
                         data: serializedData,
                         dataType: 'json',
                         success: function(response) {
@@ -694,7 +706,7 @@
                 serializedData = $("#participation_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/vsc2/',
+                    url: '/scc4/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
@@ -726,7 +738,7 @@
                 serializedData = $("#comment_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/vsc2/',
+                    url: '/scc4/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(data) {
@@ -742,22 +754,18 @@
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay,listWeek'
                 },
-                defaultDate: '2017-03-08',
+                defaultDate: '2017-03-21',
                 navLinks: true, // can click day/week names to navigate views
                 eventLimit: true, // allow "more" link when too many events
                 events: [
                     {
-                        title: '참가자 모집',
-                        start: '2017-03-08T13:00:00',
-                        end: '2017-03-11T11:00:00'
+                        title: '대회 참가 신청',
+                        start: '2017-03-22T19:00:00',
+                        end: '2017-03-26T13:00:00'
                     },
                     {
-                        title: '예선 시작',
-                        start: '2017-03-11T12:00:00'
-                    },
-                    {
-                        title: '본선 시작',
-                        start: '2017-03-19T14:00:00',
+                        title: '대회 시작',
+                        start: '2017-03-26T13:00:00',
                     },
                 ]
             });
@@ -779,7 +787,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: '/vsc2/',
+                        url: '/scc4/',
                         data: serializedData,
                         dataType: 'json',
                         success: function(response) {

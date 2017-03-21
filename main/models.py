@@ -14,6 +14,7 @@ class Fundingdummy(models.Model):
     amount = models.IntegerField(default=0)
     reward = models.CharField(max_length=1000, default='-')
     comment = models.TextField(default='-')
+    comment2 = models.TextField(default='-')
     orderno = models.CharField(max_length=400, default='-')
     when = models.CharField(max_length=400, default=timezone.localtime(timezone.now()))
     thanks = models.CharField(max_length=200, default='-')
@@ -27,6 +28,7 @@ class Funding(models.Model):
     amount = models.IntegerField(default=0)
     reward = models.CharField(max_length=1000, default='-')
     comment = models.TextField(default='-')
+    comment2 = models.TextField(default='-')
     orderno = models.CharField(max_length=400, default='-')
     when = models.CharField(max_length=400, default=timezone.localtime(timezone.now()))
     thanks = models.CharField(max_length=200, default='-')
@@ -147,8 +149,8 @@ class Tournament(models.Model):
     # if tournament_registration = yes
     participation_type = models.CharField(max_length=200, default='-')  # individual or team
     participation_template_custom = models.CharField(max_length=200, default='-')  # yes or no
-    participation_template_format = models.CharField(max_length=2000, default='-')  # text or file, array
-    participation_template = models.CharField(max_length=2000, default='-')  # array
+    participation_template_format = models.CharField(max_length=2000, default='')  # text or file, array
+    participation_template = models.CharField(max_length=2000, default='')  # array
     participation_number = models.CharField(max_length=200, default='-')
     participation_time = models.CharField(max_length=200, default='-') # default or custom
     # if participation_time = custom
@@ -167,11 +169,11 @@ class Tournament(models.Model):
     funding_starttime = models.CharField(max_length=200, default='-')
     funding_endtime = models.CharField(max_length=200, default='-')
     reward = models.CharField(max_length=200, default='-')  # yes or no
-    reward_number = models.CharField(max_length=4000, default='-')
-    reward_spec = models.CharField(max_length=4000, default='-')
+    reward_number = models.CharField(max_length=4000, default='')
+    reward_spec = models.CharField(max_length=4000, default='')
     promise = models.CharField(max_length=200, default='-')  # yes or no
-    promise_number = models.CharField(max_length=4000, default='-')
-    promise_spec = models.CharField(max_length=4000, default='-')
+    promise_number = models.CharField(max_length=4000, default='')
+    promise_spec = models.CharField(max_length=4000, default='')
     # tab4
     profile_name = models.CharField(max_length=400, default='')
     profile_introduction = summer_fields.SummernoteTextField()

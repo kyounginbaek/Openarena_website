@@ -2285,7 +2285,7 @@
                                             <!-- 오픈아레나 이메일을 사용하지 않을 경우 팝업 -->
                                             <div id="div_profile_email_question_custom" style="display: none;">
                                                 <div style="padding: 5px;"></div>
-                                                <p>진행자명으로 사용될 이름을 입력해주세요.</p>
+                                                <p>다른 이메일 주소를 입력해주세요.</p>
                                                 <div class="input-group col-md-6 col-md-offset-3" style="margin: 0 auto;">
                                                     <span class="input-group-addon" id="basic-addon1">이메일</span>
                                                     <input type="text" autocomplete="off" class="form-control" id="profile_email_custom" name="profile_email_custom" placeholder="입력해주세요.">
@@ -3171,13 +3171,12 @@
                     $('#profile_account').prop('disabled', false);
 
                 } else {
-                    if($('input:radio[name="funding"]:checked').val() == 'yes'){
-
-                    } else {
+                    if($('input:radio[name="funding"]:checked').val() != 'yes'){
                         $('#profile_account_yes').val("no");
                         $('#tab4_oksign7').show();
                         $('#tab4_check7').attr('value', 'check');
                         $('#profile_account').prop('disabled', true);
+                        $('#profile_account').val("");
                     }
                 }
 
@@ -3197,7 +3196,6 @@
                 if ($('input:radio[name="funding"]:checked').val() == 'yes') {
                     $("#div_funding_yes").show();
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
-
                     $('#profile_account_yes').val("yes");
                     $('#tab4_oksign7').hide();
                     $('#tab4_check7').attr('value', 'uncheck');
@@ -3206,13 +3204,12 @@
                 } else {
                     $("#div_funding_yes").hide();
                     /* 참가비 혹은 후원비 받기 둘 중 하나라도 체크된 경우 팝업 */
-                    if($('input:radio[name="participation_fee"]:checked').val() == 'yes'){
-
-                    } else{
+                    if($('input:radio[name="participation_fee"]:checked').val() != 'yes'){
                         $('#profile_account_yes').val("no");
                         $('#tab4_oksign7').show();
                         $('#tab4_check7').attr('value', 'check');
                         $('#profile_account').prop('disabled', true);
+                        $('#profile_account').val("");
                     }
                 }
                 $(this).closest('.hover_collapse').children('div').children('a').click();
@@ -3660,6 +3657,8 @@
                 var check4 = $('#tab4_allcheck').val();
 
                 if(check1=="check" && check2=="check" && check3=="check" && check4=="check"){
+                    $('#page4_submit').text("제출 중입니다.");
+
                     var serializedData = {
                         "purpose": "submit",
                         //tab1
@@ -3898,6 +3897,7 @@
                                 contentType: false,
                                 success: function(response) {
                                     alert("대회가 성공적으로 제출되었습니다. 오픈아레나에서 빠른 시일내에 검토 후 연락드리도록 하겠습니다.");
+                                    window.location="{% url 'home' %}"
                                 }
                             });
                         }

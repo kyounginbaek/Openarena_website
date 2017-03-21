@@ -1323,6 +1323,136 @@ def moon(request):
                                               'total_amount': total_amount, 'has_funded': has_funded,
                                               'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
 
+@csrf_exempt
+def scc4(request):
+    tournament_id = 12
+    tournament_name = "제4회 Slayer Conqueror Cup"
+
+    chat = Chat.objects.filter(tournament_name=tournament_name)
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
+
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
+                                              username=request.user.username,
+                                              name=request.POST.get('participation_name'),
+                                              email=request.user.email,
+                                              phone=request.POST.get('participation_phone'),
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3=request.POST.get('participation_etc3'),
+                                              etc4=request.POST.get('participation_etc4'))
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            if request.POST.get('funding_amount') == "etc":
+                funding_amount = request.POST.get('funding_amount_etc')
+            else:
+                funding_amount = request.POST.get('funding_amount')
+
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20170321" + str(random.randrange(1, 99999999)),
+                "amount": funding_amount,
+                "productDesc": tournament_name,
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-03-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
+                                           username=request.user.username, email=request.user.email,
+                                           comment=request.POST.get('funding_comment'),
+                                           comment2=request.POST.get('funding_comment2'),
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
+    top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament_name)
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament_name)
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/scc4.html', {'tournament': tournament, 'participation': participation,
+                                              'top_funding': top_funding, 'funding': funding,
+                                              'total_amount': total_amount, 'has_funded': has_funded,
+                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+
 def contact(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -1395,6 +1525,22 @@ def create(request):
         elif request.POST.get('purpose') == "submit":
             # 대회 생성 및 저장
             # save 코드
+            if request.POST.get('tournament_format') == "round_robin":
+                if request.POST.get('tournament_format_spec') == "match_wins":
+                    tournament_format_spec = request.POST.get('tournament_format_spec')
+                elif request.POST.get('tournament_format_spec') == "game_wins":
+                    tournament_format_spec = request.POST.get('tournament_format_spec')
+                elif request.POST.get('tournament_format_spec') == "points_scored":
+                    tournament_format_spec = request.POST.get('tournament_format_spec')
+                elif request.POST.get('tournament_format_spec') == "points_difference":
+                    tournament_format_spec = request.POST.get('tournament_format_spec')
+                else :
+                    tournament_format_spec = request.POST.getlist('tournament_format_spec[]')
+            elif request.POST.get('tournament_format') == "swiss":
+                tournament_format_spec = request.POST.getlist('tournament_format_spec[]')
+            else :
+                tournament_format_spec = request.POST.get('tournament_format_spec')
+
             tournament_obj = Tournament(username=request.user.username,
                                         email=request.user.email,
                                         # tab1
@@ -1407,15 +1553,15 @@ def create(request):
                                         tournament_starttime=request.POST.get('tournament_starttime'),
                                         tournament_endtime=request.POST.get('tournament_endtime'),
                                         tournament_format=request.POST.get('tournament_format'),
-                                        tournament_format_spec=request.POST.get('tournament_format_spec'),
+                                        tournament_format_spec=tournament_format_spec, #string or array
                                         tournament_rule=request.POST.get('tournament_rule'),
                                         participation=request.POST.get('participation'),
                                         participation_custom_url=request.POST.get('participation_custom_url'),
                                         # participation=yes
                                         participation_type=request.POST.get('participation_type'),
                                         participation_template_custom=request.POST.get('participation_template_custom'),
-                                        participation_template_format=request.POST.get('participation_template_format'),
-                                        participation_template=request.POST.get('participation_template'),
+                                        participation_template_format=request.POST.getlist('participation_template_format[]'), #array
+                                        participation_template=request.POST.getlist('participation_template[]'), #array
                                         participation_number=request.POST.get('participation_number'),
                                         participation_time=request.POST.get('participation_time'),
                                         participation_starttime=request.POST.get('participation_starttime'),
@@ -1432,17 +1578,18 @@ def create(request):
                                         funding_starttime=request.POST.get('funding_starttime'),
                                         funding_endtime=request.POST.get('funding_endtime'),
                                         reward=request.POST.get('reward'),
-                                        reward_number=request.POST.get('reward_number'),
-                                        reward_spec=request.POST.get('reward_spec'),
+                                        reward_number=request.POST.getlist('reward_number[]'), #array
+                                        reward_spec=request.POST.getlist('reward_spec[]'), #array
                                         promise=request.POST.get('promise'),
-                                        promise_spec=request.POST.get('promise_spec'),
+                                        promise_number=request.POST.getlist('prosmie_number[]'), #array
+                                        promise_spec=request.POST.getlist('promise_spec[]'), #array
                                         # tab4
                                         profile_name=request.POST.get('profile_name'),
                                         profile_introduction=request.POST.get('profile_introduction'),
                                         profile_image=request.POST.get('profile_image'),
                                         streaming=request.POST.get('streaming'),
-                                        streaming_site=request.POST.get('streaming_site'),
-                                        streaming_url=request.POST.get('streaming_url'),
+                                        streaming_site=request.POST.getlist('streaming_site[]'), #array
+                                        streaming_url=request.POST.getlist('streaming_url[]'), #array
                                         profile_email=request.POST.get('profile_email'),
                                         profile_phone=request.POST.get('profile_phone'),
                                         profile_account=request.POST.get('profile_account'),

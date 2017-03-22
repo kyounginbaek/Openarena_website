@@ -11,14 +11,14 @@
 {% endblock %}
 {% block content %}
     <div class="block-b">
-        <div class="com_header" style="background:url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/shadowverse_cover.png') center center no-repeat; background-size: cover;">
+        <div class="com_header" style="background:url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/hearthstone_cover.jpg') center center no-repeat; background-size: cover;">
             <div class="com_empty">
             </div>
             <div class="com_header_inner">
                 <div class="container">
                     <!--프로필칸-->
                     <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
-                        <div class="com_profile" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/shadowverse_logo.jpeg'); background-size: contain;"></div>
+                        <div class="com_profile" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/hearthstone_logo.png'); background-size: contain;"></div>
                     </div>
                     <!--대회설명-->
                     <div class="col-sm-6 col-md-6 col-xs-12 ">
@@ -32,18 +32,18 @@
                             <li class="">
                                 <div class="" >
                                     <div class="center">
-                                        <button id="participation" name="participation" class="btn btn-primary center-block">참가 하기</button>
+                                        <button id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">참가 하기</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="" >
                                     <div class="center">
-                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
+                                        <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 미사용</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="center">
-                                    <button id="streaming" name="streaming" class="btn btn-primary center-block">방송 보기</button>
+                                    <button disabled="disabled" id="streaming" name="streaming" class="btn btn-primary center-block">방송 미사용</button>
                                 </div>
                             </li>
                         </ul>
@@ -52,13 +52,9 @@
                     <!--상금바-->
                     <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
                         <h4 id="comma1" class="com_title">
-                            {% if funding %}
-                                후원 목표 : {{ tournament.funding_goal|intcomma }}원 / 현재 : {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다.
-                            {% else %}
-                                후원 목표 : {{ tournament.funding_goal|intcomma }}원 / 현재 : 0원 후원 해주셨습니다.
-                            {% endif %}
+                            후원 받기 기능을 사용하지 않는 대회입니다.
                         </h4>
-                        <p class="com_subtitle">* 홈페이지 후원 금액과 후원자 명단은 30분 마다 갱신됩니다.</p>
+                        <p class="com_subtitle">* 대회 참가 받기 기능만 사용하고 있습니다.</p>
                         <!--
                         <div class="com_white_bar">
                             <div class="com_orange_bar"></div>
@@ -77,26 +73,25 @@
                         <span class="list_btn">대회 소개</span>
                     </button>
                 </div>
-                <!-- 참가자 명단
+                <!-- 참가자 명단 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="stars" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
                         <span class="list_btn">참가자 명단</span>
                     </button>
                 </div>
-                -->
-                <!-- 대진표
+                <!-- 대진표 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
                         <span class="list_btn">대진표</span>
                     </button>
                 </div>
-                -->
-                <!-- 후원자 명단 -->
+                <!-- 후원자 명단
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
                         <span class="list_btn">후원자 명단</span>
                     </button>
                 </div>
+                -->
                 <!-- 대회 게시판 -->
                 <div class="btn-group" role="group">
                     <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab5" data-toggle="tab">
@@ -112,21 +107,19 @@
                     <div class="com_intro">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div style="overflow: hidden; clear: both;">
+                                <h4 style="color: #f7941e">• 대회 캘린더</h4>
+                                <div class="com_intro_now hover_div">
+                                    <div class="reset-this" id="calendar"></div>
+                                </div>
+                            </div>
+                            <div style="overflow: hidden; clear: both;">
                                 <h4 style="color: #f7941e">• 대회 소개 및 규칙</h4>
                                 <div class="com_intro_now hover_div">
-                                    <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/custom/scc4_poster.jpg">
-                                    <div style="padding: 15px;"></div>
                                     <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
                                     <br/>
                                     <p style="color: #ff9900">환불 규정</p>
                                     <p>1. 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</p>
                                     <p>2. 대회가 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</p>
-                                </div>
-                            </div>
-                            <div style="overflow: hidden; clear: both;">
-                                <h4 style="color: #f7941e">• 대회 캘린더</h4>
-                                <div class="com_intro_now hover_div">
-                                    <div class="reset-this" id="calendar"></div>
                                 </div>
                             </div>
                         </div>
@@ -136,20 +129,27 @@
                                 <div class="container com_intro_now hover_div">
                                     <div class="com_into_small">참가 마감</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ tournament.participation_endtime }}</span> 일</div><br>
-                                    {% if funding %}
-                                        <div class="com_into_small">후원자 수</div>
-                                        <div class="com_into_small"><span class="com_into_big">{{ funding.count }}</span> 명</div><br>
-                                        <div class="com_into_small">후원 상금</div>
-                                        <div class="com_into_small"><span class="com_into_big">{{ total_amount.amount__sum|intcomma }}</span> 원</div><br>
+                                    {% if participation %}
+                                        <div class="com_into_small">참가자 수</div>
+                                        <div class="com_into_small"><span class="com_into_big">{{ participation.count }}</span> 명</div><br>
                                     {% else %}
-                                        <div class="com_into_small">후원자 수</div>
+                                        <div class="com_into_small">참가자 수</div>
                                         <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
-                                        <div class="com_into_small">후원 상금</div>
-                                        <div class="com_into_small"><span class="com_into_big">0</span> 원</div><br>
                                     {% endif %}
                                     <div class="com_into_small">
                                         <!-- Go to www.addthis.com/dashboard to customize your tools -->
                                         <div class="addthis_inline_share_toolbox"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="overflow: hidden; clear: both;">
+                                <h4 style="color: #f7941e;">• 크리에이터 정보</h4>
+                                <div class="container com_intro_now hover_div">
+                                    <div class="com_profile" style="background: url({{ tournament.user_img }}); background-size: contain;">
+                                        <div class="com_into_small">개최자</div>
+                                        <div class="com_into_small"><span class="com_into_big">설맥</span> 님</div><br>
+                                        <div class="com_into_small">소개</div>
+                                        <div class="com_into_small"><span class="com_into_big">하스스톡 방장</span> 입니다.</div><br>
                                     </div>
                                 </div>
                             </div>
@@ -180,10 +180,6 @@
                                     <tr>
                                         <th>참가 번호</th>
                                         <th>오픈아레나 닉네임</th>
-                                        <th>소속 리그</th>
-                                        <th>티어</th>
-                                        <th>최종 참가 여부</th>
-                                        <th>체크인</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -192,10 +188,6 @@
                                             <tr>
                                                 <td>{{ forloop.counter }}</td>
                                                 <td>{{ p.username }}</td>
-                                                <td>{{ p.etc3 }}</td>
-                                                <td>{{ p.etc4 }}</td>
-                                                <td></td>
-                                                <td></td>
                                             </tr>
                                         {% endfor %}
                                     {% endif %}
@@ -215,7 +207,7 @@
                             </div>
                         </div>
                         <div class="com_intro_desp hover_div" style="margin-top: 5px;">
-                            <h5>참가자 마감 후 공개될 예정입니다. 많은 참여 바랍니다.</h5>
+                            <iframe src="http://challonge.com/ko/openarena_hstalk/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
                         </div>
                     </div>
                 </div>
@@ -283,7 +275,6 @@
                                         <th>후원 금액</th>
                                         <th>보상 혜택</th>
                                         <th>응원 문구</th>
-                                        <th>기타 코멘트</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -295,7 +286,6 @@
                                                 <td>{{ f.amount|intcomma }}원</td>
                                                 <td>{{ f.reward }}</td>
                                                 <td>{{ f.comment }}</td>
-                                                <td>{{ f.comment2 }}</td>
                                             </tr>
                                         {% endfor %}
                                     {% endif %}
@@ -468,67 +458,36 @@
                                     <span class="glyphicon glyphicon-info-sign"></span>
                                     다음을 꼭 확인해주세요!
                                 </h5>
-                                <h5>모든 참가자들은 2가지 덱을 제출해야 합니다.</h5>
-                                <h5>같은 클래스의 덱은 사용할 수 없습니다.</h5>
-                                <h5>신청 시 프로필, 덱리스트와 함께 ID, 닉네임, 직업 2개, 연락처를 적어서 제출해야합니다.</h5>
-                                <h5 style="color: #ff9900;">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                    덱 제출시 주의 사항
-                                </h5>
-                                <h5>사진 제출시 파일명은 클래스1, 클래스2로 합니다.</h5>
-                                <h5>덱리스트가 길어서 한 장에 캡쳐되지 않을 경우에는 2장으로 제출합니다.</h5>
-                                <h5>사진이 2장이 될 경우 파일명을 클래스1-1, 1-2로 제출합니다.</h5>
-                                <h5>(예) 네크로맨서1-1, 네크로맨서1-2, 로얄2</h5>
+                                <h5>신청 시 참가자 실명, 배틀태그, 덱 리스트를 제출해야합니다.</h5>
                             </div>
                             <div class="modal-body">
                                 <img src="">
                                 <input type="hidden" class="form-control" id="purpose" name="purpose" value="participation">
                                 <div class="form-group">
-                                    <label for="participation_etc1" style="color: #ff9900;">섀도우버스 ID</label>
+                                    <label for="participation_etc1" style="color: #ff9900;">참가자 실명</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) 593 308 123">
+                                        <input required autocomplete="off" class="form-control" id="participation_etc1" name="participation_etc1" placeholder="예) 입력해주세요.">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="participation_etc2" style="color: #ff9900;">섀도우버스 닉네임</label>
+                                    <label for="participation_etc2" style="color: #ff9900;">배틀 태그</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) VerseStop">
+                                        <input required autocomplete="off" class="form-control" id="participation_etc2" name="participation_etc2" placeholder="예) 입력해주세요.">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="participation_etc3" style="color: #ff9900;">섀도우버스 직업 2개</label>
+                                    <label for="participation_etc3" style="color: #ff9900;">덱 리스트</label>
                                     <div class="input-group">
-                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc3" name="participation_etc3" placeholder="예) 네크로맨서, 로얄">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="participation_etc4" style="color: #ff9900;">연락처</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc4" name="participation_etc4" placeholder="예) 010-1234-5678">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="participation_etc5" style="color: #ff9900;">참가 덱1</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc5" name="participation_etc5" placeholder="예) 010-1234-5678">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="participation_etc6" style="color: #ff9900;">참가 덱2</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                        <input required autocomplete="off" class="form-control" id="participation_etc5" name="participation_etc5" placeholder="예) 010-1234-5678">
+                                        <span class="input-group-addon" id="basic-addon1">파일 제출</span>
+                                        <input required autocomplete="off" class="form-control" type="file" id="participation_etc3" name="participation_etc3" placeholder="예) 010-1234-5678">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-body">
-                                <h5 style="color: #ff9900;">* 참가 완료 확인 후 연락처로 대회 관련 사항을 보내드리도록 하겠습니다.</h5>
-                                <button type="submit" class="join_submit">참가하기</button>
+                                <h5 style="color: #ff9900;">* 궁금하신 사항은 게시판을 이용해주세요.</h5>
+                                <button type="submit" class="join_submit" id="participation_submit">참가하기</button>
                             </div>
                         </form>
                     </div>
@@ -590,9 +549,11 @@
                 $('.spinner_funding_amount input').val( parseInt($('.spinner_funding_amount input').val(), 10) - 1000);
             });
 
+            /*
             $("#participation").click(function(){
                 window.open("https://battlefy.com/team-conqueror/slayer-conqueror-cup-4-with-openarena/58b2a073105e583103da3680/info?infoTab=details");
             });
+            */
 
             $("#streaming").click(function(){
                 window.open("http://www.twitch.tv/silentslayerhs");
@@ -692,7 +653,7 @@
                     var newWindow = window.open("","_blank");
                     $.ajax({
                         type: 'POST',
-                        url: '/scc4/',
+                        url: '/hstalk/',
                         data: serializedData,
                         dataType: 'json',
                         success: function(response) {
@@ -706,15 +667,32 @@
             $("#participation_form").submit(function(e) {
                 e.preventDefault();
                 serializedData = $("#participation_form").serialize();
+
+                $('#participation_submit').text("제출 중입니다.");
+
+                var image_formdata = new FormData();
+                    image_formdata.append("purpose", "image_upload");
+                    image_formdata.append("participation_etc1", $('#participation_etc1').val());
+                    image_formdata.append("participation_etc3", $('#participation_etc3').prop('files')[0]);
+
                 $.ajax({
                     type: 'POST',
-                    url: '/scc4/',
+                    url: '/hstalk/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(response) {
                         if(response.status == "success"){
-                            alert('대회 참가 신청이 정상적으로 제출되었습니다.');
-                            location.reload();
+                            $.ajax({
+                                type: 'POST',
+                                url: '/hstalk/',
+                                data: image_formdata,
+                                processData: false,
+                                contentType: false,
+                                success: function(response) {
+                                    alert('대회 참가 신청이 정상적으로 제출되었습니다.');
+                                    location.reload();
+                                }
+                            });
                         }
                     }
                 });
@@ -740,7 +718,7 @@
                 serializedData = $("#comment_form").serialize();
                 $.ajax({
                     type: 'POST',
-                    url: '/scc4/',
+                    url: '/hstalk/',
                     data: serializedData,
                     dataType: 'json',
                     success: function(data) {
@@ -762,12 +740,13 @@
                 events: [
                     {
                         title: '대회 참가 신청',
-                        start: '2017-03-22T19:00:00',
-                        end: '2017-03-26T13:00:00'
+                        start: '2017-03-22T00:00:00',
+                        end: '2017-04-06T00:00:00'
                     },
                     {
                         title: '대회 시작',
-                        start: '2017-03-26T13:00:00',
+                        start: '2017-04-06T00:00:00',
+                        end: '2017/04/30T00:00:00'
                     },
                 ]
             });
@@ -789,7 +768,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: '/scc4/',
+                        url: '/hstalk/',
                         data: serializedData,
                         dataType: 'json',
                         success: function(response) {

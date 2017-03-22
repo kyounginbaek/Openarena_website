@@ -47,5 +47,5 @@ class ChatAdmin(admin.ModelAdmin):
 admin.site.register(Chat, ChatAdmin)
 
 class GameruleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tournament_game', 'tournament_type', 'content']
+    list_display = ['id', 'tournament_game', 'tournament_type']
 admin.site.register(Gamerule, GameruleAdmin)

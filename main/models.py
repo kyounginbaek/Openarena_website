@@ -211,7 +211,7 @@ class Participation(models.Model):
     phone = models.CharField(max_length=200, default='')
     etc1 = models.CharField(max_length=400, default='-')
     etc2 = models.CharField(max_length=400, default='-')
-    etc3 = models.CharField(max_length=400, default='-')
+    etc3 = models.CharField(max_length=2000, default='-')
     etc4 = models.CharField(max_length=400, default='-')
     etc5 = models.CharField(max_length=2000, default='-')
     etc6 = models.CharField(max_length=2000, default='-')

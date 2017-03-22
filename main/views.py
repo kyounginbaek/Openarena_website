@@ -1453,6 +1453,151 @@ def scc4(request):
                                               'total_amount': total_amount, 'has_funded': has_funded,
                                               'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
 
+@csrf_exempt
+def hstalk(request):
+    tournament_id = 13
+    tournament_name = "하스톡방 운고로 최고의 덱메이킹 가려라!"
+
+    chat = Chat.objects.filter(tournament_name=tournament_name)
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
+
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
+                                              username=request.user.username,
+                                              email=request.user.email,
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3="")
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "image_upload":
+            form = UploadFileForm()
+            temp = form.save(commit=False)
+            file = request.FILES['participation_etc3']
+
+            conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY,
+                                host='s3.ap-northeast-2.amazonaws.com')
+            bucket = conn.get_bucket('openarena')
+
+            k = Key(bucket)
+            k.key = file.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            k.content_type = 'text/plain'
+            k.set_contents_from_string(file.read(), policy='public-read')
+            url = k.generate_url(expires_in=0, query_auth=False)
+            Participation.objects.filter(tournament_name=tournament_name, username=request.user.username, etc1=request.POST.get('participation_etc1')).update(etc3=url)
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            if request.POST.get('funding_amount') == "etc":
+                funding_amount = request.POST.get('funding_amount_etc')
+            else:
+                funding_amount = request.POST.get('funding_amount')
+
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20170321" + str(random.randrange(1, 99999999)),
+                "amount": funding_amount,
+                "productDesc": tournament_name,
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-03-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
+                                           username=request.user.username, email=request.user.email,
+                                           comment=request.POST.get('funding_comment'),
+                                           comment2=request.POST.get('funding_comment2'),
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
+    top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament_name)
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament_name)
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/hstalk.html', {'tournament': tournament, 'participation': participation,
+                                                'top_funding': top_funding, 'funding': funding,
+                                                'total_amount': total_amount, 'has_funded': has_funded,
+                                                'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+
 def contact(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -1610,7 +1755,7 @@ def create(request):
             if request.POST.get('tournament_image_question') != "no":
                 file1 = request.FILES['tournament_image']
                 k1 = Key(bucket)
-                k1.key = file1.name
+                k1.key = file1.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 k1.content_type = 'text/plain'
                 k1.set_contents_from_string(file1.read(), policy='public-read')
                 url1 = k1.generate_url(expires_in=0, query_auth=False)
@@ -1619,7 +1764,7 @@ def create(request):
             if request.POST.get('profile_image_question') != "no":
                 file2 = request.FILES['profile_image']
                 k2 = Key(bucket)
-                k2.key = file2.name
+                k2.key = file2.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 k2.content_type = 'text/plain'
                 k2.set_contents_from_string(file2.read(), policy='public-read')
                 url2 = k2.generate_url(expires_in=0, query_auth=False)

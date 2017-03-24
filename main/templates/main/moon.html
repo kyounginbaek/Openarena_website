@@ -17,11 +17,11 @@
             <div class="com_header_inner">
                 <div class="container">
                     <!--프로필칸-->
-                    <div class="col-sm-3 col-md-2 col-md-offset-1 hidden-xs" >
+                    <div class="col-sm-3 col-md-2 hidden-xs" >
                         <div class="com_profile" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/common/starcraft1_logo.jpeg'); background-size: contain;"></div>
                     </div>
                     <!--대회설명-->
-                    <div class="col-sm-6 col-md-6 col-xs-12 ">
+                    <div class="col-sm-6 col-md-7 col-xs-12 ">
                         <div class="com_title">{{ tournament.tournament_name }}</div><br/>
                         <p class="com_subtitle hidden-xs">{{ tournament.summary }}</p>
                         <div class="com_subtitle">대회 시작 : {{ tournament.starttime }}</div><br/>
@@ -32,25 +32,25 @@
                             <li class="">
                                 <div class="" >
                                     <div class="center">
-                                        <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block">참가 마감</button>
+                                        <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block ">참가 마감</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="" >
                                     <div class="center">
-                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
+                                        <button id="funding" name="funding" class="btn btn-primary center-block " data-toggle="modal" data-target="#fundingModal">후원 하기</button>
                                     </div>
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="center">
-                                    <button id="streaming" name="streaming" class="btn btn-primary center-block">방송 보기</button>
+                                    <button id="streaming" name="streaming" class="btn btn-primary center-block ">방송 보기</button>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <!--상금바-->
-                    <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
+                    <div class="col-sm-10 col-md-12 col-xs-10 ">
                         <h4 id="comma1" class="com_title">
                             {% if funding %}
                                 후원 목표 : {{ tournament.funding_goal|intcomma }}원 / 현재 : {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다.
@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="com_mid">
+        <div class="com_container container "> <!--class="com_mid" 자리-->
             <!--competition list-->
             <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                 <!-- 대회 소개 -->
@@ -79,21 +79,21 @@
                 </div>
                 <!-- 참가자 명단
                 <div class="btn-group" role="group">
-                    <button type="button" id="stars" class="btn btn-custom no_border" href="#com_tab2" data-toggle="tab">
+                    <button type="button" id="stars" class="btn btn-custom no_border " href="#com_tab2" data-toggle="tab">
                         <span class="list_btn">참가자 명단</span>
                     </button>
                 </div>
                 -->
                 <!-- 대진표
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab3" data-toggle="tab">
+                    <button type="button" id="following" class="btn btn-custom no_border " href="#com_tab3" data-toggle="tab">
                         <span class="list_btn">대진표</span>
                     </button>
                 </div>
                 -->
                 <!-- 후원자 명단 -->
                 <div class="btn-group" role="group">
-                    <button type="button" id="following" class="btn btn-custom no_border" href="#com_tab4" data-toggle="tab">
+                    <button type="button" id="following" class="btn btn-custom no_border " href="#com_tab4" data-toggle="tab">
                         <span class="list_btn">후원자 명단</span>
                     </button>
                 </div>
@@ -112,19 +112,7 @@
                     <div class="com_intro">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div style="overflow: hidden; clear: both;">
-                                <h4 style="color: #f7941e">• 대회 소개 및 규칙</h4>
-                                <div class="com_intro_now hover_div">
-                                    <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/custom/moon_poster.png">
-                                    <div style="padding: 15px;"></div>
-                                    <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
-                                    <br/>
-                                    <p style="color: #ff9900">환불 규정</p>
-                                    <p>1. 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</p>
-                                    <p>2. 대회가 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</p>
-                                </div>
-                            </div>
-                            <div style="overflow: hidden; clear: both;">
-                                <h4 style="color: #f7941e">• 대회 캘린더</h4>
+                                <div id="com_main_font">• 대회 캘린더</div>
                                 <div class="com_intro_now hover_div">
                                     <div class="reset-this" id="calendar"></div>
                                 </div>
@@ -132,7 +120,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div>
-                                <h4 style="color: #f7941e">• 대회 정보</h4>
+                                <div id="com_main_font">• 대회 정보</div>
                                 <div class="container com_intro_now hover_div">
                                     <div class="com_into_small">참가 마감</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ tournament.participation_endtime }}</span> 일</div><br>
@@ -154,6 +142,23 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-12 col-xs-12">
+                            <div style="overflow: hidden; clear: both;">
+                                <div id="com_main_font">• 대회 소개 및 규칙</div>
+                                <div class="com_intro_now hover_div">
+                                    <div class="container com_poster">
+                                        <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/custom/moon_poster.png">
+                                    </div>
+                                    <div style="padding: 15px;"></div>
+                                    <div id="description" class="summernote_description">{{ tournament.description|safe }}</div>
+                                    <br/>
+                                    <p style="color: #ff9900">환불 규정</p>
+                                    <p>1. 펀딩 마감 이후 환불이 불가능한 점 양해 부탁드립니다.</p>
+                                    <p>2. 대회가 중단된 경우에는 결제 수수료를 제외한 금액이 대회 중단 확정 후 3일 이내로 환불해드립니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -226,7 +231,7 @@
                         <div style="overflow:hidden; padding-top: 20px;">
                             <div style="display: inline-block;">
                                 <h4>
-                                    <a class="donator_title">• 후원 TOP 5 </a>
+                                    <div id="com_main_font">• 후원 TOP 5 </div>
                                 </h4>
                             </div>
                         </div>
@@ -263,11 +268,11 @@
                         <div style="overflow:hidden; padding-top: 20px;">
                             <div style="display: inline-block;">
                                 <h4>
-                                    <a class="donator_title">• 현재 후원자 수 : </a>
+                                    <a id="com_main_font">• 현재 후원자 수 : </a>
                                     {% if participation %}
-                                        <a style="color: white">현재 {{ funding.count }}명</a>
+                                        <a id="com_main_font" style="color: white">현재 {{ funding.count }}명</a>
                                     {% else %}
-                                        <a style="color: white">0명</a>
+                                        <a id="com_main_font" style="color: white">0명</a>
                                     {% endif %}
                                 </h4>
                             </div>
@@ -309,7 +314,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                         <div style="overflow:hidden; padding-top: 20px;">
                             <div style="display: inline-block;">
-                                <h4 style="color: #f7941e">• 공지 사항</h4>
+                                <div id="com_main_font">• 공지 사항</div>
                             </div>
                             &nbsp;
                             <div style="display: inline-block;">
@@ -325,7 +330,7 @@
                         </div>
                         <div style="overflow:hidden; padding-top: 20px;">
                             <div style="display: inline-block;">
-                                <h4 style="color: #f7941e">• 게시판 목록 : </h4>
+                                <div id="com_main_font">• 게시판 목록 : </div>
                             </div>
                             <div style="display: inline-block;">
                                 <ul class="pager" style="margin: 0; display: inline-block;">
@@ -406,8 +411,8 @@
                                 <!-- content goes here -->
                                 <input type="hidden" class="form-control" id="purpose" name="purpose" value="funding">
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1" style="color: #ff9900;">후원하실 금액을 선택해주세요.</label>
-                                    <h5>금액 직접 입력 시 1,000원 이상부터 후원 가능합니다.</h5>
+                                    <label class="com_donate_font" for="exampleInputPassword1" style="color: #ff9900;">후원하실 금액을 선택해주세요.</label>
+                                    <p class="com_donate_font">금액 직접 입력 시 1,000원 이상부터 후원 가능합니다.</p>
                                     <select id="funding_amount" name="funding_amount" class="form-control">
                                         <option value="1000">1,000원</option>
                                         <option value="3000">3,000원</option>
@@ -429,7 +434,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">대회 응원 문구를 적어주세요.</label>
+                                    <label class="com_donate_font"  for="exampleInputPassword1">대회 응원 문구를 적어주세요.</label>
                                     <div class="input-group">
                                         <span class="input-group-addon" id="basic-addon1">입력 항목</span>
                                         <input type="text" class="form-control" id="funding_comment" name="funding_comment" placeholder="예) 재밌는 대회 기대하겠습니다!">
@@ -437,7 +442,7 @@
                                 </div>
                             </div>
                             <div class="modal-body">
-                                <h5 style="color: #ff9900;">* 후원해주신 모든 분들에게 방송을 통해 감사의 말씀을 전해드릴 예정입니다.</h5>
+                                <p class="com_donate_font" style="color: #ff9900;">* 후원해주신 모든 분들에게 방송을 통해 감사의 말씀을 전해드릴 예정입니다.</p>
                                 <button type="submit" class="join_submit">후원하기</button>
                             </div>
                         </form>

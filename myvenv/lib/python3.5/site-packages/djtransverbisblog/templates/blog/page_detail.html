@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'blog:page_edit' pk=page.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        {% autoescape off %}
+        {{ page.en_content }}
+        {% endautoescape %}
+    </div>
+    <hr>
+{% endblock %}

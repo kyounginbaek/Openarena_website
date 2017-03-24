@@ -1,16 +1,30 @@
 /*join start*/
-.center {
-}
-.com_mainbox{
-    margin-left:0px;
-    padding-left:0px;
-}
 .center-block{
     width: 140px;
     height: 50px;
     padding: 7px;
     font-size: 1.8rem;
+    transition: all 0.3s ease-in-out;
 }
+.center-block:enabled:hover{
+    border: 1px solid #179b77;
+    box-shadow:
+            inset 0 0 0 110px #179b77,
+            inset 0 0 0 5px rgba(255,255,255,0.8),
+            0 1px 2px rgba(0,0,0,0.1);
+    opacity: 1;
+}
+
+.center {
+}
+.com_donate_font{
+    font-size: 14px;
+}
+.com_mainbox{
+    margin-left:0px;
+    padding-left:0px;
+}
+
 .don_list{
     color: #ff9900;
 }
@@ -93,7 +107,10 @@
         font-size: 12px;
     }
     .don_list{
-        font-size: 12px;
+        font-size: 1.2rem;
+    }
+    .com_donate_font{
+        font-size: 1.2rem;
     }
 }
 /*join end*/

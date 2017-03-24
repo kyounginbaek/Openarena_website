@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>Comments in moderation</h2>
+    {% for comment in comments %}
+        <div class="post">
+            <p class="date">created: {{ comment.created_date|date:'d-m-Y' }}</p>
+            <strong>{{ comment.author }}</strong>
+            <em>{{ comment.email_address }}</em>
+            <p>Related post: <a href="{% url 'blog:post_detail' pk=comment.post.pk %}">{{ comment.post.title }}</a></p>
+            <a class="btn btn-default" href="{% url 'blog:comment_remove_list' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+            <a class="btn btn-default" href="{% url 'blog:comment_approve_list' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+            <p>{{ comment.text|linebreaks }}</p>
+
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

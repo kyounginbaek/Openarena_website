@@ -1775,8 +1775,10 @@ def create(request):
 
     return render(request, 'main/create.html', {'gamerule': gamerule})
 
-def template(request):
-    return render(request, 'main/template.html', {})
+def t(request, url):
+    tournament = Making.objects.filter(tournament_url=url).values().get()
+
+    return render(request, 'main/template.html', {'tournament': tournament})
 
 @csrf_exempt
 def test(request):

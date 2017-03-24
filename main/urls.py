@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^tournaments/$', views.tournaments, name='tournaments'),
+    url(r'^t/(?P<url>[\w\-]+)/$', views.t, name='t'),
     url(r'^archive/$', views.archive, name='archive'),
     url(r'^clubs/$', views.clubs, name='clubs'),
     url(r'^making/$', views.making, name='making'),
@@ -32,7 +33,6 @@ urlpatterns = [
     url(r'^agreement/$', views.agreement, name="agreement"),
     url(r'^chat/$', views.chat, name='chat'),
     url(r'^create/$', views.create, name='create'),
-    url(r'^template/$', views.template, name='template'),
     url(r'^test/$', views.test, name='test'),
     url(r'^members/$', views.members, name='members'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

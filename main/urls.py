@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^moon/$', views.moon, name='moon'),
     url(r'^scc4/$', views.scc4, name='scc4'),
     url(r'^hstalk/$', views.hstalk, name='hstalk'),
+    url(r'^onfps/$', views.onfps, name='onfps'),
 
     url(r'^contact/$', views.contact, name="contact"),
     url(r'^help/$', views.help, name="help"),

@@ -61,7 +61,7 @@
                     <a href="{% url 'create' %}">대회 만들기</a>
                 </li>
                 <li>
-                    <a href="{% url 'archive' %}">종료된 대회</a>
+                    <a href="{% url 'archive' %}">지난 대회</a>
                 </li>
                 <li>
                     <a href="{% url 'help' %}">도움말</a>
@@ -83,7 +83,7 @@
                     <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} 님 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'mypage' %}"><i class="glyphicon glyphicon-user"></i> &nbsp; 마이 페이지</a></li>
-                            <li><a href="{% url 'contact' %}"><i class="glyphicon glyphicon-envelope"></i> &nbsp; 문의 / 건의사항</a></li>
+                            <li><a href="{% url 'contact' %}"><i class="glyphicon glyphicon-envelope"></i> &nbsp; 제휴 및 문의</a></li>
                             <li class="divider"></li>
                             <li><a href="{% url 'logout' %}"><i class="glyphicon glyphicon-off"></i> &nbsp; 로그아웃</a></li>
                         </ul>
@@ -115,7 +115,7 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="{% url 'contact' %}">문의 / 건의하기</a>
+                            <a href="{% url 'contact' %}">제휴 및 문의</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>

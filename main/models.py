@@ -142,17 +142,17 @@ class Tournament(models.Model):
     tournament_starttime = models.CharField(max_length=200, default='')
     tournament_endtime = models.CharField(max_length=200, default='')
     tournament_format = models.CharField(max_length=200, default='')
-    tournament_format_spec = models.CharField(max_length=200, default='')
+    tournament_format_spec = models.CharField(max_length=200, default='-')
     tournament_rule = summer_fields.SummernoteTextField()
     participation = models.CharField(max_length=200, default='')  # yes or no
     participation_custom_url = models.CharField(max_length=2000, default='-')
     # if tournament_registration = yes
     participation_type = models.CharField(max_length=200, default='-')  # individual or team
     participation_template_custom = models.CharField(max_length=200, default='-')  # yes or no
-    participation_template_format = models.CharField(max_length=2000, default='')  # text or file, array
-    participation_template = models.CharField(max_length=2000, default='')  # array
+    participation_template_format = models.CharField(max_length=2000, default='[]')  # text or file, array
+    participation_template = models.CharField(max_length=2000, default='[]')  # array
     participation_number = models.CharField(max_length=200, default='-')
-    participation_time = models.CharField(max_length=200, default='-') # default or custom
+    participation_time = models.CharField(max_length=200, default='-')  # default or custom
     # if participation_time = custom
     participation_starttime = models.CharField(max_length=200, default='-')
     participation_endtime = models.CharField(max_length=200, default='-')
@@ -169,11 +169,11 @@ class Tournament(models.Model):
     funding_starttime = models.CharField(max_length=200, default='-')
     funding_endtime = models.CharField(max_length=200, default='-')
     reward = models.CharField(max_length=200, default='-')  # yes or no
-    reward_number = models.CharField(max_length=4000, default='')
-    reward_spec = models.CharField(max_length=4000, default='')
+    reward_number = models.CharField(max_length=4000, default='[]')
+    reward_spec = models.CharField(max_length=4000, default='[]')
     promise = models.CharField(max_length=200, default='-')  # yes or no
-    promise_number = models.CharField(max_length=4000, default='')
-    promise_spec = models.CharField(max_length=4000, default='')
+    promise_number = models.CharField(max_length=4000, default='[]')
+    promise_spec = models.CharField(max_length=4000, default='[]')
     # tab4
     profile_name = models.CharField(max_length=400, default='')
     profile_introduction = summer_fields.SummernoteTextField()
@@ -182,14 +182,17 @@ class Tournament(models.Model):
     streaming_site = models.CharField(max_length=4000, default='')
     streaming_url = models.CharField(max_length=4000, default='')
     profile_email = models.CharField(max_length=400, default='')
-    profile_phone = models.CharField(max_length=200, default='')
-    profile_account = models.CharField(max_length=400, default='')
+    profile_phone = models.CharField(max_length=200, default='-')
+    profile_account = models.CharField(max_length=400, default='-')
     creator_enrollment = models.CharField(max_length=200, default='')
     # after submit
     confirm = models.CharField(max_length=200, default='-')  # yes or no(reviewing)
     # template
     cover_image = models.CharField(max_length=2000, default='-')
     logo_image = models.CharField(max_length=2000, default='-')
+    challonge_url = models.CharField(max_length=2000, default='-')
+    notice = summer_fields.SummernoteTextField(default='')
+    video_url = models.CharField(max_length=4000, default='[]')
 
 class Video(models.Model):
     id = models.AutoField(primary_key=True)

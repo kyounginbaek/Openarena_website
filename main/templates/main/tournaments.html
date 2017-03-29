@@ -1,4 +1,4 @@
-{% extends "main/base2.html" %}
+{% extends "main/base.html" %}
 {% load staticfiles %}
 
 
@@ -25,6 +25,7 @@
 
             </div>
             -->
+            <!-- game category -->
             <div class="col-md-12 contents">
                 <div class="col-xs-12 col-sm-12 col-md-1 btn" role="tablist" id="myTab">
                     <div role="" class="game-tab-head">게임별 대회</div>
@@ -41,24 +42,25 @@
                         <a href="#shadowverse" aria-controls="settings" role="tab" data-toggle="tab"><div role="presentation" class="category-factor">섀도우버스</div></a>
                     </span>
                 </div>
+                <!-- filter -->
                 <div class="tab-content col-xs-12 col-sm-12 col-md-11">
                     <div role="tabpanel" class="tab-pane active" id="wholes">
-                        <div class="game-category-container col-md-12">
-                            <span class="game-category-name col-md-2">전체</span>
-                            <div class="order-category col-md-10">
+                        <div class="game-category-container col-md-12 col-sm-12 col-xs-12">
+                            <span class="game-category-name col-md-2 col-sm-2 col-xs-2">전체</span>
+                            <div class="order-category col-md-10 col-sm-10 col-xs-10">
                                 <button type="button" class="">후원 금액순</button>
                                 <button type="button" class="">후원자순</button>
                                 <button type="button" class="">최신순</button>
                                 <button type="button" class="">마감 임박순</button>
                             </div>
                         </div>
+                        <!-- project container -->
                         <div class="project-card-container container-fluid">
                             {% for card in card_list %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
-                                            <img src="{{ card.main_image }}">
-                                        </div>
+                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -74,7 +76,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.limit_summary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -123,7 +125,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                         바로가기</a></button>
 
                                                 </div>
@@ -154,9 +156,8 @@
                             {% for card in card_list_lol %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
-                                            <img src="{{ card.main_image }}">
-                                        </div>
+                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -172,7 +173,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.limit_ummary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -221,7 +222,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                         바로가기</a></button>
 
                                                 </div>
@@ -247,9 +248,8 @@
                             {% for card in card_list_overwatch %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
-                                            <img src="{{ card.main_image }}">
-                                        </div>
+                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -265,7 +265,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.limit_summary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -314,7 +314,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                         바로가기</a></button>
 
                                                 </div>
@@ -340,9 +340,8 @@
                             {% for card in card_list_star2 %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
-                                            <img src="{{ card.main_image }}">
-                                        </div>
+                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -358,7 +357,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.limit_summary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -407,7 +406,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                         바로가기</a></button>
 
                                                 </div>
@@ -433,9 +432,8 @@
                             {% for card in card_list_heartstone %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
-                                            <img src="{{ card.main_image }}">
-                                        </div>
+                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -451,7 +449,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.limit_summary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -500,7 +498,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                         바로가기</a></button>
 
                                                 </div>
@@ -526,9 +524,8 @@
                             {% for card in card_list_shadowverse %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <div class="card-image waves-effect waves-block waves-light" id="overwatch">
-                                            <img src="{{ card.main_image }}">
-                                        </div>
+                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -544,7 +541,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.lmit_summary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -593,7 +590,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                         바로가기</a></button>
 
                                                 </div>

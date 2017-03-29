@@ -1,6 +1,11 @@
 header{
     height: auto;
     width: auto;
+    text-align: left;
+    margin-top: 3.5rem;
+    padding: 0;
+    color: white;
+    background-color: #161616;
 }
 
 .search-row{
@@ -8,6 +13,7 @@ header{
     margin-top: 2rem;
     margin-bottom: 1rem;
     margin-left: 0.9rem;
+    display: none;
 }
 
 .category-title{
@@ -17,45 +23,60 @@ header{
 }
 
 .game-category-container{
-    margin-bottom: 0.5rem;
+    text-align: left;
+    margin-bottom: 0;
+    margin-left:0;
     margin-top: 1rem;
-    padding: 0;
+    padding-left: 0;
 }
 
 .game-category-name{
     margin-left: 1rem;
     padding: 0;
     width: 8rem;
+    display: none;
 }
 
 #search-container{
-    display: inline-block;
+    display: none;
 }
 
 .order-category{
     display: inline-block;
     padding: 0;
-    text-align: right;
-    padding-right: 1rem;
+    text-align: left;
+    width: 100%;
 }
 
+
 .order-category > button{
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     padding: 0.4rem;
     background-color: inherit;
     color: white;
     border-radius: 2%;
-    border: 1px silver solid;
+    border: none;
 }
 
 .order-category > button:hover{
-    background-color: rgba(255, 153, 0, 1);
+    background-color: inherit;
+    border-bottom: 1px silver solid;
     color: white;
 }
 
+.order-category > button:focus{
+    background-color: inherit;
+    border-bottom: 1px silver solid;
+    color: white;
+}
+
+
 .game-tab-head{
     color: rgba(255, 153, 0, 1);;
-    width: 14rem;
+    border-bottom: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
 }
 
 #myTab{
@@ -64,7 +85,7 @@ header{
     padding: 0;
     border: 1px solid gray;
     margin-left: 0rem;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     position:inherit;
     width: 100%;
 
@@ -74,6 +95,10 @@ header{
     color: white;
     width: auto;
     display: inline-block;
+    margin-right: 2.8rem;
+    margin-left: 2.8rem;
+    line-height: 3.2rem;
+    font-size:1.5rem;
 }
 
 #myTab a:hover, #myTab a:focus{
@@ -89,7 +114,10 @@ header{
 }
 
 .tab-content{
-    margin-left: 14rem;
+    margin-left: 2%;
+    width: auto;
+    height: auto;
+    padding: 0;
 }
 
 .tab-content >.tab-pane{
@@ -101,101 +129,11 @@ header{
     margin-right: 1rem;
 }
 
+.project-card-container{
+    padding: 0;
+}
 
-@media (max-width: 1680px){
-
-    .card{
-        width: 21rem;
-    }
-
-    header{
-        height: auto;
-        text-align: left;
-    }
-
-    .search-row{
-        display: none;
-    }
-
-    .game-tab-head{
-        border-bottom: none;
-        width: inherit;
-    }
-
-    #myTab{
-        margin-left: 0rem;
-        margin-top: 2rem;
-        position:inherit;
-        width: 100%;
-    }
-
-    .tap-manu{
-        display: block;
-    }
-
-    #myTab a{
-        color: white;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-    }
-
-    #myTab a:hover, #myTab a:focus{
-        color: rgba(255, 153, 0, 1);
-    }
-
-    .category-factor:hover, .category-factor:focus{
-        border-right: none;
-    }
-
-    .tab-content{
-        margin-left: 0;
-        width: auto;
-        height: auto;
-
-    }
-    .game-category-container{
-        text-align: left;
-        margin-bottom: 0;
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    .game-category-name{
-        display: none;
-    }
-
-    #search-container{
-        display: none;
-    }
-
-    .order-category{
-        display: inline-block;
-        padding: 0;
-        text-align: left;
-    }
-
-    .order-category > button{
-        border: none;
-    }
-
-    .order-category > button:hover{
-        background-color: inherit;
-        border-bottom: 1px silver solid;
-        color: white;
-    }
-
-    .order-category > button:focus{
-        background-color: inherit;
-        border-bottom: 1px silver solid;
-        color: white;
-    }
-
-    .project-card-container{
-        padding: 0;
-    }
-
-    .contents{
-        height: auto;
-    }
-
+.contents{
+    height: auto;
+    margin-bottom: 1rem;
 }

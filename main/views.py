@@ -1601,7 +1601,7 @@ def hstalk(request):
 @csrf_exempt
 def onfps(request):
     tournament_id = 14
-    tournament_name = "온님TV FPS 토너먼트"
+    tournament_name = "온님 TV FPS 토너먼트 CS:GO Season 5"
 
     chat = Chat.objects.filter(tournament_name=tournament_name)
     # Retrieve all comments and sort them by path
@@ -1920,9 +1920,25 @@ def create(request):
     return render(request, 'main/create.html', {'gamerule': gamerule})
 
 def t(request, url):
-    tournament = Making.objects.filter(tournament_url=url).values().get()
+    tournament = Tournament.objects.filter(tournament_url=url).values().get()
 
-    return render(request, 'main/template.html', {'tournament': tournament})
+    participation = Participation.objects.filter(tournament_name=tournament.get('tournament_name'))
+
+    top5_funding = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament.get('tournament_name'))
+    total_amount = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament.get('tournament_name'))
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/template.html', {'tournament': tournament, 'participation': participation,
+                                                  'top5_funding': top5_funding, 'funding': funding,
+                                                  'total_amount': total_amount})
 
 @csrf_exempt
 def test(request):

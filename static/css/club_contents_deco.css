@@ -15,16 +15,16 @@
     height: 100%;
     margin: auto;
     padding-top: 50px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  box-shadow: 0 0 20px rgba(21, 21, 29, 0.2);
-  overflow: hidden;
-  border-radius: 2px;
-  width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    box-shadow: 0 0 20px rgba(21, 21, 29, 0.2);
+    overflow: hidden;
+    border-radius: 2px;
+    width: 100%;
 }
 .team_dscp{
     width: 160px;
@@ -55,7 +55,7 @@
 }
 @media only screen and (max-width: 767px) {
     .team_header{
-    height: 380px;
+        height: 380px;
     }
     .profile{
         width: 120px;
@@ -66,7 +66,7 @@
     }
     .profile_img{
         width: 100px;
-    height: 100px;
+        height: 100px;
     }
     .center-block{
         width: 100%;

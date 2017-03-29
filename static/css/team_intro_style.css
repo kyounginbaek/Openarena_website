@@ -20,13 +20,13 @@
   font-size: 1.5rem;
 }
 @media only screen and (max-width: 1200px) {
-    .player-picture{
-  width: 143px !important;
-  height: 235px !important;
-  font-size: 10px;
-    }
+  .player-picture{
+    width: 143px !important;
+    height: 235px !important;
+    font-size: 10px;
+  }
   .player_nickname{
-  font-size: 2rem;
+    font-size: 2rem;
   }
 }
 .member-image div{

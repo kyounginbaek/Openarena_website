@@ -1,9 +1,15 @@
+header{
+    margin-top: 3.5rem;
+    padding: 0;
+    color: white;
+    background-color: #161616;
+}
 
 #report-page-title{
     text-align: center;
     color: rgba(255, 153, 0, 1);
-    font-size: 2rem;
-    margin-top:4rem;
+    font-size: 3rem;
+    margin-top: 6rem;
     margin-bottom: 2rem;
 }
 
@@ -38,6 +44,7 @@
     background-color: inherit;
     color: white;
     border: 1px silver solid;
+    width: 13rem;
 }
 
 .game-category button:hover{
@@ -51,6 +58,8 @@
     margin-bottom: 1.2rem;
     display: inline-block;
     width: auto;
+    font-size: 2.2rem;
+    margin-left: 7.5%;
 }
 
 
@@ -66,32 +75,37 @@
     color: rgba(255, 153, 0, 1);
 }
 
-.order-category{
-    margin-top: 0.5rem;
-    padding-right: 1.2rem;
-    text-align: right;
+.order-search-container{
+    position: inherit;
 }
 
 .order-category > button{
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     padding: 0.4rem;
     background-color: inherit;
     color: white;
     border-radius: 2%;
-    border: 1px silver solid;
+    border: none;
+
 }
 
 .order-category > button:hover{
-    background-color: rgba(255, 153, 0, 1);
+    background-color: inherit;
+    border-bottom: 1px silver solid;
     color: white;
 }
 
+.order-category > button:focus{
+    background-color: inherit;
+    border-bottom: 1px silver solid;
+    color: white;
+}
 
 .project-card-container{
     color: white;
     background-color: inherit;
-    padding-left: 9.5rem;
-    padding-right: 9.5rem;
+    padding: 0;
+    text-align: center;
 }
 
 .project-card{

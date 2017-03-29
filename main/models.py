@@ -191,7 +191,7 @@ class Tournament(models.Model):
     cover_image = models.CharField(max_length=2000, default='-')
     logo_image = models.CharField(max_length=2000, default='-')
     challonge_url = models.CharField(max_length=2000, default='-')
-    notice = summer_fields.SummernoteTextField(default='')
+    notice = summer_fields.SummernoteTextField(default='-')
     video_url = models.CharField(max_length=4000, default='[]')
 
 class Video(models.Model):

@@ -1,9 +1,10 @@
 from django.utils import timezone
 from django.db import models
-from datetime import timedelta, datetime
+from datetime import datetime
 from django import forms
 from django.contrib.auth.models import User
 from django_summernote import fields as summer_fields
+import ast
 
 class Fundingdummy(models.Model):
     id = models.AutoField(primary_key=True)
@@ -27,6 +28,7 @@ class Funding(models.Model):
     email = models.CharField(max_length=400, default='')
     amount = models.IntegerField(default=0)
     reward = models.CharField(max_length=1000, default='-')
+    phone = models.CharField(max_length=200, default='')
     comment = models.TextField(default='-')
     comment2 = models.TextField(default='-')
     orderno = models.CharField(max_length=400, default='-')
@@ -191,7 +193,7 @@ class Tournament(models.Model):
     cover_image = models.CharField(max_length=2000, default='-')
     logo_image = models.CharField(max_length=2000, default='-')
     challonge_url = models.CharField(max_length=2000, default='-')
-    notice = summer_fields.SummernoteTextField(default='-')
+    notice = summer_fields.SummernoteTextField(default='공지사항 및 변경사항을 입력해주세요.')
     video_url = models.CharField(max_length=4000, default='[]')
 
 class Video(models.Model):
@@ -208,8 +210,6 @@ class Participation(models.Model):
     tournament_name = models.CharField(max_length=400, default='')
     username = models.CharField(max_length=400, default='')
     name = models.CharField(max_length=400, default='')
-    teamname = models.CharField(max_length=400, default='-')
-    teammember = models.CharField(max_length=2000, default='-')
     email = models.CharField(max_length=400, default='')
     phone = models.CharField(max_length=200, default='')
     etc1 = models.CharField(max_length=400, default='-')
@@ -217,13 +217,17 @@ class Participation(models.Model):
     etc3 = models.CharField(max_length=2000, default='-')
     etc4 = models.CharField(max_length=400, default='-')
     etc5 = models.CharField(max_length=2000, default='-')
-    etc6 = models.CharField(max_length=2000, default='-')
+    input = models.CharField(max_length=2000, default='[]')
     when = models.CharField(max_length=400, default=timezone.localtime(timezone.now()))
     confirm = models.CharField(max_length=200, default='-')
     checkin = models.CharField(max_length=200, default='-')
     score = models.CharField(max_length=400, default='-')
     result = models.CharField(max_length=400, default='-')
     prize = models.CharField(max_length=400, default='-')
+
+    def get_input_list(self):
+        participation_input = ast.literal_eval(self.input)
+        return participation_input
 
 class Privacy(models.Model):
     id = models.AutoField(primary_key=True)

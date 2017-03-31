@@ -1,6 +1,7 @@
 import json
 import random
 import requests
+import ast
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
@@ -1738,9 +1739,9 @@ def onfps(request):
         is_creator = "no"
 
     return render(request, 'main/onfps.html', {'tournament': tournament, 'participation': participation,
-                                                'top_funding': top_funding, 'funding': funding,
-                                                'total_amount': total_amount, 'has_funded': has_funded,
-                                                'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+                                               'top_funding': top_funding, 'funding': funding,
+                                               'total_amount': total_amount, 'has_funded': has_funded,
+                                               'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
 
 def contact(request):
     if request.method == 'POST':
@@ -1921,24 +1922,59 @@ def create(request):
 
 def t(request, url):
     tournament = Tournament.objects.filter(tournament_url=url).values().get()
-
     participation = Participation.objects.filter(tournament_name=tournament.get('tournament_name'))
-
-    top5_funding = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).order_by('-amount')[:5]
-    funding = Funding.objects.filter(tournament_name=tournament.get('tournament_name'))
+    # participation_input = ast.literal_eval(participation.get('input'))
+    funding = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).order_by('-amount')
     total_amount = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).aggregate(Sum('amount'))
 
-    video = Video.objects.filter(tournament_name=tournament.get('tournament_name'))
+    # reward 보상을 할 경우, char을 배열로 처리
+    if tournament.get('reward') == 'yes':
+        reward_number = ast.literal_eval(tournament.get('reward_number'))
+        reward_spec = ast.literal_eval(tournament.get('reward_spec'))
+    else:
+        reward_number = "[]"
+        reward_spec = "[]"
 
-    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    # reward 보상을 할 경우, char을 배열로 처리
+    if tournament.get('promise') == 'yes':
+        promise_number = ast.literal_eval(tournament.get('promise_number'))
+        promise_spec = ast.literal_eval(tournament.get('promise_spec'))
+    else:
+        promise_number = "[]"
+        promise_spec = "[]"
+
+    # 참가자를 받을 경우, char을 배열로 처리
+    if tournament.get('participation') == 'yes':
+        participation_template_format = ast.literal_eval(tournament.get('participation_template_format'))
+        participation_template = ast.literal_eval(tournament.get('participation_template'))
+    else:
+        participation_template_format = "[]"
+        participation_template = "[]"
+
+    # streaming을 할 경우, char을 배열로 처리
+    if tournament.get('streaming') == 'yes':
+        streaming_site = ast.literal_eval(tournament.get('streaming_site'))
+        streaming_url = ast.literal_eval(tournament.get('streaming_url'))
+    else :
+        streaming_site = "[]"
+        streaming_url = "[]"
+
+    # video = Video.objects.filter(tournament_name=tournament.get('tournament_name'))
+
+    # 대회 개최자일 경우, {공지사항, 참가자 명단, 후원자 명단}의 수정이 가능하도록
     if request.user.username == tournament.get('username'):
         is_creator = "yes"
     else:
         is_creator = "no"
 
     return render(request, 'main/template.html', {'tournament': tournament, 'participation': participation,
-                                                  'top5_funding': top5_funding, 'funding': funding,
-                                                  'total_amount': total_amount})
+                                                  'funding': funding, #'participation_input': participation_input,
+                                                  'total_amount': total_amount, 'is_creator': is_creator,
+                                                  'reward_number': reward_number, 'reward_spec': reward_spec,
+                                                  'promise_number': promise_number, 'promise_spec': promise_spec,
+                                                  'participation_template_format': participation_template_format,
+                                                  'participation_template': participation_template,
+                                                  'streaming_site': streaming_site, 'streaming_url': streaming_url})
 
 @csrf_exempt
 def test(request):

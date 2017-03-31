@@ -1,3 +1,10 @@
+header{
+    margin-top: 3.5rem;
+    padding: 0;
+    color: white;
+    background-color: #161616;
+}
+
 h5{
     margin: 0;
 }
@@ -26,37 +33,22 @@ h3{
     padding-left: 0;
     padding-right: 0;
     margin:0;
-    height: 36rem;
+    height: 55.8rem;
     border-bottom: 1px silver solid;
 }
 
-.main-title-eng
-{
-    font-weight: 100;
-    color: rgba(255, 153, 0, 1);
-}
-
-.main-title-kor{
-}
-
 .main-title{
-    margin-top:12.5rem;
+    margin-top:23rem;
     text-align: center;
     padding: 0;
 }
 
-#main-title-1{
-    opacity: 1;
+.main-head-title{
+    font-size: 3.5rem;
 }
 
-#main1{
-    background-size: cover !important;
-    color: white;
-}
-
-#main2{
-    background-size: cover !important;
-    background: #161616;
+.main-head-sub{
+    font-size: 2.3rem;
 }
 
 #service-title{
@@ -66,13 +58,11 @@ h3{
 }
 
 #service-title-eng{
-    font-size: 2.5rem;
     color: rgba(255, 153, 0, 1);
     font-weight: 300;
 }
 
 #service-title-kor{
-    font-size: 1rem;
     font-weight: 400;
     color: gray;
 }
@@ -89,13 +79,11 @@ h3{
 }
 
 .service{
-    font-size: 1.5rem;
     color: rgba(255, 153, 0, 1);
     font-weight: 300;
 }
 
 .service-contents{
-    font-size: 1rem;
     color: white;
     font-weight: 300;
 }
@@ -124,13 +112,11 @@ h3{
 }
 
 #arena-title-eng{
-    font-size: 2.5rem;
     color: white;
     font-weight: 100;
 }
 
 #arena-title-kor{
-    font-size: 1rem;
     color: gray;
 }
 
@@ -153,12 +139,12 @@ h3{
 
 
 .project-category-kor{
-    font-size: 1.2rem;
     margin-left: 8rem;
     margin-right: 4.5rem;
     color: white;
     font-weight: 400;
     text-align: left;
+    font-size:1.8rem;
 }
 
 .project-card-container{
@@ -232,7 +218,7 @@ h3{
     z-index: 1;
 }
 
-#New-project .slick-arrow{
+#End-project .slick-arrow{
     margin-right: 5rem;
     margin-left: 3.2rem;
     padding-bottom: 6rem;
@@ -291,7 +277,7 @@ i.slick-arrow{
 
     .service{
         color: white;
-        font-size: 1.1rem
+        font-size: 2rem
     }
 
     .service:hover{
@@ -315,12 +301,17 @@ i.slick-arrow{
     }
 }
 
-@media (max-width:570px){
+@media (max-width:530px){
     #arena-title{
         display: none;
+    }
+
+    .service-container{
+        height: 34rem;
     }
 
     .project{
         display: none;
     }
 }
+

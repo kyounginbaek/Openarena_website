@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    # main_url
     url(r'^$', views.home, name='home'),
     url(r'^tournaments/$', views.tournaments, name='tournaments'),
     url(r'^t/(?P<url>[\w\-]+)/$', views.t, name='t'),
@@ -12,7 +13,16 @@ urlpatterns = [
     url(r'^making/$', views.making, name='making'),
     url(r'^hallfame/$', views.hallfame, name='hallfame'),
     url(r'^calendar/$', views.calendar, name='calendar'),
+    url(r'^contact/$', views.contact, name="contact"),
+    url(r'^help/$', views.help, name="help"),
+    url(r'^privacy/$', views.privacy, name="privacy"),
+    url(r'^agreement/$', views.agreement, name="agreement"),
+    url(r'^chat/$', views.chat, name='chat'),
+    url(r'^create/$', views.create, name='create'),
+    url(r'^test/$', views.test, name='test'),
+    url(r'^members/$', views.members, name='members'),
 
+    # tournament_url
     url(r'^migal/$', views.migal, name='migal'),
     url(r'^whyachi/$', views.whyachi, name='whyachi'),
     url(r'^macho/$', views.macho, name='macho'),
@@ -28,12 +38,4 @@ urlpatterns = [
     url(r'^hstalk/$', views.hstalk, name='hstalk'),
     url(r'^onfps/$', views.onfps, name='onfps'),
 
-    url(r'^contact/$', views.contact, name="contact"),
-    url(r'^help/$', views.help, name="help"),
-    url(r'^privacy/$', views.privacy, name="privacy"),
-    url(r'^agreement/$', views.agreement, name="agreement"),
-    url(r'^chat/$', views.chat, name='chat'),
-    url(r'^create/$', views.create, name='create'),
-    url(r'^test/$', views.test, name='test'),
-    url(r'^members/$', views.members, name='members'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

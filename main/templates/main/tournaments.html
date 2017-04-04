@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
-
+{% load humanize %}
 
 {% block title %} 오픈아레나:대회둘러보기 {% endblock %}
 
@@ -81,7 +81,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -178,7 +178,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -203,7 +203,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -270,7 +270,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -295,7 +295,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -362,7 +362,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -387,7 +387,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -454,7 +454,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -479,7 +479,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -546,7 +546,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -571,7 +571,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -609,5 +609,8 @@
 
 {% endblock %}
 {% block script %}
-
+    <!-- slide js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <!-- card js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.js"></script>
 {% endblock %}

@@ -5,22 +5,20 @@
 
 {% block head %}
     <link rel="stylesheet" href="{%  static 'css/contact_form.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/participation.css' %}">
+    <div class="head_empty"></div>
+    <header class="help_head" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/help-cover.png');">
+        <div class="help_head_inner">
+            <h2 class="support_title" style="margin-bottom: 0px;">제휴 및 문의</h2>
+            <h4 class="support_subtitle">자유롭게 제휴/광고 혹은 문의/건의 사항을 보내주세요</h4>
+            <h4 class="support_subtitle">작성해주신 내용은 help@openarena.kr로 전송됩니다.</h4>
+        </div>
+    </header>
 {% endblock %}
 
 {% block content %}
     <div class="gray">
         <div class="block-b" style="padding:0px">
-            <div class="head_empty"></div>
-            <!-- contact 오렌지 배경 -->
-            <div class="card hovercard"><!-- .card.hovercard -->
-                <!-- contact 문의 / 건의 사항 -->
-                <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
-                    <div class="mypage_empty"></div>
-                    <h2 class="support_title" style="margin-bottom: 0px;">제휴 및 문의</h2>
-                    <h4 class="support_subtitle">자유롭게 제휴/광고 혹은 문의/건의 사항을 보내주세요</h4>
-                    <h4 class="support_subtitle">작성해주신 내용은 help@openarena.kr로 전송됩니다.</h4>
-                </div>
-            </div>
             <div class="support_empty"></div>
             <!-- contact 안쪽으로 중앙 정렬 -->
             <div class="col-xs-12 col-lg-10 col-sm-10 col-lg-offset-1 col-sm-offset-1">
@@ -61,7 +59,7 @@
                                 <div class="row">
                                     <div class="12u">
                                         <ul class="buttons" style="padding-left: 0;">
-                                            <li><input type="submit" class="btn btn-default hover_a" style="background: transparent; border-color: white; color: white" value="전송하기"/></li>
+                                            <li><input type="submit" class="btn btn-default center-block" style="border: 0px; color: white; background: #ff9900" value="전송하기"/></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +88,6 @@
                 $(this).css("color", "#fff");
                 $(this).css("border-color", "#fff");
             }
-            $('.hover_a').bind('mouseover', mouseOver_a).bind('mouseout', mouseOut_a);
 
             $("#contact_form").submit(function(e){
                 e.preventDefault();

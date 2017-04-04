@@ -1,5 +1,6 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
+{% load humanize %}
 
 {% block title %} 오픈아레나:모두의 경기 {% endblock %}
 
@@ -98,7 +99,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -123,7 +124,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -184,7 +185,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -209,7 +210,7 @@
                                             </div>
                                             <div class="card-content-bottom">
                                                 <div class="card-fundings-container">
-                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum}}원</span>
+                                                    <span class="card-fundings">모인 상금 총 {{card.get_fundings_sum|intcomma}}원</span>
                                                 </div>
                                                 <div class="detail-button-container">
                                                     <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
@@ -228,9 +229,9 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
-                                                        바로가기</a></button>
-
+                                                    <button type="button" name="" class="sponser-button">
+                                                        <a href="http://openarena.kr/{{ card.tournament_url }}">바로가기</a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -249,6 +250,11 @@
 {% endblock %}
 
 {% block script %}
+    <!-- slide js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <!-- card js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.js"></script>
+
     <script>
         $('.mainboard').slick({
             arrows: false,

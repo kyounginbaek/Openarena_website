@@ -648,7 +648,7 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 
 .head_empty{
-    height: 50px;
+    height: 20px;
 
 }
 .mypage_empty{
@@ -656,13 +656,12 @@ div.looking_picture img,div.looking_picture1 img,div.looking_picture2 img,div.lo
 }
 .help_head{
     height: 275px;
-    margin-bottom: 20px;
 }
 .help_head_inner{
     flex: 1;
     margin: auto;
     text-align: center;
-    width: 180px;
+    width: auto;
     padding-top: 100px;
 
 }

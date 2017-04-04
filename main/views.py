@@ -1920,7 +1920,37 @@ def create(request):
 
     return render(request, 'main/create.html', {'gamerule': gamerule})
 
+@csrf_exempt
 def t(request, url):
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "image_upload":
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Tournament.objects.filter(id=request.POST.get('tournament_id')).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "comment":
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "chat":
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "participation_edit":
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "participation_delete":
+            Participation.objects.filter(id=request.POST.get('id')).delete()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
     tournament = Tournament.objects.filter(tournament_url=url).values().get()
     participation = Participation.objects.filter(tournament_name=tournament.get('tournament_name'))
     # participation_input = ast.literal_eval(participation.get('input'))

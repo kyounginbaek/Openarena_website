@@ -32,6 +32,12 @@
     <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
 
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- include summernote css/js-->
+    <script src="{% static 'js/summernote.js' %}"></script>
 
     {% block head %}
 
@@ -63,7 +69,7 @@
                     <a href="{% url 'create' %}">대회 만들기</a>
                 </li>
                 <li>
-                    <a href="{% url 'archive' %}">종료된 대회</a>
+                    <a href="{% url 'archive' %}">지난 대회</a>
                 </li>
                 <li>
                     <a href="{% url 'help' %}">도움말</a>
@@ -164,18 +170,7 @@
     </div>
 </footer>
 
-
-<!-- jQuery -->
-<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
 <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<!-- include summernote css/js-->
-<script src="{% static 'js/summernote.js' %}"></script>
-<!-- slide js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-<!-- card js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.js"></script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -33,6 +33,27 @@
                                     <div class="center">
                                         <button id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">참가 하기</button>
                                     </div>
+                                    {% if participation_finish == 'finished' %}
+                                        <div class="center">
+                                            <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">참가 마감</button>
+                                        </div>
+                                    {% else %}
+                                        {% if request.user.is_authenticated %}
+                                            {% if participation_exist == "exist" %}
+                                                <div class="center">
+                                                    <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">이미 참가</button>
+                                                </div>
+                                            {% else %}
+                                                <div class="center">
+                                                    <button id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">참가 하기</button>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <div class="center">
+                                                <button disabled="disabled" id="participation" name="participation" class="btn btn-primary center-block" data-toggle="modal" data-target="#participationModal">로그인 필요</button>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
                                 {% else %}
                                     {% if tournament.participation_custom_url != 'no' and tournament.participation_custom_url != '-' %}
                                         <div class="center">
@@ -46,9 +67,21 @@
                                 {% endif %}
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 {% if tournament.funding == 'yes' %}
-                                    <div class="center">
-                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
-                                    </div>
+                                    {% if funding_finish == 'finished' %}
+                                        <div class="center">
+                                            <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 마감</button>
+                                        </div>
+                                    {% else %}
+                                        {% if request.user.is_authenticated %}
+                                            <div class="center">
+                                                <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
+                                            </div>
+                                        {% else %}
+                                            <div class="center">
+                                                <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">로그인 필요</button>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
                                 {% else %}
                                     <div class="center">
                                         <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 불가</button>
@@ -146,21 +179,28 @@
                                 <h4 style="color: #f7941e">• 대회 정보</h4>
                                 <div class="container com_intro_now hover_div">
                                     <div class="com_into_small">대회 시작</div>
-                                    <div class="com_into_small"><span class="com_into_big">{{ tournament.tournament_starttime }}</span> 일</div><br>
+                                    <div class="com_into_small"><span class="com_into_big">{{ tournament.tournament_starttime }}</span> 일</div>
 
                                     {% if tournament.participation == 'yes' %}
+                                        <hr/>
                                         <div class="com_into_small">참가자 수</div>
                                         {% if participation %}
-                                            <div class="com_into_small"><span class="com_into_big">{{ participation.count }}</span> 명</div><br>
+                                            <div class="com_into_small"><span class="com_into_big">{{ participation.count }}</span> 명</div>
                                         {% else %}
                                             <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
                                         {% endif %}
-
+                                        <br/>
                                         <div class="com_into_small">참가 마감</div>
-                                        <div class="com_into_small"><span class="com_into_big">{{ tournament.participation_endtime }}</span> 일</div><br>
+                                        <div class="com_into_small"><span class="com_into_big">{{ tournament.participation_endtime }}</span> 일</div>
+                                        {% if tournament.participation_checkin != 'no' or tournament.participation_checkin != '-'  %}
+                                            <br/>
+                                            <div class="com_into_small">체크인 시간</div>
+                                            <div class="com_into_small"><span class="com_into_big" style="color: yellowgreen">대회 시작 {{ tournament.participation_checkin }}</span> 전</div>
+                                        {% endif %}
                                     {% endif %}
 
                                     {% if tournament.funding == 'yes' %}
+                                        <hr/>
                                         {% if funding %}
                                             <div class="com_into_small">후원자 수</div>
                                             <div class="com_into_small"><span class="com_into_big">{{ funding.count }}</span> 명</div><br>
@@ -220,7 +260,7 @@
                                     <div class="com_into_small">개최자</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ tournament.profile_name }}</span></div><br>
                                     <div class="com_into_small">소개</div>
-                                    <div class="com_into_small"><span class="com_into_big">{{ tournament.profile_introduction|safe }}</span></div><br>
+                                    <div class="com_into_small"><span class="com_into_big">{{ tournament.profile_introduction|safe }}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -232,9 +272,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                         <div style="overflow:hidden; padding-top: 20px;">
                             <div style="display: inline-block;">
-                                <h4 style="color: #f7941e">• 공지 사항 <span style="font-size: 14px; color: white;">| 대회 개최자 전용</span></h4>
+                                <h4 style="color: #f7941e">• 공지 사항 <span style="font-size: 14px; color: white;">대회 개최자 전용</span></h4>
                             </div>
-                            &nbsp;
                             {% if is_creator == 'yes' %}
                                 <div style="display: inline-block;">
                                     <button id="edit_notice" class="btn btn-default" type="button" value="업데이트">수정하기</button>
@@ -291,7 +330,11 @@
                             <form id="comment_form" method="POST">{% csrf_token %}
                                 <input type="hidden" class="form-control" id="purpose" name="purpose" value="comment">
                                 <input type="hidden" class="parent" id="parent" name="parent">
-                                <input id="content" name="content" class="form-control com_donate_desp" placeholder="로그인 후 자유롭게 댓글을 적어주세요."/>
+                                {% if request.user.is_authenticated %}
+                                    <input id="content" name="content" class="form-control com_donate_desp" placeholder="댓글을 입력해주세요."/>
+                                {% else %}
+                                    <input disabled="disabled" id="content" name="content" class="form-control com_donate_desp" placeholder="로그인 후 자유롭게 댓글을 입력해주세요."/>
+                                {% endif %}
                                 <button type="submit" class="btn btn-primary com_donate_enroll">등록</button>
                             </form>
                         </div>
@@ -352,64 +395,105 @@
                                     </h4>
                                 </div>
                             </div>
-                            <div class="panel panel-default panel-table">
-                                <div class="panel-body">
-                                    <table class="table table-striped table-list">
-                                        <thead>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>오픈아레나 닉네임</th>
-                                            {% if is_creator == 'yes' %}
-                                                {% for pt in participation_template %}
-                                                    <th style="color: gray">{{ pt }}</th>
+
+                            {% if tournament.participation == 'yes' %}
+                                <div class="panel panel-default panel-table">
+                                    <div class="panel-body">
+                                        <table class="table table-striped table-list">
+                                            <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>오픈아레나 닉네임</th>
+                                                {% if is_creator == 'yes' %}
+                                                    {% for pt in participation_template %}
+                                                        <th style="color: gray">{{ pt }}</th>
+                                                    {% endfor %}
+                                                {% endif %}
+                                                {% if tournament.participation_checkin != 'no' and tournament.participation_checkin != '-' %}
+                                                    <th style="color: yellowgreen">체크인</th>
+                                                {% endif %}
+                                                {% if is_creator == 'yes' %}
+                                                    <th style="color: #ff9900">수정</th>
+                                                    <th style="color: #ff9900">삭제</th>
+                                                {% endif %}
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% if participation %}
+                                                {% for p in participation %}
+                                                    <tr>
+                                                        <td>{{ forloop.counter }}</td>
+                                                        <td>
+                                                            {{ p.username }}
+                                                            {% if user.is_authenticated %}
+                                                                {% if p.username == request.user.username %}
+                                                                    <a href="javascript: void(0)" class="participation_edit" name="{{ p.id }}">&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                                    <a hidden="hidden" href="javascript: void(0)" class="participation_save" name="{{ p.id }}">&nbsp;<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></a>
+                                                                    <a href="javascript: void(0)" class="participation_delete" name="{{ p.id }}">&nbsp;<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        </td>
+                                                        {% if is_creator == 'yes' %}
+                                                            {% for pt in p.get_input_list %}
+                                                                <td class="participation_edit_td" style="color: gray">{{ pt }}</td>
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                        {% if tournament.participation_checkin != 'no' and tournament.participation_checkin != '-' %}
+                                                            <td style="color: yellowgreen">{{ p.checkin }}</td>
+                                                        {% endif %}
+                                                        {% if is_creator == 'yes' %}
+                                                            <td>
+                                                                <a href="javascript: void(0)" class="participation_edit" name="{{ p.id }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                                <a hidden="hidden" href="javascript: void(0)" class="participation_save" name="{{ p.id }}"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></a>
+                                                            </td>
+                                                            <td><a href="javascript: void(0)" class="participation_delete" name="{{ p.id }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+                                                        {% endif %}
+                                                    </tr>
                                                 {% endfor %}
                                             {% endif %}
-                                            {% if tournament.participation_checkin != 'no' and tournament.participation_checkin != '-' %}
-                                                <th style="color: limegreen">체크인</th>
-                                            {% endif %}
-                                            {% if is_creator == 'yes' %}
-                                                <th style="color: #ff9900">수정</th>
-                                                <th style="color: #ff9900">삭제</th>
-                                            {% endif %}
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% if participation %}
-                                            {% for p in participation %}
-                                                <tr>
-                                                    <td>{{ forloop.counter }}</td>
-                                                    <td>
-                                                        {{ p.username }}
-                                                        {% if user.is_authenticated %}
-                                                            {% if p.username == request.user.username %}
-                                                                <a href="javascript: void(0)" class="participation_edit" name="{{ p.id }}">&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                                                <a hidden="hidden" href="javascript: void(0)" class="participation_save" name="{{ p.id }}">&nbsp;<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></a>
-                                                                <a href="javascript: void(0)" class="participation_delete" name="{{ p.id }}">&nbsp;<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-                                                            {% endif %}
-                                                        {% endif %}
-                                                    </td>
-                                                    {% if is_creator == 'yes' %}
-                                                        {% for pt in p.get_input_list %}
-                                                            <td class="participation_edit_td" style="color: gray">{{ pt }}</td>
-                                                        {% endfor %}
-                                                    {% endif %}
-                                                    {% if tournament.participation_checkin != 'no' and tournament.participation_checkin != '-' %}
-                                                        <td style="color: limegreen">{{ p.checkin }}</td>
-                                                    {% endif %}
-                                                    {% if is_creator == 'yes' %}
-                                                        <td>
-                                                            <a href="javascript: void(0)" class="participation_edit" name="{{ p.id }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                                            <a hidden="hidden" href="javascript: void(0)" class="participation_save" name="{{ p.id }}"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></a>
-                                                        </td>
-                                                        <td><a href="javascript: void(0)" class="participation_delete" name="{{ p.id }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
-                                                    {% endif %}
-                                                </tr>
-                                            {% endfor %}
-                                        {% endif %}
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
+                            {% else %}
+                                <div class="panel panel-default panel-table">
+                                    <div class="panel-body">
+                                        <table class="table table-striped table-list">
+                                            <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>참가자 닉네임</th>
+                                                {% if is_creator == 'yes' %}
+                                                    <th style="color: gray">참가자 정보</th>
+                                                    <th style="color: #ff9900">수정</th>
+                                                    <th style="color: #ff9900">삭제</th>
+                                                {% endif %}
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% if participation %}
+                                                {% for p in participation %}
+                                                    <tr>
+                                                        <td>{{ forloop.counter }}</td>
+                                                        <td>{{ p.dummy_username }}</td>
+                                                        {% if is_creator == 'yes' %}
+                                                            <td class="participation_edit_td" style="color: gray">
+                                                                {{ p.input }}
+                                                            </td>
+                                                            <td>
+                                                                <a href="javascript: void(0)" class="participation_edit" name="{{ p.id }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                                <a hidden="hidden" href="javascript: void(0)" class="participation_save" name="{{ p.id }}"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span></a>
+                                                            </td>
+                                                            <td><a href="javascript: void(0)" class="participation_delete" name="{{ p.id }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+                                                        {% endif %}
+                                                    </tr>
+                                                {% endfor %}
+                                            {% endif %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -504,20 +588,23 @@
                                 <!-- content goes here -->
                                 <form id="participation_form" method="POST">{% csrf_token %}
                                     <input type="hidden" class="form-control" id="purpose" name="purpose" value="participation">
+                                    <input type="hidden" class="form-control" id="tournament_id" name="tournament_id" value="{{ tournament.id }}">
+                                    <input type="hidden" class="form-control" id="tournament_name" name="tournament_name" value="{{ tournament.tournament_name }}">
+                                    <label style="color: #ff9900;">아래 대회 참가자 양식을 입력해주세요.</label>
                                     {% for ptf in participation_template_format %}
                                         {% for pt in participation_template %}
                                             {% if forloop.counter == forloop.parentloop.counter %}
                                                 {% if ptf == 'text' %}
                                                     <div class="form-group">
-                                                        <label id="participation_label" style="color: #ff9900;">{{ forloop.counter }}. {{ pt }}</label>
+                                                        <label id="participation_label">{{ forloop.counter }}. {{ pt }}</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                                            <input required autocomplete="off" class="form-control" name="participation_template_text[]" placeholder="예) 입력해주세요.">
+                                                            <input required autocomplete="off" class="form-control" name="participation_template_text[]" placeholder="입력해주세요.">
                                                         </div>
                                                     </div>
                                                 {% else %}
                                                     <div class="form-group">
-                                                        <label id="participation_label" style="color: #ff9900;">{{ forloop.counter }}. {{ pt }}</label>
+                                                        <label id="participation_label">{{ forloop.counter }}. {{ pt }}</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">파일 제출</span>
                                                             <input required autocomplete="off" class="form-control" type="file" name="participation_template_file[]">
@@ -527,7 +614,7 @@
                                             {% endif %}
                                         {% endfor %}
                                     {% endfor %}
-                                    <button type="submit" class="join_submit">참가하기</button>
+                                    <button id="participation_submit" type="submit" class="btn btn-primary center-block join_submit">참가 하기</button>
                                 </form>
                             </div>
                         </div>
@@ -543,13 +630,14 @@
                             </div>
                             <div class="modal-body">
                                 <!-- content goes here -->
-                                <form id="participation_form" method="POST">{% csrf_token %}
-                                    <input type="hidden" class="form-control" id="purpose" name="purpose" value="participation">
+                                <form id="participationManual_form" method="POST">{% csrf_token %}
+                                    <input type="hidden" class="form-control" id="purpose" name="purpose" value="participationManual">
+                                    <label style="color: #ff9900;">아래 대회 참가자 양식을 입력해주세요.</label>
                                     <div class="form-group">
-                                        <label for="dummy_username" style="color: #ff9900;">참가자 닉네임  <span style="color: white;">| 오픈아레나 닉네임 대신 사용됨</span></label>
+                                        <label for="dummy_username">참가자 닉네임 <span style="color: white;">| 오픈아레나 닉네임 대신 사용됩니다.</span></label>
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                            <input required autocomplete="off" class="form-control" id="participation_dummy_username" name="participation_dummy_username" placeholder="예) 입력해주세요.">
+                                            <input required autocomplete="off" class="form-control" id="participation_dummy_username" name="participation_dummy_username" placeholder="입력해주세요.">
                                         </div>
                                     </div>
                                     {% for ptf in participation_template_format %}
@@ -557,15 +645,15 @@
                                             {% if forloop.counter == forloop.parentloop.counter %}
                                                 {% if ptf == 'text' %}
                                                     <div class="form-group">
-                                                        <label id="participation_label" style="color: #ff9900;">{{ forloop.counter }}. {{ pt }}</label>
+                                                        <label id="participation_label">{{ forloop.counter }}. {{ pt }}</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                                            <input required autocomplete="off" class="form-control" name="participation_template_text[]" placeholder="예) 입력해주세요.">
+                                                            <input required autocomplete="off" class="form-control" name="participation_template_text[]" placeholder="입력해주세요.">
                                                         </div>
                                                     </div>
                                                 {% else %}
                                                     <div class="form-group">
-                                                        <label id="participation_label" style="color: #ff9900;">{{ forloop.counter }}. {{ pt }}</label>
+                                                        <label id="participation_label">{{ forloop.counter }}. {{ pt }}</label>
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">파일 제출</span>
                                                             <input required autocomplete="off" class="form-control" type="file" name="participation_template_file[]">
@@ -575,7 +663,7 @@
                                             {% endif %}
                                         {% endfor %}
                                     {% endfor %}
-                                    <button type="submit" class="join_submit">참가하기</button>
+                                    <button type="submit" class="btn btn-primary center-block join_submit">참가 하기</button>
                                 </form>
                             </div>
                         </div>
@@ -591,16 +679,26 @@
                             </div>
                             <div class="modal-body">
                                 <!-- content goes here -->
-                                <form id="participation_form" method="POST">{% csrf_token %}
-                                    <input type="hidden" class="form-control" id="purpose" name="purpose" value="participation">
+                                <form id="participationNo_form" method="POST">{% csrf_token %}
+                                    <input type="hidden" class="form-control" id="purpose" name="purpose" value="participationNo">
+                                    <input type="hidden" class="form-control" id="tournament_id" name="tournament_id" value="{{ tournament.id }}">
+                                    <input type="hidden" class="form-control" id="tournament_name" name="tournament_name" value="{{ tournament.tournament_name }}">
+                                    <label style="color: #ff9900;">아래 대회 참가자 양식을 입력해주세요.</label>
                                     <div class="form-group">
-                                        <label for="dummy_username" style="color: #ff9900;">참가자 닉네임 <span style="color: white;">| 오픈아레나 닉네임 대신 사용됨</span></label>
+                                        <label for="dummy_username">• 참가자 닉네임 <span style="color: white;">| 오픈아레나 닉네임 대신 사용됩니다.</span></label>
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">입력 항목</span>
-                                            <input required autocomplete="off" class="form-control" id="participation_dummy_username" name="participation_dummy_username" placeholder="예) 입력해주세요.">
+                                            <input required autocomplete="off" class="form-control" id="participation_dummy_username" name="participation_dummy_username" placeholder="입력해주세요.">
                                         </div>
                                     </div>
-                                    <button type="submit" class="join_submit">참가하기</button>
+                                    <div class="form-group">
+                                        <label for="dummy_username">• 참가자 정보 <span style="color: white;">| 참가자 관련 정보를 적어주세요.(선택사항)</span></label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1">입력 항목</span>
+                                            <input autocomplete="off" class="form-control" id="participation_input" name="participation_input" placeholder="입력해주세요.">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary center-block join_submit">참가 하기</button>
                                 </form>
                             </div>
                         </div>
@@ -622,7 +720,7 @@
                                 <form id="funding_form" method="POST">{% csrf_token %}
                                     <input type="hidden" class="form-control" id="purpose" name="purpose" value="funding">
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1" style="color: #ff9900;">후원하실 금액을 선택해주세요.</label>
+                                        <label style="color: #ff9900;">후원하실 금액을 선택해주세요. <span style="color: white;">Toss API로 결제가 진행됩니다.</span></label>
                                         <h5>금액 직접 입력 시 1,000원 이상부터 후원 가능합니다.</h5>
                                         <select id="funding_amount" name="funding_amount" class="form-control">
                                             <option value="1000">1,000원</option>
@@ -660,8 +758,7 @@
                                             <input type="text" class="form-control" id="funding_comment" name="funding_comment" placeholder="예) 재밌는 대회 기대하겠습니다!">
                                         </div>
                                     </div>
-                                    * 후원 하기 버튼 클릭 시 Toss API로 결제가 진행됩니다. <br/>
-                                    <button type="submit" class="join_submit">후원 하기</button>
+                                    <button type="submit" class="btn btn-primary center-block join_submit">후원 하기</button>
                                 </form>
                             </div>
                         </div>
@@ -681,7 +778,7 @@
                             <div class="modal-body">
                                 <!-- content goes here -->
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">시청하실 스트리밍 사이트를 선택해주세요.</label>
+                                    <label for="exampleInputPassword1">방송을 시청하실 스트리밍 사이트를 선택해주세요.</label>
                                 </div>
                                 {% for ss in streaming_site %}
                                     {% for su in streaming_url %}
@@ -729,8 +826,24 @@
 
             $('.participation_save').click(function(){
                 $(this).parents('tr').find('input.participation_edit_input').each(function() {
-
+                    var html = $(this).val();
+                    $(this).parent('td').text(html);
+                    $(this).remove();
                 });
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/t/{{ tournament.tournament_url }}/',
+                    data: serializedData,
+                    dataType: 'json',
+                    success: function(response) {
+                        if(response.status == "success"){
+                            alert('정상적으로 삭제되었습니다.');
+                            location.reload();
+                        }
+                    }
+                });
+
                 $(this).hide();
                 $(this).parents('td').find('a.participation_edit').show();
             });
@@ -755,13 +868,7 @@
                             }
                         }
                     });
-                } else {
-                    // no
                 }
-            });
-
-            $('#participation_add').click(function(){
-
             });
 
             // 만약 금액 직접 입력을 선택하면 금액 항목이 팝업되도록
@@ -875,7 +982,29 @@
 
             $("#participation_form").submit(function(e) {
                 e.preventDefault();
-                serializedData = $("#participation_form").serialize();
+                var formData = new FormData(this);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/t/{{ tournament.tournament_url }}/',
+                    data: formData,
+                    cache:false,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if(response.status == "success"){
+                            alert('참가자가 정상적으로 추가되었습니다.');
+                            location.reload();
+                        } else {
+                            alert('이미 참가 신청되었습니다.');
+                        }
+                    }
+                });
+            });
+
+            $("#participationNo_form").submit(function(e) {
+                e.preventDefault();
+                serializedData = $("#participationNo_form").serialize();
                 $.ajax({
                     type: 'POST',
                     url: '/t/{{ tournament.tournament_url }}/',
@@ -883,9 +1012,8 @@
                     dataType: 'json',
                     success: function(response) {
                         if(response.status == "success"){
-                            alert('대회 참가 신청이 정상적으로 제출되었습니다.');
+                            alert('참가자가 정상적으로 추가되었습니다.');
                             location.reload();
-
                         }
                     }
                 });
@@ -1016,22 +1144,6 @@
             });
 
         });
-    </script>
-
-    <script>
-        {% if request.user.is_authenticated %}
-
-        {% else %}
-            $("#funding").click(function(){
-                alert("로그인이 필요한 기능입니다.");
-                location.href='{% url 'login' %}';
-            });
-            $("#participation").click(function(){
-                alert("로그인이 필요한 기능입니다.");
-                location.href='{% url 'login' %}';
-            });
-            document.getElementById("comment").disabled = true;
-        {% endif %}
     </script>
 
     {% include 'main/functions/light-youtube-embed.html' %}

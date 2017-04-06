@@ -5,6 +5,7 @@
 {% block title %} 오픈아레나:모두의 경기 {% endblock %}
 
 {% block head %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
@@ -13,14 +14,14 @@
         <!-- 메인 캐러셀 -->
         <div id="header">
             <div class="mainboard">
-                <div class="main-head" id="main1" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/main_cover1.png') center center no-repeat;">
-                    <div class="col-md-12 col-sm-12 col-xs-12 main-title" id="main-title-1" style="color: white; opacity: 1;">
+                <div class="main-head" id="main1" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/main_cover1.png') center center no-repeat; background-size: cover;">
+                    <div class="main-title" id="main-title-1" >
                         <p class="main-head-title">오픈아레나 Openarena</p>
                         <p class="main-head-sub">누구나 승자가 되는 열린 경기장</p>
                     </div>
                 </div>
-                <div class="main-head" id="main2" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/main_cover2.png') center center no-repeat;">
-                    <div class="col-md-12 col-sm-12 col-xs-12 main-title" id="main-title-1" style="color: white; opacity: 1;">
+                <div class="main-head" id="main2" style="background: url('https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/main_cover2.png') center center no-repeat; background-size: cover;">
+                    <div class="main-title" id="main-title-1" style="color: white; opacity: 1;">
                         <p class="main-head-title">오픈아레나 Openarena</p>
                         <p class="main-head-sub">E스포츠 크라우드 펀딩 플랫폼</p>
                     </div>
@@ -29,7 +30,7 @@
             <!-- 서비스 컨테이너 -->
             <div class="col-md-12 col-sm-12 col-xs-12" id="service-title">
                 <img src="" alt="">
-                <h2 id="service-title-eng"   class="">Service</h2>
+                <div id="service-title-eng"  class="">Service</div>
                 <p id="service-title-kor" class="">오픈아레나는 E스포츠 대회를 만들기 위한</br>편리한 서비스를 제공하고 있습니다.</p>
             </div>
             <div class="service-container" id="service">
@@ -61,7 +62,7 @@
             <!-- 프로젝트 컨테이너 -->
             <div class="col-md-12 col-sm-12 col-xs-12" id="arena-title">
                 <img src="" alt="">
-                <h2 id="arena-title-eng" class="">Arena</h2>
+                <div id="arena-title-eng" class="">Arena</div>
                 <p id="arena-title-kor" class="">오픈아레나와 함께하는 대회들</p>
             </div>
             <div id="project" class="project">

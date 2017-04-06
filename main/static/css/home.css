@@ -9,11 +9,6 @@ h5{
     margin: 0;
 }
 
-h2{
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
-}
-
 h3{
     font-size: 2.5rem;
 }
@@ -51,20 +46,17 @@ h3{
     font-size: 2.3rem;
 }
 
-#service-title{
-    text-align: center;
-    margin-bottom: 2rem;
 
-}
 
-#service-title-eng{
+#service-title-eng, #arena-title-eng{
     color: rgba(255, 153, 0, 1);
     font-weight: 300;
+    font-size: 4rem;
 }
 
-#service-title-kor{
-    font-weight: 400;
-    color: gray;
+#service-title-kor, #arena-title-kor{
+    font-size: 1.5rem;
+    color: #999DAC;
 }
 
 .service-container{
@@ -89,36 +81,23 @@ h3{
 }
 
 #service1{
-    padding-right: 7rem;
 }
-
 #service2{
-    background-size: cover;
-    border-right-color: gray;
-    border-right-style: solid;
-    border-left-color: gray;
-    border-left-style: solid;
 }
-
 #service3{
-    margin-left: 3.6rem;
 }
-
+#service-title{
+    text-align: center;
+    padding-bottom: 2rem;
+}
 #arena-title{
     text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-    border-top: 2px black solid;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    border-top: 1px silver solid;
+    margin-top: 30px;
 }
 
-#arena-title-eng{
-    color: white;
-    font-weight: 100;
-}
-
-#arena-title-kor{
-    color: gray;
-}
 
 .project-head{
     background-color: black;
@@ -150,7 +129,7 @@ h3{
 .project-card-container{
     color: white;
     background-color: inherit;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     padding-left: 7.5rem;
     padding-right: 7.5rem;
 }
@@ -313,5 +292,23 @@ i.slick-arrow{
     .project{
         display: none;
     }
+    .service{
+        color: white;
+        font-size: 1.5rem
+    }
+    .service-img{
+        width: 80px;
+    }
+    .main-head-title{
+        font-size: 3rem;
+    }
+    .main-head-sub{
+        font-size: 1.5rem
+    }
+    .main-head{
+        height: 37rem;
+    }
+    .main-title{
+        margin-top: 12rem;
+    }
 }
-

@@ -30,14 +30,6 @@
 
     <!-- Custom CSS -->
     <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/common.css' %}">
-
-    <!-- jQuery -->
-    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- include summernote css/js-->
-    <script src="{% static 'js/summernote.js' %}"></script>
 
     {% block head %}
 
@@ -178,6 +170,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<!-- jQuery -->
+<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- include summernote css/js-->
+<script src="{% static 'js/summernote.js' %}"></script>
 
 {% block script %}
 

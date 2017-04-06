@@ -1924,6 +1924,42 @@ def create(request):
 def t(request, url):
     if request.method == 'POST':
         if request.POST.get('purpose') == "participation":
+            if Participation.objects.filter(tournament_id=request.POST.get('tournament_id'), username=request.user.username).exists():
+                response = {'status': 'exist'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                if request.FILES['participation_template_file[]'] != "":
+                    conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY,
+                                        host='s3.ap-northeast-2.amazonaws.com')
+                    bucket = conn.get_bucket('openarena')
+
+                    file = request.FILES['participation_template_file[]']
+                    k = Key(bucket)
+                    k.key = file.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    k.content_type = 'text/plain'
+                    k.set_contents_from_string(file.read(), policy='public-read')
+                    url = k.generate_url(expires_in=0, query_auth=False)
+                    Tournament.objects.filter(tournament_name=request.POST.get('tournament_name')).update(tournament_image=url)
+
+                input = request.POST.getlist('participation_template_text[]')
+                participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
+                                                  tournament_name=request.POST.get('tournament_name'),
+                                                  username=request.user.username,
+                                                  input=input)
+                participation_obj.save()
+                response = {'status': 'success'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "participationNo":
+            if request.POST.get('participation_input') == "":
+                input = "-"
+            else:
+                input = request.POST.get('participation_input')
+
+            participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
+                                              tournament_name=request.POST.get('tournament_name'),
+                                              dummy_username=request.POST.get('participation_dummy_username'),
+                                              input=input)
+            participation_obj.save()
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "image_upload":
@@ -1952,34 +1988,53 @@ def t(request, url):
             return HttpResponse(json.dumps(response), content_type='application/json')
 
     tournament = Tournament.objects.filter(tournament_url=url).values().get()
-    participation = Participation.objects.filter(tournament_name=tournament.get('tournament_name'))
+    tournament_id = tournament.get('id')
+    tournament_name = tournament.get('tournament_name')
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
     # participation_input = ast.literal_eval(participation.get('input'))
-    funding = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).order_by('-amount')
-    total_amount = Funding.objects.filter(tournament_name=tournament.get('tournament_name')).aggregate(Sum('amount'))
+    funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
 
-    # reward 보상을 할 경우, char을 배열로 처리
-    if tournament.get('reward') == 'yes':
-        reward_number = ast.literal_eval(tournament.get('reward_number'))
-        reward_spec = ast.literal_eval(tournament.get('reward_spec'))
-    else:
-        reward_number = "[]"
-        reward_spec = "[]"
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
 
-    # reward 보상을 할 경우, char을 배열로 처리
-    if tournament.get('promise') == 'yes':
-        promise_number = ast.literal_eval(tournament.get('promise_number'))
-        promise_spec = ast.literal_eval(tournament.get('promise_spec'))
-    else:
-        promise_number = "[]"
-        promise_spec = "[]"
-
+    participation_template_format = "[]"
+    participation_template = "[]"
+    participation_finish = ""
+    participation_exist = ""
     # 참가자를 받을 경우, char을 배열로 처리
     if tournament.get('participation') == 'yes':
-        participation_template_format = ast.literal_eval(tournament.get('participation_template_format'))
-        participation_template = ast.literal_eval(tournament.get('participation_template'))
-    else:
-        participation_template_format = "[]"
-        participation_template = "[]"
+        now = datetime.now()
+        participation_endtime = datetime.strptime(tournament.get('participation_endtime'), '%Y/%m/%d %H:%M')
+        if now >= participation_endtime:
+            participation_finish = "finished"
+        else :
+            participation_template_format = ast.literal_eval(tournament.get('participation_template_format'))
+            participation_template = ast.literal_eval(tournament.get('participation_template'))
+            if Participation.objects.filter(tournament_id=tournament_id, username=request.user.username).exists():
+                participation_exist = "exist"
+
+    reward_number = "[]"
+    reward_spec = "[]"
+    promise_number = "[]"
+    promise_spec = "[]"
+    funding_finish = ""
+    if tournament.get('funding') == 'yes':
+        # reward 보상을 할 경우, char을 배열로 처리
+        if tournament.get('reward') == 'yes':
+            reward_number = ast.literal_eval(tournament.get('reward_number'))
+            reward_spec = ast.literal_eval(tournament.get('reward_spec'))
+
+        # promise 보상을 할 경우, char을 배열로 처리
+        if tournament.get('promise') == 'yes':
+            promise_number = ast.literal_eval(tournament.get('promise_number'))
+            promise_spec = ast.literal_eval(tournament.get('promise_spec'))
+
+        now = datetime.now()
+        funding_endtime = datetime.strptime(tournament.get('funding_endtime'), '%Y/%m/%d %H:%M')
+        if now >= funding_endtime:
+            funding_finish = "finished"
 
     # streaming을 할 경우, char을 배열로 처리
     if tournament.get('streaming') == 'yes':
@@ -1999,6 +2054,8 @@ def t(request, url):
 
     return render(request, 'main/template.html', {'tournament': tournament, 'participation': participation,
                                                   'funding': funding, #'participation_input': participation_input,
+                                                  'comment_tree': comment_tree, 'participation_exist': participation_exist,
+                                                  'participation_finish': participation_finish, 'funding_finish': funding_finish,
                                                   'total_amount': total_amount, 'is_creator': is_creator,
                                                   'reward_number': reward_number, 'reward_spec': reward_spec,
                                                   'promise_number': promise_number, 'promise_spec': promise_spec,

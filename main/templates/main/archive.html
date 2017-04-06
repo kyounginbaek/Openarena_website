@@ -2,9 +2,10 @@
 {% load staticfiles %}
 {% load humanize %}
 
-{% block title %} 오픈아레나:대회기록실 {% endblock %}
+{% block title %} 오픈아레나:지난 대회 {% endblock %}
 
 {% block head %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
     <link rel="stylesheet" href="{% static 'css/archive_whole.css' %}">
     <link rel="stylesheet" href="{% static 'css/archive.css' %}">
 {% endblock %}
@@ -13,7 +14,7 @@
     <header>
         <div class="container-fluid">
             <div class="col-md-12">
-                <p id="report-page-title">대회기록실</p>
+                <p id="report-page-title">지난 대회</p>
             </div>
             <!-- game category -->
             <div class="game-category">
@@ -129,7 +130,6 @@
                                         <div class="card-detail-button">
                                             <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/{{ card.tournament_url }}">
                                                 바로가기</a></button>
-
                                         </div>
                                     </div>
                                 </div>

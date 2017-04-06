@@ -96,7 +96,7 @@ class Making(models.Model):
         except ValueError:
             return '-'
 
-        # d_day 연산
+            # d_day 연산
     def get_day(self):
         now = datetime.now()
         # print(self.starttime)
@@ -117,7 +117,6 @@ class Making(models.Model):
         participation_num = len(participation_qs)
         return participation_num
 
-
     def get_funding_num(self):
         funding_qs = list()
         for funding in Funding.objects.filter(tournament_name=self.tournament_name):
@@ -126,7 +125,6 @@ class Making(models.Model):
         funding_num = len(funding_qs)
         if funding_num == '':
             return 0
-
         return funding_num
 
 class Tournament(models.Model):
@@ -195,6 +193,30 @@ class Tournament(models.Model):
     challonge_url = models.CharField(max_length=2000, default='-')
     notice = summer_fields.SummernoteTextField(default='공지사항 및 변경사항을 입력해주세요.')
     video_url = models.CharField(max_length=4000, default='[]')
+
+    def participation_finish(self):
+        now = datetime.now()
+        # print(self.starttime)
+        try:
+            participation_endtime = datetime.strptime(self.participation_endtime, '%Y/%m/%d %H:%M')
+            if now >= participation_endtime:
+                return 'finished'
+            else:
+                return 'unfinished'
+        except ValueError:
+            return 'error'
+
+    def funding_finish(self):
+        now = datetime.now()
+        # print(self.starttime)
+        try:
+            funding_endtime = datetime.strptime(self.funding_endtime, '%Y/%m/%d %H:%M')
+            if now >= funding_endtime :
+                return 'finished'
+            else:
+                return 'unfinished'
+        except ValueError:
+            return 'error'
 
 class Video(models.Model):
     id = models.AutoField(primary_key=True)

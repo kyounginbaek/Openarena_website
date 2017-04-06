@@ -2,6 +2,10 @@
     width: 90%;
 }
 
+.nav a{
+    background-color: #f8f8f8;
+}
+
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
     background-color: #f8f8f8;
 }
@@ -236,6 +240,9 @@ footer{
     overflow: auto;
 }
 
+.nav > li > a{
+    background-color: #f8f8f8;
+}
 
 @media only screen and (max-width: 992px) {
     .card{

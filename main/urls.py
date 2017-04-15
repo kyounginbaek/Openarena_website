@@ -37,5 +37,7 @@ urlpatterns = [
     url(r'^scc4/$', views.scc4, name='scc4'),
     url(r'^hstalk/$', views.hstalk, name='hstalk'),
     url(r'^onfps/$', views.onfps, name='onfps'),
+    url(r'^cks2/$', views.cks2, name='cks2'),
+    url(r'^realstarleaguecom/$', views.realstarleaguecom, name='realstarleaguecom'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

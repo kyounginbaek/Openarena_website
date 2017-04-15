@@ -2,12 +2,13 @@ import json
 import random
 import requests
 import ast
+
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from main.models import Making, Fundingdummy, Funding, Participation, Video, Privacy, Agreement, Help, Comment, CommentForm, Chat, Gamerule, Tournament
 from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
@@ -1743,6 +1744,297 @@ def onfps(request):
                                                'total_amount': total_amount, 'has_funded': has_funded,
                                                'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
 
+@csrf_exempt
+def realstarleaguecom(request):
+    tournament_id = 15
+    tournament_name = "Real Star League season 5"
+
+    chat = Chat.objects.filter(tournament_name=tournament_name)
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
+
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
+                                              username=request.user.username,
+                                              email=request.user.email,
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3=request.POST.get('participation_etc3'),
+                                              etc4=request.POST.get('participation_etc4'),
+                                              etc5=request.POST.get('participation_etc5'),
+                                              )
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "image_upload":
+            form = UploadFileForm()
+            temp = form.save(commit=False)
+            file = request.FILES['participation_etc3']
+
+            conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY,
+                                host='s3.ap-northeast-2.amazonaws.com')
+            bucket = conn.get_bucket('openarena')
+
+            k = Key(bucket)
+            k.key = file.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            k.content_type = 'text/plain'
+            k.set_contents_from_string(file.read(), policy='public-read')
+            url = k.generate_url(expires_in=0, query_auth=False)
+            Participation.objects.filter(tournament_name=tournament_name, username=request.user.username, etc1=request.POST.get('participation_etc1')).update(etc3=url)
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            if request.POST.get('funding_amount') == "etc":
+                funding_amount = request.POST.get('funding_amount_etc')
+            else:
+                funding_amount = request.POST.get('funding_amount')
+
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20170325" + str(random.randrange(1, 99999999)),
+                "amount": funding_amount,
+                "productDesc": tournament_name,
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-05-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
+                                           username=request.user.username, email=request.user.email,
+                                           comment=request.POST.get('funding_comment'),
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
+    top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament_name)
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament_name)
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/realstarleaguecom.html', {'tournament': tournament, 'participation': participation,
+                                                           'top_funding': top_funding, 'funding': funding,
+                                                           'total_amount': total_amount, 'has_funded': has_funded,
+                                                           'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+
+@csrf_exempt
+def cks2(request):
+    tournament_id = 16
+    tournament_name = "스타크래프트 시리즈 연승전 : 체인킬러 시즌 2"
+
+    chat = Chat.objects.filter(tournament_name=tournament_name)
+    # Retrieve all comments and sort them by path
+    comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
+
+    if request.method == 'POST':
+        if request.POST.get('purpose') == "participation":
+            # save 코드
+            participation_obj = Participation(tournament_id=tournament_id, tournament_name=tournament_name,
+                                              username=request.user.username,
+                                              email=request.user.email,
+                                              etc1=request.POST.get('participation_etc1'),
+                                              etc2=request.POST.get('participation_etc2'),
+                                              etc3="")
+            participation_obj.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "image_upload":
+            form = UploadFileForm()
+            temp = form.save(commit=False)
+            file = request.FILES['participation_etc3']
+
+            conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY,
+                                host='s3.ap-northeast-2.amazonaws.com')
+            bucket = conn.get_bucket('openarena')
+
+            k = Key(bucket)
+            k.key = file.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            k.content_type = 'text/plain'
+            k.set_contents_from_string(file.read(), policy='public-read')
+            url = k.generate_url(expires_in=0, query_auth=False)
+            Participation.objects.filter(tournament_name=tournament_name, username=request.user.username, etc1=request.POST.get('participation_etc1')).update(etc3=url)
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "funding":
+            if request.POST.get('funding_amount') == "etc":
+                funding_amount = request.POST.get('funding_amount_etc')
+            else:
+                funding_amount = request.POST.get('funding_amount')
+
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": "20170325" + str(random.randrange(1, 99999999)),
+                "amount": funding_amount,
+                "productDesc": tournament_name,
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-05-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Fundingdummy(tournament_id=tournament_id, tournament_name=tournament_name,
+                                           username=request.user.username, email=request.user.email,
+                                           comment=request.POST.get('funding_comment'),
+                                           orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "description":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(description=request.POST.get('description'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "notice":
+            # save 코드
+            Making.objects.filter(tournament_name=tournament_name).update(notice=request.POST.get('notice'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "chat":
+            msg = request.POST.get('msgbox', None)
+            c = Chat(user=request.user, message=msg)
+            if msg != '':
+                c.save()
+
+            response = {'msg': msg, 'user': c.user.username}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+        elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_name = tournament_name
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+
+    tournament = Making.objects.filter(tournament_name=tournament_name).values().get()
+    participation = Participation.objects.filter(tournament_name=tournament_name)
+
+    top_funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')[:5]
+    funding = Funding.objects.filter(tournament_name=tournament_name)
+    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+
+    video = Video.objects.filter(tournament_name=tournament_name)
+
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
+    # 대회 개최자일 경우 공지사항 수정 가능하도록
+    if request.user.username == tournament.get('username'):
+        is_creator = "yes"
+    else:
+        is_creator = "no"
+
+    return render(request, 'main/cks2.html', {'tournament': tournament, 'participation': participation,
+                                               'top_funding': top_funding, 'funding': funding,
+                                               'total_amount': total_amount, 'has_funded': has_funded,
+                                               'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+
 def contact(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -1928,62 +2220,236 @@ def t(request, url):
                 response = {'status': 'exist'}
                 return HttpResponse(json.dumps(response), content_type='application/json')
             else:
-                if request.FILES['participation_template_file[]'] != "":
+                tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
+                template_length = len(ast.literal_eval(tournament.get('participation_template')))
+
+                input = []
+                for i in range(1, template_length+1):
+                    if request.POST.get('participation_template['+str(i)+']') is not None:
+                        input.append(request.POST.get('participation_template['+str(i)+']'))
+                    else:
+                        file = request.FILES.get('participation_template['+str(i)+']')
+
+                        conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY,
+                                            host='s3.ap-northeast-2.amazonaws.com')
+                        bucket = conn.get_bucket('openarena')
+
+                        k = Key(bucket)
+                        k.key = file.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                        k.content_type = 'text/plain'
+                        k.set_contents_from_string(file.read(), policy='public-read')
+                        url = k.generate_url(expires_in=0, query_auth=False)
+                        input.append(url)
+
+                # Challonge 참가자 추가
+                url = "https://api.challonge.com/v1/tournaments/" + tournament.get(
+                    'challonge_url') + "/participants.json"
+                data = {
+                    "api_key": settings.CHALLONGE_API_KEY,
+                    "participant": {
+                        "name": request.user.username
+                    }
+                }
+                headers = {'content-type': 'application/json'}
+                result = requests.post(url, data=json.dumps(data), headers=headers)
+
+                participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
+                                                  tournament_name=request.POST.get('tournament_name'),
+                                                  username=request.user.username,
+                                                  seed=result.json().get('participant').get('seed'),
+                                                  challonge_id=result.json().get('participant').get('id'),
+                                                  input=input)
+                participation_obj.save()
+
+                response = {'status': 'success'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "participationManual":
+            tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
+            template_length = len(ast.literal_eval(tournament.get('participation_template')))
+
+            input = []
+            for i in range(1, template_length + 1):
+                if request.POST.get('participation_template[' + str(i) + ']') is not None:
+                    input.append(request.POST.get('participation_template[' + str(i) + ']'))
+                else:
+                    file = request.FILES.get('participation_template[' + str(i) + ']')
+
                     conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY,
                                         host='s3.ap-northeast-2.amazonaws.com')
                     bucket = conn.get_bucket('openarena')
 
-                    file = request.FILES['participation_template_file[]']
                     k = Key(bucket)
                     k.key = file.name + " " + datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     k.content_type = 'text/plain'
                     k.set_contents_from_string(file.read(), policy='public-read')
                     url = k.generate_url(expires_in=0, query_auth=False)
-                    Tournament.objects.filter(tournament_name=request.POST.get('tournament_name')).update(tournament_image=url)
+                    input.append(url)
 
-                input = request.POST.getlist('participation_template_text[]')
-                participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
-                                                  tournament_name=request.POST.get('tournament_name'),
-                                                  username=request.user.username,
-                                                  input=input)
-                participation_obj.save()
-                response = {'status': 'success'}
-                return HttpResponse(json.dumps(response), content_type='application/json')
+            # Challonge 참가자 추가
+            url = "https://api.challonge.com/v1/tournaments/" + tournament.get('challonge_url') + "/participants.json"
+            data = {
+                "api_key": settings.CHALLONGE_API_KEY,
+                "participant": {
+                    "name": request.POST.get('participation_dummy_username')
+                }
+            }
+            headers = {'content-type': 'application/json'}
+            result = requests.post(url, data=json.dumps(data), headers=headers)
+
+            participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
+                                              tournament_name=request.POST.get('tournament_name'),
+                                              dummy_username=request.POST.get('participation_dummy_username'),
+                                              seed=result.json().get('participant').get('seed'),
+                                              challonge_id=result.json().get('participant').get('id'),
+                                              input=input)
+            participation_obj.save()
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "participationNo":
             if request.POST.get('participation_input') == "":
                 input = "-"
             else:
                 input = request.POST.get('participation_input')
 
+            tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
+
+            # Challonge 참가자 추가
+            url = "https://api.challonge.com/v1/tournaments/" + tournament.get('challonge_url') + "/participants.json"
+            data = {
+                "api_key": settings.CHALLONGE_API_KEY,
+                "participant": {
+                    "name": request.POST.get('participation_dummy_username')
+                }
+            }
+            headers = {'content-type': 'application/json'}
+            result = requests.post(url, data=json.dumps(data), headers=headers)
+
             participation_obj = Participation(tournament_id=request.POST.get('tournament_id'),
                                               tournament_name=request.POST.get('tournament_name'),
                                               dummy_username=request.POST.get('participation_dummy_username'),
+                                              seed=result.json().get('participant').get('seed'),
+                                              challonge_id=result.json().get('participant').get('id'),
                                               input=input)
             participation_obj.save()
+
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
-        elif request.POST.get('purpose') == "image_upload":
+        elif request.POST.get('purpose') == "participation_edit":
+            Participation.objects.filter(id=request.POST.get('participation_id')).update(input=request.POST.getlist('participation_input[]'))
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "participation_delete":
+            participation = Participation.objects.filter(id=request.POST.get('participation_id')).values().get()
+            Participation.objects.filter(id=request.POST.get('participation_id')).delete()
+            tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
+
+            # Challonge 참가자 삭제
+            url = "https://api.challonge.com/v1/tournaments/" + tournament.get('challonge_url') + "/participants/" + participation.get('challonge_id') + ".json"
+            data = {
+                "api_key": settings.CHALLONGE_API_KEY,
+            }
+            headers = {'content-type': 'application/json'}
+            result = requests.delete(url, data=json.dumps(data), headers=headers)
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "challonge_start":
+            tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
+            Tournament.objects.filter(id=request.POST.get('tournament_id')).update(challonge_start='yes')
+
+            # Challonge 대회 시작
+            url = "https://api.challonge.com/v1/tournaments/" + tournament.get(
+                'challonge_url') + "/start.json"
+            data = {
+                "api_key": settings.CHALLONGE_API_KEY,
+            }
+            headers = {'content-type': 'application/json'}
+            result = requests.post(url, data=json.dumps(data), headers=headers)
+
+            response = {'status': 'success'}
+            return HttpResponse(json.dumps(response), content_type='application/json')
+        elif request.POST.get('purpose') == "challonge_restart":
+            tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
+            Tournament.objects.filter(id=request.POST.get('tournament_id')).update(challonge_start='-')
+
+            # Challonge 대회 시작
+            url = "https://api.challonge.com/v1/tournaments/" + tournament.get(
+                'challonge_url') + "/reset.json"
+            data = {
+                "api_key": settings.CHALLONGE_API_KEY,
+            }
+            headers = {'content-type': 'application/json'}
+            result = requests.post(url, data=json.dumps(data), headers=headers)
+
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "funding":
-            response = {'status': 'success'}
-            return HttpResponse(json.dumps(response), content_type='application/json')
+            if request.POST.get('funding_amount') == "etc":
+                funding_amount = request.POST.get('funding_amount_etc')
+            else:
+                funding_amount = request.POST.get('funding_amount')
+
+            url = "https://toss.im/tosspay/api/v1/payments"
+            params = {
+                "orderNo": request.POST.get('tournament_id'),
+                "amount": funding_amount,
+                "productDesc": request.POST.get('tournament_name'),
+                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
+                "expiredTime": "2017-05-31 23:59:59",
+            }
+
+            result = requests.post(url, data=params)
+            # print(response.text)
+
+            if result.json().get('status') == 200 and result.json().get('code') != -1:
+                # save 코드
+                funding_obj = Funding(tournament_id=request.POST.get('tournament_id'),
+                                      tournament_name=request.POST.get('tournament_name'),
+                                      username=request.user.username, email=request.user.email,
+                                      comment=request.POST.get('funding_comment'),
+                                      phone=request.POST.get('funding_phone'),
+                                      orderno=params.get('orderNo'), amount=params.get('amount'))
+                funding_obj.save()
+                response = {'status': result.json().get('checkoutPage')}
+                return HttpResponse(json.dumps(response), content_type='application/json')
+            else:
+                response = {'status': 'fail'}
+                return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "notice":
             # save 코드
             Tournament.objects.filter(id=request.POST.get('tournament_id')).update(notice=request.POST.get('notice'))
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "comment":
+            # Set a blank path then save it to get an ID
+            form = CommentForm()
+            temp = form.save(commit=False)
+            temp.tournament_id = request.POST.get('tournament_id')
+            temp.tournament_name = request.POST.get('tournament_name')
+            temp.username = request.user.username
+            temp.content = request.POST.get('content')
+            temp.save()
+
+            id = int(temp.id)
+            parent = request.POST.get('parent')
+            if parent == '':
+                # converting ID to int because save() gives a long int ID
+                temp.path = [id]
+            else:
+                # Get the parent node
+                parent_obj = Comment.objects.get(id=parent)
+                temp.depth = int(parent_obj.depth) + 1
+                s = str(parent_obj.path)
+                temp.path = eval(s)
+                # Store parents path then apply comment ID
+                temp.path.append(id)
+
+            temp.save()
+
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "chat":
-            response = {'status': 'success'}
-            return HttpResponse(json.dumps(response), content_type='application/json')
-        elif request.POST.get('purpose') == "participation_edit":
-            response = {'status': 'success'}
-            return HttpResponse(json.dumps(response), content_type='application/json')
-        elif request.POST.get('purpose') == "participation_delete":
-            Participation.objects.filter(id=request.POST.get('id')).delete()
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
 
@@ -1999,39 +2465,70 @@ def t(request, url):
     # Retrieve all comments and sort them by path
     comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
 
+    now = datetime.now()
+
+    # 대회가 끝났는지 여부 판단
+    tournament_finish = ""
+    if now >= datetime.strptime(tournament.get('tournament_endtime'), '%Y/%m/%d %H:%M'):
+        tournament_finish = "finished"
+
+    # 참가자를 받을 경우, char을 배열로 처리
     participation_template_format = "[]"
     participation_template = "[]"
     participation_finish = ""
     participation_exist = ""
-    # 참가자를 받을 경우, char을 배열로 처리
+    checkin_start = ""
     if tournament.get('participation') == 'yes':
-        now = datetime.now()
+        participation_template_format = ast.literal_eval(tournament.get('participation_template_format'))
+        participation_template = ast.literal_eval(tournament.get('participation_template'))
+
+        # 참가자가 참가 신청을 했는지 여부 판단
+        if Participation.objects.filter(tournament_id=tournament_id, username=request.user.username).exists():
+            participation_exist = "exist"
+
+        # 참가자 신청 기간이 끝났는지 여부 판단
         participation_endtime = datetime.strptime(tournament.get('participation_endtime'), '%Y/%m/%d %H:%M')
         if now >= participation_endtime:
             participation_finish = "finished"
-        else :
-            participation_template_format = ast.literal_eval(tournament.get('participation_template_format'))
-            participation_template = ast.literal_eval(tournament.get('participation_template'))
-            if Participation.objects.filter(tournament_id=tournament_id, username=request.user.username).exists():
-                participation_exist = "exist"
 
+        # 체크인 시간이 되었는지 여부 판단
+        if tournament.get('participation_checkin') != 'no' and tournament.get('participation_checkin') != '-':
+            checkin_time = tournament.get('participation_checkin')
+            time_diff = timedelta(minutes=0)
+            if checkin_time == "15분":
+                time_diff = timedelta(minutes=15)
+            elif checkin_time == "30분":
+                time_diff = timedelta(minutes=30)
+            elif checkin_time == "1시간":
+                time_diff = timedelta(hours=1)
+            elif checkin_time == "2시간":
+                time_diff = timedelta(hours=2)
+            elif checkin_time == "6시간":
+                time_diff = timedelta(hours=6)
+            elif checkin_time == "1일":
+                time_diff = timedelta(days=1)
+            elif checkin_time == "2일":
+                time_diff = timedelta(days=2)
+
+            if datetime.strptime(tournament.get('tournament_starttime'), '%Y/%m/%d %H:%M') - now <= time_diff:
+                checkin_start = "yes"
+
+    # reward 보상을 할 경우, char을 배열로 처리
+    # promise 보상을 할 경우, char을 배열로 처리
     reward_number = "[]"
     reward_spec = "[]"
     promise_number = "[]"
     promise_spec = "[]"
     funding_finish = ""
     if tournament.get('funding') == 'yes':
-        # reward 보상을 할 경우, char을 배열로 처리
         if tournament.get('reward') == 'yes':
             reward_number = ast.literal_eval(tournament.get('reward_number'))
             reward_spec = ast.literal_eval(tournament.get('reward_spec'))
 
-        # promise 보상을 할 경우, char을 배열로 처리
         if tournament.get('promise') == 'yes':
             promise_number = ast.literal_eval(tournament.get('promise_number'))
             promise_spec = ast.literal_eval(tournament.get('promise_spec'))
 
-        now = datetime.now()
         funding_endtime = datetime.strptime(tournament.get('funding_endtime'), '%Y/%m/%d %H:%M')
         if now >= funding_endtime:
             funding_finish = "finished"
@@ -2046,6 +2543,12 @@ def t(request, url):
 
     # video = Video.objects.filter(tournament_name=tournament.get('tournament_name'))
 
+    # 그 사람이 후원했는지를 검색하는 기능
+    if Funding.objects.filter(tournament_id=tournament_id, username=request.user.username).exists():
+        has_funded = "yes"
+    else:
+        has_funded = "no"
+
     # 대회 개최자일 경우, {공지사항, 참가자 명단, 후원자 명단}의 수정이 가능하도록
     if request.user.username == tournament.get('username'):
         is_creator = "yes"
@@ -2053,9 +2556,11 @@ def t(request, url):
         is_creator = "no"
 
     return render(request, 'main/template.html', {'tournament': tournament, 'participation': participation,
-                                                  'funding': funding, #'participation_input': participation_input,
+                                                  'funding': funding, 'tournament_finish': tournament_finish,
                                                   'comment_tree': comment_tree, 'participation_exist': participation_exist,
-                                                  'participation_finish': participation_finish, 'funding_finish': funding_finish,
+                                                  'participation_finish': participation_finish,
+                                                  'checkin_start': checkin_start,
+                                                  'funding_finish': funding_finish, 'has_funded': has_funded,
                                                   'total_amount': total_amount, 'is_creator': is_creator,
                                                   'reward_number': reward_number, 'reward_spec': reward_spec,
                                                   'promise_number': promise_number, 'promise_spec': promise_spec,

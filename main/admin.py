@@ -23,7 +23,7 @@ class VideoAdmin(admin.ModelAdmin):
 admin.site.register(Video, VideoAdmin)
 
 class ParticipationAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'name', 'phone', 'etc1', 'etc2', 'etc3', 'etc4', 'etc5', 'input', 'confirm', 'checkin', 'score', 'result', 'prize']
+    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'dummy_username', 'seed', 'challonge_id', 'input', 'confirm', 'checkin', 'score', 'result', 'prize']
 admin.site.register(Participation, ParticipationAdmin)
 
 class PrivacyAdmin(admin.ModelAdmin):

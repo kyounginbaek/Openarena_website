@@ -32,6 +32,7 @@ class Funding(models.Model):
     comment = models.TextField(default='-')
     comment2 = models.TextField(default='-')
     orderno = models.CharField(max_length=400, default='-')
+    confirm = models.CharField(max_length=200, default='')
     when = models.CharField(max_length=400, default=timezone.localtime(timezone.now()))
     thanks = models.CharField(max_length=200, default='-')
 
@@ -131,7 +132,7 @@ class Tournament(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=400, default='')
     email = models.CharField(max_length=400, default='')
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.CharField(max_length=400, default=timezone.localtime(timezone.now()))
     # tab1
     tournament_name = models.CharField(max_length=400, default='')
     tournament_game = models.CharField(max_length=400, default='')
@@ -191,32 +192,9 @@ class Tournament(models.Model):
     cover_image = models.CharField(max_length=2000, default='-')
     logo_image = models.CharField(max_length=2000, default='-')
     challonge_url = models.CharField(max_length=2000, default='-')
+    challonge_start = models.CharField(max_length=200, default='-')
     notice = summer_fields.SummernoteTextField(default='공지사항 및 변경사항을 입력해주세요.')
     video_url = models.CharField(max_length=4000, default='[]')
-
-    def participation_finish(self):
-        now = datetime.now()
-        # print(self.starttime)
-        try:
-            participation_endtime = datetime.strptime(self.participation_endtime, '%Y/%m/%d %H:%M')
-            if now >= participation_endtime:
-                return 'finished'
-            else:
-                return 'unfinished'
-        except ValueError:
-            return 'error'
-
-    def funding_finish(self):
-        now = datetime.now()
-        # print(self.starttime)
-        try:
-            funding_endtime = datetime.strptime(self.funding_endtime, '%Y/%m/%d %H:%M')
-            if now >= funding_endtime :
-                return 'finished'
-            else:
-                return 'unfinished'
-        except ValueError:
-            return 'error'
 
 class Video(models.Model):
     id = models.AutoField(primary_key=True)
@@ -232,6 +210,8 @@ class Participation(models.Model):
     tournament_name = models.CharField(max_length=400, default='')
     username = models.CharField(max_length=400, default='')
     dummy_username = models.CharField(max_length=400, default='')
+    seed = models.CharField(max_length=200, default='')
+    challonge_id = models.CharField(max_length=200, default='')
     name = models.CharField(max_length=400, default='')
     email = models.CharField(max_length=400, default='')
     phone = models.CharField(max_length=200, default='')
@@ -268,6 +248,7 @@ class Help(models.Model):
 
 class Comment(models.Model):
     id = models.AutoField(primary_key=True)
+    tournament_id = models.CharField(max_length=200, default='')
     tournament_name = models.CharField(max_length=400, default='')
     username = models.CharField(max_length=400, default='')
     content = models.TextField(default='')

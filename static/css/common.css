@@ -236,6 +236,10 @@ footer{
     overflow: auto;
 }
 
+.nav > li > a{
+    background-color: #f8f8f8;
+}
+
 @media only screen and (max-width: 992px) {
     .card{
     }

@@ -1885,9 +1885,9 @@ def cks2(request):
         is_creator = "no"
 
     return render(request, 'main/cks2.html', {'tournament': tournament, 'participation': participation,
-                                               'top_funding': top_funding, 'funding': funding,
-                                               'total_amount': total_amount, 'has_funded': has_funded,
-                                               'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
+                                              'top_funding': top_funding, 'funding': funding,
+                                              'total_amount': total_amount, 'has_funded': has_funded,
+                                              'chat': chat, 'comment_tree': comment_tree, 'video': video, 'is_creator': is_creator})
 
 def contact(request):
     if request.method == 'POST':
@@ -2030,9 +2030,92 @@ def create(request):
                                         profile_phone=request.POST.get('profile_phone'),
                                         profile_account=request.POST.get('profile_account'),
                                         creator_enrollment=request.POST.get('creator_enrollment'))
+
             tournament_obj.save()
 
-            # 챌론지 대회 생성?
+            now = datetime.now().strftime('%Y%m%d%H%M%S')
+
+            # 생성된 챌론지 링크를 업데이트 시키기
+            Tournament.objects.filter(id=str(tournament_obj.id)).update(
+                challonge_url="openarena_" + str(tournament_obj.id) + "_" + request.POST.get(
+                    'tournament_url') + "_" + now)
+
+            # 챌론지 대회 생성
+            url = "https://api.challonge.com/v1/tournaments.json"
+            data = {
+                "api_key": settings.CHALLONGE_API_KEY,
+                "tournament": {
+                    "name": request.POST.get('tournament_name'),
+                    # "tournament_type": "", # finished
+                    "url": "openarena_"+str(tournament_obj.id)+"_"+request.POST.get('tournament_url')+"_"+now,
+                    "open_signup": "false",
+                    # single elimination only
+                    # "hold_third_place_match": "", # finished
+                    # swiss only
+                    # "pts_for_match_win": "", # finished
+                    # "pts_for_match_tie": "", # finished
+                    # "pts_for_game_win": "", # finished
+                    # "pts_for_game_tie": "", # finished
+                    # "pts_for_bye": "", # finished
+                    # "swiss_rounds": "" # not yet
+                    # "ranked_by": "", # finished
+                    # round robin only
+                    # "rr_pts_for_match_win": "", # finished
+                    # "rr_pts_for_match_tie": "", # finished
+                    # "rr_pts_for_game_win": "", # finished
+                    # "rr_pts_for_game_tie": "", # finished
+                    # sequential_pairings = true & false 가능하도록 변경 필요 # not yet
+                    "sequential_pairings": "true",
+                    # "signup_cap": "", # finished
+                    # double_elimination only
+                    # "grand_finals_modifier": "" # finished
+                }
+            }
+
+            if request.POST.get('tournament_format') == "no":
+                data['tournament'].update({'tournament_type': 'single elimination'})
+            else:
+                if request.POST.get('tournament_format') == 'single_elimination':
+                    data['tournament'].update({'tournament_type': 'single elimination'})
+                    if request.POST.get('tournament_format_spec') == 'yes_3rd_match':
+                        data['tournament'].update({'hold_third_place_match': 'true'})
+                elif request.POST.get('tournament_format') == 'double_elimination':
+                    data['tournament'].update({'tournament_type': 'double elimination'})
+                    if request.POST.get('tournament_format_spec') == 'no_advantage':
+                        data['tournament'].update({'grand_finals_modifier': 'single match'})
+                    elif request.POST.get('tournament_format_spec') == 'auto_win':
+                        data['tournament'].update({'grand_finals_modifier': 'skip'})
+                elif request.POST.get('tournament_format') == 'round_robin':
+                    data['tournament'].update({'tournament_type': 'round robin'})
+                    if request.POST.get('tournament_format_spec' == 'match_wins'):
+                        data['tournament'].update({'ranked_by': 'match_wins'})
+                    elif request.POST.get('tournament_format_spec' == 'game_wins'):
+                        data['tournament'].update({'ranked_by': 'game_wins'})
+                    elif request.POST.get('tournament_format_spec' == 'points_score'):
+                        data['tournament'].update({'ranked_by': 'points_score'})
+                    elif request.POST.get('tournament_format_spec' == 'points_difference'):
+                        data['tournament'].update({'ranked_by': 'points_difference'})
+                    else:
+                        array_ast = ast.literal_eval(str(request.POST.getlist('tournament_format_spec[]')))
+                        data['tournament'].update({'ranked_by': 'custom'})
+                        data['tournament'].update({'rr_pts_for_match_win': array_ast[0]})
+                        data['tournament'].update({'rr_pts_for_match_tie': array_ast[1]})
+                        data['tournament'].update({'rr_pts_for_game_win': array_ast[2]})
+                        data['tournament'].update({'rr_pts_for_game_tie': array_ast[3]})
+                elif request.POST.get('tournament_format') == 'swiss':
+                    array_ast = ast.literal_eval(str(request.POST.getlist('tournament_format_spec[]')))
+                    data['tournament'].update({'tournament_type': 'swiss'})
+                    data['tournament'].update({'pts_for_match_win': array_ast[0]})
+                    data['tournament'].update({'pts_for_match_tie': array_ast[1]})
+                    data['tournament'].update({'pts_for_game_win': array_ast[2]})
+                    data['tournament'].update({'pts_for_game_tie': array_ast[3]})
+                    data['tournament'].update({'pts_for_bye': array_ast[4]})
+
+            if request.POST.get('participation')=='yes':
+                data['tournament'].update({'signup_cap': request.POST.get('participation_number')})
+
+            headers = {'content-type': 'application/json'}
+            result = requests.post(url, data=json.dumps(data), headers=headers)
 
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
@@ -2277,7 +2360,7 @@ def t(request, url):
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "match_update":
             tournament = Tournament.objects.filter(id=request.POST.get('tournament_id')).values().get()
-            match_id = "123"
+            match_id = request.POST.get('match_id')
 
             # Challonge 매치 업데이트
             url = "https://api.challonge.com/v1/tournaments/" + tournament.get(
@@ -2285,8 +2368,8 @@ def t(request, url):
             data = {
                 "api_key": settings.CHALLONGE_API_KEY,
                 "match": {
-                    "scores_csv": request.POST.get('scores1') + "-" + request.POST.get('scores2'),
-                    "winner_id": "",
+                    "scores_csv": request.POST.get('match_score1') + "-" + request.POST.get('match_score2'),
+                    "winner_id": request.POST.get('winner_id')
                 }
             }
             headers = {'content-type': 'application/json'}
@@ -2295,6 +2378,8 @@ def t(request, url):
             response = {'status': 'success'}
             return HttpResponse(json.dumps(response), content_type='application/json')
         elif request.POST.get('purpose') == "funding":
+            now = datetime.now().strftime('%Y%m%d%H%M%S')
+
             if request.POST.get('funding_amount') == "etc":
                 funding_amount = request.POST.get('funding_amount_etc')
             else:
@@ -2302,11 +2387,11 @@ def t(request, url):
 
             url = "https://toss.im/tosspay/api/v1/payments"
             params = {
-                "orderNo": request.POST.get('tournament_id'),
+                "orderNo": request.POST.get('tournament_id')+"_"+str(request.user.id)+"_"+now,
                 "amount": funding_amount,
                 "productDesc": request.POST.get('tournament_name'),
-                "apiKey": "sk_live_ePk39VmNdnePk39VmNdn",
-                "expiredTime": "2017-05-31 23:59:59",
+                "apiKey": settings.TOSS_API_LIVE_KEY,
+                "retUrl": 'http://openarena.kr' + "/funding_success"
             }
 
             result = requests.post(url, data=params)
@@ -2384,8 +2469,19 @@ def t(request, url):
     challonge_match_list = requests.get(url, params=data, headers=headers).json()
 
     # participation_input = ast.literal_eval(participation.get('input'))
-    funding = Funding.objects.filter(tournament_name=tournament_name).order_by('-amount')
-    total_amount = Funding.objects.filter(tournament_name=tournament_name).aggregate(Sum('amount'))
+    funding = list(Funding.objects.filter(tournament_id=tournament_id).order_by('-amount'))
+    total_amount = Funding.objects.filter(tournament_id=tournament_id).aggregate(Sum('amount'))
+
+    # 토스 후원 목록과 비교하여 후원이 완료되었는지 체크 (confirm = yes, no)
+    url = "https://toss.im/tosspay/api/v1/status"
+    for f in funding:
+        params = {
+            "orderNo": f.orderno,
+            "apiKey": settings.TOSS_API_LIVE_KEY
+        }
+        result = requests.post(url, data=params)
+        if result.json().get('code') != 0:
+            funding.remove(f)
 
     # Retrieve all comments and sort them by path
     comment_tree = Comment.objects.filter(tournament_name=tournament_name).order_by('-path')
@@ -2503,26 +2599,10 @@ def t(request, url):
                                                   'participation_template': participation_template,
                                                   'streaming_site': streaming_site, 'streaming_url': streaming_url})
 
-@csrf_exempt
-def test(request):
-    if request.method == 'POST':
-        form = UploadFileForm()
-        temp = form.save(commit=False)
-        file = request.FILES['tournament_image']
-
-        conn = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY, host='s3.ap-northeast-2.amazonaws.com')
-        bucket = conn.get_bucket('openarena')
-
-        k = Key(bucket)
-        k.key = file.name
-        k.content_type = 'text/plain'
-        k.set_contents_from_string(file.read(), policy='public-read')
-        url = k.generate_url(expires_in=0, query_auth=False)
-
-        response = {'status': 'success',
-                    'message': url}
-        return HttpResponse(json.dumps(response), content_type='application/json')
-    return render(request, 'main/test.html', {})
-
 def members(request):
     return render(request, 'main/members.html', {})
+
+def funding_success(request):
+
+
+    return render(request, 'main/funding_success.html', {})

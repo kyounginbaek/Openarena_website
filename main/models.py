@@ -66,10 +66,10 @@ class Making(models.Model):
     funding_endtime = models.CharField(max_length=200, default='')
     participation_endtime = models.CharField(max_length=200, default='')
     summary = models.TextField(default='')
-    main_image = models.CharField(max_length=100, default='')
-    cover_image = models.CharField(max_length=100, default='')
-    poster_image = models.CharField(max_length=100, default='')
-    match_image = models.CharField(max_length=100, default='')
+    main_image = models.CharField(max_length=1000, default='')
+    cover_image = models.CharField(max_length=1000, default='')
+    poster_image = models.CharField(max_length=1000, default='')
+    match_image = models.CharField(max_length=1000, default='')
 
     def get_fundings_sum(self):
         try:

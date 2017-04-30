@@ -19,8 +19,8 @@ urlpatterns = [
     url(r'^agreement/$', views.agreement, name="agreement"),
     url(r'^chat/$', views.chat, name='chat'),
     url(r'^create/$', views.create, name='create'),
-    url(r'^test/$', views.test, name='test'),
     url(r'^members/$', views.members, name='members'),
+    url(r'^funding_success/$', views.funding_success, name='funding_success'),
 
     # tournament_url
     url(r'^migal/$', views.migal, name='migal'),

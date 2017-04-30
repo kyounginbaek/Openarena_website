@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -179,6 +178,9 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details'
 )
+
+TOSS_API_TEST_KEY = 'sk_test_AVkGqlMNRdAVkGqlMNRd'
+TOSS_API_LIVE_KEY = 'sk_live_ePk39VmNdnePk39VmNdn'
 
 BUCKET_NAME = 'openarena'
 AWS_ACCESS_KEY_ID = 'AKIAJL2ENQTJXQFFCUYQ'

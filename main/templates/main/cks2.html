@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 <div class="center">
-                                    <button id="streaming" name="streaming" class="btn btn-primary center-block">방송 보기</button>
+                                    <button id="streaming" name="streaming" class="btn btn-primary center-block" data-toggle="modal" data-target="#streamingModal">방송 보기</button>
                                 </div>
                             </li>
                         </ul>
@@ -540,18 +540,11 @@
                                 <label for="exampleInputPassword1">시청하실 스트리밍 사이트를 선택해주세요.</label>
                                 <p class="don_list">* 스트리밍 방송은 동시에 진행되며, 부정행위 방지를 위해 1분 지연방송을 기본으로 합니다.</p>
                             </div>
-                            <button id="button_afreeca" name="button_afreeca" class="donate_submit">
-                                아프리카tv
-                            </button>
-                            <button id="button_twitch" name="button_twitch" class="donate_submit" style="margin-left: 20px;">
+                            <button id="button_afreeca" name="button_twitch" class="donate_submit">
                                 트위치(twitch)
                             </button>
-                            <br/><br/>
-                            <button id="button_youtube" name="button_youtube" class="donate_submit">
-                                유투브(youtube)
-                            </button>
-                            <button id="button_daumtvpot" name="button_daumtvpot" class="donate_submit"style="margin-left: 20px;">
-                                다음tv팟
+                            <button id="button_twitch" name="button_vod" class="donate_submit" style="margin-left: 20px;">
+                                VOD
                             </button>
                             <br/><br/>
                         </div>
@@ -585,8 +578,12 @@
                 window.open("https://goo.gl/forms/fMgnA28Wby8PZK833");
             });
 
-            $("#streaming").click(function(){
-                window.open("https://gaming.youtube.com/channel/UCRjsqXSOCEzZ5vVnacmvCCA/live");
+            $("#button_twitch").click(function(){
+                window.open("https://www.twitch.tv/myielinie");
+            });
+
+            $("#button_vod").click(function(){
+                window.open("https://elinie.kr/category/br/chainkiller/");
             });
 
             $(".btn-pref .btn").click(function(){

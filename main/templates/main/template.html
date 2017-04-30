@@ -207,7 +207,9 @@
                                 <div class="container com_intro_now hover_div">
                                     <div class="com_into_small">대회 시작</div>
                                     <div class="com_into_small"><span class="com_into_big">{{ tournament.tournament_starttime }}</span> 일</div>
-
+                                    <br/>
+                                    <div class="com_into_small">대회 종료</div>
+                                    <div class="com_into_small"><span class="com_into_big">{{ tournament.tournament_endtime }}</span> 일</div>
                                     {% if tournament.participation == 'yes' %}
                                         <hr/>
                                         <div class="com_into_small">참가자 수</div>
@@ -450,27 +452,27 @@
                                                     <td>{{ cml.match.suggested_play_order }}</td>
                                                     {% if cml.match.state == 'complete' %}
                                                         {% if cml.match.winner_id == cml.match.player1_id %}
-                                                            <td style="color: greenyellow">{{ cml.match.player1_id|get_username }} 승</td>
+                                                            <td style="color: greenyellow">{{ cml.match.player1_id|get_username }} (승리)</td>
                                                         {% elif cml.match.loser_id == cml.match.player1_id %}
-                                                            <td style="color: orangered">{{ cml.match.player1_id|get_username }} 패</td>
+                                                            <td style="color: orangered">{{ cml.match.player1_id|get_username }} (패배)</td>
                                                         {% endif %}
-                                                        <td style="color: #ff9900">vs.</td>
+                                                        <td>vs.</td>
                                                         {% if cml.match.winner_id == cml.match.player2_id %}
-                                                            <td style="color: greenyellow">{{ cml.match.player2_id|get_username }} 승</td>
+                                                            <td style="color: greenyellow">{{ cml.match.player2_id|get_username }} (승리)</td>
                                                         {% elif cml.match.loser_id == cml.match.player2_id %}
-                                                            <td style="color: orangered">{{ cml.match.player2_id|get_username }} 패</td>
+                                                            <td style="color: orangered">{{ cml.match.player2_id|get_username }} (패배)</td>
                                                         {% endif %}
                                                         <td>{{ cml.match.scores_csv }}</td>
-                                                        <td><button disabled="disabled" id="" class="btn btn-default">매치 종료</button></td>
+                                                        <td><button disabled="disabled" id="" class="btn btn-default">매치 완료</button></td>
                                                     {% elif cml.match.state == 'open' %}
                                                         <td>{{ cml.match.player1_id|get_username }}</td>
-                                                        <td style="color: #ff9900">vs.</td>
+                                                        <td>vs.</td>
                                                         <td>{{ cml.match.player2_id|get_username }}</td>
-                                                        <td style="color: yellowgreen">매치 진행중</td>
-                                                        <td><button id="button_matchModal" class="btn btn-default" data-toggle="modal" data-target="#matchModal" data-player1-id="{{ cml.match.player1_id|get_username }}" data-player2-id="{{ cml.match.player2_id|get_username }}" data-match-id="{{ cml.match.id }}">매치 결과 제출</button></td>
+                                                        <td style="color: greenyellow">매치 진행중</td>
+                                                        <td><button id="button_matchModal" class="btn btn-default" data-toggle="modal" data-target="#matchModal" data-player1-id="{{ cml.match.player1_id }}" data-player1-username="{{ cml.match.player1_id|get_username }}" data-player2-id="{{ cml.match.player2_id }}" data-player2-username="{{ cml.match.player2_id|get_username }}" data-match-id="{{ cml.match.id }}">매치 결과 제출</button></td>
                                                     {% elif cml.match.state == 'pending' %}
                                                         <td>{{ cml.match.player1_id|get_username }}</td>
-                                                        <td style="color: #ff9900">vs.</td>
+                                                        <td>vs.</td>
                                                         <td>{{ cml.match.player2_id|get_username }}</td>
                                                         <td>-</td>
                                                         <td><button disabled="disabled" id="" class="btn btn-default">매치 대기중</button></td>
@@ -1048,7 +1050,8 @@
                         </div>
                         <form id="match_form" method="POST">{% csrf_token %}
                             <input type="hidden" class="form-control" id="purpose" name="purpose" value="match_update">
-                            <input type="hidden" class="form-control" id="purpose" name="purpose" value="comment">
+                            <input type="hidden" class="form-control" id="tournament_id" name="tournament_id" value="{{ tournament.id }}">
+                            <input type="hidden" class="form-control" id="match_id" name="match_id" value="">
                             <div class="modal-body">
                                 <!-- content goes here -->
                                 <label for="exampleInputPassword1">매치의 승자를 선택해주세요.</label>
@@ -1056,27 +1059,27 @@
                                     {% if tournament.tournament_format != 'single_elimination' and tournament.tournament_format != 'double_elimination' %}
                                         <div class="btn-group" data-toggle="buttons" style="margin: 0 auto;">
                                             <label class="btn btn-default">
-                                                <input required type="radio" name="winner_id" autocomplete="off" value="">
-                                                <span id="input_player1_id"></span>
+                                                <input required type="radio" id="input_player1_id" name="winner_id" autocomplete="off" value="">
+                                                <span id="button_player1_id"></span>
                                             </label>
                                             <label class="btn btn-default">
-                                                <input required type="radio" name="winner_id" autocomplete="off" value="">
-                                                <span id="input_player2_id"></span>
+                                                <input required type="radio" id="input_player2_id" name="winner_id" autocomplete="off" value="">
+                                                <span id="button_player2_id"></span>
                                             </label>
                                         </div>
                                     {% else %}
                                         <div class="btn-group" data-toggle="buttons" style="margin: 0 auto;">
                                             <label class="btn btn-default">
-                                                <input required type="radio" name="winner_id" autocomplete="off" value="">
-                                                <span id="input_player1_id"></span>
+                                                <input required type="radio" id="input_player1_id" name="winner_id" autocomplete="off" value="">
+                                                <span id="button_player1_id"></span>
                                             </label>
                                             <label class="btn btn-default">
-                                                <input required type="radio" name="winner_id" autocomplete="off" value="">
+                                                <input required type="radio" name="winner_id" autocomplete="off" value="tie">
                                                 <span>무승부</span>
                                             </label>
                                             <label class="btn btn-default">
-                                                <input required type="radio" name="winner_id" autocomplete="off" value="">
-                                                <span id="input_player2_id"></span>
+                                                <input required type="radio" id="input_player2_id" name="winner_id" autocomplete="off" value="">
+                                                <span id="button_player2_id"></span>
                                             </label>
                                         </div>
                                     {% endif %}
@@ -1086,7 +1089,7 @@
                                 <div class="row" style="text-align: center;">
                                     <div class="input-group spinner_player1_score">
                                         <span class="input-group-addon" id="span_player1_id"></span>
-                                        <input required style="text-align: right;" type="text" name="player1_score" class="form-control" value="0" aria-describedby="sizing-addon2">
+                                        <input required style="text-align: right;" type="text" name="match_score1" class="form-control" value="0" aria-describedby="sizing-addon2">
                                         <div class="input-group-btn-vertical">
                                             <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
                                             <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
@@ -1095,7 +1098,7 @@
                                     <span>vs.</span>
                                     <div class="input-group spinner_player2_score">
                                         <span class="input-group-addon" id="span_player2_id"></span>
-                                        <input required style="text-align: right;" type="text" name="player2_score" class="form-control" value="0" aria-describedby="sizing-addon2">
+                                        <input required style="text-align: right;" type="text" name="match_score2" class="form-control" value="0" aria-describedby="sizing-addon2">
                                         <div class="input-group-btn-vertical">
                                             <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
                                             <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
@@ -1118,11 +1121,18 @@
     <script>
         $(document).on("click", "#button_matchModal", function () {
             var player1_id = $(this).data('player1-id');
+            var player1_username = $(this).data('player1-username');
             var player2_id = $(this).data('player2-id');
-            $(".modal-body #input_player1_id").text(player1_id);
-            $(".modal-body #span_player1_id").text(player1_id);
-            $(".modal-body #input_player2_id").text(player2_id);
-            $(".modal-body #span_player2_id").text(player2_id);
+            var player2_username = $(this).data('player2-username');
+            var match_id = $(this).data('match-id');
+            $(".modal-body #button_player1_id").text(player1_username);
+            $("#input_player1_id").val(player1_id);
+            $(".modal-body #span_player1_id").text(player1_username);
+            $(".modal-body #button_player2_id").text(player2_username);
+            $("#input_player2_id").val(player2_id);
+            $(".modal-body #span_player2_id").text(player2_username);
+
+            $('#match_id').val(match_id);
         });
 
         /* input : 숫자만 입력이 가능하도록 */

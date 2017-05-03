@@ -196,6 +196,63 @@ class Tournament(models.Model):
     notice = summer_fields.SummernoteTextField(default='공지사항 및 변경사항을 입력해주세요.')
     video_url = models.CharField(max_length=4000, default='[]')
 
+    def get_fundings_sum(self):
+        try:
+            funding_sum = 0
+            fundings = list()
+            for funding in Funding.objects.filter(tournament_name=self.tournament_name, confirm='yes'):
+                fundings.append(funding)
+                # print(funding.amount)
+            for funding_amount in fundings:
+                funding_sum = funding_sum + funding_amount.amount
+            return funding_sum
+        except ValueError:
+            return '-'
+
+    def get_fundings_percentage(self):
+        try:
+            funding_sum = 0
+            fundings = list()
+            for funding in Funding.objects.filter(tournament_name=self.tournament_name, confirm='yes'):
+                fundings.append(funding)
+            for funding_amount in fundings:
+                funding_sum = funding_sum + funding_amount.amount
+            funding_rate = funding_sum / int(self.funding_goal) * 100
+            return funding_rate
+        except ValueError:
+            return '-'
+
+            # d_day 연산
+    def get_day(self):
+        now = datetime.now()
+        # print(self.starttime)
+        try:
+            end_time = datetime.strptime(self.tournament_starttime, '%Y/%m/%d %H:%M')
+            d_day = str(-(end_time-now).days)
+            if not d_day.startswith('-'):
+                d_day = '+' + d_day
+            return 'D'+d_day
+        except ValueError:
+            return 'D-X'
+
+    def get_participation(self):
+        participation_qs = list()
+        for participation in Participation.objects.filter(tournament_name=self.tournament_name):
+            participation_qs.append(participation)
+
+        participation_num = len(participation_qs)
+        return participation_num
+
+    def get_funding_num(self):
+        funding_qs = list()
+        for funding in Funding.objects.filter(tournament_name=self.tournament_name, confirm='yes'):
+            funding_qs.append(funding)
+
+        funding_num = len(funding_qs)
+        if funding_num == '':
+            return 0
+        return funding_num
+
 class Video(models.Model):
     id = models.AutoField(primary_key=True)
     tournament_id = models.CharField(max_length=200, default='')

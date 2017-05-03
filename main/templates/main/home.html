@@ -79,7 +79,7 @@
                             {% for card in card_list_ing %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;"></div></a>
+                                        <a href="/t/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.tournament_image }}') center center no-repeat; background-size: contain;"></div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
                                             </div>
@@ -133,7 +133,7 @@
                                             </div>
                                             <div class="card-detail-information">
                                                 <ul>
-                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.tournament_starttime}}</div></li>
                                                     <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
                                                     <!--
                                                     <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
@@ -144,7 +144,7 @@
                                                     -->
                                                 </ul>
                                                 <div class="card-detail-button">
-                                                    <button type="button" name="" class="sponser-button"><a href="/{{ card.tournament_url }}">
+                                                    <button type="button" name="" class="sponser-button"><a href="/t/{{ card.tournament_url }}">
                                                         바로가기</a></button>
                                                 </div>
                                             </div>
@@ -164,7 +164,7 @@
                             {% for card in card_list_end %}
                                 <div class="project-card">
                                     <div class="card sticky-action">
-                                        <a href="/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.main_image }}') center center no-repeat; background-size: contain;">
+                                        <a href="/t/{{ card.tournament_url }}"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('{{ card.tournament_image }}') center center no-repeat; background-size: contain;">
                                         </div></a>
                                         <div class="progress stat2">
                                             <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{card.get_fundings_percentage}}%;">
@@ -206,7 +206,7 @@
                                                     <span class="card-dday">{{card.get_day}}</span>
                                                 </div>
                                                 <div class="card-summary-container">
-                                                    <span class="card-summary">{{card.summary}}</span>
+                                                    <span class="card-summary">{{card.tournament_summary}}</span>
                                                 </div>
                                             </div>
                                             <div class="card-content-bottom">
@@ -219,7 +219,7 @@
                                             </div>
                                             <div class="card-detail-information">
                                                 <ul>
-                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.starttime}}</div></li>
+                                                    <li><div class="card-information-content">대회 일시</div><div class="card-information-data">{{card.tournament_starttime}}</div></li>
                                                     <li><div class="card-information-content">참가 마감</div><div class="card-information-data">{{card.participation_endtime}}</div></li>
                                                     <!--
                                                     <li><div class="card-information-content">후원 마감</div><div class="card-information-data">{{card.funding_endtime}}</div></li>
@@ -231,7 +231,7 @@
                                                 </ul>
                                                 <div class="card-detail-button">
                                                     <button type="button" name="" class="sponser-button">
-                                                        <a href="http://openarena.kr/{{ card.tournament_url }}">바로가기</a>
+                                                        <a href="http://openarena.kr/t/{{ card.tournament_url }}">바로가기</a>
                                                     </button>
                                                 </div>
                                             </div>
@@ -252,7 +252,7 @@
 
 {% block script %}
     <!-- slide js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <!-- card js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.js"></script>
 
@@ -271,6 +271,7 @@
 
     <script>
         $('.project-card-container').slick({
+            infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,

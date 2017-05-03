@@ -90,9 +90,6 @@
                                 {% endif %}
                                 <div class="hidden-xs" style="height: 20px"></div>
                                 {% if tournament.funding == 'yes' %}
-                                    <div class="center">
-                                        <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
-                                    </div>
                                     {% if funding_finish == 'finished' %}
                                         <div class="center">
                                             <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 마감</button>
@@ -132,7 +129,7 @@
                     <div class="col-sm-10 col-md-10 col-xs-10 col-md-offset-1 ">
                         <h4 id="comma1" class="com_title">
                             {% if funding %}
-                                총 {{ total_amount.amount__sum|intcomma }}원 후원 해주셨습니다.
+                                총 {{ total_amount|intcomma }}원 후원 해주셨습니다.
                             {% else %}
                                 총 0원 후원 해주셨습니다.
                             {% endif %}
@@ -230,15 +227,20 @@
                                                 </span> 전부터
                                             </div>
                                         {% endif %}
+
+                                    {% else %}
+                                        <hr/>
+                                        <div class="com_into_small">참가자</div>
+                                        <div class="com_into_small"><span class="com_into_big" style="color: yellowgreen">참가자를 받지 않는 대회</span></div>
                                     {% endif %}
 
                                     {% if tournament.funding == 'yes' %}
                                         <hr/>
                                         {% if funding %}
                                             <div class="com_into_small">후원자 수</div>
-                                            <div class="com_into_small"><span class="com_into_big">{{ funding.count }}</span> 명</div><br>
+                                            <div class="com_into_small"><span class="com_into_big">{{ funding|length }}</span> 명</div><br>
                                             <div class="com_into_small">후원 상금</div>
-                                            <div class="com_into_small"><span class="com_into_big">{{ total_amount.amount__sum|intcomma }}</span> 원</div><br>
+                                            <div class="com_into_small"><span class="com_into_big">{{ total_amount|intcomma }}</span> 원</div><br>
                                         {% else %}
                                             <div class="com_into_small">후원자 수</div>
                                             <div class="com_into_small"><span class="com_into_big">0</span> 명</div><br>
@@ -455,12 +457,16 @@
                                                             <td style="color: greenyellow">{{ cml.match.player1_id|get_username }} (승리)</td>
                                                         {% elif cml.match.loser_id == cml.match.player1_id %}
                                                             <td style="color: orangered">{{ cml.match.player1_id|get_username }} (패배)</td>
+                                                        {% else %}
+                                                            <td style="color: gray">{{ cml.match.player1_id|get_username }} (무승부)</td>
                                                         {% endif %}
                                                         <td>vs.</td>
                                                         {% if cml.match.winner_id == cml.match.player2_id %}
                                                             <td style="color: greenyellow">{{ cml.match.player2_id|get_username }} (승리)</td>
                                                         {% elif cml.match.loser_id == cml.match.player2_id %}
                                                             <td style="color: orangered">{{ cml.match.player2_id|get_username }} (패배)</td>
+                                                        {% else %}
+                                                            <td style="color: gray">{{ cml.match.player2_id|get_username }} (무승부)</td>
                                                         {% endif %}
                                                         <td>{{ cml.match.scores_csv }}</td>
                                                         <td><button disabled="disabled" id="" class="btn btn-default">매치 완료</button></td>
@@ -680,7 +686,7 @@
                                     <h4>
                                         <a class="donator_title">• 후원자 수 : </a>
                                         {% if funding %}
-                                            <a style="color: white">{{ funding.count }} 명</a>
+                                            <a style="color: white">{{ funding|length }} 명</a>
                                         {% else %}
                                             <a style="color: white">0 명</a>
                                         {% endif %}
@@ -696,7 +702,9 @@
                                             <th>순서</th>
                                             <th>오픈아레나 닉네임</th>
                                             <th style="color: yellowgreen">후원 금액</th>
+                                            <!--
                                             <th style="color: #ff9900">보상 혜택</th>
+                                            -->
                                             <th>응원 문구</th>
                                             {% if is_creator == 'yes' %}
                                                 <th style="color: gray">후원자 연락처</th>
@@ -710,7 +718,9 @@
                                                     <td>{{ forloop.counter }}</td>
                                                     <td>{{ f.username }} 님</td>
                                                     <td style="color: yellowgreen">{{ f.amount|intcomma }}원</td>
+                                                    <!--
                                                     <td style="color: #ff9900">{{ f.reward }}</td>
+                                                    -->
                                                     {% if f.comment == "" %}
                                                         <td>-</td>
                                                     {% else %}
@@ -1056,7 +1066,7 @@
                                 <!-- content goes here -->
                                 <label for="exampleInputPassword1">매치의 승자를 선택해주세요.</label>
                                 <div style="text-align: center;">
-                                    {% if tournament.tournament_format != 'single_elimination' and tournament.tournament_format != 'double_elimination' %}
+                                    {% if tournament.tournament_format == 'single_elimination' or tournament.tournament_format == 'double_elimination' %}
                                         <div class="btn-group" data-toggle="buttons" style="margin: 0 auto;">
                                             <label class="btn btn-default">
                                                 <input required type="radio" id="input_player1_id" name="winner_id" autocomplete="off" value="">

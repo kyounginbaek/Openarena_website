@@ -7,7 +7,7 @@ class FundingdummyAdmin(admin.ModelAdmin):
 admin.site.register(Fundingdummy, FundingdummyAdmin)
 
 class FundingAdmin(admin.ModelAdmin):
-    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'amount', 'reward', 'comment', 'orderno', 'confirm']
+    list_display = ['id', 'tournament_id', 'tournament_name', 'username', 'email', 'phone', 'amount', 'reward', 'comment', 'orderno', 'confirm']
 admin.site.register(Funding, FundingAdmin)
 
 class MakingAdmin(admin.ModelAdmin):

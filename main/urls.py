@@ -22,21 +22,4 @@ urlpatterns = [
     url(r'^members/$', views.members, name='members'),
     url(r'^funding_success/$', views.funding_success, name='funding_success'),
 
-    # tournament_url
-    url(r'^migal/$', views.migal, name='migal'),
-    url(r'^whyachi/$', views.whyachi, name='whyachi'),
-    url(r'^macho/$', views.macho, name='macho'),
-    url(r'^macho2/$', views.macho2, name='macho2'),
-    url(r'^scc2/$', views.scc2, name='scc2'),
-    url(r'^vsc/$', views.vsc, name='vsc'),
-    url(r'^ringoncup/$', views.ringoncup, name='ringoncup'),
-    url(r'^scc3/$', views.scc3, name='scc3'),
-    url(r'^chainkiller_s1/$', views.chainkiller_s1, name='chainkiller_s1'),
-    url(r'^vsc2/$', views.vsc2, name='vsc2'),
-    url(r'^moon/$', views.moon, name='moon'),
-    url(r'^scc4/$', views.scc4, name='scc4'),
-    url(r'^hstalk/$', views.hstalk, name='hstalk'),
-    url(r'^onfps/$', views.onfps, name='onfps'),
-    url(r'^cks2/$', views.cks2, name='cks2'),
-
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

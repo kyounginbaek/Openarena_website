@@ -312,3 +312,7 @@ i.slick-arrow{
         margin-top: 12rem;
     }
 }
+
+.slick-cloned{
+    display: none !important;
+}

@@ -1,136 +1,82 @@
 header{
-    height: auto;
-    width: auto;
-    text-align: left;
-    margin-top: 3.5rem;
-    padding: 0;
-    color: white;
+    margin-top: 5rem;
     background-color: #161616;
-}
-
-.search-row{
+    color: white;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    margin-left: 0.9rem;
-    display: none;
 }
 
-.category-title{
+#whole-container{
+    width: 75%;
+}
+
+#order-container{
+    margin-top: 5rem;
+    border: 1px silver solid;
+    padding: 2rem;
+}
+
+.tournaments{
     display: inline-block;
-    padding-left: 2.5rem;
-    color: rgba(255, 153, 0, 1);
 }
 
-.game-category-container{
-    text-align: left;
-    margin-bottom: 0;
-    margin-left:0;
-    margin-top: 1rem;
-    padding-left: 0;
-}
-
-.game-category-name{
-    margin-left: 1rem;
-    padding: 0;
-    width: 8rem;
-    display: none;
-}
-
-#search-container{
-    display: none;
-}
-
-.order-category{
-    display: inline-block;
-    padding: 0;
-    text-align: left;
-    width: 100%;
-}
-
-
-.order-category > button{
-    font-size: 1.3rem;
-    padding: 0.4rem;
-    background-color: inherit;
-    color: white;
-    border-radius: 2%;
-    border: none;
-}
-
-.order-category > button:hover{
-    background-color: inherit;
-    border-bottom: 1px silver solid;
-    color: white;
-}
-
-.order-category > button:focus{
-    background-color: inherit;
-    border-bottom: 1px silver solid;
-    color: white;
-}
-
-
-.game-tab-head{
-    color: rgba(255, 153, 0, 1);;
-    border-bottom: none;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+#tournaments{
     font-size: 2rem;
-}
-
-#myTab{
-    height: auto;
-    background-color: inherit;
-    padding: 0;
-    border: 1px solid gray;
-    margin-left: 0rem;
-    margin-top: 3.5rem;
-    position:inherit;
-    width: 100%;
-
-}
-
-#myTab a{
-    color: white;
-    width: auto;
-    display: inline-block;
-    margin-right: 2.8rem;
-    margin-left: 2.8rem;
-    line-height: 3.2rem;
-    font-size:1.5rem;
-}
-
-#myTab a:hover, #myTab a:focus{
     color: rgba(255, 153, 0, 1);
 }
 
-.tap-manu{
-    display: block;
+#game-category-container{
+    width: 75%;
+    display: inline-block;
+    text-align: right;
 }
 
-.category-factor{
-    width: 7rem;
+#game-category-container > select{
+    height: 3rem;
+    width: 10rem;
+    background-color: inherit;
 }
 
-.tab-content{
-    margin-left: 2%;
-    width: auto;
-    height: auto;
-    padding: 0;
+#game-category-container > select:hover{
+    border-color: rgba(255, 153, 0, 1);
 }
 
-.tab-content >.tab-pane{
-    height: auto;
+#game-category-container > select > option{
+    text-align: center;
 }
 
+#game-category, #game-order{
+    text-align: right;
+}
 
-.project-card{
+#game-category{
     margin-right: 1rem;
 }
 
-.project-card-container{
+#progress{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#progress > button{
+    height: 4rem;
+    width: 12rem;
+    background-color: inherit;
+    border-radius: 10%;
+    border: 1px silver solid;
+}
+
+#progress > button:hover{
+    background-color: rgba(255, 153, 0, 1);
+}
+
+#project-card-container{
+    text-align: left;
+    margin-top: 4rem;
     padding: 0;
+}
+
+.project-card{
+    margin-right: 1rem;
 }
 
 .contents{

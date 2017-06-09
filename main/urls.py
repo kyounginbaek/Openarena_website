@@ -7,6 +7,7 @@ urlpatterns = [
     # main_url
     url(r'^$', views.home, name='home'),
     url(r'^tournaments/$', views.tournaments, name='tournaments'),
+    url(r'^tournaments_ct/$', views.tournaments_ct, name='tournaments_ct'),
     url(r'^t/(?P<url>[\w\-]+)/$', views.t, name='t'),
     url(r'^archive/$', views.archive, name='archive'),
     url(r'^clubs/$', views.clubs, name='clubs'),

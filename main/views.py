@@ -5,7 +5,7 @@ import ast
 
 from django.core.mail import EmailMessage
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 
 from datetime import datetime, timedelta
@@ -79,6 +79,162 @@ def tournaments(request):
     }
 
     return render(request, 'main/tournaments.html', context)
+
+def tournaments_ct(request):
+
+    if request.is_ajax():
+        result = {
+            'card_list_html':[],
+        }
+
+        progress_card_list= list()
+        result_card_list= list()
+
+        game = request.GET.get('game')
+        order = request.GET.get('order')
+        progress = request.GET.get('progress')
+
+        making_item_query_set = None
+        if order == 'sponsor':
+            making_item_query_set = sorted(Tournament.objects.all(), key=lambda m: -(m.get_fundings_sum()))
+            '''
+            def sponsor_key(m):
+                return m.get_fundings_sum()
+            …
+            sorted(…, key=sponsor_key)
+            '''
+        elif order == 'latest':
+            making_item_query_set = Tournament.objects.all().order_by('-created')
+        elif order == 'deadline':
+            making_item_query_set = Tournament.objects.all().order_by('funding_endtime')
+
+        if progress == "progress":
+            for making_item in making_item_query_set:
+                if making_item.funding_endtime != '-':
+                    starttime = datetime.strptime(making_item.funding_endtime, '%Y/%m/%d %H:%M')
+                    if starttime > datetime.now():
+                        progress_card_list.append(making_item)
+
+        if progress == "end":
+            for making_item in making_item_query_set:
+                if making_item.funding_endtime != '-':
+                    starttime = datetime.strptime(making_item.funding_endtime, '%Y/%m/%d %H:%M')
+                    if starttime <= datetime.now():
+                        progress_card_list.append(making_item)
+
+        if game == 'whole':
+            for making_item in progress_card_list:
+                result_card_list.append(making_item)
+        else:
+            for making_item in progress_card_list:
+                if game == making_item.tournament_game:
+                    result_card_list.append(making_item)
+
+        #result['card_list'] = result_card_list
+        for card in result_card_list:
+            result['card_list_html'].append('''
+                    <div class="project-card">
+                        <div class="card sticky-action">
+                            <a href="/t/%s"><div class="card-image waves-effect waves-block waves-light" id="" style="background: url('%s') center center no-repeat; background-size: contain;">
+                            </div></a>
+                            <div class="progress stat2">
+                                <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: %s%%;">
+                                </div>
+                            </div>
+                            <div class="card-content-container">
+                                <div class="card-content-title">
+                                    <div class="card-content-top">
+                                        <div class="card-title-container">
+                                            <span class="card-title">%s</span>
+                                        </div>
+                                        <div class="card-dday-container">
+                                            <span class="card-dday">%s</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content-bottom">
+                                    <div class="card-fundings-container">
+                                        <span class="card-fundings">모인 상금 총 %s원</span>
+                                    </div>
+                                    <div class="detail-button-container">
+                                        <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-reveal card-detail">
+                                <div class="progress stat2">
+                                    <div class="progress-bar progress-bar-warning progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: %s%%;">
+                                    </div>
+                                </div>
+                                <div class="card-content-top">
+                                    <div class="card-title-container">
+                                        <span class="card-title">%s</span>
+                                    </div>
+                                    <div class="card-dday-container">
+                                        <span class="card-dday">%s</span>
+                                    </div>
+                                </div>
+                                <div class="card-content-bottom">
+                                    <div class="card-fundings-container">
+                                        <span class="card-fundings">모인 상금 총 %s원</span>
+                                    </div>
+                                    <div class="detail-button-container">
+                                        <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
+                                    </div>
+                                </div>
+                                <div class="card-detail-information">
+                                    <ul>
+                                        <li><div class="card-information-content">대회 일시</div><div class="card-information-data">%s</div></li>
+                                        <li><div class="card-information-content">참가 마감</div><div class="card-information-data">%s</div></li>
+                                        <!—
+                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">%s</div></li>
+                                                    —>
+                                        <li><div class="card-information-content">후원자수</div><div class="card-information-data">%s명</div></li>
+                                        <!—
+                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">%s</div></li>
+                                                    —>
+                                    </ul>
+                                    <div class="card-detail-button">
+                                        <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/%s">
+                                            바로가기</a></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            ''' % (card.tournament_url,
+                   card.tournament_image,
+                   card.get_fundings_percentage(),
+                   card.tournament_name,
+                   card.get_day(),
+                   card.get_fundings_sum(),
+                   card.get_fundings_percentage(),
+                   card.tournament_name,
+                   card.get_day(),
+                   card.get_fundings_sum(),
+                   card.tournament_starttime,
+                   card.participation_endtime,
+                   card.funding_endtime,
+                   card.get_funding_num(),
+                   card.reward,
+                   card.tournament_url
+                   ))
+        '''
+        if order == "sponsor":
+#            result_card_list.sorted('when')
+            result['card_list'] = sorted(model_to_dict(making_item))
+
+        if order == "latest":
+#            result_card_list.order_by('-when')
+            result['card_list'] = model_to_dict(making_item)
+
+        if order == "deadline":
+#            result_card_list.order_by('when')
+            result['card_list'] = model_to_dict(making_item)
+        '''
+        return JsonResponse(result)
+    return HttpResponse("tournament_ct")
 
 def archive(request):
     card_list_end = list()

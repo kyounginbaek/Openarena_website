@@ -1,14 +1,5 @@
-.topnav > .container{
-    width: 90%;
-}
-
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
     background-color: #f8f8f8;
-}
-
-
-.topnav{
-    height: 50px;
 }
 
 body{
@@ -220,7 +211,7 @@ footer{
 }
 
 .project-card > .card{
-    width: 34.4rem;
+    width: 29.4rem;
     height: auto;
     color: black;
     border-style: solid;

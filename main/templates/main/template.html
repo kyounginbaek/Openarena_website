@@ -92,23 +92,23 @@
                                 {% if tournament.funding == 'yes' %}
                                     {% if funding_finish == 'finished' %}
                                         <div class="center">
-                                            <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 마감</button>
+                                            <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">기부 마감</button>
                                         </div>
                                     {% else %}
 
                                         {% if has_funded == 'yes' %}
                                             <div class="center">
-                                                <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">추가 후원</button>
+                                                <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#donationModal">추가 기부</button>
                                             </div>
                                         {% else %}
                                             <div class="center">
-                                                <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 하기</button>
+                                                <button id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#donationModal">기부 하기</button>
                                             </div>
                                         {% endif %}
                                     {% endif %}
                                 {% else %}
                                     <div class="center">
-                                        <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">후원 불가</button>
+                                        <button disabled="disabled" id="funding" name="funding" class="btn btn-primary center-block" data-toggle="modal" data-target="#fundingModal">기부 불가</button>
                                     </div>
                                 {% endif %}
                                 <div class="hidden-xs" style="height: 20px"></div>
@@ -951,6 +951,24 @@
 
             <!--donate-->
             {% if tournament.funding == 'yes' %}
+                <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                <h3 class="modal-title" id="lineModalLabel">기부 하기</h3>
+                            </div>
+                            <div class="modal-body" style="text-align:center;">
+                                <!-- content goes here -->
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/donation_toss_qrcode.png" alt="toss qrcode" style="width: 50%; display:block; margin-left: auto; margin-right: auto;">
+                                <br/>
+                                <p>QR코드 스캔 혹은 후원 링크: <a href="http://get.toss.im/RErc/w9CitensPD">http://get.toss.im/RErc/w9CitensPD</a>를 이용해주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="modal fade" id="fundingModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">

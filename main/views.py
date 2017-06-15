@@ -885,9 +885,13 @@ def t(request, url):
     tournament_id = tournament.get('id')
     tournament_name = tournament.get('tournament_name')
     participation = Participation.objects.filter(tournament_name=tournament_name)
-    if Participation.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
-        participation_userinfo = Participation.objects.filter(tournament_name=tournament_name, username=request.user.username).values().get()
-        participation_userinfo_input_list = ast.literal_eval(participation_userinfo.get('input'))
+    if request.user.is_authenticated():
+        if Participation.objects.filter(tournament_name=tournament_name, username=request.user.username).exists():
+            participation_userinfo = Participation.objects.filter(tournament_name=tournament_name, username=request.user.username).values().get()
+            participation_userinfo_input_list = ast.literal_eval(participation_userinfo.get('input'))
+        else:
+            participation_userinfo = ""
+            participation_userinfo_input_list = ""
     else:
         participation_userinfo = ""
         participation_userinfo_input_list = ""

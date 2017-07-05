@@ -2,9 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/cks2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/hstalk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/macho.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/macho2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/making.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/migal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/moon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/onfps.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/ringoncup.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/scc2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/scc3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/scc4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/vsc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/vsc2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/whyachi.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/base.html" afterPath="$PROJECT_DIR$/main/templates/main/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/create.html" afterPath="$PROJECT_DIR$/main/templates/main/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/home.html" afterPath="$PROJECT_DIR$/main/templates/main/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/template.html" afterPath="$PROJECT_DIR$/main/templates/main/template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/tournaments.html" afterPath="$PROJECT_DIR$/main/templates/main/tournaments.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
     </list>
     <ignored path="openarena.iws" />
@@ -33,31 +53,40 @@
       <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50175">
-              <caret line="3345" column="45" selection-start-line="3345" selection-start-column="45" selection-end-line="3345" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="2274" column="93" selection-start-line="2274" selection-start-column="93" selection-end-line="2274" selection-end-column="93" />
+              <folding>
+                <marker date="1499082828000" expanded="false" signature="2431:2445" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="210795:210834" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="211008:211020" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="211121:211136" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="211940:211958" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="212284:212299" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="212780:212795" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="213401:213437" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="213554:213613" ph="..." />
+                <marker date="1499082828000" expanded="false" signature="213944:214003" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/templates/main/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+            <state relative-caret-position="345">
+              <caret line="788" column="94" selection-start-line="788" selection-start-column="94" selection-end-line="788" selection-end-column="94" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/views.py">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="896" column="46" selection-start-line="896" selection-start-column="46" selection-end-line="896" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3150">
+              <caret line="210" column="74" selection-start-line="210" selection-start-column="74" selection-end-line="210" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,8 +94,8 @@
       <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+            <state relative-caret-position="2145">
+              <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -128,7 +157,6 @@
         <option value="$PROJECT_DIR$/static/css/landing-page.css" />
         <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/main/static/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/main/templates/main/create.html" />
         <option value="$PROJECT_DIR$/main/templates/main/functions/to_int.py" />
         <option value="$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" />
         <option value="$PROJECT_DIR$/main/templates/main/realstarleaguecom.html" />
@@ -143,14 +171,15 @@
         <option value="$PROJECT_DIR$/main/static/css/home.css" />
         <option value="$PROJECT_DIR$/main/templates/main/archive.html" />
         <option value="$PROJECT_DIR$/main/models.py" />
-        <option value="$PROJECT_DIR$/main/templates/main/home.html" />
         <option value="$PROJECT_DIR$/main/urls.py" />
         <option value="$PROJECT_DIR$/main/static/css/tournaments.css" />
         <option value="$PROJECT_DIR$/main/static/css/common.css" />
-        <option value="$PROJECT_DIR$/main/templates/main/base.html" />
+        <option value="$PROJECT_DIR$/main/templates/main/home.html" />
         <option value="$PROJECT_DIR$/main/templates/main/tournaments.html" />
-        <option value="$PROJECT_DIR$/main/templates/main/template.html" />
         <option value="$PROJECT_DIR$/main/views.py" />
+        <option value="$PROJECT_DIR$/main/templates/main/base.html" />
+        <option value="$PROJECT_DIR$/main/templates/main/create.html" />
+        <option value="$PROJECT_DIR$/main/templates/main/template.html" />
       </list>
     </option>
   </component>
@@ -190,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,7 +464,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -752,7 +781,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2641357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27625203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20117474" sideWeight="0.5048465" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -760,7 +789,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20117474" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2804699" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -841,20 +870,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/macho2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="577" column="45" selection-start-line="577" selection-start-column="45" selection-end-line="577" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/ringoncup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10892">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/macho2.html" />
+    <entry file="file://$PROJECT_DIR$/main/templates/main/ringoncup.html" />
     <entry file="file://$USER_HOME$/myvenv/lib/python3.5/site-packages/rest_framework/static/rest_framework/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -947,25 +964,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/onfps.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="737" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="829" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/chainkiller_s1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#519#686#0#HTML" expanded="false" />
-            <element signature="e#986#1130#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/onfps.html" />
+    <entry file="file://$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" />
     <entry file="file://$PROJECT_DIR$/main/templates/main/realstarleaguecom.html" />
     <entry file="file://$PROJECT_DIR$/main/static/css/landing-page.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -996,19 +996,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/making.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="397" column="17" selection-start-line="397" selection-start-column="17" selection-end-line="397" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templatetags/to_int.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,52 +1007,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#27#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/scc4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/macho.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/moon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="136" column="47" selection-start-line="126" selection-start-column="36" selection-end-line="136" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/hstalk.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="125" column="67" selection-start-line="125" selection-start-column="67" selection-end-line="125" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/cks2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="573" column="87" selection-start-line="573" selection-start-column="87" selection-end-line="573" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/scc4.html" />
+    <entry file="file://$PROJECT_DIR$/main/templates/main/macho.html" />
+    <entry file="file://$PROJECT_DIR$/main/templates/main/moon.html" />
+    <entry file="file://$PROJECT_DIR$/main/templates/main/hstalk.html" />
+    <entry file="file://$PROJECT_DIR$/main/templates/main/cks2.html" />
     <entry file="file://$USER_HOME$/myvenv/lib/python3.5/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1083,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/static/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="317" column="1" selection-start-line="317" selection-start-column="1" selection-end-line="317" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/archive.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1108,20 +1054,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1140,18 +1078,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/static/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="312" column="5" selection-start-line="312" selection-start-column="5" selection-end-line="312" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="170" column="62" selection-start-line="170" selection-start-column="62" selection-end-line="170" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/making.html" />
     <entry file="file://$PROJECT_DIR$/main/templates/main/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+        <state relative-caret-position="102">
+          <caret line="134" column="27" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50175">
-          <caret line="3345" column="45" selection-start-line="3345" selection-start-column="45" selection-end-line="3345" selection-end-column="45" />
+        <state relative-caret-position="165">
+          <caret line="2274" column="93" selection-start-line="2274" selection-start-column="93" selection-end-line="2274" selection-end-column="93" />
+          <folding>
+            <marker date="1499082828000" expanded="false" signature="2431:2445" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="210795:210834" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="211008:211020" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="211121:211136" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="211940:211958" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="212284:212299" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="212780:212795" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="213401:213437" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="213554:213613" ph="..." />
+            <marker date="1499082828000" expanded="false" signature="213944:214003" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="210" column="74" selection-start-line="210" selection-start-column="74" selection-end-line="210" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2145">
+          <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1166,27 +1149,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+        <state relative-caret-position="345">
+          <caret line="788" column="94" selection-start-line="788" selection-start-column="94" selection-end-line="788" selection-end-column="94" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="896" column="46" selection-start-line="896" selection-start-column="46" selection-end-line="896" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

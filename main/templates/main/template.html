@@ -783,6 +783,11 @@
                             </div>
                             <div class="modal-body">
                                 <!-- content goes here -->
+                                {% if tournament.tournament_url == 'egghat' %}
+                                    <p>참가비 입금 계좌 - 농협 - 302-1093-9960-31</p>
+                                    <p>예금주 : 이규한(아마추어대회)</p>
+                                    <p>입금 후 010-2799-9624로 연락 혹은 카톡 gamesan 으로 연락주시기 바랍니다.</p>
+                                {% endif %}
                                 <form id="participation_form" method="POST">{% csrf_token %}
                                     <input type="hidden" class="form-control" id="purpose" name="purpose" value="participation">
                                     <input type="hidden" class="form-control" id="tournament_id" name="tournament_id" value="{{ tournament.id }}">
@@ -960,10 +965,16 @@
                             </div>
                             <div class="modal-body" style="text-align:center;">
                                 <!-- content goes here -->
-                                <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/donation_toss_qrcode.png" alt="toss qrcode" style="width: 50%; display:block; margin-left: auto; margin-right: auto;">
-                                <br/>
-                                <p>PC는 QR코드 스캔, 모바일은 후원 링크: <a href="http://get.toss.im/RErc/w9CitensPD">http://get.toss.im/RErc/w9CitensPD</a>를 이용해주세요.</p>
-                                <p>다른 방식의 후원을 원하시는 분은 <a href="http://plus.kakao.com/home/@%EC%98%A4%ED%94%88%EC%95%84%EB%A0%88%EB%82%98">카카오톡 문의</a>를 통해 문의해주세요.</p>
+                                {% if tournament.tournament_url == 'egghat' %}
+                                    <p>참가비 입금 계좌 - 농협 - 302-1093-9960-31</p>
+                                    <p>예금주 : 이규한(아마추어대회)</p>
+                                    <p>입금 후 010-2799-9624로 연락 혹은 카톡 gamesan 으로 연락주시기 바랍니다.</p>
+                                {% else %}
+                                    <img src="https://s3.ap-northeast-2.amazonaws.com/openarena/admin/images/donation_toss_qrcode.png" alt="toss qrcode" style="width: 50%; display:block; margin-left: auto; margin-right: auto;">
+                                    <br/>
+                                    <p>PC는 QR코드 스캔, 모바일은 후원 링크: <a href="http://get.toss.im/RErc/w9CitensPD">http://get.toss.im/RErc/w9CitensPD</a>를 이용해주세요.</p>
+                                    <p>다른 방식의 후원을 원하시는 분은 <a href="http://plus.kakao.com/home/@%EC%98%A4%ED%94%88%EC%95%84%EB%A0%88%EB%82%98">카카오톡 문의</a>를 통해 문의해주세요.</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

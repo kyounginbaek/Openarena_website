@@ -43,7 +43,7 @@ def tournaments(request):
     card_list_heartstone = list()
     card_list_shadowverse = list()
 
-    for making_item in Tournament.objects.filter(confirm='yes').order_by('-created'):
+    for making_item in Tournament.objects.filter(confirm="yes").order_by('-created'):
         starttime = datetime.strptime(making_item.tournament_endtime, '%Y/%m/%d %H:%M')
         # print('tg -> '+making_item.tournament_game)
         if starttime > datetime.now():
@@ -96,7 +96,7 @@ def tournaments_ct(request):
 
         making_item_query_set = None
         if order == 'sponsor':
-            making_item_query_set = sorted(Tournament.objects.all(), key=lambda m: -(m.get_fundings_sum()))
+            making_item_query_set = sorted(Tournament.objects.filter(confirm="yes"), key=lambda m: -(m.get_fundings_sum()))
             '''
             def sponsor_key(m):
                 return m.get_fundings_sum()
@@ -104,9 +104,9 @@ def tournaments_ct(request):
             sorted(…, key=sponsor_key)
             '''
         elif order == 'latest':
-            making_item_query_set = Tournament.objects.all().order_by('-created')
+            making_item_query_set = Tournament.objects.filter(confirm="yes").order_by('-created')
         elif order == 'deadline':
-            making_item_query_set = Tournament.objects.all().order_by('funding_endtime')
+            making_item_query_set = Tournament.objects.filter(confirm="yes").order_by('funding_endtime')
 
         if progress == "progress":
             for making_item in making_item_query_set:
@@ -153,9 +153,11 @@ def tournaments_ct(request):
                                     </div>
                                 </div>
                                 <div class="card-content-bottom">
+                                    <!--
                                     <div class="card-fundings-container">
                                         <span class="card-fundings">모인 상금 총 %s원</span>
                                     </div>
+                                    -->
                                     <div class="detail-button-container">
                                         <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i><i class="material-icons right"></i></span>
                                     </div>
@@ -175,9 +177,11 @@ def tournaments_ct(request):
                                     </div>
                                 </div>
                                 <div class="card-content-bottom">
+                                    <!--
                                     <div class="card-fundings-container">
                                         <span class="card-fundings">모인 상금 총 %s원</span>
                                     </div>
+                                    -->
                                     <div class="detail-button-container">
                                         <span class="card-title activator grey-text text-darken-4 card-title"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i><i class="material-icons right"></i></span>
                                     </div>
@@ -186,18 +190,20 @@ def tournaments_ct(request):
                                     <ul>
                                         <li><div class="card-information-content">대회 일시</div><div class="card-information-data">%s</div></li>
                                         <li><div class="card-information-content">참가 마감</div><div class="card-information-data">%s</div></li>
-                                        <!—
-                                                    <li><div class="card-information-content">후원 마감</div><div class="card-information-data">%s</div></li>
-                                                    —>
-                                        <li><div class="card-information-content">후원자수</div><div class="card-information-data">%s명</div></li>
-                                        <!—
-                                                    <li><div class="card-information-content">보상</div><div class="card-information-data">%s</div></li>
-                                                    —>
+                                         <!--
+                                            <li><div class="card-information-content">후원 마감</div><div class="card-information-data">%s</div></li>
+                                         -->
+                                         <!--
+                                            <li><div class="card-information-content">후원자수</div><div class="card-information-data">%s명</div></li>
+                                         -->
+                                         <!--
+                                            <li><div class="card-information-content">보상</div><div class="card-information-data">%s</div></li>
+                                         -->
                                     </ul>
                                     <div class="card-detail-button">
                                         <button type="button" name="" class="sponser-button"><a href="http://openarena.kr/%s">
-                                            바로가기</a></button>
-
+                                            바로가기</a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

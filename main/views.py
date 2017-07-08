@@ -413,43 +413,46 @@ def create(request):
                                         tournament_starttime=request.POST.get('tournament_starttime'),
                                         tournament_endtime=request.POST.get('tournament_endtime'),
                                         tournament_format=request.POST.get('tournament_format'),
-                                        tournament_format_spec=tournament_format_spec, #string or array
+                                        tournament_format_spec=tournament_format_spec,  #string or array
                                         tournament_rule=request.POST.get('tournament_rule'),
                                         participation=request.POST.get('participation'),
                                         participation_custom_url=request.POST.get('participation_custom_url'),
                                         # participation=yes
                                         participation_type=request.POST.get('participation_type'),
                                         participation_template_custom=request.POST.get('participation_template_custom'),
-                                        participation_template_format=request.POST.getlist('participation_template_format[]'), #array
-                                        participation_template=request.POST.getlist('participation_template[]'), #array
+                                        participation_template_format=request.POST.getlist('participation_template_format[]'),  #array
+                                        participation_template=request.POST.getlist('participation_template[]'),  #array
                                         participation_number=request.POST.get('participation_number'),
                                         participation_time=request.POST.get('participation_time'),
                                         participation_starttime=request.POST.get('participation_starttime'),
                                         participation_endtime=request.POST.get('participation_endtime'),
                                         participation_checkin=request.POST.get('participation_checkin'),
                                         # tab3
-                                        funding_notice=request.POST.get('funding_notice'),
-                                        account_notice=request.POST.get('account_notice'),
-                                        participation_fee=request.POST.get('participation_fee'),
-                                        funding=request.POST.get('funding'),
-                                        # if funding=yes
-                                        funding_goal=request.POST.get('funding_goal'),
-                                        funding_time=request.POST.get('funding_time'),
-                                        funding_starttime=request.POST.get('funding_starttime'),
-                                        funding_endtime=request.POST.get('funding_endtime'),
-                                        reward=request.POST.get('reward'),
-                                        reward_number=request.POST.getlist('reward_number[]'), #array
-                                        reward_spec=request.POST.getlist('reward_spec[]'), #array
-                                        promise=request.POST.get('promise'),
-                                        promise_number=request.POST.getlist('promise_number[]'), #array
-                                        promise_spec=request.POST.getlist('promise_spec[]'), #array
+                                        # funding_notice=request.POST.get('funding_notice'),
+                                        # account_notice=request.POST.get('account_notice'),
+                                        # participation_fee=request.POST.get('participation_fee'),
+                                        # funding=request.POST.get('funding'),
+                                        # # if funding=yes
+                                        # funding_goal=request.POST.get('funding_goal'),
+                                        # funding_time=request.POST.get('funding_time'),
+                                        # funding_starttime=request.POST.get('funding_starttime'),
+                                        # funding_endtime=request.POST.get('funding_endtime'),
+                                        # reward=request.POST.get('reward'),
+                                        # reward_number=request.POST.getlist('reward_number[]'), #array
+                                        # reward_spec=request.POST.getlist('reward_spec[]'), #array
+                                        # promise=request.POST.get('promise'),
+                                        # promise_number=request.POST.getlist('promise_number[]'), #array
+                                        # promise_spec=request.POST.getlist('promise_spec[]'), #array
                                         # tab4
                                         profile_name=request.POST.get('profile_name'),
                                         profile_introduction=request.POST.get('profile_introduction'),
                                         profile_image=request.POST.get('profile_image'),
                                         streaming=request.POST.get('streaming'),
-                                        streaming_site=request.POST.getlist('streaming_site[]'), #array
-                                        streaming_url=request.POST.getlist('streaming_url[]'), #array
+                                        streaming_site=request.POST.getlist('streaming_site[]'),  #array
+                                        streaming_url=request.POST.getlist('streaming_url[]'),  #array
+                                        donation=request.POST.get('donation'),
+                                        donation_site=request.POST.getlist('donation_site[]'),  # array
+                                        donation_url=request.POST.getlist('donation_url[]'),  # array
                                         profile_email=request.POST.get('profile_email'),
                                         profile_phone=request.POST.get('profile_phone'),
                                         profile_account=request.POST.get('profile_account'),
@@ -1017,6 +1020,13 @@ def t(request, url):
         streaming_site = "[]"
         streaming_url = "[]"
 
+    if tournament.get('donation') == 'yes':
+        donation_site = ast.literal_eval(tournament.get('donation_site'))
+        donation_url = ast.literal_eval(tournament.get('donation_url'))
+    else:
+        donation_site = "[]"
+        donation_url = "[]"
+
     # video = Video.objects.filter(tournament_name=tournament.get('tournament_name'))
 
     # 그 사람이 후원했는지를 검색하는 기능
@@ -1046,7 +1056,8 @@ def t(request, url):
                                                   'promise_number': promise_number, 'promise_spec': promise_spec,
                                                   'participation_template_format': participation_template_format,
                                                   'participation_template': participation_template,
-                                                  'streaming_site': streaming_site, 'streaming_url': streaming_url})
+                                                  'streaming_site': streaming_site, 'streaming_url': streaming_url,
+                                                  'donation_site': donation_site, 'donation_url': donation_url})
 
 def members(request):
     return render(request, 'main/members.html', {})

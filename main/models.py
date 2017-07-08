@@ -159,10 +159,10 @@ class Tournament(models.Model):
     participation_endtime = models.CharField(max_length=200, default='-')
     participation_checkin = models.CharField(max_length=200, default='-')  # checkin_time or no
     # tab3
-    funding_notice = models.CharField(max_length=200, default='')  # only yes
-    account_notice = models.CharField(max_length=200, default='')  # only yes
-    participation_fee = models.CharField(max_length=200, default='')  # fee_number or no
-    funding = models.CharField(max_length=200, default='')  # yes or no
+    funding_notice = models.CharField(max_length=200, default='-')  # only yes
+    account_notice = models.CharField(max_length=200, default='-')  # only yes
+    participation_fee = models.CharField(max_length=200, default='-')  # fee_number or no
+    funding = models.CharField(max_length=200, default='-')  # yes or no
     # if funding = yes
     funding_goal = models.CharField(max_length=200, default='-')
     funding_time = models.CharField(max_length=200, default='-')  # default or custom
@@ -185,6 +185,9 @@ class Tournament(models.Model):
     profile_email = models.CharField(max_length=400, default='')
     profile_phone = models.CharField(max_length=200, default='-')
     profile_account = models.CharField(max_length=400, default='-')
+    donation = models.CharField(max_length=200, default='')  # yes or no
+    donation_site = models.CharField(max_length=4000, default='')
+    donation_url = models.CharField(max_length=4000, default='')
     creator_enrollment = models.CharField(max_length=200, default='')
     # after submit
     confirm = models.CharField(max_length=200, default='-')  # yes or no(reviewing)

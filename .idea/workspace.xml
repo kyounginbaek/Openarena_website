@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db60b40f-fa75-4f06-9a93-c942c3391050" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/chainkiller_s1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/cks2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/hstalk.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/macho.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/macho2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/making.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/migal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/moon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/onfps.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/ringoncup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/scc2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/scc3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/scc4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/vsc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/vsc2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main/templates/main/whyachi.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/base.html" afterPath="$PROJECT_DIR$/main/templates/main/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models.py" afterPath="$PROJECT_DIR$/main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/create.html" afterPath="$PROJECT_DIR$/main/templates/main/create.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/home.html" afterPath="$PROJECT_DIR$/main/templates/main/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/template.html" afterPath="$PROJECT_DIR$/main/templates/main/template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/main/tournaments.html" afterPath="$PROJECT_DIR$/main/templates/main/tournaments.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/views.py" afterPath="$PROJECT_DIR$/main/views.py" />
     </list>
     <ignored path="openarena.iws" />
@@ -53,30 +35,44 @@
       <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="2274" column="93" selection-start-line="2274" selection-start-column="93" selection-end-line="2274" selection-end-column="93" />
+            <state relative-caret-position="-158">
+              <caret line="4076" column="0" selection-start-line="4076" selection-start-column="0" selection-end-line="4076" selection-end-column="0" />
               <folding>
-                <marker date="1499082828000" expanded="false" signature="2431:2445" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="210795:210834" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="211008:211020" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="211121:211136" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="211940:211958" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="212284:212299" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="212780:212795" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="213401:213437" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="213554:213613" ph="..." />
-                <marker date="1499082828000" expanded="false" signature="213944:214003" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="2431:2445" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="210738:210777" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="210951:210963" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="211064:211079" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="211883:211901" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="212227:212242" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="212723:212738" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="213344:213380" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="213497:213556" ph="..." />
+                <marker date="1499502175000" expanded="false" signature="213887:213946" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="1060" column="0" selection-start-line="1060" selection-start-column="0" selection-end-line="1060" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/main/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="788" column="94" selection-start-line="788" selection-start-column="94" selection-end-line="788" selection-end-column="94" />
-              <folding />
+            <state relative-caret-position="1020">
+              <caret line="963" column="62" selection-start-line="963" selection-start-column="62" selection-end-line="963" selection-end-column="62" />
+              <folding>
+                <marker date="1499505320000" expanded="false" signature="12080:12094" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,21 +87,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2145">
-              <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+            <state relative-caret-position="186">
+              <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/models.py">
+      <file leaf-file-name="tournaments.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2145">
-              <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+            <state relative-caret-position="1965">
+              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,16 +166,16 @@
         <option value="$PROJECT_DIR$/main/admin.py" />
         <option value="$PROJECT_DIR$/main/static/css/home.css" />
         <option value="$PROJECT_DIR$/main/templates/main/archive.html" />
-        <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/main/urls.py" />
         <option value="$PROJECT_DIR$/main/static/css/tournaments.css" />
         <option value="$PROJECT_DIR$/main/static/css/common.css" />
         <option value="$PROJECT_DIR$/main/templates/main/home.html" />
         <option value="$PROJECT_DIR$/main/templates/main/tournaments.html" />
-        <option value="$PROJECT_DIR$/main/views.py" />
         <option value="$PROJECT_DIR$/main/templates/main/base.html" />
         <option value="$PROJECT_DIR$/main/templates/main/create.html" />
+        <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/main/templates/main/template.html" />
+        <option value="$PROJECT_DIR$/main/views.py" />
       </list>
     </option>
   </component>
@@ -779,7 +775,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27625203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -787,9 +783,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.4955102" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2452276" sideWeight="0.49714285" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2804699" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2804699" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318649" sideWeight="0.49676898" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -837,7 +833,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="684" />
+      <option name="time" value="688" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1085,41 +1081,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="170" column="62" selection-start-line="170" selection-start-column="62" selection-end-line="170" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/making.html" />
     <entry file="file://$PROJECT_DIR$/main/templates/main/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="134" column="27" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="2274" column="93" selection-start-line="2274" selection-start-column="93" selection-end-line="2274" selection-end-column="93" />
-          <folding>
-            <marker date="1499082828000" expanded="false" signature="2431:2445" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="210795:210834" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="211008:211020" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="211121:211136" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="211940:211958" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="212284:212299" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="212780:212795" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="213401:213437" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="213554:213613" ph="..." />
-            <marker date="1499082828000" expanded="false" signature="213944:214003" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,25 +1100,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/tournaments.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+        <state relative-caret-position="1965">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/main/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="4076" column="0" selection-start-line="4076" selection-start-column="0" selection-end-line="4076" selection-end-column="0" />
+          <folding>
+            <marker date="1499502175000" expanded="false" signature="2431:2445" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="210738:210777" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="210951:210963" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="211064:211079" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="211883:211901" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="212227:212242" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="212723:212738" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="213344:213380" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="213497:213556" ph="..." />
+            <marker date="1499502175000" expanded="false" signature="213887:213946" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+        <state relative-caret-position="186">
+          <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/main/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="788" column="94" selection-start-line="788" selection-start-column="94" selection-end-line="788" selection-end-column="94" />
-          <folding />
+        <state relative-caret-position="1020">
+          <caret line="963" column="62" selection-start-line="963" selection-start-column="62" selection-end-line="963" selection-end-column="62" />
+          <folding>
+            <marker date="1499505320000" expanded="false" signature="12080:12094" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="1060" column="0" selection-start-line="1060" selection-start-column="0" selection-end-line="1060" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

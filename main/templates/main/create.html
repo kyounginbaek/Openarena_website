@@ -2389,8 +2389,8 @@
                             </div>
                             <div id="tab4-2_question3" class="panel-collapse collapse">
                                 <div class="panel-body" style="text-align: center">
-                                    <input type="hidden" class="form-control" id="profile_account_yes" name="profile_account_yes" value="no">
-                                    <form id="profile_account_form">
+                                    <input type="hidden" class="form-control" id="donation_yes" name="donation_yes" value="no">
+                                    <form id="donation_form">
                                         <div class="row">
                                             <div style="text-align: center;">
                                                 <div>
@@ -2422,7 +2422,7 @@
                                                         <input id="donation_site_afreecatv" name="donation_site[]" type="checkbox" value="toonation"> 투네이션(Toonation)
                                                         <div class="input-group" style="margin: 0 auto;">
                                                             <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                            <input disabled="disabled" checked="checked" id="donation_url_afreecatv" type="text" class="form-control streaming_url" placeholder="예) http://play.afreecatv.com/">
+                                                            <input disabled="disabled" checked="checked" id="donation_url_toonation" type="text" class="form-control donation_url" placeholder="예) http://">
                                                         </div>
                                                     </div>
                                                     <br/>
@@ -2430,7 +2430,7 @@
                                                         <input id="donation_site_twitch" name="donation_site[]" type="checkbox" value="twip"> 트윕(Twip)<br/>
                                                         <div class="input-group" style="margin: 0 auto;">
                                                             <span class="input-group-addon" id="basic-addon1">URL</span>
-                                                            <input disabled="disabled" id="donation_url_twitch" type="text" class="form-control donation_url" placeholder="예) https://www.twitch.tv/">
+                                                            <input disabled="disabled" id="donation_url_twip" type="text" class="form-control donation_url" placeholder="예) https://">
                                                         </div>
                                                     </div>
                                                     <br/>
@@ -3704,6 +3704,30 @@
                 }
             });
 
+            $("input:checkbox[name='donation_site[]']").change(function(){
+                if($(this).is(':checked')){
+                    document.getElementById("donation_url_"+$(this).val()).required = true;
+                    document.getElementById("donation_url_"+$(this).val()).setAttribute("name", "donation_url[]");
+                    $("#donation_url_"+$(this).val()).removeAttr("disabled");
+                } else{
+                    document.getElementById("donation_url_"+$(this).val()).required = false;
+                    document.getElementById("donation_url_"+$(this).val()).removeAttribute("name");
+                    $("#donation_url_"+$(this).val()).attr("disabled", "disabled");
+                }
+            });
+
+            $("#donation_form").submit(function(e) {
+                e.preventDefault();
+                if($('input:radio[name="donation"]:checked').val()=='yes' && $("input:checkbox[name='donation_site[]']:checked").length==0){
+                    alert("후원받으실 사이트를 선택해주세요.");
+                } else{
+                    $(this).closest('.hover_collapse').children('div').children('a').click();
+                    $(this).closest('.hover_collapse').children('div').children('a').children('h4').children('span').show();
+                    $('#tab4_check7').attr('value', 'check');
+                    tab4_check_function();
+                }
+            });
+
             /* 계좌 번호 profile_account
             // 입력을 완료했는지 required 체크
             $("#profile_account_form").submit(function(e) {
@@ -3742,7 +3766,7 @@
                     if(string=="no_alert"){
 
                     } else{
-                        alert("네번째 탭이 완료되었습니다.");
+                        alert("세번째 탭이 완료되었습니다.");
                     }
                 } else{
                     $("#tab4_oksign").hide();
@@ -3769,14 +3793,16 @@
                 }
             });
 
+            /*
             $(".hover_collapse_tab3").click(function(e) {
-                /* v체크가 show되어 있으면 hide하기 */
+                // v체크가 show되어 있으면 hide하기
                 if($(this).children('h4').children('span').is(":visible")){
                     $(this).children('h4').children('span').hide();
                     $(this).children('h4').children('input').val("uncheck");
                     tab3_check_function();
                 }
             });
+            */
 
             $(".hover_collapse_tab4").click(function(e) {
                 /* v체크가 show되어 있으면 hide하기 */
@@ -3806,10 +3832,10 @@
                 /* 최종 4개 탭 완료되었는지 확인 */
                 var check1 = $('#tab1_allcheck').val();
                 var check2 = $('#tab2_allcheck').val();
-                var check3 = $('#tab3_allcheck').val();
+                // var check3 = $('#tab3_allcheck').val();
                 var check4 = $('#tab4_allcheck').val();
 
-                if(check1=="check" && check2=="check" && check3=="check" && check4=="check"){
+                if(check1=="check" && check2=="check" && check4=="check"){
                     $('#page4_submit').text("제출 중입니다.");
 
                     var serializedData = {
@@ -3840,6 +3866,7 @@
                         "participation_endtime": "-",
                         "participation_checkin": "-", //yes_input or no
                         //
+                        /*
                         //tab3
                         "funding_notice": $('#funding_notice').val(), //only yes
                         "account_notice": $('#account_notice').val(), //only yes
@@ -3857,6 +3884,7 @@
                         "promise_number": "-", //array
                         "promise_spec": "-", //array
                         //
+                        */
                         //tab4
                         "profile_name": "-", // default_name or custom_name
                         "profile_introduction": $('#profile_introduction').summernote('code'),
@@ -3865,6 +3893,11 @@
                         //if streaming = yes
                         "streaming_site": "-", //array
                         "streaming_url": "-", //array
+                        //
+                        "donation": $('input:radio[name="donation"]:checked').val(), //yes or no
+                        //if streaming = yes
+                        "donation_site": "-", //array
+                        "donation_url": "-", //array
                         //
                         "profile_email": "-", // default_email or custom_email
                         "profile_phone": $('#profile_phone').val(),
@@ -3960,6 +3993,7 @@
                         }
                     }
 
+                    /*
                     // tab3
                     // 참가비를 받는 경우
                     if($('input:radio[name="participation_fee"]:checked').val()=="yes"){
@@ -3999,6 +4033,7 @@
                             serializedData.promise_spec = $('input[name="promise_spec[]"]').map(function(){return this.value;}).get();
                         }
                     }
+                    */
 
                     // tab4
                     if($('input:radio[name="profile_name_question"]:checked').val()=="default"){
@@ -4019,6 +4054,12 @@
                         // site, url을 배열로 받기
                         serializedData.streaming_site = $('input[name="streaming_site[]"]:checked').map(function(){return this.value;}).get();
                         serializedData.streaming_url = $('input[name="streaming_url[]"]').map(function(){return this.value;}).get();
+                    }
+
+                    if($('input:radio[name="donation"]:checked').val()=="yes"){
+                        // site, url을 배열로 받기
+                        serializedData.donation_site = $('input[name="donation_site[]"]:checked').map(function(){return this.value;}).get();
+                        serializedData.donation_url = $('input[name="donation_url[]"]').map(function(){return this.value;}).get();
                     }
 
                     if($('input:radio[name="profile_email_question"]:checked').val()=="default"){
@@ -4064,11 +4105,13 @@
                     if(check2=="uncheck"){
                         err_alert += "두번째 ";
                     }
+                    /*
                     if(check3=="uncheck"){
                         err_alert += "세번째 ";
                     }
+                    */
                     if(check4=="uncheck"){
-                        err_alert += "네번째 ";
+                        err_alert += "세번째 ";
                     }
                     err_alert += "탭이 완료되지 않았습니다. 미완료된 탭으로 돌아가 각 항목들을 완료해주세요.";
                     alert(err_alert);
